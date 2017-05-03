@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+  <div class="pad">
+  </div>
+  <div class="container">
+    <h2 class="heading-title">Resume</h2>
+    </br>
+    <div class="row">
+      <div class="col-xs-12">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="table-responsive table-shopping-cart">
+            <table class="table">
+              <thead>
+              <tr>
+                <th >HouseID</th>
+                <th >FirstName</th>
+                <th>LastName</th>
+                <th>PhonePrimary</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th class="text-center"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+
+
+              <tr>
+                <td class="">00243</td>
+                <td class="product-thumbnail text-center">Irina</td>
+                <td class="product-name">Ramos</td>
+                <td class="product-price">94232232232</td>
+                <td class="product-qty">3233 Av maisonneuve </td>
+                <td class="">Cuba</td>
+                <td><a href="#maison1" data-toggle="collapse">Click here to resume</a></td>
+              </tr>
+
+
+              <tr>
+                <td class="">00278</td>
+                <td class="product-thumbnail text-center">Steve</td>
+                <td class="product-name">Fuentes</td>
+                <td class="product-price">95232232232</td>
+                <td class="product-qty">2343 Av Miroquesada</td>
+                <td class="">Cuba</td>
+                <td><a href="#maison2" data-toggle="collapse">Click here to resume</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="collapse in" id="maison1">
+        <div class="container">
+          <p>House 00243 </p>
+          <table class="table">
+            <thead>
+            <tr>
+              <th >RequestDate</th>
+              <th >InterventionDate</th>
+              <th>ServiceID</th>
+              <th>Service</th>
+              <th>TechnicianID</th>
+              <th>Status</th>
+              <th>Details</th>
+              <th>Contact</th>
+            </tr>
+            </thead>
+
+
+            <tr>
+              <td class="">03/04/2017</td>
+              <td class="">04/04/2017</td>
+              <td class="product-name">536433</td>
+              <td class="product-price">plumbing</td>
+              <td class="product-qty">Carlos Sanz</td>
+              <td class="">Attended</td>
+              <td class="">Problems with faucett</td>
+              <td class="">Alberto</td>
+            </tr>
+
+            <tr>
+              <td class="">08/04/2017</td>
+              <td class="">10/04/2017</td>
+              <td class="product-name">536438</td>
+              <td class="product-price">Electricity</td>
+              <td class="product-qty">Andres Lopilato</td>
+              <td class="">Attended</td>
+              <td class="">Electrical problems</td>
+              <td class="">Roberto</td>
+            </tr>
+
+            <tr>
+              <td class="">15/04/2017</td>
+              <td class="">19/04/2017</td>
+              <td class="product-name">536458</td>
+              <td class="product-price">locksmith</td>
+              <td class="product-qty">Marisol</td>
+              <td class="">Attended</td>
+              <td class="">Problems with door</td>
+              <td class="">Alejandro</td>
+            </tr>
+
+          </table>
+
+        </div>
+      </div>
+
+      <div class="collapse in" id="maison2">
+        <div class="container">
+          <p>House 00278 </p>
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th >RequestDate</th>
+              <th >InterventionDate</th>
+              <th>ServiceID</th>
+              <th>Service</th>
+              <th>TechnicianID</th>
+              <th>Status</th>
+              <th>Details</th>
+              <th>Contact</th>
+            </tr>
+            </thead>
+
+
+            <tr>
+              <td class="">02/04/2017</td>
+              <td class="">03/04/2017</td>
+              <td class="product-name">536435</td>
+              <td class="product-price">plumbing</td>
+              <td class="product-qty">Rodolfo German</td>
+              <td class="">Attended</td>
+              <td class="">Problems ett</td>
+              <td class="">Braulio</td>
+            </tr>
+
+            <tr>
+              <td class="">14/04/2017</td>
+              <td class="">15/04/2017</td>
+              <td class="product-name">536456</td>
+              <td class="product-price">Electricity</td>
+              <td class="product-qty">Andres Lopilato</td>
+              <td class="">Attended</td>
+              <td class="">Electrical problems</td>
+              <td class="">Mauricio</td>
+            </tr>
+
+
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+{% endblock %}

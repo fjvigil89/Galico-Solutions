@@ -369,3 +369,6 @@ f8d2dd,127.0.0.1,GET,http://localhost:8000/plans,1493778610,,200
 a82faa,127.0.0.1,GET,http://localhost:8000/,1493778629,,200
 61b759,127.0.0.1,GET,http://localhost:8000/,1493778707,,200
 fecbbc,127.0.0.1,GET,http://localhost:8000/services,1493778796,,200
+209243,127.0.0.1,GET,http://localhost:8000/,1493832167,,200
+f26076,127.0.0.1,GET,http://localhost:8000/signin,1493832205,,200
+ad053b,127.0.0.1,GET,http://localhost:8000/signin,1493832214,,200
