@@ -1,0 +1,24 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ANTONIO
+ * Date: 2017-05-02
+ * Time: 20:13
+ */
+
+namespace AppBundle\Controller;
+
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+class UserController extends Controller
+{
+    /**
+     * @Route("/my-profile")
+     */
+    public function showMyProfileAction()
+    {
+        return $this->render('website/services-list.html.twig');
+    }
+}
