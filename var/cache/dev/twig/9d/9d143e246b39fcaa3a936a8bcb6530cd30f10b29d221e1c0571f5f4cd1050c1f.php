@@ -22,47 +22,47 @@ class __TwigTemplate_ce11603ece72ef170254c50ba281b1e32c0c61101438e0ad661f83a35ca
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bbaf83bebaf6b0fe77619ff1e51d2106863ddbfa944d7a9c70bd6880cad0c037 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_bbaf83bebaf6b0fe77619ff1e51d2106863ddbfa944d7a9c70bd6880cad0c037->enter($__internal_bbaf83bebaf6b0fe77619ff1e51d2106863ddbfa944d7a9c70bd6880cad0c037_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad->enter($__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
-        $__internal_88e8ac02d448054195c8581f1b03fa8242893afc681b08e4720464028261e877 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_88e8ac02d448054195c8581f1b03fa8242893afc681b08e4720464028261e877->enter($__internal_88e8ac02d448054195c8581f1b03fa8242893afc681b08e4720464028261e877_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494->enter($__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bbaf83bebaf6b0fe77619ff1e51d2106863ddbfa944d7a9c70bd6880cad0c037->leave($__internal_bbaf83bebaf6b0fe77619ff1e51d2106863ddbfa944d7a9c70bd6880cad0c037_prof);
+        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad->leave($__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad_prof);
 
         
-        $__internal_88e8ac02d448054195c8581f1b03fa8242893afc681b08e4720464028261e877->leave($__internal_88e8ac02d448054195c8581f1b03fa8242893afc681b08e4720464028261e877_prof);
+        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494->leave($__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_4ea610fbaa5aff45be1095b8631dc508e58d8819acfe2b5f82f9fa146dbe9b5e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4ea610fbaa5aff45be1095b8631dc508e58d8819acfe2b5f82f9fa146dbe9b5e->enter($__internal_4ea610fbaa5aff45be1095b8631dc508e58d8819acfe2b5f82f9fa146dbe9b5e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a->enter($__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_b2465bf305441610c5f79d686547d5304ae7c22c96ec0a2a69ce0200cd254c42 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b2465bf305441610c5f79d686547d5304ae7c22c96ec0a2a69ce0200cd254c42->enter($__internal_b2465bf305441610c5f79d686547d5304ae7c22c96ec0a2a69ce0200cd254c42_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef->enter($__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Our services ";
         
-        $__internal_b2465bf305441610c5f79d686547d5304ae7c22c96ec0a2a69ce0200cd254c42->leave($__internal_b2465bf305441610c5f79d686547d5304ae7c22c96ec0a2a69ce0200cd254c42_prof);
+        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef->leave($__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef_prof);
 
         
-        $__internal_4ea610fbaa5aff45be1095b8631dc508e58d8819acfe2b5f82f9fa146dbe9b5e->leave($__internal_4ea610fbaa5aff45be1095b8631dc508e58d8819acfe2b5f82f9fa146dbe9b5e_prof);
+        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a->leave($__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0c2cc975a9cd15d3e9e0dcd4321db27ba80d2c829def613da443b3345e766de2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0c2cc975a9cd15d3e9e0dcd4321db27ba80d2c829def613da443b3345e766de2->enter($__internal_0c2cc975a9cd15d3e9e0dcd4321db27ba80d2c829def613da443b3345e766de2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672->enter($__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_db525b86d4114a35b2f9b4b7ba81a49fbac151b464bbe3705aba950cb5cf6f99 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_db525b86d4114a35b2f9b4b7ba81a49fbac151b464bbe3705aba950cb5cf6f99->enter($__internal_db525b86d4114a35b2f9b4b7ba81a49fbac151b464bbe3705aba950cb5cf6f99_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d->enter($__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "  <div class=\"provide-services row row-xs-center\">
@@ -158,7 +158,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-painting\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Windows and doors
+                Doors and Windows
               </a>
             </div>
           </div>
@@ -221,7 +221,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-heating\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Appliances
+                General Appliances
               </a>
             </div>
           </div>
@@ -284,10 +284,10 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
 
 ";
         
-        $__internal_db525b86d4114a35b2f9b4b7ba81a49fbac151b464bbe3705aba950cb5cf6f99->leave($__internal_db525b86d4114a35b2f9b4b7ba81a49fbac151b464bbe3705aba950cb5cf6f99_prof);
+        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d->leave($__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d_prof);
 
         
-        $__internal_0c2cc975a9cd15d3e9e0dcd4321db27ba80d2c829def613da443b3345e766de2->leave($__internal_0c2cc975a9cd15d3e9e0dcd4321db27ba80d2c829def613da443b3345e766de2_prof);
+        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672->leave($__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672_prof);
 
     }
 
@@ -405,7 +405,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-painting\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Windows and doors
+                Doors and Windows
               </a>
             </div>
           </div>
@@ -462,7 +462,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-heating\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Appliances
+                General Appliances
               </a>
             </div>
           </div>

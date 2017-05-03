@@ -21,29 +21,29 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bbe76d49f61529a9e650d655d16b0a4af1a627d4a09ab09ded16d8a032b42322 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_bbe76d49f61529a9e650d655d16b0a4af1a627d4a09ab09ded16d8a032b42322->enter($__internal_bbe76d49f61529a9e650d655d16b0a4af1a627d4a09ab09ded16d8a032b42322_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
+        $__internal_9424f35d694dde7d1f4afff74022a3a199649ef0337859a8daaac9eb8a096452 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_9424f35d694dde7d1f4afff74022a3a199649ef0337859a8daaac9eb8a096452->enter($__internal_9424f35d694dde7d1f4afff74022a3a199649ef0337859a8daaac9eb8a096452_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
 
-        $__internal_55920dcbc1fce4c3809ade1bf1be74b1fcc37d8b66a53ac6a21dfecb6016aecd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_55920dcbc1fce4c3809ade1bf1be74b1fcc37d8b66a53ac6a21dfecb6016aecd->enter($__internal_55920dcbc1fce4c3809ade1bf1be74b1fcc37d8b66a53ac6a21dfecb6016aecd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
+        $__internal_11313b078dc34b9ab8b483b5bf14dad3fb23952a15fd7a6f4f584b852c5d0f8b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_11313b078dc34b9ab8b483b5bf14dad3fb23952a15fd7a6f4f584b852c5d0f8b->enter($__internal_11313b078dc34b9ab8b483b5bf14dad3fb23952a15fd7a6f4f584b852c5d0f8b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bbe76d49f61529a9e650d655d16b0a4af1a627d4a09ab09ded16d8a032b42322->leave($__internal_bbe76d49f61529a9e650d655d16b0a4af1a627d4a09ab09ded16d8a032b42322_prof);
+        $__internal_9424f35d694dde7d1f4afff74022a3a199649ef0337859a8daaac9eb8a096452->leave($__internal_9424f35d694dde7d1f4afff74022a3a199649ef0337859a8daaac9eb8a096452_prof);
 
         
-        $__internal_55920dcbc1fce4c3809ade1bf1be74b1fcc37d8b66a53ac6a21dfecb6016aecd->leave($__internal_55920dcbc1fce4c3809ade1bf1be74b1fcc37d8b66a53ac6a21dfecb6016aecd_prof);
+        $__internal_11313b078dc34b9ab8b483b5bf14dad3fb23952a15fd7a6f4f584b852c5d0f8b->leave($__internal_11313b078dc34b9ab8b483b5bf14dad3fb23952a15fd7a6f4f584b852c5d0f8b_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f9c2b6ce175f0fdaf1ec35d3823ce9fbb89510f48575f167d48d289f6b25dada = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f9c2b6ce175f0fdaf1ec35d3823ce9fbb89510f48575f167d48d289f6b25dada->enter($__internal_f9c2b6ce175f0fdaf1ec35d3823ce9fbb89510f48575f167d48d289f6b25dada_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c1434be4da303b3f9aecd8ffb8568b5f4c88813a967425b3eecf2e6687e7046b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c1434be4da303b3f9aecd8ffb8568b5f4c88813a967425b3eecf2e6687e7046b->enter($__internal_c1434be4da303b3f9aecd8ffb8568b5f4c88813a967425b3eecf2e6687e7046b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_8a65f2d2edbab336cf94d05ac1520b67f78a426d84e32f41c4cd5022c9292c9e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8a65f2d2edbab336cf94d05ac1520b67f78a426d84e32f41c4cd5022c9292c9e->enter($__internal_8a65f2d2edbab336cf94d05ac1520b67f78a426d84e32f41c4cd5022c9292c9e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_fbd0cad69b5f7130f34e9c032ccde805f7a5ccc1edb10f2ec8f3d3d90b05c622 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fbd0cad69b5f7130f34e9c032ccde805f7a5ccc1edb10f2ec8f3d3d90b05c622->enter($__internal_fbd0cad69b5f7130f34e9c032ccde805f7a5ccc1edb10f2ec8f3d3d90b05c622_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<div id=\"rev_slider_2_1_wrapper\" class=\"rev_slider_wrapper fullwidthbanner-container\" data-alias=\"homepage-02\" style=\"margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;\">
@@ -508,7 +508,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
             <div class=\"service-item_img\">
               <img src=\"";
         // line 439
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-05.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-06.jpg"), "html", null, true);
         echo "\" alt=\"service-renovation\">
             </div>
             <a class=\"service-item_link\" href=\"/services#additional-services\">
@@ -606,7 +606,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Electrical</td>
+\t\t\t\t\t\t<td class=\"active\">Electricity</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -616,7 +616,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Windows And Doors</td>
+\t\t\t\t\t\t<td class=\"active\">Doors and Windows</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -652,7 +652,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Nursing</td>
+\t\t\t\t\t\t<td class=\"active\">Nursing Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -660,7 +660,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Child Care</td>
+\t\t\t\t\t\t<td class=\"active\">Day Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -668,7 +668,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Gardening</td>
+\t\t\t\t\t\t<td class=\"active\">Lawn maintenance</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -676,13 +676,22 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">House Cleaning</td>
+\t\t\t\t\t\t<td class=\"active\">Cleaning services</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
+                    <tr>
+                        <td class=\"active\">IT support & services</td>
+                        <td class=\"colorplan\"></td>
+                        <td class=\"active\"></td>
+                        <td class=\"colorplan text-center\">
+                            <span class=\"glyphicon glyphicon-ok\"></span>
+                        </td>
+                    </tr>
+
 
 \t\t\t\t</tbody>
 \t\t\t</table>
@@ -697,7 +706,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
     <div class=\"row\">
       <div class=\"col-xs-12 text-center new-tips_title\">
         <h2 class=\"heading-title\">Just three steps</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur justo ac</p>
+        <p></p>
       </div>
     </div>
     <div class=\"row post-simple-layout\">
@@ -705,7 +714,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
           <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
-        // line 634
+        // line 643
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post08-800x500.jpg"), "html", null, true);
         echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
@@ -713,15 +722,12 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
                 <i class=\"fa fa-clock-o\"></i>
                 <a href=\"#\">Select your plan</a>
               </span>
-              <span class=\"comment-counts\">
-                <i class=\"fa fa-comments\"></i>
-                0
-              </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing which roofing matering to use for your home</a>
+            <a href=\"blog-single.html\">Check what plan we offer and choose what suits you best</a>
           </h2>
         </div>
       </div>
@@ -730,7 +736,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
           <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
-        // line 656
+        // line 662
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post07-800x500.jpg"), "html", null, true);
         echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
@@ -738,15 +744,12 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
           <i class=\"fa fa-clock-o\"></i>
           <a href=\"#\">Provide information</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing the Right Doors and Windows for your Home</a>
+            <a href=\"blog-single.html\">Fill out the form with the required information</a>
           </h2>
         </div>
       </div>
@@ -755,23 +758,20 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
           <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
-        // line 678
+        // line 681
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post06-800x500.jpg"), "html", null, true);
         echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
-          <a href=\"#\">Pay and send</a>
+          <a href=\"#\">Pay and enrolled</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Low Water Pressure – What Can I Do?</a>
+            <a href=\"blog-single.html\">Pay and enrolled</a>
           </h2>
         </div>
       </div>
@@ -787,10 +787,10 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 <!-- /.new-tips -->
 ";
         
-        $__internal_8a65f2d2edbab336cf94d05ac1520b67f78a426d84e32f41c4cd5022c9292c9e->leave($__internal_8a65f2d2edbab336cf94d05ac1520b67f78a426d84e32f41c4cd5022c9292c9e_prof);
+        $__internal_fbd0cad69b5f7130f34e9c032ccde805f7a5ccc1edb10f2ec8f3d3d90b05c622->leave($__internal_fbd0cad69b5f7130f34e9c032ccde805f7a5ccc1edb10f2ec8f3d3d90b05c622_prof);
 
         
-        $__internal_f9c2b6ce175f0fdaf1ec35d3823ce9fbb89510f48575f167d48d289f6b25dada->leave($__internal_f9c2b6ce175f0fdaf1ec35d3823ce9fbb89510f48575f167d48d289f6b25dada_prof);
+        $__internal_c1434be4da303b3f9aecd8ffb8568b5f4c88813a967425b3eecf2e6687e7046b->leave($__internal_c1434be4da303b3f9aecd8ffb8568b5f4c88813a967425b3eecf2e6687e7046b_prof);
 
     }
 
@@ -806,7 +806,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 
     public function getDebugInfo()
     {
-        return array (  759 => 678,  734 => 656,  709 => 634,  511 => 439,  496 => 427,  481 => 415,  466 => 403,  451 => 391,  436 => 379,  277 => 223,  136 => 85,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  762 => 681,  740 => 662,  718 => 643,  511 => 439,  496 => 427,  481 => 415,  466 => 403,  451 => 391,  436 => 379,  277 => 223,  136 => 85,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1257,7 +1257,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"{{ asset('images/page-home/services-05.jpg') }}\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-06.jpg') }}\" alt=\"service-renovation\">
             </div>
             <a class=\"service-item_link\" href=\"/services#additional-services\">
               <div class=\"service-item_icon\"><i class=\"rn-painting\"></i></div>
@@ -1354,7 +1354,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Electrical</td>
+\t\t\t\t\t\t<td class=\"active\">Electricity</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -1364,7 +1364,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Windows And Doors</td>
+\t\t\t\t\t\t<td class=\"active\">Doors and Windows</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -1400,7 +1400,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Nursing</td>
+\t\t\t\t\t\t<td class=\"active\">Nursing Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1408,7 +1408,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Child Care</td>
+\t\t\t\t\t\t<td class=\"active\">Day Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1416,7 +1416,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Gardening</td>
+\t\t\t\t\t\t<td class=\"active\">Lawn maintenance</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1424,13 +1424,22 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">House Cleaning</td>
+\t\t\t\t\t\t<td class=\"active\">Cleaning services</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
+                    <tr>
+                        <td class=\"active\">IT support & services</td>
+                        <td class=\"colorplan\"></td>
+                        <td class=\"active\"></td>
+                        <td class=\"colorplan text-center\">
+                            <span class=\"glyphicon glyphicon-ok\"></span>
+                        </td>
+                    </tr>
+
 
 \t\t\t\t</tbody>
 \t\t\t</table>
@@ -1445,7 +1454,7 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
     <div class=\"row\">
       <div class=\"col-xs-12 text-center new-tips_title\">
         <h2 class=\"heading-title\">Just three steps</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur justo ac</p>
+        <p></p>
       </div>
     </div>
     <div class=\"row post-simple-layout\">
@@ -1458,15 +1467,12 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
                 <i class=\"fa fa-clock-o\"></i>
                 <a href=\"#\">Select your plan</a>
               </span>
-              <span class=\"comment-counts\">
-                <i class=\"fa fa-comments\"></i>
-                0
-              </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing which roofing matering to use for your home</a>
+            <a href=\"blog-single.html\">Check what plan we offer and choose what suits you best</a>
           </h2>
         </div>
       </div>
@@ -1480,15 +1486,12 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
           <i class=\"fa fa-clock-o\"></i>
           <a href=\"#\">Provide information</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing the Right Doors and Windows for your Home</a>
+            <a href=\"blog-single.html\">Fill out the form with the required information</a>
           </h2>
         </div>
       </div>
@@ -1500,17 +1503,14 @@ class __TwigTemplate_259457ff3d385a5df3cc5d96f6960af6902061054fd80c560e6e4afcb52
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
-          <a href=\"#\">Pay and send</a>
+          <a href=\"#\">Pay and enrolled</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Low Water Pressure – What Can I Do?</a>
+            <a href=\"blog-single.html\">Pay and enrolled</a>
           </h2>
         </div>
       </div>

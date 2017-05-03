@@ -144,6 +144,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\PageNavigationController::showRegisterAction',  '_route' => 'app_pagenavigation_showregister',);
         }
 
+        // app_user_showmyprofile
+        if ($pathinfo === '/my-profile') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyProfileAction',  '_route' => 'app_user_showmyprofile',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

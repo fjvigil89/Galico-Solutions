@@ -23,65 +23,65 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f90f46a448398cfa05011182f2f5d49db52fad0fc0688892a05aeba4aed16bee = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f90f46a448398cfa05011182f2f5d49db52fad0fc0688892a05aeba4aed16bee->enter($__internal_f90f46a448398cfa05011182f2f5d49db52fad0fc0688892a05aeba4aed16bee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/plans.html.twig"));
+        $__internal_1b512e0abb82feba0fcb604891ca6f4e7fa4df6d8b87f213c14fcff3b2b98af7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1b512e0abb82feba0fcb604891ca6f4e7fa4df6d8b87f213c14fcff3b2b98af7->enter($__internal_1b512e0abb82feba0fcb604891ca6f4e7fa4df6d8b87f213c14fcff3b2b98af7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/plans.html.twig"));
 
-        $__internal_bb686cb8f4c6c3b0e7df279e1ff589bfd3649188feda063c91116470288e10e8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bb686cb8f4c6c3b0e7df279e1ff589bfd3649188feda063c91116470288e10e8->enter($__internal_bb686cb8f4c6c3b0e7df279e1ff589bfd3649188feda063c91116470288e10e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/plans.html.twig"));
+        $__internal_663f55db0383c77b54812a091ce44a0d6edf85dd1dbc1ad8bf556bf1d17b585e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_663f55db0383c77b54812a091ce44a0d6edf85dd1dbc1ad8bf556bf1d17b585e->enter($__internal_663f55db0383c77b54812a091ce44a0d6edf85dd1dbc1ad8bf556bf1d17b585e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/plans.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f90f46a448398cfa05011182f2f5d49db52fad0fc0688892a05aeba4aed16bee->leave($__internal_f90f46a448398cfa05011182f2f5d49db52fad0fc0688892a05aeba4aed16bee_prof);
+        $__internal_1b512e0abb82feba0fcb604891ca6f4e7fa4df6d8b87f213c14fcff3b2b98af7->leave($__internal_1b512e0abb82feba0fcb604891ca6f4e7fa4df6d8b87f213c14fcff3b2b98af7_prof);
 
         
-        $__internal_bb686cb8f4c6c3b0e7df279e1ff589bfd3649188feda063c91116470288e10e8->leave($__internal_bb686cb8f4c6c3b0e7df279e1ff589bfd3649188feda063c91116470288e10e8_prof);
+        $__internal_663f55db0383c77b54812a091ce44a0d6edf85dd1dbc1ad8bf556bf1d17b585e->leave($__internal_663f55db0383c77b54812a091ce44a0d6edf85dd1dbc1ad8bf556bf1d17b585e_prof);
 
     }
 
     // line 3
     public function block_class($context, array $blocks = array())
     {
-        $__internal_a37ac4d90d9bef67cd3aaec64ca5264ecc323d562d531e4c1ed8bd3e6d3a68af = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a37ac4d90d9bef67cd3aaec64ca5264ecc323d562d531e4c1ed8bd3e6d3a68af->enter($__internal_a37ac4d90d9bef67cd3aaec64ca5264ecc323d562d531e4c1ed8bd3e6d3a68af_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "class"));
+        $__internal_7ae75883c4ac6e5fe28093093be27c144c422212548444d40d5e8dff8b6fe029 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7ae75883c4ac6e5fe28093093be27c144c422212548444d40d5e8dff8b6fe029->enter($__internal_7ae75883c4ac6e5fe28093093be27c144c422212548444d40d5e8dff8b6fe029_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "class"));
 
-        $__internal_d7d29eaf4603ffa621bfb1629f4bf0611c77ad3e64b027fac3ec2b427da56f00 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d7d29eaf4603ffa621bfb1629f4bf0611c77ad3e64b027fac3ec2b427da56f00->enter($__internal_d7d29eaf4603ffa621bfb1629f4bf0611c77ad3e64b027fac3ec2b427da56f00_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "class"));
+        $__internal_a0177a648a16d27c3bbf455a0004be1037998f679e952449c2f5632d6aadb1ea = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a0177a648a16d27c3bbf455a0004be1037998f679e952449c2f5632d6aadb1ea->enter($__internal_a0177a648a16d27c3bbf455a0004be1037998f679e952449c2f5632d6aadb1ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "class"));
 
         echo "class=\"page-projects-3columns\"";
         
-        $__internal_d7d29eaf4603ffa621bfb1629f4bf0611c77ad3e64b027fac3ec2b427da56f00->leave($__internal_d7d29eaf4603ffa621bfb1629f4bf0611c77ad3e64b027fac3ec2b427da56f00_prof);
+        $__internal_a0177a648a16d27c3bbf455a0004be1037998f679e952449c2f5632d6aadb1ea->leave($__internal_a0177a648a16d27c3bbf455a0004be1037998f679e952449c2f5632d6aadb1ea_prof);
 
         
-        $__internal_a37ac4d90d9bef67cd3aaec64ca5264ecc323d562d531e4c1ed8bd3e6d3a68af->leave($__internal_a37ac4d90d9bef67cd3aaec64ca5264ecc323d562d531e4c1ed8bd3e6d3a68af_prof);
+        $__internal_7ae75883c4ac6e5fe28093093be27c144c422212548444d40d5e8dff8b6fe029->leave($__internal_7ae75883c4ac6e5fe28093093be27c144c422212548444d40d5e8dff8b6fe029_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_56db68a1c1149ea69be546792f6f9c2972a5964aa4722241e9863f3abc1ba82e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_56db68a1c1149ea69be546792f6f9c2972a5964aa4722241e9863f3abc1ba82e->enter($__internal_56db68a1c1149ea69be546792f6f9c2972a5964aa4722241e9863f3abc1ba82e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_0566fb46f76a90f9681ed1cf0ecd46eae699522da7cfaa7e7caadbfc3e2199ee = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0566fb46f76a90f9681ed1cf0ecd46eae699522da7cfaa7e7caadbfc3e2199ee->enter($__internal_0566fb46f76a90f9681ed1cf0ecd46eae699522da7cfaa7e7caadbfc3e2199ee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_50d9e3c35c56f851447ce91ce17c9ee066f76ccaafbe5b8684f2a08bc17dde9e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_50d9e3c35c56f851447ce91ce17c9ee066f76ccaafbe5b8684f2a08bc17dde9e->enter($__internal_50d9e3c35c56f851447ce91ce17c9ee066f76ccaafbe5b8684f2a08bc17dde9e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_9cfb7494effbe2848fa1bd84c2d145dc0fd2b423294323f2ef9ff86dcad7f0a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9cfb7494effbe2848fa1bd84c2d145dc0fd2b423294323f2ef9ff86dcad7f0a3->enter($__internal_9cfb7494effbe2848fa1bd84c2d145dc0fd2b423294323f2ef9ff86dcad7f0a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Our plans ";
         
-        $__internal_50d9e3c35c56f851447ce91ce17c9ee066f76ccaafbe5b8684f2a08bc17dde9e->leave($__internal_50d9e3c35c56f851447ce91ce17c9ee066f76ccaafbe5b8684f2a08bc17dde9e_prof);
+        $__internal_9cfb7494effbe2848fa1bd84c2d145dc0fd2b423294323f2ef9ff86dcad7f0a3->leave($__internal_9cfb7494effbe2848fa1bd84c2d145dc0fd2b423294323f2ef9ff86dcad7f0a3_prof);
 
         
-        $__internal_56db68a1c1149ea69be546792f6f9c2972a5964aa4722241e9863f3abc1ba82e->leave($__internal_56db68a1c1149ea69be546792f6f9c2972a5964aa4722241e9863f3abc1ba82e_prof);
+        $__internal_0566fb46f76a90f9681ed1cf0ecd46eae699522da7cfaa7e7caadbfc3e2199ee->leave($__internal_0566fb46f76a90f9681ed1cf0ecd46eae699522da7cfaa7e7caadbfc3e2199ee_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_9c79dbc3a9ddc58f3b58ae24febd5f3159f4bb9d1c4385514feb97d2aa72970f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_9c79dbc3a9ddc58f3b58ae24febd5f3159f4bb9d1c4385514feb97d2aa72970f->enter($__internal_9c79dbc3a9ddc58f3b58ae24febd5f3159f4bb9d1c4385514feb97d2aa72970f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_564a871f013d64568f008ce3e1649d7df4502026791eb3cd86468acdeafd0198 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_564a871f013d64568f008ce3e1649d7df4502026791eb3cd86468acdeafd0198->enter($__internal_564a871f013d64568f008ce3e1649d7df4502026791eb3cd86468acdeafd0198_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_993809917b5c52039d6cb53e5dc93c46cceb7562645f285c93ce4da430182c96 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_993809917b5c52039d6cb53e5dc93c46cceb7562645f285c93ce4da430182c96->enter($__internal_993809917b5c52039d6cb53e5dc93c46cceb7562645f285c93ce4da430182c96_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2ff29c22f0f4d7915b695b0966313932777699f8d16c3988fc29204ce0e2d3a6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2ff29c22f0f4d7915b695b0966313932777699f8d16c3988fc29204ce0e2d3a6->enter($__internal_2ff29c22f0f4d7915b695b0966313932777699f8d16c3988fc29204ce0e2d3a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -138,7 +138,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"Electrical\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Electrical</h3>
+                      <h3 class=\"grid-overlay-tittle\">Electricity</h3>
                       <p class=\"grid-overlay-description\">Frequently flickering or dimming lights are a common problem in homes, Our technicians are trained to fix these problems.</p><br/>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -152,7 +152,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"Windows and doors\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Windows and doors</h3>
+                      <h3 class=\"grid-overlay-tittle\">Doors and Windows</h3>
                       <p class=\"grid-overlay-description\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us...</p><br/>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -194,7 +194,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"Appliances\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Appliances</h3>
+                      <h3 class=\"grid-overlay-tittle\">General Appliances</h3>
                       <p class=\"grid-overlay-description\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -208,7 +208,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"nursing\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Nursing</h3>
+                      <h3 class=\"grid-overlay-tittle\">Nursing Care</h3>
                       <p class=\"grid-overlay-description\">Need a professional person to care for a relative? Here's the solution, General Pro offers nursing services </p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -222,7 +222,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"child care\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Child care</h3>
+                      <h3 class=\"grid-overlay-tittle\">Day care</h3>
                       <p class=\"grid-overlay-description\">You have work, a meeting or a commitment, and you need someone to take care of your children, General Pro offers child care services</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -238,7 +238,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"Gardening\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Gardening</h3>
+                      <h3 class=\"grid-overlay-tittle\">Lawn maintenance</h3>
                       <p class=\"grid-overlay-description\">Would you like to have a beautiful green garden? General pro offers gardening services to make this a reality</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -252,7 +252,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"House cleaning\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">House cleaning</h3>
+                      <h3 class=\"grid-overlay-tittle\">Cleaning services</h3>
                       <p class=\"grid-overlay-description\">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -266,7 +266,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
         echo "\" alt=\"House cleaning\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Computer Assistance</h3>
+                      <h3 class=\"grid-overlay-tittle\">IT support & services</h3>
                       <p class=\"grid-overlay-description\">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -286,10 +286,10 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
 
 ";
         
-        $__internal_993809917b5c52039d6cb53e5dc93c46cceb7562645f285c93ce4da430182c96->leave($__internal_993809917b5c52039d6cb53e5dc93c46cceb7562645f285c93ce4da430182c96_prof);
+        $__internal_2ff29c22f0f4d7915b695b0966313932777699f8d16c3988fc29204ce0e2d3a6->leave($__internal_2ff29c22f0f4d7915b695b0966313932777699f8d16c3988fc29204ce0e2d3a6_prof);
 
         
-        $__internal_9c79dbc3a9ddc58f3b58ae24febd5f3159f4bb9d1c4385514feb97d2aa72970f->leave($__internal_9c79dbc3a9ddc58f3b58ae24febd5f3159f4bb9d1c4385514feb97d2aa72970f_prof);
+        $__internal_564a871f013d64568f008ce3e1649d7df4502026791eb3cd86468acdeafd0198->leave($__internal_564a871f013d64568f008ce3e1649d7df4502026791eb3cd86468acdeafd0198_prof);
 
     }
 
@@ -373,7 +373,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-022.jpg') }}\" alt=\"Electrical\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Electrical</h3>
+                      <h3 class=\"grid-overlay-tittle\">Electricity</h3>
                       <p class=\"grid-overlay-description\">Frequently flickering or dimming lights are a common problem in homes, Our technicians are trained to fix these problems.</p><br/>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -384,7 +384,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-032.jpg') }}\" alt=\"Windows and doors\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Windows and doors</h3>
+                      <h3 class=\"grid-overlay-tittle\">Doors and Windows</h3>
                       <p class=\"grid-overlay-description\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us...</p><br/>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -417,7 +417,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-11.jpg') }}\" alt=\"Appliances\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Appliances</h3>
+                      <h3 class=\"grid-overlay-tittle\">General Appliances</h3>
                       <p class=\"grid-overlay-description\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -428,7 +428,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-07.jpg') }}\" alt=\"nursing\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Nursing</h3>
+                      <h3 class=\"grid-overlay-tittle\">Nursing Care</h3>
                       <p class=\"grid-overlay-description\">Need a professional person to care for a relative? Here's the solution, General Pro offers nursing services </p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -439,7 +439,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-08.jpg') }}\" alt=\"child care\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Child care</h3>
+                      <h3 class=\"grid-overlay-tittle\">Day care</h3>
                       <p class=\"grid-overlay-description\">You have work, a meeting or a commitment, and you need someone to take care of your children, General Pro offers child care services</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -452,7 +452,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-09.jpg') }}\" alt=\"Gardening\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Gardening</h3>
+                      <h3 class=\"grid-overlay-tittle\">Lawn maintenance</h3>
                       <p class=\"grid-overlay-description\">Would you like to have a beautiful green garden? General pro offers gardening services to make this a reality</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -463,7 +463,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-06.jpg') }}\" alt=\"House cleaning\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">House cleaning</h3>
+                      <h3 class=\"grid-overlay-tittle\">Cleaning services</h3>
                       <p class=\"grid-overlay-description\">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
@@ -474,7 +474,7 @@ class __TwigTemplate_16e15edb6b11365bc74548c733e3d342e5a3fc9f1061ee20026f92cca72
                   <img src=\"{{ asset('images/page-home/services-10.jpg') }}\" alt=\"House cleaning\">
                   <div class=\"grid-overlay\">
                     <div class=\"grid-overlay-wrapper\">
-                      <h3 class=\"grid-overlay-tittle\">Computer Assistance</h3>
+                      <h3 class=\"grid-overlay-tittle\">IT support & services</h3>
                       <p class=\"grid-overlay-description\">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
                       <a class=\"grid-overlay-readmore\" href=\"#\">read more</a>
                     </div>
