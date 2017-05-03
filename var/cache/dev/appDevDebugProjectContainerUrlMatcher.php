@@ -144,17 +144,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\PageNavigationController::showRegisterAction',  '_route' => 'app_pagenavigation_showregister',);
         }
 
-        if (0 === strpos($pathinfo, '/client-')) {
-            // app_user_showmyprofile
-            if ($pathinfo === '/client-edit') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyProfileAction',  '_route' => 'app_user_showmyprofile',);
-            }
+        // app_user_showmyprofile
+        if ($pathinfo === '/myprofile') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyProfileAction',  '_route' => 'app_user_showmyprofile',);
+        }
 
-            // app_user_showmyacount
-            if ($pathinfo === '/client-resume') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyAcountAction',  '_route' => 'app_user_showmyacount',);
-            }
-
+        // app_user_showmyacount
+        if ($pathinfo === '/client-resume') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyAcountAction',  '_route' => 'app_user_showmyacount',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
