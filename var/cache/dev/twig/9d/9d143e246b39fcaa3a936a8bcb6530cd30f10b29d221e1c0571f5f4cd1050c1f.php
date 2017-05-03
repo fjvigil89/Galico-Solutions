@@ -22,47 +22,47 @@ class __TwigTemplate_ce11603ece72ef170254c50ba281b1e32c0c61101438e0ad661f83a35ca
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad->enter($__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_155d25d3517c51d4eafc8dd85b69c46cdcc052f40c49873522e38789da7dc028 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_155d25d3517c51d4eafc8dd85b69c46cdcc052f40c49873522e38789da7dc028->enter($__internal_155d25d3517c51d4eafc8dd85b69c46cdcc052f40c49873522e38789da7dc028_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
-        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494->enter($__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_b7a5f5db9c3e9ca68451691a0eec059877bbccadd7e2312f6f3fe87a7f0f113e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b7a5f5db9c3e9ca68451691a0eec059877bbccadd7e2312f6f3fe87a7f0f113e->enter($__internal_b7a5f5db9c3e9ca68451691a0eec059877bbccadd7e2312f6f3fe87a7f0f113e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad->leave($__internal_c5ca052ebd1e73f2029aebdd8e8f778f189b7e02ec3633ef99b9af599b7639ad_prof);
+        $__internal_155d25d3517c51d4eafc8dd85b69c46cdcc052f40c49873522e38789da7dc028->leave($__internal_155d25d3517c51d4eafc8dd85b69c46cdcc052f40c49873522e38789da7dc028_prof);
 
         
-        $__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494->leave($__internal_15bf18b4c5d1c9919d2461bb75ab5c1b8293281e80b6c1c48177b3e2a3e8f494_prof);
+        $__internal_b7a5f5db9c3e9ca68451691a0eec059877bbccadd7e2312f6f3fe87a7f0f113e->leave($__internal_b7a5f5db9c3e9ca68451691a0eec059877bbccadd7e2312f6f3fe87a7f0f113e_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a->enter($__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_ef028cf72c34671ba85b389142231be424e24082939b94c168c1f2dce310c159 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ef028cf72c34671ba85b389142231be424e24082939b94c168c1f2dce310c159->enter($__internal_ef028cf72c34671ba85b389142231be424e24082939b94c168c1f2dce310c159_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef->enter($__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_0db484e60eae9119ee016134e56b8d1479a8f3171a133a931b502935223beb1f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0db484e60eae9119ee016134e56b8d1479a8f3171a133a931b502935223beb1f->enter($__internal_0db484e60eae9119ee016134e56b8d1479a8f3171a133a931b502935223beb1f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Our services ";
         
-        $__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef->leave($__internal_a51267cb1d4aebddd87d9ea90ffed49f3365b4aecf9ddbee64394c02fc81d0ef_prof);
+        $__internal_0db484e60eae9119ee016134e56b8d1479a8f3171a133a931b502935223beb1f->leave($__internal_0db484e60eae9119ee016134e56b8d1479a8f3171a133a931b502935223beb1f_prof);
 
         
-        $__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a->leave($__internal_3693d9b99850a1012d7ba1c9085f5a30939bab07f2a28f62591b3818beb6887a_prof);
+        $__internal_ef028cf72c34671ba85b389142231be424e24082939b94c168c1f2dce310c159->leave($__internal_ef028cf72c34671ba85b389142231be424e24082939b94c168c1f2dce310c159_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672->enter($__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_95b23260212290ee8b443ecf57de4ecd7f53a37c8b1d367649b7e0b400dfecf9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_95b23260212290ee8b443ecf57de4ecd7f53a37c8b1d367649b7e0b400dfecf9->enter($__internal_95b23260212290ee8b443ecf57de4ecd7f53a37c8b1d367649b7e0b400dfecf9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d->enter($__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0c9925661ce941204fd1526b57c1479fb4bf5b834922af0d8a83fb389715c6a9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0c9925661ce941204fd1526b57c1479fb4bf5b834922af0d8a83fb389715c6a9->enter($__internal_0c9925661ce941204fd1526b57c1479fb4bf5b834922af0d8a83fb389715c6a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "  <div class=\"provide-services row row-xs-center\">
@@ -135,7 +135,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
 
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electrical</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electricity</a></h3>
           <p class=\"service-list_item-description_content\">On a daily basis there are unforeseen events and breakdowns in electrical systems or equipment, which is why, for safety reasons, the intervention of specialized technicians is necessary. With the GeneralPro Service you can request the visit of a technician to your home, to carry out an urgent repair of a damaged electrical system or equipment.</div>
         <div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
@@ -164,7 +164,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Windows and doors</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Doors and Windows</a></h3>
           <p class=\"service-list_item-description_content\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us</div><div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
             <li><a href=\"#\">Door installation</a></li>
@@ -227,7 +227,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Appliances</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">General Appliances</a></h3>
           <p class=\"service-list_item-description_content\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.
 If you have a broken down washing machine, fridge freezer, cooker or any other appliance we can probably help you save it as many appliances are thrown away every year for minor faults that could have been easily solved.
 </div>
@@ -284,10 +284,10 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
 
 ";
         
-        $__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d->leave($__internal_2d9078b3ac7bda480f6d8a24dad8ff63ccc5822ad3f71cf1c1947d09c84ae66d_prof);
+        $__internal_0c9925661ce941204fd1526b57c1479fb4bf5b834922af0d8a83fb389715c6a9->leave($__internal_0c9925661ce941204fd1526b57c1479fb4bf5b834922af0d8a83fb389715c6a9_prof);
 
         
-        $__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672->leave($__internal_a77f6413e7b952f6926479a423bafda03367396532c55b3c6cb0be99ab4f4672_prof);
+        $__internal_95b23260212290ee8b443ecf57de4ecd7f53a37c8b1d367649b7e0b400dfecf9->leave($__internal_95b23260212290ee8b443ecf57de4ecd7f53a37c8b1d367649b7e0b400dfecf9_prof);
 
     }
 
@@ -385,7 +385,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
 
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electrical</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electricity</a></h3>
           <p class=\"service-list_item-description_content\">On a daily basis there are unforeseen events and breakdowns in electrical systems or equipment, which is why, for safety reasons, the intervention of specialized technicians is necessary. With the GeneralPro Service you can request the visit of a technician to your home, to carry out an urgent repair of a damaged electrical system or equipment.</div>
         <div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
@@ -411,7 +411,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Windows and doors</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Doors and Windows</a></h3>
           <p class=\"service-list_item-description_content\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us</div><div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
             <li><a href=\"#\">Door installation</a></li>
@@ -468,7 +468,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Appliances</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">General Appliances</a></h3>
           <p class=\"service-list_item-description_content\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.
 If you have a broken down washing machine, fridge freezer, cooker or any other appliance we can probably help you save it as many appliances are thrown away every year for minor faults that could have been easily solved.
 </div>

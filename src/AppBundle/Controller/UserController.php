@@ -15,10 +15,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class UserController extends Controller
 {
     /**
-     * @Route("/my-profile")
+     * @Route("/client-edit")
      */
     public function showMyProfileAction()
     {
-        return $this->render('website/services-list.html.twig');
+        return $this->render('website/client-edit.html.twig');
+    }
+
+    /**
+     * @Route("/client-resume")
+     */
+    public function showMyAcountAction()
+    {
+        return $this->render('website/client-resume.html.twig');
     }
 }
