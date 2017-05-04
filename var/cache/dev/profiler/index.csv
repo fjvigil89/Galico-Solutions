@@ -417,3 +417,8 @@ e874e8,127.0.0.1,GET,http://localhost:8000/myprofile,1493836585,,200
 20df27,127.0.0.1,POST,http://localhost:8000/myprofile,1493836698,,200
 c2e984,127.0.0.1,GET,http://localhost:8000/client-resume,1493836715,,200
 898df2,127.0.0.1,GET,http://localhost:8000/signin,1493836761,,200
+96e47e,127.0.0.1,GET,http://127.0.0.1:8000/,1493861678,,200
+f04eee,127.0.0.1,GET,http://127.0.0.1:8000/services,1493861703,,200
+7450a1,127.0.0.1,GET,http://127.0.0.1:8000/register,1493861713,,200
+45f1cb,127.0.0.1,GET,http://127.0.0.1:8000/my-profile,1493861724,dc3f87,200
+dc3f87,127.0.0.1,GET,http://127.0.0.1:8000/my-profile,1493861725,,404

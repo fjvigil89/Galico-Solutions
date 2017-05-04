@@ -21,29 +21,29 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_834ee6fcead224c80e3dd8c180986e541df07ef18751c8af1bd9d8205b1904d0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_834ee6fcead224c80e3dd8c180986e541df07ef18751c8af1bd9d8205b1904d0->enter($__internal_834ee6fcead224c80e3dd8c180986e541df07ef18751c8af1bd9d8205b1904d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
+        $__internal_75071cbe8520884b060f346654cf3ea5133b1537432ce72461625157ba61085b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_75071cbe8520884b060f346654cf3ea5133b1537432ce72461625157ba61085b->enter($__internal_75071cbe8520884b060f346654cf3ea5133b1537432ce72461625157ba61085b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
 
-        $__internal_7cfa2bc4981cb842c9dabf0f33b892392f3910dc6cdec6cc2668b536948d5f33 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7cfa2bc4981cb842c9dabf0f33b892392f3910dc6cdec6cc2668b536948d5f33->enter($__internal_7cfa2bc4981cb842c9dabf0f33b892392f3910dc6cdec6cc2668b536948d5f33_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
+        $__internal_6dbf15e42e71508b1cb7cdedd9f3798c46344e6d8efecd98e2972c7d6187703c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6dbf15e42e71508b1cb7cdedd9f3798c46344e6d8efecd98e2972c7d6187703c->enter($__internal_6dbf15e42e71508b1cb7cdedd9f3798c46344e6d8efecd98e2972c7d6187703c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/home.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_834ee6fcead224c80e3dd8c180986e541df07ef18751c8af1bd9d8205b1904d0->leave($__internal_834ee6fcead224c80e3dd8c180986e541df07ef18751c8af1bd9d8205b1904d0_prof);
+        $__internal_75071cbe8520884b060f346654cf3ea5133b1537432ce72461625157ba61085b->leave($__internal_75071cbe8520884b060f346654cf3ea5133b1537432ce72461625157ba61085b_prof);
 
         
-        $__internal_7cfa2bc4981cb842c9dabf0f33b892392f3910dc6cdec6cc2668b536948d5f33->leave($__internal_7cfa2bc4981cb842c9dabf0f33b892392f3910dc6cdec6cc2668b536948d5f33_prof);
+        $__internal_6dbf15e42e71508b1cb7cdedd9f3798c46344e6d8efecd98e2972c7d6187703c->leave($__internal_6dbf15e42e71508b1cb7cdedd9f3798c46344e6d8efecd98e2972c7d6187703c_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d818f2ccd1b88762b8ca625bf2d70de217f866c5126b1cbb4102c350d3b45003 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d818f2ccd1b88762b8ca625bf2d70de217f866c5126b1cbb4102c350d3b45003->enter($__internal_d818f2ccd1b88762b8ca625bf2d70de217f866c5126b1cbb4102c350d3b45003_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7a5dd30e0ea98b8dd3fe94ffbc7195efcfc741d3932bd30fb69ceb9eabe71870 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7a5dd30e0ea98b8dd3fe94ffbc7195efcfc741d3932bd30fb69ceb9eabe71870->enter($__internal_7a5dd30e0ea98b8dd3fe94ffbc7195efcfc741d3932bd30fb69ceb9eabe71870_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_c33469ffdc5e967a52c6297aee4defc48528c339f45eef4e67fc57fb2271a652 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c33469ffdc5e967a52c6297aee4defc48528c339f45eef4e67fc57fb2271a652->enter($__internal_c33469ffdc5e967a52c6297aee4defc48528c339f45eef4e67fc57fb2271a652_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_08e1a515d48deb1c5b43574c5d0d49d3945cd894a86ef8e73e3953c61f3e73a0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_08e1a515d48deb1c5b43574c5d0d49d3945cd894a86ef8e73e3953c61f3e73a0->enter($__internal_08e1a515d48deb1c5b43574c5d0d49d3945cd894a86ef8e73e3953c61f3e73a0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<div id=\"rev_slider_2_1_wrapper\" class=\"rev_slider_wrapper fullwidthbanner-container\" data-alias=\"homepage-02\" style=\"margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;\">
@@ -52,7 +52,10 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
     <ul>\t<!-- SLIDE  -->
       <li data-index=\"rs-4\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-delay=\"9030\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 1\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide01.jpg\" style='background-color:#333333' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"1\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/home02-slide01.jpg"), "html", null, true);
+        echo "\" style='background-color:#333333' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"1\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -128,7 +131,10 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
       <!-- SLIDE  -->
       <li data-index=\"rs-5\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 2\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide02.jpg\" style='background-color:#E7E7E7' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"";
+        // line 85
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/home02-slide02.jpg"), "html", null, true);
+        echo "\" style='background-color:#E7E7E7' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -266,7 +272,10 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
       <!-- SLIDE  -->
       <li data-index=\"rs-6\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 3\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide03.jpg\" style='background-color:#333333' alt=\"\"  data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"";
+        // line 223
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/home02-slide03.jpg"), "html", null, true);
+        echo "\" style='background-color:#333333' alt=\"\"  data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -422,9 +431,12 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-01.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 379
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-01.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#locksmith\">
               <div class=\"service-item_icon\"><i class=\"rn-renovation\"></i></div>
               Locksmith
             </a>
@@ -434,11 +446,14 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-02.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 391
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-02.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#electricity\">
               <div class=\"service-item_icon\"><i class=\"rn-electrical\"></i></div>
-              electrical
+              electricity
             </a>
           </div>
         </div>
@@ -446,11 +461,14 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-03.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 403
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-03.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
             <a class=\"service-item_link\" href=\"/services#service-windows-and-doors\">
               <div class=\"service-item_icon\"><i class=\"rn-home\"></i></div>
-              Windows and doors
+              Doors and Windows
             </a>
           </div>
         </div>
@@ -458,9 +476,12 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-04.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 415
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-04.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#plumbing\">
               <div class=\"service-item_icon\"><i class=\"rn-plumbing\"></i></div>
               plumbing
             </a>
@@ -470,11 +491,14 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-05.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 427
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-05.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#appliances\">
               <div class=\"service-item_icon\"><i class=\"rn-heating\"></i></div>
-              Appliances
+              GP PLus
             </a>
           </div>
         </div>
@@ -482,9 +506,12 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-06.jpg\" alt=\"service-renovation\">
+              <img src=\"";
+        // line 439
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-06.jpg"), "html", null, true);
+        echo "\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#additional-services\">
               <div class=\"service-item_icon\"><i class=\"rn-painting\"></i></div>
               Additional services
             </a>
@@ -579,7 +606,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Electrical</td>
+\t\t\t\t\t\t<td class=\"active\">Electricity</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -589,7 +616,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Windows And Doors</td>
+\t\t\t\t\t\t<td class=\"active\">Doors and Windows</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -625,7 +652,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Nursing</td>
+\t\t\t\t\t\t<td class=\"active\">Nursing Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -633,7 +660,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Child Care</td>
+\t\t\t\t\t\t<td class=\"active\">Day Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -641,7 +668,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Gardening</td>
+\t\t\t\t\t\t<td class=\"active\">Lawn maintenance</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -649,13 +676,22 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">House Cleaning</td>
+\t\t\t\t\t\t<td class=\"active\">Cleaning services</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
+                    <tr>
+                        <td class=\"active\">IT support & services</td>
+                        <td class=\"colorplan\"></td>
+                        <td class=\"active\"></td>
+                        <td class=\"colorplan text-center\">
+                            <span class=\"glyphicon glyphicon-ok\"></span>
+                        </td>
+                    </tr>
+
 
 \t\t\t\t</tbody>
 \t\t\t</table>
@@ -670,28 +706,28 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
     <div class=\"row\">
       <div class=\"col-xs-12 text-center new-tips_title\">
         <h2 class=\"heading-title\">Just three steps</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur justo ac</p>
+        <p></p>
       </div>
     </div>
     <div class=\"row post-simple-layout\">
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post08-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
+        // line 643
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post08-800x500.jpg"), "html", null, true);
+        echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
               <span class=\"posted-on\">
                 <i class=\"fa fa-clock-o\"></i>
                 <a href=\"#\">Select your plan</a>
               </span>
-              <span class=\"comment-counts\">
-                <i class=\"fa fa-comments\"></i>
-                0
-              </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing which roofing matering to use for your home</a>
+            <a href=\"blog-single.html\">Check what plan we offer and choose what suits you best</a>
           </h2>
         </div>
       </div>
@@ -699,21 +735,21 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post07-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
+        // line 662
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post07-800x500.jpg"), "html", null, true);
+        echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
           <a href=\"#\">Provide information</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing the Right Doors and Windows for your Home</a>
+            <a href=\"blog-single.html\">Fill out the form with the required information</a>
           </h2>
         </div>
       </div>
@@ -721,21 +757,21 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post06-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"";
+        // line 681
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/post/post06-800x500.jpg"), "html", null, true);
+        echo "\" alt=\"\"></a>
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
-          <a href=\"#\">Pay and send</a>
+          <a href=\"#\">Pay and enrolled</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Low Water Pressure – What Can I Do?</a>
+            <a href=\"blog-single.html\">Pay and enrolled</a>
           </h2>
         </div>
       </div>
@@ -751,10 +787,10 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 <!-- /.new-tips -->
 ";
         
-        $__internal_c33469ffdc5e967a52c6297aee4defc48528c339f45eef4e67fc57fb2271a652->leave($__internal_c33469ffdc5e967a52c6297aee4defc48528c339f45eef4e67fc57fb2271a652_prof);
+        $__internal_08e1a515d48deb1c5b43574c5d0d49d3945cd894a86ef8e73e3953c61f3e73a0->leave($__internal_08e1a515d48deb1c5b43574c5d0d49d3945cd894a86ef8e73e3953c61f3e73a0_prof);
 
         
-        $__internal_d818f2ccd1b88762b8ca625bf2d70de217f866c5126b1cbb4102c350d3b45003->leave($__internal_d818f2ccd1b88762b8ca625bf2d70de217f866c5126b1cbb4102c350d3b45003_prof);
+        $__internal_7a5dd30e0ea98b8dd3fe94ffbc7195efcfc741d3932bd30fb69ceb9eabe71870->leave($__internal_7a5dd30e0ea98b8dd3fe94ffbc7195efcfc741d3932bd30fb69ceb9eabe71870_prof);
 
     }
 
@@ -770,7 +806,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
     public function getDebugInfo()
     {
-        return array (  49 => 3,  40 => 2,  11 => 1,);
+        return array (  762 => 681,  740 => 662,  718 => 643,  511 => 439,  496 => 427,  481 => 415,  466 => 403,  451 => 391,  436 => 379,  277 => 223,  136 => 85,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -791,7 +827,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
     <ul>\t<!-- SLIDE  -->
       <li data-index=\"rs-4\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-delay=\"9030\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 1\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide01.jpg\" style='background-color:#333333' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"1\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"{{ asset('images/page-home/home02-slide01.jpg') }}\" style='background-color:#333333' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"1\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -867,7 +903,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
       <!-- SLIDE  -->
       <li data-index=\"rs-5\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 2\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide02.jpg\" style='background-color:#E7E7E7' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"{{ asset('images/page-home/home02-slide02.jpg') }}\" style='background-color:#E7E7E7' alt=\"\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -1005,7 +1041,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
       <!-- SLIDE  -->
       <li data-index=\"rs-6\" data-transition=\"fade\" data-slotamount=\"default\"  data-easein=\"default\" data-easeout=\"default\" data-masterspeed=\"default\"  data-thumb=\"http://renovation.thememove.com/demo/wp-content/\"  data-rotate=\"0\"  data-saveperformance=\"off\"  data-title=\"Slide 3\" data-description=\"\">
         <!-- MAIN IMAGE -->
-        <img src=\"images/page-home/home02-slide03.jpg\" style='background-color:#333333' alt=\"\"  data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
+        <img src=\"{{ asset('images/page-home/home02-slide03.jpg') }}\" style='background-color:#333333' alt=\"\"  data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\" data-bgparallax=\"off\" class=\"rev-slidebg\" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->
@@ -1161,9 +1197,9 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-01.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-01.jpg') }}\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#locksmith\">
               <div class=\"service-item_icon\"><i class=\"rn-renovation\"></i></div>
               Locksmith
             </a>
@@ -1173,11 +1209,11 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-02.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-02.jpg') }}\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#electricity\">
               <div class=\"service-item_icon\"><i class=\"rn-electrical\"></i></div>
-              electrical
+              electricity
             </a>
           </div>
         </div>
@@ -1185,11 +1221,11 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-03.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-03.jpg') }}\" alt=\"service-renovation\">
             </div>
             <a class=\"service-item_link\" href=\"/services#service-windows-and-doors\">
               <div class=\"service-item_icon\"><i class=\"rn-home\"></i></div>
-              Windows and doors
+              Doors and Windows
             </a>
           </div>
         </div>
@@ -1197,9 +1233,9 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-04.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-04.jpg') }}\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#plumbing\">
               <div class=\"service-item_icon\"><i class=\"rn-plumbing\"></i></div>
               plumbing
             </a>
@@ -1209,11 +1245,11 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-05.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-05.jpg') }}\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#appliances\">
               <div class=\"service-item_icon\"><i class=\"rn-heating\"></i></div>
-              Appliances
+              GP PLus
             </a>
           </div>
         </div>
@@ -1221,9 +1257,9 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
         <div class=\"col-sm-6 col-md-4\">
           <div class=\"service-item\">
             <div class=\"service-item_img\">
-              <img src=\"images/page-home/services-06.jpg\" alt=\"service-renovation\">
+              <img src=\"{{ asset('images/page-home/services-06.jpg') }}\" alt=\"service-renovation\">
             </div>
-            <a class=\"service-item_link\" href=\"#\">
+            <a class=\"service-item_link\" href=\"/services#additional-services\">
               <div class=\"service-item_icon\"><i class=\"rn-painting\"></i></div>
               Additional services
             </a>
@@ -1318,7 +1354,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Electrical</td>
+\t\t\t\t\t\t<td class=\"active\">Electricity</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -1328,7 +1364,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Windows And Doors</td>
+\t\t\t\t\t\t<td class=\"active\">Doors and Windows</td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
@@ -1364,7 +1400,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Nursing</td>
+\t\t\t\t\t\t<td class=\"active\">Nursing Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1372,7 +1408,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Child Care</td>
+\t\t\t\t\t\t<td class=\"active\">Day Care</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1380,7 +1416,7 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">Gardening</td>
+\t\t\t\t\t\t<td class=\"active\">Lawn maintenance</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
@@ -1388,13 +1424,22 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td class=\"active\">House Cleaning</td>
+\t\t\t\t\t\t<td class=\"active\">Cleaning services</td>
 \t\t\t\t\t\t<td class=\"colorplan\"></td>
 \t\t\t\t\t\t<td class=\"active\"></td>
 \t\t\t\t\t\t<td class=\"colorplan text-center\">
 \t\t\t\t\t\t<span class=\"glyphicon glyphicon-ok\"></span>
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
+                    <tr>
+                        <td class=\"active\">IT support & services</td>
+                        <td class=\"colorplan\"></td>
+                        <td class=\"active\"></td>
+                        <td class=\"colorplan text-center\">
+                            <span class=\"glyphicon glyphicon-ok\"></span>
+                        </td>
+                    </tr>
+
 
 \t\t\t\t</tbody>
 \t\t\t</table>
@@ -1409,28 +1454,25 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
     <div class=\"row\">
       <div class=\"col-xs-12 text-center new-tips_title\">
         <h2 class=\"heading-title\">Just three steps</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur justo ac</p>
+        <p></p>
       </div>
     </div>
     <div class=\"row post-simple-layout\">
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post08-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"{{ asset('images/post/post08-800x500.jpg') }}\" alt=\"\"></a>
           <div class=\"entry-meta\">
               <span class=\"posted-on\">
                 <i class=\"fa fa-clock-o\"></i>
                 <a href=\"#\">Select your plan</a>
               </span>
-              <span class=\"comment-counts\">
-                <i class=\"fa fa-comments\"></i>
-                0
-              </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing which roofing matering to use for your home</a>
+            <a href=\"blog-single.html\">Check what plan we offer and choose what suits you best</a>
           </h2>
         </div>
       </div>
@@ -1438,21 +1480,18 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post07-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"{{ asset('images/post/post07-800x500.jpg') }}\" alt=\"\"></a>
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
           <a href=\"#\">Provide information</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Choosing the Right Doors and Windows for your Home</a>
+            <a href=\"blog-single.html\">Fill out the form with the required information</a>
           </h2>
         </div>
       </div>
@@ -1460,21 +1499,18 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 
       <div class=\"col-sm-3 post post-simple-item\">
         <div class=\"post-thumb\">
-          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"images/post/post06-800x500.jpg\" alt=\"\"></a>
+          <a class=\"attachment-post-thumb\" href=\"my-account.html\"><img src=\"{{ asset('images/post/post06-800x500.jpg') }}\" alt=\"\"></a>
           <div class=\"entry-meta\">
         <span class=\"posted-on\">
           <i class=\"fa fa-clock-o\"></i>
-          <a href=\"#\">Pay and send</a>
+          <a href=\"#\">Pay and enrolled</a>
         </span>
-        <span class=\"comment-counts\">
-          <i class=\"fa fa-comments\"></i>
-          0
-        </span>
+
           </div>
         </div>
         <div class=\"entry-header\">
           <h2 class=\"entry-title\">
-            <a href=\"blog-single.html\">Low Water Pressure – What Can I Do?</a>
+            <a href=\"blog-single.html\">Pay and enrolled</a>
           </h2>
         </div>
       </div>
@@ -1490,6 +1526,6 @@ class __TwigTemplate_c159ed0a19ff22c4ae36b7cc124fb80a6e37d9f60b59d20a389f7864c78
 <!-- /.new-tips -->
 {% endblock %}
 
-", "website/home.html.twig", "C:\\xampp\\htdocs\\generalpro\\app\\Resources\\views\\website\\home.html.twig");
+", "website/home.html.twig", "C:\\xampp\\htdocs\\general-pro-symfony\\app\\Resources\\views\\website\\home.html.twig");
     }
 }

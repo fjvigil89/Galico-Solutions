@@ -22,47 +22,47 @@ class __TwigTemplate_991e7a234d554de9b8d98499745e188df101d92e9f396581ea02fd7039a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_390438e178ec851690e2be64ea675991611859bd13c625f0610559417ed6778f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_390438e178ec851690e2be64ea675991611859bd13c625f0610559417ed6778f->enter($__internal_390438e178ec851690e2be64ea675991611859bd13c625f0610559417ed6778f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_29ab8945f38d6b3bf3ce8f04aaf87dc63d3943432eb42f9cef7f3cc4c11c897e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_29ab8945f38d6b3bf3ce8f04aaf87dc63d3943432eb42f9cef7f3cc4c11c897e->enter($__internal_29ab8945f38d6b3bf3ce8f04aaf87dc63d3943432eb42f9cef7f3cc4c11c897e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
-        $__internal_42e208d4b6c58daeb5ff41c3062876b6896c1d2b06bbfc3ebfa1767675aeaf0f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_42e208d4b6c58daeb5ff41c3062876b6896c1d2b06bbfc3ebfa1767675aeaf0f->enter($__internal_42e208d4b6c58daeb5ff41c3062876b6896c1d2b06bbfc3ebfa1767675aeaf0f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
+        $__internal_b40896a434c2ed4c02df36d811a269ad72a155ba4d70e383e76a90d77fc88bd7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b40896a434c2ed4c02df36d811a269ad72a155ba4d70e383e76a90d77fc88bd7->enter($__internal_b40896a434c2ed4c02df36d811a269ad72a155ba4d70e383e76a90d77fc88bd7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/services-list.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_390438e178ec851690e2be64ea675991611859bd13c625f0610559417ed6778f->leave($__internal_390438e178ec851690e2be64ea675991611859bd13c625f0610559417ed6778f_prof);
+        $__internal_29ab8945f38d6b3bf3ce8f04aaf87dc63d3943432eb42f9cef7f3cc4c11c897e->leave($__internal_29ab8945f38d6b3bf3ce8f04aaf87dc63d3943432eb42f9cef7f3cc4c11c897e_prof);
 
         
-        $__internal_42e208d4b6c58daeb5ff41c3062876b6896c1d2b06bbfc3ebfa1767675aeaf0f->leave($__internal_42e208d4b6c58daeb5ff41c3062876b6896c1d2b06bbfc3ebfa1767675aeaf0f_prof);
+        $__internal_b40896a434c2ed4c02df36d811a269ad72a155ba4d70e383e76a90d77fc88bd7->leave($__internal_b40896a434c2ed4c02df36d811a269ad72a155ba4d70e383e76a90d77fc88bd7_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_ad512eb8e2f74f09a18bc7c36f9d6a66e83d9b01df6f2b20f45b320ac2625c28 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ad512eb8e2f74f09a18bc7c36f9d6a66e83d9b01df6f2b20f45b320ac2625c28->enter($__internal_ad512eb8e2f74f09a18bc7c36f9d6a66e83d9b01df6f2b20f45b320ac2625c28_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_70f67601d61178dde79f29cbab996ceb907bd6a6ced4f007d48156e2be7e3e32 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_70f67601d61178dde79f29cbab996ceb907bd6a6ced4f007d48156e2be7e3e32->enter($__internal_70f67601d61178dde79f29cbab996ceb907bd6a6ced4f007d48156e2be7e3e32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_7c8c5b11dd2ef0559595928f42ae27e6bb728c7725600d3eda82e76ea8058958 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7c8c5b11dd2ef0559595928f42ae27e6bb728c7725600d3eda82e76ea8058958->enter($__internal_7c8c5b11dd2ef0559595928f42ae27e6bb728c7725600d3eda82e76ea8058958_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_bb6fc1a7647e35e135215f2f6063f3782f93a1920ffeb31e9732fe71c837b981 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bb6fc1a7647e35e135215f2f6063f3782f93a1920ffeb31e9732fe71c837b981->enter($__internal_bb6fc1a7647e35e135215f2f6063f3782f93a1920ffeb31e9732fe71c837b981_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Our services ";
         
-        $__internal_7c8c5b11dd2ef0559595928f42ae27e6bb728c7725600d3eda82e76ea8058958->leave($__internal_7c8c5b11dd2ef0559595928f42ae27e6bb728c7725600d3eda82e76ea8058958_prof);
+        $__internal_bb6fc1a7647e35e135215f2f6063f3782f93a1920ffeb31e9732fe71c837b981->leave($__internal_bb6fc1a7647e35e135215f2f6063f3782f93a1920ffeb31e9732fe71c837b981_prof);
 
         
-        $__internal_ad512eb8e2f74f09a18bc7c36f9d6a66e83d9b01df6f2b20f45b320ac2625c28->leave($__internal_ad512eb8e2f74f09a18bc7c36f9d6a66e83d9b01df6f2b20f45b320ac2625c28_prof);
+        $__internal_70f67601d61178dde79f29cbab996ceb907bd6a6ced4f007d48156e2be7e3e32->leave($__internal_70f67601d61178dde79f29cbab996ceb907bd6a6ced4f007d48156e2be7e3e32_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d3a8ec64ec0ab172303f4f6b89a866c4ff4871910670087d98cefd8581ee7177 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d3a8ec64ec0ab172303f4f6b89a866c4ff4871910670087d98cefd8581ee7177->enter($__internal_d3a8ec64ec0ab172303f4f6b89a866c4ff4871910670087d98cefd8581ee7177_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b122d2acb5dbe195b1f377fa867d847e3d9ccc7d30727de47455ae7b036f1eee = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b122d2acb5dbe195b1f377fa867d847e3d9ccc7d30727de47455ae7b036f1eee->enter($__internal_b122d2acb5dbe195b1f377fa867d847e3d9ccc7d30727de47455ae7b036f1eee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_01e503e0463f4a033c9527cfd79529a332d7e6ed0c598ad9e790b6c5a463e03d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_01e503e0463f4a033c9527cfd79529a332d7e6ed0c598ad9e790b6c5a463e03d->enter($__internal_01e503e0463f4a033c9527cfd79529a332d7e6ed0c598ad9e790b6c5a463e03d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_df025d139183d6f1c8887a2b38d10a0645e23f8f4ef4134076992f5a2bd5b412 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_df025d139183d6f1c8887a2b38d10a0645e23f8f4ef4134076992f5a2bd5b412->enter($__internal_df025d139183d6f1c8887a2b38d10a0645e23f8f4ef4134076992f5a2bd5b412_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "  <div class=\"provide-services row row-xs-center\">
@@ -81,7 +81,7 @@ class __TwigTemplate_991e7a234d554de9b8d98499745e188df101d92e9f396581ea02fd7039a
   <div class=\"service-content\">
     <div class=\"container\">
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"locksmith\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"";
@@ -116,7 +116,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"electricity\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"";
@@ -128,14 +128,14 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-electrical\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Electrical
+                Electricity
               </a>
             </div>
           </div>
 
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electrical</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electricity</a></h3>
           <p class=\"service-list_item-description_content\">On a daily basis there are unforeseen events and breakdowns in electrical systems or equipment, which is why, for safety reasons, the intervention of specialized technicians is necessary. With the GeneralPro Service you can request the visit of a technician to your home, to carry out an urgent repair of a damaged electrical system or equipment.</div>
         <div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
@@ -158,13 +158,13 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-painting\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Windows and doors
+                Doors and Windows
               </a>
             </div>
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Windows and doors</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Doors and Windows</a></h3>
           <p class=\"service-list_item-description_content\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us</div><div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
             <li><a href=\"#\">Door installation</a></li>
@@ -176,7 +176,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"plumbing\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"";
@@ -209,22 +209,25 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"appliances\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
-            <img src=\"images/page-home/services-05.jpg\" alt=\"service\">
+            <img src=\"";
+        // line 141
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-05.jpg"), "html", null, true);
+        echo "\" alt=\"service\">
             <div class=\"service-list_item-img-content\">
               <div class=\"service-item_icon\">
                 <i class=\"rn-heating\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Appliances
+                General Appliances
               </a>
             </div>
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Appliances</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">General Appliances</a></h3>
           <p class=\"service-list_item-description_content\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.
 If you have a broken down washing machine, fridge freezer, cooker or any other appliance we can probably help you save it as many appliances are thrown away every year for minor faults that could have been easily solved.
 </div>
@@ -241,10 +244,13 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
         </div>
       </div>
 
-\t        <div class=\"row service-list_item\">
+\t        <div class=\"row service-list_item\" id=\"additional-services\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
-            <img src=\"images/page-home/services-07.jpg\" alt=\"service\">
+            <img src=\"";
+        // line 173
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/page-home/services-07.jpg"), "html", null, true);
+        echo "\" alt=\"service\">
             <div class=\"service-list_item-img-content\">
               <div class=\"service-item_icon\">
                 <i class=\"rn-home\"></i>
@@ -278,10 +284,10 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
 
 ";
         
-        $__internal_01e503e0463f4a033c9527cfd79529a332d7e6ed0c598ad9e790b6c5a463e03d->leave($__internal_01e503e0463f4a033c9527cfd79529a332d7e6ed0c598ad9e790b6c5a463e03d_prof);
+        $__internal_df025d139183d6f1c8887a2b38d10a0645e23f8f4ef4134076992f5a2bd5b412->leave($__internal_df025d139183d6f1c8887a2b38d10a0645e23f8f4ef4134076992f5a2bd5b412_prof);
 
         
-        $__internal_d3a8ec64ec0ab172303f4f6b89a866c4ff4871910670087d98cefd8581ee7177->leave($__internal_d3a8ec64ec0ab172303f4f6b89a866c4ff4871910670087d98cefd8581ee7177_prof);
+        $__internal_b122d2acb5dbe195b1f377fa867d847e3d9ccc7d30727de47455ae7b036f1eee->leave($__internal_b122d2acb5dbe195b1f377fa867d847e3d9ccc7d30727de47455ae7b036f1eee_prof);
 
     }
 
@@ -297,7 +303,7 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
 
     public function getDebugInfo()
     {
-        return array (  184 => 111,  154 => 84,  124 => 57,  89 => 25,  68 => 6,  59 => 5,  41 => 3,  11 => 1,);
+        return array (  252 => 173,  217 => 141,  184 => 111,  154 => 84,  124 => 57,  89 => 25,  68 => 6,  59 => 5,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -331,7 +337,7 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
   <div class=\"service-content\">
     <div class=\"container\">
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"locksmith\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"{{ asset('images/page-home/services-012.jpg') }}\" alt=\"service\">
@@ -363,7 +369,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"electricity\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"{{ asset('images/page-home/services-022.jpg') }}\" alt=\"service\">
@@ -372,14 +378,14 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-electrical\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Electrical
+                Electricity
               </a>
             </div>
           </div>
 
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electrical</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Electricity</a></h3>
           <p class=\"service-list_item-description_content\">On a daily basis there are unforeseen events and breakdowns in electrical systems or equipment, which is why, for safety reasons, the intervention of specialized technicians is necessary. With the GeneralPro Service you can request the visit of a technician to your home, to carry out an urgent repair of a damaged electrical system or equipment.</div>
         <div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
@@ -399,13 +405,13 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
                 <i class=\"rn-painting\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Windows and doors
+                Doors and Windows
               </a>
             </div>
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Windows and doors</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Doors and Windows</a></h3>
           <p class=\"service-list_item-description_content\">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us</div><div class=\"col-sm-5 col-md-3 service-list_item-categories\">
           <ul>
             <li><a href=\"#\">Door installation</a></li>
@@ -417,7 +423,7 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"plumbing\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
             <img src=\"{{ asset('images/page-home/services-042.jpg') }}\" alt=\"service\">
@@ -447,22 +453,22 @@ Our locksmith experts are at your disposal to repair or change keyhole locks or 
         </div>
       </div>
 
-      <div class=\"row service-list_item\">
+      <div class=\"row service-list_item\" id=\"appliances\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
-            <img src=\"images/page-home/services-05.jpg\" alt=\"service\">
+            <img src=\"{{ asset('images/page-home/services-05.jpg') }}\" alt=\"service\">
             <div class=\"service-list_item-img-content\">
               <div class=\"service-item_icon\">
                 <i class=\"rn-heating\"></i>
               </div>
               <a class=\"service-item_link\" href=\"#\">
-                Appliances
+                General Appliances
               </a>
             </div>
           </div>
         </div>
         <div class=\"col-sm-7 col-md-4 service-list_item-description\">
-          <h3 class=\"service-list_item-description_title\"><a href=\"#\">Appliances</a></h3>
+          <h3 class=\"service-list_item-description_title\"><a href=\"#\">General Appliances</a></h3>
           <p class=\"service-list_item-description_content\">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.
 If you have a broken down washing machine, fridge freezer, cooker or any other appliance we can probably help you save it as many appliances are thrown away every year for minor faults that could have been easily solved.
 </div>
@@ -479,10 +485,10 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
         </div>
       </div>
 
-\t        <div class=\"row service-list_item\">
+\t        <div class=\"row service-list_item\" id=\"additional-services\">
         <div class=\"col-md-5\">
           <div class=\"service-list_item-img\">
-            <img src=\"images/page-home/services-07.jpg\" alt=\"service\">
+            <img src=\"{{ asset('images/page-home/services-07.jpg') }}\" alt=\"service\">
             <div class=\"service-list_item-img-content\">
               <div class=\"service-item_icon\">
                 <i class=\"rn-home\"></i>
@@ -515,6 +521,6 @@ If you have a broken down washing machine, fridge freezer, cooker or any other a
 
 
 {% endblock %}
-", "website/services-list.html.twig", "C:\\xampp\\htdocs\\generalpro\\app\\Resources\\views\\website\\services-list.html.twig");
+", "website/services-list.html.twig", "C:\\xampp\\htdocs\\general-pro-symfony\\app\\Resources\\views\\website\\services-list.html.twig");
     }
 }
