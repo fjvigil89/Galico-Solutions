@@ -12,16 +12,19 @@
     <div class="col-xs-12">
       <h3>Login</h3>
 
-      <form class="form-login">
+      <form class="form-login" method="POST" action="/my-dashboard">
+        {% if(error)%}
+          <h1>{{ error }}</h1>
+        {% endif %}
         <div class="form-group">
           <label for="email">Email*</label>
-          <input type="email" id="email">
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
           <label for="pwd">Password*</label>
-          <input type="password" id="pwd">
+          <input type="password" id="pwd" name="pwd" required>
         </div>
-        <button type="submit" class="btn" ><a href="/myprofile">Login</a></button>
+        <button type="submit" class="btn" >Login</button>
         
         <p class="lost_password"><a href="#">Lost your password?</a></p>
       </form>

@@ -56,9 +56,9 @@ class PageNavigationController extends Controller
     /**
      * @Route("/signin")
      */
-    public function showSigninAction()
+    public function showSigninAction($error='')
     {
-        return $this->render('website/signin.html.twig');
+        return $this->render('website/signin.html.twig',array('error' => $error));
     }
 
     /**

@@ -144,14 +144,30 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\PageNavigationController::showRegisterAction',  '_route' => 'app_pagenavigation_showregister',);
         }
 
-        // app_user_showmyprofile
-        if ($pathinfo === '/myprofile') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyProfileAction',  '_route' => 'app_user_showmyprofile',);
+        if (0 === strpos($pathinfo, '/my-')) {
+            // app_user_showmyprofile
+            if ($pathinfo === '/my-profile') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyProfileAction',  '_route' => 'app_user_showmyprofile',);
+            }
+
+            // app_user_showmydashboard
+            if ($pathinfo === '/my-dashboard') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyDashboardAction',  '_route' => 'app_user_showmydashboard',);
+            }
+
         }
 
-        // app_user_showmyacount
-        if ($pathinfo === '/client-resume') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyAcountAction',  '_route' => 'app_user_showmyacount',);
+        if (0 === strpos($pathinfo, '/c')) {
+            // app_user_createcustomer
+            if ($pathinfo === '/create-customer') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::createCustomerAction',  '_route' => 'app_user_createcustomer',);
+            }
+
+            // app_user_showmyacount
+            if ($pathinfo === '/client-resume') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showMyAcountAction',  '_route' => 'app_user_showmyacount',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

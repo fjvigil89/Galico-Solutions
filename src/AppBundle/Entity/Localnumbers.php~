@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Localnumbers
+ *
+ * @ORM\Table(name="localnumbers")
+ * @ORM\Entity
+ */
+class Localnumbers
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=100, nullable=false)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=100, nullable=false)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=15, nullable=false)
+     */
+    private $phone;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="LocalNumberID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $localnumberid;
+
+
+}
+

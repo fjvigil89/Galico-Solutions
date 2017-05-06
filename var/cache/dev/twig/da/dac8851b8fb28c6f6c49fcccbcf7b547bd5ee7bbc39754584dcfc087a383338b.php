@@ -22,47 +22,47 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b9703fbe5b6863c6c0604fc9efebe98e946e6e30807a7ef10660639b8152a78e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b9703fbe5b6863c6c0604fc9efebe98e946e6e30807a7ef10660639b8152a78e->enter($__internal_b9703fbe5b6863c6c0604fc9efebe98e946e6e30807a7ef10660639b8152a78e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/signin.html.twig"));
+        $__internal_829707bc177534d9093fea3f8fe9ecd0c851bb3098c51083ed16ee4a152606a1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_829707bc177534d9093fea3f8fe9ecd0c851bb3098c51083ed16ee4a152606a1->enter($__internal_829707bc177534d9093fea3f8fe9ecd0c851bb3098c51083ed16ee4a152606a1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/signin.html.twig"));
 
-        $__internal_0323727d5e1fd9e682efd77a7fa7f2616c1789f674cd635381a48621b1aed9c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0323727d5e1fd9e682efd77a7fa7f2616c1789f674cd635381a48621b1aed9c2->enter($__internal_0323727d5e1fd9e682efd77a7fa7f2616c1789f674cd635381a48621b1aed9c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/signin.html.twig"));
+        $__internal_bc00a5ec3cb1239aa6d106f97e129f0a1d15ccd46c23dc647844830a4f92e1e7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bc00a5ec3cb1239aa6d106f97e129f0a1d15ccd46c23dc647844830a4f92e1e7->enter($__internal_bc00a5ec3cb1239aa6d106f97e129f0a1d15ccd46c23dc647844830a4f92e1e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "website/signin.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b9703fbe5b6863c6c0604fc9efebe98e946e6e30807a7ef10660639b8152a78e->leave($__internal_b9703fbe5b6863c6c0604fc9efebe98e946e6e30807a7ef10660639b8152a78e_prof);
+        $__internal_829707bc177534d9093fea3f8fe9ecd0c851bb3098c51083ed16ee4a152606a1->leave($__internal_829707bc177534d9093fea3f8fe9ecd0c851bb3098c51083ed16ee4a152606a1_prof);
 
         
-        $__internal_0323727d5e1fd9e682efd77a7fa7f2616c1789f674cd635381a48621b1aed9c2->leave($__internal_0323727d5e1fd9e682efd77a7fa7f2616c1789f674cd635381a48621b1aed9c2_prof);
+        $__internal_bc00a5ec3cb1239aa6d106f97e129f0a1d15ccd46c23dc647844830a4f92e1e7->leave($__internal_bc00a5ec3cb1239aa6d106f97e129f0a1d15ccd46c23dc647844830a4f92e1e7_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_4f2d3fa39ed712235ff4e92eb8f894c1a6b8edb8335d88a201f3383c880c54f4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4f2d3fa39ed712235ff4e92eb8f894c1a6b8edb8335d88a201f3383c880c54f4->enter($__internal_4f2d3fa39ed712235ff4e92eb8f894c1a6b8edb8335d88a201f3383c880c54f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_9efeeeaa9f027ac49de7c1147ac4741aa5c7c3cb43f97f0a99a5c417a6edd604 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_9efeeeaa9f027ac49de7c1147ac4741aa5c7c3cb43f97f0a99a5c417a6edd604->enter($__internal_9efeeeaa9f027ac49de7c1147ac4741aa5c7c3cb43f97f0a99a5c417a6edd604_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_b975c1ddfeb41189e408c4f0f83cb28544fe2ba059627f3d4469110e6dba2b43 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b975c1ddfeb41189e408c4f0f83cb28544fe2ba059627f3d4469110e6dba2b43->enter($__internal_b975c1ddfeb41189e408c4f0f83cb28544fe2ba059627f3d4469110e6dba2b43_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_204edf5687ee330665f321c447087df05420808b834e5e52407b200c64c35e2c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_204edf5687ee330665f321c447087df05420808b834e5e52407b200c64c35e2c->enter($__internal_204edf5687ee330665f321c447087df05420808b834e5e52407b200c64c35e2c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Sign in ";
         
-        $__internal_b975c1ddfeb41189e408c4f0f83cb28544fe2ba059627f3d4469110e6dba2b43->leave($__internal_b975c1ddfeb41189e408c4f0f83cb28544fe2ba059627f3d4469110e6dba2b43_prof);
+        $__internal_204edf5687ee330665f321c447087df05420808b834e5e52407b200c64c35e2c->leave($__internal_204edf5687ee330665f321c447087df05420808b834e5e52407b200c64c35e2c_prof);
 
         
-        $__internal_4f2d3fa39ed712235ff4e92eb8f894c1a6b8edb8335d88a201f3383c880c54f4->leave($__internal_4f2d3fa39ed712235ff4e92eb8f894c1a6b8edb8335d88a201f3383c880c54f4_prof);
+        $__internal_9efeeeaa9f027ac49de7c1147ac4741aa5c7c3cb43f97f0a99a5c417a6edd604->leave($__internal_9efeeeaa9f027ac49de7c1147ac4741aa5c7c3cb43f97f0a99a5c417a6edd604_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_8493088938d3d93e87fdd6c43a614f00ae550fc87ab5188ceaa836ae5a3e8e0d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8493088938d3d93e87fdd6c43a614f00ae550fc87ab5188ceaa836ae5a3e8e0d->enter($__internal_8493088938d3d93e87fdd6c43a614f00ae550fc87ab5188ceaa836ae5a3e8e0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_f7b82f585ef0fa7c3d9eacd08e8533424446f60409503dfacbab52eb87c0e907 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f7b82f585ef0fa7c3d9eacd08e8533424446f60409503dfacbab52eb87c0e907->enter($__internal_f7b82f585ef0fa7c3d9eacd08e8533424446f60409503dfacbab52eb87c0e907_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_bd863d194871bf478122ae70258623c4bbfb05a0834744970bc8fb7b2a399fde = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bd863d194871bf478122ae70258623c4bbfb05a0834744970bc8fb7b2a399fde->enter($__internal_bd863d194871bf478122ae70258623c4bbfb05a0834744970bc8fb7b2a399fde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_fc3b967fa4e24c9ffbd48702aefe09c60881da53f55d67dd5e96e759a73a7ebc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fc3b967fa4e24c9ffbd48702aefe09c60881da53f55d67dd5e96e759a73a7ebc->enter($__internal_fc3b967fa4e24c9ffbd48702aefe09c60881da53f55d67dd5e96e759a73a7ebc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "<div class=\"pad\">
@@ -74,16 +74,26 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
     <div class=\"col-xs-12\">
       <h3>Login</h3>
 
-      <form class=\"form-login\">
-        <div class=\"form-group\">
+      <form class=\"form-login\" method=\"POST\" action=\"/my-dashboard\">
+        ";
+        // line 16
+        if (($context["error"] ?? $this->getContext($context, "error"))) {
+            // line 17
+            echo "          <h1>";
+            echo twig_escape_filter($this->env, ($context["error"] ?? $this->getContext($context, "error")), "html", null, true);
+            echo "</h1>
+        ";
+        }
+        // line 19
+        echo "        <div class=\"form-group\">
           <label for=\"email\">Email*</label>
-          <input type=\"email\" id=\"email\">
+          <input type=\"email\" id=\"email\" name=\"email\" required>
         </div>
         <div class=\"form-group\">
           <label for=\"pwd\">Password*</label>
-          <input type=\"password\" id=\"pwd\">
+          <input type=\"password\" id=\"pwd\" name=\"pwd\" required>
         </div>
-        <button type=\"submit\" class=\"btn\">Login</button>
+        <button type=\"submit\" class=\"btn\" >Login</button>
         
         <p class=\"lost_password\"><a href=\"#\">Lost your password?</a></p>
       </form>
@@ -94,10 +104,10 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
 </div>
 ";
         
-        $__internal_bd863d194871bf478122ae70258623c4bbfb05a0834744970bc8fb7b2a399fde->leave($__internal_bd863d194871bf478122ae70258623c4bbfb05a0834744970bc8fb7b2a399fde_prof);
+        $__internal_fc3b967fa4e24c9ffbd48702aefe09c60881da53f55d67dd5e96e759a73a7ebc->leave($__internal_fc3b967fa4e24c9ffbd48702aefe09c60881da53f55d67dd5e96e759a73a7ebc_prof);
 
         
-        $__internal_8493088938d3d93e87fdd6c43a614f00ae550fc87ab5188ceaa836ae5a3e8e0d->leave($__internal_8493088938d3d93e87fdd6c43a614f00ae550fc87ab5188ceaa836ae5a3e8e0d_prof);
+        $__internal_f7b82f585ef0fa7c3d9eacd08e8533424446f60409503dfacbab52eb87c0e907->leave($__internal_f7b82f585ef0fa7c3d9eacd08e8533424446f60409503dfacbab52eb87c0e907_prof);
 
     }
 
@@ -113,7 +123,7 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
 
     public function getDebugInfo()
     {
-        return array (  68 => 6,  59 => 5,  41 => 3,  11 => 1,);
+        return array (  88 => 19,  82 => 17,  80 => 16,  68 => 6,  59 => 5,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -140,16 +150,19 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
     <div class=\"col-xs-12\">
       <h3>Login</h3>
 
-      <form class=\"form-login\">
+      <form class=\"form-login\" method=\"POST\" action=\"/my-dashboard\">
+        {% if(error)%}
+          <h1>{{ error }}</h1>
+        {% endif %}
         <div class=\"form-group\">
           <label for=\"email\">Email*</label>
-          <input type=\"email\" id=\"email\">
+          <input type=\"email\" id=\"email\" name=\"email\" required>
         </div>
         <div class=\"form-group\">
           <label for=\"pwd\">Password*</label>
-          <input type=\"password\" id=\"pwd\">
+          <input type=\"password\" id=\"pwd\" name=\"pwd\" required>
         </div>
-        <button type=\"submit\" class=\"btn\">Login</button>
+        <button type=\"submit\" class=\"btn\" >Login</button>
         
         <p class=\"lost_password\"><a href=\"#\">Lost your password?</a></p>
       </form>
@@ -158,6 +171,6 @@ class __TwigTemplate_926c607a6a4c933316dac17545f9efd13ad621b94b9516138a9fda5b942
     </div>
   </div>
 </div>
-{% endblock %}", "website/signin.html.twig", "C:\\xampp\\htdocs\\generalpro\\app\\Resources\\views\\website\\signin.html.twig");
+{% endblock %}", "website/signin.html.twig", "C:\\xampp\\htdocs\\general-pro-symfony\\app\\Resources\\views\\website\\signin.html.twig");
     }
 }
