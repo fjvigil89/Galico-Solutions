@@ -5,52 +5,148 @@
 {% block body %}
   <div class="pad">
   </div>
-  <div class="container">
+  <div class="">
     <h2 class="heading-title">Resume</h2>
     </br>
     <div class="row">
+      <div class="col-xs-4">
+
+        <div class="row">
+          <div class="col-xs-5">Last name</div>
+          <div class="col-xs-7">Fu</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">Name</div>
+          <div class="col-xs-7">Antonio</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">Email</div>
+          <div class="col-xs-7">Fu</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">Password</div>
+          <div class="col-xs-7">*****</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">PhonePrimary</div>
+          <div class="col-xs-7">437545443</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">PhoneAlternate</div>
+          <div class="col-xs-7">34353634</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">Country</div>
+          <div class="col-xs-7">Canada</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">State</div>
+          <div class="col-xs-7">Quebec</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">City</div>
+          <div class="col-xs-7">Montreal</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">Address</div>
+          <div class="col-xs-7">4534 av Maisonneuve</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">ZipCode</div>
+          <div class="col-xs-7">j3d 2g3</div>
+        </div>
+
+
+      </div>
+
+      <div class="col-xs-8">
+        <div class="table-responsive table-shopping-cart">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Country</th>
+              <th>Address</th>
+              <th >Contact name</th>
+              <th>Phone</th>
+              <th>Local agent number</th>
+              <th>Plan</th>
+              <th>Subscription date</th>
+              <th class="text-center"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="product-thumbnail text-center">Cuba</td>
+              <td class="product-name">3233 Av maisonneuve</td>
+              <td class="product-price">Irina Ramos</td>
+              <td class="product-qty">94232232232 </td>
+              <td class="">94232232232</td>
+              <td class="product-qty">Basic </td>
+              <td class="">04/25/2017</td>
+              <td><a href="#maison1" data-toggle="collapse">click</a></td>
+            </tr>
+            <tr>
+              <td class="product-thumbnail text-center">Cuba</td>
+              <td class="product-name">4232 av sddsd</td>
+              <td class="product-price">Carlos</td>
+              <td class="product-qty">942423232232 </td>
+              <td class="">Cuba</td>
+              <td class="product-qty">Basic </td>
+              <td class="">12/25/2017</td>
+              <td><a href="#maison2" data-toggle="collapse">Click</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
       <div class="col-xs-12">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="table-responsive table-shopping-cart">
-            <table class="table">
-              <thead>
-              <tr>
-                <th >HouseID</th>
-                <th >FirstName</th>
-                <th>LastName</th>
-                <th>PhonePrimary</th>
-                <th>Address</th>
-                <th>Country</th>
-                <th class="text-center"></th>
-              </tr>
-              </thead>
-
-              <tbody>
-
-
-              <tr>
-                <td class="">00243</td>
-                <td class="product-thumbnail text-center">Irina</td>
-                <td class="product-name">Ramos</td>
-                <td class="product-price">94232232232</td>
-                <td class="product-qty">3233 Av maisonneuve </td>
-                <td class="">Cuba</td>
-                <td><a href="#maison1" data-toggle="collapse">Click here to resume</a></td>
-              </tr>
-
-
-              <tr>
-                <td class="">00278</td>
-                <td class="product-thumbnail text-center">Steve</td>
-                <td class="product-name">Fuentes</td>
-                <td class="product-price">95232232232</td>
-                <td class="product-qty">2343 Av Miroquesada</td>
-                <td class="">Cuba</td>
-                <td><a href="#maison2" data-toggle="collapse">Click here to resume</a></td>
-              </tr>
-              </tbody>
-            </table>
+        <div class="panel-group" id="myAccordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse1">Collapsible Group 1</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
           </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse2">Collapsible Group 2</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse in">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse3">Collapsible Group 3</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse in">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
 
         </form>
 

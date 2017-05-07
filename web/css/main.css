@@ -5196,3 +5196,21 @@ text-align: center;
   {
 	margin-top: 4em;
  }
+
+ .small-margin-left
+ {
+   margin-left: 15px;
+ }
+
+.small-margin-right
+{
+  margin-right: 15px;
+}
+
+.container-rounded-corner
+{
+  border-radius: 20px;
+  border: 1px solid #73AD21;
+  padding: 10px;
+
+}

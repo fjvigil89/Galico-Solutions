@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html {% block class %}{% endblock %}>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{% block title %}GENERAL PRO{% endblock %}</title>
-        {% block stylesheets %}
-            <!-- Icon font 7 Stroke -->
-            <link rel="stylesheet" href="{{ asset('fonts/icon-7/css/pe-icon-7-stroke.css') }}">
-            <link rel="stylesheet" href="{{ asset('fonts/icon-7/css/helper.css') }}">
+    <title>{% block title %}GENERAL PRO{% endblock %}</title>
+    {% block stylesheets %}
 
-            <!-- Icon font Renovation -->
-            <link rel="stylesheet" href="{{ asset('fonts/renovation/icon-font-renovation.css') }}">
+        <!-- Icon font 7 Stroke -->
+        <link rel="stylesheet" href="{{ asset('fonts/icon-7/css/pe-icon-7-stroke.css') }}">
+        <link rel="stylesheet" href="{{ asset('fonts/icon-7/css/helper.css') }}">
 
-            <!-- Google font -->
-            <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-            <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <!-- Icon font Renovation -->
+        <link rel="stylesheet" href="{{ asset('fonts/renovation/icon-font-renovation.css') }}">
 
-            <!-- Menu Mobile: mmenu -->
-            <link type="text/css" rel="stylesheet" href="{{ asset('components/mmenu/jquery.mmenu.all.css') }}" />
+        <!-- Google font -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-            <!-- Font Awesome -->
-            <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.css') }}" />
+        <!-- Menu Mobile: mmenu -->
+        <link type="text/css" rel="stylesheet" href="{{ asset('components/mmenu/jquery.mmenu.all.css') }}" />
 
-            <!-- Owl Carousel -->
-            <link rel="stylesheet" href="{{ asset('components/owl.carousel/assets/owl.carousel.css') }}" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.css') }}" />
 
-            <!-- Light Gallery -->
-            <link rel="stylesheet" href="{{ asset('components/lightgallery/css/lightgallery.css') }}" />
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="{{ asset('components/owl.carousel/assets/owl.carousel.css') }}" />
 
-            <!-- Bootstrap -->
-            <link rel="stylesheet" href="{{ asset('components/bootstrap/css/bootstrap.css') }}" />
+        <!-- Light Gallery -->
+        <link rel="stylesheet" href="{{ asset('components/lightgallery/css/lightgallery.css') }}" />
 
-            <!-- REVOLUTION STYLE SHEETS -->
-            <link rel="stylesheet" type="text/css" href="{{ asset('components/slider/slider.css') }}">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('components/bootstrap/css/bootstrap.css') }}" />
 
-            <!-- THEME STYLE -->
-            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-        {% endblock %}
+        <!-- REVOLUTION STYLE SHEETS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('components/slider/slider.css') }}">
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-    <div class="site">
+        <!-- THEME STYLE -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<div class="site">
     <div class="site-top style-02">
         <div class="container">
             <div class="row row-sm-center">
@@ -136,112 +137,113 @@
 
     {% block body %}{% endblock %}
 
-        {% block javascripts %}
-            <script src="https://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    {% block javascripts %}
+        <script src="https://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
 
-            <script src="{{asset('components/jquery/jquery.js')  }}"></script>
-            <script src="{{ asset('components/bootstrap/js/bootstrap.js') }}"></script>
-            <script src="{{ asset('components/owl.carousel/owl.carousel.js') }}"></script>
-            <script src="{{ asset('components/parallax.js/parallax.js') }}"></script>
-            <script src="{{ asset('components/scrollup/jquery.scrollUp.js') }}"></script>
-            <script src="{{ asset('components/lightgallery/js/lightgallery.js') }}"></script>
+        <script src="{{asset('components/jquery/jquery.js')  }}"></script>
+        <script src="{{ asset('components/bootstrap/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('components/owl.carousel/owl.carousel.js') }}"></script>
+        <script src="{{ asset('components/parallax.js/parallax.js') }}"></script>
+        <script src="{{ asset('components/scrollup/jquery.scrollUp.js') }}"></script>
+        <script src="{{ asset('components/lightgallery/js/lightgallery.js') }}"></script>
 
-            <!-- Mobile Menu -->
-            <script src="{{ asset('components/mmenu/jquery.mmenu.min.all.js') }}"></script>
+        <!-- Mobile Menu -->
+        <script src="{{ asset('components/mmenu/jquery.mmenu.min.all.js') }}"></script>
 
-            <!-- REVOLUTION JS FILES -->
-            <script src="{{ asset('components/slider/jquery.themepunch.tools.min.js') }}"></script>
-            <script src="{{ asset('components/slider/jquery.themepunch.revolution.min.js') }}"></script>
+        <!-- REVOLUTION JS FILES -->
+        <script src="{{ asset('components/slider/jquery.themepunch.tools.min.js') }}"></script>
+        <script src="{{ asset('components/slider/jquery.themepunch.revolution.min.js') }}"></script>
 
-            <!-- SLIDER REVOLUTION 5.0 EXTENSIONS -->
-            <script src="{{ asset('components/slider/extensions/revolution.extension.actions.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.carousel.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.kenburn.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.migration.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.navigation.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.parallax.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.slideanims.min.js') }}"></script>
-            <script src="{{ asset('components/slider/extensions/revolution.extension.video.min.js') }}"></script>
+        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS -->
+        <script src="{{ asset('components/slider/extensions/revolution.extension.actions.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.carousel.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.kenburn.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.migration.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.navigation.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.parallax.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.slideanims.min.js') }}"></script>
+        <script src="{{ asset('components/slider/extensions/revolution.extension.video.min.js') }}"></script>
 
-            <!-- ISOTOPE -->
-            <script src="{{ asset('components/isotope.pkgd.min.js') }}"></script>
 
-            <!-- HOVER ISOTOPE -->
-            <script src="{{ asset('components/jquery.directional-hover.min.js') }}"></script>
+        <!-- ISOTOPE -->
+        <script src="{{ asset('components/isotope.pkgd.min.js') }}"></script>
 
-            <!-- Image loaded ISOTOPE -->
-            <script src="{{ asset('components/imagesloaded.pkgd.min.js') }}"></script>
+        <!-- HOVER ISOTOPE -->
+        <script src="{{ asset('components/jquery.directional-hover.min.js') }}"></script>
 
-            <script src="{{ asset('js/main.js') }}"></script>
-            <script src="{{ asset('js/angularjs/angular.min.jsmain.js') }}"></script>
-            <script src="{{ asset('js/services/services.js') }}"></script>
+        <!-- Image loaded ISOTOPE -->
+        <script src="{{ asset('components/imagesloaded.pkgd.min.js') }}"></script>
 
-        {% endblock %}
+        <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/angularjs/angular.min.jsmain.js') }}"></script>
+        <script src="{{ asset('js/services/services.js') }}"></script>
+
+    {% endblock %}
 
     {% block footer %}
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="footer-about">
-                            <p><a href="#"><img src="images/page-home/logo-alt.png" alt="renovation-logo"></a></p>
-                            <p>Our mission is to provide the best handyman service at an reasonable price without sacrificing quality. You will be satisfied with our work knowing we take the necessary steps to meet your needs and get the job done right</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-infomation">
-                            <h3 class="widget-tittle">infomation</h3>
-                            <ul class="menu-infomation">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Extras</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Infomation</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Shop</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-info">
-                            <h3 class="widget-tittle">renovation office</h3>
-                            <ul>
-                                <li><i class="fa fa-map-marker"></i>14 Tottenham Road, London, England.</li>
-                                <li><i class="fa fa-phone"></i>(102) 6666 8888</li>
-                                <li><i class="fa fa-envelope"></i>info@thememove.com</li>
-                                <li><i class="fa fa-fax"></i>(102) 8888 9999</li>
-                                <li><i class="fa fa-clock-o"></i>Mon - Sat: 9:00 - 18:00</li>
-                            </ul>
-                        </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-about">
+                        <p><a href="#"><img src="images/page-home/logo-alt.png" alt="renovation-logo"></a></p>
+                        <p>Our mission is to provide the best handyman service at an reasonable price without sacrificing quality. You will be satisfied with our work knowing we take the necessary steps to meet your needs and get the job done right</p>
                     </div>
                 </div>
-            </div>
-            <div class="social-menu social-menu_right-arrow">
-                <ul class="menu">
-                    <li class="menu-item"><a href="https://www.facebook.com/">facebook</a></li>
-                    <li class="menu-item"><a href="https://www.plus.google.com/">google+</a></li>
-                    <li class="menu-item"><a href="https://www.twitter.com/">twitter</a></li>
-                    <li class="menu-item"><a href="https://www.youtube.com/">youtube</a></li>
-                </ul>
-            </div>
-        </footer>
-        <!-- /.footer -->
-
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        Copyright &copy; General Pro 2017. All rights reserved.
+                <div class="col-md-4">
+                    <div class="footer-infomation">
+                        <h3 class="widget-tittle">infomation</h3>
+                        <ul class="menu-infomation">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Extras</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Infomation</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-info">
+                        <h3 class="widget-tittle">renovation office</h3>
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i>14 Tottenham Road, London, England.</li>
+                            <li><i class="fa fa-phone"></i>(102) 6666 8888</li>
+                            <li><i class="fa fa-envelope"></i>info@thememove.com</li>
+                            <li><i class="fa fa-fax"></i>(102) 8888 9999</li>
+                            <li><i class="fa fa-clock-o"></i>Mon - Sat: 9:00 - 18:00</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.copyright -->
-    </div>
+        <div class="social-menu social-menu_right-arrow">
+            <ul class="menu">
+                <li class="menu-item"><a href="https://www.facebook.com/">facebook</a></li>
+                <li class="menu-item"><a href="https://www.plus.google.com/">google+</a></li>
+                <li class="menu-item"><a href="https://www.twitter.com/">twitter</a></li>
+                <li class="menu-item"><a href="https://www.youtube.com/">youtube</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /.footer -->
 
-    {% endblock %}
-    </body>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    Copyright &copy; General Pro 2017. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.copyright -->
+</div>
+
+{% endblock %}
+</body>
 </html>
