@@ -65,9 +65,9 @@
                     <div class="site-top-right text-xs-center text-sm-right">
                         <nav id="top-right-menu">
                             <ul class="menu">
-                                <li class="menu-item"><a href="/signin">Sign in</a></li>
+                                <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">Sign in</a></li>
                                 <li class="menu-item">
-                                    <a href="/register">Register</a>
+                                    <a href="{{ url('app_pagenavigation_showregister') }}">Register</a>
 
                                 </li>
                                 <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -97,11 +97,11 @@
                         <nav id="primary-menu-mobile">
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/services">Services</a></li>
-                                <li><a href="/plans">Plans</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showservices') }}">Services</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showplans') }}">Plans</a></li>
                                 <!--<li><a href="index.html">Prices</a></li>-->
-                                <li><a href="/contact">Contact us</a></li>
-                                <li><a href="/about">About us</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showcontactus') }}">Contact us</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showaboutus') }}">About us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -123,10 +123,10 @@
                             <a href="/">Home</a></li>
 
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">services</a></li>
-                        <li class="menu-item"><a href="/plans">Plans</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">Plans</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
-                        <li class="menu-item"><a href="/contact">Contact us</a></li>
-                        <li class="menu-item"><a href="/about">About us</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">Contact us</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">About us</a></li>
 
                     </ul>
                 </div>
