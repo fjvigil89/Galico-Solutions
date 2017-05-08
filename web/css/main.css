@@ -2620,50 +2620,50 @@ input[type="submit"] {
 }
 
 .we-are-layoutplan_pro {
-  padding: 80px 15px 30px;
-  background: url("../images/page-home/home02-slide01.jpg") center center;
+padding: 80px 15px 30px;
+background: url("../images/page-home/feature_style2_bg.jpg") center center;
 }
 
 .we-are-layoutcontact_pro {
-  padding: 80px 15px 30px;
-  background: url("../images/page-home/home02-slide02.jpg") center center;
+padding: 80px 15px 30px;
+background: url("../images/page-home/home02-slide03.jpg") center center;
 }
 
 
 
 .we-are-layout2_pro {
-  padding: 80px 15px 30px;
-  background: url("../images/page-home/home02_section1_bg1.png") center center;
+padding: 80px 15px 30px;
+background: url("../images/page-home/home02_section1_bg1.png") center center;
 }
 
 .we-are-layout2_call {
-  background: #FBD232;
-  max-width: 470px;
-  padding-bottom: 30px;
-  margin: 0 auto;
+background: #FBD232;
+max-width: 470px;
+padding-bottom: 30px;
+margin: 0 auto;
 }
 
 .we-are-layout2_call h2 {
-  font-size: 23px;
-  border-bottom: 1px solid #e6c109;
-  padding: 10px 0px 30px;
-  margin-bottom: 30px;
+font-size: 23px;
+border-bottom: 1px solid #e6c109;
+padding: 10px 0px 30px;
+margin-bottom: 30px;
 }
 
 .we-are-layout2_call .btn {
-  background: #111;
-  color: #FBD232;
+background: #111;
+color: #FBD232;
 }
 
 @media (min-width: 80em) {
-  .we-are-layout2_call {
-    background: #FBD232;
-  }
-  .we-are-layout2_call img {
-    position: relative;
-    z-index: 99;
-    margin-top: -40px;
-  }
+.we-are-layout2_call {
+  background: #FBD232;
+}
+.we-are-layout2_call img {
+  position: relative;
+  z-index: 99;
+  margin-top: -40px;
+}
 }
 
 /*-----------------------------
@@ -2904,7 +2904,7 @@ input[type="submit"] {
   left: 0px;
   right: 0px;
   bottom: 0;
-  background-color: #1d2736;
+
   opacity: 0.8;
   z-index: 1;
 }
@@ -5246,10 +5246,14 @@ ins .amount {
   background: #DDDDDD;
 }
 
-.color-greywhite{
+.color-blue{
   background: #d9edf7;
 }
 
 .color-yellowhite{
   background: #FFFFEB;
+}
+
+.color-orange{
+  background: #fff3e6;
 }
