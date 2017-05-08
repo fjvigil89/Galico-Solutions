@@ -47,6 +47,7 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'app_user_showmydashboard' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\UserController::showMyDashboardAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/my-dashboard',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_user_createcustomer' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\UserController::createCustomerAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/create-customer',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_user_showmyacount' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\UserController::showMyAcountAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/client-resume',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'app_user_showadministrator' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\UserController::showAdministratorAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/administrator',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

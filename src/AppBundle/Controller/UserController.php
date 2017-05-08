@@ -100,4 +100,13 @@ class UserController extends Controller
     {
         return $this->render('website/client-resume.html.twig');
     }
+
+    /**
+     * @Route("/administrator")
+     */
+    public function showAdministratorAction()
+    {
+        return $this->render('website/administator.html.twig');
+    }
+
 }

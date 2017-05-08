@@ -5,258 +5,602 @@
 {% block body %}
   <div class="pad">
   </div>
-  <div class="">
-    <h2 class="heading-title">Resume</h2>
+  <div class="container">
+    <h2 class="heading-title">ADMINISTRATOR</h2>
     </br>
-    <div class="row">
-      <div class="col-xs-4">
 
-        <div class="row">
-          <div class="col-xs-5">Last name</div>
-          <div class="col-xs-7">Fu</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">Name</div>
-          <div class="col-xs-7">Antonio</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">Email</div>
-          <div class="col-xs-7">Fu</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">Password</div>
-          <div class="col-xs-7">*****</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">PhonePrimary</div>
-          <div class="col-xs-7">437545443</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">PhoneAlternate</div>
-          <div class="col-xs-7">34353634</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">Country</div>
-          <div class="col-xs-7">Canada</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">State</div>
-          <div class="col-xs-7">Quebec</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">City</div>
-          <div class="col-xs-7">Montreal</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">Address</div>
-          <div class="col-xs-7">4534 av Maisonneuve</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-5">ZipCode</div>
-          <div class="col-xs-7">j3d 2g3</div>
+    <div id="exTab1" class="container">
+      <ul  class="nav nav-pills">
+        <li class="active">
+          <a  href="#1a" data-toggle="tab">Customer</a>
+        </li>
+        <li><a href="#2a" data-toggle="tab">Technician</a>
+        </li>
+        <li><a href="#3a" data-toggle="tab">Request</a>
+        </li>
+        <li><a href="#4a" data-toggle="tab">Setting</a>
+        </li>
+      </ul>
+
+      <div class="tab-content clearfix">
+        <div class="tab-pane active" id="1a">
+          <div class="panel-body">
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <label class="sr-only" for="search">Search</label>
+                <input type="text" class="form-control" id="search" placeholder="Search">
+              </div>
+
+              <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+            </form>
+          </br>
+
+            <div class="row">
+
+              <div class="col-xs-4 container-rounded-corner ">
+
+                <div class="row head-title-row">
+                  <div class="col-xs-8 left-align">My Profile</div>
+                  <div class="col-xs-4 right-align ">
+                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                      <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                    </a></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Last name</div>
+                  <div class="col-xs-8">Fu</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Name</div>
+                  <div class="col-xs-8">Antonio</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Email</div>
+                  <div class="col-xs-8">antofuchong@gmail.com</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Password</div>
+                  <div class="col-xs-8">*****</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">PhonePrimary</div>
+                  <div class="col-xs-8">437545443</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">PhoneAlternate</div>
+                  <div class="col-xs-8">34353634</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Country</div>
+                  <div class="col-xs-8">Canada</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">State</div>
+                  <div class="col-xs-8">Quebec</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">City</div>
+                  <div class="col-xs-8">Montreal</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Address</div>
+                  <div class="col-xs-8">4534 av Maisonneuve</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">ZipCode</div>
+                  <div class="col-xs-8">j3d 2g3</div>
+                </div>
+
+
+              </div>
+              <div class="col-xs-1"></div>
+              <div class="col-xs-7 container-rounded-corner">
+                <div class="table-responsive table-shopping-cart">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>Country</th>
+                      <th>Address</th>
+                      <th>Plan</th>
+                      <th>Due date</th>
+                      <th>Local agent number</th>
+                      <th>
+                        <a href="#" data-toggle="modal" data-target="#addmaisonModal" >
+                          <span class="glyphicon glyphicon-plus" title="add"></span>
+                        </a>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="product-thumbnail text-center">
+                        <a href="#" data-toggle="modal" data-target="#houseModal" >
+                          <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                        </a>Cuba</td>
+                      <td class="product-name">3233 Av maisonneuve</td>
+                      <td class="">Basic</td>
+                      <td class="product-qty">04/25/2017 </td>
+                      <td class="">94232232232</td>
+                      <td>
+                        <a href="#" data-toggle="modal" data-target="#editmaisonModal" >
+                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                        </a>
+
+                        <a href="#" data-toggle="modal" data-target="#addserviceModal" >
+                          <span class="glyphicon glyphicon-plus" title="View payments" ></span>
+                        </a>
+                        <a href="#" data-toggle="modal" data-target="#paymentsModal" >
+                          <span class="glyphicon glyphicon-usd" title="View payments" ></span>
+                        </a>
+                        <a href="#" data-target="#" >
+                          <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                        </a>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="product-thumbnail text-center">Cuba</td>
+                      <td class="product-name">4232 av sddsd</td>
+                      <td class="">Basic</td>
+                      <td class="">12/25/2017</td>
+                      <td class="product-qty">94232232232</td>
+                      <td>
+                        <a href="#maison2" data-toggle="collapse">
+                          <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+              </br></br>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="panel-group" id="myAccordion">
+                    <div class="panel panel-griss ">
+                                  <div class="panel-heading ">
+                                    <h4 class="panel-title ">
+                                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse1">JAN 21, 2017 - Plumbing - Closed</a>
+                                    </h4>
+                                  </div>
+
+                                  <div id="collapse1" class="panel-collapse collapse in panel-collapse-color  ">
+                                        <div class="panel-body">Request date : 2017-01-21 <br/>
+                                          Status : Closed
+                                        </div>
+
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </div>
+
+                                        <div class="panel-body">
+                                          <div class="row">
+                                            <div class="col-xs-2">Intervention date</div>
+                                            <div class="col-xs-2">Technician</div>
+                                            <div class="col-xs-8">Comments</div>
+
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-xs-2">23/04/2017</div>
+                                            <div class="col-xs-2">Jorge Suarez</div>
+                                            <div class="col-xs-8">asfgasd a asda asdf asdfasdfasasdfasf</div>
+
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-xs-2">26/04/2017</div>
+                                            <div class="col-xs-2">Irina Rodriguez</div>
+                                            <div class="col-xs-8">asdfasd asdf asdf asdf sa fas</div>
+
+                                          </div>
+                                        </div>
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+          </div>
         </div>
 
 
+
+
+
+
+        <div class="tab-pane" id="2a">
+          <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+        </div>
+        <div class="tab-pane" id="3a">
+          <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+        </div>
+        <div class="tab-pane" id="4a">
+          <h3>We use css to change the background color of the content to be equal to the tab</h3>
+        </div>
       </div>
+    </div>
 
-      <div class="col-xs-8">
-        <div class="table-responsive table-shopping-cart">
-          <table class="table">
-            <thead>
-            <tr>
-              <th>Country</th>
-              <th>Address</th>
-              <th >Contact name</th>
-              <th>Phone</th>
-              <th>Local agent number</th>
-              <th>Plan</th>
-              <th>Subscription date</th>
-              <th class="text-center"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="product-thumbnail text-center">Cuba</td>
-              <td class="product-name">3233 Av maisonneuve</td>
-              <td class="product-price">Irina Ramos</td>
-              <td class="product-qty">94232232232 </td>
-              <td class="">94232232232</td>
-              <td class="product-qty">Basic </td>
-              <td class="">04/25/2017</td>
-              <td><a href="#maison1" data-toggle="collapse">click</a></td>
-            </tr>
-            <tr>
-              <td class="product-thumbnail text-center">Cuba</td>
-              <td class="product-name">4232 av sddsd</td>
-              <td class="product-price">Carlos</td>
-              <td class="product-qty">942423232232 </td>
-              <td class="">Cuba</td>
-              <td class="product-qty">Basic </td>
-              <td class="">12/25/2017</td>
-              <td><a href="#maison2" data-toggle="collapse">Click</a></td>
-            </tr>
-            </tbody>
-          </table>
+
+
+
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div id="houseModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">House information</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-5">Plan</div>
+            <div class="col-xs-7">Basic</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Due date</div>
+            <div class="col-xs-7">04/25/2017</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Suscription date</div>
+            <div class="col-xs-7">12/02/2017</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Contact</div>
+            <div class="col-xs-7">Renzo Sanchez</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Phone (Primary)</div>
+            <div class="col-xs-7">234543232</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Phone (Alternate)</div>
+            <div class="col-xs-7">23523232</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Country</div>
+            <div class="col-xs-7">Cuba</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">City</div>
+            <div class="col-xs-7">La habana</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Address</div>
+            <div class="col-xs-7">3233 Av maisonneuve</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">State / Province</div>
+            <div class="col-xs-7">Matanzas</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">Local number</div>
+            <div class="col-xs-7">94232232232</div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove" title="Close"></span>
+          </button>
         </div>
       </div>
 
     </div>
+  </div>
 
 
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="panel-group" id="myAccordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse1">Collapsible Group 1</a>
-              </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
+  <div id="paymentsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Payments history</h4>
+        </div>
+        <div class="modal-body">
+
+          <h4 >Suscription date 12 02-2017 ( Basic plan)</h4>
+
+          <div class="row">
+            <div class="col-xs-5">Payment date</div>
+            <div class="col-xs-7">Amount</div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse2">Collapsible Group 2</a>
-              </h4>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse in">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
+          <div class="row">
+            <div class="col-xs-5">12/06/2017</div>
+            <div class="col-xs-7">$29.99</div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse3">Collapsible Group 3</a>
-              </h4>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse in">
-              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
+          <div class="row">
+            <div class="col-xs-5">12/07/2017</div>
+            <div class="col-xs-7">$29.99</div>
           </div>
 
         </div>
-
-        <form action="#" method="post" enctype="multipart/form-data">
-
-
-        </form>
-
-      </div>
-      <div class="collapse in" id="maison1">
-        <div class="container">
-          <p>House 00243 </p>
-          <table class="table">
-            <thead>
-            <tr>
-              <th >RequestDate</th>
-              <th >InterventionDate</th>
-              <th>ServiceID</th>
-              <th>Service</th>
-              <th>TechnicianID</th>
-              <th>Status</th>
-              <th>Details</th>
-              <th>Contact</th>
-            </tr>
-            </thead>
-
-
-            <tr>
-              <td class="">03/04/2017</td>
-              <td class="">04/04/2017</td>
-              <td class="product-name">536433</td>
-              <td class="product-price">plumbing</td>
-              <td class="product-qty">Carlos Sanz</td>
-              <td class="">Attended</td>
-              <td class="">Problems with faucett</td>
-              <td class="">Alberto</td>
-            </tr>
-
-            <tr>
-              <td class="">08/04/2017</td>
-              <td class="">10/04/2017</td>
-              <td class="product-name">536438</td>
-              <td class="product-price">Electricity</td>
-              <td class="product-qty">Andres Lopilato</td>
-              <td class="">Attended</td>
-              <td class="">Electrical problems</td>
-              <td class="">Roberto</td>
-            </tr>
-
-            <tr>
-              <td class="">15/04/2017</td>
-              <td class="">19/04/2017</td>
-              <td class="product-name">536458</td>
-              <td class="product-price">locksmith</td>
-              <td class="product-qty">Marisol</td>
-              <td class="">Attended</td>
-              <td class="">Problems with door</td>
-              <td class="">Alejandro</td>
-            </tr>
-
-          </table>
-
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove" title="Close"></span>
+          </button>
         </div>
       </div>
 
-      <div class="collapse in" id="maison2">
-        <div class="container">
-          <p>House 00278 </p>
-
-          <table class="table">
-            <thead>
-            <tr>
-              <th >RequestDate</th>
-              <th >InterventionDate</th>
-              <th>ServiceID</th>
-              <th>Service</th>
-              <th>TechnicianID</th>
-              <th>Status</th>
-              <th>Details</th>
-              <th>Contact</th>
-            </tr>
-            </thead>
-
-
-            <tr>
-              <td class="">02/04/2017</td>
-              <td class="">03/04/2017</td>
-              <td class="product-name">536435</td>
-              <td class="product-price">plumbing</td>
-              <td class="product-qty">Rodolfo German</td>
-              <td class="">Attended</td>
-              <td class="">Problems ett</td>
-              <td class="">Braulio</td>
-            </tr>
-
-            <tr>
-              <td class="">14/04/2017</td>
-              <td class="">15/04/2017</td>
-              <td class="product-name">536456</td>
-              <td class="product-price">Electricity</td>
-              <td class="product-qty">Andres Lopilato</td>
-              <td class="">Attended</td>
-              <td class="">Electrical problems</td>
-              <td class="">Mauricio</td>
-            </tr>
-
-
-          </table>
-
-
-        </div>
-      </div>
     </div>
   </div>
+
+
+
+  <div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" value="Fu">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Name:</label>
+            <input type="text" class="form-control" id="lastname" value="Antonio" >
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" value="antofuchong@gmail.com" >
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" value="*****">
+          </div>
+          <div class="form-group">
+            <label for="phonePrimary">Phone Primary:</label>
+            <input type="tel" class="form-control" id="phonePrimary" value="534545443" >
+          </div>
+          <div class="form-group">
+            <label for="phonealternate">Phone Alternate:</label>
+            <input type="tel" class="form-control" id="phonealternate" value="437545443" >
+          </div>
+          <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" class="form-control" id="country" value="Canada" >
+          </div>
+          <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" id="state" value="Quebec" >
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" value="Montreal" >
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address" value="4534 av Maisonneuve" >
+          </div>
+          <div class="form-group">
+            <label for="zipCode">ZipCode:</label>
+            <input type="text" class="form-control" id="zipCode" value="j3d 2g3" >
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+
+
+  <div id="editmaisonModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit House</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="editplan">Plan:</label>
+            <input type="text" class="form-control" id="editplan" value="Basic">
+          </div>
+          <div class="form-group">
+            <label for="editduedate">Due date:</label>
+            <input type="text" class="form-control" id="editduedate" value="04/25/2017" >
+          </div>
+          <div class="form-group">
+            <label for="addsuscription">Suscription date:</label>
+            <input type="text" class="form-control" id="addsuscription" value="12/02/2017" >
+          </div>
+          <div class="form-group">
+            <label for="editcontact">Contact:</label>
+            <input type="text" class="form-control" id="editcontact" value="Renzo Sanchez">
+          </div>
+          <div class="form-group">
+            <label for="editphonePrimary">Phone Primary:</label>
+            <input type="tel" class="form-control" id="editphonePrimary" value="234543232" >
+          </div>
+          <div class="form-group">
+            <label for="editphonealternate">Phone Alternate:</label>
+            <input type="tel" class="form-control" id="editphonealternate" value="23523232" >
+          </div>
+          <div class="form-group">
+            <label for="editcountry">Country:</label>
+            <input type="text" class="form-control" id="editcountry" value="Cuba" >
+          </div>
+          <div class="form-group">
+            <label for="editcity">City:</label>
+            <input type="text" class="form-control" id="editcity" value="La habana" >
+          </div>
+
+          <div class="form-group">
+            <label for="editaddress">Address:</label>
+            <input type="text" class="form-control" id="editaddress" value="3233 Av maisonneuve" >
+          </div>
+          <div class="form-group">
+            <label for="editstate">State:</label>
+            <input type="text" class="form-control" id="editstate" value="Matanzas" >
+          </div>
+          <div class="form-group">
+            <label for="editlocalnumber">Local number:</label>
+            <input type="tel" class="form-control" id="editlocalnumber" value="94232232232" >
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="addmaisonModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add House</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="add-plan">Plan:</label>
+            <input type="text" class="form-control" id="add-plan" value="">
+          </div>
+          <div class="form-group">
+            <label for="add-duedate">Due date:</label>
+            <input type="text" class="form-control" id="add-duedate" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-suscription">Suscription date:</label>
+            <input type="text" class="form-control" id="add-suscription" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-contact">Contact:</label>
+            <input type="text" class="form-control" id="add-contact" value="">
+          </div>
+          <div class="form-group">
+            <label for="add-phonePrimary">Phone Primary:</label>
+            <input type="tel" class="form-control" id="add-phonePrimary" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-phonealternate">Phone Alternate:</label>
+            <input type="tel" class="form-control" id="add-phonealternate" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-country">Country:</label>
+            <input type="text" class="form-control" id="add-country" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-city">City:</label>
+            <input type="text" class="form-control" id="add-city" value="" >
+          </div>
+
+          <div class="form-group">
+            <label for="add-address">Address:</label>
+            <input type="text" class="form-control" id="add-address" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-state">State:</label>
+            <input type="text" class="form-control" id="add-state" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-localnumber">Local number:</label>
+            <input type="tel" class="form-control" id="add-localnumber" value="" >
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-plus" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div id="addserviceModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Services</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="service-request">Request date:</label>
+            <input type="date" class="form-control" id="service-request" value="">
+          </div>
+          <div class="form-group">
+            <label for="service-service">Service:</label>
+            <input type="text" class="form-control" id="service-service" value="" >
+          </div>
+          <div class="form-group">
+            <label for="service-status">Status:</label>
+            <input type="text" class="form-control" id="service-status" value="" >
+          </div>
+          <div class="form-group">
+            <label for="service-details">Details:</label>
+            <input type="text" class="form-control" id="service-details" value="">
+          </div>
+          <div class="form-group">
+            <label for="service-intervention-date">Intervention date:</label>
+            <input type="tel" class="form-control" id="service-intervention-date" value="" >
+          </div>
+          <div class="form-group">
+            <label for="service-technician">Technician:</label>
+            <input type="tel" class="form-control" id="service-technician" value="" >
+          </div>
+          <div class="form-group">
+            <label for="service-comments">Comments:</label>
+            <input type="text" class="form-control" id="service-comments" value="" >
+          </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-plus" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
 
 {% endblock %}

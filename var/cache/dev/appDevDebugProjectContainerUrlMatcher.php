@@ -170,6 +170,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // app_user_showadministrator
+        if ($pathinfo === '/administrator') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::showAdministratorAction',  '_route' => 'app_user_showadministrator',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
