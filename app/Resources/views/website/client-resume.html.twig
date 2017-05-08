@@ -22,78 +22,106 @@
         </li>
       </ul>
 
+
+
       <div class="tab-content clearfix">
+
+
+        <!--customer-------------------------------------------->
+
+
         <div class="tab-pane active" id="1a">
-          <div class="panel-body">
-            <form class="form-inline" role="form">
-              <div class="form-group">
-                <label class="sr-only" for="search">Search</label>
-                <input type="text" class="form-control" id="search" placeholder="Search">
-              </div>
+            <br/>
+          <!-- Search Customer-------------------------------------------->
+                  <form class="form-inline" role="form">
+                    <div class="form-group">
+                      <label class="sr-only" for="search">Search</label>
+                      <input type="text" class="form-control" id="search" placeholder="Search">
+                    </div>
 
-              <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
-            </form>
+                    <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+                  </form>
 
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-2">Code Id</div>
-                  <div class="col-xs-2">Country</div>
-                  <div class="col-xs-2">Last Name</div>
-                  <div class="col-xs-2">Name</div>
-                  <div class="col-xs-2">Qty House</div>
-                  <div class="col-xs-2">
+
+
+          <div class="col-xs-12 container-rounded-corner color-yellowhite">
+            <div class="">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Code Id</th>
+                  <th>Country</th>
+                  <th>Last Name</th>
+                  <th>Name</th>
+                  <th>Qty House</th>
+                  <th>
                     <a href="#" data-toggle="modal" data-target="#addcustomerModal" >
                       <span class="glyphicon glyphicon-plus" title="add"></span>
                     </a>
-                  </div>
-                </div>
-              </div>
-                <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-2">CAD14253</div>
-                  <div class="col-xs-2">Canada</div>
-                  <div class="col-xs-2">Fu</div>
-                  <div class="col-xs-2">Antonio</div>
-                  <div class="col-xs-2">1</div>
-                  <div class="col-xs-2">
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                  <td class="">CAD14253</td>
+                  <td class="">CANADA</td>
+                  <td class="">Fu</td>
+                  <td class="">Antonio</td>
+                  <td class="">2</td>
+                  <td>
                     <a href="#" data-target="#" >
                       <span class="glyphicon glyphicon-remove" title="Remove" ></span>
                     </a>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-xs-2">USA23534</div>
-                  <div class="col-xs-2">United States</div>
-                  <div class="col-xs-2">Jean</div>
-                  <div class="col-xs-2">Rhod</div>
-                  <div class="col-xs-2">1</div>
-                  <div class="col-xs-2">
+                  </td>
+                </tr>
+                <tr>
+
+                  <td class="">CA233232</td>
+                  <td class="">CUBA</td>
+                  <td class="">Ramos</td>
+                  <td class="">Hector</td>
+                  <td class="">10</td>
+                  <td>
                     <a href="#" data-target="#" >
                       <span class="glyphicon glyphicon-remove" title="Remove" ></span>
                     </a>
-                  </div>
-                </div>
-
-
-
-              </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
             </div>
+          </div><br/>
 
 
 
+
+          <!-- End Search Customer-------------------------------------------->
+
+          <div class="panel-body">
+
+            <!-- Row Profile Customer and Houses Customer-------------------------------------------->
             <div class="row">
-
+              <!-- Profile Customer-------------------------------------------->
               <div class="col-xs-4 container-rounded-corner ">
 
-                <div class="row head-title-row">
-                  <div class="col-xs-8 left-align">My Profile</div>
+                <div class="row ">
+                  <div class="col-xs-8 left-align">Antonio Fu</div>
                   <div class="col-xs-4 right-align ">
                     <a href="#maison3" data-toggle="modal" data-target="#editModal" >
                       <span class="glyphicon glyphicon-edit" title="Edit" ></span>
                     </a></div>
                 </div>
+                </br>
+                <div class="row">
+
+                  <div class="col-xs-4"></div>
+                  <div class="col-xs-4 imgphoto "><img src="{{ asset('images/page-home/services-01.jpg') }}"  alt="profile" ></div>
+                  <div class="col-xs-4"></div>
+                </div>
+                </br>
+
                 <div class="row">
                   <div class="col-xs-4">ID</div>
                   <div class="col-xs-8">CAD14253</div>
@@ -145,9 +173,16 @@
 
 
               </div>
+              <!-- End Profile Customer-------------------------------------------->
+
+
+
               <div class="col-xs-1"></div>
-              <div class="col-xs-7 container-rounded-corner">
-                <div class="table-responsive table-shopping-cart">
+
+              <!-- Houses Customer-------------------------------------------->
+
+              <div class="col-xs-7 container-rounded-corner colorgris">
+                <div class="">
                   <table class="table">
                     <thead>
                     <tr>
@@ -191,25 +226,42 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="product-thumbnail text-center">Cuba</td>
+                      <td class="product-thumbnail text-center">
+                      <a href="#" data-toggle="#" >
+                        <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                      </a>Cuba</td>
                       <td class="product-name">4232 av sddsd</td>
                       <td class="">Basic</td>
                       <td class="">12/25/2017</td>
                       <td class="product-qty">94232232232</td>
                       <td>
-                        <a href="#maison2" data-toggle="collapse">
-                          <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                        <a href="#" data-toggle="#" >
+                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
                         </a>
+
+                        <a href="#" data-toggle="#" >
+                          <span class="glyphicon glyphicon-plus" title="add service" ></span>
+                        </a>
+                        <a href="#" data-toggle="#" >
+                          <span class="glyphicon glyphicon-usd" title="View payments" ></span>
+                        </a>
+                        <a href="#" data-target="#" >
+                          <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                        </a>
+
                       </td>
                     </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+              <!-- End Houses Customer-------------------------------------------->
             </div>
 
-              </br></br>
+            <!-- End Row Profile Customer and Houses Customer-------------------------------------------->
 
+              </br></br>
+            <!-- Details Services customer-------------------------------------------->
               <div class="row">
                 <div class="col-xs-12">
                   <div class="panel-group" id="myAccordion">
@@ -230,7 +282,7 @@
                                   </div>
 
                                   <div id="collapse1" class="panel-collapse collapse in panel-collapse-color  ">
-                                        <div class="panel-body">Request date : 2017-01-21 <br/>
+                                        <div class="panel-body">Request date : 04/24/2017 <br/>
                                           Status : Closed
                                         </div>
 
@@ -243,19 +295,22 @@
                                           <div class="row">
                                             <div class="col-xs-2">Intervention date</div>
                                             <div class="col-xs-2">Technician</div>
-                                            <div class="col-xs-8">Comments</div>
+                                            <div class="col-xs-7">Comments</div>
+                                            <div class="col-xs-1">Amount</div>
 
                                           </div>
                                           <div class="row">
-                                            <div class="col-xs-2">23/04/2017</div>
+                                            <div class="col-xs-2">04/25/2017</div>
                                             <div class="col-xs-2">Jorge Suarez</div>
-                                            <div class="col-xs-8">asfgasd a asda asdf asdfasdfasasdfasf</div>
+                                            <div class="col-xs-7">asfgasd a asda asdf asdfasdfasasdfasf</div>
+                                            <div class="col-xs-1">US 15</div>
 
                                           </div>
                                           <div class="row">
-                                            <div class="col-xs-2">26/04/2017</div>
+                                            <div class="col-xs-2">04/26/2017</div>
                                             <div class="col-xs-2">Irina Rodriguez</div>
-                                            <div class="col-xs-8">asdfasd asdf asdf asdf sa fas</div>
+                                            <div class="col-xs-7">asdfasd asdf asdf asdf sa fas</div>
+                                            <div class="col-xs-1">US 15</div>
 
                                           </div>
                                         </div>
@@ -265,24 +320,347 @@
                 </div>
               </div>
 
-
+            <!-- End Details Services customer-------------------------------------------->
 
 
 
           </div>
+          <!-- End Panel-------------------------------------------->
         </div>
 
+        <!--End Customers-------------------------------------------->
 
-
-
-
-
+        <!--Technician-------------------------------------------->
         <div class="tab-pane" id="2a">
-          <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+          <br/>
+          <!-- Search Technician-------------------------------------------->
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="search-technician">Search</label>
+              <input type="text" class="form-control" id="search-technician" placeholder="Search">
+            </div>
+
+            <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+          </form>
+
+
+
+
+
+
+          <div class="col-xs-12 container-rounded-corner color-greywhite">
+            <div class="">
+              <table class="table">
+                <thead>
+                <tr>
+
+                  <th>Service</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th>Last Name</th>
+                  <th>Name</th>
+                  <th>Qty House</th>
+                  <th>Code Id</th>
+                  <th>
+                    <a href="#" data-toggle="modal" data-target="#addtechnicianModal" >
+                      <span class="glyphicon glyphicon-plus" title="add"></span>
+                    </a>
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                  <td class="">Plombing</td>
+                  <td class="">CUBA</td>
+                  <td class="">La Habana</td>
+                  <td class="">Ramirez</td>
+                  <td class="">Juan</td>
+                  <td class="">4</td>
+                  <td class="">CA35323</td>
+                  <td>
+                    <a href="#" data-target="#" >
+                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                    </a>
+
+                  </td>
+                </tr>
+                <tr>
+
+                  <td class="">Locksmith</td>
+                  <td class="">CUBA</td>
+                  <td class="product-qty">La Habana</td>
+                  <td class="">Ramos</td>
+                  <td class="">Hector</td>
+                  <td class="">10</td>
+                  <td class="">CA233232</td>
+                  <td>
+                    <a href="#" data-target="#" >
+                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                    </a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div><br/>
+
+
+
+
+
+          <!-- End Search Technician-------------------------------------------->
+
+          <div class="row">
+            <!-- Profile technician-------------------------------------------->
+            <div class="col-xs-4 container-rounded-corner ">
+
+              <div class="row ">
+                <div class="col-xs-8 left-align">Technicien Juan Ramirez</div>
+                <div class="col-xs-4 right-align ">
+                  <a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
+                    <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                  </a></div>
+              </div>
+              </br>
+              <div class="row">
+
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4 imgphoto "><img src="{{ asset('images/page-home/services-01.jpg') }}"  alt="Paris" ></div>
+                <div class="col-xs-4"></div>
+              </div>
+              </br>
+              <div class="row">
+                <div class="col-xs-4">Code ID</div>
+                <div class="col-xs-8">CA35323</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Last name</div>
+                <div class="col-xs-8">Ramirez</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Name</div>
+                <div class="col-xs-8">Juan</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Email</div>
+                <div class="col-xs-8">ramirez@gmail.com</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">PhonePrimary</div>
+                <div class="col-xs-8">437545443</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">PhoneAlternate</div>
+                <div class="col-xs-8">34353634</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Profesion</div>
+                <div class="col-xs-8">Engineer</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Serv. Provide</div>
+                <div class="col-xs-8">Plumbing</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Country</div>
+                <div class="col-xs-8">Canada</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">State</div>
+                <div class="col-xs-8">Quebec</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">City</div>
+                <div class="col-xs-8">Montreal</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Address</div>
+                <div class="col-xs-8">4534 av Maisonneuve</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">ZipCode</div>
+                <div class="col-xs-8">j3d 2g3</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Mon - Fri</div>
+                <div class="col-xs-8">10h - 18h</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Sat</div>
+                <div class="col-xs-8">11h - 15h</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">Sun</div>
+                <div class="col-xs-8">11h - 14h</div>
+              </div>
+
+
+            </div>
+            <!-- End Profile technician-------------------------------------------->
+
+
+
+            <div class="col-xs-1"></div>
+
+            <!-- technician services-------------------------------------------->
+
+            <div class="col-xs-7 container-rounded-corner colorgris">
+              <div class="">
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Code Service</th>
+                    <th>Code Client</th>
+                    <th>Service</th>
+                    <th>Date service</th>
+                    <th>Amount</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td class="product-name">CUBA</td>
+                    <td class="">BPS43567</td>
+                    <td class="">TF43567</td>
+                    <td class="product-qty">Plombing </td>
+                    <td class="">04/25/2017</td>
+                    <td class="">US 15 </td>
+                    <td>
+                      <a href="#" data-toggle="#" >
+                        <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                      </a>
+
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <td class="product-name">CUBA</td>
+                    <td class="">TF4378</td>
+                    <td class="">BPS43567</td>
+                    <td class="product-qty">Plombing </td>
+                    <td class="">06/25/2017</td>
+                    <td class="">US 20 </td>
+                    <td>
+                      <a href="#maison2" data-toggle="collapse">
+                        <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                      </a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- End technician services-------------------------------------------->
+          </div>
+
+          <!-- End Row technician Customer and technician services-------------------------------------------->
+
+
+
+          <!-- Details technician services-------------------------------------------->
+        </br>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-group" id="myAccordiontech">
+                <div class="panel panel-griss ">
+                  <div class="panel-heading ">
+                    <h4 class="panel-title ">
+                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsetech">JAN 21, 2017 - Plumbing - Closed
+
+
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapsetech" class="panel-collapse collapse in panel-collapse-color  ">
+                    <div class="panel-body">Request date : 24/04/2017 <br/>
+                      Status : Closed
+                    </div>
+
+                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-2">Intervention date</div>
+                        <div class="col-xs-2">Technician</div>
+                        <div class="col-xs-7">Comments</div>
+                        <div class="col-xs-1">Amount</div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-2">25/04/2017</div>
+                        <div class="col-xs-2">Juan Ramirez</div>
+                        <div class="col-xs-7">asfgasd a asda asdf asdfasdfasasdfasf</div>
+                        <div class="col-xs-1">US 15</div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-2">26/04/2017</div>
+                        <div class="col-xs-2">Irina Rodriguez</div>
+                        <div class="col-xs-7">asdfasd asdf asdf asdf sa fas</div>
+                        <div class="col-xs-1">US 15</div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- End Details technician services-------------------------------------------->
+
         </div>
+
+
+        <!--End Technician-------------------------------------------->
+
+        <!--Request-------------------------------------------->
         <div class="tab-pane" id="3a">
           <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
+
+        <!--End Request-------------------------------------------->
         <div class="tab-pane" id="4a">
           <h3>We use css to change the background color of the content to be equal to the tab</h3>
         </div>
@@ -316,12 +694,11 @@
 
 
 
-
-
-
-
-
   <!-- Modal -->
+
+  <!-- Modal Customer-->
+
+
   <div id="houseModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -714,34 +1091,37 @@
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="service-request">Request date:</label>
-            <input type="date" class="form-control" id="service-request" value="">
+            <label for="add-service-request">Request date:</label>
+            <input type="date" class="form-control" id="add-service-request" value="">
           </div>
           <div class="form-group">
-            <label for="service-service">Service:</label>
-            <input type="text" class="form-control" id="service-service" value="" >
+            <label for="add-service-service">Service:</label>
+            <input type="text" class="form-control" id="add-service-service" value="" >
           </div>
           <div class="form-group">
-            <label for="service-status">Status:</label>
-            <input type="text" class="form-control" id="service-status" value="" >
+            <label for="add-service-status">Status:</label>
+            <input type="text" class="form-control" id="add-service-status" value="" >
           </div>
           <div class="form-group">
-            <label for="service-details">Details:</label>
-            <input type="text" class="form-control" id="service-details" value="">
+            <label for="add-service-details">Details:</label>
+            <input type="text" class="form-control" id="add-service-details" value="">
           </div>
           <div class="form-group">
-            <label for="service-intervention-date1">Intervention date:</label>
-            <input type="tel" class="form-control" id="service-intervention-date1" value="" >
+            <label for="add-service-intervention-date">Intervention date:</label>
+            <input type="date" class="form-control" id="add-service-intervention-date" value="" >
           </div>
           <div class="form-group">
-            <label for="service-technician1">Technician:</label>
-            <input type="tel" class="form-control" id="service-technician1" value="" >
+            <label for="add-service-technician">Technician:</label>
+            <input type="text" class="form-control" id="add-service-technician" value="" >
           </div>
           <div class="form-group">
-            <label for="service-comments1">Comments:</label>
-            <input type="text" class="form-control" id="service-comments1" value="" >
+            <label for="add-service-comments">Comments:</label>
+            <input type="text" class="form-control" id="add-service-comments" value="" >
           </div>
-
+          <div class="form-group">
+            <label for="add-service-amount">Amount:</label>
+            <input type="number" class="form-control" id="add-service-amount" value="" >
+          </div>
 
 
 
@@ -788,40 +1168,52 @@
           </div>
           <div class="form-group">
             <label for="edit-service-intervention-date">Intervention date:</label>
-            <input type="tel" class="form-control" id="edit-service-intervention-date" value="23/04/2017" >
+            <input type="date" class="form-control" id="edit-service-intervention-date" value="23/04/2017" >
           </div>
           <div class="form-group">
             <label for="edit-service-technician">Technician:</label>
-            <input type="tel" class="form-control" id="edit-service-technician" value="Jorge Suarez" >
+            <input type="text" class="form-control" id="edit-service-technician" value="Jorge Suarez" >
           </div>
           <div class="form-group">
             <label for="edit-service-comments">Comments:</label>
             <input type="text" class="form-control" id="edit-service-comments" value="asfgasd a asda asdf asdfasdfasasdfasf" >
           </div>
+          <div class="form-group">
+            <label for="edit-service-amount">Amount:</label>
+            <input type="number" class="form-control" id="edit-service-amount" value="15" >
+          </div>
 
           <div class="form-group">
             <label for="edit-service-intervention-date2">Intervention date:</label>
-            <input type="tel" class="form-control" id="edit-service-intervention-date2" value="26/04/2017" >
+            <input type="date" class="form-control" id="edit-service-intervention-date2" value="26/04/2017" >
           </div>
           <div class="form-group">
             <label for="edit-service-technician2">Technician:</label>
-            <input type="tel" class="form-control" id="edit-service-technician2" value="Irina Rodriguez" >
+            <input type="text" class="form-control" id="edit-service-technician2" value="Irina Rodriguez" >
           </div>
           <div class="form-group">
             <label for="edit-service-comments2">Comments:</label>
             <input type="text" class="form-control" id="edit-service-comment2" value="asdfasd asdf asdf asdf sa fas" >
           </div>
           <div class="form-group">
+            <label for="edit-service-amount2">Amount:</label>
+            <input type="number" class="form-control" id="edit-service-amount2" value="15" >
+          </div>
+          <div class="form-group">
             <label for="edit-service-intervention-date3">Intervention date:</label>
-            <input type="tel" class="form-control" id="edit-service-intervention-date3" value="" >
+            <input type="date" class="form-control" id="edit-service-intervention-date3" value="" >
           </div>
           <div class="form-group">
             <label for="edit-service-technician3">Technician:</label>
-            <input type="tel" class="form-control" id="edit-service-technician3" value="" >
+            <input type="text" class="form-control" id="edit-service-technician3" value="" >
           </div>
           <div class="form-group">
             <label for="edit-service-comments3">Comments:</label>
             <input type="text" class="form-control" id="edit-service-comments3" value="" >
+          </div>
+          <div class="form-group">
+            <label for="edit-service-amount3">Amount:</label>
+            <input type="number" class="form-control" id="edit-service-amount3" value="" >
           </div>
 
 
@@ -835,6 +1227,186 @@
 
     </div>
   </div>
+
+
+  <!-- End Modal Customer-->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Modal Technician-->
+
+  <!-- add technician Modal-->
+  <div id="addtechnicianModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Technicien</h4>
+        </div>
+        <div class="modal-body"> <div class="form-group">
+            <label for="add-tech-codeid">Code ID</label>
+            <input type="text" class="form-control" id="add-tech-codeid" value="" >
+          </div>
+
+          <div class="form-group">
+            <label for="add-tech-lastname">Last Name:</label>
+            <input type="text" class="form-control" id="add-tech-lastname" value="">
+          </div>
+          <div class="form-group">
+            <label for="add-tech-lastname">Name:</label>
+            <input type="text" class="form-control" id="add-tech-lastname" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-email">Email:</label>
+            <input type="email" class="form-control" id="add-tech-email" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-phonePrimary">Phone Primary:</label>
+            <input type="tel" class="form-control" id="add-tech-phonePrimary" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-phonealternate">Phone Alternate:</label>
+            <input type="tel" class="form-control" id="add-tech-phonealternate" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-lastname">Profesion:</label>
+            <input type="text" class="form-control" id="add-tech-lastname" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-lastname">Serv. Provide:</label>
+            <input type="text" class="form-control" id="add-tech-lastname" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-country">Country:</label>
+            <input type="text" class="form-control" id="add-tech-country" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-state">State:</label>
+            <input type="text" class="form-control" id="add-tech-state" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-city">City:</label>
+            <input type="text" class="form-control" id="add-tech-city" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-address">Address:</label>
+            <input type="text" class="form-control" id="add-tech-address" value="" >
+          </div>
+          <div class="form-group">
+            <label for="add-tech-zipCode">ZipCode:</label>
+            <input type="text" class="form-control" id="add-tech-zipCode" value="" >
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- End add technician Modal-->
+
+
+
+
+
+  <!-- Edit technician Modal-->
+
+  <div id="edittechnicianModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Technician</h4>
+        </div>
+        <div class="modal-body"> <div class="form-group">
+            <label for="edit-tech-codeid">Code ID</label>
+            <input type="text" class="form-control" id="edit-tech-codeid" value="CA35323" >
+          </div>
+
+          <div class="form-group">
+            <label for="edit-tech-lastname">Last Name:</label>
+            <input type="text" class="form-control" id="edit-tech-lastname" value="Ramirez">
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-lastname">Name:</label>
+            <input type="text" class="form-control" id="edit-tech-lastname" value="Juan" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-email">Email:</label>
+            <input type="email" class="form-control" id="edit-tech-email" value="ramirez@gmail.com" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-phonePrimary">Phone Primary:</label>
+            <input type="tel" class="form-control" id="edit-tech-phonePrimary" value="437545443" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-phonealternate">Phone Alternate:</label>
+            <input type="tel" class="form-control" id="edit-tech-phonealternate" value="34353634" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-lastname">Profesion:</label>
+            <input type="text" class="form-control" id="edit-tech-lastname" value="Engineer" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-lastname">Serv. Provide:</label>
+            <input type="text" class="form-control" id="edit-tech-lastname" value="Plumbing" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-country">Country:</label>
+            <input type="text" class="form-control" id="edit-tech-country" value="Canada" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-state">State:</label>
+            <input type="text" class="form-control" id="edit-tech-state" value="Quebec" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-city">City:</label>
+            <input type="text" class="form-control" id="edit-tech-city" value="Montreal" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-address">Address:</label>
+            <input type="text" class="form-control" id="edit-tech-address" value="4534 av Maisonneuve" >
+          </div>
+          <div class="form-group">
+            <label for="edit-tech-zipCode">ZipCode:</label>
+            <input type="text" class="form-control" id="edit-tech-zipCode" value="j3d 2g3" >
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--End Edit technician Modal-->
+
+
+  <!-- End Modal Technician-->
+
+
+
 
 
 

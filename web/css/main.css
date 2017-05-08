@@ -5234,3 +5234,22 @@ ins .amount {
   background-color: #f5f5f5;
   border-color: #6d6d6d;
 }
+
+.imgphoto {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 80px;
+}
+
+.colorgris{
+  background: #DDDDDD;
+}
+
+.color-greywhite{
+  background: #d9edf7;
+}
+
+.color-yellowhite{
+  background: #FFFFEB;
+}
