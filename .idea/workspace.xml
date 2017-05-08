@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2145f7aa-501d-4968-991d-f96c77148eff" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
@@ -51,15 +52,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my-dashboard.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my-dashboard.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="192" column="72" lean-forward="true" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="72" />
+            <state relative-caret-position="200">
+              <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
               <folding>
-                <element signature="e#12183#12190#1#HTML" expanded="true" />
-                <element signature="e#15819#15826#1#HTML" expanded="true" />
-                <element signature="e#17202#17209#1#HTML" expanded="true" />
+                <element signature="e#12196#12203#1#HTML" expanded="true" />
+                <element signature="e#15832#15839#1#HTML" expanded="true" />
+                <element signature="e#17215#17222#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,18 +99,18 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="5195" column="19" lean-forward="false" selection-start-line="5195" selection-start-column="2" selection-end-line="5195" selection-end-column="19" />
+            <state relative-caret-position="8696">
+              <caret line="5227" column="25" lean-forward="true" selection-start-line="5227" selection-start-column="25" selection-end-line="5227" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2150">
-              <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="75" />
+            <state relative-caret-position="306">
+              <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
               <folding>
                 <element signature="e#3075#3104#0#Twig" expanded="true" />
                 <element signature="e#3236#3267#0#Twig" expanded="true" />
@@ -139,6 +140,7 @@
       <find>table-responsive</find>
       <find>table-shopping-cart</find>
       <find>align</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/website/home.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -311,54 +313,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="general-pro-symfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="general-pro-symfony" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="general-pro-symfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="general-pro-symfony" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -477,12 +431,12 @@
       <workItem from="1493862533162" duration="1907000" />
       <workItem from="1493944768136" duration="14955000" />
       <workItem from="1494032648940" duration="13584000" />
-      <workItem from="1494103979757" duration="21938000" />
+      <workItem from="1494103979757" duration="22641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80403000" />
+    <option name="totallyTimeSpent" value="81106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -871,10 +825,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/website/signin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8696">
+          <caret line="5227" column="25" lean-forward="true" selection-start-line="5227" selection-start-column="25" selection-end-line="5227" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding>
+            <element signature="e#12196#12203#1#HTML" expanded="true" />
+            <element signature="e#15832#15839#1#HTML" expanded="true" />
+            <element signature="e#17215#17222#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2150">
-          <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="75" />
+        <state relative-caret-position="306">
+          <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
           <folding>
             <element signature="e#3075#3104#0#Twig" expanded="true" />
             <element signature="e#3236#3267#0#Twig" expanded="true" />
@@ -886,34 +868,6 @@
             <element signature="e#5625#5653#0#Twig" expanded="true" />
             <element signature="e#5819#5851#0#Twig" expanded="true" />
             <element signature="e#5941#5971#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="5195" column="19" lean-forward="false" selection-start-line="5195" selection-start-column="2" selection-end-line="5195" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/website/signin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="192" column="72" lean-forward="true" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="72" />
-          <folding>
-            <element signature="e#12183#12190#1#HTML" expanded="true" />
-            <element signature="e#15819#15826#1#HTML" expanded="true" />
-            <element signature="e#17202#17209#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
