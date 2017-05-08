@@ -275,15 +275,14 @@
                                           <span class="glyphicon glyphicon-edit " title="add"></span>
                                         </a>
 
-
-
                                       </a>
                                     </h4>
                                   </div>
 
                                   <div id="collapse1" class="panel-collapse collapse in panel-collapse-color  ">
                                         <div class="panel-body">Request date : 04/24/2017 <br/>
-                                          Status : Closed
+                                          Status : Closed<br/>
+                                          Code Service : PL00023
                                         </div>
 
                                         <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -576,7 +575,8 @@
 
                   <div id="collapsetech" class="panel-collapse collapse in panel-collapse-color  ">
                     <div class="panel-body">Request date : 24/04/2017 <br/>
-                      Status : Closed
+                      Status : Closed </br>
+                      Code Service : PL00023
                     </div>
 
                     <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -623,47 +623,236 @@
 
         <!--Request-------------------------------------------->
         <div class="tab-pane" id="3a">
-          <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+
+          <!--Search Request-------------------------------------------->
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="initial-date">Initial Date</label>
+              <input type="date" class="form-control" id="initial-date" placeholder="Initial Date">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="final-date">Final Date</label>
+              <input type="date" class="form-control" id="final-date" placeholder="Final Date">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="client">Client</label>
+              <input type="text" class="form-control" id="client" placeholder="Client">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="service1">Service</label>
+              <input type="text" class="form-control" id="service1" placeholder="Service">
+            </div>
+
+            <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+          </form>
+
+          <!--End Search Request-------------------------------------------->
+          <!--Panel Request-------------------------------------------->
+        </br>
+          <div class="col-xs-12 container-rounded-corner color-yellowhite">
+            <div class="">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Code Id</th>
+                  <th>Code Service</th>
+                  <th>Country</th>
+                  <th>Client</th>
+                  <th>Service</th>
+                  <th>House Adresse</th>
+                  <th>Details</th>
+                  <th>
+
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                  <td class="">CAD14253</td>
+                  <td class="">PB234232</td>
+                  <td class="">CANADA</td>
+                  <td class="">Fu Antonio</td>
+                  <td class="">Plumbing</td>
+                  <td class="">Av Maisonneuve</td>
+                  <td class="">asdffdsasdasd ass</td>
+                  <th>
+                    <a href="#" data-toggle="collapse">
+                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                    </a>
+
+                  </th>
+                </tr>
+                <tr>
+
+                  <td class="">CAD24353</td>
+                  <td class="">PB2325332</td>
+                  <td class="">USA</td>
+                  <td class="">Hernandez Ronald</td>
+                  <td class="">Locksmith</td>
+                  <td class="">Av los Proceres 3454</td>
+                  <td class="">asdffdsasfdss ass</td>
+                  <th>
+                    <a href="#" data-toggle="collapse">
+                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                    </a>
+
+                  </th>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div><br/>
+          <!--End Panel Request-------------------------------------------->
+          <!--Detatails Panel Request-------------------------------------------->
+          </br>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-group" id="myAccordionreq">
+                <div class="panel panel-griss ">
+                  <div class="panel-heading ">
+                    <h4 class="panel-title ">
+                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsereq">JAN 21, 2017 - Plumbing - Closed
 
 
+                      </a>
+                    </h4>
+                  </div>
 
+                  <div id="collapsereq" class="panel-collapse collapse in panel-collapse-color">
+                    <div class="panel-body">Request date : 24/04/2017 <br/>
+                      Status : Closed </br>
+                      Code Service : PL00023
+                    </div>
 
+                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
 
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-2">Intervention date</div>
+                        <div class="col-xs-2">Technician</div>
+                        <div class="col-xs-7">Comments</div>
+                        <div class="col-xs-1">Amount</div>
 
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-2">25/04/2017</div>
+                        <div class="col-xs-2">Juan Ramirez</div>
+                        <div class="col-xs-7">asfgasd a asda asdf asdfasdfasasdfasf</div>
+                        <div class="col-xs-1">US 15</div>
 
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-2">26/04/2017</div>
+                        <div class="col-xs-2">Irina Rodriguez</div>
+                        <div class="col-xs-7">asdfasd asdf asdf asdf sa fas</div>
+                        <div class="col-xs-1">US 15</div>
 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <!--End Detatails Panel Request-------------------------------------------->
 
 
 
         </div>
 
         <!--End Request-------------------------------------------->
+        <!--Setting-------------------------------------------->
         <div class="tab-pane" id="4a">
-          <h3>We use css to change the background color of the content to be equal to the tab</h3>
+
+
+          </br>
+          <div class="col-xs-12 container-rounded-corner color-yellowhite">
+            <div class="">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>Local Number</th>
+                  <th>Basic Plan</th>
+                  <th>GP Plus</th>
+                  <th>Aditional Service</th>
+
+                  <th>
+
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                  <td class="">CANADA</td>
+                  <td class="">2452323232</td>
+                  <td class="">CAD 29.00</td>
+                  <td class="">CAD 59.00</td>
+                  <td>
+                    <a href="#" data-toggle="modal" data-target="#settingModal" >
+                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                    </a>
+
+                  </td>
+                </tr>
+                  <tr>
+
+                  <td class="">CUBA</td>
+                  <td class="">243223232</td>
+                  <td class="">US 19.00</td>
+                  <td class="">US 29.00</td>
+                  <td>
+                    <a href="#" data-toggle="collapse">
+                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                    </a>
+
+                  </td>
+                </tr>
+
+                <tr>
+
+                  <td class="">USA</td>
+                  <td class="">243233433</td>
+                  <td class="">US 29.00</td>
+                  <td class="">US 39.00</td>
+                  <td>
+                    <a href="#" data-toggle="collapse">
+                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
+                    </a>
+
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
+
+        <!--End Setting-------------------------------------------->
+
+
       </div>
     </div>
 
@@ -1404,6 +1593,61 @@
 
 
   <!-- End Modal Technician-->
+
+
+
+  <!-- Modal Setting-->
+
+
+  <div id="settingModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Addicional Services Prices</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-7">Service</div>
+            <div class="col-xs-5">Amount</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7">Lawn maintenance</div>
+            <div class="col-xs-5">CAD 19.99</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7">Nursing Care</div>
+            <div class="col-xs-5">CAD $29.99</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7">Day care</div>
+            <div class="col-xs-5">CAD $19.99</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7">Cleaning services</div>
+            <div class="col-xs-5">CAD $29.99</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7">IT support & services</div>
+            <div class="col-xs-5">CAD $19.99</div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove" title="Close"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
 
 
 

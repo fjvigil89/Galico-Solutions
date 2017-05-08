@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2145f7aa-501d-4968-991d-f96c77148eff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,19 +69,20 @@
       <file leaf-file-name="client-resume.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="494" column="46" lean-forward="false" selection-start-line="494" selection-start-column="46" selection-end-line="494" selection-end-column="46" />
+            <state relative-caret-position="35">
+              <caret line="1629" column="40" lean-forward="false" selection-start-line="1629" selection-start-column="40" selection-end-line="1629" selection-end-column="40" />
               <folding>
-                <element signature="e#25361#25368#1#HTML" expanded="true" />
-                <element signature="e#27603#27610#1#HTML" expanded="true" />
-                <element signature="e#28724#28731#1#HTML" expanded="true" />
-                <element signature="e#31477#31484#1#HTML" expanded="true" />
-                <element signature="e#34337#34344#1#HTML" expanded="true" />
-                <element signature="e#37152#37159#1#HTML" expanded="true" />
-                <element signature="e#39857#39864#1#HTML" expanded="true" />
-                <element signature="e#42140#42147#1#HTML" expanded="true" />
-                <element signature="e#46640#46647#1#HTML" expanded="true" />
-                <element signature="e#49910#49917#1#HTML" expanded="true" />
+                <element signature="e#33090#33097#1#HTML" expanded="true" />
+                <element signature="e#35332#35339#1#HTML" expanded="true" />
+                <element signature="e#36453#36460#1#HTML" expanded="true" />
+                <element signature="e#39206#39213#1#HTML" expanded="true" />
+                <element signature="e#42066#42073#1#HTML" expanded="true" />
+                <element signature="e#44881#44888#1#HTML" expanded="true" />
+                <element signature="e#47586#47593#1#HTML" expanded="true" />
+                <element signature="e#49869#49876#1#HTML" expanded="true" />
+                <element signature="e#54369#54376#1#HTML" expanded="true" />
+                <element signature="e#57639#57646#1#HTML" expanded="true" />
+                <element signature="e#61068#61075#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -504,12 +503,12 @@
       <workItem from="1493862533162" duration="1907000" />
       <workItem from="1493944768136" duration="14955000" />
       <workItem from="1494032648940" duration="13584000" />
-      <workItem from="1494103979757" duration="52935000" />
+      <workItem from="1494103979757" duration="57477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111400000" />
+    <option name="totallyTimeSpent" value="115942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -941,19 +940,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="494" column="46" lean-forward="false" selection-start-line="494" selection-start-column="46" selection-end-line="494" selection-end-column="46" />
+        <state relative-caret-position="35">
+          <caret line="1629" column="40" lean-forward="false" selection-start-line="1629" selection-start-column="40" selection-end-line="1629" selection-end-column="40" />
           <folding>
-            <element signature="e#25361#25368#1#HTML" expanded="true" />
-            <element signature="e#27603#27610#1#HTML" expanded="true" />
-            <element signature="e#28724#28731#1#HTML" expanded="true" />
-            <element signature="e#31477#31484#1#HTML" expanded="true" />
-            <element signature="e#34337#34344#1#HTML" expanded="true" />
-            <element signature="e#37152#37159#1#HTML" expanded="true" />
-            <element signature="e#39857#39864#1#HTML" expanded="true" />
-            <element signature="e#42140#42147#1#HTML" expanded="true" />
-            <element signature="e#46640#46647#1#HTML" expanded="true" />
-            <element signature="e#49910#49917#1#HTML" expanded="true" />
+            <element signature="e#33090#33097#1#HTML" expanded="true" />
+            <element signature="e#35332#35339#1#HTML" expanded="true" />
+            <element signature="e#36453#36460#1#HTML" expanded="true" />
+            <element signature="e#39206#39213#1#HTML" expanded="true" />
+            <element signature="e#42066#42073#1#HTML" expanded="true" />
+            <element signature="e#44881#44888#1#HTML" expanded="true" />
+            <element signature="e#47586#47593#1#HTML" expanded="true" />
+            <element signature="e#49869#49876#1#HTML" expanded="true" />
+            <element signature="e#54369#54376#1#HTML" expanded="true" />
+            <element signature="e#57639#57646#1#HTML" expanded="true" />
+            <element signature="e#61068#61075#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
