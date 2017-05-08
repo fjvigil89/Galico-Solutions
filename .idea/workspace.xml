@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2145f7aa-501d-4968-991d-f96c77148eff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/website/my-dashboard.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
@@ -75,15 +70,17 @@
       <file leaf-file-name="client-resume.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="135" column="80" lean-forward="false" selection-start-line="135" selection-start-column="80" selection-end-line="135" selection-end-column="80" />
+            <state relative-caret-position="20325">
+              <caret line="813" column="34" lean-forward="true" selection-start-line="813" selection-start-column="34" selection-end-line="813" selection-end-column="34" />
               <folding>
-                <element signature="e#10009#10016#1#HTML" expanded="true" />
-                <element signature="e#12251#12258#1#HTML" expanded="true" />
-                <element signature="e#13367#13374#1#HTML" expanded="true" />
-                <element signature="e#16058#16065#1#HTML" expanded="true" />
-                <element signature="e#18873#18880#1#HTML" expanded="true" />
-                <element signature="e#21578#21585#1#HTML" expanded="true" />
+                <element signature="e#12350#12357#1#HTML" expanded="true" />
+                <element signature="e#14592#14599#1#HTML" expanded="true" />
+                <element signature="e#15713#15720#1#HTML" expanded="true" />
+                <element signature="e#18466#18473#1#HTML" expanded="true" />
+                <element signature="e#21326#21333#1#HTML" expanded="true" />
+                <element signature="e#24141#24148#1#HTML" expanded="true" />
+                <element signature="e#26846#26853#1#HTML" expanded="true" />
+                <element signature="e#28877#28884#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,8 +119,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8696">
-              <caret line="5227" column="25" lean-forward="true" selection-start-line="5227" selection-start-column="25" selection-end-line="5227" selection-end-column="25" />
+            <state relative-caret-position="271">
+              <caret line="5217" column="5" lean-forward="false" selection-start-line="5217" selection-start-column="1" selection-end-line="5217" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -163,8 +160,8 @@
       <find>table-responsive</find>
       <find>table-shopping-cart</find>
       <find>align</find>
-      <find>text</find>
       <find>countr</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -234,6 +231,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="general-pro-symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="general-pro-symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="general-pro-symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="general-pro-symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="general-pro-symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,12 +500,12 @@
       <workItem from="1493862533162" duration="1907000" />
       <workItem from="1493944768136" duration="14955000" />
       <workItem from="1494032648940" duration="13584000" />
-      <workItem from="1494103979757" duration="34960000" />
+      <workItem from="1494103979757" duration="38466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93425000" />
+    <option name="totallyTimeSpent" value="96931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -855,14 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8696">
-          <caret line="5227" column="25" lean-forward="true" selection-start-line="5227" selection-start-column="25" selection-end-line="5227" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -906,17 +927,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="5217" column="5" lean-forward="false" selection-start-line="5217" selection-start-column="1" selection-end-line="5217" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/website/client-resume.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="135" column="80" lean-forward="false" selection-start-line="135" selection-start-column="80" selection-end-line="135" selection-end-column="80" />
+        <state relative-caret-position="20325">
+          <caret line="813" column="34" lean-forward="true" selection-start-line="813" selection-start-column="34" selection-end-line="813" selection-end-column="34" />
           <folding>
-            <element signature="e#10009#10016#1#HTML" expanded="true" />
-            <element signature="e#12251#12258#1#HTML" expanded="true" />
-            <element signature="e#13367#13374#1#HTML" expanded="true" />
-            <element signature="e#16058#16065#1#HTML" expanded="true" />
-            <element signature="e#18873#18880#1#HTML" expanded="true" />
-            <element signature="e#21578#21585#1#HTML" expanded="true" />
+            <element signature="e#12350#12357#1#HTML" expanded="true" />
+            <element signature="e#14592#14599#1#HTML" expanded="true" />
+            <element signature="e#15713#15720#1#HTML" expanded="true" />
+            <element signature="e#18466#18473#1#HTML" expanded="true" />
+            <element signature="e#21326#21333#1#HTML" expanded="true" />
+            <element signature="e#24141#24148#1#HTML" expanded="true" />
+            <element signature="e#26846#26853#1#HTML" expanded="true" />
+            <element signature="e#28877#28884#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
