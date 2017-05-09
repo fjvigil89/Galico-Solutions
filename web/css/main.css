@@ -5257,3 +5257,37 @@ ins .amount {
 .color-orange{
   background: #fff3e6;
 }
+
+.bg-yellow
+{
+  background-color: #FBD232;
+}
+
+.border-yellow
+{
+  border: solid 1px ;
+  border-color: #FBD232;
+}
+
+
+
+.bg-light-gray
+{
+
+  background-color: #eee;
+}
+
+.font-header{
+  font-size: 1.5em;
+}
+
+
+.top-padding{
+
+  padding-top: 5px;
+}
+
+.bot-padding{
+
+  padding-bottom: 5px;
+}

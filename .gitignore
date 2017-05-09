@@ -17,3 +17,5 @@
 /.idea/workspace.xml
 /var/cache/dev/profiler/index.csv
 /var/logs/dev.log
+.idea/
+/var/logs

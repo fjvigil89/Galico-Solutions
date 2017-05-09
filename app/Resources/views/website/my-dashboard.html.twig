@@ -10,10 +10,10 @@
         </br>
         <div class="row">
 
-            <div class="col-xs-4 container-rounded-corner ">
+            <div class="col-xs-4 border-yellow ">
 
-                <div class="row ">
-                    <div class="col-xs-8 left-align">My Profile</div>
+                <div class="row bg-yellow ">
+                    <div class="col-xs-8 left-align font-header top-padding">My Profile</div>
                     <div class="col-xs-4 right-align ">
                         <a href="#maison3" data-toggle="modal" data-target="#editModal" >
                             <span class="glyphicon glyphicon-edit" title="Edit" ></span>
@@ -75,10 +75,17 @@
 
             </div>
             <div class="col-xs-1"></div>
-            <div class="col-xs-7 container-rounded-corner color-blue">
+            <div class="col-xs-7 border-yellow no-padding">
                 <div class="">
                     <table class="table">
-                        <thead>
+
+                        <thead class="bg-yellow font-header">
+                        <tr>
+                            <th colspan="6">Houses</th>
+
+                        </tr>
+                        </thead>
+                        <thead class="bg-light-gray">
                         <tr>
                             <th>Country</th>
                             <th>Address</th>
@@ -433,6 +440,12 @@
 
         </div>
     </div>
+
+
+
+
+
+
 
 {% endblock %}
 {% block javascripts %}
