@@ -1,0 +1,96 @@
+.full-width
+{
+	width:100%;
+}
+
+.no-padding
+{
+	padding:0px;
+}
+
+.no-margin
+{
+	margin:0px;
+}
+
+.text-center
+{
+	text-align:center;
+}
+
+.text-right
+{
+	text-align:right;
+}
+
+.text-valign-middle
+{
+	vertical-align:middle;
+}
+.text-valign-bottom
+{
+	vertical-align:text-bottom;
+}
+
+.text-bold
+{
+	font-weight:bold;
+}
+
+.text-ucase
+{
+	text-transform: uppercase;
+}
+.text-lcase
+{
+	text-transform: lowercase;
+}
+
+.text-capitalize
+{
+	text-decoration: capitalize;
+}
+
+.text-overline
+{
+	text-decoration: overline;
+}
+
+
+
+.text-underline
+{
+	text-decoration: underline;
+}
+
+.text-line-through
+{
+	text-decoration: line-through;
+}
+
+.spacer-small
+{
+	height:5px;
+}
+
+.spacer-medium
+{
+	height:10px;
+}
+
+.spacer-large
+{
+	height:35px;
+}
+.spacer-xlarge
+{
+	height:70px;
+}
+
+.container-center
+{
+    margin: 0 auto; 
+}
+
+
+

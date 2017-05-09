@@ -15,6 +15,7 @@
 /vendor/
 /web/bundles/
 /.idea/workspace.xml
+/.idea
 /var/cache/dev/profiler/index.csv
 /var/logs/dev.log
 .idea/
