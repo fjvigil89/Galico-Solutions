@@ -5,60 +5,60 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Services
+ * Countries
  *
- * @ORM\Table(name="services")
+ * @ORM\Table(name="countries")
  * @ORM\Entity
  */
-class Services
+class Countries
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="ServiceName", type="string", length=50, nullable=false)
+     * @ORM\Column(name="Country", type="string", length=50, nullable=false)
      */
-    private $servicename;
+    private $country;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=true)
+     * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=false)
      */
     private $price;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="ServiceID", type="integer")
+     * @ORM\Column(name="CountryID", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $serviceid;
+    private $countryid;
 
 
 
     /**
-     * Set servicename
+     * Set country
      *
-     * @param string $servicename
+     * @param string $country
      *
-     * @return Services
+     * @return Countries
      */
-    public function setServicename($servicename)
+    public function setCountry($country)
     {
-        $this->servicename = $servicename;
+        $this->country = $country;
     
         return $this;
     }
 
     /**
-     * Get servicename
+     * Get country
      *
      * @return string
      */
-    public function getServicename()
+    public function getCountry()
     {
-        return $this->servicename;
+        return $this->country;
     }
 
     /**
@@ -66,7 +66,7 @@ class Services
      *
      * @param string $price
      *
-     * @return Services
+     * @return Countries
      */
     public function setPrice($price)
     {
@@ -86,12 +86,12 @@ class Services
     }
 
     /**
-     * Get serviceid
+     * Get countryid
      *
      * @return integer
      */
-    public function getServiceid()
+    public function getCountryid()
     {
-        return $this->serviceid;
+        return $this->countryid;
     }
 }

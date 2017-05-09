@@ -22,16 +22,6 @@ class Planservices
     private $planserviceid;
 
     /**
-     * @var \AppBundle\Entity\Plans
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plans")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="PlanID", referencedColumnName="PlanID")
-     * })
-     */
-    private $planid;
-
-    /**
      * @var \AppBundle\Entity\Services
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Services")
@@ -40,6 +30,16 @@ class Planservices
      * })
      */
     private $serviceid;
+
+    /**
+     * @var \AppBundle\Entity\Plans
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plans")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="PlanID", referencedColumnName="PlanID")
+     * })
+     */
+    private $planid;
 
 
 }
