@@ -7,18 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Localnumbers
  *
- * @ORM\Table(name="localnumbers")
+ * @ORM\Table(name="localnumbers", indexes={@ORM\Index(name="CountryID", columns={"CountryID"})})
  * @ORM\Entity
  */
 class Localnumbers
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="country", type="string", length=100, nullable=false)
-     */
-    private $country;
-
     /**
      * @var string
      *
@@ -42,31 +35,17 @@ class Localnumbers
      */
     private $localnumberid;
 
-
-
     /**
-     * Set country
+     * @var \AppBundle\Entity\Countries
      *
-     * @param string $country
-     *
-     * @return Localnumbers
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Countries")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="CountryID", referencedColumnName="CountryID")
+     * })
      */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-    
-        return $this;
-    }
+    private $countryid;
 
-    /**
-     * Get country
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
+
 
     /**
      * Set city
@@ -124,5 +103,29 @@ class Localnumbers
     public function getLocalnumberid()
     {
         return $this->localnumberid;
+    }
+
+    /**
+     * Set countryid
+     *
+     * @param \AppBundle\Entity\Countries $countryid
+     *
+     * @return Localnumbers
+     */
+    public function setCountryid(\AppBundle\Entity\Countries $countryid = null)
+    {
+        $this->countryid = $countryid;
+    
+        return $this;
+    }
+
+    /**
+     * Get countryid
+     *
+     * @return \AppBundle\Entity\Countries
+     */
+    public function getCountryid()
+    {
+        return $this->countryid;
     }
 }
