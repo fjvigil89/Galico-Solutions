@@ -5241,7 +5241,10 @@ ins .amount {
   padding: 5px;
   width: 80px;
 }
-
+.container-img img
+{
+  width:100%;
+}
 .colorgris{
   background: #DDDDDD;
 }
@@ -5256,4 +5259,49 @@ ins .amount {
 
 .color-orange{
   background: #fff3e6;
+}
+
+.bg-yellow
+{
+  background-color: #FBD232;
+}
+
+.border-yellow
+{
+  border: solid 1px ;
+  border-color: #FBD232;
+}
+
+
+
+.bg-light-gray
+{
+
+  background-color: #eee;
+}
+
+.font-header{
+  font-size: 1.2em;
+}
+
+
+.top-padding{
+
+  padding-top: 5px;
+}
+
+.bot-padding{
+
+  padding-bottom: 15px;
+}
+.color-black{
+
+  color: black;
+}
+
+#tbl-profile td
+{
+  border-top: 1px solid #FFFFFF;
+  /*font-size:1.18vw;*/
+  line-height: 1.1;
 }

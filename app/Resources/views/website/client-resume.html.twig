@@ -44,10 +44,16 @@
 
 
 
-          <div class="col-xs-12 container-rounded-corner color-orange">
-            <div class="">
-              <table class="table">
-                <thead>
+          <div class="col-xs-12 border-yellow no-padding">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="bg-yellow font-header">
+                <tr>
+                  <th colspan="6">Customer information</th>
+
+                </tr>
+                </thead>
+                <thead class="bg-light-gray">
                 <tr>
                   <th>Code Id</th>
                   <th>Country</th>
@@ -104,72 +110,99 @@
             <!-- Row Profile Customer and Houses Customer-------------------------------------------->
             <div class="row">
               <!-- Profile Customer-------------------------------------------->
-              <div class="col-xs-4 container-rounded-corner ">
+              <div class="col-xs-4 border-yellow no-padding">
 
-                <div class="row ">
-                  <div class="col-xs-8 left-align">Antonio Fu</div>
-                  <div class="col-xs-4 right-align ">
-                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                      <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                    </a></div>
-                </div>
-                </br>
-                <div class="row">
 
-                  <div class="col-xs-4"></div>
-                  <div class="col-xs-4 imgphoto "><img src="{{ asset('images/page-home/services-05.jpg') }}"  alt="profile" ></div>
-                  <div class="col-xs-4"></div>
-                </div>
-                </br>
 
-                <div class="row">
-                  <div class="col-xs-4">ID</div>
-                  <div class="col-xs-8">CAD14253</div>
+
+
+                <div class="table-responsive ">
+                  <table class="table" id="tbl-profile">
+                    <thead class="bg-yellow font-header">
+                    <tr>
+                      <th colspan="2">Jhon Rosales
+
+                      </th>
+                      <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                        </a></th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                      <td colspan="3" class="text-center container-img">
+                        <img src="{{ asset('images/page-home/services-05.jpg') }}"  alt="profile" >
+
+                        </td>
+
+                    </tr>
+
+                    <tr style="border: none">
+                      <td>ID</td>
+                      <td >CANADA</td>
+                    </tr>
+                    <tr>
+                      <td class="">Last name</td>
+                      <td class="">Fu</td>
+                    </tr>
+                    <tr>
+                      <td class="">First name</td>
+                      <td class="">Antonio</td>
+                    </tr>
+                    <tr>
+                      <td class="">Email</td>
+                      <td class="">antofuchong@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td class="">Password</td>
+                      <td class="">*****</td>
+                    </tr>
+                    <tr>
+                      <td class="">PhonePrimary</td>
+                      <td class="">437545443</td>
+                    </tr>
+                    <tr>
+                      <td class="">PhoneAlternate</td>
+                      <td class="">34353634</td>
+                    </tr>
+                    <tr>
+                      <td class="">Country</td>
+                      <td class="">Canada</td>
+                    </tr>
+                    <tr>
+                      <td class="">State</td>
+                      <td class="">Quebec</td>
+                    </tr>
+                    <tr>
+                      <td class="">City</td>
+                      <td class="">Montreal</td>
+                    </tr>
+                    <tr>
+                      <td class="">Country</td>
+                      <td class="">Canada</td>
+                    </tr>
+                    <tr>
+                      <td class="">Address</td>
+                      <td class="">4534 av Maisonneuve</td>
+                    </tr>
+                    <tr>
+                      <td class="">ZipCode</td>
+                      <td class="">j3d 2g3</td>
+                    </tr>
+
+                    </tbody>
+                  </table>
                 </div>
-                <div class="row">
-                  <div class="col-xs-4">Last name</div>
-                  <div class="col-xs-8">Fu</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">Name</div>
-                  <div class="col-xs-8">Antonio</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">Email</div>
-                  <div class="col-xs-8">antofuchong@gmail.com</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">Password</div>
-                  <div class="col-xs-8">*****</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">PhonePrimary</div>
-                  <div class="col-xs-8">437545443</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">PhoneAlternate</div>
-                  <div class="col-xs-8">34353634</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">Country</div>
-                  <div class="col-xs-8">Canada</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">State</div>
-                  <div class="col-xs-8">Quebec</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">City</div>
-                  <div class="col-xs-8">Montreal</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">Address</div>
-                  <div class="col-xs-8">4534 av Maisonneuve</div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-4">ZipCode</div>
-                  <div class="col-xs-8">j3d 2g3</div>
-                </div>
+
+
+
+
+
+
+
 
 
               </div>
@@ -181,10 +214,17 @@
 
               <!-- Houses Customer-------------------------------------------->
 
-              <div class="col-xs-7 container-rounded-corner color-blue">
-                <div class="">
-                  <table class="table">
-                    <thead>
+              <div class="col-xs-7 border-yellow no-padding">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+
+                    <thead class="bg-yellow font-header">
+                    <tr>
+                      <th colspan="6">House information</th>
+
+                    </tr>
+                    </thead>
+                    <thead class="bg-light-gray">
                     <tr>
                       <th>Country</th>
                       <th>Address</th>
@@ -197,6 +237,7 @@
                         </a>
                       </th>
                     </tr>
+
                     </thead>
                     <tbody>
                     <tr>
@@ -263,10 +304,10 @@
               </br></br>
             <!-- Details Services customer-------------------------------------------->
               <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 no-padding">
                   <div class="panel-group" id="myAccordion">
-                    <div class="panel panel-griss ">
-                                  <div class="panel-heading ">
+                    <div class="panel border-yellow ">
+                                  <div class="panel-heading bg-yellow ">
                                     <h4 class="panel-title ">
                                       <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse1">JAN 21, 2017 - Plumbing - Closed
 
@@ -279,7 +320,7 @@
                                     </h4>
                                   </div>
 
-                                  <div id="collapse1" class="panel-collapse collapse in panel-collapse-color  ">
+                                  <div id="collapse1" class="panel-collapse collapse in  ">
                                         <div class="panel-body">Request date : 04/24/2017 <br/>
                                           Status : Closed<br/>
                                           Code Service : PL00023
@@ -290,29 +331,55 @@
                                           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                         </div>
 
-                                        <div class="panel-body">
-                                          <div class="row">
-                                            <div class="col-xs-2">Intervention date</div>
-                                            <div class="col-xs-2">Technician</div>
-                                            <div class="col-xs-7">Comments</div>
-                                            <div class="col-xs-1">Amount</div>
+                                    <div class="col-xs-12 no-padding">
+                                      <div class="table-responsive">
+                                        <table class="table table-hover">
 
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-xs-2">04/25/2017</div>
-                                            <div class="col-xs-2">Jorge Suarez</div>
-                                            <div class="col-xs-7">asfgasd a asda asdf asdfasdfasasdfasf</div>
-                                            <div class="col-xs-1">US 15</div>
+                                          <thead class="bg-light-gray">
+                                          <tr>
+                                            <th>Intervention date</th>
+                                            <th>Technician</th>
+                                            <th>Comments</th>
+                                            <th>Amount</th>
 
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-xs-2">04/26/2017</div>
-                                            <div class="col-xs-2">Irina Rodriguez</div>
-                                            <div class="col-xs-7">asdfasd asdf asdf asdf sa fas</div>
-                                            <div class="col-xs-1">US 15</div>
 
-                                          </div>
-                                        </div>
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+
+                                            <td class="">04/25/2017</td>
+                                            <td class="">Jorge Suarez</td>
+                                            <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
+                                            <td class="">US 15</td>
+
+
+                                          </tr>
+                                          <tr>
+
+                                            <td class="">04/26/2017</td>
+                                            <td class="">Irina Rodriguez</td>
+                                            <td class="">asdfasd asdf asdf asdf sa fas</td>
+                                            <td class="">US 15</td>
+
+
+                                          </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
                                   </div>
                     </div>
                   </div>
@@ -320,6 +387,40 @@
               </div>
 
             <!-- End Details Services customer-------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -347,7 +448,7 @@
 
 
 
-          <div class="col-xs-12 container-rounded-corner color-blue">
+          <div class="col-xs-12 border-yellow">
             <div class="">
               <table class="table">
                 <thead>
@@ -1644,7 +1745,6 @@
 
     </div>
   </div>
-
 
 
 
