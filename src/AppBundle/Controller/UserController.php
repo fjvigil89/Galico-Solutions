@@ -18,17 +18,9 @@ use Symfony\Component\HttpFoundation\Request;
 class UserController extends Controller
 {
     /**
-     * @Route("/my-profile")
+     * @Route("/authentication")
      */
-    public function showMyProfileAction()
-    {
-        return $this->render('website/my-profile.html.twig');
-    }
-
-    /**
-     * @Route("/my-dashboard")
-     */
-    public function showMyDashboardAction(Request $request)
+    public function authenticateAction(Request $request)
     {
         $data = $request->request->all();
         $email = $data['email'];
@@ -46,7 +38,13 @@ class UserController extends Controller
             $error =  "Login failed : email or password is invalid";
             return $this->redirectToRoute('app_pagenavigation_showsignin',array('error' => $error));
         }
+    }
 
+    /**
+     * @Route("/my-dashboard")
+     */
+    public function showMyDashboardAction()
+    {
         return $this->render('website/my-dashboard.html.twig');
     }
 

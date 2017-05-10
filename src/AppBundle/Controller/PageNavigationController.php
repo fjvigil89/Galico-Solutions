@@ -9,6 +9,8 @@
 namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\Loader\ArrayLoader;
 
 
 class PageNavigationController extends Controller
@@ -16,9 +18,9 @@ class PageNavigationController extends Controller
     /**
      * @Route("/")
      */
-    public function showHomeAction()
+    public function showHomeAction(Request $request)
     {
-        return $this->render('website/home.html.twig');
+       return $this->render('website/home.html.twig');
     }
 
     /**
