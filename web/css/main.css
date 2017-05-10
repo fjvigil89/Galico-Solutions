@@ -5241,7 +5241,10 @@ ins .amount {
   padding: 5px;
   width: 80px;
 }
-
+.container-img img
+{
+  width:100%;
+}
 .colorgris{
   background: #DDDDDD;
 }
@@ -5296,3 +5299,9 @@ ins .amount {
   color: black;
 }
 
+#tbl-profile td
+{
+  border-top: 1px solid #FFFFFF;
+  /*font-size:1.18vw;*/
+  line-height: 1.1;
+}
