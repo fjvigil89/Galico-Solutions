@@ -18,7 +18,7 @@ class PageNavigationController extends Controller
     /**
      * @Route("/")
      */
-    public function showHomeAction(Request $request)
+    public function showHomeAction()
     {
        return $this->render('website/home.html.twig');
     }
