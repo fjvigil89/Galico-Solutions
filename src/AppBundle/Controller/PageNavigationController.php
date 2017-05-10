@@ -11,6 +11,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\Loader\ArrayLoader;
+use Symfony\Component\HttpFoundation\Request;
+
+
+
 
 
 class PageNavigationController extends Controller
@@ -18,9 +22,13 @@ class PageNavigationController extends Controller
     /**
      * @Route("/")
      */
-    public function showHomeAction()
+    public function showHomeAction(Request $request)
     {
-       return $this->render('website/home.html.twig');
+       //var_dump($request); ["REQUEST_URI"]
+        $request->setLocale('es');
+        $translated = $this->get('translator')->trans('Home');
+        echo "$translated<br>";
+        return $this->render('website/home.html.twig');
     }
 
     /**
@@ -69,5 +77,16 @@ class PageNavigationController extends Controller
     public function showRegisterAction()
     {
         return $this->render('website/register.html.twig');
+    }
+
+    /**
+     * @Route("/translate/{lang}")
+     */
+    public function translateAction($lang)
+    {
+        $translated = $this->get('translator')->trans('Symfony is great');
+
+        $_SESSION['lang'] = $lang;
+
     }
 }

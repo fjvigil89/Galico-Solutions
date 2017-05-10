@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row row-sm-center">
 
-                <div class="col-sm-5 col-md-6 hidden-xs-down">
+                <!--<div class="col-sm-5 col-md-6 hidden-xs-down">
                     <div class="social-menu text-xs-center text-sm-left">
                         <ul class="menu">
                             <li class="menu-item"><a href="https://www.facebook.com/">facebook</a></li>
@@ -60,6 +60,22 @@
                             <li class="menu-item"><a href="https://www.twitter.com/">twitter</a></li>
                             <li class="menu-item"><a href="https://www.youtube.com/">youtube</a></li>
                         </ul>
+                    </div>
+                    <!-- /.social-menu
+                </div>-->
+                <div class="col-sm-5 col-md-6 hidden-xs-down">
+                    <div class="text-xs-center text-sm-left">
+                       <ul class="menu">
+                           <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}"><a href="/translate/en"><img src="{{ asset('images/flag-en.png') }}" alt="English" title="English"></a></a></li>
+
+                           <li class="menu-item">
+                                <a href="/translate/es"><img src="{{ asset('images/flag-es.png') }}" alt="Espa&ntilde;ol" title="Espa&ntilde;ol"></a>
+
+                            </li>
+                            <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
+                        </ul>
+
+
                     </div>
                     <!-- /.social-menu -->
                 </div>
@@ -191,7 +207,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-about">
-                        <p><a href="#"><img src="images/page-home/logo-alt.png" alt="renovation-logo"></a></p>
+                        <p><a href="#"><img src="{{ asset('images/page-home/logo-alt.png') }}" alt="renovation-logo"></a></p>
                         <p>Our mission is to provide the best handyman service at an reasonable price without sacrificing quality. You will be satisfied with our work knowing we take the necessary steps to meet your needs and get the job done right</p>
                     </div>
                 </div>
