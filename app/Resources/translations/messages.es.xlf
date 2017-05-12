@@ -2,6 +2,22 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
+
+<!--Base-->
+
+    <!--head menu-->
+            <trans-unit id="menu_signin">
+                 <source>Sign in</source>
+                 <target>Iniciar sesión</target>
+            </trans-unit>
+            <trans-unit id="menu_registre">
+                   <source>Register</source>
+                   <target>Registrarse</target>
+             </trans-unit>
+
+
+    <!--End Head menu-->
+    <!--menu-->
             <trans-unit id="menu_home">
                 <source>Home</source>
                 <target>Inicio</target>
@@ -10,9 +26,83 @@
                 <source>Services</source>
                 <target>Servicios</target>
             </trans-unit>
+             <trans-unit id="menu_plans">
+                <source>Plans</source>
+                <target>Planes</target>
+            </trans-unit>
+            <trans-unit id="menu_contactus">
+                 <source>Contact us</source>
+                 <target>Contáctenos</target>
+             </trans-unit>
+              <trans-unit id="menu_aboutus">
+                <source>About us</source>
+                 <target>Quienes somos</target>
+              </trans-unit>
+
+    <!--End menu-->
+
+    <!--footer-->
+
+               <trans-unit id="menu_information">
+                 <source>infomation</source>
+                 <target>Información</target>
+              </trans-unit>
+               <trans-unit id="menu_allrightreserved">
+                 <source>All rights reserved.</source>
+                 <target>Todos los derechos reservados.</target>
+              </trans-unit>
+               <trans-unit id="menu_copyright">
+                 <source>Copyright</source>
+                 <target>Derecho de autor</target>
+              </trans-unit>
+
+
+    <!--End footer-->
+
+
+<!--End Base-->
+
+
+<!--Home-->
+
+               <trans-unit id="home_ourservice">
+                 <source>Our Services</source>
+                 <target>Nuestros Servicios</target>
+              </trans-unit>
+               <trans-unit id="home_ourservicephrase">
+                 <source>We offer a wide range of services. Leave the building to the professionals.</source>
+                 <target>Ofrecemos una alta gama de servicios. Deje que los profesionales realicen su trabajo.</target>
+              </trans-unit>
 
 
 
+               <trans-unit id="home_plumbing">
+                 <source>Plumbing</source>
+                 <target>Plomeria</target>
+              </trans-unit>
+               <trans-unit id="home_electricity">
+                 <source>Electricity</source>
+                 <target>Electricidad</target>
+              </trans-unit>
+               <trans-unit id="home_doors_windows">
+                 <source>Doors and Windows</source>
+                 <target>Puertas y Ventanas</target>
+              </trans-unit>
+               <trans-unit id="home_locksmith">
+                 <source>Locksmith</source>
+                 <target>Cerrajeria</target>
+              </trans-unit>
+               <trans-unit id="home_appliances">
+                 <source>Appliances</source>
+                 <target>Electrodomésticos</target>
+              </trans-unit>
+               <trans-unit id="home_additional_services">
+                 <source>Additional services</source>
+                 <target>Servicios adicionales</target>
+              </trans-unit>
+
+
+<!--End Home-->
         </body>
     </file>
 </xliff>

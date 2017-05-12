@@ -84,9 +84,9 @@
                     <div class="site-top-right text-xs-center text-sm-right">
                         <nav id="top-right-menu">
                             <ul class="menu">
-                                <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">Sign in</a></li>
+                                <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
                                 <li class="menu-item">
-                                    <a href="{{ url('app_pagenavigation_showregister') }}">Register</a>
+                                    <a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}Register{% endtrans %}</a>
 
                                 </li>
                                 <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -142,10 +142,10 @@
                             <a href="/">{% trans %}Home{% endtrans %}</a></li>
 
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">Plans</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{% trans %}Plans{% endtrans %}</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">Contact us</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">About us</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{% trans %}Contact us{% endtrans %}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
 
                     </ul>
                 </div>
@@ -213,16 +213,16 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-infomation">
-                        <h3 class="widget-tittle">infomation</h3>
+                        <h3 class="widget-tittle">{% trans %}infomation{% endtrans %}</h3>
                         <ul class="menu-infomation">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Extras</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Infomation</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">{% trans %}Home{% endtrans %}</a></li>
+                            <li><a href="#">{% trans %}Services{% endtrans %}</a></li>
+                            <li><a href="#">{% trans %}Plans{% endtrans %}</a></li>
+                            <li><a href="contact.html">{% trans %}Contact us{% endtrans %}</a></li>
+                            <li><a href="#">{% trans %}About us{% endtrans %}</a></li>
+                            <li><a href="#">{% trans %}Sign in{% endtrans %}</a></li>
+                            <li><a href="#">{% trans %}Register{% endtrans %}</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -244,7 +244,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    Copyright &copy; General Pro 2017. All rights reserved.
+                    {% trans %}Copyright{% endtrans %} &copy; General Pro 2017. {% trans %}All rights reserved.{% endtrans %}
                 </div>
             </div>
         </div>
