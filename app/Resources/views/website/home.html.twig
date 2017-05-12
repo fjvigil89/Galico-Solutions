@@ -30,7 +30,7 @@
                          data-elementdelay="0.1"
                          data-end="9000"
 
-                         style="z-index: 5; white-space: nowrap; color: rgba(255, 255, 255, 1.00);">We Can Do Anything!
+                         style="z-index: 5; white-space: nowrap; color: rgba(255, 255, 255, 1.00);">Let's get the job done!
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -52,7 +52,7 @@
 
                          data-end="9000"
 
-                         style="z-index: 6; white-space: nowrap; color: rgba(255, 255, 255, 1.00); font-size: 18px;">Our handymen are certified and highly experienced professionals.
+                         style="z-index: 6; white-space: nowrap; color: rgba(255, 255, 255, 1.00); font-size: 18px;">Yes we can do it.
                     </div>
 
                     <!-- LAYER NR. 6 -->
@@ -375,24 +375,28 @@
             <div class="container">
                 <div class="row">
 
+
+
+
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-01.jpg') }}" alt="service-renovation">
+                                <img src="{{ asset('images/page-home/services-04.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#locksmith">
-                                <div class="service-item_icon"><i class="rn-renovation"></i></div>
-                                Locksmith
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#plumbing">
+                                <div class="service-item_icon"><i class="rn-plumbing"></i></div>
+                                plumbing
                             </a>
                         </div>
                     </div>
+
 
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
                                 <img src="{{ asset('images/page-home/services-02.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#electricity">
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#electricity">
                                 <div class="service-item_icon"><i class="rn-electrical"></i></div>
                                 electricity
                             </a>
@@ -404,7 +408,7 @@
                             <div class="service-item_img">
                                 <img src="{{ asset('images/page-home/services-03.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#service-windows-and-doors">
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#service-windows-and-doors">
                                 <div class="service-item_icon"><i class="rn-home"></i></div>
                                 Doors and Windows
                             </a>
@@ -414,23 +418,24 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-04.jpg') }}" alt="service-renovation">
+                                <img src="{{ asset('images/page-home/services-01.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#plumbing">
-                                <div class="service-item_icon"><i class="rn-plumbing"></i></div>
-                                plumbing
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#locksmith">
+                                <div class="service-item_icon"><i class="rn-renovation"></i></div>
+                                Locksmith
                             </a>
                         </div>
                     </div>
+
 
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
                                 <img src="{{ asset('images/page-home/services-05.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#appliances">
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#appliances">
                                 <div class="service-item_icon"><i class="rn-heating"></i></div>
-                                GP PLus
+                                Appliance
                             </a>
                         </div>
                     </div>
@@ -438,9 +443,9 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-06.jpg') }}" alt="service-renovation">
+                                <img src="{{ asset('images/page-home/services-12.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="/services#additional-services">
+                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#additional-services">
                                 <div class="service-item_icon"><i class="rn-painting"></i></div>
                                 Additional services
                             </a>
@@ -472,7 +477,7 @@
                             <i class="pe-7s-tools"></i>
                         </div>
                         <h3 class="feature-item_title">
-                            Basic Plan
+                            GP Basic
                         </h3>
                         <p class="feature-item_description">
                             Includes basic services such as locksmith, plumbing, electricity and windows & doors.
@@ -500,11 +505,11 @@
                             <i class="pe-7s-cash"></i>
                         </div>
                         <h3 class="feature-item_title">
-                            Additional services
+                            GP Add
                         </h3>
                         <p class="feature-item_description">
 
-                            Additional services at your disposal such as gardening, nursing, child care,IT support & services and house cleaning
+                            Additional services at your disposal such as gardening, nursing, child care,IT support & services, painting services and house cleaning
                         </p>
                     </div>
                 </div>
@@ -518,9 +523,9 @@
                     <thead>
                     <tr>
                         <th>&nbsp;</th>
-                        <th>BASIC PLAN</th>
-                        <th>GP PLUS</th>
-                        <th>ADDITIONAL SERVICES</th>
+                        <th class="text-center">GP BASIC</th>
+                        <th class="text-center">GP PLUS</th>
+                        <th class="text-center">GP ADD</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -532,7 +537,9 @@
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">Electricity</td>
@@ -542,7 +549,9 @@
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">Doors and Windows</td>
@@ -552,7 +561,9 @@
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">Plumbing</td>
@@ -562,61 +573,91 @@
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">Appliances</td>
-                        <td class="colorplan"></td>
+                        <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">AC/Heating</td>
-                        <td class="colorplan"></td>
+                        <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                         <td class="active text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
-                        <td class="colorplan"></td>
+                        <td class="color-yellowhite text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="active">Nursing Care</td>
-                        <td class="colorplan"></td>
-                        <td class="active"></td>
                         <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="active text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="color-yellowhite text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="active">Day Care</td>
-                        <td class="colorplan"></td>
-                        <td class="active"></td>
                         <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="active text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="color-yellowhite text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="active">Lawn maintenance</td>
-                        <td class="colorplan"></td>
-                        <td class="active"></td>
                         <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="active text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="color-yellowhite text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="active">Cleaning services</td>
-                        <td class="colorplan"></td>
-                        <td class="active"></td>
                         <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="active text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="color-yellowhite text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="active">IT support & services</td>
-                        <td class="colorplan"></td>
-                        <td class="active"></td>
                         <td class="colorplan text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="active text-center">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </td>
+                        <td class="color-yellowhite text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
                     </tr>
@@ -646,7 +687,7 @@
                         <div class="entry-meta">
               <span class="posted-on">
                 <i class="fa fa-clock-o"></i>
-                <a href="#">Select your plan</a>
+                <a href="{{ url('app_pagenavigation_showregister') }}">Select your plan</a>
               </span>
 
                         </div>
@@ -665,7 +706,7 @@
                         <div class="entry-meta">
         <span class="posted-on">
           <i class="fa fa-clock-o"></i>
-          <a href="#">Provide information</a>
+          <a href="{{ url('app_pagenavigation_showregister') }}">Provide information</a>
         </span>
 
                         </div>
@@ -684,14 +725,14 @@
                         <div class="entry-meta">
         <span class="posted-on">
           <i class="fa fa-clock-o"></i>
-          <a href="#">Pay and enrolled</a>
+          <a href="{{ url('app_pagenavigation_showregister') }}">Submit and enrolled</a>
         </span>
 
                         </div>
                     </div>
                     <div class="entry-header">
                         <h2 class="entry-title">
-                            <a href="blog-single.html">Pay and enrolled</a>
+                            <a href="blog-single.html">Submit and enrolled</a>
                         </h2>
                     </div>
                 </div>
