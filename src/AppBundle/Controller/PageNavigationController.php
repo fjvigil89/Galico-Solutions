@@ -25,10 +25,12 @@ class PageNavigationController extends Controller
     public function showHomeAction(Request $request)
     {
        //var_dump($request); ["REQUEST_URI"]
-        $request->setLocale('es');
+
         $translated = $this->get('translator')->trans('Home');
-        echo "$translated<br>";
-        return $this->render('website/home.html.twig');
+        //die($request->getLocale());
+        return $this->render('website/home.html.twig',array(
+            'lang' => $request->getLocale()
+        ));
     }
 
     /**
@@ -82,11 +84,12 @@ class PageNavigationController extends Controller
     /**
      * @Route("/translate/{lang}")
      */
-    public function translateAction($lang)
+    public function translateAction($lang, Request $request)
     {
-        $translated = $this->get('translator')->trans('Symfony is great');
+        $request->setLocale('es');
 
         $_SESSION['lang'] = $lang;
+        die($request->getLocale());
 
     }
 }

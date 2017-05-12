@@ -1,12 +1,18 @@
-<!-- messages.es.xlf -->
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="symfony_is_great">
+            <trans-unit id="menu_home">
                 <source>Home</source>
                 <target>Inicio</target>
             </trans-unit>
+            <trans-unit id="menu_services">
+                <source>Services</source>
+                <target>Servicios</target>
+            </trans-unit>
+
+
+
         </body>
     </file>
 </xliff>
