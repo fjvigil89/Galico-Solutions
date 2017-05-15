@@ -73,9 +73,6 @@
                  <source>We offer a wide range of services. Leave the building to the professionals.</source>
                  <target>Ofrecemos una alta gama de servicios. Deje que los profesionales realicen su trabajo.</target>
               </trans-unit>
-
-
-
                <trans-unit id="home_plumbing">
                  <source>Plumbing</source>
                  <target>Plomeria</target>
@@ -101,6 +98,68 @@
                  <target>Servicios adicionales</target>
               </trans-unit>
 
+
+               <trans-unit id="aC_heating">
+                 <source>AC/Heating</source>
+                 <target>AC/Calefaccion</target>
+              </trans-unit>
+               <trans-unit id="cursing_care">
+                 <source>Nursing Care</source>
+                 <target>Cuidado personas adultas</target>
+              </trans-unit>
+               <trans-unit id="day_Care">
+                 <source>Day Care</source>
+                 <target>Cuidado de niños</target>
+              </trans-unit>
+                <trans-unit id="lawn_maintenance">
+                 <source>Lawn maintenance</source>
+                 <target>Mantenimiento Jardines</target>
+              </trans-unit>
+               <trans-unit id="cleaning_services">
+                 <source>Cleaning services</source>
+                 <target>Servicios de limpieza</target>
+              </trans-unit>
+               <trans-unit id="it_support_services">
+                <source>IT support and services</source>
+                 <target>Servicio y soporte informatico</target>
+                 </trans-unit>
+               <trans-unit id="painting_services">
+                 <source>Painting Services</source>
+                 <target>Servicios de pintado</target>
+              </trans-unit>
+
+
+
+                <trans-unit id="just_three_steps">
+                 <source>Just three steps</source>
+                 <target>Solo en tres pasos</target>
+              </trans-unit>
+               <trans-unit id="select_your_plan">
+                 <source>Select your plan</source>
+                 <target>Seleccione su plan</target>
+              </trans-unit>
+               <trans-unit id="select_your_plan_phrase">
+                <source>Check what plan we offer and choose what suits you best</source>
+                 <target>Conozca nuestros planes y elija la mejor opcion</target>
+                 </trans-unit>
+               <trans-unit id="provide_information">
+                 <source>Provide information</source>
+                 <target>Complete el formulario</target>
+              </trans-unit>
+
+                <trans-unit id="provide_information_phrase">
+                 <source>Fill out the form with the required information</source>
+                 <target>Complete debidamente nuestro formulario</target>
+              </trans-unit>
+
+               <trans-unit id="submit_and_enrolled">
+                 <source>Submit and enrolled</source>
+                 <target>Confirmación</target>
+              </trans-unit>
+                <trans-unit id="submit_and_enrolled_phrase">
+                <source>Pay and your information will be processed</source>
+                 <target>Espere su numero de confirmación</target>
+                 </trans-unit>
 
 <!--End Home-->
         </body>
