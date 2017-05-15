@@ -50,7 +50,7 @@ class UserController extends Controller
 
 
     /**
-     * @Route("/create-customer")
+     * @Route("/create-customer", name="createCustomer")
      * @param Request $request
      */
     public function createCustomerAction(Request $request)
