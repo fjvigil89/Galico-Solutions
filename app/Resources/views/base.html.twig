@@ -216,12 +216,12 @@
                         <h3 class="widget-tittle">{% trans %}infomation{% endtrans %}</h3>
                         <ul class="menu-infomation">
                             <li><a href="#">{% trans %}Home{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Services{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Plans{% endtrans %}</a></li>
-                            <li><a href="contact.html">{% trans %}Contact us{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}About us{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Sign in{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Register{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showplans') }}">{% trans %}Plans{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{% trans %}Contact us{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}Register{% endtrans %}</a></li>
 
                         </ul>
                     </div>

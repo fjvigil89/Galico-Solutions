@@ -23,9 +23,9 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="button-group filters-button-group">
-              <button class="button" data-filter=".basic-plan">Basic Plan</button>
+              <button class="button" data-filter=".basic-plan">GP Basic</button>
               <button class="button" data-filter=".gp-plus">GP Plus</button>
-              <button class="button" data-filter=".additional">Additional services</button>
+              <button class="button" data-filter=".additional">GP Add</button>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
       <div class="content">
         <div class="container">
-          <h3 class="text-center">BASIC PLAN</h3>
+          <h3 class="text-center">GP Basic</h3>
           <div class="row">
             <div class="col-xs-12">
               <div class="grid">
@@ -42,9 +42,9 @@
                   <img src="{{ asset('images/page-home/services-012.jpg') }}" alt="Locksmith">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Locksmith</h3>
+                      <h3 class="grid-overlay-tittle"> {% trans %}Locksmith{% endtrans %}</h3>
                       <p class="grid-overlay-description">Have you ever lost your house keys and been worried, or had problems with your lock, then call us, our professional locksmith will solve your problems.<br>&nbsp;</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -53,9 +53,9 @@
                   <img src="{{ asset('images/page-home/services-022.jpg') }}" alt="Electrical">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Electricity</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Electricity{% endtrans %}</h3>
                       <p class="grid-overlay-description">Frequently flickering or dimming lights are a common problem in homes, Our technicians are trained to fix these problems.</p><br/>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -64,9 +64,9 @@
                   <img src="{{ asset('images/page-home/services-032.jpg') }}" alt="Windows and doors">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Doors and Windows</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Doors and Windows{% endtrans %}</h3>
                       <p class="grid-overlay-description">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us...</p><br/>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -75,9 +75,9 @@
                   <img src="{{ asset('images/page-home/services-042.jpg') }}" alt="Plumbing">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Plumbing</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Plumbing{% endtrans %}</h3>
                       <p class="grid-overlay-description">Emergency plumbing situations are very stressful to deal with, Our goal is to minimize the stress and frustration associated with emergency repairs.</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -86,9 +86,9 @@
                   <img src="{{ asset('images/page-home/services-05.jpg') }}" alt="Appliances">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">AC/Heating</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}AC/Heating{% endtrans %}</h3>
                       <p class="grid-overlay-description">It is close to the winter or summer season, and your AC / heating equipment is broken down, do not hesitate to contact us.</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -97,9 +97,9 @@
                   <img src="{{ asset('images/page-home/services-11.jpg') }}" alt="Appliances">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">General Appliances</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Appliances{% endtrans %}</h3>
                       <p class="grid-overlay-description">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -108,9 +108,9 @@
                   <img src="{{ asset('images/page-home/services-07.jpg') }}" alt="nursing">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Nursing Care</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Nursing Care{% endtrans %}</h3>
                       <p class="grid-overlay-description">Need a professional person to care for a relative? Here's the solution, General Pro offers nursing services </p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -119,9 +119,9 @@
                   <img src="{{ asset('images/page-home/services-08.jpg') }}" alt="child care">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Day care</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Day Care{% endtrans %}</h3>
                       <p class="grid-overlay-description">You have work, a meeting or a commitment, and you need someone to take care of your children, General Pro offers child care services</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -132,9 +132,9 @@
                   <img src="{{ asset('images/page-home/services-09.jpg') }}" alt="Gardening">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Lawn maintenance</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Lawn maintenance{% endtrans %}</h3>
                       <p class="grid-overlay-description">Would you like to have a beautiful green garden? General pro offers gardening services to make this a reality</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -143,9 +143,9 @@
                   <img src="{{ asset('images/page-home/services-06.jpg') }}" alt="House cleaning">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Cleaning services</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Cleaning services{% endtrans %}</h3>
                       <p class="grid-overlay-description">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -154,9 +154,9 @@
                   <img src="{{ asset('images/page-home/services-10.jpg') }}" alt="House cleaning">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">IT support & services</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}IT support and services{% endtrans %}</h3>
                       <p class="grid-overlay-description">Generalpro offers services of computer support and technical assistance for any type of failure (hardware or software)</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
@@ -164,10 +164,10 @@
                   <img src="{{ asset('images/page-home/services-12.jpg') }}" alt="Painting service">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Painting service</h3>
+                      <h3 class="grid-overlay-tittle">{% trans %}Painting Services{% endtrans %}</h3>
                       <p class="grid-overlay-description">
                         You want to change the color of your house but do not have time to perform that service, Our specialists will gladly assist you</p>
-                      <a class="grid-overlay-readmore" href="#">read more</a>
+                      <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
                 </div>
