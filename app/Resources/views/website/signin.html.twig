@@ -7,26 +7,27 @@
 
 </div>
 
-<div class="container">
+<div class="container" ng-controller="UserController">
   <div class="row">
     <div class="col-xs-12">
       <h3>Login</h3>
 
-      <form class="form-login" method="POST" action="/my-dashboard">
+      <form class="form-login" method="POST" id="frm_signin" action="{{ url('app_user_authenticate') }}">
         {% if(error)%}
           <h1>{{ error }}</h1>
         {% endif %}
         <div class="form-group">
           <label for="email">Email*</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" ng-model="user.email" required>
         </div>
         <div class="form-group">
           <label for="pwd">Password*</label>
-          <input type="password" id="pwd" name="pwd" required>
+          <input type="password" id="pwd" name="pwd" ng-model="user.pwd" required>
         </div>
-        <button type="submit" class="btn" >Login</button>
+        <button type="button" class="btn" ng-click="authenticate()">Login</button>
         
         <p class="lost_password"><a href="#">Lost your password?</a></p>
+        <input type="hidden" ng-model="user.authUrl" value="{{ url('app_user_authenticate') |escape('js') }}">
       </form>
 
 

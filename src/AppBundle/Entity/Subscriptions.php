@@ -36,7 +36,7 @@ class Subscriptions
      *   @ORM\JoinColumn(name="HouseID", referencedColumnName="HouseID")
      * })
      */
-    private $houseid;
+    private $house;
 
     /**
      * @var \AppBundle\Entity\Plans
@@ -46,7 +46,7 @@ class Subscriptions
      *   @ORM\JoinColumn(name="PlanID", referencedColumnName="PlanID")
      * })
      */
-    private $planid;
+    private $plan;
 
 
 
@@ -85,50 +85,50 @@ class Subscriptions
     }
 
     /**
-     * Set houseid
+     * Set house
      *
-     * @param \AppBundle\Entity\Houses $houseid
+     * @param \AppBundle\Entity\Houses $house
      *
      * @return Subscriptions
      */
-    public function setHouseid(\AppBundle\Entity\Houses $houseid = null)
+    public function setHouse(\AppBundle\Entity\Houses $house = null)
     {
-        $this->houseid = $houseid;
+        $this->house = $house;
     
         return $this;
     }
 
     /**
-     * Get houseid
+     * Get house
      *
      * @return \AppBundle\Entity\Houses
      */
-    public function getHouseid()
+    public function getHouse()
     {
-        return $this->houseid;
+        return $this->house;
     }
 
     /**
-     * Set planid
+     * Set plan
      *
-     * @param \AppBundle\Entity\Plans $planid
+     * @param \AppBundle\Entity\Plans $plan
      *
      * @return Subscriptions
      */
-    public function setPlanid(\AppBundle\Entity\Plans $planid = null)
+    public function setPlan(\AppBundle\Entity\Plans $plan = null)
     {
-        $this->planid = $planid;
+        $this->plan = $plan;
     
         return $this;
     }
 
     /**
-     * Get planid
+     * Get plan
      *
      * @return \AppBundle\Entity\Plans
      */
-    public function getPlanid()
+    public function getPlan()
     {
-        return $this->planid;
+        return $this->plan;
     }
 }

@@ -6,7 +6,7 @@
     <div class="pad">
     </div>
     <div class="container">
-        <h2 class="heading-title">MY DASHBOARD - ANTONIO FU</h2>
+        <h2 class="heading-title">MY DASHBOARD - {{ customer.firstname }} {{ customer.lastname }}</h2>
         </br>
         <div class="row">
 
@@ -18,7 +18,7 @@
                     <table class="table" id="tbl-profile">
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="2">Antonio Fu
+                            <th colspan="2">{{ customer.firstname }} {{ customer.lastname }}
 
                             </th>
                             <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" >
@@ -44,51 +44,44 @@
                         </tr>
                         <tr>
                             <td class="">Last name</td>
-                            <td class="">Fu</td>
+                            <td class="">{{ customer.lastname }}</td>
                         </tr>
                         <tr>
                             <td class="">First name</td>
-                            <td class="">Antonio</td>
+                            <td class="">{{ customer.firstname }}</td>
                         </tr>
                         <tr>
                             <td class="">Email</td>
-                            <td class="">antofuchong@gmail.com</td>
+                            <td class="">{{ customer.email }}</td>
                         </tr>
-                        <tr>
-                            <td class="">Password</td>
-                            <td class="">*****</td>
-                        </tr>
+
                         <tr>
                             <td class="">Phone (Primary)</td>
-                            <td class="">437545443</td>
+                            <td class="">{{ customer.phoneprimary }}</td>
                         </tr>
                         <tr>
                             <td class="">Phone (Alternate)</td>
-                            <td class="">34353634</td>
+                            <td class="">{{ customer.phonealternate }}</td>
                         </tr>
                         <tr>
                             <td class="">Country</td>
-                            <td class="">Canada</td>
+                            <td class="">{{ customer.country }}</td>
                         </tr>
                         <tr>
                             <td class="">State</td>
-                            <td class="">Quebec</td>
+                            <td class="">{{ customer.state }}</td>
                         </tr>
                         <tr>
                             <td class="">City</td>
-                            <td class="">Montreal</td>
-                        </tr>
-                        <tr>
-                            <td class="">Country</td>
-                            <td class="">Canada</td>
+                            <td class="">{{ customer.city }}</td>
                         </tr>
                         <tr>
                             <td class="">Address</td>
-                            <td class="">4534 av Maisonneuve</td>
+                            <td class="">{{ customer.address }}</td>
                         </tr>
                         <tr>
                             <td class="">ZipCode</td>
-                            <td class="">j3d 2g3</td>
+                            <td class="">{{ customer.zipcode }}</td>
                         </tr>
 
                         </tbody>
@@ -126,33 +119,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="product-thumbnail text-center">Cuba</td>
-                            <td class="product-name">3233 Av maisonneuve</td>
-                            <td class="">Basic</td>
-                            <td class="product-qty">04/25/2017 </td>
-                            <td class="">94232232232</td>
-                            <td>
-                                <a href="#maison1" data-toggle="modal" data-target="#houseModal" >
-                                    <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
-                                </a>
-                                <a href="#" data-toggle="modal" data-target="#paymentsModal" >
-                                    <span class="glyphicon glyphicon-usd" title="View payments" ></span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-thumbnail text-center">Cuba</td>
-                            <td class="product-name">4232 av sddsd</td>
-                            <td class="">Basic</td>
-                            <td class="">12/25/2017</td>
-                            <td class="product-qty">94232232232</td>
-                            <td>
-                                <a href="#maison2" data-toggle="collapse">
-                                    <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                                </a>
-                            </td>
-                        </tr>
+                        {% for house in customer.houses %}
+
+                            <tr>
+                                <td class="product-thumbnail text-center">{{ house.country }}</td>
+                                <td class="product-name">{{ house.address }}</td>
+                                <td class="">Basic</td>
+                                <td class="product-qty">04/25/2017 </td>
+                                <td class="">94232232232</td>
+                                <td>
+                                    <a href="#maison1" data-toggle="modal" data-target="#houseModal" >
+                                        <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#paymentsModal" >
+                                        <span class="glyphicon glyphicon-usd" title="View payments" ></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+
                         </tbody>
                     </table>
                 </div>

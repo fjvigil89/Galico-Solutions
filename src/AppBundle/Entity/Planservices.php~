@@ -42,5 +42,62 @@ class Planservices
     private $planid;
 
 
-}
 
+    /**
+     * Get planserviceid
+     *
+     * @return integer
+     */
+    public function getPlanserviceid()
+    {
+        return $this->planserviceid;
+    }
+
+    /**
+     * Set serviceid
+     *
+     * @param \AppBundle\Entity\Services $serviceid
+     *
+     * @return Planservices
+     */
+    public function setServiceid(\AppBundle\Entity\Services $serviceid = null)
+    {
+        $this->serviceid = $serviceid;
+    
+        return $this;
+    }
+
+    /**
+     * Get serviceid
+     *
+     * @return \AppBundle\Entity\Services
+     */
+    public function getServiceid()
+    {
+        return $this->serviceid;
+    }
+
+    /**
+     * Set planid
+     *
+     * @param \AppBundle\Entity\Plans $planid
+     *
+     * @return Planservices
+     */
+    public function setPlanid(\AppBundle\Entity\Plans $planid = null)
+    {
+        $this->planid = $planid;
+    
+        return $this;
+    }
+
+    /**
+     * Get planid
+     *
+     * @return \AppBundle\Entity\Plans
+     */
+    public function getPlanid()
+    {
+        return $this->planid;
+    }
+}

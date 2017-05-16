@@ -46,5 +46,86 @@ class Localnumbers
     private $countryid;
 
 
-}
 
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return Localnumbers
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return Localnumbers
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Get localnumberid
+     *
+     * @return integer
+     */
+    public function getLocalnumberid()
+    {
+        return $this->localnumberid;
+    }
+
+    /**
+     * Set countryid
+     *
+     * @param \AppBundle\Entity\Countries $countryid
+     *
+     * @return Localnumbers
+     */
+    public function setCountryid(\AppBundle\Entity\Countries $countryid = null)
+    {
+        $this->countryid = $countryid;
+    
+        return $this;
+    }
+
+    /**
+     * Get countryid
+     *
+     * @return \AppBundle\Entity\Countries
+     */
+    public function getCountryid()
+    {
+        return $this->countryid;
+    }
+}

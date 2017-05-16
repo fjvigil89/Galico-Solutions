@@ -101,6 +101,18 @@ class Customers
 
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Houses", mappedBy="customer")
+     */
+    private $houses;
+
+    public function __construct()
+    {
+        $this->houses = new ArrayCollection();
+    }
+
+
+
+    /**
      * Set firstname
      *
      * @param string $firstname
@@ -372,5 +384,39 @@ class Customers
     public function getCustomerid()
     {
         return $this->customerid;
+    }
+
+    /**
+     * Add house
+     *
+     * @param \AppBundle\Entity\Houses $house
+     *
+     * @return Customers
+     */
+    public function addHouse(\AppBundle\Entity\Houses $house)
+    {
+        $this->houses[] = $house;
+    
+        return $this;
+    }
+
+    /**
+     * Remove house
+     *
+     * @param \AppBundle\Entity\Houses $house
+     */
+    public function removeHouse(\AppBundle\Entity\Houses $house)
+    {
+        $this->houses->removeElement($house);
+    }
+
+    /**
+     * Get houses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getHouses()
+    {
+        return $this->houses;
     }
 }

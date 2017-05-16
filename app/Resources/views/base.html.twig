@@ -46,7 +46,7 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
-<body>
+<body ng-app="gpApp">
 <div class="site">
     <div class="site-top style-02">
         <div class="container">
@@ -158,6 +158,7 @@
 
     {% block javascripts %}
         <script src="https://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
         <script src="{{asset('components/jquery/jquery.js')  }}"></script>
         <script src="{{ asset('components/bootstrap/js/bootstrap.js') }}"></script>
@@ -196,6 +197,10 @@
 
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="{{ asset('js/angularjs/angular.min.jsmain.js') }}"></script>
+
+        <!--CUSTOM JS -->
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/controllers/controllers.js') }}"></script>
         <script src="{{ asset('js/services/services.js') }}"></script>
 
     {% endblock %}

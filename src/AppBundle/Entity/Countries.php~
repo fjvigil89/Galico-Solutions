@@ -36,5 +36,62 @@ class Countries
     private $countryid;
 
 
-}
 
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Countries
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     *
+     * @return Countries
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Get countryid
+     *
+     * @return integer
+     */
+    public function getCountryid()
+    {
+        return $this->countryid;
+    }
+}

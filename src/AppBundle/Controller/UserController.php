@@ -14,38 +14,65 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
+$session = new Session();
 class UserController extends Controller
 {
+
+
+
     /**
-     * @Route("/authentication")
+     * @Route("/authenticate")
      */
     public function authenticateAction(Request $request)
     {
-        $data = $request->request->all();
-        $email = $data['email'];
-        $pwd = $data['pwd'];
+        $email = $request->query->get('email');
+        $pwd = $request->query->get('pwd');
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
 
-        // query for a single product matching the given name and price
         $customer = $repository->findOneBy(
             array('email' => $email, 'password' => $pwd)
         );
+        $userId = -1;
+        if($customer)
+        {
+            $userId = $customer->getCustomerid();
 
-
-        if (!$customer) {
-            $error =  "Login failed : email or password is invalid";
-            return $this->redirectToRoute('app_pagenavigation_showsignin',array('error' => $error));
+            $this->get('session')->set('userId', $userId);
         }
+        /*
+        if (!$customer) {
+            //$error =  "Login failed : email or password is invalid";
+            //return $this->redirectToRoute('app_pagenavigation_showsignin',array('error' => $error));
+        }
+        */
+
+        return $this->json(array('userId' => $userId));
     }
 
     /**
-     * @Route("/my-dashboard")
+     * @Route("/my-dashboard/{customerId}")
      */
-    public function showMyDashboardAction()
+    public function showMyDashboardAction($customerId)
     {
-        return $this->render('website/my-dashboard.html.twig');
+       $userId = $this->get('session')->get('userId');
+       if(!$userId || $customerId!=$userId)
+       {
+           return $this->redirectToRoute('app_pagenavigation_showsignin');
+       }
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+
+        if(!$customer)
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+
+        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer));
     }
 
 
@@ -87,7 +114,8 @@ class UserController extends Controller
         $em->persist($customer);
         $em->flush();
 
-        return $this->redirectToRoute("app_user_showmydashboard");
+        $this->get('session')->set('userId', $customer->getCustomerid());
+        return $this->redirectToRoute("app_user_showmydashboard/".$customer->getCustomerid());
 
     }
 

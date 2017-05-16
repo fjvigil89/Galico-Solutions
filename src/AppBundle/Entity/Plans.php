@@ -52,6 +52,17 @@ class Plans
      */
     private $subplanid;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Subscriptions", mappedBy="plan")
+     */
+    private $subscriptions;
+
+    public function __construct()
+    {
+        $this->subscriptions = new ArrayCollection();
+    }
+
+
 
 
     /**
@@ -158,5 +169,39 @@ class Plans
     public function getSubplanid()
     {
         return $this->subplanid;
+    }
+
+    /**
+     * Add subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     *
+     * @return Plans
+     */
+    public function addSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions[] = $subscription;
+    
+        return $this;
+    }
+
+    /**
+     * Remove subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     */
+    public function removeSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions->removeElement($subscription);
+    }
+
+    /**
+     * Get subscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
     }
 }

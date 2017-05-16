@@ -70,6 +70,7 @@ class PageNavigationController extends Controller
      */
     public function showSigninAction($error='')
     {
+        echo "$error<br>";
         return $this->render('website/signin.html.twig',array('error' => $error));
     }
 
