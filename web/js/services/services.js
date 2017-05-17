@@ -3,9 +3,23 @@ angular.module("gpApp")
         this.authenticate = function (user) {
 
             return $http({
-                url : '/authenticate',//user.authUrl,
+                url : user.authUrl,
                 method: "GET",
                 params: {email: user.email, pwd : user.pwd}
             });
         }
-    });
+    })
+
+    .service('GeneralService',function(){
+
+        this.isInvalid = function(value){
+            var invalid = false;
+            if(value===undefined || value.length==0)
+            {
+                invalid = true;
+            }
+
+            return invalid;
+        }
+})
+

@@ -12,10 +12,8 @@
     <div class="col-xs-12">
       <h3>Login</h3>
 
-      <form class="form-login" method="POST" id="frm_signin" action="{{ url('app_user_authenticate') }}">
-        {% if(error)%}
-          <h1>{{ error }}</h1>
-        {% endif %}
+      <form class="form-login" method="POST" id="frm_signin" action="{{ path('app_user_authenticate') }}">
+        <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
         <div class="form-group">
           <label for="email">Email*</label>
           <input type="email" id="email" name="email" ng-model="user.email" required>
@@ -27,7 +25,7 @@
         <button type="button" class="btn" ng-click="authenticate()">Login</button>
         
         <p class="lost_password"><a href="#">Lost your password?</a></p>
-        <input type="hidden" ng-model="user.authUrl" value="{{ url('app_user_authenticate') |escape('js') }}">
+        <input type="hidden" ng-model="user.authUrl" value="{{ path('app_user_authenticate')  }}">
       </form>
 
 

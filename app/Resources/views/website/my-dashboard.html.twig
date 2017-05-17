@@ -124,7 +124,15 @@
                             <tr>
                                 <td class="product-thumbnail text-center">{{ house.country }}</td>
                                 <td class="product-name">{{ house.address }}</td>
-                                <td class="">Basic</td>
+
+                                <td class="">
+                                    {% if(house.subscriptions.count)>0 %}
+                                        {{ house.subscriptions[house.subscriptions.count-1].plan.planname }}
+
+                                    {% endif %}
+                                </td>
+
+
                                 <td class="product-qty">04/25/2017 </td>
                                 <td class="">94232232232</td>
                                 <td>

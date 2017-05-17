@@ -6,12 +6,13 @@
 <div class="pad">
 
 </div>
-<div class="container">
+<div class="container" ng-controller="UserController">
   <div class="row">
     <div class="col-xs-12">
       <h3>Sign Up</h3>
 
-      <form class="form-login" method="POST" action="{{ url('createCustomer') }}">
+      <form class="form-login" id="frm_register" method="POST" action="{{ path('createCustomer') }}">
+        <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
 	   <div class="form-group">
           <label for="firstName">First name*</label>
           <input type="text" id="firstName" name="firstName" required>
@@ -64,7 +65,7 @@
           <input type="text" id="zipCode" name="zipCode" required>
         </div>
 
-        <button type="submit" class="btn">Sign Up</button>
+        <button type="button" class="btn" ng-click="register()">Sign Up</button>
         
         
       </form>
