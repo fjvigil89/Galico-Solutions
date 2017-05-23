@@ -3,215 +3,216 @@
 {% block title %} My dashboard{% endblock %}
 
 {% block body %}
-    <div class="pad">
-    </div>
-    <div class="container">
-        <h2 class="heading-title">MY DASHBOARD - {{ customer.firstname }} {{ customer.lastname }}</h2>
-        </br>
-        <div class="row">
+    <div ng-controller="DashboardController">
+        <div class="pad">
+        </div>
+        <div class="container">
+            <h2 class="heading-title">MY DASHBOARD - {{ customer.firstname }} {{ customer.lastname }}</h2>
+            </br>
+            <div class="row">
 
 
 
-            <div class="col-xs-12 col-md-4 border-yellow no-padding">
+                <div class="col-xs-12 col-md-4 border-yellow no-padding">
 
-                <div class="table-responsive ">
-                    <table class="table" id="tbl-profile">
-                        <thead class="bg-yellow font-header">
-                        <tr>
-                            <th colspan="2">{{ customer.firstname }} {{ customer.lastname }}
+                    <div class="table-responsive ">
+                        <table class="table" id="tbl-profile">
+                            <thead class="bg-yellow font-header">
+                            <tr>
+                                <th colspan="2">{{ customer.firstname }} {{ customer.lastname }}
 
-                            </th>
-                            <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                                    <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                                </a></th>
+                                </th>
+                                <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" ng-click="getCustomerInformation()">
+                                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                                    </a></th>
 
-                        </tr>
-                        </thead>
+                            </tr>
+                            </thead>
 
-                        <tbody>
-
-                        <tr>
-                            <td colspan="3" class="text-center container-img">
-                                <img src="{{ asset('images/page-home/services-05.jpg') }}"  alt="profile" >
-
-                            </td>
-
-                        </tr>
-
-                        <tr style="border: none">
-                            <td>ID</td>
-                            <td >CA24353</td>
-                        </tr>
-                        <tr>
-                            <td class="">Last name</td>
-                            <td class="">{{ customer.lastname }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">First name</td>
-                            <td class="">{{ customer.firstname }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">Email</td>
-                            <td class="">{{ customer.email }}</td>
-                        </tr>
-
-                        <tr>
-                            <td class="">Phone (Primary)</td>
-                            <td class="">{{ customer.phoneprimary }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">Phone (Alternate)</td>
-                            <td class="">{{ customer.phonealternate }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">Country</td>
-                            <td class="">{{ customer.country }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">State</td>
-                            <td class="">{{ customer.state }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">City</td>
-                            <td class="">{{ customer.city }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">Address</td>
-                            <td class="">{{ customer.address }}</td>
-                        </tr>
-                        <tr>
-                            <td class="">ZipCode</td>
-                            <td class="">{{ customer.zipcode }}</td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-
-
-            </div>
-
-
-
-
-
-            <div class="col-md-1"></div>
-            <div class="col-xs-12 col-md-7 border-yellow no-padding">
-                <div class="table-responsive">
-                    <table class="table table-hover ">
-
-                        <thead class="bg-yellow font-header">
-                        <tr>
-                            <th colspan="6">Houses</th>
-
-                        </tr>
-                        </thead>
-                        <thead class="bg-light-gray">
-                        <tr>
-                            <th>Country</th>
-                            <th>Address</th>
-                             <th>Plan</th>
-                            <th>Due date</th>
-                            <th>Local agent number</th>
-                            <th class="text-center"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for house in customer.houses %}
+                            <tbody>
 
                             <tr>
-                                <td class="product-thumbnail text-center">{{ house.country }}</td>
-                                <td class="product-name">{{ house.address }}</td>
+                                <td colspan="3" class="text-center container-img">
+                                    <img src="{{ asset('images/page-home/services-05.jpg') }}"  alt="profile" >
 
-                                <td class="">
-                                    {% if(house.subscriptions.count)>0 %}
-                                        {{ house.subscriptions[house.subscriptions.count-1].plan.planname }}
-
-                                    {% endif %}
                                 </td>
 
-
-                                <td class="product-qty">04/25/2017 </td>
-                                <td class="">94232232232</td>
-                                <td>
-                                    <a href="#maison1" data-toggle="modal" data-target="#houseModal" >
-                                        <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#paymentsModal" >
-                                        <span class="glyphicon glyphicon-usd" title="View payments" ></span>
-                                    </a>
-                                </td>
                             </tr>
-                        {% endfor %}
 
+                            <!--<tr>
+                                <td>ID</td>
+                                <td >CA24353</td>
+                            </tr>-->
+                            <tr>
+                                <td class="">Last name</td>
+                                <td class="">{{ customer.lastname }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">First name</td>
+                                <td class="">{{ customer.firstname }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">Email</td>
+                                <td class="">{{ customer.email }}</td>
+                            </tr>
 
-                        </tbody>
-                    </table>
+                            <tr>
+                                <td class="">Phone (Primary)</td>
+                                <td class="">{{ customer.phoneprimary }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">Phone (Alternate)</td>
+                                <td class="">{{ customer.phonealternate }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">Country</td>
+                                <td class="">{{ customer.country }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">State</td>
+                                <td class="">{{ customer.state }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">City</td>
+                                <td class="">{{ customer.city }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">Address</td>
+                                <td class="">{{ customer.address }}</td>
+                            </tr>
+                            <tr>
+                                <td class="">ZipCode</td>
+                                <td class="">{{ customer.zipcode }}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="hidden" id="customerId" value="{{ customer.customerid }}">
                 </div>
+
+
+
+
+
+                <div class="col-md-1"></div>
+                <div class="col-xs-12 col-md-7 border-yellow no-padding">
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+
+                            <thead class="bg-yellow font-header">
+                            <tr>
+                                <th colspan="6">Houses</th>
+
+                            </tr>
+                            </thead>
+                            <thead class="bg-light-gray">
+                            <tr>
+                                <th>Country</th>
+                                <th>Address</th>
+                                 <th>Plan</th>
+                                <th>Due date</th>
+                                <th>Local agent number</th>
+                                <th class="text-center"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for house in customer.houses %}
+
+                                <tr>
+                                    <td class="product-thumbnail text-center">{{ house.country }}</td>
+                                    <td class="product-name">{{ house.address }}</td>
+
+                                    <td class="">
+                                        {% if(house.subscriptions.count)>0 %}
+                                            {{ house.subscriptions[house.subscriptions.count-1].plan.planname }}
+
+                                        {% endif %}
+                                    </td>
+
+
+                                    <td class="product-qty">04/25/2017 </td>
+                                    <td class="">94232232232</td>
+                                    <td>
+                                        <a href="#maison1" data-toggle="modal" data-target="#houseModal" >
+                                            <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                                        </a>
+                                        <a href="#" data-toggle="modal" data-target="#paymentsModal" >
+                                            <span class="glyphicon glyphicon-usd" title="View payments" ></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
-
-        </br></br>
-        <div class="row">
-            <div class="col-xs-12 no-padding">
-                <div class="panel-group" id="myAccordion">
-                    <div class="panel border-yellow ">
-                        <div class="panel-heading bg-yellow">
-                            <h4 class="panel-title ">
-                                <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard">JAN 21, 2017 - Plumbing - Closed</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                            <div class="panel-body"><label class="text-bold">Request date :</label> 2017-01-21 <br/>
-                                <label class="text-bold">Status :</label> Closed<br/>
-                                <label class="text-bold">Code Service</label> : PL00023
+            </br></br>
+            <div class="row">
+                <div class="col-xs-12 no-padding">
+                    <div class="panel-group" id="myAccordion">
+                        <div class="panel border-yellow ">
+                            <div class="panel-heading bg-yellow">
+                                <h4 class="panel-title ">
+                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard">JAN 21, 2017 - Plumbing - Closed</a>
+                                </h4>
                             </div>
 
-                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
+                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
+                                <div class="panel-body"><label class="text-bold">Request date :</label> 2017-01-21 <br/>
+                                    <label class="text-bold">Status :</label> Closed<br/>
+                                    <label class="text-bold">Code Service</label> : PL00023
+                                </div>
 
-                            <div class="col-xs-12 no-padding">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
+                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
 
-                                        <thead class="bg-light-gray">
-                                        <tr>
-                                            <th>Intervention date</th>
-                                            <th>Technician</th>
-                                            <th>Comments</th>
-                                            <th>Amount</th>
+                                <div class="col-xs-12 no-padding">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
+                                            <thead class="bg-light-gray">
+                                            <tr>
+                                                <th>Intervention date</th>
+                                                <th>Technician</th>
+                                                <th>Comments</th>
+                                                <th>Amount</th>
 
-                                            <td class="">04/25/2017</td>
-                                            <td class="">Jorge Suarez</td>
-                                            <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
-                                            <td class="">US 15</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
 
-                                        </tr>
-                                        <tr>
+                                                <td class="">04/25/2017</td>
+                                                <td class="">Jorge Suarez</td>
+                                                <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
+                                                <td class="">US 15</td>
 
-                                            <td class="">04/26/2017</td>
-                                            <td class="">Irina Rodriguez</td>
-                                            <td class="">asdfasd asdf asdf asdf sa fas</td>
-                                            <td class="">US 15</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="">04/26/2017</td>
+                                                <td class="">Irina Rodriguez</td>
+                                                <td class="">asdfasd asdf asdf asdf sa fas</td>
+                                                <td class="">US 15</td>
 
 
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
 
 
@@ -219,189 +220,183 @@
 
 
             </div>
-
-
         </div>
-    </div>
 
 
 
 
-    <!-- Modal -->
-    <div id="houseModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <!-- Modal -->
+        <div id="houseModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header bg-yellow">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">House information</h4>
-                </div>
-                        <div class="modal-body">
-
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Plan</div>
-                                <div class="col-xs-7">: Basic</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Due date</div>
-                                <div class="col-xs-7">: 04/25/2017</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Suscription date</div>
-                                <div class="col-xs-7">: 12/02/2017</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Contact</div>
-                                <div class="col-xs-7">: Renzo Sanchez</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Phone (Primary)</div>
-                                <div class="col-xs-7">: 234543232</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Phone (Alternate)</div>
-                                <div class="col-xs-7">: 23523232</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Country</div>
-                                <div class="col-xs-7">: Cuba</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">City</div>
-                                <div class="col-xs-7">: La habana</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold ">Address</div>
-                                <div class="col-xs-7">: 3233 Av maisonneuve</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">State / Province</div>
-                                <div class="col-xs-7">: Matanzas</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-bold">Local number</div>
-                                <div class="col-xs-7">: 94232232232</div>
-                            </div>
-
-                        </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-remove" title="Close"></span> Close
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div id="paymentsModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-                <div class="modal-header bg-yellow">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Payments history</h4>
-                </div>
-                <div class="modal-body">
-
-                    <h4 >Suscription date 12 02-2017 ( Basic plan)</h4>
-
-                    <div class="row">
-                        <div class="col-xs-5 text-bold">Payment date</div>
-                        <div class="col-xs-7 text-bold">Amount</div>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">House information</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-5">12/06/2017</div>
-                        <div class="col-xs-7">$29.99</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-5">12/07/2017</div>
-                        <div class="col-xs-7">$29.99</div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-remove" title="Close"></span> Close
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <div id="editModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-                <div class="modal-header bg-yellow">
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Edit</h4>
-                </div>
                             <div class="modal-body">
 
-                                <div class="form-group">
-                                    <label for="lastname">Last Name:</label>
-                                    <input type="text" class="form-control" id="lastname" value="Fu">
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Plan</div>
+                                    <div class="col-xs-7">: Basic</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="lastname">Name:</label>
-                                    <input type="text" class="form-control" id="lastname" value="Antonio" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Due date</div>
+                                    <div class="col-xs-7">: 04/25/2017</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" class="form-control" id="email" value="antofuchong@gmail.com" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Suscription date</div>
+                                    <div class="col-xs-7">: 12/02/2017</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="pwd">Password:</label>
-                                    <input type="password" class="form-control" id="pwd" value="*****">
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Contact</div>
+                                    <div class="col-xs-7">: Renzo Sanchez</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="phonePrimary">Phone (Primary):</label>
-                                    <input type="tel" class="form-control" id="phonePrimary" value="534545443" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Phone (Primary)</div>
+                                    <div class="col-xs-7">: 234543232</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="phonealternate">Phone (Alternate):</label>
-                                    <input type="tel" class="form-control" id="phonealternate" value="437545443" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Phone (Alternate)</div>
+                                    <div class="col-xs-7">: 23523232</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="country">Country:</label>
-                                    <input type="text" class="form-control" id="country" value="Canada" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Country</div>
+                                    <div class="col-xs-7">: Cuba</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="state">State:</label>
-                                    <input type="text" class="form-control" id="state" value="Quebec" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">City</div>
+                                    <div class="col-xs-7">: La habana</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="city">City:</label>
-                                    <input type="text" class="form-control" id="city" value="Montreal" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold ">Address</div>
+                                    <div class="col-xs-7">: 3233 Av maisonneuve</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="address">Address:</label>
-                                    <input type="text" class="form-control" id="address" value="4534 av Maisonneuve" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">State / Province</div>
+                                    <div class="col-xs-7">: Matanzas</div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="zipCode">ZipCode:</label>
-                                    <input type="text" class="form-control" id="zipCode" value="j3d 2g3" >
+                                <div class="row">
+                                    <div class="col-xs-5 text-bold">Local number</div>
+                                    <div class="col-xs-7">: 94232232232</div>
                                 </div>
 
                             </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> Save
-                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove" title="Close"></span> Close
+                        </button>
+                    </div>
                 </div>
+
             </div>
-
         </div>
+
+
+        <div id="paymentsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Payments history</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <h4 >Suscription date 12 02-2017 ( Basic plan)</h4>
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Payment date</div>
+                            <div class="col-xs-7 text-bold">Amount</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5">12/06/2017</div>
+                            <div class="col-xs-7">$29.99</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5">12/07/2017</div>
+                            <div class="col-xs-7">$29.99</div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove" title="Close"></span> Close
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit profile information</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="lastname">Last name *:</label>
+                            <input type="text" class="form-control" id="lastName" ng-model="customer.lastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">First name *:</label>
+                            <input type="text" class="form-control" id="firstName" ng-model="customer.firstName" >
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *:</label>
+                            <input type="email" class="form-control" id="email" ng-model="customer.email" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phonePrimary">Phone (Primary) *:</label>
+                            <input type="tel" class="form-control" id="phonePrimary" ng-model="customer.phonePrimary">
+                        </div>
+                        <div class="form-group">
+                            <label for="phonealternate">Phone (Alternate):</label>
+                            <input type="tel" class="form-control" id="phoneAlternate" ng-model="customer.phoneAlternate" >
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country *:</label>
+                            <input type="text" class="form-control" id="country" ng-model="customer.country">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State :</label>
+                            <input type="text" class="form-control" id="state" ng-model="customer.state" >
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *:</label>
+                            <input type="text" class="form-control" id="city" ng-model="customer.city" >
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address *:</label>
+                            <input type="text" class="form-control" id="address" ng-model="customer.address" >
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZipCode:</label>
+                            <input type="text" class="form-control" id="zipCode" ng-model="customer.zipCode" >
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> Save
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
-
-
-
 
 
 

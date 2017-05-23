@@ -21,5 +21,21 @@ angular.module("gpApp")
 
             return invalid;
         }
-})
+    })
+
+    .service('DashboardService',function($http){
+        this.getCustomerInformation = function(id)
+        {
+            return $http({
+                url : '/customer-information/'+id,
+                method: "GET",
+                /*params: {email: user.email, pwd : user.pwd}*/
+            });
+        }
+
+        this.updateCustomer = function (customer) {
+
+            return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});
+        }
+    })
 
