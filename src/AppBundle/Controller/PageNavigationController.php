@@ -79,7 +79,11 @@ class PageNavigationController extends Controller
      */
     public function showRegisterAction()
     {
-        return $this->render('website/register.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countries = $repository->findAll();
+        return $this->render('website/register.html.twig',array(
+            'countries'=> $countries
+        ));
     }
 
     /**
@@ -93,4 +97,7 @@ class PageNavigationController extends Controller
         die($request->getLocale());
 
     }
+
+
+
 }
