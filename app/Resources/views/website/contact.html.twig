@@ -8,23 +8,23 @@
         <div class="we-are-layoutcontact_pro">
    
       <h2 class="provide-services_title">{% trans %}Contact us{% endtrans %}</h2>
-      <p class="provide-services_description color-white">Every home owner has a list of handyman, home repair, or home improvement projects he or she needs done both interior and exterior. Sometimes that list can get quite long, too! The bathrooms that needs updating.</p>
+
 		</div>
 	</div>
   </div>
 
 
-<div class="container contact-content">
+<div class="container contact-content" ng-controller="ContactUsController">
   <div class="row">
     <div class="col-md-4">
      
 	 
-        <img class="hotline-img" src="images/page-home/services-03.jpg" alt="">
+        <img class="hotline-img" src="images/page-home/services-14.jpg" alt="">
         
      
       <!-- /.hotline -->
 
-      <p class="hotline-description">Every home owner has a list of handyman, home repair, or home improvement project he or she needs done both interior and exterior</p>
+      <p class="hotline-description">Feel free to contact us at any time, our customer service representative will respond shortly. We encourage your comments and suggestions.  </p>
       <!-- /.hotline-description -->
 
 
@@ -36,23 +36,23 @@
     <div class="col-md-8">
       <div id="map-canvas" class="thememove-gmaps" data-address="40.7590615,-73.969231" data-height="400" data-width="100%" data-zoom_enable="" data-zoom="16" data-map_type="roadmap" data-map_style="style1"></div>
       <!-- /.thememove-gmaps -->
-
-      <form action="#">
+      <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
+      <form id="frm_contact_us" method="GET" action="{{ path('send_email') }}" >
         <div class="row">
           <div class="col-sm-12">
-            <input type="text" name="name" required="required" placeholder="Name*">
+            <input type="text" id="cname" name="cname"  ng-model="sender.cname" required placeholder="Name*">
           </div>
           <div class="col-sm-12">
-            <input type="text" name="your-phone" value="" size="40" aria-invalid="false" placeholder="Phone">
+            <input type="text" name="phone" id="phone" ng-model="sender.phone" value="" size="40" aria-invalid="false" placeholder="Phone">
           </div>
           <div class="col-sm-12">
-            <input type="email" name="email" required="required" placeholder="Email*">
+            <input type="email" name="email" id="email" ng-model="sender.email" required placeholder="Email*">
           </div>
           <div class="col-sm-12">
-            <textarea name="your-message" cols="40" rows="10" aria-invalid="false" placeholder="Your message*" style="height: 110px;"></textarea>
+            <textarea name="message" id="message" ng-model="sender.message" cols="40" rows="10" aria-invalid="false" placeholder="Your message*" style="height: 110px;"></textarea>
           </div>
           <div class="col-sm-12">
-            <input type="submit" style= "color: white" value="Send Message" class="btn">
+            <button type="button" class="btn" ng-click="send()">Send Messages</button>
           </div>
         </div>
       </form>

@@ -6,34 +6,106 @@
 
 {% block body %}
 
-  <div class="provide-services row row-xs-center">
-    <div class="col-md-12">
-      <div class="we-are-layoutplan_pro">
+  <div id="rev_slider_2_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.9">
+    <ul>	<!-- SLIDE  -->
+      <li data-index="rs-4" data-transition="fade" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://renovation.thememove.com/demo/wp-content/"  data-delay="9030"  data-rotate="0"  data-saveperformance="off"  data-title="Slide 1" data-description="">
+        <!-- MAIN IMAGE -->
+        <img src="{{ asset('images/page-home/services-16.jpg') }}" style='background-color:#333333' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" class="rev-slidebg" data-no-retina>
+        <!-- LAYERS -->
 
-        <h2 class="provide-services_title">Our plans</h2>
-        <p class="provide-services_description color-white ">Every home owner has a list of handyman, home repair, or home improvement projects he or she needs done both interior and exterior. Sometimes that list can get quite long, too! The bathrooms that needs updating.</p>
-      </div>
+        <!-- LAYER NR. 1 -->
+        <div class="tp-caption Renovation-BigTitle   tp-resizeme rs-parallaxlevel-1"
+             id="slide-4-layer-11"
+             data-x="['left','left','left','left']" data-hoffset="['720','720','720','720']"
+             data-y="['top','top','top','top']" data-voffset="['238','238','238','238']"
+             data-width="none"
+             data-height="none"
+             data-whitespace="nowrap"
+             data-transform_idle="o:1;"
+
+             data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:200;e:Power4.easeInOut;"
+             data-transform_out="opacity:0;s:300;s:300;"
+             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+             data-start="1030"
+             data-splitin="chars"
+             data-splitout="none"
+             data-responsive_offset="on"
+
+             data-elementdelay="0.1"
+             data-end="9000"
+
+             style="z-index: 5; white-space: nowrap; color: rgba(255, 255, 255, 1.00);">Our Plans
+        </div>
+
+        <!-- LAYER NR. 2 -->
+        <div class="tp-caption Renovation-SmallTitle   tp-resizeme rs-parallaxlevel-2"
+             id="slide-4-layer-3"
+             data-x="['left','left','left','left']" data-hoffset="['725','725','725','725']"
+             data-y="['top','top','top','top']" data-voffset="['326','326','326','326']"
+             data-width="none"
+             data-height="none"
+             data-whitespace="nowrap"
+             data-transform_idle="o:1;"
+
+             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+             data-transform_out="opacity:0;s:300;s:300;"
+             data-start="880"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+
+             data-end="9000"
+
+             style="z-index: 6; white-space: nowrap; color: black; font-size: 1.8em;">Our three different plans vary based on the services provided and the monthly prices.
+        </div>
+
+        <!-- LAYER NR. 6 -->
+
+      </li>
+      <!-- SLIDE  -->
+      <li data-index="rs-5" data-transition="fade" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="http://renovation.thememove.com/demo/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="Slide 2" data-description="">
+        <!-- MAIN IMAGE -->
+        <img src="{{ asset('images/page-home/services-08.jpg') }}" style='background-color:#E7E7E7' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+        <!-- LAYERS -->
+
+
+      <!-- SLIDE  -->
+
+
+
+
+
+    </ul>
+    <div class="tp-static-layers">
     </div>
-  </div>
+    <div class="tp-bannertimer" style="height: 5px; background-color: rgba(0, 0, 0, 0.15);"></div>
+  </div><!-- END REVOLUTION SLIDER -->
 
-  <div class="site-content">
+  <div class="site-content" ng-controller="PageNavigationController">
     <section class="projects">
 
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
             <div class="button-group filters-button-group">
-              <button class="button" data-filter=".basic-plan">GP Basic</button>
-              <button class="button" data-filter=".gp-plus">GP Plus</button>
-              <button class="button" data-filter=".additional">GP Add</button>
+              <button class="button" ng-click = "plan.name='GP Basic'; plan.text='The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.'"
+                      data-filter=".basic-plan">GP Basic</button>
+
+
+              <button class="button" ng-click = "plan.name='GP Plus'; plan.text='The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.'"
+
+                      data-filter=".gp-plus">GP Plus</button>
+              <button class="button" ng-click = "plan.name='GP Add'; plan.text= 'The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.'"
+                      data-filter=".additional">GP Add</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="content">
+      <div class="content" >
         <div class="container">
-          <h3 class="text-center">GP Basic</h3>
+          <h3 class="text-center" ng-bind="plan.name"></h3>
+          <p class="text-center" ng-bind="plan.text"></p>
           <div class="row">
             <div class="col-xs-12">
               <div class="grid">
@@ -43,7 +115,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle"> {% trans %}Locksmith{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Have you ever lost your house keys and been worried, or had problems with your lock, then call us, our professional locksmith will solve your problems.<br>&nbsp;</p>
+                      <p class="grid-overlay-description">Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your problems and concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our on-site locksmiths to seal, fix, repair, disassemble, and change locks or key jams.<br>&nbsp;</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -54,7 +126,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Electricity{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Frequently flickering or dimming lights are a common problem in homes, Our technicians are trained to fix these problems.</p><br/>
+                      <p class="grid-overlay-description">On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.      </p><br/>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -65,19 +137,26 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Doors and Windows{% endtrans %}</h3>
-                      <p class="grid-overlay-description">General Pro is responsible for installing windows or doors, replacing window panel, etc. To help you if you need these services do not hesitate to contact us...</p><br/>
+                      <p class="grid-overlay-description">Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </p><br/>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
+                      </br>
+                      </br>
+
                     </div>
                   </div>
                 </div>
+
 
                 <div class="element-item basic-plan" data-category="basic-plan">
                   <img src="{{ asset('images/page-home/services-042.jpg') }}" alt="Plumbing">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Plumbing{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Emergency plumbing situations are very stressful to deal with, Our goal is to minimize the stress and frustration associated with emergency repairs.</p>
+                      <p class="grid-overlay-description">Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.        </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
+                      </br>
+                      </br>
+                      </br>
                     </div>
                   </div>
                 </div>
@@ -87,8 +166,9 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}AC/Heating{% endtrans %}</h3>
-                      <p class="grid-overlay-description">It is close to the winter or summer season, and your AC / heating equipment is broken down, do not hesitate to contact us.</p>
+                      <p class="grid-overlay-description">The AC/heating system is essential to a house. No matter the season, this system is crucial to maintain a good temperature around. When this system is breaking down, or showing deficiencies many problems are caused. Our team of experts can efficiently take care of the flaws of your AC/heating system, so that you can lead a more comfortable life. </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
+                      </br>
                     </div>
                   </div>
                 </div>
@@ -98,7 +178,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Appliances{% endtrans %}</h3>
-                      <p class="grid-overlay-description">We understand how much of an inconvenience your household appliances breaking down can be, Our repair team offer a fast and reliable service.</p>
+                      <p class="grid-overlay-description">We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them. </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -109,8 +189,11 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Nursing Care{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Need a professional person to care for a relative? Here's the solution, General Pro offers nursing services </p>
+                      <p class="grid-overlay-description">Need a professional person to care of a relative when you can’t? General Pro’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones.  </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
+                      </br>
+                      </br>
+                      </br>
                     </div>
                   </div>
                 </div>
@@ -119,8 +202,8 @@
                   <img src="{{ asset('images/page-home/services-08.jpg') }}" alt="child care">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Day Care{% endtrans %}</h3>
-                      <p class="grid-overlay-description">You have work, a meeting or a commitment, and you need someone to take care of your children, General Pro offers child care services</p>
+                      <h3 class="grid-overlay-tittle">Child Care</h3>
+                      <p class="grid-overlay-description">At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. General Pro’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.    </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -133,7 +216,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Lawn maintenance{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Would you like to have a beautiful green garden? General pro offers gardening services to make this a reality</p>
+                      <p class="grid-overlay-description"> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, General Pro offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve.  </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -144,7 +227,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Cleaning services{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Do not have time to clean your house? Here's the solution, General Pro offers house cleaning services to meet your needs</p>
+                      <p class="grid-overlay-description">You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. General Pro’s house cleaning services consist of professionally trained cleaners that will meet your demands. </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -155,7 +238,7 @@
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}IT support and services{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Generalpro offers services of computer support and technical assistance for any type of failure (hardware or software)</p>
+                      <p class="grid-overlay-description">If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -166,7 +249,7 @@
                     <div class="grid-overlay-wrapper">
                       <h3 class="grid-overlay-tittle">{% trans %}Painting Services{% endtrans %}</h3>
                       <p class="grid-overlay-description">
-                        You want to change the color of your house but do not have time to perform that service, Our specialists will gladly assist you</p>
+                        You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! General Pro’s team of specialists will gladly fulfil your requests.   </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
