@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Customers
@@ -98,18 +97,6 @@ class Customers
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $customerid;
-
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Houses", mappedBy="customer")
-     */
-    private $houses;
-
-    public function __construct()
-    {
-        $this->houses = new ArrayCollection();
-    }
 
 
 
@@ -385,39 +372,5 @@ class Customers
     public function getCustomerid()
     {
         return $this->customerid;
-    }
-
-    /**
-     * Add house
-     *
-     * @param \AppBundle\Entity\Houses $house
-     *
-     * @return Customers
-     */
-    public function addHouse(\AppBundle\Entity\Houses $house)
-    {
-        $this->houses[] = $house;
-    
-        return $this;
-    }
-
-    /**
-     * Remove house
-     *
-     * @param \AppBundle\Entity\Houses $house
-     */
-    public function removeHouse(\AppBundle\Entity\Houses $house)
-    {
-        $this->houses->removeElement($house);
-    }
-
-    /**
-     * Get houses
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getHouses()
-    {
-        return $this->houses;
     }
 }

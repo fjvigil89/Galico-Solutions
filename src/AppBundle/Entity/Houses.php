@@ -85,17 +85,7 @@ class Houses
      *   @ORM\JoinColumn(name="CustomerID", referencedColumnName="CustomerID")
      * })
      */
-    private $customer;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Subscriptions", mappedBy="house")
-     */
-    private $subscriptions;
-
-    public function __construct()
-    {
-        $this->subscriptions = new ArrayCollection();
-    }
+    private $customerid;
 
 
 
@@ -308,9 +298,9 @@ class Houses
      *
      * @return Houses
      */
-    public function setCustomer(\AppBundle\Entity\Customers $customer = null)
+    public function setCustomerid(\AppBundle\Entity\Customers $customerid = null)
     {
-        $this->customer = $customer;
+        $this->customerid = $customerid;
     
         return $this;
     }
@@ -320,42 +310,8 @@ class Houses
      *
      * @return \AppBundle\Entity\Customers
      */
-    public function getCustomer()
+    public function getCustomerid()
     {
-        return $this->customer;
-    }
-
-    /**
-     * Add subscription
-     *
-     * @param \AppBundle\Entity\Subscriptions $subscription
-     *
-     * @return Houses
-     */
-    public function addSubscription(\AppBundle\Entity\Subscriptions $subscription)
-    {
-        $this->subscriptions[] = $subscription;
-    
-        return $this;
-    }
-
-    /**
-     * Remove subscription
-     *
-     * @param \AppBundle\Entity\Subscriptions $subscription
-     */
-    public function removeSubscription(\AppBundle\Entity\Subscriptions $subscription)
-    {
-        $this->subscriptions->removeElement($subscription);
-    }
-
-    /**
-     * Get subscriptions
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSubscriptions()
-    {
-        return $this->subscriptions;
+        return $this->customerid;
     }
 }

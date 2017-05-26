@@ -5,35 +5,35 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Localnumbers
+ * States
  *
- * @ORM\Table(name="localnumbers", indexes={@ORM\Index(name="CountryID", columns={"CountryID"})})
+ * @ORM\Table(name="states", indexes={@ORM\Index(name="CountryID", columns={"CountryID"})})
  * @ORM\Entity
  */
-class Localnumbers
+class States
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=100, nullable=false)
+     * @ORM\Column(name="State", type="string", length=50, nullable=false)
      */
-    private $city;
+    private $state;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=15, nullable=false)
+     * @ORM\Column(name="StateCode", type="string", length=5, nullable=false)
      */
-    private $phone;
+    private $statecode;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="LocalNumberID", type="integer")
+     * @ORM\Column(name="StateID", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $localnumberid;
+    private $stateid;
 
     /**
      * @var \AppBundle\Entity\Countries

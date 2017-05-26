@@ -22,16 +22,6 @@ class Planservices
     private $planserviceid;
 
     /**
-     * @var \AppBundle\Entity\Services
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Services")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="ServiceID", referencedColumnName="ServiceID")
-     * })
-     */
-    private $serviceid;
-
-    /**
      * @var \AppBundle\Entity\Plans
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plans")
@@ -40,6 +30,16 @@ class Planservices
      * })
      */
     private $planid;
+
+    /**
+     * @var \AppBundle\Entity\Services
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Services")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ServiceID", referencedColumnName="ServiceID")
+     * })
+     */
+    private $serviceid;
 
 
 
@@ -51,30 +51,6 @@ class Planservices
     public function getPlanserviceid()
     {
         return $this->planserviceid;
-    }
-
-    /**
-     * Set serviceid
-     *
-     * @param \AppBundle\Entity\Services $serviceid
-     *
-     * @return Planservices
-     */
-    public function setServiceid(\AppBundle\Entity\Services $serviceid = null)
-    {
-        $this->serviceid = $serviceid;
-    
-        return $this;
-    }
-
-    /**
-     * Get serviceid
-     *
-     * @return \AppBundle\Entity\Services
-     */
-    public function getServiceid()
-    {
-        return $this->serviceid;
     }
 
     /**
@@ -99,5 +75,29 @@ class Planservices
     public function getPlanid()
     {
         return $this->planid;
+    }
+
+    /**
+     * Set serviceid
+     *
+     * @param \AppBundle\Entity\Services $serviceid
+     *
+     * @return Planservices
+     */
+    public function setServiceid(\AppBundle\Entity\Services $serviceid = null)
+    {
+        $this->serviceid = $serviceid;
+    
+        return $this;
+    }
+
+    /**
+     * Get serviceid
+     *
+     * @return \AppBundle\Entity\Services
+     */
+    public function getServiceid()
+    {
+        return $this->serviceid;
     }
 }

@@ -24,7 +24,7 @@ class Services
      *
      * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $price;
+    private $price = '0.00';
 
     /**
      * @var integer

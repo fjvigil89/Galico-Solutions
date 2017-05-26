@@ -33,9 +33,30 @@ angular.module("gpApp")
             });
         }
 
+        this.getHousesInformation = function(id)
+        {
+            return $http({
+                url : '/houses-informations/'+id,
+                method: "GET",
+
+            });
+        }
+
         this.updateCustomer = function (customer) {
 
-            return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});
+            //return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});
+            return $http({
+                url : '/update-customer',
+                method: "GET",
+                params:
+                    {
+                        customerId : customer.customerId,lastName : customer.lastName,
+                        firstName : customer.firstName,email: customer.email,
+                        phonePrimary : customer.phonePrimary, phoneAlternate : customer.phoneAlternate,
+                        country : customer.country, state : customer.state, city : customer.city,
+                        address : customer.address, zipCode : customer.zipCode
+                    }
+            });
         }
     })
 
