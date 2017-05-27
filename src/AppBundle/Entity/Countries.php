@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Countries
@@ -48,6 +49,17 @@ class Countries
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $countryid;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Localnumbers", mappedBy="country")
+     */
+    private $localnumbers;
+
+    public function __construct()
+    {
+        $this->localnumbers = new ArrayCollection();
+    }
+
 
 
 
@@ -155,5 +167,39 @@ class Countries
     public function getCountryid()
     {
         return $this->countryid;
+    }
+
+    /**
+     * Add localnumber
+     *
+     * @param \AppBundle\Entity\Localnumbers $localnumber
+     *
+     * @return Countries
+     */
+    public function addLocalNumber(\AppBundle\Entity\Localnumbers $localnumber)
+    {
+        $this->localnumbers[] = $localnumber;
+
+        return $this;
+    }
+
+    /**
+     * Remove localnumber
+     *
+     * @param \AppBundle\Entity\Localnumbers $localnumber
+     */
+    public function removeLocalNumber(\AppBundle\Entity\Localnumbers $localnumber)
+    {
+        $this->localnumbers->removeElement($localnumber);
+    }
+
+    /**
+     * Get localnumbers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLocalNumbers()
+    {
+        return $this->localnumbers;
     }
 }

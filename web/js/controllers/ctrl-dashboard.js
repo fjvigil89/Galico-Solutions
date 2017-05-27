@@ -108,8 +108,20 @@ angular.module("gpApp")
                 }
             }
 
+        $scope.getPaymentsHistory = function(houseId) {
+            DashboardService.getPaymentsHistory(houseId)
+                .then(function(response){
+                    console.log(response.data);
+                    $scope.subscriptions = response.data;
 
-            // CALL METHODS
+                },function(error){
+
+                })
+        }
+
+
+
+        // CALL METHODS
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();

@@ -247,8 +247,8 @@ class UserController extends Controller
             $hs = array();
             $hs['id'] =$house->getHouseid();
             $hs['plan'] = $subscriptions[$index]->getPlan()->getPlanname();
-            //$hs['dueDate'] = $house->getSubscription[]
             $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
+            //$hs['dueDate'] = $this->getDueDate($hs['subscriptionDate']);
             $hs['contact'] = $house->getFirstname() . " " . $house->getLastname();
             $hs['phonePrimary'] = $house->getPhoneprimary();
             $hs['phoneAlternate'] = $house->getPhonealternate();
@@ -257,12 +257,73 @@ class UserController extends Controller
             $hs['city'] = $house->getCity();
             $hs['address'] = $house->getAddress();
             $hs['contactFullName'] = $house->getFirstname() . " " . $house->getLastname();
-            //$h['agentNumber'] = $house->getPhonealternate();
+            $hs['agentNumber'] = $this->getLocalAgentNumber($hs['country'],$hs['city']);
 
             $customerHouses[] = $hs;
 
         }
         return $this->json($customerHouses);
+    }
+
+    private function getDueDate($subscriptionDate)
+    {
+
+    }
+
+    private function getLocalAgentNumber($country,$city)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountry("$country");
+        $localNumbers = $country->getLocalNumbers();
+
+
+        $phoneNumber = "";
+        foreach ($localNumbers as $localNumber)
+        {
+            //echo strtoupper($localNumber->getCity()) . "  " . strtoupper($city) . "\n";
+            if(strtoupper($localNumber->getCity())==strtoupper($city))
+            {
+                $phoneNumber = $localNumber->getPhone();
+                break;
+            }
+        }
+
+        return $phoneNumber;
+    }
+
+    /**
+     * @Route("/payments-history/{houseId}")
+     */
+    public function getPaymentsHistoryAction($houseId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+        $house = $repository->find($houseId);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Subscriptions');
+        $subscriptions = $repository->findByHouse($house);
+
+        $housePayments = array();
+        foreach($subscriptions as $subscription)
+        {
+            $sub = array();
+
+            $sub['subscriptionDate'] = date_format($subscription->getSubscriptiondate(), 'Y-m-d');
+            $sub['plan'] = $subscription->getPlan()->getPlanname();
+            //$sub['title']
+            $paymnt = array();
+            foreach($subscription->getPayments() as $payment)
+            {
+                $pay = array();
+                $pay['paymentDate'] = date_format($payment->getPaymentdate(), 'Y-m-d');
+                $pay['amount'] = $payment->getAmount();
+                $paymnt[] = $pay;
+            }
+            $sub['payments'] = $paymnt;
+
+            $housePayments[] = $sub;
+
+        }
+        return $this->json($housePayments);
     }
 
     /**

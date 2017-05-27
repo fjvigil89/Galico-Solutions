@@ -43,7 +43,7 @@ class Localnumbers
      *   @ORM\JoinColumn(name="CountryID", referencedColumnName="CountryID")
      * })
      */
-    private $countryid;
+    private $country;
 
 
 
@@ -106,26 +106,26 @@ class Localnumbers
     }
 
     /**
-     * Set countryid
+     * Set country
      *
-     * @param \AppBundle\Entity\Countries $countryid
+     * @param \AppBundle\Entity\Countries $country
      *
      * @return Localnumbers
      */
-    public function setCountryid(\AppBundle\Entity\Countries $countryid = null)
+    public function setCountry(\AppBundle\Entity\Countries $country = null)
     {
-        $this->countryid = $countryid;
+        $this->country = $country;
     
         return $this;
     }
 
     /**
-     * Get countryid
+     * Get country
      *
      * @return \AppBundle\Entity\Countries
      */
-    public function getCountryid()
+    public function getCountry()
     {
-        return $this->countryid;
+        return $this->country;
     }
 }

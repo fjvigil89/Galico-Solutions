@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Houses
@@ -85,7 +86,18 @@ class Houses
      *   @ORM\JoinColumn(name="CustomerID", referencedColumnName="CustomerID")
      * })
      */
-    private $customerid;
+    private $customer;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Subscriptions", mappedBy="house")
+     */
+    private $subscriptions;
+
+    public function __construct()
+    {
+        $this->subscriptions = new ArrayCollection();
+    }
+
 
 
 
@@ -298,9 +310,9 @@ class Houses
      *
      * @return Houses
      */
-    public function setCustomerid(\AppBundle\Entity\Customers $customerid = null)
+    public function setCustomer(\AppBundle\Entity\Customers $customer = null)
     {
-        $this->customerid = $customerid;
+        $this->customer = $customer;
     
         return $this;
     }
@@ -310,8 +322,42 @@ class Houses
      *
      * @return \AppBundle\Entity\Customers
      */
-    public function getCustomerid()
+    public function getCustomer()
     {
-        return $this->customerid;
+        return $this->customer;
+    }
+
+    /**
+     * Add subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     *
+     * @return Houses
+     */
+    public function addSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions[] = $subscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     */
+    public function removeSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions->removeElement($subscription);
+    }
+
+    /**
+     * Get subscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
     }
 }

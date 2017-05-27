@@ -43,7 +43,7 @@ class Payments
      *   @ORM\JoinColumn(name="SubscriptionID", referencedColumnName="SubscriptionID")
      * })
      */
-    private $subscriptionid;
+    private $subscription;
 
 
 
@@ -106,26 +106,26 @@ class Payments
     }
 
     /**
-     * Set subscriptionid
+     * Set subscription
      *
-     * @param \AppBundle\Entity\Subscriptions $subscriptionid
+     * @param \AppBundle\Entity\Subscriptions $subscription
      *
      * @return Payments
      */
-    public function setSubscriptionid(\AppBundle\Entity\Subscriptions $subscriptionid = null)
+    public function setSubscription(\AppBundle\Entity\Subscriptions $subscription = null)
     {
-        $this->subscriptionid = $subscriptionid;
+        $this->subscription = $subscription;
     
         return $this;
     }
 
     /**
-     * Get subscriptionid
+     * Get subscription
      *
      * @return \AppBundle\Entity\Subscriptions
      */
-    public function getSubscriptionid()
+    public function getSubscription()
     {
-        return $this->subscriptionid;
+        return $this->subscription;
     }
 }
