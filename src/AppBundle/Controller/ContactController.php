@@ -30,15 +30,15 @@ class ContactController extends Controller
 
 
         $messagesend = \Swift_Message::newInstance()
-            ->setSubject('cname')
-            ->setFrom('email')
+            ->setSubject('contact us - From GP')
+            ->setFrom("$email")
             ->setTo('antofuchong@gmail.com')
             ->setBody('message');
 
-        $this->get('mailer')->send($messagesend);
+        $this->get('mailer')->send($message);
 
 
-        die($cname.$email.$message);
+
 
         return $this->render('website/plans.html.twig');
     }
