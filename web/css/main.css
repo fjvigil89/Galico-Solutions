@@ -5323,3 +5323,12 @@ ins .amount {
   background:#777;
 
 }
+
+.color-red{
+  color: red;
+}
+
+.bot-padding2{
+
+  padding-bottom: 5px;
+}

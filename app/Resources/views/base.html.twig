@@ -2,8 +2,11 @@
 <html {% block class %}{% endblock %}>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="General Pro offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs.">
+     <meta name="keywords" content="general pro,general-pro, generalpro, plumbing, electricity ,doors and windows, locksmith, appliances, additional services, gp basic, gp add, gp plus, heating, child care, painting service, lawn maintenance">
+    <meta name="author" content="General Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     <title>{% block title %}GENERAL PRO{% endblock %}</title>
     {% block stylesheets %}
@@ -47,6 +50,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body ng-app="gpApp">
+{% set userId = app.session.get('userId') %}
 <div class="site">
     <div class="site-top style-02">
         <div class="container">
@@ -65,15 +69,15 @@
                 </div>-->
                 <div class="col-sm-5 col-md-6 hidden-xs-down">
                     <div class="text-xs-center text-sm-left">
-                       <ul class="menu">
+                       <!--<ul class="menu">
                            <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}"><a href="/translate/en"><img src="{{ asset('images/flag-en.png') }}" alt="English" title="English"></a></a></li>
 
                            <li class="menu-item">
                                 <a href="/translate/es"><img src="{{ asset('images/flag-es.png') }}" alt="Espa&ntilde;ol" title="Espa&ntilde;ol"></a>
 
                             </li>
-                            <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
-                        </ul>
+                            <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>
+                        </ul>-->
 
 
                     </div>
@@ -83,6 +87,7 @@
                 <div class="col-sm-7 col-md-6">
                     <div class="site-top-right text-xs-center text-sm-right">
                         <nav id="top-right-menu">
+                            {% if(userId=="")  %}
                             <ul class="menu">
                                 <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
                                 <li class="menu-item">
@@ -91,6 +96,20 @@
                                 </li>
                                 <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
                             </ul>
+                            {% else %}
+                                <ul class="menu">
+                                    <li class="menu-item">
+                                        <a href="#">My Account</a>
+                                        <ul class="sub-menu text-left">
+                                            <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>  My dashboard</a></li>
+                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>  Change my password</a></li>
+
+                                            <li class="menu-item"><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sign out</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
+                                </ul>
+                            {% endif %}
                         </nav>
                     </div>
                 </div>
@@ -105,9 +124,10 @@
             <div class="container">
                 <div class="row row-xs-center">
 
-                    <div class="col-xs-10 col-lg-2 site-branding">
+                    <div class="col-xs-10 col-lg-2 site-branding bot-padding2 top-padding">
                         <a href="/">
-                            <img src="images/logogp.png" alt="Renovation">
+                            <img src="{{asset('images/logogp.png')  }}" alt="General pro">
+
                         </a>
                     </div>
 
@@ -260,6 +280,45 @@
     </div>
     <!-- /.copyright -->
 </div>
+
+
+
+
+    <div id="passwordModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Change my password</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="pwd">Old password*</label>
+                        <input type="password" id="opwd" name="opwd" ng-model="user.opwd" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">New password*</label>
+                        <input type="password" id="npwd" name="npwd" ng-model="user.npwd" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Confirm password*</label>
+                        <input type="password" id="cPwd" name="cPwd" ng-model="user.cPwd" required>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-floppy-disk" title="Close"></span> Save
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}
 </body>
