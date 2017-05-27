@@ -104,7 +104,7 @@
                                             <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>  My dashboard</a></li>
                                             <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>  Change my password</a></li>
 
-                                            <li class="menu-item"><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sign out</a></li>
+                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>  Sign out</a></li>
                                         </ul>
                                     </li>
                                     <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -124,9 +124,9 @@
             <div class="container">
                 <div class="row row-xs-center">
 
-                    <div class="col-xs-10 col-lg-2 site-branding bot-padding2 top-padding">
+                    <div class="col-xs-2 col-lg-2 site-branding bot-padding2 top-padding">
                         <a href="/">
-                            <img src="{{asset('images/logogp.png')  }}" alt="General pro">
+                            <img src="{{asset('images/logogp.png')  }}" alt="General Pro">
 
                         </a>
                     </div>
@@ -319,6 +319,34 @@
 
         </div>
     </div>
+
+    <div id="signoutModal" class="modal fade" role="dialog" ng-controller="UserController">
+        <div class="modal-dialog">
+
+            <form id="frm_signout" action="{{ path('app_user_signout') }}">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span> Signing out...</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center text-bold">Are you sure you want to sign out?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" ng-click="signOut()">
+                        <span class="glyphicon glyphicon-log-out" title="Close"></span> Sign out
+                    </button>
+                </div>
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
 
 {% endblock %}
 </body>

@@ -57,6 +57,18 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/logout")
+     */
+    public function signOutAction(Request $request)
+    {
+        $this->get('session')->remove('userId');
+        $this->get('session')->invalidate();
+        $this->get('session')->clear();
+
+        return $this->redirectToRoute('home');
+    }
+
+    /**
      * @Route("/my-dashboard/{customerId}")
      */
     public function showMyDashboardAction($customerId)

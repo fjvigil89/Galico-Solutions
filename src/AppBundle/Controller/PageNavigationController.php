@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
 class PageNavigationController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/",name="home")
      */
     public function showHomeAction(Request $request)
     {

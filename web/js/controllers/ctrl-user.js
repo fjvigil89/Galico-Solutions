@@ -127,14 +127,14 @@ angular.module("gpApp")
                 $window.document.getElementById("zipCode").focus();
             }
 
-
-
-
-
-
             else
             {
                 $('#frm_register').submit();
             }
+        }
+
+        $scope.signOut = function()
+        {
+            $('#frm_signout').submit();
         }
     })
