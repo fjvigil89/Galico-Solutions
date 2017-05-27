@@ -20,7 +20,7 @@
                             <thead class="bg-yellow font-header">
                             <tr>
                                 <th colspan="2" ng-bind="customer.fullName"></th>
-                                <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                                <th class="text-right"><a href="" data-toggle="modal" data-target="#editModal" >
                                         <span class="glyphicon glyphicon-edit" title="Edit" ></span>
                                     </a></th>
 
@@ -100,8 +100,10 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="6">Houses</th>
-
+                                <th colspan="5">Houses</th>
+                                <th><a href="#" data-toggle="modal" data-target="#addmaisonModal" >
+                                    <span class="glyphicon glyphicon-plus-sign font-header"  title="add"></span>
+                                    </a></th>
                             </tr>
                             </thead>
                             <thead class="bg-light-gray">
@@ -386,6 +388,72 @@
             </div>
         </div>
 
+
+
+        <div id="addmaisonModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add House</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="add-plan">Plan:</label>
+                            <select name="plan" class="form-control" id="plan"  required>
+                                <option>GP Basic</option>
+                                <option>GP Plus</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-contact">Contact:</label>
+                            <input type="text" class="form-control" id="add-contact" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="add-phonePrimary">Phone (Primary):</label>
+                            <input type="tel" class="form-control" id="add-phonePrimary" value="" >
+                        </div>
+                        <div class="form-group">
+                            <label for="add-phonealternate">Phone (Alternate):</label>
+                            <input type="tel" class="form-control" id="add-phonealternate" value="" >
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country*</label>
+                            <select name="country" class="form-control" id="country"  required>
+                                <option>Canada</option>
+                                <option>United States</option>
+                                <option>Mexico</option>
+                                <option>Peru</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-state">State:</label>
+                            <input type="text" class="form-control" id="add-state" value="" >
+                        </div>
+                        <div class="form-group">
+                            <label for="add-city">City:</label>
+                            <input type="text" class="form-control" id="add-city" value="" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="add-address">Address:</label>
+                            <input type="text" class="form-control" id="add-address" value="" >
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-plus" title="Save"></span> Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
