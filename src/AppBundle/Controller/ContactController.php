@@ -32,7 +32,7 @@ class ContactController extends Controller
         $messagesend = \Swift_Message::newInstance()
             ->setSubject('contact us - From GP')
             ->setFrom("$email")
-            ->setTo('antofuchong@gmail.com')
+            ->setTo('contact@maxtergift.com')
             ->setBody('message');
 
         $this->get('mailer')->send($message);
