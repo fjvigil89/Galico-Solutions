@@ -89,7 +89,7 @@ angular.module("gpApp")
             }
             else if($scope.user.pwd!=$scope.user.cPwd)
             {
-                $scope.auth.message = "Your password don't match";
+                $scope.auth.message = "Your passwords don't match";
                 $scope.user.pwd = "";
                 $scope.user.cPwd = "";
                 $window.document.getElementById("pwd").focus();

@@ -63,8 +63,9 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    transport:  smtp
+    encryption: ssl
+    host:       email-smtp.us-east-1.amazonaws.com
+    auth_mode:  login
+    username:   AKIAJ4NLGDFCDM46QIQQ
+    password:   AikEFBrfg864B83GF51KtUh322HTTC4Djnt0DcUf4Go3

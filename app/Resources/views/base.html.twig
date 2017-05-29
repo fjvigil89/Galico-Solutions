@@ -89,12 +89,28 @@
                         <nav id="top-right-menu">
                             {% if(userId=="")  %}
                             <ul class="menu">
+
+                                <li class="menu-item">
+                                    <a href="#">Country</a>
+                                    <ul class="sub-menu text-left">
+                                        <li class="menu-item"><a href="" >Canada</a></li>
+                                        <li class="menu-item"><a href="" >United States</a></li>
+
+                                        <li class="menu-item"><a href="">Mexico</a></li>
+                                    </ul>
+                                </li>
                                 <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
                                 <li class="menu-item">
                                     <a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}Register{% endtrans %}</a>
 
                                 </li>
                                 <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
+
+
+                                    <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
+
+
+
                             </ul>
                             {% else %}
                                 <ul class="menu">
