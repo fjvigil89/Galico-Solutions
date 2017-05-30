@@ -96,7 +96,7 @@
                                         <li class="menu-item"><a href="" >Canada</a></li>
                                         <li class="menu-item"><a href="" >United States</a></li>
 
-                                        <li class="menu-item"><a href="">Mexico</a></li>
+                                        <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}">Mexico</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
@@ -178,7 +178,7 @@
                             <a href="/">{% trans %}Home{% endtrans %}</a></li>
 
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{% trans %}Plans{% endtrans %}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'Plans' | trans({}, "messages", "es") }}</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{% trans %}Contact us{% endtrans %}</a></li>
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
