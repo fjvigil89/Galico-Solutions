@@ -73,6 +73,38 @@
                  <source>We offer a wide range of services. Leave the building to the professionals.</source>
                  <target>Ofrecemos una alta gama de servicios. Deje que los profesionales realicen su trabajo.</target>
               </trans-unit>
+               <trans-unit id="home_band1">
+                 <source>Let’s Get the Job Done!</source>
+                 <target>¡Sus Necesidades son Nuestras Prioridades!</target>
+              </trans-unit>
+              <trans-unit id="home_band11">
+                 <source>From experienced handymen to highly trained professionals; we got it all covered!</source>
+                 <target>Nuestro personal está capacitado para cumplir cualquier trabajo eficientemente.</target>
+              </trans-unit>
+              <trans-unit id="home_band2">
+                 <source>Yes,</source>
+                 <target>¡Lo  </target>
+              </trans-unit>
+               <trans-unit id="home_band201">
+                 <source>We Can Do It!</source>
+                 <target>Mejor ya está aquí! </target>
+              </trans-unit>
+                <trans-unit id="home_band21">
+                 <source>Just pick a time and we will do the rest.</source>
+                 <target>Nuestros profesionales trabajan diligentemente para satisfacer sus necesidades.</target>
+              </trans-unit>
+                <trans-unit id="home_band3">
+                 <source>Let’s Open</source>
+                 <target>¡Hagámoslo! </target>
+              </trans-unit>
+                <trans-unit id="home_band301">
+                 <source>the Door to Better Days!</source>
+                 <target> </target>
+              </trans-unit>
+                <trans-unit id="home_band302">
+                 <source>Book expert home cleaners and handymen at a moment’s notice.</source>
+                 <target>Simplemente contáctenos y nosotros nos encargaremos del resto. </target>
+              </trans-unit>
 
                <trans-unit id="home_ourplans">
                  <source>Our plans</source>
