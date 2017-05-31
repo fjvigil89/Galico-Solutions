@@ -25,13 +25,14 @@ class PageNavigationController extends Controller
      */
     public function showHomeAction(Request $request)
     {
-       //var_dump($request); ["REQUEST_URI"]
+       //$this->container->get('session')->isStarted()
+        $session = $request->getSession();
+        if (!$session->has('lang'))
+        {
+            $this->get('session')->set('lang', 'en');
+        }
 
-        $translated = $this->get('translator')->trans('Home');
-        //die($request->getLocale());
-        return $this->render('website/home.html.twig',array(
-            'lang' => $request->getLocale()
-        ));
+        return $this->render('website/home.html.twig');
     }
 
     /**
