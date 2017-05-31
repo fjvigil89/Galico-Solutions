@@ -51,6 +51,7 @@
 </head>
 <body ng-app="gpApp">
 {% set userId = app.session.get('userId') %}
+{% set lang = app.session.get('lang') %}
 <div class="site">
     <div class="site-top style-02">
         <div class="container">
@@ -93,8 +94,8 @@
                                 <li class="menu-item">
                                     <a href="#">Country</a>
                                     <ul class="sub-menu text-left">
-                                        <li class="menu-item"><a href="" >Canada</a></li>
-                                        <li class="menu-item"><a href="" >United States</a></li>
+                                        <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" >Canada</a></li>
+                                        <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" >United States</a></li>
 
                                         <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}">Mexico</a></li>
                                     </ul>
@@ -178,9 +179,9 @@
                             <a href="/">{% trans %}Home{% endtrans %}</a></li>
 
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'Plans' | trans({}, "messages", "es") }}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'Plans' | trans({}, "messages", lang) }}</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{% trans %}Contact us{% endtrans %}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
 
                     </ul>

@@ -91,19 +91,7 @@ class PageNavigationController extends Controller
      */
     public function translateAction($lang, Request $request)
     {
-        $request->setLocale('es');
-
-        $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-        $translator = new Translator($locale);
-
-        $translator->setFallbackLocale('es');
-
-        $_SESSION['lang'] = $lang;
-        //die($request->getLocale());
-        return $this->render('website/signin.html.twig');
-
+        $this->get('session')->set('lang', $lang);
+        return $this->redirectToRoute("home");
     }
-
-
-
 }

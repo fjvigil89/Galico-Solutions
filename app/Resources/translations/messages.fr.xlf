@@ -28,11 +28,11 @@
             </trans-unit>
              <trans-unit id="menu_plans">
                 <source>Plans</source>
-                <target>Planes</target>
+                <target>Plans</target>
             </trans-unit>
             <trans-unit id="menu_contactus" resname="menu_contactus">
                  <source>Contact us</source>
-                 <target>Contáctenos</target>
+                 <target>Contactez-nous</target>
              </trans-unit>
               <trans-unit id="menu_aboutus">
                 <source>About us</source>
