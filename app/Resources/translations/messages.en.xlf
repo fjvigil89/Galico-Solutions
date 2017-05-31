@@ -17,29 +17,29 @@
 
 
     <!--End Head menu-->
-    <!--menu-->
-            <trans-unit id="menu_home">
-                <source>Home</source>
-                <target>Inicio</target>
-            </trans-unit>
-            <trans-unit id="menu_services">
-                <source>Services</source>
-                <target>Servicios</target>
-            </trans-unit>
-             <trans-unit id="menu_plans">
-                <source>Plans</source>
-                <target>Planes</target>
-            </trans-unit>
-            <trans-unit id="menu_contactus" resname="menu_contactus">
-                 <source>Contact us</source>
-                 <target>Contact us</target>
-             </trans-unit>
-              <trans-unit id="menu_aboutus">
-                <source>About us</source>
-                 <target>Quienes somos</target>
-              </trans-unit>
+   <!--menu-->
+               <trans-unit id="menu_home" resname="menu_home">
+                   <source>Home</source>
+                   <target>Home</target>
+               </trans-unit>
+               <trans-unit id="menu_services" resname="menu_services">
+                   <source>Services</source>
+                   <target>Services</target>
+               </trans-unit>
+                <trans-unit id="menu_plans" resname="menu_plans">
+                   <source>Plans</source>
+                   <target>Plans</target>
+               </trans-unit>
+               <trans-unit id="menu_contactus" resname="menu_contactus">
+                    <source>Contact us</source>
+                    <target>Contact us</target>
+                </trans-unit>
+                 <trans-unit id="menu_aboutus" resname="menu_aboutus">
+                   <source>About us</source>
+                    <target>About us</target>
+                 </trans-unit>
 
-    <!--End menu-->
+       <!--End menu-->
 
     <!--footer-->
 
@@ -55,7 +55,10 @@
                  <source>Copyright</source>
                  <target>Derecho de autor</target>
               </trans-unit>
-
+               <trans-unit id="foot_mission" resname="foot_mission">
+                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</source>
+                    <target>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</target>
+               </trans-unit>
 
     <!--End footer-->
 

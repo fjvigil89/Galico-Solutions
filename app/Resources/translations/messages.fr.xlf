@@ -6,9 +6,9 @@
 <!--Base-->
 
     <!--head menu-->
-            <trans-unit id="menu_signin">
+            <trans-unit id="menu_signin" resname="menu_signin">
                  <source>Sign in</source>
-                 <target>Iniciar sesión</target>
+                 <target>Se connecter</target>
             </trans-unit>
             <trans-unit id="menu_registre">
                    <source>Register</source>
@@ -18,26 +18,31 @@
 
     <!--End Head menu-->
     <!--menu-->
-            <trans-unit id="menu_home">
-                <source>Home</source>
-                <target>Inicio</target>
-            </trans-unit>
-            <trans-unit id="menu_services">
-                <source>Services</source>
-                <target>Servicios</target>
-            </trans-unit>
-             <trans-unit id="menu_plans">
-                <source>Plans</source>
-                <target>Plans</target>
-            </trans-unit>
-            <trans-unit id="menu_contactus" resname="menu_contactus">
-                 <source>Contact us</source>
-                 <target>Contactez-nous</target>
-             </trans-unit>
-              <trans-unit id="menu_aboutus">
-                <source>About us</source>
-                 <target>Quienes somos</target>
-              </trans-unit>
+                   <trans-unit id="menu_home" resname="menu_home">
+                       <source>Home</source>
+                       <target>Accueil</target>
+                   </trans-unit>
+                   <trans-unit id="menu_services" resname="menu_services">
+                       <source>Services</source>
+                       <target>Services</target>
+                   </trans-unit>
+                    <trans-unit id="menu_plans" resname="menu_plans">
+                       <source>Plans</source>
+                       <target>Plans</target>
+                   </trans-unit>
+                   <trans-unit id="menu_contactus" resname="menu_contactus">
+                        <source>Contact us</source>
+                        <target>Contactez-Nous</target>
+                    </trans-unit>
+                     <trans-unit id="menu_aboutus" resname="menu_aboutus">
+                       <source>About us</source>
+                        <target>À Propos</target>
+                     </trans-unit>
+
+               <trans-unit id="foot_mission" resname="foot_mission">
+                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
+                    <target>Chez General Pro, notre vision est d’améliorer le plus de vies possible. Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. General Pro s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
+               </trans-unit>
 
     <!--End menu-->
 

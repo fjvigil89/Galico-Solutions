@@ -92,7 +92,7 @@
                             <ul class="menu">
 
                                 <li class="menu-item">
-                                    <a href="#">Country</a>
+                                    <a href="#">{{ 'menu_country' | trans({}, "messages", lang) }}</a>
                                     <ul class="sub-menu text-left">
                                         <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" >Canada</a></li>
                                         <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" >United States</a></li>
@@ -100,9 +100,9 @@
                                         <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}">Mexico</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
+                                <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
                                 <li class="menu-item">
-                                    <a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}Register{% endtrans %}</a>
+                                    <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'menu_registre' | trans({}, "messages", lang) }}</a>
 
                                 </li>
                                 <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -118,10 +118,10 @@
                                     <li class="menu-item">
                                         <a href="#">My Account</a>
                                         <ul class="sub-menu text-left">
-                                            <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>  My dashboard</a></li>
-                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>  Change my password</a></li>
+                                            <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>{{ 'menu_dashboard' | trans({}, "messages", lang) }}</a></li>
+                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>{{ 'menu_password' | trans({}, "messages", lang) }}</a></li>
 
-                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>  Sign out</a></li>
+                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>{{ 'menu_signout' | trans({}, "messages", lang) }}</a></li>
                                         </ul>
                                     </li>
                                     <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -152,12 +152,12 @@
                         <a id="menu-button" href="#primary-menu-mobile"><i id="open-left" class="fa fa-bars"></i></a>
                         <nav id="primary-menu-mobile">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="{{ url('app_pagenavigation_showservices') }}">Services</a></li>
-                                <li><a href="{{ url('app_pagenavigation_showplans') }}">Plans</a></li>
+                                <li><a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
                                 <!--<li><a href="index.html">Prices</a></li>-->
-                                <li><a href="{{ url('app_pagenavigation_showcontactus') }}">Contact us</a></li>
-                                <li><a href="{{ url('app_pagenavigation_showaboutus') }}">About us</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -176,13 +176,13 @@
                 <div class="col-md-12">
                     <ul class="menu">
                         <li class="menu-item active">
-                            <a href="/">{% trans %}Home{% endtrans %}</a></li>
+                            <a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
 
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'Plans' | trans({}, "messages", lang) }}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showaboutus') }}">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</a></li>
 
                     </ul>
                 </div>
@@ -253,20 +253,20 @@
                 <div class="col-md-4">
                     <div class="footer-about">
                         <h4 class="color-white">Mission Statement</h4>
-                        <p>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </p>
+                        <p>{{ 'foot_mission' | trans({}, "messages", lang) }}</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="footer-infomation">
                         <h3 class="widget-tittle">{% trans %}information{% endtrans %}</h3>
                         <ul class="menu-infomation">
-                            <li><a href="/">{% trans %}Home{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showservices') }}">{% trans %}Services{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showplans') }}">{% trans %}Plans{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{% trans %}Contact us{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{% trans %}About us{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showsignin') }}">{% trans %}Sign in{% endtrans %}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}Register{% endtrans %}</a></li>
+                            <li><a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showsignin') }}">{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showregister') }}">{{ 'menu_registre' | trans({}, "messages", lang) }}</a></li>
 
                         </ul>
                     </div>
