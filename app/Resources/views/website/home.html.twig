@@ -30,7 +30,7 @@
                          data-elementdelay="0.1"
                          data-end="9000"
 
-                         style="z-index: 5; white-space: nowrap; color: #66a3ff;">{% trans %}Let’s Get the Job Done!{% endtrans %}
+                         style="z-index: 5; white-space: nowrap; color: #66a3ff;">{{ 'home_band1_title' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -52,7 +52,7 @@
 
                          data-end="9000"
 
-                         style="z-index: 6; white-space: nowrap; color: rgba(255, 255, 255, 1.00); font-size: 1.9em;">{% trans %}From experienced handymen to highly trained professionals; we got it all covered!{% endtrans %}
+                         style="z-index: 6; white-space: nowrap; color: rgba(255, 255, 255, 1.00); font-size: 1.9em;">{{ 'home_band1_subtitle' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 6 -->
@@ -76,7 +76,7 @@
                          data-responsive="off"
                          data-end="9000"
 
-                         style="z-index: 10; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"><a href="{{ url('app_pagenavigation_showregister') }}">{% trans %}FIND OUT MORE{% endtrans %}</a> <i class="fa-icon-angle-double-right"></i>
+                         style="z-index: 10; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"><a href="{{ url('app_pagenavigation_showregister') }}">{{ 'home_band1_button' | trans({}, "messages", lang) }}</a> <i class="fa-icon-angle-double-right"></i>
                     </div>
                 </li>
                 <!-- SLIDE  -->
@@ -104,7 +104,7 @@
                          data-responsive_offset="on"
 
 
-                         style="z-index: 5; white-space: nowrap; color: #66a3ff;">{% trans %} Yes,{% endtrans %}
+                         style="z-index: 5; white-space: nowrap; color: #66a3ff;">{{ 'home_band2_title1' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -128,7 +128,7 @@
                          data-responsive_offset="on"
 
 
-                         style="z-index: 7; white-space: nowrap; color: #ff6600;">{% trans %}We Can Do It!{% endtrans %}
+                         style="z-index: 7; white-space: nowrap; color: #ff6600;">{{ 'home_band2_title2' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 4 -->
@@ -150,7 +150,7 @@
 
                          data-elementdelay="0.05"
 
-                         style="  font-size: 1.8em; z-index: 8; white-space: nowrap; color: #66a3ff;"> {% trans %}Just pick a time and we will do the rest.{% endtrans %}
+                         style="  font-size: 1.8em; z-index: 8; white-space: nowrap; color: #66a3ff;"> {{ 'home_band2_subtitle' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 5 -->
@@ -221,7 +221,7 @@
                          data-responsive_offset="on"
 
 
-                         style="z-index: 5; white-space: nowrap; color:#66a3ff;">{% trans %}Let’s Open{% endtrans %}
+                         style="z-index: 5; white-space: nowrap; color:#66a3ff;">{{ 'home_band3_title1' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -243,7 +243,7 @@
                          data-responsive_offset="on"
 
 
-                         style="z-index: 6; white-space: nowrap; color: #ff6600;">{% trans %}the Door to Better Days!{% endtrans %}
+                         style="z-index: 6; white-space: nowrap; color: #ff6600;">{{ 'home_band3_title2' | trans({}, "messages", lang) }}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -289,7 +289,7 @@
                          data-responsive_offset="on"
 
 
-                         style="color: #66a3ff;font-size: 1.8em; z-index: 9; min-width: 503px; max-width: 503px; max-width: 45px; max-width: 45px; white-space: normal;">{% trans %}Book expert home cleaners and handymen at a moment’s notice.{% endtrans %}
+                         style="color: #66a3ff;font-size: 1.8em; z-index: 9; min-width: 503px; max-width: 503px; max-width: 45px; max-width: 45px; white-space: normal;">{{ 'home_band3_subtitle' | trans({}, "messages", lang) }}
                     </div>
                 </li>
             </ul>
@@ -307,7 +307,7 @@
                     <div class="we-are-layout2_pro">
                         <h2 class="heading-title">General pro</h2>
                         <p>
-                            We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. General Pro offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</p>
+                            {{ 'home_generalpro_resume' | trans({}, "messages", lang) }}</p>
                     </div>
                 </div>
 
@@ -323,8 +323,8 @@
                 <div class="row">
                     <div class="col-sm-12 text-center">
 
-                        <h2 class="heading-title">{% trans %}Our Services{% endtrans %}</h2>
-                        <h5 class="color-white">General Pro offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </h5>
+                        <h2 class="heading-title"> {{ 'home_ourservice_title' | trans({}, "messages", lang) }}</h2>
+                        <h5 class="color-white"> {{ 'home_ourservice_subtitle' | trans({}, "messages", lang) }}</h5>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#plumbing">
                                 <div class="service-item_icon"><i class="rn-plumbing"></i></div>
-                                {% trans %}Plumbing{% endtrans %}
+                                {{ 'plumbing' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -356,7 +356,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#electricity">
                                 <div class="service-item_icon"><i class="rn-electrical"></i></div>
-                                {% trans %}Electricity{% endtrans %}
+                                {{ 'electricity' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -368,7 +368,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#service-windows-and-doors">
                                 <div class="service-item_icon"><i class="rn-home"></i></div>
-                                {% trans %}Doors and Windows{% endtrans %}
+                                {{ 'doors_windows' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -380,7 +380,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#locksmith">
                                 <div class="service-item_icon"><i class="rn-renovation"></i></div>
-                                {% trans %}Locksmith{% endtrans %}
+                                {{ 'locksmith' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -393,7 +393,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#appliances">
                                 <div class="service-item_icon"><i class="rn-heating"></i></div>
-                                {% trans %}Appliances{% endtrans %}
+                                {{ 'appliances' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -405,7 +405,7 @@
                             </div>
                             <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#additional-services">
                                 <div class="service-item_icon"><i class="rn-painting"></i></div>
-                                {% trans %}Additional services{% endtrans %}
+                                {{ 'additional_services' | trans({}, "messages", lang) }}
                             </a>
                         </div>
                     </div>
@@ -421,8 +421,8 @@
             <div class="container" >
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <h2 class="heading-title">{% trans %}Our plans{% endtrans %}</h2>
-                        <h6 class="color-white">{% trans %}General Pro allows you to choose from three plans that include various services.{% endtrans %} </h6>
+                        <h2 class="heading-title">{{ 'home_ourplans' | trans({}, "messages", lang) }}</h2>
+                        <h6 class="color-white">{{ 'home_ourplans_subtitle' | trans({}, "messages", lang) }}</h6>
                     </div>
                 </div>
             </div>
@@ -438,7 +438,7 @@
                             GP BASIC
                         </a>
                         <p class="feature-item_description">
-                            {% trans %}Includes basic services such as plumbing, electricity, locksmith and doors & windows, for the affordable price of $24.99 per month.{% endtrans %}
+                            {{ 'home_gpbasic_resume' | trans({}, "messages", lang) }}
                         </p>
                     </div>
                 </div>
@@ -452,7 +452,7 @@
                             GP PLUS
                         </a>
                         <p class="feature-item_description">
-                            {% trans %}Includes the services offered in the GP Basic, while also providing appliance service, for only $29.99 per month.{% endtrans %}
+                            {{ 'home_gpplus_resume' | trans({}, "messages", lang) }}
                         </p>
                     </div>
                 </div>
@@ -467,12 +467,11 @@
                         </a>
                         <p class="feature-item_description">
 
-                            {% trans %}Covers additional services such as IT support, babysitting, house cleaning, and many more, at very competitive rates*{% endtrans %}
-
+                            {{ 'home_gpadd_resume1' | trans({}, "messages", lang) }}
                         </p>
                         <p class="feature-item_description">
 
-                            {% trans %}*Certain discounts can be applied. Refer to our “Plans” page for more information.{% endtrans %}
+                            {{ 'home_gpadd_resume2' | trans({}, "messages", lang) }}
                         </p>
                     </div>
                 </div>
@@ -493,7 +492,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="active">{% trans %}Locksmith{% endtrans %}</td>
+                        <td class="active">{{ 'locksmith' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
@@ -505,7 +504,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Electricity{% endtrans %}</td>
+                        <td class="active">{{ 'electricity' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
@@ -517,7 +516,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active"> {% trans %}Doors and Windows{% endtrans %}</td>
+                        <td class="active"> {{ 'doors_windows' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
@@ -529,7 +528,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active"> {% trans %}Plumbing{% endtrans %}</td>
+                        <td class="active"> {{ 'plumbing' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-ok"></span>
                         </td>
@@ -541,7 +540,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Appliances{% endtrans %}</td>
+                        <td class="active"> {{ 'appliances' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -553,7 +552,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}AC/Heating{% endtrans %}</td>
+                        <td class="active"> {{ 'ac_heating' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -565,7 +564,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Nursing Care{% endtrans %}</td>
+                        <td class="active"> {{ 'nursing_care' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -577,7 +576,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Child Care{% endtrans %}</td>
+                        <td class="active"> {{ 'child_Care' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -589,7 +588,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Lawn maintenance{% endtrans %}</td>
+                        <td class="active"> {{ 'lawn_maintenance' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -601,7 +600,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Cleaning services{% endtrans %}</td>
+                        <td class="active"> {{ 'cleaning_services' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -613,7 +612,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}IT support and services{% endtrans %}</td>
+                        <td class="active"> {{ 'it_support_services' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -625,7 +624,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="active">{% trans %}Painting Services{% endtrans %}</td>
+                        <td class="active"> {{ 'painting_services' | trans({}, "messages", lang) }}</td>
                         <td class="colorplan text-center">
                             <span class="glyphicon glyphicon-minus"></span>
                         </td>
@@ -650,7 +649,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center new-tips_title">
-                    <h2 class="heading-title">Just Three Easy Steps:</h2>
+                    <h2 class="heading-title">{{ 'home_just_three_steps' | trans({}, "messages", lang) }}</h2>
                     <p></p>
                 </div>
             </div>
@@ -662,14 +661,14 @@
                         <div class="entry-meta">
               <span class="posted-on">
                 <i class="fa fa-clock-o"></i>
-                <a href="{{ url('app_pagenavigation_showplans') }}">{% trans %}Select your plan{% endtrans %}</a>
+                <a href="{{ url('app_pagenavigation_showplans') }}">{{ 'home_select_your_plan' | trans({}, "messages", lang) }}</a>
               </span>
 
                         </div>
                     </div>
                     <div class="entry-header">
                         <h2 class="entry-title">
-                            <a href="{{ url('app_pagenavigation_showplans') }}">Browse through our plans and choose the one that best suits your needs. </a>
+                            <a href="{{ url('app_pagenavigation_showplans') }}">{{ 'home_select_your_plan_resume' | trans({}, "messages", lang) }}</a>
                         </h2>
                     </div>
                 </div>
@@ -681,14 +680,14 @@
                         <div class="entry-meta">
         <span class="posted-on">
           <i class="fa fa-clock-o"></i>
-          <a href="{{ url('app_pagenavigation_showregister') }}">Complete your information</a>
+          <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'home_complete_information' | trans({}, "messages", lang) }}</a>
         </span>
 
                         </div>
                     </div>
                     <div class="entry-header">
                         <h2 class="entry-title">
-                            <a href="{{ url('app_pagenavigation_showregister') }}">Fill out the subscription form with the required data.</a>
+                            <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'home_complete_information_resume' | trans({}, "messages", lang) }}</a>
                         </h2>
                     </div>
                 </div>
@@ -700,7 +699,7 @@
                         <div class="entry-meta">
         <span class="posted-on">
           <i class="fa fa-clock-o"></i>
-          <a href="{{ url('app_pagenavigation_showregister') }}">Submit and enroll</a>
+          <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'home_submit_and_enrolled' | trans({}, "messages", lang) }}</a>
         </span>
 
                         </div>
@@ -708,7 +707,7 @@
                     <div class="entry-header">
                         <h2 class="entry-title">
 
-                            <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'submit_and_enrolled_phrase' | trans({}, "messages", lang) }}</a>
+                            <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'home_submit_and_enrolled_resume' | trans({}, "messages", lang) }}</a>
                         </h2>
                     </div>
                 </div>
@@ -723,4 +722,3 @@
     </section>
     <!-- /.new-tips -->
 {% endblock %}
-

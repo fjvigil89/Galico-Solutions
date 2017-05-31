@@ -4,33 +4,33 @@
 
 {% block body %}
 <section class="about-big-title text-center" data-parallax="scroll" data-image-src="images/page-home/feature_style2_bg.jpg">
-  <h2 class="color-black">{% trans %}About us{% endtrans %}</h2>
-  <p class="color-black">We want to help you achieve your goals</p>
+  <h2 class="color-black">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</h2>
+  <p class="color-black">{{ 'about_band_subtitle' | trans({}, "messages", lang) }}</p>
 </section>
 <!-- /.about-big-title -->
 
 <div class="container" >
   <div class="row about-slogan text-center">
     <div class="col-xs-12">
-      <h3>“No Matter your Problem, We Can Solve it!.”</h3>
-      <p>General Pro’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces.  </p>
+      <h3>{{ 'about_slogan_title' | trans({}, "messages", lang) }}</h3>
+      <p>{{ 'about_slogan_subtitle' | trans({}, "messages", lang) }} </p>
     </div>
   </div>
   <!-- /.about-slogan -->
 
   <div class="row home-maintenance">
     <div class="col-md-6">
-      <h3>About General Pro</h3>
-      <p>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</p>
-      <p> Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible. </p>
+      <h3>{{ 'about_body_title' | trans({}, "messages", lang) }}</h3>
+      <p>{{ 'about_body_subtitle1' | trans({}, "messages", lang) }}</p>
+      <p> {{ 'about_body_subtitle2' | trans({}, "messages", lang) }} </p>
     </div>
     <div class="col-md-6">
       <img src="images/page-home/services-02.jpg" alt="">
     </div>
   </div>
 
-  <h5>Testimony</h5>
-  <i>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </i>
+  <h5>{{ 'about_testimony_title' | trans({}, "messages", lang) }}</h5>
+  <i>{{ 'about_testimony_resume' | trans({}, "messages", lang) }}</i>
 <p></p>
   <!-- /.home-maintenance -->
 </div>

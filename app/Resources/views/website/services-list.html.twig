@@ -7,8 +7,8 @@
      <div class="col-md-12">
         <div class="we-are-layout21_pro">
 
-      <h2 class="provide-services_title">Make your Concerns Go Away!</h2>
-      <h5 class="color-black">Every home owner dreams of having their home improvement projects done. Our professionals will make your dreams come true. </h5>
+      <h2 class="provide-services_title">{{ 'service_band_title' | trans({}, "messages", lang) }}</h2>
+      <h5 class="color-black">{{ 'service_band_sub' | trans({}, "messages", lang) }}</h5>
 		</div>
 	</div>
   </div>
@@ -28,22 +28,22 @@
                 <i class="rn-plumbing"></i>
               </div>
               <a class="service-item_link" >
-                Plumbing
+                  {{ 'plumbing' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title">{% trans %}Plumbing{% endtrans %}</h3>
-          <p class="service-list_item-description_content">Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.</div>
+          <h3 class="service-list_item-description_title">{{ 'plumbing' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_plumbing_resume' | trans({}, "messages", lang) }}</div>
         <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Unclog drains & pipes</li>
-            <li>Fix faucets</li>
-            <li>Faucet Repair & Installation</li>
-            <li>Sink Installation</li>
-            <li>Toilet Repair & Installation</li>
-            <li>Minor Plumbing Leaks</li>
+            <li>{{ 'service_plumbing_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_plumbing_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_plumbing_3' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_plumbing_4' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_plumbing_5' | trans({}, "messages", lang) }}</li>
+
 
           </ul>
         </div>
@@ -61,21 +61,21 @@
                 <i class="rn-electrical"></i>
               </div>
               <a class="service-item_link" >
-                Electricity
+                  {{ 'electricity' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
 
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title">{% trans %}Electricity{% endtrans %}</h3>
-          <p class="service-list_item-description_content">On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.     </div>
+          <h3 class="service-list_item-description_title">{{ 'electricity' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_electricity_resume' | trans({}, "messages", lang) }}</div>
         <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Switches and Socket Repair</li>
-            <li>Light Fixture Installation</li>
-            <li>Circuits and wiring </li>
-            <li>Ceiling fan installation & repair </li>
+            <li>{{ 'service_electricity_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_electricity_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_electricity_3' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_electricity_4' | trans({}, "messages", lang) }}</li>
 
             
           </ul>
@@ -91,19 +91,20 @@
                 <i class="rn-painting"></i>
               </div>
               <a class="service-item_link">
-                Doors and Windows
+                  {{ 'doors_windows' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title">{% trans %}Doors and Windows{% endtrans %}</h3>
-          <p class="service-list_item-description_content">Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </div><div class="col-sm-5 col-md-3 service-list_item-categories">
+          <h3 class="service-list_item-description_title">{{ 'doors_windows' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_doorswindows_resume' | trans({}, "messages", lang) }}</div>
+        <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Door installation</li>
-            <li>Windows installation</li>
-           <li>Replace window panel</li>
-            <li>Repair window panel</li>
+            <li>{{ 'service_doorswindows_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_doorswindows_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_doorswindows_3' | trans({}, "messages", lang) }}</li>
+
            
           </ul>
         </div>
@@ -119,23 +120,23 @@
                 <i class="rn-renovation"></i>
               </div>
               <a class="service-item_link">
-                Locksmith
+                  {{ 'locksmith' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title">{% trans %}Locksmith{% endtrans %}</h3>
-          <p class="service-list_item-description_content">Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our locksmiths to seal, fix, repair, disassemble, and change locks or key jams.
+          <h3 class="service-list_item-description_title">{{ 'locksmith' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_locksmith_resume' | trans({}, "messages", lang) }}
         </div>
         <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Installation</li>
-            <li>Repair </li>
-            <li>Change </li>
-            <li>Opening locks </li>
-            <li>Disassemble</li>
-            <li>Fix</li>
+            <li>{{ 'service_locksmith_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_locksmith_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_locksmith_3' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_locksmith_4' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_locksmith_5' | trans({}, "messages", lang) }}</li>
+
 
           </ul>
         </div>
@@ -153,23 +154,23 @@
                 <i class="rn-heating"></i>
               </div>
               <a class="service-item_link" >
-                General Appliances
+                  {{ 'appliances' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title">{% trans %}Appliances{% endtrans %}</h3>
-          <p class="service-list_item-description_content">We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them.
+          <h3 class="service-list_item-description_title">{{ 'appliances' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_appliances_resume' | trans({}, "messages", lang) }}
         </div>
         <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Washing machine</li>
-            <li>Refrigerators</li>
-            <li>Dishwashers</li>
-            <li>Microwave</li>
-            <li>Dryer</li>
-            <li>Range Hood</li>
+            <li>{{ 'service_appliances_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_appliances_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_appliances_3' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_appliances_4' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_appliances_5' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_appliances_6' | trans({}, "messages", lang) }}</li>
     
           </ul>
         </div>
@@ -184,23 +185,23 @@
                 <i class="rn-home"></i>
               </div>
               <a class="service-item_link" >
-                Additional services
+                  {{ 'additional_services' | trans({}, "messages", lang) }}
               </a>
             </div>
           </div>
         </div>
         <div class="col-sm-7 col-md-4 service-list_item-description">
-          <h3 class="service-list_item-description_title"> {% trans %}Additional services{% endtrans %}</h3>
-          <p class="service-list_item-description_content">General Pro genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more. </div>
+          <h3 class="service-list_item-description_title">  {{ 'additional_services' | trans({}, "messages", lang) }}</h3>
+          <p class="service-list_item-description_content">{{ 'service_additionalservices_resume' | trans({}, "messages", lang) }}</div>
         <div class="col-sm-5 col-md-3 service-list_item-categories">
           <ul>
-            <li>Cleaning services</li>
-            <li>Nursing Care</li>
-            <li>Day care</li>
-            <li>Lawn maintenance</li>
-            <li>IT support & services</li>
-            <li>Painting service</li>
-            <li>Carpet installation services</li>
+            <li>{{ 'service_additionalservices_1' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_2' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_3' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_4' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_5' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_6' | trans({}, "messages", lang) }}</li>
+            <li>{{ 'service_additionalservices_7' | trans({}, "messages", lang) }}</li>
           </ul>
         </div>
       </div>

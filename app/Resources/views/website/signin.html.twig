@@ -10,19 +10,19 @@
 <div class="container" ng-controller="UserController">
   <div class="row">
     <div class="col-xs-12">
-      <h3>Login</h3>
+      <h3>{{ 'form_login' | trans({}, "messages", lang) }}</h3>
 
       <form class="form-login" method="POST" id="frm_signin" action="{{ path('app_user_authenticate') }}">
         <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
         <div class="form-group">
-          <label for="email">Email*</label>
+          <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
           <input type="email" id="email" name="email" ng-model="user.email" required>
         </div>
         <div class="form-group">
-          <label for="pwd">Password*</label>
+          <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
           <input type="password" id="pwd" name="pwd" ng-model="user.pwd" required>
         </div>
-        <button type="button" class="btn" ng-click="authenticate()">Login</button>
+        <button type="button" class="btn" ng-click="authenticate()">{{ 'form_login' | trans({}, "messages", lang) }}</button>
         
         <p class="lost_password"><a href="#pass1" data-toggle="modal" data-target="#forgetpasswordModal" >Forget your password?</a></p>
         <input type="hidden" ng-model="user.authUrl" value="{{ path('app_user_authenticate')  }}">

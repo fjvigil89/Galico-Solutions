@@ -34,7 +34,7 @@
              data-elementdelay="0.1"
              data-end="9000"
 
-             style="z-index: 5; white-space: nowrap; color: rgba(255, 255, 255, 1.00);">Our Plans
+             style="z-index: 5; white-space: nowrap; color: rgba(255, 255, 255, 1.00);">{{ 'plans_band_title' | trans({}, "messages", lang) }}
         </div>
 
         <!-- LAYER NR. 2 -->
@@ -56,7 +56,7 @@
 
              data-end="9000"
 
-             style="z-index: 6; white-space: nowrap; color: black; font-size: 1.8em;">Our three different plans vary based on the services provided and the monthly prices.
+             style="z-index: 6; white-space: nowrap; color: black; font-size: 1.8em;">{{ 'plans_band_sub' | trans({}, "messages", lang) }}
         </div>
 
         <!-- LAYER NR. 6 -->
@@ -114,8 +114,8 @@
                   <img src="{{ asset('images/page-home/services-012.jpg') }}" alt="Locksmith">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle"> {% trans %}Locksmith{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your problems and concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our on-site locksmiths to seal, fix, repair, disassemble, and change locks or key jams.<br>&nbsp;</p>
+                      <h3 class="grid-overlay-tittle"> {{ 'locksmith' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'service_locksmith_resume' | trans({}, "messages", lang) }}<br>&nbsp;</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -125,8 +125,8 @@
                   <img src="{{ asset('images/page-home/services-022.jpg') }}" alt="Electrical">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Electricity{% endtrans %}</h3>
-                      <p class="grid-overlay-description">On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.      </p><br/>
+                      <h3 class="grid-overlay-tittle">{{ 'electricity' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'service_electricity_resume' | trans({}, "messages", lang) }}</p><br/>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -136,8 +136,8 @@
                   <img src="{{ asset('images/page-home/services-032.jpg') }}" alt="Windows and doors">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Doors and Windows{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </p><br/>
+                      <h3 class="grid-overlay-tittle"> {{ 'doors_windows' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'service_doorswindows_resume' | trans({}, "messages", lang) }}</p><br/>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                       </br>
                       </br>
@@ -151,8 +151,8 @@
                   <img src="{{ asset('images/page-home/services-042.jpg') }}" alt="Plumbing">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Plumbing{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.        </p>
+                      <h3 class="grid-overlay-tittle"> {{ 'plumbing' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'service_plumbing_resume' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                       </br>
                       </br>
@@ -165,8 +165,8 @@
                   <img src="{{ asset('images/page-home/services-05.jpg') }}" alt="Appliances">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}AC/Heating{% endtrans %}</h3>
-                      <p class="grid-overlay-description">The AC/heating system is essential to a house. No matter the season, this system is crucial to maintain a good temperature around. When this system is breaking down, or showing deficiencies many problems are caused. Our team of experts can efficiently take care of the flaws of your AC/heating system, so that you can lead a more comfortable life. </p>
+                      <h3 class="grid-overlay-tittle">{{ 'ac_heating' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'plans_ac_heating' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                       </br>
                     </div>
@@ -177,8 +177,8 @@
                   <img src="{{ asset('images/page-home/services-11.jpg') }}" alt="Appliances">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Appliances{% endtrans %}</h3>
-                      <p class="grid-overlay-description">We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them. </p>
+                      <h3 class="grid-overlay-tittle">{{ 'appliances' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'service_appliances_resume' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -188,8 +188,8 @@
                   <img src="{{ asset('images/page-home/services-07.jpg') }}" alt="nursing">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Nursing Care{% endtrans %}</h3>
-                      <p class="grid-overlay-description">Need a professional person to care of a relative when you can’t? General Pro’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones.  </p>
+                      <h3 class="grid-overlay-tittle">{{ 'nursing_care' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description"> {{ 'plans_nursing' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                       </br>
                       </br>
@@ -202,8 +202,8 @@
                   <img src="{{ asset('images/page-home/services-08.jpg') }}" alt="child care">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">Child Care</h3>
-                      <p class="grid-overlay-description">At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. General Pro’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.    </p>
+                      <h3 class="grid-overlay-tittle">{{ 'child_Care' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description"> {{ 'plans_child' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -215,8 +215,8 @@
                   <img src="{{ asset('images/page-home/services-09.jpg') }}" alt="Gardening">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Lawn maintenance{% endtrans %}</h3>
-                      <p class="grid-overlay-description"> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, General Pro offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve.  </p>
+                      <h3 class="grid-overlay-tittle">{{ 'lawn_maintenance' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'plans_lawn' | trans({}, "messages", lang) }} </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -226,8 +226,8 @@
                   <img src="{{ asset('images/page-home/services-06.jpg') }}" alt="House cleaning">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Cleaning services{% endtrans %}</h3>
-                      <p class="grid-overlay-description">You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. General Pro’s house cleaning services consist of professionally trained cleaners that will meet your demands. </p>
+                      <h3 class="grid-overlay-tittle"> {{ 'cleaning_services' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'plans_cleaning' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -237,8 +237,8 @@
                   <img src="{{ asset('images/page-home/services-10.jpg') }}" alt="House cleaning">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}IT support and services{% endtrans %}</h3>
-                      <p class="grid-overlay-description">If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </p>
+                      <h3 class="grid-overlay-tittle">{{ 'it_support_services' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'plans_support' | trans({}, "messages", lang) }}</p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>
@@ -247,9 +247,9 @@
                   <img src="{{ asset('images/page-home/services-12.jpg') }}" alt="Painting service">
                   <div class="grid-overlay">
                     <div class="grid-overlay-wrapper">
-                      <h3 class="grid-overlay-tittle">{% trans %}Painting Services{% endtrans %}</h3>
-                      <p class="grid-overlay-description">
-                        You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! General Pro’s team of specialists will gladly fulfil your requests.   </p>
+                      <h3 class="grid-overlay-tittle">{{ 'painting_services' | trans({}, "messages", lang) }}</h3>
+                      <p class="grid-overlay-description">{{ 'plans_painting' | trans({}, "messages", lang) }}
+                      </p>
                       <!--<a class="grid-overlay-readmore" href="#">read more</a>-->
                     </div>
                   </div>

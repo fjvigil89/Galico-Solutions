@@ -7,7 +7,7 @@
      <div class="col-md-12">
         <div class="we-are-layoutcontact_pro">
    
-      <h2 class="provide-services_title">{% trans %}Contact us{% endtrans %}</h2>
+      <h2 class="provide-services_title">{{ 'menu_contactus' | trans({}, "messages", lang) }}</h2>
 
 		</div>
 	</div>
@@ -24,7 +24,7 @@
      
       <!-- /.hotline -->
 
-      <p class="hotline-description">Feel free to contact us at any time, our customer service representative will respond shortly. We encourage your comments and suggestions.  </p>
+      <p class="hotline-description">{{ 'contactus_resume' | trans({}, "messages", lang) }}</p>
       <!-- /.hotline-description -->
 
 
@@ -40,19 +40,19 @@
       <form id="frm_contact_us" method="GET" action="{{ path('send_email') }}" >
         <div class="row">
           <div class="col-sm-12">
-            <input type="text" id="cname" name="cname"  ng-model="sender.cname" required placeholder="Name*">
+            <input type="text" id="cname" name="cname"  ng-model="sender.cname" required placeholder="{{ 'form_name' | trans({}, "messages", lang) }}">
           </div>
           <div class="col-sm-12">
-            <input type="text" name="phone" id="phone" ng-model="sender.phone" value="" size="40" aria-invalid="false" placeholder="Phone">
+            <input type="text" name="phone" id="phone" ng-model="sender.phone" value="" size="40" aria-invalid="false" placeholder="{{ 'form_phone_primary' | trans({}, "messages", lang) }}">
           </div>
           <div class="col-sm-12">
-            <input type="email" name="email" id="email" ng-model="sender.email" required placeholder="Email*">
+            <input type="email" name="email" id="email" ng-model="sender.email" required placeholder="{{ 'form_email' | trans({}, "messages", lang) }}">
           </div>
           <div class="col-sm-12">
-            <textarea name="message" id="message" ng-model="sender.message" cols="40" rows="10" aria-invalid="false" placeholder="Your message*" style="height: 110px;"></textarea>
+            <textarea name="message" id="message" ng-model="sender.message" cols="40" rows="10" aria-invalid="false" placeholder="{{ 'form_message' | trans({}, "messages", lang) }}" style="height: 110px;"></textarea>
           </div>
           <div class="col-sm-12">
-            <button type="button" class="btn" ng-click="send()">Send Messages</button>
+            <button type="button" class="btn" ng-click="send()">{{ 'form_send_message' | trans({}, "messages", lang) }}</button>
           </div>
         </div>
       </form>

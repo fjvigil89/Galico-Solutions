@@ -6,210 +6,632 @@
 <!--Base-->
 
     <!--head menu-->
-            <trans-unit id="menu_signin">
+            <trans-unit id="menu_signin" resname="menu_signin">
                  <source>Sign in</source>
-                 <target>Iniciar sesión</target>
+                 <target>Sign in</target>
             </trans-unit>
-            <trans-unit id="menu_registre">
+            <trans-unit id="menu_registre" resname="menu_registre">
                    <source>Register</source>
-                   <target>Registrarse</target>
+                   <target>Register</target>
+             </trans-unit>
+            <trans-unit id="menu_country" resname="menu_country">
+                   <source>Country</source>
+                   <target>Country</target>
+             </trans-unit>
+
+            <trans-unit id="menu_dashboard" resname="menu_dashboard">
+                 <source>My dashboard</source>
+                 <target>My dashboard</target>
+            </trans-unit>
+            <trans-unit id="menu_password" resname="menu_password">
+                   <source>Change my password</source>
+                   <target>Change my password</target>
+             </trans-unit>
+            <trans-unit id="menu_signout" resname="menu_signout">
+                   <source>Sign out</source>
+                   <target>Sign out</target>
              </trans-unit>
 
 
     <!--End Head menu-->
-   <!--menu-->
-               <trans-unit id="menu_home" resname="menu_home">
-                   <source>Home</source>
-                   <target>Home</target>
-               </trans-unit>
-               <trans-unit id="menu_services" resname="menu_services">
-                   <source>Services</source>
-                   <target>Services</target>
-               </trans-unit>
-                <trans-unit id="menu_plans" resname="menu_plans">
-                   <source>Plans</source>
-                   <target>Plans</target>
-               </trans-unit>
-               <trans-unit id="menu_contactus" resname="menu_contactus">
-                    <source>Contact us</source>
-                    <target>Contact us</target>
-                </trans-unit>
-                 <trans-unit id="menu_aboutus" resname="menu_aboutus">
-                   <source>About us</source>
-                    <target>About us</target>
-                 </trans-unit>
+    <!--menu-->
+            <trans-unit id="menu_home" resname="menu_home">
+                <source>Home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="menu_services" resname="menu_services">
+                <source>Services</source>
+                <target>Services</target>
+            </trans-unit>
+             <trans-unit id="menu_plans" resname="menu_plans">
+                <source>Plans</source>
+                <target>Plans</target>
+            </trans-unit>
+            <trans-unit id="menu_contactus" resname="menu_contactus">
+                 <source>Contact us</source>
+                 <target>Contact us</target>
+             </trans-unit>
+              <trans-unit id="menu_aboutus" resname="menu_aboutus">
+                <source>About us</source>
+                 <target>About us</target>
+              </trans-unit>
 
-       <!--End menu-->
+    <!--End menu-->
 
     <!--footer-->
-
-               <trans-unit id="menu_information">
-                 <source>infomation</source>
-                 <target>Información</target>
+               <trans-unit id="title_mission" resname="title_mission">
+                    <source>Mission Statement</source>
+                    <target>Mission Statement</target>
               </trans-unit>
-               <trans-unit id="menu_allrightreserved">
-                 <source>All rights reserved.</source>
-                 <target>Todos los derechos reservados.</target>
+               <trans-unit id="menu_information" resname="menu_information">
+                    <source>information</source>
+                    <target>information</target>
               </trans-unit>
-               <trans-unit id="menu_copyright">
-                 <source>Copyright</source>
-                 <target>Derecho de autor</target>
+               <trans-unit id="menu_allrightreserved" resname="menu_allrightreserved">
+                    <source>All rights reserved.</source>
+                    <target>All rights reserved.</target>
+              </trans-unit>
+               <trans-unit id="menu_copyright" resname="menu_copyright">
+                    <source>Copyright</source>
+                    <target>Copyright</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</source>
+                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
                     <target>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</target>
                </trans-unit>
 
     <!--End footer-->
 
+    <!--Modal-->
+
+               <trans-unit id="modal_Old_password" resname="modal_Old_password">
+                    <source>Old password*</source>
+                    <target>Old password*</target>
+              </trans-unit>
+               <trans-unit id="modal_new_pass" resname="modal_new_pass">
+                    <source>New password*</source>
+                    <target>New password*</target>
+              </trans-unit>
+               <trans-unit id="modal_confirm_password" resname="modal_confirm_password">
+                    <source>Confirm password*</source>
+                    <target>Confirm password*</target>
+              </trans-unit>
+               <trans-unit id="modal_singing_out" resname="modal_singing_out">
+                    <source>Signing out...</source>
+                    <target>Signing out...</target>
+               </trans-unit>
+                <trans-unit id="modal_conf_signout" resname="modal_conf_signout">
+                     <source>Are you sure you want to sign out?</source>
+                     <target>Are you sure you want to sign out?</target>
+               </trans-unit>
+               <trans-unit id="modal_signout" resname="modal_signout">
+                    <source>Sign out</source>
+                    <target>Sign out</target>
+              </trans-unit>
+
+
+    <!--End Modal-->
 
 <!--End Base-->
 
 
 <!--Home-->
+         <!--Band-->
 
-               <trans-unit id="home_ourservice">
-                 <source>Our Services</source>
-                 <target>Nuestros Servicios</target>
+              <trans-unit id="home_band1_title" resname="home_band1_title">
+                    <source>Let’s Get the Job Done!</source>
+                    <target>Let’s Get the Job Done!</target>
               </trans-unit>
-               <trans-unit id="home_ourservicephrase">
-                 <source>We offer a wide range of services. Leave the building to the professionals.</source>
-                 <target>Ofrecemos una alta gama de servicios. Deje que los profesionales realicen su trabajo.</target>
+              <trans-unit id="home_band1_subtitle" resname="home_band1_subtitle">
+                    <source>From experienced handymen to highly trained professionals; we got it all covered!</source>
+                    <target>From experienced handymen to highly trained professionals; we got it all covered!</target>
               </trans-unit>
-               <trans-unit id="home_band1">
-                 <source>Let’s Get the Job Done!</source>
-                 <target>¡Sus Necesidades son Nuestras Prioridades!</target>
+              <trans-unit id="home_band1_button" resname="home_band1_button">
+                    <source>FIND OUT MORE</source>
+                    <target>FIND OUT MORE</target>
               </trans-unit>
-              <trans-unit id="home_band11">
-                 <source>From experienced handymen to highly trained professionals; we got it all covered!</source>
-                 <target>Nuestro personal está capacitado para cumplir cualquier trabajo eficientemente.</target>
+              <trans-unit id="home_band2_title1" resname="home_band2_title1">
+                    <source> Yes,</source>
+                    <target>Yes,</target>
               </trans-unit>
-              <trans-unit id="home_band2">
-                 <source>Yes,</source>
-                 <target>¡Lo  </target>
+              <trans-unit id="home_band2_title2" resname="home_band2_title2">
+                    <source>We Can Do It!</source>
+                    <target>We Can Do It!</target>
               </trans-unit>
-               <trans-unit id="home_band201">
-                 <source>We Can Do It!</source>
-                 <target>Mejor ya está aquí! </target>
+              <trans-unit id="home_band2_subtitle" resname="home_band2_subtitle">
+                    <source>Just pick a time and we will do the rest.</source>
+                     <target>Just pick a time and we will do the rest.</target>
               </trans-unit>
-                <trans-unit id="home_band21">
-                 <source>Just pick a time and we will do the rest.</source>
-                 <target>Nuestros profesionales trabajan diligentemente para satisfacer sus necesidades.</target>
+              <trans-unit id="home_band3_title1" resname="home_band3_title1">
+                    <source>Let’s Open</source>
+                    <target>Let’s Open</target>
               </trans-unit>
-                <trans-unit id="home_band3">
-                 <source>Let’s Open</source>
-                 <target>¡Hagámoslo! </target>
+              <trans-unit id="home_band3_title2" resname="home_band3_title2">
+                    <source>the Door to Better Days!</source>
+                    <target>the Door to Better Days!</target>
               </trans-unit>
-                <trans-unit id="home_band301">
-                 <source>the Door to Better Days!</source>
-                 <target> </target>
-              </trans-unit>
-                <trans-unit id="home_band302">
-                 <source>Book expert home cleaners and handymen at a moment’s notice.</source>
-                 <target>Simplemente contáctenos y nosotros nos encargaremos del resto. </target>
+              <trans-unit id="home_band3_subtitle" resname="home_band3_subtitle">
+                    <source>Book expert home cleaners and handymen at a moment’s notice.</source>
+                    <target>Book expert home cleaners and handymen at a moment’s notice.</target>
               </trans-unit>
 
-               <trans-unit id="home_ourplans">
-                 <source>Our plans</source>
-                 <target>Nuestros planes</target>
+         <!--End Band-->
+
+               <trans-unit id="home_generalpro_resume" resname="home_generalpro_resume">
+                    <source>We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. General Pro offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</source>
+                    <target>We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. General Pro offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</target>
               </trans-unit>
-               <trans-unit id="home_Three_plans">
-                 <source>Three plans are at your disposal.</source>
-                 <target>Contamos con tres planes a su disposicion.</target>
+               <trans-unit id="home_ourservice_title" resname="home_ourservice_title">
+                    <source>Our Services</source>
+                    <target>Our Services</target>
+              </trans-unit>
+               <trans-unit id="home_ourservice_subtitle" resname="home_ourservice_subtitle">
+                     <source>General Pro offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </source>
+                     <target>General Pro offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </target>
+              </trans-unit>
+         <!--Gp Basic-->
+               <trans-unit id="plumbing" resname="plumbing">
+                     <source>Plumbing</source>
+                     <target>Plumbing</target>
+              </trans-unit>
+               <trans-unit id="electricity" resname="electricity">
+                     <source>Electricity</source>
+                     <target>Electricity</target>
+              </trans-unit>
+               <trans-unit id="doors_windows" resname="doors_windows">
+                     <source>Doors and Windows</source>
+                     <target>Doors and Windows</target>
+              </trans-unit>
+               <trans-unit id="locksmith" resname="locksmith">
+                     <source>Locksmith</source>
+                     <target>Locksmith</target>
+              </trans-unit>
+               <trans-unit id="appliances" resname="appliances">
+                     <source>Appliances</source>
+                     <target>Appliances</target>
+              </trans-unit>
+               <trans-unit id="additional_services" resname="additional_services">
+                     <source>Additional services</source>
+                     <target>Additional services</target>
+              </trans-unit>
+         <!--End Gp Basic-->
+         <!--Gp plus-->
+               <trans-unit id="ac_heating" resname="ac_heating">
+                     <source>AC/Heating</source>
+                     <target>AC/Heating</target>
+              </trans-unit>
+         <!--End Gp plus-->
+         <!--Gp add-->
+
+              <trans-unit id="nursing_care" resname="nursing_care">
+                     <source>Nursing Care</source>
+                     <target>Nursing Care</target>
+              </trans-unit>
+              <trans-unit id="child_Care" resname="child_Care">
+                     <source>Child Care</source>
+                     <target>Child Care</target>
+              </trans-unit>
+               <trans-unit id="lawn_maintenance" resname="lawn_maintenance">
+                     <source>Lawn maintenance</source>
+                     <target>Lawn maintenance</target>
+              </trans-unit>
+              <trans-unit id="cleaning_services" resname="cleaning_services">
+                     <source>Cleaning services</source>
+                     <target>Cleaning services</target>
+              </trans-unit>
+              <trans-unit id="it_support_services" resname="it_support_services">
+                      <source>IT support and services</source>
+                      <target>IT support and services</target>
+               </trans-unit>
+               <trans-unit id="painting_services" resname="painting_services">
+                        <source>Painting Services</source>
+                        <target>Painting Services</target>
               </trans-unit>
 
+         <!--End Gp plus-->
 
-               <trans-unit id="home_plumbing">
-                 <source>Plumbing</source>
-                 <target>Plomeria</target>
+               <trans-unit id="home_ourplans" resname="home_ourplans">
+                     <source>Our plans</source>
+                     <target>Our plans</target>
               </trans-unit>
-               <trans-unit id="home_electricity">
-                 <source>Electricity</source>
-                 <target>Electricidad</target>
+               <trans-unit id="home_ourplans_subtitle" resname="home_ourplans_subtitle">
+                     <source>General Pro allows you to choose from three plans that include various services.</source>
+                     <target>eneral Pro allows you to choose from three plans that include various services.</target>
               </trans-unit>
-               <trans-unit id="home_doors_windows">
-                 <source>Doors and Windows</source>
-                 <target>Puertas y Ventanas</target>
+               <trans-unit id="home_gpbasic_resume" resname="home_gpbasic_resume">
+                     <source>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</source>
+                     <target>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</target>
               </trans-unit>
-               <trans-unit id="home_locksmith">
-                 <source>Locksmith</source>
-                 <target>Cerrajeria</target>
+               <trans-unit id="home_gpplus_resume" resname="home_gpplus_resume">
+                     <source>Includes the services offered in the GP Basic, while also providing appliance service, for only $29.99 per month.</source>
+                     <target>Includes the services offered in the GP Basic, while also providing appliance service, for only $29.99 per month.</target>
               </trans-unit>
-               <trans-unit id="home_appliances">
-                 <source>Appliances</source>
-                 <target>Electrodomésticos</target>
+               <trans-unit id="home_gpadd_resume1" resname="home_gpadd_resume1">
+                     <source>Covers additional services such as IT support, babysitting, house cleaning, and many more, at very competitive rates*</source>
+                     <target>Covers additional services such as IT support, babysitting, house cleaning, and many more, at very competitive rates*</target>
               </trans-unit>
-               <trans-unit id="home_additional_services">
-                 <source>Additional services</source>
-                 <target>Servicios adicionales</target>
-              </trans-unit>
-
-
-               <trans-unit id="aC_heating">
-                 <source>AC/Heating</source>
-                 <target>AC/Calefaccion</target>
-              </trans-unit>
-               <trans-unit id="cursing_care">
-                 <source>Nursing Care</source>
-                 <target>Cuidado personas adultas</target>
-              </trans-unit>
-               <trans-unit id="day_Care">
-                 <source>Day Care</source>
-                 <target>Cuidado de niños</target>
-              </trans-unit>
-                <trans-unit id="lawn_maintenance">
-                 <source>Lawn maintenance</source>
-                 <target>Mantenimiento Jardines</target>
-              </trans-unit>
-               <trans-unit id="cleaning_services">
-                 <source>Cleaning services</source>
-                 <target>Servicios de limpieza</target>
-              </trans-unit>
-               <trans-unit id="it_support_services">
-                <source>IT support and services</source>
-                 <target>Servicio y soporte informatico</target>
-                 </trans-unit>
-               <trans-unit id="painting_services">
-                 <source>Painting Services</source>
-                 <target>Servicios de pintado</target>
+               <trans-unit id="home_gpadd_resume2" resname="home_gpadd_resume2">
+                     <source>*Certain discounts can be applied. Refer to our “Plans” page for more information.</source>
+                     <target>*Certain discounts can be applied. Refer to our “Plans” page for more information.</target>
               </trans-unit>
 
-
-
-                <trans-unit id="just_three_steps">
-                 <source>Just three steps</source>
-                 <target>Solo en tres pasos</target>
+              <trans-unit id="home_just_three_steps" resname="home_just_three_steps">
+                     <source>Just Three Easy Steps:</source>
+                     <target>Just Three Easy Steps:</target>
               </trans-unit>
-               <trans-unit id="select_your_plan">
-                 <source>Select your plan</source>
-                 <target>Seleccione su plan</target>
+              <trans-unit id="home_select_your_plan" resname="home_select_your_plan">
+                     <source>Select your plan</source>
+                     <target>Select your plan</target>
               </trans-unit>
-               <trans-unit id="select_your_plan_phrase">
-                <source>Check what plan we offer and choose what suits you best</source>
-                 <target>Conozca nuestros planes y elija la mejor opcion</target>
-                 </trans-unit>
-               <trans-unit id="provide_information">
-                 <source>Provide information</source>
-                 <target>Complete el formulario</target>
+              <trans-unit id="home_select_your_plan_resume" resname="home_select_your_plan_resume">
+                     <source>Browse through our plans and choose the one that best suits your needs.</source>
+                     <target>Browse through our plans and choose the one that best suits your needs.</target>
               </trans-unit>
-
-              <trans-unit id="provide_information_phrase">
-                 <source>Fill out the form with the required information</source>
-                 <target>Complete debidamente nuestro formulario</target>
+              <trans-unit id="home_complete_information" resname="home_complete_information">
+                    <source>Complete your information</source>
+                    <target>Complete your information</target>
+               </trans-unit>
+               <trans-unit id="home_complete_information_resume" resname="home_complete_information_resume">
+                     <source>Fill out the subscription form with the required data.</source>
+                     <target>Fill out the subscription form with the required data.</target>
               </trans-unit>
 
-               <trans-unit id="submit_and_enrolled">
-                 <source>Submit and enrolled</source>
-                 <target>Confirmación</target>
+               <trans-unit id="home_submit_and_enrolled" resname="home_submit_and_enrolled">
+                     <source>Submit and enroll</source>
+                     <target>Submit and enroll</target>
               </trans-unit>
-                <trans-unit id="submit_and_enrolled_phrase" resname="submit_and_enrolled_phrase">
-                <source>Pay and your information will be processed</source>
-                 <target>Espere su numero de confirmación</target>
+                <trans-unit id="home_submit_and_enrolled_resume" resname="home_submit_and_enrolled_resume">
+                        <source>Pay and your information will be processed</source>
+                        <target>Pay and your information will be processed</target>
                  </trans-unit>
 
 
 
 <!--End Home-->
+
+<!--Services-->
+              <trans-unit id="service_band_title" resname="service_band_title">
+                     <source>Make your Concerns Go Away!</source>
+                     <target>Make your Concerns Go Away!</target>
+              </trans-unit>
+              <trans-unit id="service_band_sub" resname="service_band_sub">
+                     <source>Every home owner dreams of having their home improvement projects done. Our professionals will make your dreams come true. </source>
+                     <target>Every home owner dreams of having their home improvement projects done. Our professionals will make your dreams come true. </target>
+              </trans-unit>
+              <trans-unit id="service_plumbing_resume" resname="service_plumbing_resume">
+                     <source>Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.</source>
+                     <target>Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.</target>
+              </trans-unit>
+
+                               <trans-unit id="service_plumbing_1" resname="service_plumbing_1">
+                                      <source>Unclog drains and pipes</source>
+                                      <target>Unclog drains and pipes</target>
+                               </trans-unit>
+                               <trans-unit id="service_plumbing_2" resname="service_plumbing_2">
+                                        <source>Faucet Repair and Installation</source>
+                                        <target>Faucet Repair and Installation</target>
+                               </trans-unit>
+                                <trans-unit id="service_plumbing_3" resname="service_plumbing_3">
+                                       <source>Sink Installation</source>
+                                       <target>Sink Installation</target>
+                                </trans-unit>
+                                <trans-unit id="service_plumbing_4" resname="service_plumbing_4">
+                                       <source>Toilet Repair and Installation</source>
+                                       <target>Toilet Repair and Installation</target>
+                                </trans-unit>
+                                <trans-unit id="service_plumbing_5" resname="service_plumbing_5">
+                                         <source>Minor Plumbing Leaks</source>
+                                         <target>Minor Plumbing Leaks</target>
+                                </trans-unit>
+
+
+              <trans-unit id="service_electricity_resume" resname="service_electricity_resume">
+                     <source>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</source>
+                     <target>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</target>
+              </trans-unit>
+
+                               <trans-unit id="service_electricity_1" resname="service_electricity_1">
+                                      <source>Switches and Socket Repair</source>
+                                      <target>Switches and Socket Repair</target>
+                               </trans-unit>
+                               <trans-unit id="service_electricity_2" resname="service_electricity_2">
+                                        <source>Light Fixture Installation</source>
+                                        <target>Light Fixture Installation</target>
+                               </trans-unit>
+                                <trans-unit id="service_electricity_3" resname="service_electricity_3">
+                                       <source>Circuits and wiring Inspections</source>
+                                       <target>Circuits and wiring Inspections</target>
+                                </trans-unit>
+                                <trans-unit id="service_electricity_4" resname="service_electricity_4">
+                                       <source>Ceiling fan installation and repair</source>
+                                       <target>Ceiling fan installation and repair</target>
+                                </trans-unit>
+
+
+               <trans-unit id="service_doorswindows_resume" resname="service_doorswindows_resume">
+                      <source>Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </source>
+                      <target>Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </target>
+               </trans-unit>
+
+                               <trans-unit id="service_doorswindows_1" resname="service_doorswindows_1">
+                                      <source>Windows frames repair</source>
+                                      <target>Windows frames repair</target>
+                               </trans-unit>
+                               <trans-unit id="service_doorswindows_2" resname="service_doorswindows_2">
+                                        <source>Replace window and doors panels</source>
+                                        <target>Replace window and doors panels</target>
+                               </trans-unit>
+                                <trans-unit id="service_doorswindows_3" resname="service_doorswindows_3">
+                                       <source>Glasses</source>
+                                       <target>Glasses</target>
+                                </trans-unit>
+
+
+
+               <trans-unit id="service_locksmith_resume" resname="service_locksmith_resume">
+                      <source>Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our locksmiths to seal, fix, repair, disassemble, and change locks or key jams.</source>
+                      <target>Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our locksmiths to seal, fix, repair, disassemble, and change locks or key jams.</target>
+               </trans-unit>
+
+                               <trans-unit id="service_locksmith_1" resname="service_locksmith_1">
+                                      <source>Installation</source>
+                                      <target>Installation</target>
+                               </trans-unit>
+                               <trans-unit id="service_locksmith_2" resname="service_locksmith_2">
+                                        <source>Repair</source>
+                                        <target>Repair</target>
+                               </trans-unit>
+                                <trans-unit id="service_locksmith_3" resname="service_locksmith_3">
+                                       <source>Change</source>
+                                       <target>Change</target>
+                                </trans-unit>
+                                <trans-unit id="service_locksmith_4" resname="service_locksmith_4">
+                                       <source>Opening locks</source>
+                                       <target>Opening locks</target>
+                                </trans-unit>
+                                <trans-unit id="service_locksmith_5" resname="service_locksmith_5">
+                                         <source>Disassemble</source>
+                                         <target>Disassemble</target>
+                                </trans-unit>
+
+
+
+               <trans-unit id="service_appliances_resume" resname="service_appliances_resume">
+                      <source>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them.</source>
+                      <target>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them.</target>
+               </trans-unit>
+
+                                  <trans-unit id="service_appliances_1" resname="service_appliances_1">
+                                         <source>Washing machine</source>
+                                         <target>Washing machine </target>
+                                  </trans-unit>
+                                  <trans-unit id="service_appliances_2" resname="service_appliances_2">
+                                           <source>Refrigerators</source>
+                                           <target>Refrigerators</target>
+                                  </trans-unit>
+                                   <trans-unit id="service_appliances_3" resname="service_appliances_3">
+                                          <source>Dishwashers</source>
+                                          <target>Dishwashers </target>
+                                   </trans-unit>
+                                   <trans-unit id="service_appliances_4" resname="service_appliances_4">
+                                          <source>Microwave</source>
+                                          <target>Microwave </target>
+                                   </trans-unit>
+                                   <trans-unit id="service_appliances_5" resname="service_appliances_5">
+                                            <source>Dryer</source>
+                                            <target>Dryer</target>
+                                   </trans-unit>
+                                    <trans-unit id="service_appliances_6" resname="service_appliances_6">
+                                           <source>Range Hood</source>
+                                           <target>Range Hood</target>
+                                    </trans-unit>
+
+               <trans-unit id="service_additionalservices_resume" resname="service_additionalservices_resume">
+                      <source>General Pro genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</source>
+                      <target>General Pro genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</target>
+               </trans-unit>
+
+
+                               <trans-unit id="service_additionalservices_1" resname="service_additionalservices_1">
+                                      <source>Cleaning services</source>
+                                      <target>Cleaning services</target>
+                               </trans-unit>
+                               <trans-unit id="service_additionalservices_2" resname="service_additionalservices_2">
+                                        <source>Nursing Care</source>
+                                        <target>Nursing Care</target>
+                               </trans-unit>
+                                <trans-unit id="service_additionalservices_3" resname="service_additionalservices_3">
+                                       <source>Child care</source>
+                                       <target>hild care</target>
+                                </trans-unit>
+                                <trans-unit id="service_additionalservices_4" resname="service_additionalservices_4">
+                                       <source>Lawn maintenance</source>
+                                       <target>Lawn maintenance</target>
+                                </trans-unit>
+                                <trans-unit id="service_additionalservices_5" resname="service_additionalservices_5">
+                                         <source>IT support and services</source>
+                                         <target>IT support and services</target>
+                                </trans-unit>
+                                 <trans-unit id="service_additionalservices_6" resname="service_additionalservices_6">
+                                        <source>Painting service</source>
+                                        <target>Painting service</target>
+                                 </trans-unit>
+                                  <trans-unit id="service_additionalservices_7" resname="service_additionalservices_7">
+                                         <source>Carpet installation services</source>
+                                         <target>Carpet installation services</target>
+                                  </trans-unit>
+
+<!--End Services-->
+
+<!--Plans-->
+                <trans-unit id="plans_band_title" resname="plans_band_title">
+                      <source>Our Plans</source>
+                      <target>Our Plans</target>
+               </trans-unit>
+                <trans-unit id="plans_band_sub" resname="plans_band_sub">
+                      <source>Our three different plans vary based on the services provided and the monthly prices.</source>
+                      <target>Our three different plans vary based on the services provided and the monthly prices.</target>
+               </trans-unit>
+
+                <trans-unit id="plans_ac_heating" resname="plans_ac_heating">
+                      <source>The AC/heating system is essential to a house. No matter the season, this system is crucial to maintain a good temperature around. When this system is breaking down, or showing deficiencies many problems are caused. Our team of experts can efficiently take care of the flaws of your AC/heating system, so that you can lead a more comfortable life. </source>
+                      <target>The AC/heating system is essential to a house. No matter the season, this system is crucial to maintain a good temperature around. When this system is breaking down, or showing deficiencies many problems are caused. Our team of experts can efficiently take care of the flaws of your AC/heating system, so that you can lead a more comfortable life.  </target>
+               </trans-unit>
+                <trans-unit id="plans_appliances" resname="plans_appliances">
+                      <source>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them. </source>
+                      <target>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them. </target>
+               </trans-unit>
+                 <trans-unit id="plans_nursing" resname="plans_nursing">
+                       <source>Need a professional person to care of a relative when you can’t? General Pro’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones. </source>
+                       <target>Need a professional person to care of a relative when you can’t? General Pro’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones. </target>
+                </trans-unit>
+                 <trans-unit id="plans_child" resname="plans_child">
+                       <source>At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. General Pro’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.   </source>
+                       <target>At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. General Pro’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.   .</target>
+                </trans-unit>
+                 <trans-unit id="plans_lawn" resname="plans_lawn">
+                       <source> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, General Pro offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve. </source>
+                       <target> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, General Pro offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve. </target>
+                </trans-unit>
+                 <trans-unit id="plans_painting" resname="plans_painting">
+                       <source>   You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! General Pro’s team of specialists will gladly fulfil your requests.  </source>
+                       <target>   You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! General Pro’s team of specialists will gladly fulfil your requests.  </target>
+                </trans-unit>
+                 <trans-unit id="plans_cleaning" resname="plans_cleaning">
+                       <source>You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. General Pro’s house cleaning services consist of professionally trained cleaners that will meet your demands. </source>
+                        <target>You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. General Pro’s house cleaning services consist of professionally trained cleaners that will meet your demands. </target>
+                </trans-unit>
+                 <trans-unit id="plans_support" resname="plans_support">
+                       <source>If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </source>
+                       <target>If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </target>
+                </trans-unit>
+
+                 <trans-unit id="plans_gpbasic" resname="plans_gpbasic">
+                       <source>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
+                       <target>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</target>
+                </trans-unit>
+
+
+
+
+
+<!--End Plans-->
+
+<!--Contact us-->
+
+                <trans-unit id="contactus_resume" resname="contactus_resume">
+                      <source>Feel free to contact us at any time, our customer service representative will respond shortly. We encourage your comments and suggestions.  </source>
+                      <target>Feel free to contact us at any time, our customer service representative will respond shortly. We encourage your comments and suggestions.  .</target>
+               </trans-unit>
+
+
+
+
+<!--End Contact us-->
+
+<!--About us-->
+
+                <trans-unit id="about_band_subtitle" resname="about_band_subtitle">
+                      <source>We want to help you achieve your goals</source>
+                      <target>We want to help you achieve your goals</target>
+               </trans-unit>
+                <trans-unit id="about_slogan_title" resname="about_slogan_title">
+                      <source>“No Matter your Problem, We Can Solve it!.”</source>
+                      <target>“No Matter your Problem, We Can Solve it!.”</target>
+               </trans-unit>
+                <trans-unit id="about_slogan_subtitle" resname="about_slogan_subtitle">
+                      <source>General Pro’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces. </source>
+                      <target>General Pro’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces. </target>
+               </trans-unit>
+                <trans-unit id="about_body_title" resname="about_body_title">
+                      <source>About General Pro</source>
+                      <target>About General Pro</target>
+               </trans-unit>
+                <trans-unit id="about_body_subtitle1" resname="about_body_subtitle1">
+                      <source>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</source>
+                      <target>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</target>
+               </trans-unit>
+                 <trans-unit id="about_body_subtitle2" resname="about_body_subtitle2">
+                       <source>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</source>
+                       <target>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</target>
+                </trans-unit>
+                 <trans-unit id="about_testimony_title" resname="about_testimony">
+                       <source>Testimony</source>
+                       <target>Testimon</target>
+                </trans-unit>
+                 <trans-unit id="about_testimony_resume" resname="about_testimony_resume">
+                       <source>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </source>
+                       <target>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </target>
+                </trans-unit>
+<!--End About us-->
+
+<!--Form-->
+
+                <trans-unit id="form_name" resname="form_name">
+                      <source>First name*</source>
+                      <target>First name*</target>
+               </trans-unit>
+                <trans-unit id="form_lastname" resname="form_lastname">
+                      <source>Last name*</source>
+                      <target>Last name*</target>
+               </trans-unit>
+                <trans-unit id="form_email" resname="form_email">
+                      <source>Email*</source>
+                      <target>Email*</target>
+               </trans-unit>
+                <trans-unit id="form_password" resname="form_password">
+                      <source>Password*</source>
+                      <target>Password*</target>
+               </trans-unit>
+                 <trans-unit id="form_phone_primary" resname="form_phone_primary">
+                       <source>Phone (Primary) *</source>
+                       <target>Phone (Primary) *</target>
+                </trans-unit>
+                 <trans-unit id="form_phone_alternate" resname="form_phone_alternate">
+                       <source>Phone (Alternate)</source>
+                       <target>Phone (Alternate)</target>
+                </trans-unit>
+                 <trans-unit id="form_Country" resname="form_Country">
+                       <source>Country*</source>
+                       <target>Country*</target>
+                </trans-unit>
+                 <trans-unit id="form_state" resname="form_state">
+                       <source>State / Province*</source>
+                       <target>State / Province*</target>
+                </trans-unit>
+                 <trans-unit id="form_city" resname="form_city">
+                       <source>City*</source>
+                       <target>City*</target>
+                </trans-unit>
+                 <trans-unit id="form_address" resname="form_address">
+                       <source>Address*</source>
+                       <target>Address*</target>
+                </trans-unit>
+                 <trans-unit id="form_zipcode" resname="form_zipcode">
+                       <source>Zip code*</source>
+                       <target>Zip code*</target>
+                </trans-unit>
+                 <trans-unit id="form_message" resname="form_message">
+                       <source>Message*</source>
+                       <target>Message*</target>
+                </trans-unit>
+
+                 <trans-unit id="form_signup" resname="form_signup">
+                       <source>Sign up</source>
+                       <target>Sign up</target>
+                </trans-unit>
+                 <trans-unit id="form_send_message" resname="form_send_message">
+                       <source>Send Message*</source>
+                       <target>Send Message*</target>
+                </trans-unit>
+
+                 <trans-unit id="form_login" resname="form_login">
+                       <source>Login</source>
+                       <target>Login</target>
+                </trans-unit>
+
+
+<!--End Form-->
         </body>
     </file>
 </xliff>
