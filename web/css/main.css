@@ -5332,3 +5332,20 @@ ins .amount {
 
   padding-bottom: 5px;
 }
+
+.left-padding{
+
+  padding-left: 3em;
+}
+
+.margin-left{
+
+  margin-left: 3px;
+
+}
+
+.top-bot-padding{
+
+  padding-top: 50px;
+  padding-bottom: 30px;
+}

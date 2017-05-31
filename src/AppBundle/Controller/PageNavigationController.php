@@ -95,4 +95,17 @@ class PageNavigationController extends Controller
         $this->get('session')->set('lang', $lang);
         return $this->redirectToRoute("home");
     }
+
+    /**
+     * @Route("/conditions")
+     */
+    public function showConditionsAction()
+    {
+        {
+            return $this->render('website/conditions.html.twig');
+        }
+    }
+
+
+
 }
