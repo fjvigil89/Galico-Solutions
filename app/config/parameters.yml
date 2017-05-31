@@ -5,8 +5,8 @@ parameters:
     database_name: generalpro
     database_user: root
     database_password: null
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
+    mailer_transport: gmail
+    mailer_host: smtp@gmail.com
     mailer_user: null
     mailer_password: null
     secret: 88f9db9d576771535c39f66dffed74a8ec1a66df
