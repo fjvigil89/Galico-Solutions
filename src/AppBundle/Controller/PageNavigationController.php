@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 
+
 class PageNavigationController extends Controller
 {
     /**
@@ -68,10 +69,9 @@ class PageNavigationController extends Controller
     /**
      * @Route("/signin")
      */
-    public function showSigninAction($error='')
+    public function showSigninAction()
     {
-        echo "$error<br>";
-        return $this->render('website/signin.html.twig',array('error' => $error));
+       return $this->render('website/signin.html.twig');
     }
 
     /**
@@ -87,17 +87,11 @@ class PageNavigationController extends Controller
     }
 
     /**
-     * @Route("/translate/{lang}")
+     * @Route("/translate/{lang}",name="page_translation")
      */
     public function translateAction($lang, Request $request)
     {
-        $request->setLocale('es');
-
-        $_SESSION['lang'] = $lang;
-        die($request->getLocale());
-
+        $this->get('session')->set('lang', $lang);
+        return $this->redirectToRoute("home");
     }
-
-
-
 }

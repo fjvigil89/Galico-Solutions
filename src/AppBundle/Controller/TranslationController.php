@@ -17,4 +17,9 @@ class TranslationController extends Controller
         //var_dump($lang);
         return $this->render('website/long-translations/home-intro-en.html.twig');
     }
+
+    public function localize()
+    {
+
+    }
 }
