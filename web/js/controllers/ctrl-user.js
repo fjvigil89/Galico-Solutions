@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-15.
  */
 angular.module("gpApp")
-    .controller('UserController',function($scope,$rootScope,authService,GeneralService,$window){
+    .controller('UserController',function($scope,$rootScope,authService,GeneralService,RouterService,$window){
         $scope.user = {};
         $scope.user.email = "";
         $scope.user.pwd = "";
@@ -42,7 +42,7 @@ angular.module("gpApp")
                         var userId = response.data.userId;
                         if(userId>-1)
                         {
-                            $('#frm_signin').attr('action', '/my-dashboard/'+userId);
+                            $('#frm_signin').attr('action', RouterService.getEndPoint()+'/my-dashboard/'+userId);
                             $('#frm_signin').submit();
                         }
                         else

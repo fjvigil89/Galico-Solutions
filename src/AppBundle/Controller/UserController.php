@@ -92,7 +92,7 @@ class UserController extends Controller
 
 
     /**
-     * @Route("/customer-information/{customerId}")
+     * @Route("/customer-information/{customerId}",name="customerInformation")
      */
     public function getCustomerInformationAction($customerId)
     {

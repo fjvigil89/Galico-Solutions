@@ -23,11 +23,11 @@ angular.module("gpApp")
         }
     })
 
-    .service('DashboardService',function($http){
+    .service('DashboardService',function($http,RouterService){
         this.getCustomerInformation = function(id)
         {
             return $http({
-                url : '/customer-information/'+id,
+                url : RouterService.getEndPoint() + '/customer-information/'+id,
                 method: "GET",
                 /*params: {email: user.email, pwd : user.pwd}*/
             });
@@ -36,7 +36,7 @@ angular.module("gpApp")
         this.getHousesInformation = function(id)
         {
             return $http({
-                url : '/houses-informations/'+id,
+                url : RouterService.getEndPoint() + '/houses-informations/'+id,
                 method: "GET",
 
             });
@@ -45,7 +45,7 @@ angular.module("gpApp")
         this.getPaymentsHistory = function(houseId)
         {
             return $http({
-                url : '/payments-history/'+houseId,
+                url : RouterService.getEndPoint() + '/payments-history/'+houseId,
                 method: "GET",
 
             });
@@ -55,7 +55,7 @@ angular.module("gpApp")
 
             //return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});
             return $http({
-                url : '/update-customer',
+                url : RouterService.getEndPoint() + '/update-customer',
                 method: "GET",
                 params:
                     {
