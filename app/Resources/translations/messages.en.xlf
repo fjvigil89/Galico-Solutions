@@ -236,7 +236,7 @@
               </trans-unit>
                <trans-unit id="home_ourplans_subtitle" resname="home_ourplans_subtitle">
                      <source>General Pro allows you to choose from three plans that include various services.</source>
-                     <target>eneral Pro allows you to choose from three plans that include various services.</target>
+                     <target>General Pro allows you to choose from three plans that include various services.</target>
               </trans-unit>
                <trans-unit id="home_gpbasic_resume" resname="home_gpbasic_resume">
                      <source>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</source>
