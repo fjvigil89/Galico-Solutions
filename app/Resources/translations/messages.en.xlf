@@ -564,7 +564,25 @@
                        <target>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </target>
                 </trans-unit>
 <!--End About us-->
+<!--SignIn-->
 
+                <trans-unit id="signin_forgetpsw" resname="signin_forgetpsw">
+                      <source>Forget your password</source>
+                      <target>Forget your password</target>
+               </trans-unit>
+                <trans-unit id="signin_entermail" resname="signin_entermail">
+                      <source>Please enter your email</source>
+                      <target>Please enter your email</target>
+               </trans-unit>
+                <trans-unit id="signin_message_enteremail" resname="signin_message_enteremail">
+                      <source>A temporary password has been sent to your email</source>
+                      <target>A temporary password has been sent to your email</target>
+               </trans-unit>
+                <trans-unit id="signin_reset" resname="signin_reset">
+                      <source>RESET</source>
+                      <target>RESET</target>
+               </trans-unit>
+<!--End SignIn-->
 <!--Form-->
 
                 <trans-unit id="form_name" resname="form_name">
@@ -632,6 +650,72 @@
 
 
 <!--End Form-->
+
+<!--Error message -->
+
+                 <trans-unit id="error_name" resname="error_name">
+                       <source>Please enter your first name</source>
+                       <target>Please enter your first name</target>
+                </trans-unit>
+                 <trans-unit id="error_lastname" resname="error_lastname">
+                       <source>Please enter your last name</source>
+                       <target>Please enter your last name</target>
+                </trans-unit>
+                 <trans-unit id="error_email" resname="error_email">
+                       <source>Please enter a valid email</source>
+                       <target>Please enter a valid email</target>
+                </trans-unit>
+                 <trans-unit id="error_pw" resname="error_pw">
+                       <source>Please enter a password</source>
+                       <target>Please enter a password</target>
+                </trans-unit>
+                 <trans-unit id="error_cpw" resname="error_cpw">
+                       <source>Please confirm your password</source>
+                       <target>Please confirm your password</target>
+                </trans-unit>
+                  <trans-unit id="error_mpw" resname="error_mpw">
+                        <source>Your passwords don't match</source>
+                        <target>Your passwords don't match</target>
+                 </trans-unit>
+                   <trans-unit id="error_phone" resname="error_phone">
+                         <source>Please enter a phone number</source>
+                         <target>Please enter a phone number</target>
+                  </trans-unit>
+
+                  <trans-unit id="error_country" resname="error_country">
+                        <source>Please enter a country</source>
+                        <target>Please enter a country</target>
+                 </trans-unit>
+                  <trans-unit id="error_state" resname="error_state">
+                        <source>Please enter a state</source>
+                        <target>Please enter a state</target>
+                 </trans-unit>
+                  <trans-unit id="error_city" resname="error_city">
+                        <source>Please enter a city</source>
+                        <target>Please enter a city</target>
+                 </trans-unit>
+                  <trans-unit id="error_address" resname="error_address">
+                        <source>Please enter a address</source>
+                        <target>Please enter a address</target>
+                 </trans-unit>
+                  <trans-unit id="error_zipCode" resname="error_zipCode">
+                        <source>Please enter a zipCode</source>
+                        <target>Please enter a zipCode</target>
+                 </trans-unit>
+
+
+
+
+<!--End Error message -->
+
+
+
+
+
+
+
+
+
         </body>
     </file>
 </xliff>

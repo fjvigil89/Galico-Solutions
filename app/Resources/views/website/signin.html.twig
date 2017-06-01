@@ -24,7 +24,7 @@
         </div>
         <button type="button" class="btn" ng-click="authenticate()">{{ 'form_login' | trans({}, "messages", lang) }}</button>
         
-        <p class="lost_password"><a href="#pass1" data-toggle="modal" data-target="#forgetpasswordModal" >Forget your password?</a></p>
+        <p class="lost_password"><a href="#pass1" data-toggle="modal" data-target="#forgetpasswordModal" >{{ 'signin_forgetpsw' | trans({}, "messages", lang) }}</a></p>
         <input type="hidden" ng-model="user.authUrl" value="{{ path('app_user_authenticate')  }}">
       </form>
 
@@ -41,20 +41,20 @@
       <div class="modal-content">
         <div class="modal-header bg-yellow">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Forget my password</h4>
+          <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>{{ 'signin_forgetpsw' | trans({}, "messages", lang) }}</h4>
         </div>
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="email">Email*</label>
-            <input type="email" id="email" name="email" placeholder="Please enter your email" required>
+            <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
+            <input type="email" id="email" name="email" placeholder="{{ 'signin_entermail' | trans({}, "messages", lang) }}" required>
           </div>
-          <p class="text-center text-bold color-red "> A temporary password has been sent to your email</p>
+          <p class="text-center text-bold color-red "> {{ 'signin_message_enteremail' | trans({}, "messages", lang) }}</p>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-yellow color-black">
-            <span class="glyphicon glyphicon-ok-circle" title="Close"></span> Reset
+            <span class="glyphicon glyphicon-ok-circle" title="Close"></span> {{ 'signin_reset' | trans({}, "messages", lang) }}
           </button>
         </div>
       </div>

@@ -561,11 +561,34 @@
                        <target>"Je suis très satisfait avec le service de General Pro. Leur temps de réponse a été rapide et ils ont traité mon problème efficacement." F. Tomlinson, LaSalle, QC.</target>
                 </trans-unit>
 <!--End About us-->
+
+<!--SignIn-->
+
+                <trans-unit id="signin_forgetpsw" resname="signin_forgetpsw">
+                      <source>Forget your password</source>
+                      <target>Mot de passe oublié</target>
+               </trans-unit>
+                <trans-unit id="signin_entermail" resname="signin_entermail">
+                      <source>Please enter your email</source>
+                      <target>Veuillez saisir votre courriel</target>
+               </trans-unit>
+                <trans-unit id="signin_message_enteremail" resname="signin_message_enteremail">
+                      <source>A temporary password has been sent to your email</source>
+                      <target>Un mot de passe temporaire a été envoyé à votre courriel</target>
+               </trans-unit>
+                <trans-unit id="signin_reset" resname="signin_reset">
+                      <source>RESET</source>
+                      <target>RÉINITIALISER</target>
+               </trans-unit>
+<!--End SignIn-->
+
+
+
 <!--Form-->
 
                 <trans-unit id="form_name" resname="form_name">
                       <source>First name*</source>
-                      <target>Prenom*</target>
+                      <target>Prénom*</target>
                </trans-unit>
                 <trans-unit id="form_lastname" resname="form_lastname">
                       <source>Last name*</source>
@@ -573,7 +596,7 @@
                </trans-unit>
                 <trans-unit id="form_email" resname="form_email">
                       <source>Email*</source>
-                      <target>Email*</target>
+                      <target>Courriel*</target>
                </trans-unit>
                 <trans-unit id="form_password" resname="form_password">
                       <source>Password*</source>
@@ -627,6 +650,65 @@
                 </trans-unit>
 
 <!--End Form-->
+
+<!--Error message -->
+
+                 <trans-unit id="error_name" resname="error_name">
+                       <source>Please enter your first name</source>
+                       <target>Veuillez saisir votre prénom </target>
+                </trans-unit>
+                 <trans-unit id="error_lastname" resname="error_lastname">
+                       <source>Please enter your last name</source>
+                       <target>Veuillez saisir votre nom de famille</target>
+                </trans-unit>
+                 <trans-unit id="error_email" resname="error_email">
+                       <source>Please enter a valid email</source>
+                       <target>Veuillez saisir un email valide</target>
+                </trans-unit>
+                 <trans-unit id="error_pw" resname="error_pw">
+                       <source>Please enter a password</source>
+                       <target>Veuillez saisir un mot de passe</target>
+                </trans-unit>
+                 <trans-unit id="error_cpw" resname="error_cpw">
+                       <source>Please confirm your password</source>
+                       <target>Veuillez confirmer votre mot de passe</target>
+                </trans-unit>
+                  <trans-unit id="error_mpw" resname="error_mpw">
+                        <source>Your passwords don't match</source>
+                        <target>Vos mots de passe ne correspondent pas</target>
+                 </trans-unit>
+                  <trans-unit id="error_phone" resname="error_phone">
+                        <source>Please enter a phone number</source>
+                        <target>Veuillez saisir un numéro de téléphone</target>
+                 </trans-unit>
+
+                  <trans-unit id="error_country" resname="error_country">
+                        <source>Please enter a country</source>
+                        <target>Veuillez saisir un pays</target>
+                 </trans-unit>
+                  <trans-unit id="error_state" resname="error_state">
+                        <source>Please enter a state</source>
+                        <target>Veuillez saisir un état</target>
+                 </trans-unit>
+                  <trans-unit id="error_city" resname="error_city">
+                        <source>Please enter a city</source>
+                        <target>Veuillez saisir une ville</target>
+                 </trans-unit>
+                  <trans-unit id="error_address" resname="error_address">
+                        <source>Please enter a address</source>
+                        <target>Veuillez saisir une adresse</target>
+                 </trans-unit>
+                  <trans-unit id="error_zipCode" resname="error_zipCode">
+                        <source>Please enter a zipCode</source>
+                        <target>Veuillez saisir un code zip</target>
+                 </trans-unit>
+
+
+
+
+<!--End Error message -->
+
+
 
         </body>
     </file>

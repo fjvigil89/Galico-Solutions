@@ -94,10 +94,10 @@
                                     <li class="menu-item">
                                         <a href="#">{{ 'menu_country' | trans({}, "messages", lang) }}</a>
                                         <ul class="sub-menu text-left">
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" >Canada</a></li>
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" >United States</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag_canada.png') }}" >Canada</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag_USA.png') }}" >United States</a></li>
 
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}">Mexico</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}"><img src="{{ asset('images/flag_mexico.png') }}" >Mexico</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
