@@ -752,7 +752,7 @@
 <!--My dashboard-->
                  <trans-unit id="dash_sdate" resname="dash_sdate">
                        <source>Subscription date</source>
-                       <target>Fecha de subscripción</target>
+                       <target>Fecha</target>
                 </trans-unit>
                  <trans-unit id="dash_local_agent" resname="dash_local_agent">
                        <source>Local agent number</source>
@@ -760,7 +760,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>Casas</target>
+                       <target>Suscripción de casa</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
