@@ -29,7 +29,7 @@ class Requestservices
      *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
      * })
      */
-    private $requestid;
+    private $request;
 
     /**
      * @var \AppBundle\Entity\Services
@@ -39,7 +39,7 @@ class Requestservices
      *   @ORM\JoinColumn(name="ServiceID", referencedColumnName="ServiceID")
      * })
      */
-    private $serviceid;
+    private $service;
 
 
 
@@ -54,50 +54,50 @@ class Requestservices
     }
 
     /**
-     * Set requestid
+     * Set request
      *
-     * @param \AppBundle\Entity\Requests $requestid
+     * @param \AppBundle\Entity\Requests $request
      *
      * @return Requestservices
      */
-    public function setRequestid(\AppBundle\Entity\Requests $requestid = null)
+    public function setRequest(\AppBundle\Entity\Requests $request = null)
     {
-        $this->requestid = $requestid;
+        $this->request = $request;
     
         return $this;
     }
 
     /**
-     * Get requestid
+     * Get request
      *
      * @return \AppBundle\Entity\Requests
      */
-    public function getRequestid()
+    public function getRequest()
     {
-        return $this->requestid;
+        return $this->request;
     }
 
     /**
-     * Set serviceid
+     * Set service
      *
-     * @param \AppBundle\Entity\Services $serviceid
+     * @param \AppBundle\Entity\Services $service
      *
      * @return Requestservices
      */
-    public function setServiceid(\AppBundle\Entity\Services $serviceid = null)
+    public function setService(\AppBundle\Entity\Services $service = null)
     {
-        $this->serviceid = $serviceid;
+        $this->service = $service;
     
         return $this;
     }
 
     /**
-     * Get serviceid
+     * Get service
      *
      * @return \AppBundle\Entity\Services
      */
-    public function getServiceid()
+    public function getService()
     {
-        return $this->serviceid;
+        return $this->service;
     }
 }

@@ -304,8 +304,8 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/payments-history/{houseId}")
-     */
+ * @Route("/payments-history/{houseId}")
+ */
     public function getPaymentsHistoryAction($houseId)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
@@ -336,6 +336,44 @@ class UserController extends Controller
 
         }
         return $this->json($housePayments);
+    }
+
+    /**
+     * @Route("/house-requests/{houseId}")
+     */
+    public function getHouseRequestsAction($houseId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+        $house = $repository->find($houseId);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $requests = $repository->findByHouse($house);
+
+        $houseRequests = array();
+        foreach($requests as $request)
+        {
+            $req = array();
+
+            $req['requestDate'] = date_format($request->getRequestdate(), 'Y-m-d');
+            $req['status'] = $request->getStatus();
+            $req['requestId'] = $request->getRequestid();
+            $req['details'] = $request->getDetails();
+            $interventions = array();
+            foreach($request->getInterventions() as $intervention)
+            {
+                $interv = array();
+                $interv['interventionDate'] = date_format($intervention->getInterventiondate(), 'Y-m-d');
+                $interv['technician'] = $intervention->getTechnician()->getFirstname() . " " . $intervention->getTechnician()->getLastname();
+                $interv['comments'] = $intervention->getComments();
+
+                $interventions[] = $interv;
+            }
+            $req['interventions'] = $interventions;
+
+            $houseRequests[] = $req;
+
+        }
+        return $this->json($houseRequests);
     }
 
     /**

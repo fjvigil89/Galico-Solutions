@@ -93,12 +93,16 @@ class Houses
      */
     private $subscriptions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Requests", mappedBy="house")
+     */
+    private $requests;
+
     public function __construct()
     {
         $this->subscriptions = new ArrayCollection();
+        $this->requests = new ArrayCollection();
     }
-
-
 
 
     /**
@@ -360,4 +364,42 @@ class Houses
     {
         return $this->subscriptions;
     }
+
+
+
+    /**
+     * Add request
+     *
+     * @param \AppBundle\Entity\Requests $request
+     *
+     * @return Houses
+     */
+    public function addRequest(\AppBundle\Entity\Requests $request)
+    {
+        $this->requests[] = $request;
+
+        return $this;
+    }
+
+    /**
+     * Remove request
+     *
+     * @param \AppBundle\Entity\Requests $request
+     */
+    public function removeRequest(\AppBundle\Entity\Requests $request)
+    {
+        $this->requests->removeElement($request);
+    }
+
+    /**
+     * Get requests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRequests()
+    {
+        return $this->requests;
+    }
+
+
 }

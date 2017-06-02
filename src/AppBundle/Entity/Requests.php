@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Requests
@@ -50,9 +52,23 @@ class Requests
      *   @ORM\JoinColumn(name="HouseID", referencedColumnName="HouseID")
      * })
      */
-    private $houseid;
+    private $house;
 
+    /**
+ * @ORM\OneToMany(targetEntity="AppBundle\Entity\Interventions", mappedBy="request")
+ */
+    private $interventions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Requestservices", mappedBy="request")
+     */
+    private $requestservices;
+
+    public function __construct()
+    {
+        $this->interventions = new ArrayCollection();
+        $this->requestservices = new ArrayCollection();
+    }
 
     /**
      * Set requestdate
@@ -137,26 +153,96 @@ class Requests
     }
 
     /**
-     * Set houseid
+     * Set house
      *
      * @param \AppBundle\Entity\Houses $houseid
      *
      * @return Requests
      */
-    public function setHouseid(\AppBundle\Entity\Houses $houseid = null)
+    public function setHouse(\AppBundle\Entity\Houses $house = null)
     {
-        $this->houseid = $houseid;
+        $this->house = $house;
     
         return $this;
     }
 
     /**
-     * Get houseid
+     * Get house
      *
      * @return \AppBundle\Entity\Houses
      */
-    public function getHouseid()
+    public function getHouse()
     {
-        return $this->houseid;
+        return $this->house;
     }
+
+    /**
+     * Add intervention
+     *
+     * @param \AppBundle\Entity\Interventions $intervention
+     *
+     * @return Requests
+     */
+    public function addIntervention(\AppBundle\Entity\Interventions $intervention)
+    {
+        $this->interventions[] = $intervention;
+
+        return $this;
+    }
+
+    /**
+     * Remove intervention
+     *
+     * @param \AppBundle\Entity\Interventions $intervention
+     */
+    public function removeIntervention(\AppBundle\Entity\Interventions $intervention)
+    {
+        $this->interventions->removeElement($intervention);
+    }
+
+    /**
+     * Get interventions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventions()
+    {
+        return $this->interventions;
+    }
+
+
+    /**
+     * Add requestservice
+     *
+     * @param \AppBundle\Entity\Requestservices $requestservice
+     *
+     * @return Requests
+     */
+    public function addRequestService(\AppBundle\Entity\Requestservices $requestservice)
+    {
+        $this->requestservices[] = $requestservice;
+
+        return $this;
+    }
+
+    /**
+     * Remove requestservice
+     *
+     * @param \AppBundle\Entity\Requestservices $requestservice
+     */
+    public function removeRequestService(\AppBundle\Entity\Interventions $requestservice)
+    {
+        $this->requestservices->removeElement($requestservice);
+    }
+
+    /**
+     * Get requestservices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRequestServices()
+    {
+        return $this->requestservices;
+    }
+
 }

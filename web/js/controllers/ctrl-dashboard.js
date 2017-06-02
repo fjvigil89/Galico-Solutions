@@ -121,7 +121,7 @@ angular.module("gpApp")
 
 
 
-        // CALL METHODS
+        // CALL METHODS ONLOAD
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();

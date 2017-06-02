@@ -43,7 +43,7 @@ class Interventions
      *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
      * })
      */
-    private $requestid;
+    private $request;
 
     /**
      * @var \AppBundle\Entity\Technicians
@@ -53,7 +53,7 @@ class Interventions
      *   @ORM\JoinColumn(name="TechnicianID", referencedColumnName="TechnicianID")
      * })
      */
-    private $technicianid;
+    private $technician;
 
 
 
@@ -116,50 +116,50 @@ class Interventions
     }
 
     /**
-     * Set requestid
+     * Set request
      *
-     * @param \AppBundle\Entity\Requests $requestid
+     * @param \AppBundle\Entity\Requests $request
      *
      * @return Interventions
      */
-    public function setRequestid(\AppBundle\Entity\Requests $requestid = null)
+    public function setRequest(\AppBundle\Entity\Requests $request = null)
     {
-        $this->requestid = $requestid;
+        $this->request = $request;
     
         return $this;
     }
 
     /**
-     * Get requestid
+     * Get request
      *
      * @return \AppBundle\Entity\Requests
      */
-    public function getRequestid()
+    public function getRequest()
     {
-        return $this->requestid;
+        return $this->request;
     }
 
     /**
-     * Set technicianid
+     * Set technician
      *
-     * @param \AppBundle\Entity\Technicians $technicianid
+     * @param \AppBundle\Entity\Technicians $technician
      *
      * @return Interventions
      */
-    public function setTechnicianid(\AppBundle\Entity\Technicians $technicianid = null)
+    public function setTechnician(\AppBundle\Entity\Technicians $technician = null)
     {
-        $this->technicianid = $technicianid;
+        $this->technician = $technician;
     
         return $this;
     }
 
     /**
-     * Get technicianid
+     * Get technician
      *
      * @return \AppBundle\Entity\Technicians
      */
-    public function getTechnicianid()
+    public function getTechnician()
     {
-        return $this->technicianid;
+        return $this->technician;
     }
 }
