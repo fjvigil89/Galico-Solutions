@@ -100,11 +100,9 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="4">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
+                                <th colspan="5">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
+                          
                                 <th><a href="#" data-toggle="modal" data-target="#contratModal" >
-                                        <span class="glyphicon glyphicon-plus-sign font-header"  title="contrat"></span>
-                                    </a></th>
-                                <th><a href="#" data-toggle="modal" data-target="#addmaisonModal" >
                                     <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add' | trans({}, "messages", lang)}}></span>
                                     </a></th>
                             </tr>
@@ -393,7 +391,7 @@
 
 
 
-        <div id="addmaisonModal" class="modal fade" role="dialog">
+        <div id="addHouseModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <div class="modal-content">
@@ -449,7 +447,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                        <button type="button" class="btn bg-yellow color-black" >
                             <span class="glyphicon glyphicon-plus" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang)}}
                         </button>
                     </div>
@@ -489,7 +487,7 @@
                     </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                                <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" data-toggle="modal" data-target="#addHouseModal">
                                     I ACCEPT
                                 </button>
                             </div>
