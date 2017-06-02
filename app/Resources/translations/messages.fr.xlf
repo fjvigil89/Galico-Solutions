@@ -79,6 +79,14 @@
                     <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
                     <target>Chez General Pro, notre vision est d’améliorer le plus de vies possible. Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. General Pro s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
                </trans-unit>
+                <trans-unit id="menu_terms" resname="menu_terms">
+                         <source>Terms of use</source>
+                         <target>Conditions d'utilisation</target>
+                </trans-unit>
+
+
+
+
 
     <!--End footer-->
 
@@ -108,7 +116,10 @@
                     <source>Sign out</source>
                     <target>Se deconnecter</target>
               </trans-unit>
-
+            <trans-unit id="menu_account" resname="menu_account">
+                   <source>My Account</source>
+                   <target>Mon compte</target>
+             </trans-unit>
 
     <!--End Modal-->
 
@@ -120,7 +131,7 @@
 
               <trans-unit id="home_band1_title" resname="home_band1_title">
                     <source>Let’s Get the Job Done!</source>
-                    <target>Répondre à Vos Besoins est Notre Priorité!</target>
+                    <target>Répondre à vos besoins est notre priorité!</target>
               </trans-unit>
               <trans-unit id="home_band1_subtitle" resname="home_band1_subtitle">
                     <source>From experienced handymen to highly trained professionals; we got it all covered!</source>
@@ -128,7 +139,7 @@
               </trans-unit>
               <trans-unit id="home_band1_button" resname="home_band1_button">
                     <source>FIND OUT MORE</source>
-                    <target>En Savoir Plus</target>
+                    <target>En savoir plus</target>
               </trans-unit>
               <trans-unit id="home_band2_title1" resname="home_band2_title1">
                     <source> Yes,</source>
@@ -136,7 +147,7 @@
               </trans-unit>
               <trans-unit id="home_band2_title2" resname="home_band2_title2">
                     <source>We Can Do It!</source>
-                    <target>Meilleur Reste à Venir!  </target>
+                    <target>Meilleur reste à venir!  </target>
               </trans-unit>
               <trans-unit id="home_band2_subtitle" resname="home_band2_subtitle">
                     <source>Just pick a time and we will do the rest.</source>
@@ -148,7 +159,7 @@
               </trans-unit>
               <trans-unit id="home_band3_title2" resname="home_band3_title2">
                     <source>the Door to Better Days!</source>
-                    <target>Nous Pouvons le Faire!</target>
+                    <target>Nous pouvons le faire!</target>
               </trans-unit>
               <trans-unit id="home_band3_subtitle" resname="home_band3_subtitle">
                     <source>Book expert home cleaners and handymen at a moment’s notice.</source>
@@ -506,11 +517,27 @@
                        <target>Si votre ordinateur a des défauts, et vous ne savez pas comment le réparer, vous pouvez compter sur nous. General Pro offre des services de support informatique et d'assistance technique pour les défauts dans les matériels informatique et les logiciels.</target>
                  </trans-unit>
 
-
-                 <trans-unit id="plans_gpbasic" resname="plans_gpbasic">
+                <trans-unit id="plan_gpbasic" resname="plan_gpbasic">
                        <source>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
-                       <target> Le plan GP Basique comprend des services de base, tels que la plomberie, l'électricité, la serrurerie et la maintenance de portes et fenêtres, pour un prix convenable de 24,99 $ par mois. L'activation de ce plan requiert une attente de 30 jours, suite à votre abonnement. Au cours de ces 30 jours, une inspection de votre domicile, ainsi que la confirmation de votre demande, auront lieu. Sachez que ce plan couvre entièrement notre coût de la main-d'œuvre, mais certains matériaux supplémentaires pourraient ne pas être inclus.</target>
+                       <target>Le plan GP Basique comprend des services de base, tels que la plomberie, l'électricité, la serrurerie et la maintenance de portes et fenêtres, pour un prix convenable de 24,99 $ par mois. L'activation de ce plan requiert une attente de 30 jours, suite à votre abonnement. Au cours de ces 30 jours, une inspection de votre domicile, ainsi que la confirmation de votre demande, auront lieu. Sachez que ce plan couvre entièrement notre coût de la main-d'œuvre, mais certains matériaux supplémentaires pourraient ne pas être inclus.</target>
                 </trans-unit>
+                 <trans-unit id="plan_gpplus" resname="plan_gpplus">
+                       <source>The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
+                       <target>Le GP Plus est une extension du GP Basique, avec l'ajout de services de réparation de systèmes de climatisation, de systèmes de chauffage et d'appareils électroménagers, pour seulement 29,99 $ par mois. L'activation de ce plan requiert une attente de 30 jours, suite à votre abonnement. Au cours de ces 30 jours, une inspection de votre domicile, ainsi que la confirmation de votre demande, auront lieu. Sachez que ce plan couvre entièrement notre coût de la main-d'œuvre, mais certains matériaux supplémentaires pourraient ne pas être inclus.</target>
+                </trans-unit>
+                 <trans-unit id="plan_gpadd" resname="plan_gpadd">
+                       <source>The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price.</source>
+                       <target>Le GP Additionnel offre des services supplémentaires tels que le support informatique, la garde d’enfants, les soins infirmiers, l'entretien des pelouses, le nettoyage, et la peinture, chacun pour un prix respectivement abordable. En outre, si un client s'est déjà inscrit à un autre plan avant de demander ces services, un rabais de 10% sera appliqué à ce prix.</target>
+                </trans-unit>
+
+                <trans-unit id="plan_all" resname="plan_all">
+                      <source>All services</source>
+                      <target>Tous les services</target>
+               </trans-unit>
+
+
+
+
 <!--End Plans-->
 
 
@@ -587,52 +614,52 @@
 <!--Form-->
 
                 <trans-unit id="form_name" resname="form_name">
-                      <source>First name*</source>
-                      <target>Prénom*</target>
+                      <source>First name</source>
+                      <target>Prénom</target>
                </trans-unit>
                 <trans-unit id="form_lastname" resname="form_lastname">
-                      <source>Last name*</source>
-                      <target>Nom*</target>
+                      <source>Last name</source>
+                      <target>Nom</target>
                </trans-unit>
                 <trans-unit id="form_email" resname="form_email">
-                      <source>Email*</source>
-                      <target>Courriel*</target>
+                      <source>Email</source>
+                      <target>Courriel</target>
                </trans-unit>
                 <trans-unit id="form_password" resname="form_password">
-                      <source>Password*</source>
-                      <target>Mot de passe*</target>
+                      <source>Password</source>
+                      <target>Mot de passe</target>
                </trans-unit>
                  <trans-unit id="form_phone_primary" resname="form_phone_primary">
-                       <source>Phone (Primary) *</source>
-                       <target>Phone* </target>
+                       <source>Phone (Primary) </source>
+                       <target>Phone </target>
                 </trans-unit>
                  <trans-unit id="form_phone_alternate" resname="form_phone_alternate">
                        <source>Phone (Alternate)</source>
-                       <target>Phone (optionnel)*</target>
+                       <target>Phone (optionnel)</target>
                 </trans-unit>
                  <trans-unit id="form_Country" resname="form_Country">
-                       <source>Country*</source>
-                       <target>Pays*</target>
+                       <source>Country</source>
+                       <target>Pays</target>
                 </trans-unit>
                  <trans-unit id="form_state" resname="form_state">
-                       <source>State / Province*</source>
-                       <target>Etat / Province*</target>
+                       <source>State / Province</source>
+                       <target>Etat / Province</target>
                 </trans-unit>
                  <trans-unit id="form_city" resname="form_city">
-                       <source>City*</source>
-                       <target>Ville*</target>
+                       <source>City</source>
+                       <target>Ville</target>
                 </trans-unit>
                  <trans-unit id="form_address" resname="form_address">
-                       <source>Address*</source>
-                       <target>Adresse*</target>
+                       <source>Address</source>
+                       <target>Adresse</target>
                 </trans-unit>
                  <trans-unit id="form_zipcode" resname="form_zipcode">
-                       <source>Zip code*</source>
-                       <target>Code postal*</target>
+                       <source>Zip code</source>
+                       <target>Code postal</target>
                 </trans-unit>
                  <trans-unit id="form_message" resname="form_message">
-                       <source>Message*</source>
-                       <target>Message*</target>
+                       <source>Message</source>
+                       <target>Message</target>
                 </trans-unit>
 
 
@@ -641,8 +668,8 @@
                        <target>S'inscrire</target>
                 </trans-unit>
                  <trans-unit id="form_send_message" resname="form_send_message">
-                       <source>Send Message*</source>
-                       <target>Envoi Message*</target>
+                       <source>Send Message</source>
+                       <target>Envoi Message</target>
                 </trans-unit>
                  <trans-unit id="form_login" resname="form_login">
                        <source>Login</source>
@@ -709,6 +736,85 @@
 <!--End Error message -->
 
 
+<!--My dashboard-->
+                 <trans-unit id="dash_sdate" resname="dash_sdate">
+                       <source>Subscription date</source>
+                       <target>Date de souscription</target>
+                </trans-unit>
+                 <trans-unit id="dash_local_agent" resname="dash_local_agent">
+                       <source>Local agent number</source>
+                       <target>Numéro de l'agent local</target>
+                </trans-unit>				
+                 <trans-unit id="dash_house" resname="dash_house">
+                       <source>Houses</source>
+                       <target>Maisons</target>
+                </trans-unit>					
+                 <trans-unit id="dash_req_date" resname="dash_req_date">
+                       <source>Request date</source>
+                       <target>Date de la demande</target>
+                </trans-unit>					
+                 <trans-unit id="dash_status" resname="dash_status">
+                       <source>Status</source>
+                       <target>Statut</target>
+                </trans-unit>					
+
+                 <trans-unit id="dash_req_id" resname="dash_req_id">
+                       <source>Request ID</source>
+                       <target>Code de la requête</target>
+                </trans-unit>
+                 <trans-unit id="status_open" resname="status_open">
+                       <source>Open</source>
+                       <target>Ouvert</target>
+                </trans-unit>					
+                 <trans-unit id="status_closed" resname="status_closed">
+                       <source>Closed</source>
+                       <target>Fermé</target>
+                </trans-unit>	
+                 <trans-unit id="dash_intervention" resname="dash_intervention">
+                       <source>Intervention</source>
+                       <target>Intervention</target>
+                </trans-unit>
+                 <trans-unit id="dash_technician" resname="dash_technician">
+                       <source>Technician</source>
+                       <target>Technicien</target>
+                </trans-unit>
+                 <trans-unit id="dash_comments" resname="dash_comments">
+                       <source>Comments</source>
+                       <target>commentaires</target>
+                </trans-unit>
+
+                 <trans-unit id="dash_my_dashboard" resname="dash_my_dashboard">
+                       <source>My dashboard</source>
+                       <target>MON TABLEAU DE BORD</target>
+                </trans-unit>
+
+                 <trans-unit id="dash_edit" resname="dash_edit">
+                       <source>Edit</source>
+                       <target>Editer</target>
+                </trans-unit>
+                 <trans-unit id="dash_add" resname="dash_add">
+                       <source>Add</source>
+                       <target>Ajouter</target>
+                </trans-unit>
+                 <trans-unit id="dash_edit_profile" resname="dash_edit_profile">
+                       <source>Edit profile information</source>
+                       <target>Modifier les informations du profil</target>
+                </trans-unit>
+                 <trans-unit id="dash_add_house" resname="dash_add_house">
+                       <source>Add House</source>
+                       <target>Ajouter une maison</target>
+                </trans-unit>
+                 <trans-unit id="dash_save" resname="dash_save">
+                       <source>Save</source>
+                       <target>Sauvegarder</target>
+                </trans-unit>				
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contact</target>
+                </trans-unit>						
+				
+				
+<!--End my dashboard-->	
 
         </body>
     </file>

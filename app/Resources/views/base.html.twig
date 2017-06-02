@@ -92,17 +92,17 @@
                                 <ul class="menu">
 
                                     <li class="menu-item">
-                                        <a href="#">{{ 'menu_country' | trans({}, "messages", lang) }}</a>
+                                        <a href="#"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
                                         <ul class="sub-menu text-left">
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag_canada.png') }}" >Canada</a></li>
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag_USA.png') }}" >United States</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag_canada.png') }}" >&nbsp;Canada</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag_USA.png') }}" >&nbsp;United States</a></li>
 
-                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}"><img src="{{ asset('images/flag_mexico.png') }}" >Mexico</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}"><img src="{{ asset('images/flag_mexico.png') }}" >&nbsp;Mexico</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}">{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
+                                    <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}"> <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
                                     <li class="menu-item">
-                                        <a href="{{ url('app_pagenavigation_showregister') }}">{{ 'menu_registre' | trans({}, "messages", lang) }}</a>
+                                        <a href="{{ url('app_pagenavigation_showregister') }}"> <span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_registre' | trans({}, "messages", lang) }}</a>
 
                                     </li>
                                     <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -114,14 +114,24 @@
 
                                 </ul>
                             {% else %}
+							
                                 <ul class="menu">
-                                    <li class="menu-item">
-                                        <a href="#">My Account</a>
+								    <li class="menu-item">
+                                        <a href="#"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
                                         <ul class="sub-menu text-left">
-                                            <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>{{ 'menu_dashboard' | trans({}, "messages", lang) }}</a></li>
-                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>{{ 'menu_password' | trans({}, "messages", lang) }}</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag_canada.png') }}" >&nbsp;Canada</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag_USA.png') }}" >&nbsp;United States</a></li>
 
-                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>{{ 'menu_signout' | trans({}, "messages", lang) }}</a></li>
+                                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}"><img src="{{ asset('images/flag_mexico.png') }}" >&nbsp;Mexico</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#"> <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_account' | trans({}, "messages", lang) }}</a>
+                                        <ul class="sub-menu text-left">
+                                            <li class="menu-item"><a href="{{ path('app_user_showmydashboard',{'customerId':userId}) }}"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;{{ 'menu_dashboard' | trans({}, "messages", lang) }}</a></li>
+                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;{{ 'menu_password' | trans({}, "messages", lang) }}</a></li>
+
+                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;{{ 'menu_signout' | trans({}, "messages", lang) }}</a></li>
                                         </ul>
                                     </li>
                                     <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
@@ -257,7 +267,7 @@
                         <p>{{ 'foot_mission' | trans({}, "messages", lang) }}</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="footer-infomation">
                         <h3 class="widget-tittle">{{ 'menu_information' | trans({}, "messages", lang) }}</h3>
                         <ul class="menu-infomation">
@@ -268,7 +278,7 @@
                             <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</a></li>
                             <li><a href="{{ url('app_pagenavigation_showsignin') }}">{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
                             <li><a href="{{ url('app_pagenavigation_showregister') }}">{{ 'menu_registre' | trans({}, "messages", lang) }}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showconditions') }}">Terms of Use</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showconditions') }}">{{ 'menu_terms' | trans({}, "messages", lang) }}</a></li>
                         </ul>
                     </div>
                 </div>

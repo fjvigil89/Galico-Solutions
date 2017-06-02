@@ -14,29 +14,29 @@
       <form class="form-login" id="frm_register" method="POST" action="{{ path('createCustomer') }}">
         <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
 	   <div class="form-group">
-          <label for="firstName">{{ 'form_name' | trans({}, "messages", lang) }}</label>
+          <label for="firstName">{{ 'form_name' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="firstName" name="firstName" ng-model="user.firstName"  required>
         </div>
 		 <div class="form-group">
-          <label for="lastName">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
+          <label for="lastName">{{ 'form_lastname' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="lastName" name="lastName" ng-model="user.lastName" required>
         </div>
 	  
         <div class="form-group">
-          <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
+          <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}*</label>
           <input type="email" id="email" name="email" ng-model="user.email" required>
         </div>
         <div class="form-group">
-          <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
+          <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}*</label>
           <input type="password" id="pwd" name="pwd" ng-model="user.pwd" required>
         </div>
         <div class="form-group">
-          <label for="pwd">{{ 'modal_confirm_password' | trans({}, "messages", lang) }}</label>
+          <label for="pwd">{{ 'modal_confirm_password' | trans({}, "messages", lang) }}*</label>
           <input type="password" id="cPwd" name="cPwd" ng-model="user.cPwd" required>
         </div>
 		
 		<div class="form-group">
-          <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
+          <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}*</label>
           <input type="tel" id="phonePrimary" name="phonePrimary" ng-model="user.phonePrimary" required>
         </div>
 		
@@ -49,7 +49,7 @@
           <input type="text" id="country" name="country"  ng-model="user.country" required>
         </div>-->
         <div class="form-group">
-          <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}</label>
+          <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}*</label>
             <select name="country" id="country" ng-model= "user.country" required>
               {% for country in countries %}
                 <option value="{{ country.country }}">{{ country.country }}</option>
@@ -58,19 +58,19 @@
         </div>
 
 		 <div class="form-group">
-          <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
+          <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="state" name="state" ng-model="user.state" required>
         </div>
 		 <div class="form-group">
-          <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
+          <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="city" name="city" ng-model="user.city" required>
         </div>
 		 <div class="form-group">
-          <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
+          <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="address" name="address" ng-model="user.address" required>
         </div>
 		 <div class="form-group">
-          <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
+          <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}*</label>
           <input type="text" id="zipCode" name="zipCode" ng-model="user.zipCode"  required>
         </div>
 

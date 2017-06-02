@@ -30,7 +30,10 @@
                    <source>Sign out</source>
                    <target>Desconectarse</target>
              </trans-unit>
-
+            <trans-unit id="menu_account" resname="menu_account">
+                   <source>My account</source>
+                   <target>Mi cuenta</target>
+             </trans-unit>
 
     <!--End Head menu-->
 
@@ -82,6 +85,11 @@
                     <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
                     <target>Nuestra prioridad es atender las necesidades básicas de nuestros clientes con la mejor cobertura posible, ofreciendo un justo balance entre precio y calidad. General Pro garantiza que sus expectativas serán compensadas plenamente.</target>
                </trans-unit>
+                <trans-unit id="menu_terms" resname="menu_terms">
+                         <source>Terms of use</source>
+                         <target>Términos de Uso</target>
+                </trans-unit>
+
 
     <!--End footer-->
 
@@ -507,14 +515,23 @@
                 </trans-unit>
 
 
-                 <trans-unit id="plans_gpbasic" resname="plans_gpbasic">
+                 <trans-unit id="plan_gpbasic" resname="plan_gpbasic">
                        <source>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
                        <target>El plan básico ofrece servicios elementales, que incluyen plomería, electricidad, cerrajería, y mantenimiento de puertas y ventanas, por el precio conveniente de $24.99 por mes. Este plan será activado 30 días después de su suscripción. Durante ese período, se realizará una inspección a su domicilio con el fin de evaluar las condiciones de su hogar, así como la confirmación de su solicitud. Tenga en cuenta que este plan cubre totalmente el costo de mano de obra, pero algunos materiales adicionales podrían no estar incluidos.</target>
                 </trans-unit>
+                 <trans-unit id="plan_gpplus" resname="plan_gpplus">
+                       <source>The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
+                       <target>El GP Plus es una extensión del GP Básico, con la adición de mantenimiento de aire acondicionado, sistemas de calefacción, y reparaciones de electrodomésticos, por sólo $ 29.99 por mes. Este plan será activado 30 días después de su suscripción. Durante ese período, la inspección a su vivienda es requerida, así como la confirmación de su solicitud. Tenga en cuenta que este plan cubre totalmente el costo de mano de obra, pero algunos materiales adicionales podrían no estar incluidos.</target>
+                </trans-unit>
+                 <trans-unit id="plan_gpadd" resname="plan_gpadd">
+                       <source>The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price.</source>
+                       <target>La opción GP Adicional incorpora servicios tales como soporte de TI, cuidado de niños, servicio de cuidados de adultos, mantenimiento del césped, limpieza y pintura, etc., cada uno por un precio competitivo. En caso de estar inscrito a uno de nuestros planes, recibirá un descuento de 10% en cualquiera de estos servicios.</target>
+                </trans-unit>
 
-
-
-
+                <trans-unit id="plan_all" resname="plan_all">
+                      <source>All services</source>
+                      <target>Todos los servicios</target>
+               </trans-unit>
 
 
 
@@ -595,52 +612,52 @@
 <!--Form-->
 
                 <trans-unit id="form_name" resname="form_name">
-                      <source>First name*</source>
-                      <target>Nombre*</target>
+                      <source>First name</source>
+                      <target>Nombre</target>
                </trans-unit>
                 <trans-unit id="form_lastname" resname="form_lastname">
-                      <source>Last name*</source>
-                      <target>Apellido*</target>
+                      <source>Last name</source>
+                      <target>Apellido</target>
                </trans-unit>
                 <trans-unit id="form_email" resname="form_email">
-                      <source>Email*</source>
-                      <target>Correo*</target>
+                      <source>Email</source>
+                      <target>Correo</target>
                </trans-unit>
                 <trans-unit id="form_password" resname="form_password">
-                      <source>Password*</source>
-                      <target>Clave*</target>
+                      <source>Password</source>
+                      <target>Clave</target>
                </trans-unit>
                  <trans-unit id="form_phone_primary" resname="form_phone_primary">
-                       <source>Phone (Primary) *</source>
-                       <target>Telefono* </target>
+                       <source>Phone (Primary) </source>
+                       <target>Teléfono </target>
                 </trans-unit>
                  <trans-unit id="form_phone_alternate" resname="form_phone_alternate">
                        <source>Phone (Alternate)</source>
-                       <target>Telefono (Opcional)</target>
+                       <target>Teléfono (Opcional)</target>
                 </trans-unit>
                  <trans-unit id="form_Country" resname="form_Country">
-                       <source>Country*</source>
-                       <target>País*</target>
+                       <source>Country</source>
+                       <target>País</target>
                 </trans-unit>
                  <trans-unit id="form_state" resname="form_state">
-                       <source>State / Province*</source>
-                       <target>Estado / Provincia*</target>
+                       <source>State / Province</source>
+                       <target>Estado / Provincia</target>
                 </trans-unit>
                  <trans-unit id="form_city" resname="form_city">
-                       <source>City*</source>
-                       <target>Ciudad*</target>
+                       <source>City</source>
+                       <target>Ciudad</target>
                 </trans-unit>
                  <trans-unit id="form_address" resname="form_address">
-                       <source>Address*</source>
-                       <target>Dirección*</target>
+                       <source>Address</source>
+                       <target>Dirección</target>
                 </trans-unit>
                  <trans-unit id="form_zipcode" resname="form_zipcode">
-                       <source>Zip code*</source>
-                       <target>Codigo Postal*</target>
+                       <source>Zip code</source>
+                       <target>Codigo Postal</target>
                 </trans-unit>
                  <trans-unit id="form_message" resname="form_message">
-                       <source>Message*</source>
-                       <target>Mensaje*</target>
+                       <source>Message</source>
+                       <target>Mensaje</target>
                 </trans-unit>
 
 
@@ -649,16 +666,19 @@
                        <target>Regístrate</target>
                 </trans-unit>
                  <trans-unit id="form_send_message" resname="form_send_message">
-                       <source>Send Message*</source>
-                       <target>Enviar Mensaje*</target>
+                       <source>Send Message</source>
+                       <target>Enviar Mensaje</target>
                 </trans-unit>
 
                  <trans-unit id="form_login" resname="form_login">
                        <source>Login</source>
                        <target>Iniciar sesión</target>
                 </trans-unit>
-
+				
 <!--End Form-->
+
+		
+
 
 <!--Error message -->
 
@@ -718,7 +738,83 @@
 <!--End Error message -->
 
 
+<!--My dashboard-->
+                 <trans-unit id="dash_sdate" resname="dash_sdate">
+                       <source>Subscription date</source>
+                       <target>Fecha de subscripción</target>
+                </trans-unit>
+                 <trans-unit id="dash_local_agent" resname="dash_local_agent">
+                       <source>Local agent number</source>
+                       <target>Número de agente Local</target>
+                </trans-unit>				
+                 <trans-unit id="dash_house" resname="dash_house">
+                       <source>Houses</source>
+                       <target>Casas</target>
+                </trans-unit>					
+                 <trans-unit id="dash_req_date" resname="dash_req_date">
+                       <source>Request date</source>
+                       <target>Fecha de solicitud</target>
+                </trans-unit>					
+                 <trans-unit id="dash_status" resname="dash_status">
+                       <source>Status</source>
+                       <target>Estado</target>
+                </trans-unit>					
 
+                 <trans-unit id="dash_req_id" resname="dash_req_id">
+                       <source>Request ID</source>
+                       <target>Numero de solicitud</target>
+                </trans-unit>
+                 <trans-unit id="status_open" resname="status_open">
+                       <source>Open</source>
+                       <target>Abierto</target>
+                </trans-unit>					
+                 <trans-unit id="status_closed" resname="status_closed">
+                       <source>Closed</source>
+                       <target>Cerrado</target>
+                </trans-unit>	
+                 <trans-unit id="dash_intervention" resname="dash_intervention">
+                       <source>Intervention</source>
+                       <target>Intervención</target>
+                </trans-unit>
+                 <trans-unit id="dash_technician" resname="dash_technician">
+                       <source>Technician</source>
+                       <target>Técnico</target>
+                </trans-unit>
+                 <trans-unit id="dash_comments" resname="dash_comments">
+                       <source>Comments</source>
+                       <target>Comentarios</target>
+                </trans-unit>
+
+                 <trans-unit id="dash_my_dashboard" resname="dash_my_dashboard">
+                       <source>My dashboard</source>
+                       <target>MI TABLERO</target>
+                </trans-unit>
+                 <trans-unit id="dash_edit" resname="dash_edit">
+                       <source>Edit</source>
+                       <target>Editar</target>
+                </trans-unit>
+                 <trans-unit id="dash_add" resname="dash_add">
+                       <source>Add</source>
+                       <target>Adicionar</target>
+                </trans-unit>
+                 <trans-unit id="dash_edit_profile" resname="dash_edit_profile">
+                       <source>Edit profile information</source>
+                       <target>Editar información del perfil</target>
+                </trans-unit>
+                 <trans-unit id="dash_add_house" resname="dash_add_house">
+                       <source>Add House</source>
+                       <target>Adicionar Casa</target>
+                </trans-unit>
+                 <trans-unit id="dash_save" resname="dash_save">
+                       <source>Save</source>
+                       <target>Guardar</target>
+                </trans-unit>				
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contacto</target>
+                </trans-unit>					
+				
+<!--End my dashboard-->		
 
 
 

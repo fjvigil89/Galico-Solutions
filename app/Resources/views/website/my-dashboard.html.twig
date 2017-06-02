@@ -7,7 +7,7 @@
         <div class="pad">
         </div>
         <div class="container">
-            <h2 class="heading-title">MY DASHBOARD</h2>
+            <h2 class="heading-title">{{ 'dash_my_dashboard' | trans({}, "messages", lang)}}</h2>
             </br>
             <div class="row">
 
@@ -21,7 +21,7 @@
                             <tr>
                                 <th colspan="2" ng-bind="customer.fullName"></th>
                                 <th class="text-right"><a href="" data-toggle="modal" data-target="#editModal" >
-                                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                                        <span class="glyphicon glyphicon-edit" title={{ 'dash_edit' | trans({}, "messages", lang)}} ></span>
                                     </a></th>
 
                             </tr>
@@ -42,44 +42,44 @@
                                 <td >CA24353</td>
                             </tr>-->
                             <tr>
-                                <td>Last name</td>
+                                <td>{{ 'form_lastname' | trans({}, "messages", lang) }}</td>
                                 <td ng-bind="customer.lastName"></td>
                             </tr>
                             <tr>
-                                <td>First name</td>
+                                <td>{{ 'form_name' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.firstName"></td>
                             </tr>
                             <tr>
-                                <td>Email</td>
+                                <td>{{ 'form_email' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.email"></td>
                             </tr>
 
                             <tr>
-                                <td>Phone (Primary)</td>
+                                <td>{{ 'form_phone_primary' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.phonePrimary"></td>
                             </tr>
                             <tr>
-                                <td>Phone (Alternate)</td>
+                                <td>{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.phoneAlternate"></td>
                             </tr>
                             <tr>
-                                <td>Country</td>
+                                <td>{{ 'form_Country' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.country"></td>
                             </tr>
                             <tr>
-                                <td>State</td>
+                                <td>{{ 'form_state' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.state"></td>
                             </tr>
                             <tr>
-                                <td>City</td>
+                                <td>{{ 'form_city' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.city"></td>
                             </tr>
                             <tr>
-                                <td>Address</td>
+                                <td>{{ 'form_address' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.address"></td>
                             </tr>
                             <tr>
-                                <td>ZipCode</td>
+                                <td>{{ 'form_zipcode' | trans({}, "messages", lang)}}</td>
                                 <td ng-bind="customer.zipCode"></td>
                             </tr>
 
@@ -100,22 +100,20 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="4">Houses</th>
+                                <th colspan="5">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
+                          
                                 <th><a href="#" data-toggle="modal" data-target="#contratModal" >
-                                        <span class="glyphicon glyphicon-plus-sign font-header"  title="contrat"></span>
-                                    </a></th>
-                                <th><a href="#" data-toggle="modal" data-target="#addmaisonModal" >
-                                    <span class="glyphicon glyphicon-plus-sign font-header"  title="add"></span>
+                                    <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add' | trans({}, "messages", lang)}}></span>
                                     </a></th>
                             </tr>
                             </thead>
                             <thead class="bg-light-gray">
                             <tr>
-                                <th>Country</th>
-                                <th>Address</th>
+                                <th>{{ 'form_Country' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'form_address' | trans({}, "messages", lang)}}</th>
                                  <th>Plan</th>
-                                <th>Subscription date</th>
-                                <th>Local agent number</th>
+                                <th>{{ 'dash_sdate' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
                                 <th class="text-center"></th>
                             </tr>
                             </thead>
@@ -160,9 +158,9 @@
                             </div>
 
                             <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                <div class="panel-body"><label class="text-bold">Request date :</label> 2017-01-21 <br/>
-                                    <label class="text-bold">Status :</label> Closed<br/>
-                                    <label class="text-bold">Code Service</label> : PL00023
+                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> 2017-01-21 <br/>
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : PL00023
                                 </div>
 
                                 <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -176,10 +174,10 @@
 
                                             <thead class="bg-light-gray">
                                             <tr>
-                                                <th>Intervention date</th>
-                                                <th>Technician</th>
-                                                <th>Comments</th>
-                                                <th>Amount</th>
+                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                                
 
                                             </tr>
                                             </thead>
@@ -189,7 +187,7 @@
                                                 <td class="">04/25/2017</td>
                                                 <td class="">Jorge Suarez</td>
                                                 <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
-                                                <td class="">US 15</td>
+                                                
 
                                             </tr>
                                             <tr>
@@ -197,7 +195,7 @@
                                                 <td class="">04/26/2017</td>
                                                 <td class="">Irina Rodriguez</td>
                                                 <td class="">asdfasd asdf asdf asdf sa fas</td>
-                                                <td class="">US 15</td>
+                                                
 
 
                                             </tr>
@@ -333,49 +331,49 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Edit profile information</h4>
+                            <h4 class="modal-title">{{ 'dash_edit_profile' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
                         <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
                         <div class="form-group">
-                            <label for="lastname">Last name *:</label>
+                            <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="lastName" ng-model="customerUpdated.lastName">
                         </div>
                         <div class="form-group">
-                            <label for="lastname">First name *:</label>
+                            <label for="lastname">{{ 'form_name' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="firstName" ng-model="customerUpdated.firstName" >
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *:</label>
+                            <label for="email">{{ 'form_email' | trans({}, "messages", lang)}} *:</label>
                             <input type="email" class="form-control" id="email" ng-model="customerUpdated.email" >
                         </div>
 
                         <div class="form-group">
-                            <label for="phonePrimary">Phone (Primary) *:</label>
+                            <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}} *:</label>
                             <input type="tel" class="form-control" id="phonePrimary" ng-model="customerUpdated.phonePrimary">
                         </div>
                         <div class="form-group">
-                            <label for="phonealternate">Phone (Alternate):</label>
+                            <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
                             <input type="tel" class="form-control" id="phoneAlternate" ng-model="customerUpdated.phoneAlternate" >
                         </div>
                         <div class="form-group">
-                            <label for="country">Country *:</label>
+                            <label for="country">{{ 'form_Country' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="country" ng-model="customerUpdated.country">
                         </div>
                         <div class="form-group">
-                            <label for="state">State :</label>
+                            <label for="state">{{ 'form_state' | trans({}, "messages", lang)}} :</label>
                             <input type="text" class="form-control" id="state" ng-model="customerUpdated.state" >
                         </div>
                         <div class="form-group">
-                            <label for="city">City *:</label>
+                            <label for="city">{{ 'form_city' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="city" ng-model="customerUpdated.city" >
                         </div>
                         <div class="form-group">
-                            <label for="address">Address *:</label>
+                            <label for="address">{{ 'form_address' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="address" ng-model="customerUpdated.address" >
                         </div>
                         <div class="form-group">
-                            <label for="zipCode">ZipCode:</label>
+                            <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="zipCode" ng-model="customerUpdated.zipCode" >
                         </div>
                         <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
@@ -383,7 +381,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
-                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> Save
+                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
                         </button>
                     </div>
                 </div>
@@ -393,13 +391,13 @@
 
 
 
-        <div id="addmaisonModal" class="modal fade" role="dialog">
+        <div id="addHouseModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add House</h4>
+                        <h4 class="modal-title">{{ 'dash_add_house' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
 
@@ -411,19 +409,19 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="add-contact">Contact:</label>
+                            <label for="add-contact">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="add-contact" value="">
                         </div>
                         <div class="form-group">
-                            <label for="add-phonePrimary">Phone (Primary):</label>
+                            <label for="add-phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
                             <input type="tel" class="form-control" id="add-phonePrimary" value="" >
                         </div>
                         <div class="form-group">
-                            <label for="add-phonealternate">Phone (Alternate):</label>
+                            <label for="add-phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
                             <input type="tel" class="form-control" id="add-phonealternate" value="" >
                         </div>
                         <div class="form-group">
-                            <label for="country">Country*</label>
+                            <label for="country">{{ 'form_Country' | trans({}, "messages", lang)}}*</label>
                             <select name="country" class="form-control" id="country"  required>
                                 <option>Canada</option>
                                 <option>United States</option>
@@ -432,16 +430,16 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="add-state">State:</label>
+                            <label for="add-state">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="add-state" value="" >
                         </div>
                         <div class="form-group">
-                            <label for="add-city">City:</label>
+                            <label for="add-city">{{ 'form_city' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="add-city" value="" >
                         </div>
 
                         <div class="form-group">
-                            <label for="add-address">Address:</label>
+                            <label for="add-address">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="add-address" value="" >
                         </div>
 
@@ -449,8 +447,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-plus" title="Save"></span> Add
+                        <button type="button" class="btn bg-yellow color-black" >
+                            <span class="glyphicon glyphicon-plus" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang)}}
                         </button>
                     </div>
                 </div>
@@ -489,7 +487,7 @@
                     </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                                <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" data-toggle="modal" data-target="#addHouseModal">
                                     I ACCEPT
                                 </button>
                             </div>
