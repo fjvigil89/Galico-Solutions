@@ -34,7 +34,18 @@
                    <source>My account</source>
                    <target>Mi cuenta</target>
              </trans-unit>
-
+            <trans-unit id="menu_Canada" resname="menu_Canada">
+                   <source>Canada</source>
+                   <target>Canada</target>
+             </trans-unit>
+            <trans-unit id="menu_UnitedStates" resname="menu_UnitedStates">
+                   <source>United States</source>
+                   <target>Estados Unidos</target>
+             </trans-unit>
+            <trans-unit id="menu_Mexico" resname="menu_Mexico">
+                   <source>Mexico</source>
+                   <target>México</target>
+             </trans-unit>
     <!--End Head menu-->
 
 
@@ -741,7 +752,7 @@
 <!--My dashboard-->
                  <trans-unit id="dash_sdate" resname="dash_sdate">
                        <source>Subscription date</source>
-                       <target>Fecha de subscripción</target>
+                       <target>Fecha</target>
                 </trans-unit>
                  <trans-unit id="dash_local_agent" resname="dash_local_agent">
                        <source>Local agent number</source>
@@ -749,7 +760,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>Casas</target>
+                       <target>Suscripción de casa</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>

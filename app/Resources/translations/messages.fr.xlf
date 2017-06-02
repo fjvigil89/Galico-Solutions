@@ -31,7 +31,18 @@
                    <source>Sign out</source>
                    <target>Se deconnecter</target>
              </trans-unit>
-
+            <trans-unit id="menu_Canada" resname="menu_Canada">
+                   <source>Canada</source>
+                   <target>Canada</target>
+             </trans-unit>
+            <trans-unit id="menu_UnitedStates" resname="menu_UnitedStates">
+                   <source>United States</source>
+                   <target>État Unis</target>
+             </trans-unit>
+            <trans-unit id="menu_Mexico" resname="menu_Mexico">
+                   <source>Mexico</source>
+                   <target>Mexique</target>
+             </trans-unit>
 
     <!--End Head menu-->
     <!--menu-->
@@ -739,7 +750,7 @@
 <!--My dashboard-->
                  <trans-unit id="dash_sdate" resname="dash_sdate">
                        <source>Subscription date</source>
-                       <target>Date de souscription</target>
+                       <target>Date</target>
                 </trans-unit>
                  <trans-unit id="dash_local_agent" resname="dash_local_agent">
                        <source>Local agent number</source>
@@ -747,7 +758,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>Maisons</target>
+                       <target>Maison abonnement</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
