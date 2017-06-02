@@ -31,7 +31,18 @@
                    <source>Sign out</source>
                    <target>Se deconnecter</target>
              </trans-unit>
-
+            <trans-unit id="menu_Canada" resname="menu_Canada">
+                   <source>Canada</source>
+                   <target>Canada</target>
+             </trans-unit>
+            <trans-unit id="menu_UnitedStates" resname="menu_UnitedStates">
+                   <source>United States</source>
+                   <target>État Unis</target>
+             </trans-unit>
+            <trans-unit id="menu_Mexico" resname="menu_Mexico">
+                   <source>Mexico</source>
+                   <target>Mexique</target>
+             </trans-unit>
 
     <!--End Head menu-->
     <!--menu-->
