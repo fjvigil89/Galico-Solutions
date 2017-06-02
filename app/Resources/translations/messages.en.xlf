@@ -31,7 +31,10 @@
                    <source>Sign out</source>
                    <target>Sign out</target>
              </trans-unit>
-
+            <trans-unit id="menu_account" resname="menu_account">
+                   <source>My Account</source>
+                   <target>My account</target>
+             </trans-unit>
 
     <!--End Head menu-->
     <!--menu-->
@@ -79,6 +82,13 @@
                     <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
                     <target>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</target>
                </trans-unit>
+                <trans-unit id="menu_terms" resname="menu_terms">
+                         <source>Terms of use</source>
+                         <target>Terms of use</target>
+                </trans-unit>
+
+
+
 
     <!--End footer-->
 
@@ -506,14 +516,23 @@
                        <target>If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </target>
                 </trans-unit>
 
-                 <trans-unit id="plans_gpbasic" resname="plans_gpbasic">
-                       <source>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
-                       <target>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</target>
-                </trans-unit>
+                   <trans-unit id="plan_gpbasic" resname="plan_gpbasic">
+                        <source>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
+                        <target>The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</target>
+                 </trans-unit>
+                  <trans-unit id="plan_gpplus" resname="plan_gpplus">
+                        <source>The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</source>
+                        <target>The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.</target>
+                 </trans-unit>
+                  <trans-unit id="plan_gpadd" resname="plan_gpadd">
+                        <source>The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price.</source>
+                        <target>The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price.</target>
+                 </trans-unit>
 
-
-
-
+                <trans-unit id="plan_all" resname="plan_all">
+                      <source>All services</source>
+                      <target>All services</target>
+               </trans-unit>
 
 <!--End Plans-->
 
@@ -586,52 +605,52 @@
 <!--Form-->
 
                 <trans-unit id="form_name" resname="form_name">
-                      <source>First name*</source>
-                      <target>First name*</target>
+                      <source>First name</source>
+                      <target>First name</target>
                </trans-unit>
                 <trans-unit id="form_lastname" resname="form_lastname">
-                      <source>Last name*</source>
-                      <target>Last name*</target>
+                      <source>Last name</source>
+                      <target>Last name</target>
                </trans-unit>
                 <trans-unit id="form_email" resname="form_email">
-                      <source>Email*</source>
-                      <target>Email*</target>
+                      <source>Email</source>
+                      <target>Email</target>
                </trans-unit>
                 <trans-unit id="form_password" resname="form_password">
-                      <source>Password*</source>
-                      <target>Password*</target>
+                      <source>Password</source>
+                      <target>Password</target>
                </trans-unit>
                  <trans-unit id="form_phone_primary" resname="form_phone_primary">
-                       <source>Phone (Primary) *</source>
-                       <target>Phone (Primary) *</target>
+                       <source>Phone (Primary) </source>
+                       <target>Phone (Primary) </target>
                 </trans-unit>
                  <trans-unit id="form_phone_alternate" resname="form_phone_alternate">
                        <source>Phone (Alternate)</source>
                        <target>Phone (Alternate)</target>
                 </trans-unit>
                  <trans-unit id="form_Country" resname="form_Country">
-                       <source>Country*</source>
-                       <target>Country*</target>
+                       <source>Country</source>
+                       <target>Country</target>
                 </trans-unit>
                  <trans-unit id="form_state" resname="form_state">
-                       <source>State / Province*</source>
-                       <target>State / Province*</target>
+                       <source>State / Province</source>
+                       <target>State / Province</target>
                 </trans-unit>
                  <trans-unit id="form_city" resname="form_city">
-                       <source>City*</source>
-                       <target>City*</target>
+                       <source>City</source>
+                       <target>City</target>
                 </trans-unit>
                  <trans-unit id="form_address" resname="form_address">
-                       <source>Address*</source>
-                       <target>Address*</target>
+                       <source>Address</source>
+                       <target>Address</target>
                 </trans-unit>
                  <trans-unit id="form_zipcode" resname="form_zipcode">
-                       <source>Zip code*</source>
-                       <target>Zip code*</target>
+                       <source>Zip code</source>
+                       <target>Zip code</target>
                 </trans-unit>
                  <trans-unit id="form_message" resname="form_message">
-                       <source>Message*</source>
-                       <target>Message*</target>
+                       <source>Message</source>
+                       <target>Message</target>
                 </trans-unit>
 
                  <trans-unit id="form_signup" resname="form_signup">
@@ -639,8 +658,8 @@
                        <target>Sign up</target>
                 </trans-unit>
                  <trans-unit id="form_send_message" resname="form_send_message">
-                       <source>Send Message*</source>
-                       <target>Send Message*</target>
+                       <source>Send Message</source>
+                       <target>Send Message</target>
                 </trans-unit>
 
                  <trans-unit id="form_login" resname="form_login">
@@ -708,7 +727,70 @@
 
 <!--End Error message -->
 
+<!--My dashboard-->
+                 <trans-unit id="dash_sdate" resname="dash_sdate">
+                       <source>Subscription date</source>
+                       <target>Subscription date</target>
+                </trans-unit>
+                 <trans-unit id="dash_local_agent" resname="dash_local_agent">
+                       <source>Local agent number</source>
+                       <target>Local agent number</target>
+                </trans-unit>				
+                 <trans-unit id="dash_house" resname="dash_house">
+                       <source>Houses</source>
+                       <target>Houses</target>
+                </trans-unit>					
+                 <trans-unit id="dash_req_date" resname="dash_req_date">
+                       <source>Request date</source>
+                       <target>Request date</target>
+                </trans-unit>					
+                 <trans-unit id="dash_status" resname="dash_status">
+                       <source>Status</source>
+                       <target>Status</target>
+                </trans-unit>					
+		
+                 <trans-unit id="dash_req_id" resname="dash_req_id">
+                       <source>Request ID</source>
+                       <target>Request ID</target>
+                </trans-unit>
+                 <trans-unit id="status_open" resname="status_open">
+                       <source>Open</source>
+                       <target>Open</target>
+                </trans-unit>					
+                 <trans-unit id="status_closed" resname="status_closed">
+                       <source>Closed</source>
+                       <target>Closed</target>
+                </trans-unit>	
+                 <trans-unit id="dash_intervention" resname="dash_intervention">
+                       <source>Intervention</source>
+                       <target>Intervention</target>
+                </trans-unit>
+                 <trans-unit id="dash_technician" resname="dash_technician">
+                       <source>Technician</source>
+                       <target>Technician</target>
+                </trans-unit>
+                 <trans-unit id="dash_comments" resname="dash_comments">
+                       <source>Comments</source>
+                       <target>Comments</target>
+                </trans-unit>
 
+                 <trans-unit id="dash_my_dashboard" resname="dash_my_dashboard">
+                       <source>My dashboard</source>
+                       <target>MY DASHBOARD</target>
+                </trans-unit>
+                 <trans-unit id="dash_edit" resname="dash_edit">
+                       <source>Edit</source>
+                       <target>Edit</target>
+                </trans-unit>
+                 <trans-unit id="dash_add" resname="dash_add">
+                       <source>Add</source>
+                       <target>Add</target>
+                </trans-unit>
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contact</target>
+                </trans-unit>		
+<!--End my dashboard-->	
 
 
 

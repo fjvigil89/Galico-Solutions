@@ -88,14 +88,11 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="button-group filters-button-group">
-              <button class="button" ng-click = "plan.name='GP Basic'; plan.text='The GP Basic plan consists of basic services, which include plumbing, electricity, locksmith, and doors and windows maintenance, for the convenient price of $24.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.'"
+              <button class="button" ng-click = "setPlanInfo('basic')"
                       data-filter=".basic-plan">GP Basic</button>
-
-
-              <button class="button" ng-click = "plan.name='GP Plus'; plan.text='The GP Plus is an extention of the GP Basic, with the addition of  Air Conditioning, heating systems, and appliances repairs, for only $29.99 per month. This plan’s activation requires a 30 day wait following your subscription. During those 30 days, an inspection of your home, as well as a confirmation of your demand will take place. Keep in mind that this plan fully covers our labor cost, but some additional materials might not be included.'"
-
+              <button class="button" ng-click = "setPlanInfo('plus')"
                       data-filter=".gp-plus">GP Plus</button>
-              <button class="button" ng-click = "plan.name='GP Add'; plan.text= 'The GP Add brings additional services such as IT support, babysitting, nursing care, lawn maintenance, cleaning, and painting, each for a respectively fair price. In addition, if a client has already enrolled in another plan before requesting these services, a 10% discount will be applied to this price.'"
+              <button class="button" ng-click = "setPlanInfo('add')"
                       data-filter=".additional">GP Add</button>
             </div>
           </div>
@@ -265,5 +262,8 @@
     </section>
 
   </div>
-
+    <input type="hidden" id="GPBasic" value="{{ 'plan_gpbasic' | trans({}, "messages", lang) }}">
+    <input type="hidden" id="GPPlus" value="{{ 'plan_gpplus' | trans({}, "messages", lang) }}">
+  <input type="hidden" id="GPAdd" value="{{ 'plan_gpadd' | trans({}, "messages", lang) }}">
+<input type="hidden" id="allPlans" value="{{ 'plan_all' | trans({}, "messages", lang) }}">
 {% endblock %}
