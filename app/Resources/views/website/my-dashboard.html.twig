@@ -147,25 +147,31 @@
             </div>
 
             </br></br>
-            <div class="row">
+            <!--<div class="form-group">
+                <label for="houseRequests">View my requests</label>
+                <select name="country" class="form-control" id="country"  required>
+                    <option value=""></option>
+                    <option ng-repeat="house in houses" value="house.id" ng-bind="house.address + ' ' + house.city"></option>
+                </select>
+            </div>-->
+            <div class="row" ng-repeat="request in requests">
                 <div class="col-xs-12 no-padding">
                     <div class="panel-group" id="myAccordion">
                         <div class="panel border-yellow ">
                             <div class="panel-heading bg-yellow">
                                 <h4 class="panel-title ">
-                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard">JAN 21, 2017 - Plumbing - Closed</a>
+                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
                                 </h4>
                             </div>
 
                             <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> 2017-01-21 <br/>
-                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>
-                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : PL00023
+                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
                                 </div>
 
-                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <div class="panel-body" ng-bind="request.details">
                                 </div>
 
                                 <div class="col-xs-12 no-padding">
@@ -182,23 +188,15 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+                                            <tr ng-repeat="intervention in request.interventions">
 
-                                                <td class="">04/25/2017</td>
-                                                <td class="">Jorge Suarez</td>
-                                                <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
+                                                <td class="" ng-bind="intervention.interventionDate"></td>
+                                                <td class="" ng-bind="intervention.technician"></td>
+                                                <td class="" ng-bind="intervention.comments"></td>
                                                 
 
                                             </tr>
-                                            <tr>
 
-                                                <td class="">04/26/2017</td>
-                                                <td class="">Irina Rodriguez</td>
-                                                <td class="">asdfasd asdf asdf asdf sa fas</td>
-                                                
-
-
-                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>

@@ -51,6 +51,15 @@ angular.module("gpApp")
             });
         }
 
+        this.getHouseRequests = function(houseId)
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/house-requests/'+houseId,
+                method: "GET",
+
+            });
+        }
+
         this.updateCustomer = function (customer) {
 
             //return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});

@@ -358,6 +358,7 @@ class UserController extends Controller
             $req['status'] = $request->getStatus();
             $req['requestId'] = $request->getRequestid();
             $req['details'] = $request->getDetails();
+            $req['service'] = (($request->getRequestServices())[0])->getService()->getServicename();
             $interventions = array();
             foreach($request->getInterventions() as $intervention)
             {

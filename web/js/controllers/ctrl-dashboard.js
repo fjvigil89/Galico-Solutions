@@ -119,10 +119,22 @@ angular.module("gpApp")
                 })
         }
 
+        $scope.getHouseRequests = function(houseId) {
+            DashboardService.getHouseRequests(houseId)
+                .then(function(response){
+                    console.log(response.data);
+                    $scope.requests = response.data;
+
+                },function(error){
+
+                })
+        }
+
 
 
         // CALL METHODS ONLOAD
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();
+        $scope.getHouseRequests(1);
     })
