@@ -29,7 +29,7 @@
              </trans-unit>
             <trans-unit id="menu_signout" resname="menu_signout">
                    <source>Sign out</source>
-                   <target>Se deconnecter</target>
+                   <target>Se déconnecter</target>
              </trans-unit>
             <trans-unit id="menu_Canada" resname="menu_Canada">
                    <source>Canada</source>
@@ -117,7 +117,7 @@
               </trans-unit>
                <trans-unit id="modal_singing_out" resname="modal_singing_out">
                     <source>Signing out...</source>
-                    <target>Se deconnecter</target>
+                    <target>Se déconnecter</target>
                </trans-unit>
                 <trans-unit id="modal_conf_signout" resname="modal_conf_signout">
                      <source>Are you sure you want to sign out?</source>
@@ -125,7 +125,7 @@
                </trans-unit>
                <trans-unit id="modal_signout" resname="modal_signout">
                     <source>Sign out</source>
-                    <target>Se deconnecter</target>
+                    <target>Se déconnecter</target>
               </trans-unit>
             <trans-unit id="menu_account" resname="menu_account">
                    <source>My Account</source>
