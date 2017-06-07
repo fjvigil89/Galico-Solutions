@@ -1,0 +1,181 @@
+/*CUSTOM CSS*/
+#section-plans .heading-title {
+    color: #fff;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.style-header {
+    background: #eee;
+}
+.colorplan  {
+    background: #b9cce5;
+}
+.pad  {
+    margin-top: 4em;
+}
+
+.small-margin-left {
+    margin-left: 15px;
+}
+
+.small-margin-right {
+    margin-right: 15px;
+}
+
+.container-rounded-corner{
+    border-radius: 20px;
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+.head-title-row {
+    border-bottom-color: #FBD232;
+    padding: 10px;
+    color: #fff;
+    background: #FBD232;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+.right-align{
+    text-align: right;
+}
+
+.left-align{
+    text-align: left;
+}
+
+.panel-griss > .panel-heading {
+    color: #FFFFFF;
+    background-color: #999;
+    border-color: #ddd;
+}
+
+.panel-collapse-color {
+
+    background-color: #f5f5f5;
+    border-color: #6d6d6d;
+}
+
+.imgphoto {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 80px;
+}
+.container-img img
+{
+    width:100%;
+}
+.colorgris{
+    background: #DDDDDD;
+}
+
+.color-blue{
+    background: #d9edf7;
+}
+
+.color-yellowhite{
+    background: #FFFFEB;
+}
+
+.color-orange{
+    background: #fff3e6;
+}
+
+.bg-yellow
+{
+    background-color: #FBD232;
+}
+
+.border-yellow
+{
+    border: solid 1px ;
+    border-color: #FBD232;
+}
+
+
+
+.bg-light-gray
+{
+
+    background-color: #eee;
+}
+
+.font-header{
+    font-size: 1.2em;
+}
+
+
+.top-padding{
+
+    padding-top: 5px;
+}
+
+.bot-padding{
+
+    padding-bottom: 15px;
+}
+.color-black{
+
+    color: black;
+}
+
+#tbl-profile td
+{
+    border-top: 1px solid #FFFFFF;
+    /*font-size:1.18vw;*/
+    line-height: 1.1;
+}
+
+.container-flag img
+{
+    width:100%;
+    height:100%;
+
+}
+
+.color-white{
+    color: #FFFFFF;
+}
+
+
+.bg-grisfonce{
+
+    background:#777;
+
+}
+
+.color-red{
+    color: red;
+}
+
+.bot-padding2{
+
+    padding-bottom: 5px;
+}
+
+.left-padding{
+
+    padding-left: 3em;
+}
+
+.margin-left{
+
+    margin-left: 3px;
+
+}
+
+.top-bot-padding{
+
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.message-info
+{
+    color: #104d0b;
+}

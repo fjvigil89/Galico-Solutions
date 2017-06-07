@@ -119,22 +119,26 @@ angular.module("gpApp")
                 })
         }
 
-        $scope.getHouseRequests = function(houseId) {
-            DashboardService.getHouseRequests(houseId)
-                .then(function(response){
-                    console.log(response.data);
-                    $scope.requests = response.data;
+        $scope.getHouseRequests = function() {
+            $scope.requests = [];
 
-                },function(error){
+            if($scope.selectedHouseId!="")
+            {
+                DashboardService.getHouseRequests($scope.selectedHouseId)
+                    .then(function(response){
+                        console.log(response.data);
+                        $scope.requests = response.data;
 
-                })
+                    },function(error){
+
+                    })
+            }
+
         }
-
-
 
         // CALL METHODS ONLOAD
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();
-        $scope.getHouseRequests(1);
+
     })

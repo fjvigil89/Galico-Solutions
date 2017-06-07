@@ -76,5 +76,18 @@ angular.module("gpApp")
                     }
             });
         }
+
+        this.updatePassword = function (customer) {
+
+            return $http({
+                url : RouterService.getEndPoint() + '/update-password',
+                method: "GET",
+                params:
+                    {
+                        oldPassword : customer.customerId,lastName : customer.lastName,
+                        newPassword : customer.firstName,email: customer.email
+                    }
+            });
+        }
     })
 

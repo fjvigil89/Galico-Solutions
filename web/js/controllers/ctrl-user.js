@@ -19,7 +19,8 @@ angular.module("gpApp")
         $scope.user.address = "";
         $scope.user.zipCode = "";
 
-
+        $scope.update = {};
+        $scope.update.successful = false;
 
         $scope.authenticate = function()
         {
@@ -136,5 +137,40 @@ angular.module("gpApp")
         $scope.signOut = function()
         {
             $('#frm_signout').submit();
+        }
+
+        $scope.updatePassword = function()
+        {
+            $scope.update.error = "";
+            $scope.update.successful = false;
+
+            if(GeneralService.isInvalid($scope.user.oldPassword))
+            {
+                $scope.update.error = "Please enter your old password";
+                $window.document.getElementById('oldPassword').focus();
+
+            }
+            else if(GeneralService.isInvalid($scope.user.newPassword))
+            {
+                $scope.update.error = "Please enter your new password";
+                $window.document.getElementById('newPassword').focus();
+
+            }
+            else if(GeneralService.isInvalid($scope.user.cNewPassword))
+            {
+                $scope.update.error = "Please confirm your new password";
+                $window.document.getElementById('cNewPassword').focus();
+            }
+            else if($scope.user.newPassword!=$scope.user.cNewPassword)
+            {
+                $scope.update.error = "The 2 passwords must match";
+                $scope.user.newPassword = "";
+                $scope.user.cNewPassword = "";
+                $window.document.getElementById('newPassword').focus();
+            }
+            else
+            {
+                $scope.update.successful = true;
+            }
         }
     })

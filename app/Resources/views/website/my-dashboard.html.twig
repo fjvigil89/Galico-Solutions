@@ -147,13 +147,15 @@
             </div>
 
             </br></br>
-            <!--<div class="form-group">
-                <label for="houseRequests">View my requests</label>
-                <select name="country" class="form-control" id="country"  required>
-                    <option value=""></option>
-                    <option ng-repeat="house in houses" value="house.id" ng-bind="house.address + ' ' + house.city"></option>
-                </select>
-            </div>-->
+            <div class="row">
+                <label for="houseRequests" class="col col-sm-4 col-md-3">View my requests</label>
+                <div class="col col-sm-8 col-md-9">
+                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
+                        <option value=""></option>
+                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
+                    </select>
+                </div>
+            </div>
             <div class="row" ng-repeat="request in requests">
                 <div class="col-xs-12 no-padding">
                     <div class="panel-group" id="myAccordion">
@@ -171,7 +173,7 @@
                                     <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
                                 </div>
 
-                                <div class="panel-body" ng-bind="request.details">
+                                <div class="panel-body" >{[request.details]}
                                 </div>
 
                                 <div class="col-xs-12 no-padding">

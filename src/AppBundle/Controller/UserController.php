@@ -177,7 +177,7 @@ class UserController extends Controller
     /**
      * @Route("/update-customer", name="updateCustomer")
      */
-    public function updateCustomerAction(Request $request)
+        public function updateCustomerAction(Request $request)
     {
         //$postData = $request->request->get('contact');
         //$request->request->get('data'); // for post
@@ -233,6 +233,49 @@ class UserController extends Controller
             $response['zipCode'] = $customer->getZipcode();
 
         }
+        $response['updateStatus'] = $updateStatus;
+
+        return $this->json($response);
+
+    }
+
+    /**
+     * @Route("/update-password", name="updatePassword")
+     */
+    public function updatePasswordAction(Request $request)
+    {
+        $customerId = $request->query->get('customerId');
+        $oldPassword = $request->query->get('oldPassword');
+        $newPassword = $request->query->get('newPassword');
+        $cNewPassword = $request->query->get('cNewPassword');
+
+        $updateStatus = -1;
+        $response = array();
+
+        if($newPassword==$cNewPassword)
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+
+            if($customer)
+            {
+                if($oldPassword==$customer->getPassword())
+                {
+                    $customer->setPassword($newPassword);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->flush();
+                    $updateStatus = 1;
+                }
+                else
+                {
+                    $updateStatus = -2; //old password incorrect
+                }
+
+            }
+        }
+
+
+
         $response['updateStatus'] = $updateStatus;
 
         return $this->json($response);
@@ -354,11 +397,12 @@ class UserController extends Controller
         {
             $req = array();
 
+            $reqService = $request->getRequestServices();
             $req['requestDate'] = date_format($request->getRequestdate(), 'Y-m-d');
             $req['status'] = $request->getStatus();
             $req['requestId'] = $request->getRequestid();
             $req['details'] = $request->getDetails();
-            $req['service'] = (($request->getRequestServices())[0])->getService()->getServicename();
+            $req['service'] = count($reqService)>0? $reqService[0]->getService()->getServicename() : "";
             $interventions = array();
             foreach($request->getInterventions() as $intervention)
             {
