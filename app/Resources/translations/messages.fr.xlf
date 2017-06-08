@@ -43,6 +43,25 @@
                    <source>Mexico</source>
                    <target>Mexique</target>
              </trans-unit>
+	         <trans-unit id="menu_Lang_spanish" resname="menu_Lang_spanish">
+                   <source>Spanish</source>
+                   <target>Espagnol</target>
+             </trans-unit>		 
+            <trans-unit id="menu_Lang_english" resname="menu_Lang_english">
+                   <source>English</source>
+                   <target>Anglais</target>
+             </trans-unit>			 
+            <trans-unit id="menu_Lang_french" resname="menu_Lang_french">
+                   <source>French</source>
+                   <target>Français</target>
+             </trans-unit>				 
+	            <trans-unit id="menu_Lang" resname="menu_Lang">
+                   <source>English</source>
+                   <target>Français</target>
+             </trans-unit>				 
+			 
+			 
+			 
 
     <!--End Head menu-->
     <!--menu-->
@@ -72,7 +91,7 @@
     <!--footer-->
                <trans-unit id="title_mission" resname="title_mission">
                     <source>Mission Statement</source>
-                    <target>Énoncé de Mission</target>
+                    <target>Énoncé de mission</target>
               </trans-unit>
                <trans-unit id="menu_information" resname="menu_information">
                     <source>information</source>
@@ -572,7 +591,7 @@
                </trans-unit>
                 <trans-unit id="about_slogan_title" resname="about_slogan_title">
                       <source>“No Matter your Problem, We Can Solve it!.”</source>
-                      <target>Peu Importe Votre Problème, Nous Pouvons le résoudre!</target>
+                      <target>Peu importe votre problème, nous pouvons le résoudre!</target>
                </trans-unit>
                 <trans-unit id="about_slogan_subtitle" resname="about_slogan_subtitle">
                       <source>General Pro’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces. </source>
@@ -580,7 +599,7 @@
                </trans-unit>
                 <trans-unit id="about_body_title" resname="about_body_title">
                       <source>About General Pro</source>
-                      <target>À Propos de General Pro</target>
+                      <target>À propos de General Pro</target>
                </trans-unit>
                 <trans-unit id="about_body_subtitle1" resname="about_body_subtitle1">
                       <source>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</source>
