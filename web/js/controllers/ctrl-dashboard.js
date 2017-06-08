@@ -6,6 +6,9 @@ angular.module("gpApp")
             $scope.customer = {};
             $scope.customerUpdated = {};
             $scope.update = {};
+            $scope.newSubscription = {};
+
+            $scope.newSubscription.contractAccepted = false;
             $scope.update.error = "";
 
             $scope.getCustomerInformation = function()
@@ -132,6 +135,60 @@ angular.module("gpApp")
                     },function(error){
 
                     })
+            }
+
+        }
+
+        $scope.addNewHouse = function()
+        {
+            if(GeneralService.isInvalid($scope.newSubscription.planId))
+            {
+                $scope.newSubscription.error = "Please choose a plan";
+                $window.document.getElementById("subPlanId").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newSubscription.firstName))
+            {
+                $scope.newSubscription.error = "Please enter your contact first name";
+                $window.document.getElementById("subContactFirstName").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newSubscription.lastName))
+            {
+                $scope.newSubscription.error = "Please enter your contact last name";
+                $window.document.getElementById("subContactLastName").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.phonePrimary))
+            {
+                $scope.newSubscription.error = "Please enter at least one phone number";
+                $window.document.getElementById("subContactLastName").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.country))
+            {
+                $scope.newSubscription.error = "Please choose a country";
+                $window.document.getElementById("subCountry").focus();
+            }
+
+            /*else if(GeneralService.isInvalid($scope.newSubscription.state))
+            {
+                $scope.newSubscription.error = "Please enter a state";
+                $window.document.getElementById("subState").focus();
+            }*/
+
+            else if(GeneralService.isInvalid($scope.newSubscription.city))
+            {
+                $scope.newSubscription.error = "Please enter a city";
+                $window.document.getElementById("subCity").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.address))
+            {
+                $scope.newSubscription.error = "Please enter the address of the house";
+                $window.document.getElementById("subAddress").focus();
+            }
+            else
+            {
+
             }
 
         }

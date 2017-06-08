@@ -102,7 +102,7 @@
                             <tr>
                                 <th colspan="5">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
                           
-                                <th><a href="#" data-toggle="modal" data-target="#contratModal" >
+                                <th><a href="#" data-toggle="modal" data-target="#contractModal" >
                                     <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add_house' | trans({}, "messages", lang)}}></span>
                                     </a></th>
                             </tr>
@@ -401,54 +401,67 @@
                     </div>
                     <div class="modal-body">
 
+                        <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
+
                         <div class="form-group">
-                            <label for="add-plan">Plan:</label>
-                            <select name="plan" class="form-control" id="plan"  required>
-                                <option>GP Basic</option>
-                                <option>GP Plus</option>
+                            <label for="subPlanId">Plan:</label>
+                            <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
+                                {% for plan in plans %}
+                                    <option value="{{ plan.planid }}">{{ plan.planname }}</option>
+                                {% endfor %}
+
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="add-contact">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="add-contact" value="">
+                            <label for="subContactFirstName">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
+                            <input type="text" class="form-control" id="subContactFirstName" ng-model="newSubscription.firstName" placeholder="Contact first name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subContactLastName">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
+                            <input type="text" class="form-control" id="subContactLastName" ng-model="newSubscription.lastName" placeholder="Contact last name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subPhonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
+                            <input type="tel" class="form-control" id="subPhonePrimary" ng-model="newSubscription.phonePrimary" >
                         </div>
                         <div class="form-group">
-                            <label for="add-phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
-                            <input type="tel" class="form-control" id="add-phonePrimary" value="" >
-                        </div>
-                        <div class="form-group">
-                            <label for="add-phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
-                            <input type="tel" class="form-control" id="add-phonealternate" value="" >
+                            <label for="subPhoneAlternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
+                            <input type="tel" class="form-control" id="subPhoneAlternate" ng-model="newSubscription.phoneAlternate" >
                         </div>
                         <div class="form-group">
                             <label for="country">{{ 'form_Country' | trans({}, "messages", lang)}}*</label>
-                            <select name="country" class="form-control" id="country"  required>
-                                <option>Canada</option>
-                                <option>United States</option>
-                                <option>Mexico</option>
-                                <option>Peru</option>
+                            <select name="subCountry" id="subCountry" class="form-control" ng-model= "newSubscription.country">
+                                {% for country in countries %}
+                                    <option value="{{ country.country }}">{{ country.country }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="add-state">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="add-state" value="" >
-                        </div>
-                        <div class="form-group">
-                            <label for="add-city">{{ 'form_city' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="add-city" value="" >
+                            <label for="subState">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
+                            <input type="text" class="form-control" id="subState" ng-model= "newSubscription.state" >
                         </div>
 
                         <div class="form-group">
-                            <label for="add-address">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="add-address" value="" >
+                            <label for="subCity">{{ 'form_city' | trans({}, "messages", lang)}} *:</label>
+                            <input type="text" class="form-control" id="subCity" ng-model= "newSubscription.city" >
                         </div>
 
+                        <div class="form-group">
+                            <label for="subAddress">{{ 'form_address' | trans({}, "messages", lang)}} *:</label>
+                            <input type="text" class="form-control" id="subAddress" ng-model= "newSubscription.address" >
+                        </div>
 
+                        <div class="form-group">
+                            <label for="subZipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}} *:</label>
+                            <input type="text" class="form-control" id="subZipCode" ng-model= "newSubscription.zipCode" >
+                        </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" >
-                            <span class="glyphicon glyphicon-plus" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang)}}
+                        <button type="button" class="btn bg-yellow color-black" ng-click="addNewHouse()">
+                            <span class="glyphicon glyphicon-plus" title=""></span> {{ 'dash_add' | trans({}, "messages", lang)}}
                         </button>
                     </div>
                 </div>
@@ -456,45 +469,51 @@
             </div>
         </div>
 
-    </div>
 
-
-    <div id="contratModal" class="modal fade" role="dialog" >
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-yellow">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">CONTRACT AGREEMENT</h4>
-                </div>
-                <div class="modal-body">
-
-
-
-                    <p>This agreement is entered into as of the XX day of October, 200x, between General Pro and __________</p>
-                    <p>1.	Plans Limitations: General Pro’s plans, the GP Basic and the GP Plus take care of the service that we provide to you. In other words, you are paying for our labour. However, these plans do not cover some major additional materials that might be needed to fully realize a task. Moreover, being subscribed to our plans allows you to request our services twice a month. In both of these occasions, our team will go to your domicile and efficiently cater to your needs. If you were to demand our services more than two times per month, you would have to pay a supplementary price, which will be determined by the type of labor done, the amount of working hours, and the labor cost. Our plans comprise labour costs that are equal or less than 400$. Consequently, this amount is the maximum amount of costs covered by our plans. If your project or requirement were to exceed $400, you would have to pay the difference between the assignment’s final cost and $400. Furthermore, some of the services provided by our plans are only covered if they are minor. Such services include plumbing and electricity. If the tasks related to these services are deemed to be major by our experts, an additional payment will have to take place. Keep in mind that we will accommodate your needs and your demands to the best of our abilities, and we will give you the most reasonable price possible.  </p>
-                    <p>2.	Force Majeure: Neither you nor General Pro shall be held accountable for any postponement or failure in performance under these Terms, if the cause of contract breach is beyond either party’s control. Such causes include but are not limited to acts of God, acts of war whether it is declared or undeclared, earthquakes, strikes, fires, floods, unobtainability of necessary utilities, blackouts and national disasters. Therefore, General Pro’s plans are not responsible for insuring services under such circumstances.  </p>
-                    <p>3.	Payments: By acting in accordance with these terms, you agree to provide General Pro accurate and complete information about you and your payment information. You also agree to make your payments in full and on time. If you or any Member does not pay on time, or if General Pro is unable to charge a provided payment method for any reason, General Pro reserves all rights approved under law to pursue and recover payment, as well as all costs and expenses involved, including attorneys’ fees. If you have an amount of money due on any account, you agree that General Pro may charge such unpaid payments to your credit card, or bill you for said unpaid expenditures. You openly approve that all communication about fraudulent and delinquent accounts or payments due will be achieved by electronic mail or by phone; said communication may be made by General Pro or by anyone on its behalf. </p>
-                    <p>4.	Warranty: General Pro guarantees the efficient completion of any assignment that you request. We assure you that we will treat your demand with the most care and professionalism. </p>
-                    <p>5.	Contract Termination: If you were to end your contract and therefore, your subscription to either one of our plans, you shall pay the equivalent of three months of subscription, respective to your plan. You may request a cancellation by emailing xxxxxx.com or by calling us at xxxxxx. We will process your request within a 30 days of receiving it.  </p>
-                    <p>Contacting information: If you still have any questions about our Contract Agreement, make sure to contact us by sending an email to xxxxxxx.com, or by calling us at xxxxxxx. </p>
-                    <p>In Witness whereof the parties have respected this contract and fully executed it as of the day year first written above. The parties hereto agree that facsimile signature shall be as effective as originals.  </p>
-                    <p>Party 1: General Pro</p>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                            I agree with the terms and conditions of this Contract
-                        </label>
+        <div id="contractModal" class="modal fade" role="dialog" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">CONTRACT AGREEMENT</h4>
                     </div>
+                    <div class="modal-body">
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" data-toggle="modal" data-target="#addHouseModal">
-                                    I ACCEPT
-                                </button>
-                            </div>
+
+
+                        <p>This agreement is entered into as of the XX day of October, 200x, between General Pro and __________</p>
+                        <p>1.	Plans Limitations: General Pro’s plans, the GP Basic and the GP Plus take care of the service that we provide to you. In other words, you are paying for our labour. However, these plans do not cover some major additional materials that might be needed to fully realize a task. Moreover, being subscribed to our plans allows you to request our services twice a month. In both of these occasions, our team will go to your domicile and efficiently cater to your needs. If you were to demand our services more than two times per month, you would have to pay a supplementary price, which will be determined by the type of labor done, the amount of working hours, and the labor cost. Our plans comprise labour costs that are equal or less than 400$. Consequently, this amount is the maximum amount of costs covered by our plans. If your project or requirement were to exceed $400, you would have to pay the difference between the assignment’s final cost and $400. Furthermore, some of the services provided by our plans are only covered if they are minor. Such services include plumbing and electricity. If the tasks related to these services are deemed to be major by our experts, an additional payment will have to take place. Keep in mind that we will accommodate your needs and your demands to the best of our abilities, and we will give you the most reasonable price possible.  </p>
+                        <p>2.	Force Majeure: Neither you nor General Pro shall be held accountable for any postponement or failure in performance under these Terms, if the cause of contract breach is beyond either party’s control. Such causes include but are not limited to acts of God, acts of war whether it is declared or undeclared, earthquakes, strikes, fires, floods, unobtainability of necessary utilities, blackouts and national disasters. Therefore, General Pro’s plans are not responsible for insuring services under such circumstances.  </p>
+                        <p>3.	Payments: By acting in accordance with these terms, you agree to provide General Pro accurate and complete information about you and your payment information. You also agree to make your payments in full and on time. If you or any Member does not pay on time, or if General Pro is unable to charge a provided payment method for any reason, General Pro reserves all rights approved under law to pursue and recover payment, as well as all costs and expenses involved, including attorneys’ fees. If you have an amount of money due on any account, you agree that General Pro may charge such unpaid payments to your credit card, or bill you for said unpaid expenditures. You openly approve that all communication about fraudulent and delinquent accounts or payments due will be achieved by electronic mail or by phone; said communication may be made by General Pro or by anyone on its behalf. </p>
+                        <p>4.	Warranty: General Pro guarantees the efficient completion of any assignment that you request. We assure you that we will treat your demand with the most care and professionalism. </p>
+                        <p>5.	Contract Termination: If you were to end your contract and therefore, your subscription to either one of our plans, you shall pay the equivalent of three months of subscription, respective to your plan. You may request a cancellation by emailing xxxxxx.com or by calling us at xxxxxx. We will process your request within a 30 days of receiving it.  </p>
+                        <p>Contacting information: If you still have any questions about our Contract Agreement, make sure to contact us by sending an email to xxxxxxx.com, or by calling us at xxxxxxx. </p>
+                        <p>In Witness whereof the parties have respected this contract and fully executed it as of the day year first written above. The parties hereto agree that facsimile signature shall be as effective as originals.  </p>
+                        <p>Party 1: General Pro</p>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" ng-model="newSubscription.contractAccepted">
+                                I agree with the terms and conditions of this Contract
+                            </label>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" ng-disabled="newSubscription.contractAccepted==false" class="btn bg-yellow color-black" data-dismiss="modal" data-toggle="modal" data-target="#addHouseModal">
+                                I ACCEPT
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </div>
         </div>
+
+
+
+
     </div>
+
+
+
 
 {% endblock %}
 

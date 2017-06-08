@@ -84,8 +84,10 @@ angular.module("gpApp")
                 method: "GET",
                 params:
                     {
-                        oldPassword : customer.customerId,lastName : customer.lastName,
-                        newPassword : customer.firstName,email: customer.email
+                        customerId : customer.customerId,
+                        oldPassword : customer.oldPassword,
+                        newPassword : customer.newPassword,
+                        cNewPassword : customer.cNewPassword
                     }
             });
         }

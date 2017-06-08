@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-15.
  */
 angular.module("gpApp")
-    .controller('UserController',function($scope,$rootScope,authService,GeneralService,RouterService,$window){
+    .controller('UserController',function($scope,$rootScope,authService,GeneralService,RouterService,DashboardService,$window){
         $scope.user = {};
         $scope.user.email = "";
         $scope.user.pwd = "";
@@ -144,6 +144,8 @@ angular.module("gpApp")
             $scope.update.error = "";
             $scope.update.successful = false;
 
+            var customerId = $window.document.getElementById("customerId").value;
+
             if(GeneralService.isInvalid($scope.user.oldPassword))
             {
                 $scope.update.error = "Please enter your old password";
@@ -170,7 +172,35 @@ angular.module("gpApp")
             }
             else
             {
-                $scope.update.successful = true;
+                $scope.user.customerId = customerId;
+                DashboardService.updatePassword( $scope.user)
+                    .then(function (response) {
+
+                        console.log(response);
+                        var updateStatus = response.data.updateStatus;
+                        if(updateStatus == -2)
+                        {
+                            $scope.update.error = "Your old password is incorrect. Please try again";
+
+                        }
+                        else if(updateStatus==1)
+                        {
+                            $scope.update.error = "";
+                            $scope.update.successful = true;
+                        }
+                        else
+                        {
+                            $scope.update.error = "Your password could not be saved. Please try again";
+                        }
+
+
+                    },function (error) {
+                        $scope.update.error = "Your password could not be saved. Please try again";
+                    }).finally(function(){
+                        $scope.user.oldPassword = "";
+                        $scope.user.newPassword = "";
+                        $scope.user.cNewPassword = "";
+                });
             }
         }
     })

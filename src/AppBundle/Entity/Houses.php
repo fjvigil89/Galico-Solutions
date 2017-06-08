@@ -70,6 +70,14 @@ class Houses
     private $address;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="ZipCode", type="string", length=10, nullable=false)
+     */
+    private $zipcode;
+
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="HouseID", type="integer")
@@ -295,6 +303,30 @@ class Houses
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Set zipcode
+     *
+     * @param string $zipcode
+     *
+     * @return Customers
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
     }
 
     /**

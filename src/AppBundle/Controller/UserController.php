@@ -10,6 +10,8 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Customers;
+use AppBundle\Entity\Houses;
+use AppBundle\Entity\Subscriptions;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -82,12 +84,18 @@ class UserController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
 
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+        $plans = $repository->findAll();
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countries = $repository->findAll();
+
         if(!$customer)
         {
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
 
-        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer));
+        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer,'plans'=>$plans,'countries'=>$countries));
     }
 
 
@@ -419,6 +427,70 @@ class UserController extends Controller
 
         }
         return $this->json($houseRequests);
+    }
+
+    /**
+     * @Route("/subscribe-house", name="subscribeHouse")
+     */
+    public function subscribeHouseAction(Request $request)
+    {
+
+        $customerId = $request->query->get('customerId');
+        $planId = $request->query->get('planId');
+        $firstName = $request->query->get('firstName');
+        $lastName = $request->query->get('lastName');
+        $phonePrimary = $request->query->get('phonePrimary');
+        $phoneAlternate = $request->query->get('phoneAlternate');
+        $country = $request->query->get('country');
+        $state = $request->query->get('state');
+        $city = $request->query->get('city');
+        $address = $request->query->get('address');
+        $zipCode = $request->query->get('zipCode');
+
+        $subscriptionStatus = -1;
+        $response = array();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+
+        if($customer)
+        {
+            $house = new Houses();
+            $house->setFirstname($firstName);
+            $house->setLastname($lastName);
+            $house->setPhoneprimary($phonePrimary);
+            $house->setPhonealternate($phoneAlternate);
+            $house->setCountry($country);
+            $house->setState($state);
+            $house->setCity($city);
+            $house->setAddress($address);
+            $house->setZipcode($zipCode);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($house);
+            $em->flush();
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+            $plan = $repository->find($planId);
+
+            $today = (new \DateTime())->format('Y-m-d');
+            $subscription = new Subscriptions();
+            $subscription->setHouse($house);
+            $subscription->setPlan($plan);
+            $subscription->setSubscriptiondate($today);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subscription);
+            $em->flush();
+
+            $subscriptionStatus = 1;
+            $response['agentNumber'] = $this->getLocalAgentNumber($country,$city);
+            $response['houseId'] = $house->getHouseid();
+
+        }
+        $response['subscriptionStatus'] = $subscriptionStatus;
+
+        return $this->json($response);
+
     }
 
     /**

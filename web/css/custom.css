@@ -179,3 +179,10 @@
 {
     color: #104d0b;
 }
+
+
+#addHouseModal .modal-body
+{
+    max-height: 73vh;
+    overflow-y: auto;
+}
