@@ -21,7 +21,7 @@
 
             <trans-unit id="menu_dashboard" resname="menu_dashboard">
                  <source>My dashboard</source>
-                 <target>Ma compte</target>
+                 <target>Mon tableau de bord</target>
             </trans-unit>
             <trans-unit id="menu_password" resname="menu_password">
                    <source>Change my password</source>
@@ -609,7 +609,7 @@
                        <source>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</source>
                        <target>Notre ponctualité est inégalée et nous arrivons prêts à travailler. Nous sommes prêts à vous assister quotidiennement. Contactez-nous aujourd'hui pour obtenir la meilleure offre possible.</target>
                 </trans-unit>
-                 <trans-unit id="about_testimony_title" resname="about_testimony">
+                 <trans-unit id="about_testimony_title" resname="about_testimony_title">
                        <source>Testimony</source>
                        <target>Témoignage</target>
                 </trans-unit>

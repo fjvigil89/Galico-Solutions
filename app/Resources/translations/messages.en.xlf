@@ -603,9 +603,9 @@
                        <source>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</source>
                        <target>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</target>
                 </trans-unit>
-                 <trans-unit id="about_testimony_title" resname="about_testimony">
+                 <trans-unit id="about_testimony_title" resname="about_testimony_title">
                        <source>Testimony</source>
-                       <target>Testimon</target>
+                       <target>Testimony</target>
                 </trans-unit>
                  <trans-unit id="about_testimony_resume" resname="about_testimony_resume">
                        <source>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </source>
