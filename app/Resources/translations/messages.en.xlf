@@ -47,6 +47,24 @@
                    <source>Mexico</source>
                    <target>Mexico</target>
              </trans-unit>
+	         <trans-unit id="menu_Lang_spanish" resname="menu_Lang_spanish">
+                   <source>Spanish</source>
+                   <target>Spanish</target>
+             </trans-unit>		 
+            <trans-unit id="menu_Lang_english" resname="menu_Lang_english">
+                   <source>English</source>
+                   <target>English</target>
+             </trans-unit>			 
+            <trans-unit id="menu_Lang_french" resname="menu_Lang_french">
+                   <source>French</source>
+                   <target>French</target>
+             </trans-unit>				 
+	            <trans-unit id="menu_Lang" resname="menu_Lang">
+                   <source>English</source>
+                   <target>English</target>
+             </trans-unit>			 
+			 
+			 
     <!--End Head menu-->
     <!--menu-->
             <trans-unit id="menu_home" resname="menu_home">

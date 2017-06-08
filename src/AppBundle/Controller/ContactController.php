@@ -28,8 +28,7 @@ class ContactController extends Controller
         $message = $request->query->get('message');
 
 
-
-        $message = \Swift_Message::newInstance('Test')
+     $message = \Swift_Message::newInstance('Test')
             ->setSubject('contact us - From GP')
             ->setFrom("$email")
             ->setTo('antofuchong@gmail.com')
