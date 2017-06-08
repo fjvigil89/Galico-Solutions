@@ -815,10 +815,53 @@
                        <source>Add</source>
                        <target>Add</target>
                 </trans-unit>
-                 <trans-unit id="dash_contact" resname="dash_contact">
-                       <source>Contact</source>
-                       <target>Contact</target>
-                </trans-unit>		
+	            <trans-unit id="dash_edit_profile" resname="dash_edit_profile">
+                       <source>Edit profile information</source>
+                       <target>Edit profile information</target>
+                </trans-unit>
+                 <trans-unit id="dash_add_house" resname="dash_add_house">
+                       <source>Add House</source>
+                       <target>Add House</target>
+                </trans-unit>
+                 <trans-unit id="dash_save" resname="dash_save">
+                       <source>Save</source>
+                       <target>Save</target>
+                </trans-unit>							
+				
+				
+                 <trans-unit id="dash_contact_firtName" resname="dash_contact_firtName">
+                       <source>Contact first name</source>
+                       <target>Contact first name</target>
+                </trans-unit>					
+                 <trans-unit id="dash_contact_lastName" resname="dash_contact_lastName">
+                       <source>Contact last name</source>
+                       <target>Contact last name</target>
+                </trans-unit>	
+
+	            <trans-unit id="dash_payments_history" resname="dash_payments_history">
+                       <source>Payments history</source>
+                       <target>Payments history</target>
+                </trans-unit>
+                 <trans-unit id="dash_payment_date" resname="dash_payment_date">
+                       <source>Payment date</source>
+                       <target>Payment date</target>
+                </trans-unit>
+                 <trans-unit id="dash_amount" resname="dash_amount">
+                       <source>Amount</source>
+                       <target>Amount</target>
+                </trans-unit>
+                 <trans-unit id="dash_view_details" resname="dash_view_details">
+                       <source>View details</source>
+                       <target>View details</target>
+                </trans-unit>				
+                 <trans-unit id="dash_view_payment" resname="dash_view_payment">
+                       <source>View payments</source>
+                       <target>View payments</target>
+                </trans-unit>	
+
+
+
+				
 <!--End my dashboard-->	
 
 

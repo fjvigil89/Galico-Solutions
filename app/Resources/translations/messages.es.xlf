@@ -837,10 +837,38 @@
                        <source>Save</source>
                        <target>Guardar</target>
                 </trans-unit>				
-                 <trans-unit id="dash_contact" resname="dash_contact">
-                       <source>Contact</source>
-                       <target>Contacto</target>
+                 <trans-unit id="dash_contact_firtName" resname="dash_contact_firtName">
+                       <source>Contact first name</source>
+                       <target>Nombre del contacto</target>
                 </trans-unit>					
+                 <trans-unit id="dash_contact_lastName" resname="dash_contact_lastName">
+                       <source>Contact last name</source>
+                       <target>Apellido del contacto</target>
+                </trans-unit>				
+	            <trans-unit id="dash_payments_history" resname="dash_payments_history">
+                       <source>Payments history</source>
+                       <target>Historial de pagos</target>
+                </trans-unit>
+                 <trans-unit id="dash_payment_date" resname="dash_payment_date">
+                       <source>Payment date</source>
+                       <target>Fecha de pago</target>
+                </trans-unit>
+                 <trans-unit id="dash_amount" resname="dash_amount">
+                       <source>Amount</source>
+                       <target>Monto</target>
+                </trans-unit>
+                 <trans-unit id="dash_view_details" resname="dash_view_details">
+                       <source>View details</source>
+                       <target>Ver detalles</target>
+                </trans-unit>				
+                 <trans-unit id="dash_view_payment" resname="dash_view_payment">
+                       <source>View payments</source>
+                       <target>Ver pagos</target>
+                </trans-unit>			
+				
+		
+
+				
 				
 <!--End my dashboard-->		
 

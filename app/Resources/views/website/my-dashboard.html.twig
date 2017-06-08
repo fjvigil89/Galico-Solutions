@@ -130,10 +130,10 @@
                                     <td ng-bind="house.agentNumber"></td>
                                     <td>
                                         <a href="#maison1" data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)">
-                                            <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
+                                            <span class="glyphicon glyphicon-list-alt" title={{ 'dash_view_details' | trans({}, "messages", lang)}} ></span>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)">
-                                            <span class="glyphicon glyphicon-usd" title="View payments" ></span>
+                                            <span class="glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}} ></span>
                                         </a>
                                     </td>
                                 </tr>
@@ -294,15 +294,15 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Payments history</h4>
+                        <h4 class="modal-title">{{ 'dash_payments_history' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
                         <div ng-repeat="sub in subscriptions">
                             <h4 ng-bind="'Subscription  ' + sub.subscriptionDate + ' (' + sub.plan +')'" ></h4>
 
                             <div class="row">
-                                <div class="col-xs-5 text-bold">Payment date</div>
-                                <div class="col-xs-7 text-bold">Amount</div>
+                                <div class="col-xs-5 text-bold">{{ 'dash_payment_date' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-7 text-bold">{{ 'dash_view_payment' | trans({}, "messages", lang)}}</div>
                             </div>
                             <div class="row" ng-repeat="payment in sub.payments">
                                 <div class="col-xs-5" ng-bind="payment.paymentDate"></div>
@@ -413,13 +413,13 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="subContactFirstName">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="subContactFirstName" ng-model="newSubscription.firstName" placeholder="Contact first name">
+                            <label for="subContactFirstName">{{ 'dash_contact_firtName' | trans({}, "messages", lang)}}:</label>
+                            <input type="text" class="form-control" id="subContactFirstName" ng-model="newSubscription.firstName">
                         </div>
 
                         <div class="form-group">
-                            <label for="subContactLastName">{{ 'dash_contact' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="subContactLastName" ng-model="newSubscription.lastName" placeholder="Contact last name">
+                            <label for="subContactLastName">{{ 'dash_contact_lastName' | trans({}, "messages", lang)}}:</label>
+                            <input type="text" class="form-control" id="subContactLastName" ng-model="newSubscription.lastName">
                         </div>
 
                         <div class="form-group">
