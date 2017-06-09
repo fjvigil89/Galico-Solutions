@@ -148,7 +148,7 @@
 
             </br></br>
             <div class="row">
-                <label for="houseRequests" class="col col-sm-4 col-md-3">View my requests</label>
+                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
                 <div class="col col-sm-8 col-md-9">
                     <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
                         <option value=""></option>
@@ -227,7 +227,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">House information - Details</h4>
+                        <h4 class="modal-title">{{ 'dash_house_information' | trans({}, "messages", lang)}}</h4>
                     </div>
                             <div class="modal-body">
 
@@ -240,46 +240,46 @@
                                     <div class="col-xs-7">04/25/2017</div>
                                 </div>-->
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Suscription date</div>
+                                    <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.subscriptionDate">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Contact</div>
+                                    <div class="col-xs-5 text-bold">{{ 'dash_contact' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.contactFullName">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Phone (Primary)</div>
+                                    <div class="col-xs-5 text-bold">{{ 'form_phone_primary' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.phonePrimary">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Phone (Alternate)</div>
+                                    <div class="col-xs-5 text-bold">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.phoneAlternate">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Country</div>
+                                    <div class="col-xs-5 text-bold">{{ 'form_Country' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.country">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">City</div>
+                                    <div class="col-xs-5 text-bold">{{ 'form_city' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.city">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold ">Address</div>
+                                    <div class="col-xs-5 text-bold ">{{ 'form_address' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.address">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">State / Province</div>
+                                    <div class="col-xs-5 text-bold">{{ 'form_state' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.state">: </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-5 text-bold">Local number</div>
+                                    <div class="col-xs-5 text-bold">{{ 'dash_local_agent' | trans({}, "messages", lang)}}</div>
                                     <div class="col-xs-7" ng-bind="selectedHouse.agentNumber"> </div>
                                 </div>
 
                             </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-remove" title="Close"></span> Close
+                            <span class="glyphicon glyphicon-remove" title="{{ 'dash_close' | trans({}, "messages", lang)}}"></span> {{ 'dash_close' | trans({}, "messages", lang)}}
                         </button>
                     </div>
                 </div>
@@ -298,11 +298,11 @@
                     </div>
                     <div class="modal-body">
                         <div ng-repeat="sub in subscriptions">
-                            <h4 ng-bind="'Subscription  ' + sub.subscriptionDate + ' (' + sub.plan +')'" ></h4>
+                            <h4>{{ 'dash_subscription' | trans({}, "messages", lang)}} {[sub.subscriptionDate + ' (' + sub.plan +')']}</h4>
 
                             <div class="row">
                                 <div class="col-xs-5 text-bold">{{ 'dash_payment_date' | trans({}, "messages", lang)}}</div>
-                                <div class="col-xs-7 text-bold">{{ 'dash_view_payment' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-7 text-bold">{{ 'dash_amount' | trans({}, "messages", lang)}}</div>
                             </div>
                             <div class="row" ng-repeat="payment in sub.payments">
                                 <div class="col-xs-5" ng-bind="payment.paymentDate"></div>
@@ -315,7 +315,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-remove" title="Close"></span> Close
+                            <span class="glyphicon glyphicon-remove" title="{{ 'dash_close' | trans({}, "messages", lang)}}"></span> {{ 'dash_close' | trans({}, "messages", lang)}}
                         </button>
                     </div>
                 </div>
@@ -480,7 +480,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">CONTRACT AGREEMENT</h4>
+                        <h4 class="modal-title">{{ 'dash_contract_agreement' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
 
@@ -504,7 +504,7 @@
 
                         <div class="modal-footer">
                             <button type="button" ng-disabled="newSubscription.contractAccepted==false" class="btn bg-yellow color-black" data-dismiss="modal" data-toggle="modal" data-target="#addHouseModal">
-                                I ACCEPT
+                               {{ 'dash_accept' | trans({}, "messages", lang)}}
                             </button>
                         </div>
                     </div>

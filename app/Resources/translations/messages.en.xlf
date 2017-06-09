@@ -108,8 +108,8 @@
                     <target>Copyright</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
-                    <target>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</target>
+                    <source>General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
+                    <target>General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands.</target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
                          <source>Terms of use</source>
@@ -695,7 +695,10 @@
                        <source>Login</source>
                        <target>Login</target>
                 </trans-unit>
-
+	            <trans-unit id="form_fullname" resname="form_fullname">
+                       <source>Full name</source>
+                       <target>Full name</target>
+                </trans-unit>	
 
 <!--End Form-->
 
@@ -767,7 +770,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>House Subscription</target>
+                       <target>My Houses</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
@@ -858,8 +861,34 @@
                        <source>View payments</source>
                        <target>View payments</target>
                 </trans-unit>	
-
-
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contact</target>
+                </trans-unit>	
+	            <trans-unit id="dash_house_information" resname="dash_house_information">
+                       <source>House information - Details</source>
+                       <target>House information - Details</target>
+                </trans-unit>
+	            <trans-unit id="dash_close" resname="dash_close">
+                       <source>Close</source>
+                       <target>Close</target>
+                </trans-unit>
+		            <trans-unit id="dash_view_request" resname="dash_view_request">
+                       <source>View my requests</source>
+                       <target>View my requests</target>
+                </trans-unit>
+		        <trans-unit id="dash_subscription" resname="dash_subscription">
+                       <source>Subscription</source>
+                       <target>Subscription</target>
+                </trans-unit>
+		        <trans-unit id="dash_contract_agreement" resname="dash_contract_agreement">
+                       <source>CONTRACT AGREEMENT</source>
+                       <target>CONTRACT AGREEMENT</target>
+                </trans-unit>
+		        <trans-unit id="dash_accept" resname="dash_accept">
+                       <source>I ACCEPT</source>
+                       <target>I ACCEPT</target>
+                </trans-unit>
 
 				
 <!--End my dashboard-->	
