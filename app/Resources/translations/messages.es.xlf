@@ -110,7 +110,7 @@
                     <target>Derecho de autor</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
+                    <source>General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
                     <target>Nuestra prioridad es atender las necesidades básicas de nuestros clientes con la mejor cobertura posible, ofreciendo un justo balance entre precio y calidad. General Pro garantiza que sus expectativas serán compensadas plenamente.</target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
@@ -702,7 +702,10 @@
                        <source>Login</source>
                        <target>Iniciar sesión</target>
                 </trans-unit>
-				
+	            <trans-unit id="form_fullname" resname="form_fullname">
+                       <source>Full name</source>
+                       <target>Nombre completo</target>
+                </trans-unit>			
 <!--End Form-->
 
 		
@@ -865,10 +868,36 @@
                        <source>View payments</source>
                        <target>Ver pagos</target>
                 </trans-unit>			
-				
-		
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contacto</target>
+                </trans-unit>					
+	            <trans-unit id="dash_house_information" resname="dash_house_information">
+                       <source>House information - Details</source>
+                       <target>Información y detalle de la casa</target>
+                </trans-unit>		
+	            <trans-unit id="dash_close" resname="dash_close">
+                       <source>Close</source>
+                       <target>Cerrar</target>
+                </trans-unit>
+	            <trans-unit id="dash_view_request" resname="dash_view_request">
+                       <source>View my requests</source>
+                       <target>Ver mis solicitudes</target>
+                </trans-unit>				
+		        <trans-unit id="dash_subscription" resname="dash_subscription">
+                       <source>Subscription</source>
+                       <target>Subscripción</target>
+                </trans-unit>
+		        <trans-unit id="dash_contract_agreement" resname="dash_contract_agreement">
+                       <source>CONTRACT AGREEMENT</source>
+                       <target>ACUERDO DE CONTRATO</target>
+                </trans-unit>
+		        <trans-unit id="dash_accept" resname="dash_accept">
+                       <source>I ACCEPT</source>
+                       <target>YO ACEPTO</target>
+                </trans-unit>
 
-				
+
 				
 <!--End my dashboard-->		
 

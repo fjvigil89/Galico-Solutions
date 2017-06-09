@@ -106,8 +106,8 @@
                     <target>Droits d'auteur</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>At General Pro, our vision is to improve as many lives as possible. General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
-                    <target>Chez General Pro, notre vision est d’améliorer le plus de vies possible. Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. General Pro s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
+                    <source>General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
+                    <target>Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. General Pro s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
                          <source>Terms of use</source>
@@ -699,13 +699,16 @@
                 </trans-unit>
                  <trans-unit id="form_send_message" resname="form_send_message">
                        <source>Send Message</source>
-                       <target>Envoi Message</target>
+                       <target>Envoyer Message</target>
                 </trans-unit>
                  <trans-unit id="form_login" resname="form_login">
                        <source>Login</source>
                        <target>S'identifier</target>
                 </trans-unit>
-
+	            <trans-unit id="form_fullname" resname="form_fullname">
+                       <source>Full name</source>
+                       <target>Nom complet</target>
+                </trans-unit>	
 <!--End Form-->
 
 <!--Error message -->
@@ -777,7 +780,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>Maison abonnement</target>
+                       <target>Mes maisons</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
@@ -866,6 +869,35 @@
                        <source>View payments</source>
                        <target>Afficher les paiements</target>
                 </trans-unit>					
+                 <trans-unit id="dash_contact" resname="dash_contact">
+                       <source>Contact</source>
+                       <target>Contact</target>
+                </trans-unit>
+	            <trans-unit id="dash_house_information" resname="dash_house_information">
+                       <source>House information - Details</source>
+                       <target>Information sur la maison - Détails</target>
+                </trans-unit>
+	            <trans-unit id="dash_close" resname="dash_close">
+                       <source>Close</source>
+                       <target>Fermer</target>
+                </trans-unit>
+		            <trans-unit id="dash_view_request" resname="dash_view_request">
+                       <source>View my requests</source>
+                       <target>Voir mes requêtes</target>
+                </trans-unit>
+		        <trans-unit id="dash_subscription" resname="dash_subscription">
+                       <source>Subscription</source>
+                       <target>Abonnement</target>
+                </trans-unit>
+		        <trans-unit id="dash_contract_agreement" resname="dash_contract_agreement">
+                       <source>CONTRACT AGREEMENT</source>
+                       <target>ACCORD DE CONTRAT</target>
+                </trans-unit>
+		        <trans-unit id="dash_accept" resname="dash_accept">
+                       <source>I ACCEPT</source>
+                       <target>J'ACCEPTE</target>
+                </trans-unit>
+
 				
 <!--End my dashboard-->	
 
