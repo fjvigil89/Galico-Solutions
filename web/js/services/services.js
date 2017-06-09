@@ -91,5 +91,28 @@ angular.module("gpApp")
                     }
             });
         }
+
+        this.subscribeHouse = function (subscription) {
+
+            return $http({
+                url : RouterService.getEndPoint() + '/subscribe-house',
+                method: "GET",
+                params:
+                    {
+                        customerId : subscription.customerId,
+                        planId : subscription.planId,
+                        firstName : subscription.firstName,
+                        lastName : subscription.lastName,
+                        phonePrimary : subscription.phonePrimary,
+                        phoneAlternate : subscription.phoneAlternate,
+                        country : subscription.country,
+                        state : subscription.state,
+                        city : subscription.city,
+                        address : subscription.address,
+                        zipCode : subscription.zipCode,
+
+                    }
+            });
+        }
     })
 

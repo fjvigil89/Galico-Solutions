@@ -312,7 +312,7 @@ class UserController extends Controller
             $hs['plan'] = $subscriptions[$index]->getPlan()->getPlanname();
             $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
             //$hs['dueDate'] = $this->getDueDate($hs['subscriptionDate']);
-            $hs['contact'] = $house->getFirstname() . " " . $house->getLastname();
+            //$hs['contact'] = $house->getFirstname() . " " . $house->getLastname();
             $hs['phonePrimary'] = $house->getPhoneprimary();
             $hs['phoneAlternate'] = $house->getPhonealternate();
             $hs['country'] = $house->getCountry();
@@ -464,6 +464,7 @@ class UserController extends Controller
             $house->setCity($city);
             $house->setAddress($address);
             $house->setZipcode($zipCode);
+            $house->setCustomer($customer);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($house);
@@ -472,11 +473,11 @@ class UserController extends Controller
             $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
             $plan = $repository->find($planId);
 
-            $today = (new \DateTime())->format('Y-m-d');
+            //$today = date("Y-m-d");//(new \DateTime())->format('Y-m-d');
             $subscription = new Subscriptions();
             $subscription->setHouse($house);
             $subscription->setPlan($plan);
-            $subscription->setSubscriptiondate($today);
+            $subscription->setSubscriptiondate(new \DateTime('now'));
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($subscription);
@@ -485,6 +486,8 @@ class UserController extends Controller
             $subscriptionStatus = 1;
             $response['agentNumber'] = $this->getLocalAgentNumber($country,$city);
             $response['houseId'] = $house->getHouseid();
+            $response['subscriptionDate'] = date_format($subscription->getSubscriptiondate(), 'Y-m-d');;
+            $response['plan'] = $plan->getPlanname();
 
         }
         $response['subscriptionStatus'] = $subscriptionStatus;

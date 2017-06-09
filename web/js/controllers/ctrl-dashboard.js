@@ -8,6 +8,8 @@ angular.module("gpApp")
             $scope.update = {};
             $scope.newSubscription = {};
 
+            $scope.newSubscription.customerId = $window.document.getElementById("customerId").value;
+
             $scope.newSubscription.contractAccepted = false;
             $scope.update.error = "";
 
@@ -128,18 +130,18 @@ angular.module("gpApp")
             if($scope.selectedHouseId!="")
             {
                 DashboardService.getHouseRequests($scope.selectedHouseId)
-                    .then(function(response){
-                        console.log(response.data);
-                        $scope.requests = response.data;
+                .then(function(response){
+                    console.log(response.data);
+                    $scope.requests = response.data;
 
-                    },function(error){
+                },function(error){
 
-                    })
+                })
             }
 
         }
 
-        $scope.addNewHouse = function()
+        $scope.subscribeNewHouse = function()
         {
             if(GeneralService.isInvalid($scope.newSubscription.planId))
             {
@@ -189,6 +191,31 @@ angular.module("gpApp")
             else
             {
 
+                DashboardService.subscribeHouse($scope.newSubscription)
+                .then(function(response){
+                    console.log(response.data);
+                    var rs = response.data;
+                    if(rs.subscriptionStatus==1)
+                    {
+                        $("#addHouseModal").modal('hide');
+                        var newHouse = {};
+                        angular.copy($scope.newSubscription, newHouse);
+                        newHouse.id = rs.houseId;
+                        newHouse.agentNumber = rs.agentNumber;
+                        newHouse.plan = rs.plan;
+                        newHouse.subscriptionDate = rs.subscriptionDate;
+                        newHouse.contactFullName = newHouse.firstName + " " + newHouse.lastName;
+
+                        $scope.houses.push(newHouse);
+                    }
+                    else
+                    {
+                        $scope.newSubscription.error = "The new house could not be added. Please try again";
+                    }
+
+                },function(error){
+
+                })
             }
 
         }
