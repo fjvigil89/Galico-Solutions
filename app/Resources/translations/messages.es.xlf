@@ -768,7 +768,15 @@
 
 <!--End Error message -->
 
+<!--Contact-->
+                 <trans-unit id="contact_message_successfully" resname="contact_message_successfully">
+                       <source>Your message was sent successfully.</source>
+                       <target>Su mensaje ha sido enviado con éxito.</target>
+                </trans-unit>
 
+
+
+<!--End Contact -->
 <!--My dashboard-->
                  <trans-unit id="dash_sdate" resname="dash_sdate">
                        <source>Subscription date</source>
@@ -897,6 +905,9 @@
                        <target>YO ACEPTO</target>
                 </trans-unit>
 
+				
+				
+				
 
 				
 <!--End my dashboard-->		
