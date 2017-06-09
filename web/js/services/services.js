@@ -23,6 +23,23 @@ angular.module("gpApp")
         }
     })
 
+    .service('ContactService',function($http,RouterService){
+
+        this.sendMessage = function(msg){
+            return $http({
+                url : RouterService.getEndPoint() + '/send-email',
+                method: "GET",
+                params:
+                    {
+                        cname : msg.cname,
+                        phone : msg.phone,
+                        email : msg.email,
+                        message : msg.message
+                    }
+            });
+        }
+    })
+
     .service('DashboardService',function($http,RouterService){
         this.getCustomerInformation = function(id)
         {

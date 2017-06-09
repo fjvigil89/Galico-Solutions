@@ -7,6 +7,6 @@ parameters:
     database_password: null
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
-    mailer_user: null
-    mailer_password: null
+    mailer_user: "generalpro0617@gmail.com"
+    mailer_password: "gpp@ss-1"
     secret: 88f9db9d576771535c39f66dffed74a8ec1a66df

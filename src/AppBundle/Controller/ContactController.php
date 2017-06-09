@@ -18,30 +18,36 @@ use Symfony\Component\HttpFoundation\Request;
 class ContactController extends Controller
 {
     /**
-     * @Route("/sendEmail", name="send_email")
+     * @Route("/send-email", name="sendEmail")
      */
     public function SendEmailAction(Request $request)
     {
         $cname = $request->query->get('cname');
         $phone = $request->query->get('phone');
         $email = $request->query->get('email');
-        $messages1 = $request->query->get('message');
+        $msg = $request->query->get('message');
 
-	 $tranport= \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
+        $content = "FROM : $cname\n\n";
+        $content .= "EMAIL : $email\n\n";
+        $content .= "PHONE : $phone\n\n";
+        $content .= "$msg";
+        $sendStatus = -1;
+        $response = array();
 
-	 
-     $mailer= \Swift_Mailer::newInstance($tranport);
-	 $message= \Swift_Message::newInstance('Hello Email')
-            ->setSubject('contact us - From GP')
-            ->setFrom("$email")
-            ->setTo('antofuchong@gmail.com')
-            ->setBody($messages1);
+    # Setup the message
+    $message = \Swift_Message::newInstance()
+        ->setSubject("Contact - From General Pro's website")
+        ->setFrom($email)
+        ->setTo('jrhodelyr@gmail.com')
+        ->setBody( $content );
 
-    /**    $this->get($mailer)->send($message1);*/
-	$result = $mailer->send($message);
+    # Send the message
+    $this->get('mailer')
+        ->send($message);
 
 
-
-        return $this->render('website/plans.html.twig');
+        $sendStatus = 1;
+        $response['sendStatus'] = $sendStatus;
+        return $this->json($response);
     }
 }

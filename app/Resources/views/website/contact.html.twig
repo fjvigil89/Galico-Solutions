@@ -36,8 +36,9 @@
     <div class="col-md-8">
       <div id="map-canvas" class="thememove-gmaps" data-address="40.7590615,-73.969231" data-height="400" data-width="100%" data-zoom_enable="" data-zoom="16" data-map_type="roadmap" data-map_style="style1"></div>
       <!-- /.thememove-gmaps -->
-      <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
-      <form id="frm_contact_us" method="GET" action="{{ path('send_email') }}" >
+      <h5 class="error-message text-bold text-center" ng-bind="message.error" class=""> </h5>
+      <h5 ng-cloak class="message-info text-bold text-center" ng-if="message.successful"> Your message was sent successfully. </h5>
+      <form id="frm_contact_us" method="GET" action="{{ path('sendEmail') }}" >
         <div class="row">
           <div class="col-sm-12">
             <input type="text" id="cname" name="cname"  ng-model="sender.cname" required placeholder="{{ 'form_name' | trans({}, "messages", lang) }}">
