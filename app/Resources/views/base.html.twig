@@ -72,9 +72,9 @@
                 <div class="col-sm-5 col-md-6 hidden-xs-down">
                     <div class="text-xs-center text-sm-left">
                            <ul class="menu">
-						   <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag-en.png') }}" alt="Espa&ntilde;ol" title="Espa&ntilde;ol" > &nbsp;  &nbsp;</a>&nbsp;  &nbsp;</li>
+						   <li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" ><img src="{{ asset('images/flag-en.png') }}" alt="English" title="English" > &nbsp;  &nbsp;</a>&nbsp;  &nbsp;</li>
                            <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}" ><img src="{{ asset('images/flag-es.png') }}" alt="Espa&ntilde;ol" title="Espa&ntilde;ol">&nbsp;  &nbsp;</a>&nbsp;  &nbsp;</li>
-							<li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag-fr.png') }}" alt="Espa&ntilde;ol" title="Espa&ntilde;ol">&nbsp;  &nbsp;</a>&nbsp;  &nbsp;</li>
+							<li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}" ><img src="{{ asset('images/flag-fr.png') }}" alt="Français" title="Français">&nbsp;  &nbsp;</a>&nbsp;  &nbsp;</li>
                            <!--li class="menu-item">
                                 <a><img src="{{ asset('images/{[flag]}') }}" ></a>
 
@@ -139,10 +139,10 @@
                                          <a href="#"><img src="{{ asset('images/{[flag]}') }}" >&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
                                         <ul class="sub-menu text-left">
                                        
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_canada.png')"><img src="{{ asset('images/flag_canada.png') }}" >&nbsp;CA</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_USA.png')" ><img src="{{ asset('images/flag_USA.png') }}" >&nbsp;US</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_mexico.png')"><img src="{{ asset('images/flag_mexico.png') }}" >&nbsp;MX</a></li>
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_cr.png')"><img src="{{ asset('images/flag_cr.png') }}" >&nbsp;CR</a></li>
+											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_canada.png')"><img src="{{ asset('images/flag_canada.png') }}" alt="Canada" title="Canada" >&nbsp;CA</a></li>
+                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_USA.png')" ><img src="{{ asset('images/flag_USA.png') }}" alt="United States" title="United States" >&nbsp;US</a></li>
+                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_mexico.png')"><img src="{{ asset('images/flag_mexico.png')  }}" alt="Mexico" title="Mexico" >&nbsp;MX</a></li>
+											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_cr.png')"><img src="{{ asset('images/flag_cr.png') }}"  alt="Costa Rica" title="Costa Rica">&nbsp;CR</a></li>
                                         </ul>
 										
                                     </li>

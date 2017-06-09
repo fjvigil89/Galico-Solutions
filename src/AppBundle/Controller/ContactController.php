@@ -25,18 +25,20 @@ class ContactController extends Controller
         $cname = $request->query->get('cname');
         $phone = $request->query->get('phone');
         $email = $request->query->get('email');
-        $messages = $request->query->get('message');
+        $messages1 = $request->query->get('message');
 
 	 $tranport= \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
+
+	 
      $mailer= \Swift_Mailer::newInstance($tranport);
 	 $message= \Swift_Message::newInstance('Hello Email')
             ->setSubject('contact us - From GP')
             ->setFrom("$email")
             ->setTo('antofuchong@gmail.com')
-            ->setBody($messages);
+            ->setBody($messages1);
 
-        $this->get($mailer)->send($message);
-
+    /**    $this->get($mailer)->send($message1);*/
+	$result = $mailer->send($message);
 
 
 
