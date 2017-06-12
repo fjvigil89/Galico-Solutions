@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-15.
  */
 angular.module("gpApp")
-    .controller('UserController',function($scope,$rootScope,authService,GeneralService,RouterService,DashboardService,$window){
+    .controller('UserController',function($scope,$rootScope,authService,GeneralService,RouterService,DashboardService,$window,$translate){
         $scope.user = {};
         $scope.user.email = "";
         $scope.user.pwd = "";
@@ -22,11 +22,24 @@ angular.module("gpApp")
         $scope.update = {};
         $scope.update.successful = false;
 
+
+        // GET LANGUAGE ON LOAD
+        var curLang = $("#hiddenLang").val();
+        if(curLang=="")
+        {
+            curLang="en";
+        }
+
+        $translate.use(curLang);
+
+        //--END : GET LANGUAGE ON LOAD
+
         $scope.authenticate = function()
         {
             if(GeneralService.isInvalid($scope.user.email))
             {
-                $scope.auth.message = "Please enter a valid email";
+                //$scope.auth.message = "Please enter a valid email";
+                $scope.auth.message = $translate.instant('ERR_SIGNIN_EMAIL');
                 $window.document.getElementById("email").focus();
             }
             else if(GeneralService.isInvalid($scope.user.pwd))
