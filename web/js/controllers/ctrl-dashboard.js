@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-17.
  */
 angular.module("gpApp")
-    .controller('DashboardController',function($scope,$rootScope,DashboardService,$window,GeneralService){
+    .controller('DashboardController',function($scope,$rootScope,DashboardService,$window,GeneralService,$translate){
             $scope.customer = {};
             $scope.customerUpdated = {};
             $scope.update = {};
@@ -35,37 +35,37 @@ angular.module("gpApp")
             {
                 if(GeneralService.isInvalid($scope.customerUpdated.lastName))
                 {
-                    $scope.update.error = "Please provide your last name";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_LASTNAME');
                     $window.document.getElementById("lastName").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.firstName))
                 {
-                    $scope.update.error = "Please provide your first name";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_FIRSTNAME');
                     $window.document.getElementById("firstName").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.email))
                 {
-                    $scope.update.error = "Please provide a valid email address";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_ADDRESSVALIDE');
                     $window.document.getElementById("email").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.phonePrimary))
                 {
-                    $scope.update.error = "Please provide a phone number";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_NUMBER');
                     $window.document.getElementById("phonePrimary").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.country))
                 {
-                    $scope.update.error = "Please provide your country";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_COUNTRY');
                     $window.document.getElementById("country").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.city))
                 {
-                    $scope.update.error = "Please provide your city";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_CITY');
                     $window.document.getElementById("city").focus();
                 }
                 else if(GeneralService.isInvalid($scope.customerUpdated.address))
                 {
-                    $scope.update.error = "Please provide your address";
+                    $scope.update.error = $translate.instant('ERR_DASHBOARD_ADDRESS');
                     $window.document.getElementById("address").focus();
                 }
                 else
@@ -82,11 +82,11 @@ angular.module("gpApp")
                             else
                             {
                                 //angular.copy($scope.customer,$scope.customerUpdated);
-                                $scope.update.error = "Your information could not be updated. Please try again.";
+                                $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
                             }
 
                         },function(error){
-                            $scope.update.error = "Your information could not be updated. Please try again.";
+                            $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
                         })
                 }
             }
@@ -145,29 +145,29 @@ angular.module("gpApp")
         {
             if(GeneralService.isInvalid($scope.newSubscription.planId))
             {
-                $scope.newSubscription.error = "Please choose a plan";
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_PLAN');
                 $window.document.getElementById("subPlanId").focus();
             }
             else if(GeneralService.isInvalid($scope.newSubscription.firstName))
             {
-                $scope.newSubscription.error = "Please enter your contact first name";
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CONTACTFIRSTNAME');
                 $window.document.getElementById("subContactFirstName").focus();
             }
             else if(GeneralService.isInvalid($scope.newSubscription.lastName))
             {
-                $scope.newSubscription.error = "Please enter your contact last name";
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CONTACTLASTNAME');
                 $window.document.getElementById("subContactLastName").focus();
             }
 
             else if(GeneralService.isInvalid($scope.newSubscription.phonePrimary))
             {
-                $scope.newSubscription.error = "Please enter at least one phone number";
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_PHONENUMBER');
                 $window.document.getElementById("subContactLastName").focus();
             }
 
             else if(GeneralService.isInvalid($scope.newSubscription.country))
             {
-                $scope.newSubscription.error = "Please choose a country";
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CHOOSECOUNTRY');
                 $window.document.getElementById("subCountry").focus();
             }
 
@@ -179,13 +179,13 @@ angular.module("gpApp")
 
             else if(GeneralService.isInvalid($scope.newSubscription.city))
             {
-                $scope.newSubscription.error = "Please enter a city";
+                $scope.newSubscription.error = $translate.instant('ERR_DASHBOARD_ENTERCITY');
                 $window.document.getElementById("subCity").focus();
             }
 
             else if(GeneralService.isInvalid($scope.newSubscription.address))
             {
-                $scope.newSubscription.error = "Please enter the address of the house";
+                $scope.newSubscription.error = $translate.instant('ERR_DASHBOARD_ADDRESSHOUSE');
                 $window.document.getElementById("subAddress").focus();
             }
             else
@@ -210,7 +210,7 @@ angular.module("gpApp")
                     }
                     else
                     {
-                        $scope.newSubscription.error = "The new house could not be added. Please try again";
+                        $scope.newSubscription.error = $translate.instant('ERR_DASHBOARD_NOTADDHOUSE');
                     }
 
                 },function(error){
