@@ -31,6 +31,7 @@ angular.module("gpApp")
         }
 
         $translate.use(curLang);
+		console.log(curLang);
 
         //--END : GET LANGUAGE ON LOAD
 
@@ -38,13 +39,12 @@ angular.module("gpApp")
         {
             if(GeneralService.isInvalid($scope.user.email))
             {
-                //$scope.auth.message = "Please enter a valid email";
                 $scope.auth.message = $translate.instant('ERR_SIGNIN_EMAIL');
                 $window.document.getElementById("email").focus();
             }
             else if(GeneralService.isInvalid($scope.user.pwd))
             {
-                $scope.auth.message = "Please enter a password";
+                $scope.auth.message = $translate.instant('ERR_SIGNIN_PASSWORD');
                 $window.document.getElementById("pwd").focus();
             }
             else
@@ -61,7 +61,7 @@ angular.module("gpApp")
                         }
                         else
                         {
-                            $scope.auth.message = "Your email or password is incorrect. Please try again.";
+                            $scope.auth.message = $translate.instant('ERR_SIGNIN_FAILED');
                         }
 
 
@@ -76,68 +76,68 @@ angular.module("gpApp")
         {
             if(GeneralService.isInvalid($scope.user.firstName))
             {
-                $scope.auth.message = "Please enter your first name";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
                 $window.document.getElementById("firstName").focus();
             }
             else if(GeneralService.isInvalid($scope.user.lastName))
             {
-                $scope.auth.message = "Please enter your last name";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_LASTNAME');
                 $window.document.getElementById("lastName").focus();
             }
 
             else if(GeneralService.isInvalid($scope.user.email))
             {
-                $scope.auth.message = "Please enter a valid email";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_EMAIL');
                 $window.document.getElementById("email").focus();
             }
             else if(GeneralService.isInvalid($scope.user.pwd))
             {
-                $scope.auth.message = "Please enter a password";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_PASSWORD');
                 $window.document.getElementById("pwd").focus();
             }
 
             else if(GeneralService.isInvalid($scope.user.cPwd))
             {
-                $scope.auth.message = "Please confirm your password";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_REPASSWORD');
                 $window.document.getElementById("cPwd").focus();
             }
             else if($scope.user.pwd!=$scope.user.cPwd)
             {
-                $scope.auth.message = "Your passwords don't match";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_DONTMATCH');
                 $scope.user.pwd = "";
                 $scope.user.cPwd = "";
                 $window.document.getElementById("pwd").focus();
             }
             else if(GeneralService.isInvalid($scope.user.phonePrimary))
             {
-                $scope.auth.message = "Please enter a phone number";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
                 $window.document.getElementById("phonePrimary").focus();
             }
 
             else if(GeneralService.isInvalid($scope.user.country))
             {
-                $scope.auth.message = "Please enter a country";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("country").focus();
             }
             else if(GeneralService.isInvalid($scope.user.state))
             {
-                $scope.auth.message = "Please enter a state";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_STATE');
                 $window.document.getElementById("state").focus();
             }
             else if(GeneralService.isInvalid($scope.user.city))
             {
-                $scope.auth.message = "Please enter a city";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
                 $window.document.getElementById("city").focus();
             }
 
             else if(GeneralService.isInvalid($scope.user.address))
             {
-                $scope.auth.message = "Please enter a address";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
                 $window.document.getElementById("address").focus();
             }
             else if(GeneralService.isInvalid($scope.user.zipCode))
             {
-                $scope.auth.message = "Please enter a zipCode";
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ZIPCODE');
                 $window.document.getElementById("zipCode").focus();
             }
 
@@ -161,24 +161,24 @@ angular.module("gpApp")
 
             if(GeneralService.isInvalid($scope.user.oldPassword))
             {
-                $scope.update.error = "Please enter your old password";
+                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_PASS');
                 $window.document.getElementById('oldPassword').focus();
 
             }
             else if(GeneralService.isInvalid($scope.user.newPassword))
             {
-                $scope.update.error = "Please enter your new password";
+                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_REPASS');
                 $window.document.getElementById('newPassword').focus();
 
             }
             else if(GeneralService.isInvalid($scope.user.cNewPassword))
             {
-                $scope.update.error = "Please confirm your new password";
+                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_REPASS');
                 $window.document.getElementById('cNewPassword').focus();
             }
             else if($scope.user.newPassword!=$scope.user.cNewPassword)
             {
-                $scope.update.error = "The 2 passwords must match";
+                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_MATCHPASS');
                 $scope.user.newPassword = "";
                 $scope.user.cNewPassword = "";
                 $window.document.getElementById('newPassword').focus();
@@ -193,7 +193,7 @@ angular.module("gpApp")
                         var updateStatus = response.data.updateStatus;
                         if(updateStatus == -2)
                         {
-                            $scope.update.error = "Your old password is incorrect. Please try again";
+                            $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_FAILEDPASS');
 
                         }
                         else if(updateStatus==1)
@@ -203,12 +203,12 @@ angular.module("gpApp")
                         }
                         else
                         {
-                            $scope.update.error = "Your password could not be saved. Please try again";
+                            $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_NOTSAVEPASS');
                         }
 
 
                     },function (error) {
-                        $scope.update.error = "Your password could not be saved. Please try again";
+                        $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_NOTSAVEPASS');
                     }).finally(function(){
                         $scope.user.oldPassword = "";
                         $scope.user.newPassword = "";
