@@ -173,7 +173,7 @@ angular.module("gpApp")
             }
             else if(GeneralService.isInvalid($scope.user.cNewPassword))
             {
-                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_REPASS');
+                $scope.update.error = $translate.instant('ERR_UPDATEPASSWORD_NEWPASS');
                 $window.document.getElementById('cNewPassword').focus();
             }
             else if($scope.user.newPassword!=$scope.user.cNewPassword)
