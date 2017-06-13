@@ -699,7 +699,7 @@
                 </trans-unit>
                  <trans-unit id="form_send_message" resname="form_send_message">
                        <source>Send Message</source>
-                       <target>Envoyer Message</target>
+                       <target>Envoyer</target>
                 </trans-unit>
                  <trans-unit id="form_login" resname="form_login">
                        <source>Login</source>

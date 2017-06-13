@@ -32,9 +32,14 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Please confirm your new password",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "The 2 passwords must match",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Your old password is incorrect. Please try again.",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Your password could not be saved. Please try again."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Your password could not be saved. Please try again.",	
   	
-
+        "ERR_CONTACTUS_NAME"     : "Please enter your name.",
+        "ERR_CONTACTUS_MAIL"    : "Please enter a valid email.",
+        "ERR_CONTACTUS_MESSAGE" : "Please enter your message",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "The message could not be sent. Please try again",
+        
+		
 		
     });
 
@@ -63,9 +68,15 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Por favor, confirme su nueva contraseña.",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "Sus contraseñas no coinciden",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Su contraseña Actual es incorrecta. Por favor intente otra vez",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Su contraseña no será guardada. Por favor intente otra vez."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Su contraseña no será guardada. Por favor intente otra vez.",	
   	
-		
+	  	
+        "ERR_CONTACTUS_NAME"     : "Por favor, ingrese su nombre.",
+        "ERR_CONTACTUS_MAIL"    : "Por favor ingrese una dirección de correo electrónico válida",
+        "ERR_CONTACTUS_MESSAGE" : "Por favor, ingrese su mensaje.",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "Su mensaje no será enviado. Por favor intente de nuevo.",
+      	
+
 		
     });
 
@@ -96,9 +107,14 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Veuillez confirmer votre mot de passe",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "Vos mots de passe ne correspondent pas",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Votre ancien mot de passe est incorrect. Veuillez réessayer.",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Votre mot de passe n'a pas pu être enregistré. Veuillez réessayer."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Votre mot de passe n'a pas pu être enregistré. Veuillez réessayer.",
   	
-		
+	  	
+        "ERR_CONTACTUS_NAME"     : "Veuillez saisir votre nom complet.",
+        "ERR_CONTACTUS_MAIL"    : "Veuillez saisir un email valide.",
+        "ERR_CONTACTUS_MESSAGE" : "Veuillez saisir votre message",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "Le message n'a pas pu être envoyé. Veuillez réessayer",
+      	
 		
 		
     });

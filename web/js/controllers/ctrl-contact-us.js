@@ -3,7 +3,7 @@
  */
 
 angular.module("gpApp")
-    .controller('ContactUsController',function($scope,$rootScope,authService,GeneralService,ContactService,$window){
+    .controller('ContactUsController',function($scope,$rootScope,authService,GeneralService,ContactService,$window,$translate){
 
         $scope.sender = {};
         $scope.sender.cname ="";
@@ -22,18 +22,18 @@ angular.module("gpApp")
 
             if(GeneralService.isInvalid($scope.sender.cname))
             {
-                $scope.message.error = "Please enter your name";
+                $scope.message.error = $translate.instant('ERR_CONTACTUS_NAME');
                 $window.document.getElementById("cname").focus();
             }
             else if(GeneralService.isInvalid($scope.sender.email))
             {
-                $scope.message.error = "Please enter your email";
+                $scope.message.error = $translate.instant('ERR_CONTACTUS_MAIL');
                 $window.document.getElementById("email").focus();
             }
 
             else if(GeneralService.isInvalid($scope.sender.message))
             {
-                $scope.message.error = "Please enter your message";
+                $scope.message.error = $translate.instant('ERR_CONTACTUS_MESSAGE');
                 $window.document.getElementById("message").focus();
             }
 
@@ -51,10 +51,10 @@ angular.module("gpApp")
                         }
                         else
                         {
-                            $scope.message.error = "The message could not be sent. Please try again";
+                            $scope.message.error = $translate.instant('ERR_CONTACTUS_MESSAGENOTSENT');
                         }
                     },function (error) {
-                        $scope.message.error = "The message could not be sent. Please try again";
+                        $scope.message.error = $translate.instant('ERR_CONTACTUS_MESSAGENOTSENT');
                     })
             }
         }
