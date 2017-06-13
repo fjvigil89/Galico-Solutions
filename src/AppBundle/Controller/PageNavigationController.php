@@ -93,7 +93,7 @@ class PageNavigationController extends Controller
     public function translateAction($lang, Request $request)
     {
         $this->get('session')->set('lang', $lang);
-        return $this->redirectToRoute("home");
+        return $this->redirect($request->headers->get('referer'));
     }
 
     /**

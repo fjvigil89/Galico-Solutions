@@ -49,7 +49,7 @@
             <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
             <input type="email" id="email" name="email" placeholder="{{ 'signin_entermail' | trans({}, "messages", lang) }}" required>
           </div>
-          <p class="text-center text-bold color-red "> {{ 'signin_message_enteremail' | trans({}, "messages", lang) }}</p>
+          <p class="text-center text-bold color-red " ng-if="reset.successful"> {{ 'signin_message_enteremail' | trans({}, "messages", lang) }}</p>
 
         </div>
         <div class="modal-footer">

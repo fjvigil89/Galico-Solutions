@@ -17,6 +17,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
@@ -43,16 +45,21 @@ class UserController extends Controller
         $pwd = $request->query->get('pwd');
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-
-        $customer = $repository->findOneBy(
+        /*$customer = $repository->findOneBy(
             array('email' => $email, 'password' => $pwd)
-        );
+        );*/
+        $customer = $repository->findOneByEmail($email);
+
         $userId = -1;
         if($customer)
         {
-            $userId = $customer->getCustomerid();
-
-            $this->get('session')->set('userId', $userId);
+            $encoder = $this->container->get('security.password_encoder');
+            $isValid = $encoder->isPasswordValid($customer, $pwd);
+            if($isValid)
+            {
+                $userId = $customer->getCustomerid();
+                $this->get('session')->set('userId', $userId);
+            }
         }
 
         return $this->json(array('userId' => $userId));
@@ -142,6 +149,9 @@ class UserController extends Controller
 
     /**
      * @Route("/create-customer", name="createCustomer")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function createCustomerAction(Request $request)
     {
@@ -172,6 +182,10 @@ class UserController extends Controller
         $customer->setCity($city);
         $customer->setAddress($address);
         $customer->setZipcode($zipCode);
+
+        $encoder = $this->container->get('security.password_encoder');
+        $password = $encoder->encodePassword($customer, $customer->getPassword());
+        $customer->setPassword($password);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($customer);
@@ -267,9 +281,17 @@ class UserController extends Controller
 
             if($customer)
             {
-                if($oldPassword==$customer->getPassword())
+                $encoder = $this->container->get('security.password_encoder');
+                $isValid = $encoder->isPasswordValid($customer, $oldPassword);
+
+                if($isValid)
                 {
                     $customer->setPassword($newPassword);
+                    $encoder = $this->container->get('security.password_encoder');
+                    $password = $encoder->encodePassword($customer, $newPassword);
+                    $customer->setPassword($password);
+
+
                     $em = $this->getDoctrine()->getManager();
                     $em->flush();
                     $updateStatus = 1;
