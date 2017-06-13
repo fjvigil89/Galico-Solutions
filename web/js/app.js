@@ -32,9 +32,30 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Please confirm your new password",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "The 2 passwords must match",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Your old password is incorrect. Please try again.",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Your password could not be saved. Please try again."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Your password could not be saved. Please try again.",	
   	
-
+        "ERR_CONTACTUS_NAME"     : "Please enter your name.",
+        "ERR_CONTACTUS_MAIL"    : "Please enter a valid email.",
+        "ERR_CONTACTUS_MESSAGE" : "Please enter your message",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "The message could not be sent. Please try again",
+        
+        "ERR_DASHBOARD_LASTNAME"     : "Please provide your last name.",
+        "ERR_DASHBOARD_FIRSTNAME"    : "Please provide your first name.",
+        "ERR_DASHBOARD_ADDRESSVALIDE" : "Please provide a valid email address.",
+        "ERR_DASHBOARD_NUMBER"     : "Please provide a phone number.",
+        "ERR_DASHBOARD_COUNTRY"     : "Please provide your country.",
+        "ERR_DASHBOARD_CITY"    : "Please provide your city.",
+        "ERR_DASHBOARD_ADDRESS" : "Please provide your address.",
+        "ERR_DASHBOARD_INF_UPDATE"     : "Your information could not be updated. Please try again.",
+        "ERR_DASHBOARD_PLAN"     : "Please choose a plan.",
+        "ERR_DASHBOARD_CONTACTFIRSTNAME"     : "Please enter your contact first name.",
+        "ERR_DASHBOARD_CONTACTLASTNAME"    : "Please enter your contact last name.",
+        "ERR_DASHBOARD_PHONENUMBER" : "Please enter at least one phone number.",
+        "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Please choose a country.",
+        "ERR_DASHBOARD_ENTERCITY"     : "Please enter a city.",
+        "ERR_DASHBOARD_ADDRESSHOUSE"    : "Please enter the address of the house.",
+        "ERR_DASHBOARD_NOTADDHOUSE" : "The new house could not be added. Please try again."
+				
 		
     });
 
@@ -63,9 +84,31 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Por favor, confirme su nueva contraseña.",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "Sus contraseñas no coinciden",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Su contraseña Actual es incorrecta. Por favor intente otra vez",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Su contraseña no será guardada. Por favor intente otra vez."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Su contraseña no será guardada. Por favor intente otra vez.",	
   	
-		
+	  	
+        "ERR_CONTACTUS_NAME"     : "Por favor, ingrese su nombre.",
+        "ERR_CONTACTUS_MAIL"    : "Por favor ingrese una dirección de correo electrónico válida",
+        "ERR_CONTACTUS_MESSAGE" : "Por favor, ingrese su mensaje.",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "Su mensaje no será enviado. Por favor intente de nuevo.",
+      	
+        "ERR_DASHBOARD_LASTNAME"     : "Por favor ingrese su apellido.",
+        "ERR_DASHBOARD_FIRSTNAME"    : "Por favor, ingrese su nombre.",
+        "ERR_DASHBOARD_ADDRESSVALIDE" : "Por favor ingrese una dirección de correo electrónico válida.",
+        "ERR_DASHBOARD_NUMBER"     : "Por favor, ingrese un número de teléfono.",
+        "ERR_DASHBOARD_COUNTRY"     : "Please provide your country.",
+        "ERR_DASHBOARD_CITY"    : "Por favor ingrese un país.",
+        "ERR_DASHBOARD_ADDRESS" : "Por favor ingrese su dirección.",
+        "ERR_DASHBOARD_INF_UPDATE"     : "Su información no será actualizadda. Por favor intente otra vez.",
+        "ERR_DASHBOARD_PLAN"     : "Por favor elija un plan.",
+        "ERR_DASHBOARD_CONTACTFIRSTNAME"     : "Por favor ingrese el nombre de su contacto",
+        "ERR_DASHBOARD_CONTACTLASTNAME"    : "Por favor ingrese el apellido de su contacto.",
+        "ERR_DASHBOARD_PHONENUMBER" : "Por favor ingrese al menos un número de teléfono.",
+        "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Por favor escoja un país.",
+        "ERR_DASHBOARD_ENTERCITY"     : "Por favor ingrese una ciudad.",
+        "ERR_DASHBOARD_ADDRESSHOUSE"    : "Por favor ingrese la dirección de la casa.",
+        "ERR_DASHBOARD_NOTADDHOUSE" : "La nueva casa no ha sido registrada. Por favor intente otra vez."
+				
 		
     });
 
@@ -96,10 +139,30 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_UPDATEPASSWORD_NEWPASS" : "Veuillez confirmer votre mot de passe",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "Vos mots de passe ne correspondent pas",
         "ERR_UPDATEPASSWORD_FAILEDPASS"    : "Votre ancien mot de passe est incorrect. Veuillez réessayer.",
-        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Votre mot de passe n'a pas pu être enregistré. Veuillez réessayer."	
+        "ERR_UPDATEPASSWORD_NOTSAVEPASS" : "Votre mot de passe n'a pas pu être enregistré. Veuillez réessayer.",
   	
-		
-		
+	  	
+        "ERR_CONTACTUS_NAME"     : "Veuillez saisir votre nom complet.",
+        "ERR_CONTACTUS_MAIL"    : "Veuillez saisir un email valide.",
+        "ERR_CONTACTUS_MESSAGE" : "Veuillez saisir votre message",
+        "ERR_CONTACTUS_MESSAGENOTSENT"     : "Le message n'a pas pu être envoyé. Veuillez réessayer",
+      	
+        "ERR_DASHBOARD_LASTNAME"     : "Veuillez saisir votre nom de famille.",
+        "ERR_DASHBOARD_FIRSTNAME"    : "Veuillez saisir votre prénom.",
+        "ERR_DASHBOARD_ADDRESSVALIDE" : "Veuillez saisir un email valide.",
+        "ERR_DASHBOARD_NUMBER"     : "Veuillez saisir un numéro de téléphone.",
+        "ERR_DASHBOARD_COUNTRY"     : "Veuillez saisir un pays.",
+        "ERR_DASHBOARD_CITY"    : "Veuillez saisir une ville",
+        "ERR_DASHBOARD_ADDRESS" : "Veuillez saisir une adresse.",
+        "ERR_DASHBOARD_INF_UPDATE"     : "Vos informations n'ont pas pu être mises à jour. Veuillez réessayer.",
+        "ERR_DASHBOARD_PLAN"     : "Choisissez un plan.",
+        "ERR_DASHBOARD_CONTACTFIRSTNAME"     : "Veuillez saisir votre prénom de contact.",
+        "ERR_DASHBOARD_CONTACTLASTNAME"    : "Veuillez saisir votre nom de contact.",
+        "ERR_DASHBOARD_PHONENUMBER" : "Veuillez saisir au moins un numéro de téléphone.",
+        "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Choisissez un pays.",
+        "ERR_DASHBOARD_ENTERCITY"     : "Veuillez saisir une ville.",
+        "ERR_DASHBOARD_ADDRESSHOUSE"    : "Veuillez saisir l'adresse de la maison.",
+        "ERR_DASHBOARD_NOTADDHOUSE" : "La nouvelle maison ne pouvait pas être ajoutée. Veuillez réessayer."		
 		
     });
 
