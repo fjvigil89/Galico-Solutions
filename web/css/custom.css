@@ -180,6 +180,12 @@
     color: #104d0b;
 }
 
+.message-error
+{
+    color: red;
+}
+
+
 
 #addHouseModal .modal-body
 {

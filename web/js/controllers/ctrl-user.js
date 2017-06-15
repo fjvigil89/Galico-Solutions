@@ -22,6 +22,9 @@ angular.module("gpApp")
         $scope.update = {};
         $scope.update.successful = false;
 
+        $scope.reset = {};
+
+
 
         // GET LANGUAGE ON LOAD
         var curLang = $("#hiddenLang").val();
@@ -215,5 +218,36 @@ angular.module("gpApp")
                         $scope.user.cNewPassword = "";
                 });
             }
+        }
+
+        $scope.resetPassword = function()
+        {
+           $scope.reset.successful = false;
+           $scope.reset.error = "";
+
+            if(GeneralService.isInvalid($scope.reset.email))
+            {
+                $scope.reset.error = $translate.instant('ERR_SIGNIN_EMAIL');
+                $window.document.getElementById('resetEmail').focus();
+            }
+            else
+            {
+				authService.resetPassword($scope.reset.email)
+				.then(function(response){
+					console.log(response.data);
+					if(response.data.actionStatus==1)
+					{
+						$scope.reset.successful = true;
+						$scope.reset.email = "";
+					}
+					else
+					{
+						$scope.reset.error = $translate.instant('ERR_SIGNIN_EMAIL_NOT_FOUND');
+					}
+				},function(error){
+					$scope.reset.error = $translate.instant('ERR_SIGNIN_RESET');
+				})
+            }
+
         }
     })

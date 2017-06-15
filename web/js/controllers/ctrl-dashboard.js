@@ -70,24 +70,25 @@ angular.module("gpApp")
                 }
                 else
                 {
+                    $scope.update.error = "";
                     DashboardService.updateCustomer($scope.customerUpdated)
-                        .then(function(response){
-                            console.log(response);
-                            var resp = response.data;
-                            if(resp.updateStatus> 0)
-                            {
-                                $scope.customer = resp;
-                                $('#editModal').modal('hide');
-                            }
-                            else
-                            {
-                                //angular.copy($scope.customer,$scope.customerUpdated);
-                                $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
-                            }
-
-                        },function(error){
+                    .then(function(response){
+                        console.log(response);
+                        var resp = response.data;
+                        if(resp.updateStatus> 0)
+                        {
+                            $scope.customer = resp;
+                            $('#editModal').modal('hide');
+                        }
+                        else
+                        {
+                            //angular.copy($scope.customer,$scope.customerUpdated);
                             $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
-                        })
+                        }
+
+                    },function(error){
+                        $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
+                    })
                 }
             }
 
@@ -190,7 +191,7 @@ angular.module("gpApp")
             }
             else
             {
-
+                $scope.newSubscription.error = "";
                 DashboardService.subscribeHouse($scope.newSubscription)
                 .then(function(response){
                     console.log(response.data);

@@ -25,6 +25,8 @@ use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
 
 
 
@@ -64,6 +66,124 @@ class UserController extends Controller
 
         return $this->json(array('userId' => $userId));
     }
+	
+	/**
+     * @Route("/reset-password-requested",name="resetPasswordRequested")
+     */
+    public function resetPasswordRequestedAction(Request $request)
+    {
+        $msg = "The password could not be reset. Please try again.";
+		$email = $request->query->get('email');
+        $customerId = $request->query->get('code');
+		$repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        
+		//die($email);
+        $customer = $repository->find($customerId);
+		
+		if($customer)
+		{
+			$randomPwd = $this->getRandomPassword();
+			$encoder = $this->container->get('security.password_encoder');
+            $password = $encoder->encodePassword($customer, $randomPwd);
+			$customer->setPassword($password);
+			
+			$em = $this->getDoctrine()->getManager();
+            $em->flush();
+			
+			$fullname = $customer->getFirstname() . " " . $customer->getLastname();
+			$content = "Dear $fullname, \n\n\n";
+			$content .= "Your temporary password is : $randomPwd\n\n";
+			$content .= "Please make sure you change it the next time you log into your account.\n\n";
+			$content .= "Thanks,\n\n\n";
+			$content .= "GENERAL PRO";
+			$sendStatus = -1;
+			//$response = array();
+
+			# Setup the message
+			$message = \Swift_Message::newInstance()
+			->setSubject("Password reset")
+			->setFrom("do-not-reply@general-pro.com")
+			->setTo($email)
+			->setBody( $content );
+
+			# Send the message
+			$this->get('mailer')
+			->send($message);
+			
+			
+			$msg = "A temporary password has been sent to your email";
+			$sendStatus = 1;
+			
+		}
+        
+		//echo($msg);
+
+        //return $this->json(array('actionStatus' => $sendStatus));
+        return $this->json($msg);
+    }
+	
+	/**
+     * @Route("/reset-password")
+     */
+    public function resetPasswordAction(Request $request)
+    {
+        $email = $request->query->get('email');
+        
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        
+        $customer = $repository->findOneByEmail($email);
+
+        $actionStatus = -1;
+        if($customer)
+        {
+            $requestId = $this->getRandomPassword();
+			$requestId .= $this->getRandomPassword();
+			$requestId .= $this->getRandomPassword();
+			
+			$fullname = $customer->getFirstname() . " " . $customer->getLastname();
+			
+			$url = $this->generateUrl('resetPasswordRequested', array('email'=>$email,'code'=>$customer->getCustomerid(),'requestId'=>$requestId), UrlGeneratorInterface::ABSOLUTE_URL);
+			
+			$content = "Dear $fullname, \n\n\n";
+			$content .= "Please follow the link below to reset your password\n\n";
+			$content .= "$url\n\n";
+			$content .= "If you didn’t ask to reset your password, you can ignore this email.\n\n";
+			$content .= "Thanks,\n\n\n";
+			$content .= "GENERAL PRO";
+			$sendStatus = -1;
+			//$response = array();
+
+			# Setup the message
+			$message = \Swift_Message::newInstance()
+			->setSubject("Password reset")
+			->setFrom("do-not-reply@general-pro.com")
+			->setTo($email)
+			->setBody( $content );
+
+			# Send the message
+			$this->get('mailer')
+			->send($message);
+			
+			 $actionStatus = 1;
+			//END
+			
+        }
+
+        return $this->json(array('actionStatus' => $actionStatus));
+    }
+	
+	private function getRandomPassword()
+	{
+		$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 12; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+		return implode($pass); //turn the array into a string
+	}
+
 
     /**
      * @Route("/logout")
