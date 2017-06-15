@@ -221,8 +221,13 @@ class UserController extends Controller
         {
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
+		
+		//--
+		$today = date('Y-m-d');
+		//--
+		
 
-        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer,'plans'=>$plans,'countries'=>$countries));
+        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer,'plans'=>$plans,'countries'=>$countries,'today'=>$today));
     }
 
 
