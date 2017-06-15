@@ -13,6 +13,9 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_SIGNIN_EMAIL"     : "Please enter a valid email",
         "ERR_SIGNIN_PASSWORD"    : "Please enter a password.",
         "ERR_SIGNIN_FAILED" : "Your email or password is incorrect. Please try again.",
+		"ERR_SIGNIN_EMAIL_NOT_FOUND" : "Your email could not be found",
+		"ERR_SIGNIN_RESET" : "Your password could not be reset. Please try again",
+		
 		
 		"ERR_REGISTER_FIRSTNAME" : "Please enter your first name",
 		"ERR_REGISTER_LASTNAME" : "Please enter your last name",
@@ -64,8 +67,9 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_SIGNIN_EMAIL"     : "Por favor introduzca una dirección de correo electrónico válida",
         "ERR_SIGNIN_PASSWORD"    : "Por favor ingrese una contraseña.",
         "ERR_SIGNIN_FAILED" : "Su correo electrónico o la contraseña es incorrecta. Vuelve a intentarlo.",
+		"ERR_SIGNIN_EMAIL_NOT_FOUND" : "Su correo no ha sido encontrado",
+		"ERR_SIGNIN_RESET" : "Su contraseña no pudo ser reestablecida. Por favor, inténtelo de nuevo",		
 		
-			
 		"ERR_REGISTER_FIRSTNAME" : "Por favor, ingrese su nombre",
 		"ERR_REGISTER_LASTNAME" : "Por favor ingrese su apellido",
 		"ERR_REGISTER_EMAIL" : "Por favor ingrese una dirección de correo electrónico válida",
@@ -117,8 +121,8 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_SIGNIN_EMAIL"     : "Veuillez saisir un courriel valide.",
         "ERR_SIGNIN_PASSWORD"    : "Veuillez saisir votre mot de passe.",
         "ERR_SIGNIN_FAILED" : "Votre courriel ou votre mot de passe est incorrect. Veuillez réessayer.",
-		
-			
+		"ERR_SIGNIN_EMAIL_NOT_FOUND" : "Votre courriel n'existe pas dans notre système ",
+		"ERR_SIGNIN_RESET" : "Votre mot de passe n'a pas pu être réinitialisé. Veuillez réessayer",	
 			
 		"ERR_REGISTER_FIRSTNAME" : "Veuillez saisir votre prénom",
 		"ERR_REGISTER_LASTNAME" : "Veuillez saisir votre nom de famille",

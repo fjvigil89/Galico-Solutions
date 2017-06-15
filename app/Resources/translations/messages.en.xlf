@@ -623,8 +623,8 @@
                       <target>Please enter your email</target>
                </trans-unit>
                 <trans-unit id="signin_message_enteremail" resname="signin_message_enteremail">
-                      <source>A temporary password has been sent to your email</source>
-                      <target>A temporary password has been sent to your email</target>
+                      <source>A link has been sent to your email to reset your password</source>
+                      <target>A link has been sent to your email to reset your password</target>
                </trans-unit>
                 <trans-unit id="signin_reset" resname="signin_reset">
                       <source>RESET</source>
@@ -750,8 +750,8 @@
                         <target>Please enter a address</target>
                  </trans-unit>
                   <trans-unit id="error_zipCode" resname="error_zipCode">
-                        <source>Please enter a zipCode</source>
-                        <target>Please enter a zipCode</target>
+                        <source>Please enter a zip code</source>
+                        <target>Please enter a zip code</target>
                  </trans-unit>
 
 

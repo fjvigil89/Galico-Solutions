@@ -319,7 +319,7 @@
 
                <trans-unit id="home_submit_and_enrolled" resname="home_submit_and_enrolled">
                      <source>Submit and enroll</source>
-                     <target>Soumettre et compléter l’inscription</target>
+                     <target>Soumettre l’inscription</target>
               </trans-unit>
                 <trans-unit id="home_submit_and_enrolled_resume" resname="home_submit_and_enrolled_resume">
                         <source>Pay and your information will be processed</source>
@@ -630,8 +630,8 @@
                       <target>Veuillez saisir votre courriel</target>
                </trans-unit>
                 <trans-unit id="signin_message_enteremail" resname="signin_message_enteremail">
-                      <source>A temporary password has been sent to your email</source>
-                      <target>Un mot de passe temporaire a été envoyé à votre courriel</target>
+                      <source>A link has been sent to your email to reset your password</source>
+                      <target>Un lien a été envoyé à votre courrier électronique pour réinitialiser votre mot de passe</target>
                </trans-unit>
                 <trans-unit id="signin_reset" resname="signin_reset">
                       <source>RESET</source>
@@ -759,7 +759,7 @@
                         <target>Veuillez saisir une adresse</target>
                  </trans-unit>
                   <trans-unit id="error_zipCode" resname="error_zipCode">
-                        <source>Please enter a zipCode</source>
+                        <source>Please enter a zip code</source>
                         <target>Veuillez saisir un code zip</target>
                  </trans-unit>
 
