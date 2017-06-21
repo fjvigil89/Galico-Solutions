@@ -938,16 +938,16 @@
                        <target>Date d'expiration:</target>
                 </trans-unit>
 		        <trans-unit id="dash_back" resname="dash_back">
-                       <source>Back:</source>
-                       <target>Arrière:</target>
+                       <source>Back</source>
+                       <target>Arrière</target>
                 </trans-unit>				
 			        <trans-unit id="dash_submit" resname="dash_submit">
-                       <source>Submit:</source>
-                       <target>Soumettre:</target>
+                       <source>Submit</source>
+                       <target>Soumettre</target>
                 </trans-unit>
 		        <trans-unit id="dash_next" resname="dash_next">
-                       <source>Next:</source>
-                       <target>Suivant:</target>
+                       <source>Next</source>
+                       <target>Suivant</target>
                 </trans-unit>	
 				
 <!--End my dashboard-->	

@@ -938,15 +938,15 @@
                        <target>Fecha de expiración</target>
                 </trans-unit>
 		        <trans-unit id="dash_back" resname="dash_back">
-                       <source>Back:</source>
+                       <source>Back</source>
                        <target>Atrás </target>
                 </trans-unit>				
 			        <trans-unit id="dash_submit" resname="dash_submit">
-                       <source>Submit:</source>
+                       <source>Submit</source>
                        <target>Enviar</target>
                 </trans-unit>
 		        <trans-unit id="dash_next" resname="dash_next">
-                       <source>Next:</source>
+                       <source>Next</source>
                        <target>Siguiente</target>
                 </trans-unit>				
 
