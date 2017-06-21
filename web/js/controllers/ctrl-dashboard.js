@@ -221,9 +221,14 @@ angular.module("gpApp")
 
         }
 
-        // CALL METHODS ONLOAD
+  
+		
+		// CALL METHODS ONLOAD
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();
+      
 
     })
+	
+	
