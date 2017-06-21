@@ -905,9 +905,50 @@
                        <target>YO ACEPTO</target>
                 </trans-unit>
 
-				
-				
-				
+			    <trans-unit id="dash_payinfo" resname="dash_payinfo">
+                       <source>Payment information</source>
+                       <target>Información de pagos</target>
+                </trans-unit>
+		        <trans-unit id="dash_month_amount" resname="dash_month_amount">
+                       <source>Monthly amount:</source>
+                       <target>Monto mensual</target>
+                </trans-unit>
+		        <trans-unit id="dash_type_c" resname="dash_type_c">
+                       <source>Type:</source>
+                       <target>Tipo:</target>
+                </trans-unit>			
+			        <trans-unit id="dash_credit_card" resname="dash_credit_card">
+                       <source>Credit Card</source>
+                       <target>Tarjeta de crédito</target>
+                </trans-unit>
+		        <trans-unit id="dash_name_card" resname="dash_name_card">
+                       <source>Name on Card:</source>
+                       <target>Nombre del Usuario</target>
+                </trans-unit>
+		        <trans-unit id="dash_card_type" resname="dash_card_type">
+                       <source>Card Type:</source>
+                       <target>Tipo de tarjeta </target>
+                </trans-unit>				
+			        <trans-unit id="dash_card_number" resname="dash_card_number">
+                       <source>Card Number:</source>
+                       <target>Número de tarjeta</target>
+                </trans-unit>
+		        <trans-unit id="dash_expiration_date" resname="dash_expiration_date">
+                       <source>Expiration date:</source>
+                       <target>Fecha de expiración</target>
+                </trans-unit>
+		        <trans-unit id="dash_back" resname="dash_back">
+                       <source>Back:</source>
+                       <target>Atrás </target>
+                </trans-unit>				
+			        <trans-unit id="dash_submit" resname="dash_submit">
+                       <source>Submit:</source>
+                       <target>Enviar</target>
+                </trans-unit>
+		        <trans-unit id="dash_next" resname="dash_next">
+                       <source>Next:</source>
+                       <target>Siguiente</target>
+                </trans-unit>				
 
 				
 <!--End my dashboard-->		

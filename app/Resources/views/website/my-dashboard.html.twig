@@ -100,10 +100,8 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="4">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
- 								<th><a href="#" data-toggle="modal" data-target="#addPayment" >
-                                    <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add_house' | trans({}, "messages", lang)}}></span>
-                                    </a></th>                         
+                                <th colspan="5">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
+                      
                                 <th><a href="#" data-toggle="modal" data-target="#contractModal" >
                                     <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add_house' | trans({}, "messages", lang)}}></span>
                                     </a></th>
@@ -402,19 +400,11 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{ 'dash_add_house' | trans({}, "messages", lang)}}</h4>
                     </div>
-                    <div class="modal-body">
-
+                   <div class="modal-body">
+					<div ng-hide="showPaymentForm">
                         <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
 
-                        <div class="form-group">
-                            <label for="subPlanId">Plan:</label>
-                            <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
-                                {% for plan in plans %}
-                                    <option value="{{ plan.planid }}">{{ plan.planname }}</option>
-                                {% endfor %}
-
-                            </select>
-                        </div>
+                      
                         <div class="form-group">
                             <label for="subContactFirstName">{{ 'dash_contact_firtName' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="subContactFirstName" ng-model="newSubscription.firstName">
@@ -465,12 +455,163 @@
                             <label for="subZipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}} *:</label>
                             <input type="text" class="form-control" id="subZipCode" ng-model= "newSubscription.zipCode" >
                         </div>
+						<div class="form-group">
+                            <label for="subPlanId">Plan:</label>
+                            <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
+                                {% for plan in plans %}
+                                    <option value="{{ plan.planid }}">{{ plan.planname }}</option>
+                                {% endfor %}
 
+                            </select>
+                        </div>
+						<div class="form-group">
+                            <label for="status">Monthly amount:</label>
+							<text>US 24.99</text>
+                        </div>						
+						
+						
+						
+						
                     </div>
+				
+				
+					
+
+				<!--<div data-toggle="collapse" style = "font-size:6px; " data-target="#pay" class="text-right" ><span class="glyphicon glyphicon-chevron-right"></span></div>-->
+
+				
+					<!--div class="modal-body"-->
+					<div class ="border-yellow padding-payment" id="container-payment" ng-show="showPaymentForm">
+						 <h4 class="text-bold text-center">{{ 'dash_payinfo' | trans({}, "messages", lang)}}</h4>
+                        <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
+							
+						
+						</br>
+						
+                        <div class="form-group">
+                            <label for="subPlanId">Plan:</label>
+							<text>Basic</text>
+                        </div>
+						<div class="form-group">
+                            <label for="status">{{ 'dash_month_amount' | trans({}, "messages", lang)}}</label>
+							<text>US 24.99</text>
+                        </div>	
+						<div class="form-group">
+                            <label for="type">{{ 'dash_type_c' | trans({}, "messages", lang)}}</label>
+							<text>{{ 'dash_credit_card' | trans({}, "messages", lang)}}</text>
+                        </div>
+							<!--div class="col-xs-6 no-padding"-->				
+									<div class="form-group">
+										<label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
+										<input type="text" class="form-control" id="fullname" >
+									</div>
+
+									<div class="form-group">
+										<label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
+										<select name="creditCard" id="creditCard" class="form-control" >
+										  
+											<option value="Visa"><img src="{{ asset('images/flag_canada.png') }}" >Visa</option>
+											<option value="MasterCard"><img src="{{ asset('images/flag_canada.png') }}" >Master Card</option>
+										   
+										</select>
+									</div>
+									
+									<div class="form-group">
+										<div class="col-xs-6 no-padding">
+										<label for="cardnumber">{{ 'dash_card_number' | trans({}, "messages", lang)}}&nbsp; </label><img src="{{ asset('images/card_mastercard.png') }}"><img src="{{ asset('images/card_visa.png') }}">
+										</div>
+										
+										
+
+										<div class="row margin-left">
+										
+										<div class="col-xs-7 no-padding">
+										<input type="text" class="form-control" id="cardnumber"  >
+										</div>
+									<div class="col-xs-1 no-padding"></div>
+										
+										<div class="col-xs-3 no-padding">
+										
+										<input type="text" class="form-control" id="securitycode"  placeholder="CVC" >
+										 </div>
+										</div>	
+									<!--/div>	
+									
+									
+									<div class="form-group">
+										<label for="cardnumber">Card Number:</label>
+										<div class="col-xs-6 no-padding">
+										<input type="text" class="form-control" id="cardnumber"  >
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="securitycode">Security code:</label>
+										<div class="col-xs-3 no-padding">
+										<input type="text" class="form-control" id="securitycode"  >
+										 </div>
+									</div-->		
+
+									
+									<div class="form-group">
+										<label for="dateexpiration">{{ 'dash_expiration_date' | trans({}, "messages", lang)}}</label>
+										
+										<div class="row margin-left">
+										
+											<div class="col-xs-4 no-padding">
+											<select name="dateexpirationmonth" id="dateexpirationmonth" class="form-control" >
+										
+												<option value="1">01</option>
+												<option value="2">02</option>
+												<option value="3">03</option>
+												<option value="4">04</option>
+												<option value="5">05</option>
+												<option value="6">06</option>
+												<option value="7">07</option>
+												<option value="8">08</option>
+												<option value="9">09</option>
+												<option value="10">10</option>		
+												<option value="11">11</option>
+												<option value="12">12</option>								
+											</select>
+											</div>
+											<div class="col-xs-2 no-padding"></div>
+												<div class="col-xs-5 no-padding">
+												<select name="dateexpirationyear" id="dateexpirationyear" class="form-control" >
+										
+												<option value="2017">2017</option>
+												<option value="2018">2018</option>
+												<option value="2019">2019</option>
+												<option value="2020">2020</option>
+												<option value="2021">2021</option>
+												<option value="2022">2022</option>
+												<option value="2023">2023</option>
+												<option value="2024">2024</option>
+												<option value="2025">2025</option>
+											
+												</select>
+												</div>
+										</div>
+						
+									</div>
+							        </div>             
+					
+					
+					
+					</div>
+                    </div>
+					
+					
+					
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" ng-click="subscribeNewHouse()">
-                            <span class="glyphicon glyphicon-plus" title=""></span> {{ 'dash_add' | trans({}, "messages", lang)}}
-                        </button>
+                        <button type="button" class="btn bg-yellow color-black" ng-show="showPaymentForm" ng-click="goToHouseInfoForm()">
+							 <span class="glyphicon glyphicon-chevron-left" title=""></span>{{ 'dash_back' | trans({}, "messages", lang)}}
+						</button>
+						<button type="button" class="btn bg-blue color-white" ng-show="showPaymentForm" ng-click="goToHouseInfoForm()">
+							 {{ 'dash_submit' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-ok-circle" title=""></span>
+						</button>
+						<button type="button" class="btn bg-yellow color-black" ng-hide="showPaymentForm" ng-click="goToPaymentForm()">
+							 {{ 'dash_next' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-chevron-right" title=""></span>
+						</button>
                     </div>
                 </div>
 
@@ -517,8 +658,8 @@
 
 
 
-	<div id="addPayment" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+	<!--div id="addPayment" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
 
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
@@ -528,7 +669,7 @@
                     <div class="modal-body">
 
                         <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
-						<div class="col-xs-6 no-padding">	
+							
                         <div class="form-group">
                             <label for="subPlanId">Plan:</label>
 							<text>Basic</text>
@@ -622,9 +763,9 @@
                 </div>
 
             </div>
-        </div>	
+ 	
 		
-		</div>
+		</div-->
 		
 		
 		
