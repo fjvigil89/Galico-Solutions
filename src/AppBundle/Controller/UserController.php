@@ -16,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -75,53 +76,59 @@ class UserController extends Controller
         $msg = "The password could not be reset. Please try again.";
 		$email = $request->query->get('email');
         $customerId = $request->query->get('code');
+        $requestTime = $request->query->get('tstamp');
 		$repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         
-		//die($email);
-        $customer = $repository->find($customerId);
-		
-		if($customer)
+		$now = time();
+		if($now-$requestTime>3600) //The request link is for an hour
 		{
-			$randomPwd = $this->getRandomPassword();
-			$encoder = $this->container->get('security.password_encoder');
-            $password = $encoder->encodePassword($customer, $randomPwd);
-			$customer->setPassword($password);
-			
-			$em = $this->getDoctrine()->getManager();
-            $em->flush();
-			
-			$fullname = $customer->getFirstname() . " " . $customer->getLastname();
-			$content = "Dear $fullname, \n\n\n";
-			$content .= "Your temporary password is : $randomPwd\n\n";
-			$content .= "Please make sure you change it the next time you log into your account.\n\n";
-			$content .= "Thanks,\n\n\n";
-			$content .= "GENERAL PRO";
-			$sendStatus = -1;
-			//$response = array();
+			$msg = "The link has expired. Please submit another request";
+		}
+		else
+		{
+			$customer = $repository->find($customerId);
+		
+			if($customer)
+			{
+				$randomPwd = $this->getRandomPassword();
+				$encoder = $this->container->get('security.password_encoder');
+				$password = $encoder->encodePassword($customer, $randomPwd);
+				$customer->setPassword($password);
+				
+				$em = $this->getDoctrine()->getManager();
+				$em->flush();
+				
+				$fullname = $customer->getFirstname() . " " . $customer->getLastname();
+				$content = "Dear $fullname, \n\n\n";
+				$content .= "Your temporary password is : $randomPwd\n\n";
+				$content .= "Please make sure you change it the next time you log into your account.\n\n";
+				$content .= "Thank you,\n\n\n";
+				$content .= "GENERAL PRO";
+				$sendStatus = -1;
+				//$response = array();
 
-			# Setup the message
-			$message = \Swift_Message::newInstance()
-			->setSubject("Password reset")
-			->setFrom("do-not-reply@general-pro.com")
-			->setTo($email)
-			->setBody( $content );
+				# Setup the message
+				$message = \Swift_Message::newInstance()
+				->setSubject("Password reset")
+				->setFrom("do-not-reply@general-pro.com")
+				->setTo($email)
+				->setBody($content);
 
-			# Send the message
-			$this->get('mailer')
-			->send($message);
-			
-			
-			$msg = "A temporary password has been sent to your email";
-			$sendStatus = 1;
-			
+				# Send the message
+				$this->get('mailer')
+				->send($message);
+				
+				
+				$msg = "A temporary password has been sent to your email";
+				$sendStatus = 1;
+			}
 		}
         
-		//echo($msg);
-
-        //return $this->json(array('actionStatus' => $sendStatus));
-        return $this->json($msg);
+        
+        return new Response("<h3>$msg</h3>");
     }
 	
+		
 	/**
      * @Route("/reset-password")
      */
@@ -140,15 +147,18 @@ class UserController extends Controller
 			$requestId .= $this->getRandomPassword();
 			$requestId .= $this->getRandomPassword();
 			
+			$timestamp = time();
+			
 			$fullname = $customer->getFirstname() . " " . $customer->getLastname();
 			
-			$url = $this->generateUrl('resetPasswordRequested', array('email'=>$email,'code'=>$customer->getCustomerid(),'requestId'=>$requestId), UrlGeneratorInterface::ABSOLUTE_URL);
+			$url = $this->generateUrl('resetPasswordRequested', array('email'=>$email,'code'=>$customer->getCustomerid(),'tstamp'=>$timestamp,'requestId'=>$requestId), UrlGeneratorInterface::ABSOLUTE_URL);
 			
 			$content = "Dear $fullname, \n\n\n";
 			$content .= "Please follow the link below to reset your password\n\n";
 			$content .= "$url\n\n";
 			$content .= "If you didn’t ask to reset your password, you can ignore this email.\n\n";
-			$content .= "Thanks,\n\n\n";
+			$content .= "Please note that this link will expire in an hour.\n\n";
+			$content .= "Thank you,\n\n\n";
 			$content .= "GENERAL PRO";
 			$sendStatus = -1;
 			//$response = array();

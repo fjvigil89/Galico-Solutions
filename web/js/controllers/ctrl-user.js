@@ -234,7 +234,7 @@ angular.module("gpApp")
             {
 				authService.resetPassword($scope.reset.email)
 				.then(function(response){
-					console.log(response.data);
+					//console.log(response.data);
 					if(response.data.actionStatus==1)
 					{
 						$scope.reset.successful = true;
