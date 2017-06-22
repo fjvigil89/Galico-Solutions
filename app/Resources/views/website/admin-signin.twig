@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} General Pro - Sign in {% endblock %}
+
+{% block body %}
+<div class="pad">
+
+</div>
+
+<div class="container" ng-controller="UserController">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>{{ 'form_login' | trans({}, "messages", lang) }}</h3>
+
+      <form class="form-login" method="POST" id="frm_signin" action="{{ path('app_user_authenticate') }}">
+        <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
+        <div class="form-group">
+          <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
+          <input type="email" id="email" name="email" ng-model="user.email" required>
+        </div>
+        <div class="form-group">
+          <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
+          <input type="password" id="pwd" name="pwd" ng-model="user.pwd" required>
+        </div>
+        <button type="button" class="btn" ng-click="authenticate()">{{ 'form_login' | trans({}, "messages", lang) }}</button>
+        
+        <p class="lost_password"><a href="#pass1" data-toggle="modal" data-target="#forgetpasswordModal" >{{ 'signin_forgetpsw' | trans({}, "messages", lang) }}</a></p>
+        <input type="hidden" ng-model="user.authUrl" value="{{ path('app_user_authenticate')  }}">
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+  <div id="forgetpasswordModal" class="modal fade" role="dialog" ng-controller="UserController">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header bg-yellow">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>{{ 'signin_forgetpsw' | trans({}, "messages", lang) }}</h4>
+        </div>
+        <div class="modal-body">
+          <h5 class="message-error text-bold text-center" ng-bind="reset.error"></h5>
+          <div class="form-group">
+            <input type="email" id="resetEmail" name="resetEmail" ng-model="reset.email" placeholder="{{ 'signin_entermail' | trans({}, "messages", lang) }}" required>
+          </div>
+          <p class="text-center text-bold message-info " ng-if="reset.successful"> {{ 'signin_message_enteremail' | trans({}, "messages", lang) }}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-yellow color-black" ng-click="resetPassword()">
+            <span class="glyphicon glyphicon-ok-circle" title="Close"></span> {{ 'signin_reset' | trans({}, "messages", lang) }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

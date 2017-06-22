@@ -86,6 +86,22 @@ class PageNavigationController extends Controller
             'countries'=> $countries
         ));
     }
+	
+	/**
+     * @Route("/admin-signin")
+     */
+    public function showAdminSigninAction()
+    {
+       return $this->render('website/admin-signin.html.twig');
+    }
+	
+	/**
+     * @Route("/admin-console")
+     */
+    public function showAdminConsoleAction()
+    {
+       return $this->render('website/admin-console.html.twig');
+    }
 
     /**
      * @Route("/translate/{lang}",name="page_translation")
