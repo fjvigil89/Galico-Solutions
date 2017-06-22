@@ -7,6 +7,8 @@ angular.module("gpApp")
             $scope.customerUpdated = {};
             $scope.update = {};
             $scope.newSubscription = {};
+			
+			$scope.showPaymentForm = false;
 
             $scope.newSubscription.customerId = $window.document.getElementById("customerId").value;
 
@@ -220,6 +222,65 @@ angular.module("gpApp")
             }
 
         }
+		
+		$scope.goToPaymentForm = function()
+		{
+			if(GeneralService.isInvalid($scope.newSubscription.planId))
+            {
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_PLAN');
+                $window.document.getElementById("subPlanId").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newSubscription.firstName))
+            {
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CONTACTFIRSTNAME');
+                $window.document.getElementById("subContactFirstName").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newSubscription.lastName))
+            {
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CONTACTLASTNAME');
+                $window.document.getElementById("subContactLastName").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.phonePrimary))
+            {
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_PHONENUMBER');
+                $window.document.getElementById("subContactLastName").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.country))
+            {
+                $scope.newSubscription.error =  $translate.instant('ERR_DASHBOARD_CHOOSECOUNTRY');
+                $window.document.getElementById("subCountry").focus();
+            }
+
+            /*else if(GeneralService.isInvalid($scope.newSubscription.state))
+            {
+                $scope.newSubscription.error = "Please enter a state";
+                $window.document.getElementById("subState").focus();
+            }*/
+
+            else if(GeneralService.isInvalid($scope.newSubscription.city))
+            {
+                $scope.newSubscription.error = $translate.instant('ERR_DASHBOARD_ENTERCITY');
+                $window.document.getElementById("subCity").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newSubscription.address))
+            {
+                $scope.newSubscription.error = $translate.instant('ERR_DASHBOARD_ADDRESSHOUSE');
+                $window.document.getElementById("subAddress").focus();
+            }
+            else
+			{
+				$scope.showPaymentForm = true;
+			}
+			
+		}
+		
+		$scope.goToHouseInfoForm = function()
+		{
+			$scope.showPaymentForm = false;
+		}
 
   
 		

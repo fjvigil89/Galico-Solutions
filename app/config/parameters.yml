@@ -5,8 +5,10 @@ parameters:
     database_name: generalpro
     database_user: root
     database_password: null
-    mailer_transport: gmail
-    mailer_host: smtp.gmail.com
-    mailer_user: "generalpro0617@gmail.com"
-    mailer_password: "gpp@ss-1"
+    mailer_transport: smtp
+    mailer_host: email-smtp.us-east-1.amazonaws.com
+    mailer_user: "AKIAIHK4XCUAV6O6AFJA"
+    mailer_password: "AgXsYzZS6qzVhmBNXovmUMZOvPUhCUkcWv0k09SV5r9E"
+    mailer_encryption: ssl
+    mailer_port: 465
     secret: 88f9db9d576771535c39f66dffed74a8ec1a66df

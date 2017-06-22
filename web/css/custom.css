@@ -192,3 +192,18 @@
     max-height: 73vh;
     overflow-y: auto;
 }
+
+
+#container-payment
+{
+	width:60%;
+	margin-left:20%;
+}
+
+.padding-payment{
+
+    padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 1em;
+	
+}

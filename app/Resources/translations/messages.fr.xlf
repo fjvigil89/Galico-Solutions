@@ -902,10 +902,53 @@
                        <target>ACCORD DE CONTRAT</target>
                 </trans-unit>
 		        <trans-unit id="dash_accept" resname="dash_accept">
-                       <source>I ACCEPT</source>
+                       <source>I AGREE</source>
                        <target>J'ACCEPTE</target>
                 </trans-unit>
-
+			    <trans-unit id="dash_payinfo" resname="dash_payinfo">
+                       <source>Payment information</source>
+                       <target>Informations de paiement</target>
+                </trans-unit>
+		        <trans-unit id="dash_month_amount" resname="dash_month_amount">
+                       <source>Monthly amount:</source>
+                       <target>Montant mensuel:</target>
+                </trans-unit>
+		        <trans-unit id="dash_type_c" resname="dash_type_c">
+                       <source>Type:</source>
+                       <target>Type:</target>
+                </trans-unit>			
+			        <trans-unit id="dash_credit_card" resname="dash_credit_card">
+                       <source>Credit Card</source>
+                       <target>Carte de crédit</target>
+                </trans-unit>
+		        <trans-unit id="dash_name_card" resname="dash_name_card">
+                       <source>Name on Card:</source>
+                       <target>Nom sur carte:</target>
+                </trans-unit>
+		        <trans-unit id="dash_card_type" resname="dash_card_type">
+                       <source>Card Type:</source>
+                       <target>Type de carte:</target>
+                </trans-unit>				
+			        <trans-unit id="dash_card_number" resname="dash_card_number">
+                       <source>Card Number:</source>
+                       <target>Numéro de carte:</target>
+                </trans-unit>
+		        <trans-unit id="dash_expiration_date" resname="dash_expiration_date">
+                       <source>Expiration date:</source>
+                       <target>Date d'expiration:</target>
+                </trans-unit>
+		        <trans-unit id="dash_back" resname="dash_back">
+                       <source>Back</source>
+                       <target>Retour</target>
+                </trans-unit>				
+			        <trans-unit id="dash_submit" resname="dash_submit">
+                       <source>Submit</source>
+                       <target>Soumettre</target>
+                </trans-unit>
+		        <trans-unit id="dash_next" resname="dash_next">
+                       <source>Next</source>
+                       <target>Suivant</target>
+                </trans-unit>	
 				
 <!--End my dashboard-->	
 
