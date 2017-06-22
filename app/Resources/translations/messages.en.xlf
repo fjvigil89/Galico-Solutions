@@ -894,8 +894,8 @@
                        <target>CONTRACT AGREEMENT</target>
                 </trans-unit>
 		        <trans-unit id="dash_accept" resname="dash_accept">
-                       <source>I ACCEPT</source>
-                       <target>I ACCEPT</target>
+                       <source>I AGREE</source>
+                       <target>I AGREE</target>
                 </trans-unit>
 
 			    <trans-unit id="dash_payinfo" resname="dash_payinfo">

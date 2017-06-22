@@ -902,7 +902,7 @@
                        <target>ACCORD DE CONTRAT</target>
                 </trans-unit>
 		        <trans-unit id="dash_accept" resname="dash_accept">
-                       <source>I ACCEPT</source>
+                       <source>I AGREE</source>
                        <target>J'ACCEPTE</target>
                 </trans-unit>
 			    <trans-unit id="dash_payinfo" resname="dash_payinfo">
@@ -939,7 +939,7 @@
                 </trans-unit>
 		        <trans-unit id="dash_back" resname="dash_back">
                        <source>Back</source>
-                       <target>Arrière</target>
+                       <target>Retour</target>
                 </trans-unit>				
 			        <trans-unit id="dash_submit" resname="dash_submit">
                        <source>Submit</source>

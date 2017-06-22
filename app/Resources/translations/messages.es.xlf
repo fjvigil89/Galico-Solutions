@@ -901,7 +901,7 @@
                        <target>ACUERDO DE CONTRATO</target>
                 </trans-unit>
 		        <trans-unit id="dash_accept" resname="dash_accept">
-                       <source>I ACCEPT</source>
+                       <source>I AGREE</source>
                        <target>YO ACEPTO</target>
                 </trans-unit>
 
