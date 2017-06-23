@@ -12,13 +12,13 @@
     <div id="exTab1" class="container">
       <ul  class="nav nav-pills">
         <li class="active">
-          <a  href="#1a" data-toggle="tab">Customer</a>
+          <a  href="#1a" data-toggle="tab">Customers</a>
         </li>
-        <li><a href="#2a" data-toggle="tab">Technician</a>
+        <li><a href="#2a" data-toggle="tab">Technicians</a>
         </li>
-        <li><a href="#3a" data-toggle="tab">Request</a>
+        <li><a href="#3a" data-toggle="tab">Requests</a>
         </li>
-        <li><a href="#4a" data-toggle="tab">Setting</a>
+        <li><a href="#4a" data-toggle="tab">Settings</a>
         </li>
       </ul>
 
@@ -34,7 +34,23 @@
             <br/>
           <!-- Search Customer-------------------------------------------->
                   <form class="form-inline" role="form">
-                    <div class="form-group">
+                   
+                        <div class="form-group">
+                           
+                            <select name="subCountry" id="subCountry" class="form-control" ng-model= "newSubscription.country" >
+                               <!-- {|% for country in countries #%}
+                                    <option value="{|{ country.country }}">{|{ country.country }}</option>
+                                {|% endfor #%}-->
+                                <option value="Canada">Canada</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="United States">United States</option>
+                            </select>
+                        </div>
+
+
+				   <div class="form-group">
                       <label class="sr-only" for="search">Search</label>
                       <input type="text" class="form-control" id="search" placeholder="Search">
                     </div>
@@ -76,8 +92,12 @@
                   <td class="">Antonio</td>
                   <td class="">2</td>
                   <td>
-                    <a href="#" data-target="#" >
-                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                    </a>
+              
+                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                          <span class="glyphicon glyphicon-list-alt" title="Edit" ></span>
                     </a>
 
                   </td>
@@ -90,8 +110,11 @@
                   <td class="">Hector</td>
                   <td class="">10</td>
                   <td>
-                    <a href="#" data-target="#" >
-                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                    </a>
+					<a href="#maison3" data-toggle="modal" data-target="#editModal" >
+                          <span class="glyphicon glyphicon-list-alt" title="Edit" ></span>
                     </a>
                   </td>
                 </tr>
@@ -105,124 +128,34 @@
 
           <!-- End Search Customer-------------------------------------------->
 
-          <div class="panel-body">
+          <!-- div class="panel-body"-->
 
             <!-- Row Profile Customer and Houses Customer-------------------------------------------->
-            <div class="row">
+            <!--div class="row">
               <!-- Profile Customer-------------------------------------------->
-              <div class="col-xs-4 border-yellow no-padding">
 
-                <div class="table-responsive ">
-                  <table class="table" id="tbl-profile">
-                    <thead class="bg-yellow font-header">
-                    <tr>
-                      <th colspan="2">Jhon Rosales
-
-                      </th>
-                      <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                        </a></th>
-
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                    <tr>
-                      <td colspan="3" class="text-center container-img">
-                        <img src="{{ asset('images/page-home/services-05.jpg') }}"  alt="profile" >
-
-                        </td>
-
-                    </tr>
-
-                    <tr style="border: none">
-                      <td>ID</td>
-                      <td >CA24353</td>
-                    </tr>
-                    <tr>
-                      <td class="">Last name</td>
-                      <td class="">Fu</td>
-                    </tr>
-                    <tr>
-                      <td class="">First name</td>
-                      <td class="">Antonio</td>
-                    </tr>
-                    <tr>
-                      <td class="">Email</td>
-                      <td class="">antofuchong@gmail.com</td>
-                    </tr>
-                    <tr>
-                      <td class="">Password</td>
-                      <td class="">*****</td>
-                    </tr>
-                    <tr>
-                      <td class="">Phone (Primary)</td>
-                      <td class="">437545443</td>
-                    </tr>
-                    <tr>
-                      <td class="">Phone (Alternate)</td>
-                      <td class="">34353634</td>
-                    </tr>
-                    <tr>
-                      <td class="">Country</td>
-                      <td class="">Canada</td>
-                    </tr>
-                    <tr>
-                      <td class="">State</td>
-                      <td class="">Quebec</td>
-                    </tr>
-                    <tr>
-                      <td class="">City</td>
-                      <td class="">Montreal</td>
-                    </tr>
-                    <tr>
-                      <td class="">Country</td>
-                      <td class="">Canada</td>
-                    </tr>
-                    <tr>
-                      <td class="">Address</td>
-                      <td class="">4534 av Maisonneuve</td>
-                    </tr>
-                    <tr>
-                      <td class="">ZipCode</td>
-                      <td class="">j3d 2g3</td>
-                    </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-
-
-
-
-
-
-
-
-
-              </div>
               <!-- End Profile Customer-------------------------------------------->
 
 
 
-              <div class="col-xs-1"></div>
+  
 
               <!-- Houses Customer-------------------------------------------->
 
-              <div class="col-xs-7 border-yellow no-padding">
+              <div class="col-xs-12 border-yellow no-padding">
                 <div class="table-responsive">
                   <table class="table table-hover">
 
                     <thead class="bg-yellow font-header">
                     <tr>
-                      <th colspan="6">House information</th>
+                      <th colspan="7">House information</th>
 
                     </tr>
                     </thead>
                     <thead class="bg-light-gray">
                     <tr>
                       <th>Country</th>
+                      <th>City</th>					  
                       <th>Address</th>
                       <th>Plan</th>
                       <th>Due date</th>
@@ -239,8 +172,9 @@
                     <tr>
                       <td class="product-thumbnail text-center">
                         Cuba</td>
+                      <td class="">La habana</td>							
                       <td class="product-name">3233 Av maisonneuve</td>
-                      <td class="">Basic</td>
+				      <td class="">Basic</td>
                       <td class="product-qty">04/25/2017 </td>
                       <td class="">94232232232</td>
                       <td>
@@ -266,7 +200,9 @@
                     <tr>
                       <td class="product-thumbnail text-center">
                       Cuba</td>
+                      <td class="">La habana</td>						  
                       <td class="product-name">4232 av sddsd</td>
+					  
                       <td class="">Basic</td>
                       <td class="">12/25/2017</td>
                       <td class="product-qty">94232232232</td>
@@ -295,102 +231,79 @@
                 </div>
               </div>
               <!-- End Houses Customer-------------------------------------------->
-            </div>
+            
 
             <!-- End Row Profile Customer and Houses Customer-------------------------------------------->
 
               </br></br>
             <!-- Details Services customer-------------------------------------------->
-              <div class="row">
+            <div class="row">
+                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
+                <div class="col col-sm-8 col-md-9">
+                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
+                        <option value=""></option>
+                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" ng-repeat="request in requests">
                 <div class="col-xs-12 no-padding">
-                  <div class="panel-group" id="myAccordion">
-                    <div class="panel border-yellow ">
-                                  <div class="panel-heading bg-yellow ">
-                                    <h4 class="panel-title ">
-                                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse1">JAN 21, 2017 - Plumbing - Closed
+                    <div class="panel-group" id="myAccordion">
+                        <div class="panel border-yellow ">
+                            <div class="panel-heading bg-yellow">
+                                <h4 class="panel-title ">
+                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
+                                </h4>
+                            </div>
 
+                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
+                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                                </div>
 
-                                        <a href="#" data-toggle="modal" data-target="#editserviceModal" >
-                                          <span class="glyphicon glyphicon-edit " title="add"></span>
-                                        </a>
+                                <div class="panel-body" >{[request.details]}
+                                </div>
 
-                                      </a>
-                                    </h4>
-                                  </div>
-
-                                  <div id="collapse1" class="panel-collapse collapse in  ">
-                                    <div class="panel-body"><label class="text-bold">Request date</label> : 04/24/2017 <br/>
-                                      <label class="text-bold">Status</label> : Closed<br/>
-                                      <label class="text-bold">Code Service</label> : PL00023
-                                        </div>
-
-                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </div>
-
-                                    <div class="col-xs-12 no-padding">
-                                      <div class="table-responsive">
+                                <div class="col-xs-12 no-padding">
+                                    <div class="table-responsive">
                                         <table class="table table-hover">
 
-                                          <thead class="bg-light-gray">
-                                          <tr>
-                                            <th>Intervention date</th>
-                                            <th>Technician</th>
-                                            <th>Comments</th>
-                                            <th>Amount</th>
+                                            <thead class="bg-light-gray">
+                                            <tr>
+                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                                
 
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="intervention in request.interventions">
 
-                                          </tr>
-                                          </thead>
-                                          <tbody>
-                                          <tr>
+                                                <td class="" ng-bind="intervention.interventionDate"></td>
+                                                <td class="" ng-bind="intervention.technician"></td>
+                                                <td class="" ng-bind="intervention.comments"></td>
+                                                
 
-                                            <td class="">04/25/2017</td>
-                                            <td class="">Jorge Suarez</td>
-                                            <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
-                                            <td class="">US 15</td>
+                                            </tr>
 
-
-                                          </tr>
-                                          <tr>
-
-                                            <td class="">04/26/2017</td>
-                                            <td class="">Irina Rodriguez</td>
-                                            <td class="">asdfasd asdf asdf asdf sa fas</td>
-                                            <td class="">US 15</td>
-
-
-                                          </tr>
-                                          </tbody>
+                                            </tbody>
                                         </table>
-                                      </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-                                  </div>
                     </div>
-                  </div>
+
+
                 </div>
-              </div>
-
-            <!-- End Details Services customer-------------------------------------------->
 
 
-
-
-
-          </div>
+            </div>
           <!-- End Panel-------------------------------------------->
         </div>
 
@@ -401,7 +314,22 @@
           <br/>
           <!-- Search Technician-------------------------------------------->
           <form class="form-inline" role="form">
-            <div class="form-group">
+             <div class="form-group">
+                           
+                            <select name="subCountry" id="subCountry" class="form-control" ng-model= "newSubscription.country" >
+                               <!-- {|% for country in countries #%}
+                                    <option value="{|{ country.country }}">{|{ country.country }}</option>
+                                {|% endfor #%}-->
+                                <option value="Canada">Canada</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="United States">United States</option>
+                            </select>
+              </div>
+			
+			
+			<div class="form-group">
               <label class="sr-only" for="search-technician">Search</label>
               <input type="text" class="form-control" id="search-technician" placeholder="Search">
             </div>
@@ -452,9 +380,9 @@
                   <td class="">4</td>
                   <td class="">CA35323</td>
                   <td>
-                    <a href="#" data-target="#" >
-                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
-                    </a>
+						<a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
+                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                      </a>
 
                   </td>
                 </tr>
@@ -468,9 +396,9 @@
                   <td class="">10</td>
                   <td class="">CA233232</td>
                   <td>
-                    <a href="#" data-target="#" >
-                      <span class="glyphicon glyphicon-remove" title="Remove" ></span>
-                    </a>
+					<a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
+                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
+                      </a>
                   </td>
                 </tr>
                 </tbody>
@@ -484,164 +412,11 @@
 
           <!-- End Search Technician-------------------------------------------->
 
-          <div class="row">
-            <!-- Profile technician-------------------------------------------->
-
-
-
-            <div class="col-xs-4 border-yellow no-padding">
-
-              <div class="table-responsive ">
-                <table class="table" id="tbl-profile">
-                  <thead class="bg-yellow font-header">
-                  <tr>
-                    <th colspan="2">Technicien Juan Ramirez
-
-                    </th>
-                    <th class="text-right"><a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
-                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                      </a></th>
-
-                  </tr>
-                  </thead>
-
-                  <tbody>
-
-                  <tr>
-                    <td colspan="3" class="text-center container-img">
-                      <img src="{{ asset('images/page-home/services-03.jpg') }}"  alt="profile" >
-
-                    </td>
-
-                  </tr>
-
-                  <tr style="border: none">
-                    <td>Code ID</td>
-                    <td >CA35323</td>
-                  </tr>
-                  <tr>
-                    <td class="">Last name</td>
-                    <td class="">Ramirez</td>
-                  </tr>
-                  <tr>
-                    <td class="">First name</td>
-                    <td class="">Juan</td>
-                  </tr>
-                  <tr>
-                    <td class="">Email</td>
-                    <td class="">juanramirez@gmail.com</td>
-                  </tr>
-
-                  <tr>
-                    <td class="">Phone (Primary)</td>
-                    <td class="">437545443</td>
-                  </tr>
-                  <tr>
-                    <td class="">Phone (Alternate)</td>
-                    <td class="">34353634</td>
-                  </tr>
-                  <tr>
-                    <td class="">Profesion</td>
-                    <td class="">Engineer</td>
-                  </tr>
-                  <tr>
-                    <td class="">Serv. Provide</td>
-                    <td class="">Plumbing</td>
-                  </tr>
-                  <tr>
-                    <td class="">Country</td>
-                    <td class="">Cuba</td>
-                  </tr>
-                  <tr>
-                    <td class="">State</td>
-                    <td class="">Matanzas</td>
-                  </tr>
-                  <tr>
-                    <td class="">City</td>
-                    <td class="">La Habana</td>
-                  </tr>
-
-                  <tr>
-                    <td class="">Address</td>
-                    <td class="">4534 av Maisonneuve</td>
-                  </tr>
-                  <tr>
-                    <td class="">ZipCode</td>
-                    <td class="">j3d 2g3</td>
-                  </tr>
-                  <tr>
-                    <td class="">Mon-Fri</td>
-                    <td class="">10h - 15h</td>
-                  </tr>
-                  <tr>
-                    <td class="">Sat</td>
-                    <td class="">11h - 13h</td>
-                  </tr>
-                  <tr>
-                    <td class="">Sun</td>
-                    <td class="">12h - 14h</td>
-                  </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- End Profile technician-------------------------------------------->
-
-
-
-            <div class="col-xs-1"></div>
+<div class="col-xs-12 border-yellow no-padding">
 
             <!-- technician services-------------------------------------------->
 
-            <div class="col-xs-7 border-yellow no-padding">
+            
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead class="bg-yellow font-header">
@@ -694,7 +469,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+           
             <!-- End technician services-------------------------------------------->
           </div>
 
@@ -704,78 +479,73 @@
 
           <!-- Details technician services-------------------------------------------->
         </br>
-          <div class="row">
-            <div class="col-xs-12 no-padding">
-              <div class="panel-group" id="myAccordion">
-                <div class="panel border-yellow ">
-                  <div class="panel-heading bg-yellow ">
-                    <h4 class="panel-title ">
-                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse2">JAN 21, 2017 - Plumbing - Closed
-
-
-                        <a href="#" data-toggle="modal" data-target="#editserviceModal" >
-                          <span class="glyphicon glyphicon-edit " title="add"></span>
-                        </a>
-
-                      </a>
-                    </h4>
-                  </div>
-
-                  <div id="collapse2" class="panel-collapse collapse in  ">
-                    <div class="panel-body"><label class="text-bold">Request date</label> : 04/24/2017 <br/>
-                      <label class="text-bold">Status</label> : Closed<br/>
-                      <label class="text-bold">Code Service</label> : PL00023
-                    </div>
-
-                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-
-                    <div class="col-xs-12 no-padding">
-                      <div class="table-responsive">
-                        <table class="table table-hover">
-
-                          <thead class="bg-light-gray">
-                          <tr>
-                            <th>Intervention date</th>
-                            <th>Technician</th>
-                            <th>Comments</th>
-                            <th>Amount</th>
-
-
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-
-                            <td class="">04/25/2017</td>
-                            <td class="">Jorge Suarez</td>
-                            <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
-                            <td class="">US 15</td>
-
-
-                          </tr>
-                          <tr>
-
-                            <td class="">04/26/2017</td>
-                            <td class="">Irina Rodriguez</td>
-                            <td class="">asdfasd asdf asdf asdf sa fas</td>
-                            <td class="">US 15</td>
-
-
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
-                  </div>
+                <div class="row">
+                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
+                <div class="col col-sm-8 col-md-9">
+                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
+                        <option value=""></option>
+                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
+                    </select>
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="row" ng-repeat="request in requests">
+                <div class="col-xs-12 no-padding">
+                    <div class="panel-group" id="myAccordion">
+                        <div class="panel border-yellow ">
+                            <div class="panel-heading bg-yellow">
+                                <h4 class="panel-title ">
+                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
+                                </h4>
+                            </div>
 
+                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
+                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                                </div>
+
+                                <div class="panel-body" >{[request.details]}
+                                </div>
+
+                                <div class="col-xs-12 no-padding">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+
+                                            <thead class="bg-light-gray">
+                                            <tr>
+                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                                
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="intervention in request.interventions">
+
+                                                <td class="" ng-bind="intervention.interventionDate"></td>
+                                                <td class="" ng-bind="intervention.technician"></td>
+                                                <td class="" ng-bind="intervention.comments"></td>
+                                                
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
           <!-- End Details technician services-------------------------------------------->
 
@@ -803,9 +573,25 @@
               <input type="text" class="form-control" id="client" placeholder="Client">
             </div>
             <div class="form-group">
-              <label class="sr-only" for="service1">Service</label>
-              <input type="text" class="form-control" id="service1" placeholder="Service">
-            </div>
+                           
+                            <select name="service" id="service" class="form-control" ng-model= "newSubscription.country" >
+
+                                <option value="Plumbing">Plumbing</option>
+                                <option value="Electricity">Electricity</option>
+                                <option value="Doors and Windows">Doors and Windows</option>
+                                <option value="Locksmith">Locksmith</option>
+                                <option value="United States">United States</option>
+								<option value="Appliances">Appliances</option>
+								<option value="AC/Heating">AC/Heating</option>
+								<option value="Nursing Care">Nursing Care</option>
+								<option value="Child Care">Child Care</option>
+								<option value="Lawn maintenance">Lawn maintenance</option>
+								<option value="Cleaning services">Cleaning services</option>
+								<option value="IT support and services">IT support and services</option>
+								<option value="Painting Services">Painting Services</option>								
+								
+                            </select>
+                        </div>
 
             <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
           </form>
@@ -818,11 +604,18 @@
               <table class="table table-hover">
                 <thead class="bg-yellow">
                 <tr>
-                  <th colspan ="8">Request</th>
-
+                  <th colspan ="7">Request</th>
+				<th>
+				<a href="#" data-toggle="modal" data-target="#addserviceModal" >
+                 <span class="glyphicon glyphicon-plus" title="add service" ></span>
+               </a>
+				</th>
 
 
                 </tr>
+				
+
+				
                 </thead>
                 <thead class="bg-light-gray">
                 <tr>
@@ -878,74 +671,73 @@
           <!--End Panel Request-------------------------------------------->
           <!--Detatails Panel Request-------------------------------------------->
           </br>
-          <div class="row">
-            <div class="col-xs-12 no-padding">
-              <div class="panel-group" id="myAccordion">
-                <div class="panel border-yellow ">
-                  <div class="panel-heading bg-yellow ">
-                    <h4 class="panel-title ">
-                      <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse3">JAN 21, 2017 - Plumbing - Closed
-
-
-
-                      </a>
-                    </h4>
-                  </div>
-
-                  <div id="collapse3" class="panel-collapse collapse in  ">
-                    <div class="panel-body"><label class="text-bold">Request date</label> : 04/24/2017 <br/>
-                      <label class="text-bold">Status</label> : Closed<br/>
-                      <label class="text-bold">Code Service</label> : PL00023
-                    </div>
-
-                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-
-                    <div class="col-xs-12 no-padding">
-                      <div class="table-responsive">
-                        <table class="table table-hover">
-
-                          <thead class="bg-light-gray">
-                          <tr>
-                            <th>Intervention date</th>
-                            <th>Technician</th>
-                            <th>Comments</th>
-                            <th>Amount</th>
-
-
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-
-                            <td class="">04/25/2017</td>
-                            <td class="">Jorge Suarez</td>
-                            <td class="">asfgasd a asda asdf asdfasdfasasdfasf</td>
-                            <td class="">US 15</td>
-
-
-                          </tr>
-                          <tr>
-
-                            <td class="">04/26/2017</td>
-                            <td class="">Irina Rodriguez</td>
-                            <td class="">asdfasd asdf asdf asdf sa fas</td>
-                            <td class="">US 15</td>
-
-
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
-                  </div>
+            <div class="row">
+                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
+                <div class="col col-sm-8 col-md-9">
+                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
+                        <option value=""></option>
+                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
+                    </select>
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="row" ng-repeat="request in requests">
+                <div class="col-xs-12 no-padding">
+                    <div class="panel-group" id="myAccordion">
+                        <div class="panel border-yellow ">
+                            <div class="panel-heading bg-yellow">
+                                <h4 class="panel-title ">
+                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
+                                </h4>
+                            </div>
+
+                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
+                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                                </div>
+
+                                <div class="panel-body" >{[request.details]}
+                                </div>
+
+                                <div class="col-xs-12 no-padding">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+
+                                            <thead class="bg-light-gray">
+                                            <tr>
+                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                                
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="intervention in request.interventions">
+
+                                                <td class="" ng-bind="intervention.interventionDate"></td>
+                                                <td class="" ng-bind="intervention.technician"></td>
+                                                <td class="" ng-bind="intervention.comments"></td>
+                                                
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
 
           <!--End Detatails Panel Request-------------------------------------------->
@@ -1196,7 +988,12 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add Customer</h4>
         </div>
-        <div class="modal-body"> <div class="form-group">
+        <div class="modal-body"> 
+		
+          <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+
+
+		<div class="form-group">
             <label for="codeid">ID:</label>
             <input type="text" class="form-control" id="codeid" value="" >
           </div>
@@ -1265,10 +1062,11 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit</h4>
         </div>
-        <div class="modal-body"> <div class="form-group">
-            <label for="codeid">ID:</label>
-            <input type="text" class="form-control" id="codeid" value="CAD14253" >
-          </div>
+        <div class="modal-body"> 
+
+          <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+
+
 
           <div class="form-group">
             <label for="lastname">Last Name:</label>
@@ -1338,6 +1136,10 @@
         </div>
         <div class="modal-body">
 
+
+		
+		
+		
           <div class="form-group">
             <label for="editplan">Plan:</label>
             <input type="text" class="form-control" id="editplan" value="Basic">
@@ -1481,28 +1283,53 @@
           </div>
           <div class="form-group">
             <label for="add-service-service">Service:</label>
-            <input type="text" class="form-control" id="add-service-service" value="" >
+            
+                           
+                            <select name="service" id="service" class="form-control" ng-model= "newSubscription.country" >
+
+                                <option value="Plumbing">Plumbing</option>
+                                <option value="Electricity">Electricity</option>
+                                <option value="Doors and Windows">Doors and Windows</option>
+                                <option value="Locksmith">Locksmith</option>
+                                <option value="United States">United States</option>
+								<option value="Appliances">Appliances</option>
+								<option value="AC/Heating">AC/Heating</option>
+								<option value="Nursing Care">Nursing Care</option>
+								<option value="Child Care">Child Care</option>
+								<option value="Lawn maintenance">Lawn maintenance</option>
+								<option value="Cleaning services">Cleaning services</option>
+								<option value="IT support and services">IT support and services</option>
+								<option value="Painting Services">Painting Services</option>								
+								
+                            </select>
+                       
           </div>
-          <div class="form-group">
-            <label for="add-service-status">Status:</label>
-            <input type="text" class="form-control" id="add-service-status" value="" >
-          </div>
-          <div class="form-group">
-            <label for="add-service-details">Details:</label>
-            <input type="text" class="form-control" id="add-service-details" value="">
-          </div>
+
+			<div class="form-group">
+			  <label for="details">Details:</label>
+			  <textarea class="form-control" rows="5" id="details"></textarea>
+			</div>
           <div class="form-group">
             <label for="add-service-intervention-date">Intervention date:</label>
             <input type="date" class="form-control" id="add-service-intervention-date" value="" >
           </div>
-          <div class="form-group">
-            <label for="add-service-technician">Technician:</label>
-            <input type="text" class="form-control" id="add-service-technician" value="" >
+            
+			<div class="form-group">
+			<label for="add-service-service">Technician:</label>
+            
+                           
+                            <select name="technician" id="technician" class="form-control" ng-model= "newSubscription.country" >
+
+                                <option value="Carlos">Carlos</option>
+                                <option value="Jose">Jose</option>
+                                <option value="Jhon">Jhon</option>
+                                <option value="David">David</option>
+             							
+								
+                            </select>
+                       
           </div>
-          <div class="form-group">
-            <label for="add-service-comments">Comments:</label>
-            <input type="text" class="form-control" id="add-service-comments" value="" >
-          </div>
+
           <div class="form-group">
             <label for="add-service-amount">Amount:</label>
             <input type="number" class="form-control" id="add-service-amount" value="" >
@@ -1638,10 +1465,10 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Add Technicien</h4>
         </div>
-        <div class="modal-body"> <div class="form-group">
-            <label for="add-tech-codeid">Code ID</label>
-            <input type="text" class="form-control" id="add-tech-codeid" value="" >
-          </div>
+		<div class="modal-body"> 
+		
+          <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+
 
           <div class="form-group">
             <label for="add-tech-lastname">Last Name:</label>
@@ -1719,10 +1546,8 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Technician</h4>
         </div>
-        <div class="modal-body"> <div class="form-group">
-            <label for="edit-tech-codeid">Code ID</label>
-            <input type="text" class="form-control" id="edit-tech-codeid" value="CA35323" >
-          </div>
+        <div class="modal-body"> 
+          <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
 
           <div class="form-group">
             <label for="edit-tech-lastname">Last Name:</label>
