@@ -27,9 +27,8 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-
-
-
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\Loader\ArrayLoader;
 
 $session = new Session();
 
@@ -73,7 +72,55 @@ class UserController extends Controller
      */
     public function resetPasswordRequestedAction(Request $request)
     {
-        $msg = "The password could not be reset. Please try again.";
+        //--SET UP TRANSLATION
+		$lang = $this->get('session')->get('lang');
+		$translator = new Translator($lang);
+		$translator->addLoader('array', new ArrayLoader());
+		
+		$translator->addResource('array', array('Reset_failed' => 'Le mot de passse n\'a pas pu être réinitialisé.Veuillez réessayer.',), 'fr');
+		$translator->addResource('array', array('Reset_failed' => 'The password could not be reset. Please try again.',), 'en');
+		$translator->addResource('array', array('Reset_failed' => 'La contraseña no puede ser reiniciado. Por favor, inténtelo de nuevo',), 'es');
+		$resetFailed = $translator->trans('Reset_failed');
+		
+		$translator->addResource('array', array('Link_expired' => 'Le lien a expiré. Veuillez faire une autre demande de réinitialisation de mot de passe.',), 'fr');
+		$translator->addResource('array', array('Link_expired' => 'The link has expired. Please submit another request.',), 'en');
+		$translator->addResource('array', array('Link_expired' => 'El enlace ha caducado. Por favor, haga otra solicitud de restablecimiento de contraseña',), 'es');
+		$linkExpired = $translator->trans('Link_expired');
+		
+		$translator->addResource('array', array('Hi' => 'Bonjour',), 'fr');
+		$translator->addResource('array', array('Hi' => 'Hello',), 'en');
+		$translator->addResource('array', array('Hi' => 'Hola',), 'es');
+		$hi = $translator->trans('Hi');
+		
+		$translator->addResource('array', array('TemporaryPassword' => 'Votre mot de passe temporaire est',), 'fr');
+		$translator->addResource('array', array('TemporaryPassword' => 'Your temporary password is',), 'en');
+		$translator->addResource('array', array('TemporaryPassword' => 'Su contraseña temporal es',), 'es');
+		$temporaryPassword = $translator->trans('TemporaryPassword');
+		
+		$translator->addResource('array', array('ChangeRequired' => 'Assurez-vous de le modifier la prochaine fois que vous vous connectez à votre compte',), 'fr');
+		$translator->addResource('array', array('ChangeRequired' => 'Please make sure you change it the next time you log into your account',), 'en');
+		$translator->addResource('array', array('ChangeRequired' => 'Asegúrese de cambiarla la próxima vez que inicie sesión en su cuenta',), 'es');
+		$changeRequired = $translator->trans('ChangeRequired');
+		
+		$translator->addResource('array', array('ThankYou' => 'Merci',), 'fr');
+		$translator->addResource('array', array('ThankYou' => 'Thank you',), 'en');
+		$translator->addResource('array', array('ThankYou' => 'Gracias',), 'es');
+		$thankYou = $translator->trans('ThankYou');
+		
+		$translator->addResource('array', array('PasswordSent' => 'Un mot de passe temporaire vous a été envoyé par courriel',), 'fr');
+		$translator->addResource('array', array('PasswordSent' => 'A temporary password has been sent to your email',), 'en');
+		$translator->addResource('array', array('PasswordSent' => 'Una contraseña temporal se ha enviado a su correo electrónico',), 'es');
+		$passwordSent = $translator->trans('PasswordSent');
+		
+		$translator->addResource('array', array('PasswordReset' => 'Réinitialisation de mot de passe',), 'fr');
+		$translator->addResource('array', array('PasswordReset' => 'Password reset',), 'en');
+		$translator->addResource('array', array('PasswordReset' => 'restablecimiento de contraseña',), 'es');
+		$passwordReset = $translator->trans('PasswordReset');
+	
+		//--END ::
+		
+		
+		$msg = $resetFailed;
 		$email = $request->query->get('email');
         $customerId = $request->query->get('code');
         $requestTime = $request->query->get('tstamp');
@@ -82,7 +129,7 @@ class UserController extends Controller
 		$now = time();
 		if($now-$requestTime>3600) //The request link is for an hour
 		{
-			$msg = "The link has expired. Please submit another request";
+			$msg = $linkExpired;
 		}
 		else
 		{
@@ -99,17 +146,17 @@ class UserController extends Controller
 				$em->flush();
 				
 				$fullname = $customer->getFirstname() . " " . $customer->getLastname();
-				$content = "Dear $fullname, \n\n\n";
-				$content .= "Your temporary password is : $randomPwd\n\n";
-				$content .= "Please make sure you change it the next time you log into your account.\n\n";
-				$content .= "Thank you,\n\n\n";
+				$content = "$hi $fullname, \n\n\n";
+				$content .= "$temporaryPassword : $randomPwd\n\n";
+				$content .= "$changeRequired.\n\n";
+				$content .= "$thankYou,\n\n\n";
 				$content .= "GENERAL PRO";
 				$sendStatus = -1;
 				//$response = array();
 
 				# Setup the message
 				$message = \Swift_Message::newInstance()
-				->setSubject("Password reset")
+				->setSubject($passwordReset)
 				->setFrom("do-not-reply@general-pro.com")
 				->setTo($email)
 				->setBody($content);
@@ -119,7 +166,7 @@ class UserController extends Controller
 				->send($message);
 				
 				
-				$msg = "A temporary password has been sent to your email";
+				$msg = $passwordSent;
 				$sendStatus = 1;
 			}
 		}
