@@ -117,6 +117,7 @@ class UserController extends Controller
 		$translator->addResource('array', array('PasswordReset' => 'restablecimiento de contraseña',), 'es');
 		$passwordReset = $translator->trans('PasswordReset');
 	
+		
 		//--END ::
 		
 		
@@ -181,7 +182,42 @@ class UserController extends Controller
      */
     public function resetPasswordAction(Request $request)
     {
-        $email = $request->query->get('email');
+               //--SET UP TRANSLATION
+		$lang = $this->get('session')->get('lang');
+		$translator = new Translator($lang);
+		$translator->addLoader('array', new ArrayLoader());
+		
+		$translator->addResource('array', array('Click_Link' => 'Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe..',), 'fr');
+		$translator->addResource('array', array('Click_Link' => 'Please click on the link below to reset your password.',), 'en');
+		$translator->addResource('array', array('Click_Link' => 'Haga clic en el enlace de abajo para restablecer su contraseña.',), 'es');
+		$clickLink = $translator->trans('Click_Link');
+		
+		$translator->addResource('array', array('Reset_Password' => 'Si vous n avez pas demandé de réinitialiser votre mot de passe, vous pouvez ignorer ce courrier électronique.',), 'fr');
+		$translator->addResource('array', array('Reset_Password' => 'If you didn’t ask to reset your password, you can ignore this email.',), 'en');
+		$translator->addResource('array', array('Reset_Password' => 'Si no solicitó que restableciera su contraseña, puede ignorar este correo electrónico.',), 'es');
+		$resetPassword = $translator->trans('Reset_Password');
+		
+		$translator->addResource('array', array('Hi' => 'Bonjour',), 'fr');
+		$translator->addResource('array', array('Hi' => 'Hello',), 'en');
+		$translator->addResource('array', array('Hi' => 'Hola',), 'es');
+		$hi = $translator->trans('Hi');
+		
+		$translator->addResource('array', array('Expire_Password' => 'Veuillez noter que ce lien expirera dans une heure.',), 'fr');
+		$translator->addResource('array', array('Expire_Password' => 'Please note that this link will expire in an hour.',), 'en');
+		$translator->addResource('array', array('Expire_Password' => 'Tenga en cuenta que este enlace expirará en una hora.',), 'es');
+		$expirePassword = $translator->trans('Expire_Password');
+				
+		$translator->addResource('array', array('ThankYou' => 'Merci',), 'fr');
+		$translator->addResource('array', array('ThankYou' => 'Thank you',), 'en');
+		$translator->addResource('array', array('ThankYou' => 'Gracias',), 'es');
+		$thankYou = $translator->trans('ThankYou');
+	
+		
+		//--END ::
+
+
+
+	   $email = $request->query->get('email');
         
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         
@@ -200,12 +236,12 @@ class UserController extends Controller
 			
 			$url = $this->generateUrl('resetPasswordRequested', array('email'=>$email,'code'=>$customer->getCustomerid(),'tstamp'=>$timestamp,'requestId'=>$requestId), UrlGeneratorInterface::ABSOLUTE_URL);
 			
-			$content = "Dear $fullname, \n\n\n";
-			$content .= "Please follow the link below to reset your password\n\n";
+			$content = "$hi $fullname, \n\n\n";
+			$content .= "$clickLink\n\n";
 			$content .= "$url\n\n";
-			$content .= "If you didn’t ask to reset your password, you can ignore this email.\n\n";
-			$content .= "Please note that this link will expire in an hour.\n\n";
-			$content .= "Thank you,\n\n\n";
+			$content .= "$resetPassword\n\n";
+			$content .= "$expirePassword\n\n";
+			$content .= "$thankYou,\n\n\n";
 			$content .= "GENERAL PRO";
 			$sendStatus = -1;
 			//$response = array();
