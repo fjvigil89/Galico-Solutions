@@ -12,13 +12,13 @@
     <div id="exTab1" class="container">
       <ul  class="nav nav-pills">
         <li class="active">
-          <a  href="#1a" data-toggle="tab">Customers</a>
+          <a  href="#1a" data-toggle="tab">{{ 'admin_console_customers' | trans({}, "messages", lang) }}</a>
         </li>
-        <li><a href="#2a" data-toggle="tab">Technicians</a>
+        <li><a href="#2a" data-toggle="tab">{{ 'admin_console_technicians' | trans({}, "messages", lang) }}</a>
         </li>
-        <li><a href="#3a" data-toggle="tab">Requests</a>
+        <li><a href="#3a" data-toggle="tab">{{ 'admin_console_requests' | trans({}, "messages", lang) }}</a>
         </li>
-        <li><a href="#4a" data-toggle="tab">Settings</a>
+        <li><a href="#4a" data-toggle="tab">{{ 'admin_console_settings' | trans({}, "messages", lang) }}</a>
         </li>
       </ul>
 
@@ -51,8 +51,8 @@
 
 
 				   <div class="form-group">
-                      <label class="sr-only" for="search">Search</label>
-                      <input type="text" class="form-control" id="search" placeholder="Search">
+                      <label class="sr-only" for="search">{{ 'admin_console_search' | trans({}, "messages", lang) }}</label>
+                      <input type="text" class="form-control" id="search" placeholder={{ 'admin_console_search' | trans({}, "messages", lang) }}>
                     </div>
 
                     <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
@@ -65,17 +65,17 @@
               <table class="table table-hover">
                 <thead class="bg-yellow font-header">
                 <tr>
-                  <th colspan="6">Customer information</th>
+                  <th colspan="6">{{ 'admin_console_custinfo' | trans({}, "messages", lang) }}</th>
 
                 </tr>
                 </thead>
                 <thead class="bg-light-gray">
                 <tr>
-                  <th>Code Id</th>
-                  <th>Country</th>
-                  <th>Last Name</th>
-                  <th>Name</th>
-                  <th>Qty House</th>
+                  <th>{{ 'admin_console_codeid' | trans({}, "messages", lang) }}</th>
+                  <th>{{ 'menu_country' | trans({}, "messages", lang) }}</th>
+                  <th>{{ 'form_lastname' | trans({}, "messages", lang) }}</th>
+                  <th>{{ 'form_name' | trans({}, "messages", lang) }}</th>
+                  <th>{{ 'admin_console_house' | trans({}, "messages", lang) }}</th>
                   <th>
                     <a href="#" data-toggle="modal" data-target="#addcustomerModal" >
                       <span class="glyphicon glyphicon-plus" title="add"></span>
@@ -986,7 +986,7 @@
       <div class="modal-content">
         <div class="modal-header bg-yellow">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Customer</h4>
+          <h4 class="modal-title">{{ 'admin_console_addcustomer' | trans({}, "messages", lang) }}</h4>
         </div>
         <div class="modal-body"> 
 		
@@ -999,54 +999,54 @@
           </div>
 
           <div class="form-group">
-            <label for="lastname">Last Name:</label>
+            <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="lastname" value="">
           </div>
           <div class="form-group">
-            <label for="lastname">Name:</label>
+            <label for="lastname">{{ 'form_name' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="lastname" value="" >
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
             <input type="email" class="form-control" id="email" value="" >
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
+            <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
             <input type="password" class="form-control" id="pwd" value="">
           </div>
           <div class="form-group">
-            <label for="phonePrimary">Phone (Primary):</label>
+            <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="phonePrimary" value="" >
           </div>
           <div class="form-group">
-            <label for="phonealternate">Phone (Alternate):</label>
+            <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="phonealternate" value="" >
           </div>
           <div class="form-group">
-            <label for="country">Country:</label>
+            <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="country" value="" >
           </div>
           <div class="form-group">
-            <label for="state">State:</label>
+            <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="state" value="" >
           </div>
           <div class="form-group">
-            <label for="city">City:</label>
+            <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="city" value="" >
           </div>
           <div class="form-group">
-            <label for="address">Address:</label>
+            <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="address" value="" >
           </div>
           <div class="form-group">
-            <label for="zipCode">ZipCode:</label>
+            <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="zipCode" value="" >
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> Add
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
           </button>
         </div>
       </div>
@@ -1060,7 +1060,7 @@
       <div class="modal-content">
         <div class="modal-header bg-yellow">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit</h4>
+          <h4 class="modal-title">{{ 'dash_edit' | trans({}, "messages", lang) }}</h4>
         </div>
         <div class="modal-body"> 
 
@@ -1069,54 +1069,54 @@
 
 
           <div class="form-group">
-            <label for="lastname">Last Name:</label>
+            <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="lastname" value="Fu">
           </div>
           <div class="form-group">
-            <label for="lastname">Name:</label>
-            <input type="text" class="form-control" id="lastname" value="Antonio" >
+            <label for="name">{{ 'form_name' | trans({}, "messages", lang) }}</label>
+            <input type="text" class="form-control" id="name" value="Antonio" >
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
             <input type="email" class="form-control" id="email" value="antofuchong@gmail.com" >
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
+            <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
             <input type="password" class="form-control" id="pwd" value="*****">
           </div>
           <div class="form-group">
-            <label for="phonePrimary">Phone (Primary):</label>
+            <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="phonePrimary" value="534545443" >
           </div>
           <div class="form-group">
-            <label for="phonealternate">Phone (Alternate):</label>
+            <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="phonealternate" value="437545443" >
           </div>
           <div class="form-group">
-            <label for="country">Country:</label>
+            <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}:</label>
             <input type="text" class="form-control" id="country" value="Canada" >
           </div>
           <div class="form-group">
-            <label for="state">State:</label>
+            <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="state" value="Quebec" >
           </div>
           <div class="form-group">
-            <label for="city">City:</label>
+            <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="city" value="Montreal" >
           </div>
           <div class="form-group">
-            <label for="address">Address:</label>
+            <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="address" value="4534 av Maisonneuve" >
           </div>
           <div class="form-group">
-            <label for="zipCode">ZipCode:</label>
+            <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="zipCode" value="j3d 2g3" >
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> Save
+            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang) }}
           </button>
         </div>
       </div>

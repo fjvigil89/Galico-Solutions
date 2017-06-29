@@ -560,7 +560,10 @@
                       <source>All services</source>
                       <target>Todos los servicios</target>
                </trans-unit>
-
+		        <trans-unit id="admin_console_addcustomer" resname="admin_console_addcustomer">
+                       <source>Add Customers</source>
+                       <target>Adicionar Cliente</target>
+                </trans-unit>
 
 
 
@@ -951,10 +954,50 @@
                 </trans-unit>				
 
 				
-<!--End my dashboard-->		
+<!--End my dashboard-->
+
+<!--Admin-console-->
+
+		        <trans-unit id="admin_console_customers" resname="admin_console_customers">
+                       <source>Customers</source>
+                       <target>Clientes</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_technicians" resname="admin_console_technicians">
+                       <source>Technicians</source>
+                       <target>Técnicos </target>
+                </trans-unit>
+			        <trans-unit id="admin_console_requests" resname="admin_console_requests">
+                       <source>Requests</source>
+                       <target>Consultas</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_settings" resname="admin_console_settings">
+                       <source>Settings</source>
+                       <target>Parámetros</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_search" resname="admin_console_search">
+                       <source>Search</source>
+                       <target>Búsqueda</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_custinfo" resname="admin_console_custinfo">
+                       <source>Customer information</source>
+                       <target>Información del Cliente</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_codeid" resname="admin_console_codeid">
+                       <source>Code id</source>
+                       <target>Código id</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_house" resname="admin_console_house">
+                       <source>Qty House</source>
+                       <target>Cantidad Casas</target>
+                </trans-unit>
 
 
 
+
+
+
+
+<!--End Admin-console-->
 
 
         </body>

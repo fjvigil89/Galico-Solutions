@@ -945,7 +945,50 @@
 <!--End my dashboard-->	
 
 
+<!--Admin-console-->
 
+		        <trans-unit id="admin_console_customers" resname="admin_console_customers">
+                       <source>Customers</source>
+                       <target>Customers</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_technicians" resname="admin_console_technicians">
+                       <source>Technicians</source>
+                       <target>Technicians </target>
+                </trans-unit>
+			        <trans-unit id="admin_console_requests" resname="admin_console_requests">
+                       <source>Requests</source>
+                       <target>Requests</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_settings" resname="admin_console_settings">
+                       <source>Settings</source>
+                       <target>Settings</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_search" resname="admin_console_search">
+                       <source>Search</source>
+                       <target>Search</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_custinfo" resname="admin_console_custinfo">
+                       <source>Customer information</source>
+                       <target>Customer information</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_codeid" resname="admin_console_codeid">
+                       <source>Code id</source>
+                       <target>Code id</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_house" resname="admin_console_house">
+                       <source>Qty House</source>
+                       <target>Qty House</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_addcustomer" resname="admin_console_addcustomer">
+                       <source>Add Customers</source>
+                       <target>Add Customers</target>
+                </trans-unit>
+
+
+
+
+
+<!--End Admin-console-->
 
 
 
