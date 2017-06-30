@@ -990,12 +990,26 @@
                        <source>Qty House</source>
                        <target>Cantidad Casas</target>
                 </trans-unit>
-
-
-
-
-
-
+		        <trans-unit id="admin_console_houseinfo" resname="admin_console_houseinfo">
+                       <source>House information</source>
+                       <target>Información de la casa</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_duedate" resname="admin_console_duedate">
+                       <source>Due date</source>
+                       <target>Fecha de vencimiento</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_agentnumber" resname="admin_console_agentnumber">
+                       <source>Local agent number</source>
+                       <target>Número de agente local</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_addmaison" resname="admin_console_addmaison">
+                       <source>Add house</source>
+                       <target>Adicionar Casa</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_subscriptiondate" resname="admin_console_subscriptiondate">
+                       <source>Subscription date</source>
+                       <target>Fecha de suscripción</target>
+                </trans-unit>
 
 <!--End Admin-console-->
 

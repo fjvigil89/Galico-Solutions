@@ -983,10 +983,26 @@
                        <source>Add Customers</source>
                        <target>Add Customers</target>
                 </trans-unit>
-
-
-
-
+		        <trans-unit id="admin_console_houseinfo" resname="admin_console_houseinfo">
+                       <source>House information</source>
+                       <target>House information</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_duedate" resname="admin_console_duedate">
+                       <source>Due date</source>
+                       <target>Due date</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_agentnumber" resname="admin_console_agentnumber">
+                       <source>Local agent number</source>
+                       <target>Local agent number</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_addmaison" resname="admin_console_addmaison">
+                       <source>Add house</source>
+                       <target>Add house</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_subscriptiondate" resname="admin_console_subscriptiondate">
+                       <source>Subscription date</source>
+                       <target>Subscription date</target>
+                </trans-unit>
 
 <!--End Admin-console-->
 

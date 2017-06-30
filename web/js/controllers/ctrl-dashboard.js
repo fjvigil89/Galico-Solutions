@@ -7,8 +7,9 @@ angular.module("gpApp")
             $scope.customerUpdated = {};
             $scope.update = {};
             $scope.newSubscription = {};
-			
-			$scope.showPaymentForm = false;
+            $scope.showPaymentForm = false;
+			$scope.showServiceForm = false;
+            $scope.showInvoice = false;
 
             $scope.newSubscription.customerId = $window.document.getElementById("customerId").value;
 
@@ -282,8 +283,26 @@ angular.module("gpApp")
 			$scope.showPaymentForm = false;
 		}
 
-  
-		
+        $scope.gotoserviceForm = function()
+        {
+            $scope.showServiceForm = true;
+        }
+
+        $scope.gotodetailsForm = function()
+        {
+            $scope.showServiceForm = false;
+        }
+
+
+        $scope.gotopaysForm = function()
+        {
+            $scope.showInvoice = false;
+        }
+
+        $scope.gotoinvoiceForm = function()
+        {
+            $scope.showInvoice = true;
+        }
 		// CALL METHODS ONLOAD
 
         $scope.getCustomerInformation();

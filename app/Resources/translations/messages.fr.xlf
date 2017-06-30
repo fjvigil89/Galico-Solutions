@@ -990,10 +990,26 @@
                        <source>Add Customers</source>
                        <target>Ajouter des clients</target>
                 </trans-unit>
-
-
-
-
+		        <trans-unit id="admin_console_houseinfo" resname="admin_console_houseinfo">
+                       <source>House information</source>
+                       <target>Informations sur la maison</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_duedate" resname="admin_console_duedate">
+                       <source>Due date</source>
+                       <target>Date d'échéance</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_agentnumber" resname="admin_console_agentnumber">
+                       <source>Local agent number</source>
+                       <target>Numéro d'agent local</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_addmaison" resname="admin_console_addmaison">
+                       <source>Add house</source>
+                       <target>Ajouter Maison</target>
+                </trans-unit>
+		        <trans-unit id="admin_console_subscriptiondate" resname="admin_console_subscriptiondate">
+                       <source>Subscription date</source>
+                       <target>Date de souscription</target>
+                </trans-unit>
 
 <!--End Admin-console-->
 

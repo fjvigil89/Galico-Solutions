@@ -3,6 +3,7 @@
 {% block title %} General Pro - Register {% endblock %}
 
 {% block body %}
+    <div ng-controller="DashboardController">
   <div class="pad">
   </div>
   <div class="container">
@@ -55,7 +56,7 @@
                       <input type="text" class="form-control" id="search" placeholder={{ 'admin_console_search' | trans({}, "messages", lang) }}>
                     </div>
 
-                    <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+                    <button type="submit" class="btn-primary btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
                   </form>
 
 
@@ -65,8 +66,12 @@
               <table class="table table-hover">
                 <thead class="bg-yellow font-header">
                 <tr>
-                  <th colspan="6">{{ 'admin_console_custinfo' | trans({}, "messages", lang) }}</th>
-
+                  <th colspan="5">{{ 'admin_console_custinfo' | trans({}, "messages", lang) }}</th>
+                    <th>
+                        <a href="#" data-toggle="modal" data-target="#addcustomerModal" >
+                            <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                        </a>
+                    </th>
                 </tr>
                 </thead>
                 <thead class="bg-light-gray">
@@ -76,11 +81,7 @@
                   <th>{{ 'form_lastname' | trans({}, "messages", lang) }}</th>
                   <th>{{ 'form_name' | trans({}, "messages", lang) }}</th>
                   <th>{{ 'admin_console_house' | trans({}, "messages", lang) }}</th>
-                  <th>
-                    <a href="#" data-toggle="modal" data-target="#addcustomerModal" >
-                      <span class="glyphicon glyphicon-plus" title="add"></span>
-                    </a>
-                  </th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -91,16 +92,10 @@
                   <td class="">Fu</td>
                   <td class="">Antonio</td>
                   <td class="">2</td>
-                  <td>
-                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                    </a>
-              
-                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                          <span class="glyphicon glyphicon-list-alt" title="Edit" ></span>
-                    </a>
-
-                  </td>
+                    <td>
+                        <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                        <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
+                    </td>
                 </tr>
                 <tr>
 
@@ -110,12 +105,8 @@
                   <td class="">Hector</td>
                   <td class="">10</td>
                   <td>
-                    <a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                    </a>
-					<a href="#maison3" data-toggle="modal" data-target="#editModal" >
-                          <span class="glyphicon glyphicon-list-alt" title="Edit" ></span>
-                    </a>
+                      <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                      <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
                   </td>
                 </tr>
                 </tbody>
@@ -148,23 +139,23 @@
 
                     <thead class="bg-yellow font-header">
                     <tr>
-                      <th colspan="7">House information</th>
-
+                        <th colspan="6">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</th>
+                        <th>
+                            <a href="#" data-toggle="modal" data-target="#addmaisonModal" >
+                                <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                            </a>
+                        </th>
                     </tr>
                     </thead>
                     <thead class="bg-light-gray">
                     <tr>
-                      <th>Country</th>
-                      <th>City</th>					  
-                      <th>Address</th>
+                      <th>{{ 'menu_country' | trans({}, "messages", lang) }}</th>
+                      <th>{{ 'form_city' | trans({}, "messages", lang) }}</th>
+                      <th>{{ 'form_address' | trans({}, "messages", lang) }}</th>
                       <th>Plan</th>
-                      <th>Due date</th>
-                      <th>Local agent number</th>
-                      <th>
-                        <a href="#" data-toggle="modal" data-target="#addmaisonModal" >
-                          <span class="glyphicon glyphicon-plus" title="add"></span>
-                        </a>
-                      </th>
+                      <th>{{ 'admin_console_duedate' | trans({}, "messages", lang) }}</th>
+                      <th>{{ 'admin_console_agentnumber' | trans({}, "messages", lang) }}</th>
+                        <th></th>
                     </tr>
 
                     </thead>
@@ -177,25 +168,20 @@
 				      <td class="">Basic</td>
                       <td class="product-qty">04/25/2017 </td>
                       <td class="">94232232232</td>
-                      <td>
-                        <a href="#" data-toggle="modal" data-target="#houseModal" >
-                          <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
-                        </a>
-                        <a href="#" data-toggle="modal" data-target="#editmaisonModal" >
-                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                        </a>
+                        <td>
+                            <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
-                        <a href="#" data-toggle="modal" data-target="#addserviceModal" >
-                          <span class="glyphicon glyphicon-plus" title="add service" ></span>
-                        </a>
-                        <a href="#" data-toggle="modal" data-target="#paymentsModal" >
-                          <span class="glyphicon glyphicon-usd" title="View payments" ></span>
-                        </a>
-                        <a href="#" data-target="#" >
-                          <span class="glyphicon glyphicon-remove" title="Remove" ></span>
-                        </a>
+                            <button data-toggle="modal" data-target="#editmaisonModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" title="go"></span></button>
 
-                      </td>
+                            <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+
+                            <button data-toggle="modal" data-target="#paymentsModal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="go"></span></button>
+
+                            <a href="#" data-target="#" ng-hide="true">
+                                <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                            </a>
+
+                        </td>
                     </tr>
                     <tr>
                       <td class="product-thumbnail text-center">
@@ -207,22 +193,17 @@
                       <td class="">12/25/2017</td>
                       <td class="product-qty">94232232232</td>
                       <td>
-                        <a href="#" data-toggle="#" >
-                          <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
-                        </a>
-                        <a href="#" data-toggle="#" >
-                          <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                        </a>
+                          <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
-                        <a href="#" data-toggle="#" >
-                          <span class="glyphicon glyphicon-plus" title="add service" ></span>
-                        </a>
-                        <a href="#" data-toggle="#" >
-                          <span class="glyphicon glyphicon-usd" title="View payments" ></span>
-                        </a>
-                        <a href="#" data-target="#" >
-                          <span class="glyphicon glyphicon-remove" title="Remove" ></span>
-                        </a>
+                          <button data-toggle="modal" data-target="#editmaisonModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" title="go"></span></button>
+
+                          <button data-toggle="modal"  ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+
+                          <button data-toggle="modal" data-target="#paymentsModal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="go"></span></button>
+
+                          <a href="#" data-target="#" ng-hide="true">
+                              <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                          </a>
 
                       </td>
                     </tr>
@@ -876,67 +857,170 @@
   <!-- Modal Customer-->
 
 
-  <div id="houseModal" class="modal fade" role="dialog">
+
+    <div id="houseModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
-      <div class="modal-content">
+    <div class="modal-content">
+
         <div class="modal-header bg-yellow">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">House information</h4>
+          <h4 class="modal-title">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</h4>
         </div>
         <div class="modal-body">
-
+            <div ng-hide="showServiceForm">
           <div class="row">
             <div class="col-xs-5">Plan</div>
             <div class="col-xs-7">Basic</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Due date</div>
+            <div class="col-xs-5">{{ 'admin_console_duedate' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">04/25/2017</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Suscription date</div>
+            <div class="col-xs-5">{{ 'admin_console_subscriptiondate' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">12/02/2017</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Contact</div>
+            <div class="col-xs-5">{{ 'dash_contact' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">Renzo Sanchez</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Phone (Primary)</div>
+            <div class="col-xs-5">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">234543232</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Phone (Alternate)</div>
+            <div class="col-xs-5">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">23523232</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Country</div>
+            <div class="col-xs-5">{{ 'form_Country' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">Cuba</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">City</div>
+            <div class="col-xs-5">{{ 'form_city' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">La habana</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Address</div>
+            <div class="col-xs-5">{{ 'form_address' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">3233 Av maisonneuve</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">State / Province</div>
+            <div class="col-xs-5">{{ 'form_state' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">Matanzas</div>
           </div>
           <div class="row">
-            <div class="col-xs-5">Local number</div>
+            <div class="col-xs-5">{{ 'admin_console_agentnumber' | trans({}, "messages", lang) }}</div>
             <div class="col-xs-7">94232232232</div>
           </div>
 
+
+
+
+        </div>
+
+
+        <div  ng-show="showServiceForm">
+            <table class="table table-hover">
+
+                <thead class="bg-light-gray">
+                <tr>
+                    <th>{{ 'dash_req_date' | trans({}, "messages", lang)}}</th>
+                    <th>{{ 'dash_req_id' | trans({}, "messages", lang)}}</th>
+                    <th>{{ 'menu_services' | trans({}, "messages", lang)}}</th>
+                    <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                    <th> <button data-toggle="modal" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                    <td>13/04/2017</td>
+                    <td>3253453</td>
+                    <td>Electicity</td>
+                    <td>Carlos Mendez</td>
+                    <td><button class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button></td>
+
+                </tr>
+                <tr>
+
+                    <td>16/05/2017</td>
+                    <td>56443453</td>
+                    <td>Plumbing</td>
+                    <td>Mario Villavicencio</td>
+                    <td><button class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button></td>
+
+                </tr>
+                </tbody>
+            </table>
+                            <div class ="border-yellow " >
+                                <div class="panel-body" ><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                                </div>
+
+                                <div class="panel-body" >{[request.details]}
+                                </div>
+
+                                <div class="col-xs-12 padding-sevice">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+
+                                            <thead class="bg-light-blue">
+                                            <tr>
+                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="intervention in request.interventions">
+
+                                                <td class="" ng-bind="intervention.interventionDate"></td>
+                                                <td class="" ng-bind="intervention.technician"></td>
+                                                <td class="" ng-bind="intervention.comments"></td>
+
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-            <span class="glyphicon glyphicon-remove" title="Close"></span> Close
-          </button>
+
+            <button type="button" class="btn bg-yellow color-black" ng-show="showServiceForm" ng-click="gotodetailsForm()">
+                <span class="glyphicon glyphicon-chevron-left" title=""></span>{{ 'dash_back' | trans({}, "messages", lang)}}
+            </button>
+            <button type="button" class="btn bg-yellow color-black" ng-hide="showServiceForm" ng-click="gotoserviceForm()">
+                {{ 'dash_next' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-chevron-right" title=""></span>
+            </button>
         </div>
       </div>
 
@@ -944,7 +1028,37 @@
   </div>
 
 
-  <div id="paymentsModal" class="modal fade" role="dialog">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--div id="paymentsModal" class="modal fade" role="dialog">
     <div class="modal-dialog ">
 
       <div class="modal-content">
@@ -978,7 +1092,107 @@
       </div>
 
     </div>
-  </div>
+  </div-->
+
+
+        <div id="paymentsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog ">
+
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Payments history</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-hide="showInvoice">
+                        <h4 >Suscription date 12 02-2017 ( Basic plan)</h4>
+
+                        <div class="row">
+                            <div class="col-xs-5">Payment date</div>
+                            <div class="col-xs-7">Amount</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5">12/06/2017</div>
+                            <div class="col-xs-7">$29.99</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5">12/07/2017</div>
+                            <div class="col-xs-7">$29.99</div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div ng-show="showInvoice">
+
+                    <table class="table table-hover">
+
+                        <thead class="bg-light-gray">
+                        <tr>
+                            <th>{{ 'dash_req_date' | trans({}, "messages", lang)}}</th>
+                            <th>Invoice</th>
+                            <th>{{ 'dash_req_id' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'menu_services' | trans({}, "messages", lang)}}</th>
+                            <th>Amount</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                            <td>13/04/2017</td>
+                            <td>CA00423</td>
+                            <td>3253453</td>
+                            <td>plan basic</td>
+                            <td>CA 24.99</td>
+                        </tr>
+                        <tr>
+
+                            <td>16/05/2017</td>
+                            <td>CA00453</td>
+                            <td>56443453</td>
+                            <td>Painting</td>
+                            <td>CA 80.00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+            </div>
+
+
+
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" ng-show="showInvoice" ng-click="gotopaysForm()">
+                        <span class="glyphicon glyphicon-chevron-left" title=""></span>{{ 'dash_back' | trans({}, "messages", lang)}}
+                    </button>
+                    <button type="button" class="btn bg-yellow color-black" ng-hide="showInvoice" ng-click="gotoinvoiceForm()">
+                        {{ 'dash_next' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-chevron-right" title=""></span>
+                    </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
 
   <div id="addcustomerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -1140,28 +1354,34 @@
 		
 		
 		
+
+              <div class="form-group">
+                  <label for="subPlanId">Plan:</label>
+                  <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
+                      <option value="gp_basic">GP Basic</option>
+                      <option value="gp_plus">GP Plus</option>
+
+                  </select>
+              </div>
+
           <div class="form-group">
-            <label for="editplan">Plan:</label>
-            <input type="text" class="form-control" id="editplan" value="Basic">
-          </div>
-          <div class="form-group">
-            <label for="editduedate">Due date:</label>
+            <label for="editduedate">{{ 'admin_console_duedate' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="editduedate" value="04/25/2017" >
           </div>
           <div class="form-group">
-            <label for="addsuscription">Suscription date:</label>
+            <label for="addsuscription">{{ 'admin_console_subscriptiondate' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="addsuscription" value="12/02/2017" >
           </div>
           <div class="form-group">
-            <label for="editcontact">Contact:</label>
+            <label for="editcontact">{{ 'dash_contact' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="editcontact" value="Renzo Sanchez">
           </div>
           <div class="form-group">
-            <label for="editphonePrimary">Phone (Primary):</label>
+            <label for="editphonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="editphonePrimary" value="234543232" >
           </div>
           <div class="form-group">
-            <label for="editphonealternate">Phone (Alternate):</label>
+            <label for="editphonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="editphonealternate" value="23523232" >
           </div>
           <div class="form-group">
@@ -1204,60 +1424,61 @@
       <div class="modal-content">
         <div class="modal-header bg-yellow">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add House</h4>
+          <h4 class="modal-title">{{ 'admin_console_addmaison' | trans({}, "messages", lang) }}</h4>
         </div>
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="add-plan">Plan:</label>
-            <input type="text" class="form-control" id="add-plan" value="">
+              <label for="subPlanId">Plan:</label>
+              <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
+                  <option value="gp_basic">GP Basic</option>
+                  <option value="gp_plus">GP Plus</option>
+
+              </select>
           </div>
+
           <div class="form-group">
-            <label for="add-duedate">Due date:</label>
-            <input type="text" class="form-control" id="add-duedate" value="" >
-          </div>
-          <div class="form-group">
-            <label for="add-suscription">Suscription date:</label>
+            <label for="add-suscription">{{ 'admin_console_subscriptiondate' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-suscription" value="" >
           </div>
           <div class="form-group">
-            <label for="add-contact">Contact:</label>
+            <label for="add-contact">{{ 'dash_contact' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-contact" value="">
           </div>
           <div class="form-group">
-            <label for="add-phonePrimary">Phone (Primary):</label>
+            <label for="add-phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="add-phonePrimary" value="" >
           </div>
           <div class="form-group">
-            <label for="add-phonealternate">Phone (Alternate):</label>
+            <label for="add-phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="add-phonealternate" value="" >
           </div>
           <div class="form-group">
-            <label for="add-country">Country:</label>
+            <label for="add-country">{{ 'form_Country' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-country" value="" >
           </div>
           <div class="form-group">
-            <label for="add-city">City:</label>
+            <label for="add-city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-city" value="" >
           </div>
 
           <div class="form-group">
-            <label for="add-address">Address:</label>
+            <label for="add-address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-address" value="" >
           </div>
           <div class="form-group">
-            <label for="add-state">State:</label>
+            <label for="add-state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
             <input type="text" class="form-control" id="add-state" value="" >
           </div>
           <div class="form-group">
-            <label for="add-localnumber">Local number:</label>
+            <label for="add-localnumber">{{ 'dash_local_agent' | trans({}, "messages", lang) }}</label>
             <input type="tel" class="form-control" id="add-localnumber" value="" >
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
-            <span class="glyphicon glyphicon-plus" title="Save"></span> Add
+            <span class="glyphicon glyphicon-plus" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
           </button>
         </div>
       </div>
@@ -1665,7 +1886,7 @@
 
     </div>
   </div>
-
+    </div>
 
 
 
