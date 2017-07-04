@@ -49,7 +49,18 @@
                                 <option value="United States">United States</option>
                             </select>
                         </div>
+                      <div class="form-group">
 
+                          <select name="subsearch" id="subsearch" class="form-control"  >
+                              <!-- {|% for country in countries #%}
+                                   <option value="{|{ country.country }}">{|{ country.country }}</option>
+                               {|% endfor #%}-->
+                              <option value="codeid">Code Id</option>
+                              <option value="Last name">Last name</option>
+                              <option value="First name">First name</option>
+
+                          </select>
+                      </div>
 
 				   <div class="form-group">
                       <label class="sr-only" for="search">{{ 'admin_console_search' | trans({}, "messages", lang) }}</label>
@@ -218,73 +229,8 @@
 
               </br></br>
             <!-- Details Services customer-------------------------------------------->
-            <div class="row">
-                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
-                <div class="col col-sm-8 col-md-9">
-                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
-                        <option value=""></option>
-                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row" ng-repeat="request in requests">
-                <div class="col-xs-12 no-padding">
-                    <div class="panel-group" id="myAccordion">
-                        <div class="panel border-yellow ">
-                            <div class="panel-heading bg-yellow">
-                                <h4 class="panel-title ">
-                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
-                                </h4>
-                            </div>
-
-                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
-                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
-                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
-                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
-                                </div>
-
-                                <div class="panel-body" >{[request.details]}
-                                </div>
-
-                                <div class="col-xs-12 no-padding">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-
-                                            <thead class="bg-light-gray">
-                                            <tr>
-                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
-                                                
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr ng-repeat="intervention in request.interventions">
-
-                                                <td class="" ng-bind="intervention.interventionDate"></td>
-                                                <td class="" ng-bind="intervention.technician"></td>
-                                                <td class="" ng-bind="intervention.comments"></td>
-                                                
-
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
-                    </div>
-
-
-                </div>
-
-
-            </div>
           <!-- End Panel-------------------------------------------->
         </div>
 
@@ -308,14 +254,27 @@
                                 <option value="United States">United States</option>
                             </select>
               </div>
-			
-			
-			<div class="form-group">
-              <label class="sr-only" for="search-technician">Search</label>
-              <input type="text" class="form-control" id="search-technician" placeholder="Search">
-            </div>
+              <div class="form-group">
 
-            <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+                  <select name="subsearchtech" id="subsearchtech" class="form-control"  >
+                      <!-- {|% for country in countries #%}
+                           <option value="{|{ country.country }}">{|{ country.country }}</option>
+                       {|% endfor #%}-->
+                      <option value="Service">Service</option>
+                      <option value="City">City</option>
+                      <option value="Technician">Technician</option>
+                      <option value="Code Client">Code Client</option>
+
+
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label class="sr-only" for="search">{{ 'admin_console_search' | trans({}, "messages", lang) }}</label>
+                  <input type="text" class="form-control" id="search" placeholder={{ 'admin_console_search' | trans({}, "messages", lang) }}>
+              </div>
+
+              <button type="submit" class="btn-primary btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
           </form>
 
 
@@ -329,8 +288,12 @@
 
                 <thead class="bg-yellow font-header">
                 <tr>
-                  <th colspan="8">Technician information</th>
-
+                  <th colspan="7">Technician information</th>
+                    <th>
+                        <a href="#" data-toggle="modal" data-target="#addtechnicianModal" >
+                            <span class="glyphicon glyphicon-plus" title="add"></span>
+                        </a>
+                    </th>
                 </tr>
                 </thead>
                 <thead class="bg-light-gray">
@@ -342,12 +305,8 @@
                   <th>Technician</th>
                   <th>Phone</th>
                   <th>Qty House</th>
-                  <th>Code Id</th>
-                  <th>
-                    <a href="#" data-toggle="modal" data-target="#addtechnicianModal" >
-                      <span class="glyphicon glyphicon-plus" title="add"></span>
-                    </a>
-                  </th>
+                  <th>Code Client</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -360,12 +319,12 @@
                   <td class="">437545443</td>
                   <td class="">4</td>
                   <td class="">CA35323</td>
-                  <td>
-						<a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
-                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                      </a>
+                    <td>
+                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
 
-                  </td>
+
+                    </td>
                 </tr>
                 <tr>
 
@@ -376,10 +335,12 @@
                   <td class="">245334233</td>
                   <td class="">10</td>
                   <td class="">CA233232</td>
-                  <td>
-					<a href="#maison3" data-toggle="modal" data-target="#edittechnicianModal" >
-                        <span class="glyphicon glyphicon-edit" title="Edit" ></span>
-                      </a>
+
+                    <td>
+                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
+
+
                   </td>
                 </tr>
                 </tbody>
@@ -409,7 +370,7 @@
                   <thead class="bg-light-gray">
                   <tr>
                     <th>Country</th>
-                    <th>Code Service</th>
+                    <th>Request Id</th>
                     <th>Code Client</th>
                     <th>Service</th>
                     <th>Date service</th>
@@ -427,9 +388,7 @@
                     <td class="">04/25/2017</td>
                     <td class="">US 15 </td>
                     <td>
-                      <a href="#" data-toggle="#" >
-                        <span class="glyphicon glyphicon-list-alt" title="View details" ></span>
-                      </a>
+                        <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
                     </td>
                   </tr>
@@ -442,9 +401,7 @@
                     <td class="">06/25/2017</td>
                     <td class="">US 20 </td>
                     <td>
-                      <a href="#maison2" data-toggle="collapse">
-                        <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                      </a>
+                        <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
                     </td>
                   </tr>
                   </tbody>
@@ -460,73 +417,8 @@
 
           <!-- Details technician services-------------------------------------------->
         </br>
-                <div class="row">
-                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
-                <div class="col col-sm-8 col-md-9">
-                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
-                        <option value=""></option>
-                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row" ng-repeat="request in requests">
-                <div class="col-xs-12 no-padding">
-                    <div class="panel-group" id="myAccordion">
-                        <div class="panel border-yellow ">
-                            <div class="panel-heading bg-yellow">
-                                <h4 class="panel-title ">
-                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
-                                </h4>
-                            </div>
-
-                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
-                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
-                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
-                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
-                                </div>
-
-                                <div class="panel-body" >{[request.details]}
-                                </div>
-
-                                <div class="col-xs-12 no-padding">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-
-                                            <thead class="bg-light-gray">
-                                            <tr>
-                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
-                                                
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr ng-repeat="intervention in request.interventions">
-
-                                                <td class="" ng-bind="intervention.interventionDate"></td>
-                                                <td class="" ng-bind="intervention.technician"></td>
-                                                <td class="" ng-bind="intervention.comments"></td>
-                                                
-
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
-                    </div>
-
-
-                </div>
-
-
-            </div>
 
           <!-- End Details technician services-------------------------------------------->
 
@@ -549,33 +441,29 @@
               <label class="sr-only" for="final-date">Final Date</label>
               <input type="date" class="form-control" id="final-date" placeholder="Final Date">
             </div>
-            <div class="form-group">
-              <label class="sr-only" for="client">Client</label>
-              <input type="text" class="form-control" id="client" placeholder="Client">
-            </div>
-            <div class="form-group">
-                           
-                            <select name="service" id="service" class="form-control" ng-model= "newSubscription.country" >
 
-                                <option value="Plumbing">Plumbing</option>
-                                <option value="Electricity">Electricity</option>
-                                <option value="Doors and Windows">Doors and Windows</option>
-                                <option value="Locksmith">Locksmith</option>
-                                <option value="United States">United States</option>
-								<option value="Appliances">Appliances</option>
-								<option value="AC/Heating">AC/Heating</option>
-								<option value="Nursing Care">Nursing Care</option>
-								<option value="Child Care">Child Care</option>
-								<option value="Lawn maintenance">Lawn maintenance</option>
-								<option value="Cleaning services">Cleaning services</option>
-								<option value="IT support and services">IT support and services</option>
-								<option value="Painting Services">Painting Services</option>								
-								
-                            </select>
-                        </div>
+              <div class="form-group">
 
-            <button type="submit" class="btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
+                  <select name="subsearchtech" id="subsearchtech" class="form-control"  >
+                      <!-- {|% for country in countries #%}
+                           <option value="{|{ country.country }}">{|{ country.country }}</option>
+                       {|% endfor #%}-->
+
+                      <option value="Client">Client</option>
+                      <option value="Service">Service</option>
+                      <option value="All">All</option>
+
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label class="sr-only" for="search">{{ 'admin_console_search' | trans({}, "messages", lang) }}</label>
+                  <input type="text" class="form-control" id="search" placeholder={{ 'admin_console_search' | trans({}, "messages", lang) }}>
+              </div>
+
+              <button type="submit" class="btn-primary btn-xs"><span class="glyphicon glyphicon-search" title="go"></span></button>
           </form>
+
 
           <!--End Search Request-------------------------------------------->
           <!--Panel Request-------------------------------------------->
@@ -600,8 +488,8 @@
                 </thead>
                 <thead class="bg-light-gray">
                 <tr>
-                  <th>Code Id</th>
-                  <th>Code Service</th>
+                  <th>Code Client</th>
+                  <th>Request Id</th>
                   <th>Country</th>
                   <th>Client</th>
                   <th>Service</th>
@@ -622,10 +510,10 @@
                   <td class="">Plumbing</td>
                   <td class="">Av Maisonneuve</td>
                   <td class="">asdffdsasdasd ass</td>
-                  <th>
-                    <a href="#" data-toggle="collapse">
-                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                    </a>
+
+                    <td>
+                        <button data-toggle="modal" data-target="#servicedetailModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                    </td>
 
                   </th>
                 </tr>
@@ -638,10 +526,10 @@
                   <td class="">Locksmith</td>
                   <td class="">Av los Proceres 3454</td>
                   <td class="">asdffdsasfdss ass</td>
-                  <th>
-                    <a href="#" data-toggle="collapse">
-                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                    </a>
+
+                    <td>
+                        <button data-toggle="modal" data-target="#servicedetailModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                    </td>
 
                   </th>
                 </tr>
@@ -652,73 +540,7 @@
           <!--End Panel Request-------------------------------------------->
           <!--Detatails Panel Request-------------------------------------------->
           </br>
-            <div class="row">
-                <label for="houseRequests" class="col col-sm-4 col-md-3">{{ 'dash_view_request' | trans({}, "messages", lang)}}</label>
-                <div class="col col-sm-8 col-md-9">
-                    <select name="country" class="form-control" id="country" ng-model="selectedHouseId" ng-change="getHouseRequests()">
-                        <option value=""></option>
-                        <option ng-repeat="house in houses" value="{[house.id]}" >{[house.address + " | " + house.city]}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row" ng-repeat="request in requests">
-                <div class="col-xs-12 no-padding">
-                    <div class="panel-group" id="myAccordion">
-                        <div class="panel border-yellow ">
-                            <div class="panel-heading bg-yellow">
-                                <h4 class="panel-title ">
-                                    <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
-                                </h4>
-                            </div>
 
-                            <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
-                                    <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
-                                    <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
-                                    <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
-                                </div>
-
-                                <div class="panel-body" >{[request.details]}
-                                </div>
-
-                                <div class="col-xs-12 no-padding">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-
-                                            <thead class="bg-light-gray">
-                                            <tr>
-                                                <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
-                                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
-                                                
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr ng-repeat="intervention in request.interventions">
-
-                                                <td class="" ng-bind="intervention.interventionDate"></td>
-                                                <td class="" ng-bind="intervention.technician"></td>
-                                                <td class="" ng-bind="intervention.comments"></td>
-                                                
-
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
 
 
           <!--End Detatails Panel Request-------------------------------------------->
@@ -1890,6 +1712,77 @@
 
 
 
+    <div id="servicedetailModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Request Information</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div  >
+
+                        <div class ="border-yellow " >
+                            <div class="panel-body" ><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                            </div>
+
+                            <div class="panel-body" >{[request.details]}
+                            </div>
+
+                            <div class="col-xs-12 padding-sevice">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+
+                                        <thead class="bg-light-blue">
+                                        <tr>
+                                            <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                            <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                            <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="intervention in request.interventions">
+
+                                            <td class="" ng-bind="intervention.interventionDate"></td>
+                                            <td class="" ng-bind="intervention.technician"></td>
+                                            <td class="" ng-bind="intervention.comments"></td>
+
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-floppy-disk" title="Close"></span> {{ 'dash_close' | trans({}, "messages", lang) }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 
