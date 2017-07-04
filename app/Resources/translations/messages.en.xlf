@@ -115,7 +115,10 @@
                          <source>Terms of use</source>
                          <target>Terms of use</target>
                 </trans-unit>
-
+                <trans-unit id="menu_privacy" resname="menu_privacy">
+                         <source>Privacy policy</source>
+                         <target>Privacy policy</target>
+                </trans-unit>
 
 
 

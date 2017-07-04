@@ -122,6 +122,24 @@ class PageNavigationController extends Controller
         }
     }
 
+    /**
+     * @Route("/workus")
+     */
+    public function showWorkusAction()
+    {
+        {
+            return $this->render('website/workus.html.twig');
+        }
+    }
 
+    /**
+     * @Route("/policy")
+     */
+    public function showPolicyAction()
+    {
+        {
+            return $this->render('website/policy.html.twig');
+        }
+    }
 
 }

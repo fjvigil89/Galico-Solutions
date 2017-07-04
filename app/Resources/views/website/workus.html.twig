@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} General Pro - Contact us {% endblock %}
+
+{% block body %}
+<div class="provide-services row row-xs-center">
+    <div class="col-md-12">
+        <div class="we-are-layoutcontact_pro">
+
+            <h2 class="provide-services_title">{{ 'menu_contactus' | trans({}, "messages", lang) }}</h2>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container contact-content" ng-controller="ContactUsController">
+    <div class="row">
+        <div class="col-md-4">
+
+
+            <img class="hotline-img" src="images/page-home/services-14.jpg" alt="">
+
+
+            <!-- /.hotline -->
+
+            <p class="hotline-description">{{ 'contactus_resume' | trans({}, "messages", lang) }}</p>
+            <!-- /.hotline-description -->
+
+
+            <!-- /.call-us_phone -->
+
+            <!-- /.call-us_address -->
+        </div>
+
+        <div class="col-md-8">
+            <!-- <div id="map-canvas" class="thememove-gmaps" data-address="40.7590615,-73.969231" data-height="400" data-width="100%" data-zoom_enable="" data-zoom="16" data-map_type="roadmap" data-map_style="style1"></div>
+            <!-- /.thememove-gmaps -->
+            <h5 class="error-message text-bold text-center" ng-bind="message.error" class=""> </h5>
+            <h5 ng-cloak class="message-info text-bold text-center" ng-if="message.successful">{{ 'contact_message_successfully' | trans({}, "messages", lang) }}</h5>
+            <form id="frm_contact_us" method="GET" action="{{ path('sendEmail') }}" >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="text" id="cnamework" name="cnamework"  ng-model="sender.cnamework" required placeholder="{{ 'form_fullname' | trans({}, "messages", lang) }}">
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="text" name="phonework" id="phonework" ng-model="sender.phonework" value="" size="40" aria-invalid="false" placeholder="{{ 'form_phone_primary' | trans({}, "messages", lang) }}">
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="email" name="emailwork" id="emailwork" ng-model="sender.emailwork" required placeholder="{{ 'form_email' | trans({}, "messages", lang) }}">
+                    </div>
+
+                        <div class="col-sm-12">
+                        <textarea name="messagework" id="messagework" ng-model="sender.messagework" cols="40" rows="10" aria-invalid="false" placeholder="{{ 'form_message' | trans({}, "messages", lang) }}" style="height: 110px;"></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="control-label">Select File</label>
+                        <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true"> </div>
+                    <div class="col-sm-12">
+                        <button type="button" class="btn" ng-click="send()">{{ 'form_send_message' | trans({}, "messages", lang) }}</button>
+                    </div>
+
+                </div>
+            </form>
+            <!-- /form -->
+        </div>
+
+
+
+
+
+    </div>
+</div>
+<!-- /.contact-content -->
+{% endblock %}
