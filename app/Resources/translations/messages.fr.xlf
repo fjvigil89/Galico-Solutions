@@ -117,7 +117,10 @@
                          <source>Privacy policy</source>
                          <target>Politique de confidentialité</target>
                 </trans-unit>
-
+                 <trans-unit id="menu_careers" resname="menu_careers">
+                          <source>Careers</source>
+                          <target>Carrière</target>
+                 </trans-unit>
 
 
 
@@ -1016,7 +1019,26 @@
 
 <!--End Admin-console-->
 
+<!--Work us-->
+		        <trans-unit id="workus_resume" resname="workus_resume">
+                       <source>We want people like you in our team. Join our great family</source>
+                       <target>Nous voulons que les gens comme vous dans notre équipe. Faites partie de notre famille</target>
+                </trans-unit>
+                  <trans-unit id="workus_cv" resname="workus_cv">
+                         <source>Send CV</source>
+                         <target>Envoyer CV</target>
+                  </trans-unit>
+                   <trans-unit id="workus_title" resname="workus_title">
+                          <source>Work with us</source>
+                          <target>Travaille avec nous</target>
+                   </trans-unit>
+                      <trans-unit id="workus_select_cv" resname="workus_select_cv">
+                             <source>Select your CV</source>
+                             <target>Sélectionnez votre CV</target>
+                      </trans-unit>
 
+
+<!--End Work us-->
 
 
 

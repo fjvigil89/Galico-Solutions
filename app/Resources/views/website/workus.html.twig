@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="we-are-layoutcontact_pro">
 
-            <h2 class="provide-services_title">{{ 'menu_contactus' | trans({}, "messages", lang) }}</h2>
+            <h2 class="provide-services_title">{{ 'workus_title' | trans({}, "messages", lang) }}</h2>
 
         </div>
     </div>
@@ -19,12 +19,12 @@
         <div class="col-md-4">
 
 
-            <img class="hotline-img" src="images/page-home/services-14.jpg" alt="">
+            <img class="hotline-img" src="images/page-home/band-11.jpg" alt="">
 
 
             <!-- /.hotline -->
 
-            <p class="hotline-description">{{ 'contactus_resume' | trans({}, "messages", lang) }}</p>
+            <p class="hotline-description">{{ 'workus_resume' | trans({}, "messages", lang) }}</p>
             <!-- /.hotline-description -->
 
 
@@ -40,6 +40,7 @@
             <h5 ng-cloak class="message-info text-bold text-center" ng-if="message.successful">{{ 'contact_message_successfully' | trans({}, "messages", lang) }}</h5>
             <form id="frm_contact_us" method="GET" action="{{ path('sendEmail') }}" >
                 <div class="row">
+
                     <div class="col-sm-12">
                         <input type="text" id="cnamework" name="cnamework"  ng-model="sender.cnamework" required placeholder="{{ 'form_fullname' | trans({}, "messages", lang) }}">
                     </div>
@@ -49,15 +50,41 @@
                     <div class="col-sm-12">
                         <input type="email" name="emailwork" id="emailwork" ng-model="sender.emailwork" required placeholder="{{ 'form_email' | trans({}, "messages", lang) }}">
                     </div>
+                    <div class="col-sm-12">
+                        <select name="local" id="local" class="form-control" >
 
+                            <option value="1">661 Notre-Dame St-Remi Quebec - Canada</option>
+                            <option value="2">New York</option>
+
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <select name="servicework" id="servicework" class="form-control" >
+
+                            <option value="plumbing">{{ 'plumbing' | trans({}, "messages", lang) }}</option>
+                            <option value="electricity">{{ 'electricity' | trans({}, "messages", lang) }}</option>
+                            <option value="doors_windows">{{ 'doors_windows' | trans({}, "messages", lang) }}</option>
+                            <option value="locksmith">{{ 'locksmith' | trans({}, "messages", lang) }}</option>
+                            <option value="appliances">{{ 'appliances' | trans({}, "messages", lang) }}</option>
+                            <option value="ac_heating">{{ 'ac_heating' | trans({}, "messages", lang) }}</option>
+                            <option value="nursing_care">{{ 'nursing_care' | trans({}, "messages", lang) }}</option>
+                            <option value="child_Care">{{ 'child_Care' | trans({}, "messages", lang) }}</option>
+                            <option value="lawn_maintenance">{{ 'lawn_maintenance' | trans({}, "messages", lang) }}</option>
+                            <option value="cleaning_services">{{ 'cleaning_services' | trans({}, "messages", lang) }}</option>
+                            <option value="it_support_services">{{ 'it_support_services' | trans({}, "messages", lang) }}</option>
+                            <option value="painting_services">{{ 'painting_services' | trans({}, "messages", lang) }}</option>
+
+
+                        </select>
+                    </div>
                         <div class="col-sm-12">
                         <textarea name="messagework" id="messagework" ng-model="sender.messagework" cols="40" rows="10" aria-invalid="false" placeholder="{{ 'form_message' | trans({}, "messages", lang) }}" style="height: 110px;"></textarea>
                     </div>
                     <div class="col-sm-12">
-                        <label class="control-label">Select File</label>
+                        <label class="control-label">{{ 'workus_select_cv' | trans({}, "messages", lang) }}</label>
                         <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true"> </div>
                     <div class="col-sm-12">
-                        <button type="button" class="btn" ng-click="send()">{{ 'form_send_message' | trans({}, "messages", lang) }}</button>
+                        <button type="button" class="btn" ng-click="send()">{{ 'workus_cv' | trans({}, "messages", lang) }}</button>
                     </div>
 
                 </div>
