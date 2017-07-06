@@ -142,4 +142,13 @@ class PageNavigationController extends Controller
         }
     }
 
+    /**
+     * @Route("/refundpolicy")
+     */
+    public function showRefundpolicyAction()
+    {
+        {
+            return $this->render('website/refundpolicy.html.twig');
+        }
+    }
 }
