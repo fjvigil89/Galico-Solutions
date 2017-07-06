@@ -258,7 +258,7 @@
                      <target>Cuidado de niños</target>
               </trans-unit>
                <trans-unit id="lawn_maintenance" resname="lawn_maintenance">
-                     <source>Lawn maintenance</source>
+                     <source>Landscaping</source>
                      <target>Mantenimiento Jardines</target>
               </trans-unit>
               <trans-unit id="cleaning_services" resname="cleaning_services">

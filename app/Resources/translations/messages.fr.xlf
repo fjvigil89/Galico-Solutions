@@ -259,7 +259,7 @@
                      <target>Garde d’enfants</target>
               </trans-unit>
                <trans-unit id="lawn_maintenance" resname="lawn_maintenance">
-                     <source>Lawn maintenance</source>
+                     <source>Landscaping</source>
                      <target>Maintenance de Pelouse</target>
               </trans-unit>
               <trans-unit id="cleaning_services" resname="cleaning_services">
