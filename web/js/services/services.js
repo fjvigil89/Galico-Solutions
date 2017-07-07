@@ -2,11 +2,12 @@ angular.module("gpApp")
     .service('authService', function($http,RouterService) {
         this.authenticate = function (user) {
 
-            return $http({
+            /*return $http({
                 url : user.authUrl,
                 method: "GET",
                 params: {email: user.email, pwd : user.pwd}
-            });
+            });*/
+            return $http.post(user.authUrl, {email: user.email, pwd : user.pwd});
         }
 		
 		this.resetPassword = function (email) {

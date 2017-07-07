@@ -70,3 +70,9 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+#GuzzleHttp Configuration
+emoe_guzzle:
+    log:
+        enabled: true # Logging requests to Monolog
+        format: 'Guzzle: [{ts}] "{method} {uri} HTTP/{version}" {code}' # Optional log format customization
