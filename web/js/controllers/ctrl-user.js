@@ -55,7 +55,7 @@ angular.module("gpApp")
                 $scope.user.authUrl = $('#frm_signin').attr('action');
                 authService.authenticate($scope.user)
                     .then(function(response){
-                        console.log(response.data.userId);
+                        console.log(response);
                         var userId = response.data.userId;
                         if(userId>-1)
                         {

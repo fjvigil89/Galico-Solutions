@@ -7,7 +7,20 @@ angular.module("gpApp")
                 method: "GET",
                 params: {email: user.email, pwd : user.pwd}
             });*/
-            return $http.post(user.authUrl, {email: user.email, pwd : user.pwd});
+
+            //http://techfunda.com/howto/565/http-post-server-request
+            var data = $.param({
+                email: user.email,
+                pwd : user.pwd
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(user.authUrl, data, config);
+
         }
 		
 		this.resetPassword = function (email) {
@@ -56,7 +69,7 @@ angular.module("gpApp")
             return $http({
                 url : RouterService.getEndPoint() + '/customer-information/'+id,
                 method: "GET",
-                /*params: {email: user.email, pwd : user.pwd}*/
+
             });
         }
 
@@ -89,7 +102,6 @@ angular.module("gpApp")
 
         this.updateCustomer = function (customer) {
 
-            //return $http.post('/update-customer',{customerId : customer.customerId,email: customer.email});
             return $http({
                 url : RouterService.getEndPoint() + '/update-customer',
                 method: "GET",
@@ -140,6 +152,25 @@ angular.module("gpApp")
 
                     }
             });
+        }
+
+        //this.addRecurringPayments = function(paymentInfo)
+        this.addRecurringPayments = function()
+        {
+            var url = RouterService.getEndPoint() + '/ccaddrecurring'
+            var data = $.param({
+                amount: '9.99',
+                cardNumber : '5123456789012346', //visa : 4987654321098769
+                cvv : '100',
+                expirationDate : '0522'
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
         }
     })
 

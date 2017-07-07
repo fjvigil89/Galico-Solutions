@@ -43,8 +43,8 @@ class UserController extends Controller
      */
     public function authenticateAction(Request $request)
     {
-        $email = $request->query->get('email');
-        $pwd = $request->query->get('pwd');
+        $email = $request->request->get('email');
+        $pwd = $request->request->get('pwd');
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         /*$customer = $repository->findOneBy(

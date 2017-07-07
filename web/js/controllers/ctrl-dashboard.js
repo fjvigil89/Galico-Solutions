@@ -303,8 +303,19 @@ angular.module("gpApp")
         {
             $scope.showInvoice = true;
         }
-		// CALL METHODS ONLOAD
 
+
+        $scope.addRecurringPayments = function()
+        {
+            DashboardService.addRecurringPayments()
+                .then(function(response){
+                    console.log(response);
+                },function(error){
+                    console.log(error);
+                })
+        }
+
+        // CALL METHODS ONLOAD
         $scope.getCustomerInformation();
         $scope.getHousesInformation();
       
