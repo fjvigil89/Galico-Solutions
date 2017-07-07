@@ -1534,7 +1534,7 @@ input[type="submit"], .service-item_img img, .service-item_icon, .service-item_i
 
 .footer-infomation li {
   display: inline-block;
-  width: 50%;
+  width: 30%;
   margin-right: -3px;
   margin-bottom: 10px;
 }
