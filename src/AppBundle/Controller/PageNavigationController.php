@@ -14,10 +14,6 @@ use Symfony\Component\Translation\Loader\ArrayLoader;
 use Symfony\Component\HttpFoundation\Request;
 
 
-
-
-
-
 class PageNavigationController extends Controller
 {
     /**
