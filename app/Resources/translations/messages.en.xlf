@@ -257,8 +257,8 @@
                      <target>Child Care</target>
               </trans-unit>
                <trans-unit id="lawn_maintenance" resname="lawn_maintenance">
-                     <source>Lawn maintenance</source>
-                     <target>Lawn maintenance</target>
+                     <source>Landscaping</source>
+                     <target>Landscaping</target>
               </trans-unit>
               <trans-unit id="cleaning_services" resname="cleaning_services">
                      <source>Cleaning services</source>
