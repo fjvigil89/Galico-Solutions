@@ -154,15 +154,19 @@ angular.module("gpApp")
             });
         }
 
-        //this.addRecurringPayments = function(paymentInfo)
-        this.addRecurringPayments = function()
+        this.addRecurringPayments = function(paymentInfo)
         {
             var url = RouterService.getEndPoint() + '/ccaddrecurring'
             var data = $.param({
-                amount: '9.99',
-                cardNumber : '5123456789012346', //visa : 4987654321098769
-                cvv : '100',
-                expirationDate : '0522'
+                amount: paymentInfo.amount,
+                cardNumber : paymentInfo.cardNumber,//'5123456789012346', //visa : 4987654321098769
+                cvv : paymentInfo.cvv,
+                expirationDate :   paymentInfo.expMonth+""+paymentInfo.expYear,
+                nameOnCard : paymentInfo.nameOnCard,
+                cardType : paymentInfo.cardType,
+                planName : paymentInfo.planName,
+                customerId : paymentInfo.customerId
+
             });
 
             var config = {
