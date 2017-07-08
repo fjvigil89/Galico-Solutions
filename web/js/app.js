@@ -57,9 +57,15 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Please choose a country.",
         "ERR_DASHBOARD_ENTERCITY"     : "Please enter a city.",
         "ERR_DASHBOARD_ADDRESSHOUSE"    : "Please enter the address of the house.",
-        "ERR_DASHBOARD_NOTADDHOUSE" : "The new house could not be added. Please try again."
-				
-		
+        "ERR_DASHBOARD_NOTADDHOUSE" : "The new house could not be added. Please try again.",
+
+
+        "ERR_DASHBOARD_NAMEONCARD"     : "Please provide a valid name.",
+        "ERR_DASHBOARD_CARDTYPE"    : "Please provide your card type.",
+        "ERR_DASHBOARD_CARDNUMBER" : "Please provide your card number.",
+        "ERR_DASHBOARD_CVV"     : "Please provide your CVV number",
+        "ERR_DASHBOARD_EXPMONTH"    : "The expiration date is invalid.",
+        "ERR_DASHBOARD_EXPYEAR"    : "The expiration date is invalid."
     });
 
     // Adding a translation table for the Spanish language
@@ -111,9 +117,14 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Por favor escoja un país.",
         "ERR_DASHBOARD_ENTERCITY"     : "Por favor ingrese una ciudad.",
         "ERR_DASHBOARD_ADDRESSHOUSE"    : "Por favor ingrese la dirección de la casa.",
-        "ERR_DASHBOARD_NOTADDHOUSE" : "La nueva casa no ha sido registrada. Por favor intente otra vez."
-				
-		
+        "ERR_DASHBOARD_NOTADDHOUSE" : "La nueva casa no ha sido registrada. Por favor intente otra vez.",
+
+        "ERR_DASHBOARD_NAMEONCARD"     : "Por favor ingrese un nombre valido.",
+        "ERR_DASHBOARD_CARDTYPE"    : "Por favor introducir un tipo de tarjeta.",
+        "ERR_DASHBOARD_CARDNUMBER" : "Por favor ingrese un número de tarjeta.",
+        "ERR_DASHBOARD_CVV"     : "Por favor ingresar un código de seguridad válido.",
+        "ERR_DASHBOARD_EXPMONTH"    : "La fecha de expiración no es válido.",
+        "ERR_DASHBOARD_EXPYEAR"    : "La fecha de expiración no es válido."
     });
 
     // Adding a translation table for the French language
@@ -166,8 +177,14 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CHOOSECOUNTRY"     : "Choisissez un pays.",
         "ERR_DASHBOARD_ENTERCITY"     : "Veuillez saisir une ville.",
         "ERR_DASHBOARD_ADDRESSHOUSE"    : "Veuillez saisir l'adresse de la maison.",
-        "ERR_DASHBOARD_NOTADDHOUSE" : "La nouvelle maison ne pouvait pas être ajoutée. Veuillez réessayer."		
-		
+        "ERR_DASHBOARD_NOTADDHOUSE" : "La nouvelle maison ne pouvait pas être ajoutée. Veuillez réessayer.",
+
+        "ERR_DASHBOARD_NAMEONCARD"     : "Vous devez saisir un nom.",
+        "ERR_DASHBOARD_CARDTYPE"    : "Vous devez saisir un type de carte.",
+        "ERR_DASHBOARD_CARDNUMBER" : "Vous devez saisir un numéro de carte.",
+        "ERR_DASHBOARD_CVV"     : "Vous devez saisir un code de sécurité valide.",
+        "ERR_DASHBOARD_EXPMONTH"    : "La date d'expiration n'est pas valide.",
+        "ERR_DASHBOARD_EXPYEAR"    : "La date d'expiration n'est pas valide."
     });
 
     // Tell the module what language to use by default

@@ -11,6 +11,11 @@ angular.module("gpApp")
 			$scope.showServiceForm = false;
             $scope.showInvoice = false;
 
+            $scope.paymentInfo = {};
+            $scope.paymentInfo.planName = "plan Basic";
+            $scope.paymentInfo.amount = "29.99";
+
+
             $scope.newSubscription.customerId = $window.document.getElementById("customerId").value;
 
             $scope.newSubscription.contractAccepted = false;
@@ -307,12 +312,50 @@ angular.module("gpApp")
 
         $scope.addRecurringPayments = function()
         {
-            DashboardService.addRecurringPayments()
-                .then(function(response){
-                    console.log(response);
-                },function(error){
-                    console.log(error);
-                })
+            if(GeneralService.isInvalid($scope.paymentInfo.nameOnCard))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_NAMEONCARD');
+                $window.document.getElementById("nameOnCard").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.cardType))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CARDTYPE');
+                $window.document.getElementById("cardType").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.cardNumber))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CARDNUMBER');
+                $window.document.getElementById("cardNumber").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.paymentInfo.cvv))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CVV');
+                $window.document.getElementById("cvv").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.expMonth))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_EXPMONTH');
+                $window.document.getElementById("expMonth").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.expYear))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_EXPYEAR');
+                $window.document.getElementById("expYear").focus();
+            }
+
+            else
+            {
+                $scope.paymentInfo.customerId = $scope.newSubscription.customerId;
+
+                DashboardService.addRecurringPayments($scope.paymentInfo)
+                    .then(function(response){
+                        console.log(response);
+                    },function(error){
+                        console.log(error);
+                    })
+            }
+
         }
 
         // CALL METHODS ONLOAD

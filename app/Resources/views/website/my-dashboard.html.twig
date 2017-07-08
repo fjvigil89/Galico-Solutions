@@ -429,11 +429,11 @@
                                <!-- {|% for country in countries #%}
                                     <option value="{|{ country.country }}">{|{ country.country }}</option>
                                 {|% endfor #%}-->
-                                <option value="Canada">Canada</option>
-                                <option value="Costa Rica">Costa Rica</option>
-                                <option value="Cuba">Cuba</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="United States">United States</option>
+                                <option value="CAN">Canada</option>
+                                <option value="CRI">Costa Rica</option>
+                                <option value="CUB">Cuba</option>
+                                <option value="MEX">Mexico</option>
+                                <option value="USA">United States</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -483,18 +483,18 @@
 					<!--div class="modal-body"-->
 					<div class ="border-yellow padding-payment" id="container-payment" ng-show="showPaymentForm">
 						 <h4 class="text-bold text-center">{{ 'dash_payinfo' | trans({}, "messages", lang)}}</h4>
-                        <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
+                        <h5 class="error-message text-bold text-center">{[paymentInfo.error]} </h5>
 							
 						
 						</br>
 						
                         <div class="form-group">
                             <label for="subPlanId">Plan:</label>
-							<text>Basic</text>
+							<text>{[paymentInfo.planName]}</text>
                         </div>
 						<div class="form-group">
                             <label for="status">{{ 'dash_month_amount' | trans({}, "messages", lang)}}</label>
-							<text>US 24.99</text>
+							<text>{[paymentInfo.amount]}</text>
                         </div>	
 						<div class="form-group">
                             <label for="type">{{ 'dash_type_c' | trans({}, "messages", lang)}}</label>
@@ -503,16 +503,16 @@
 							<!--div class="col-xs-6 no-padding"-->				
 									<div class="form-group">
 										<label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
-										<input type="text" class="form-control" id="fullname" >
+										<input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
 									</div>
 
 									<div class="form-group">
 										<label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
-										<select name="creditCard" id="creditCard" class="form-control" >
-										  
-											<option value="Visa"><img src="{{ asset('images/flag_canada.png') }}" >Visa</option>
-											<option value="MasterCard"><img src="{{ asset('images/flag_canada.png') }}" >Master Card</option>
-										   
+										<select name="creditCard" id="cardType" class="form-control" ng-model="paymentInfo.cardType" >
+                                            <option value=""></option>
+											<option value="Visa">Visa</option>
+											<option value="MasterCard">Master Card</option>
+
 										</select>
 									</div>
 									
@@ -526,13 +526,13 @@
 										<div class="row margin-left">
 										
 										<div class="col-xs-7 no-padding">
-										<input type="text" class="form-control" id="cardnumber"  >
+										<input type="text" class="form-control" id="cardNumber"  ng-model="paymentInfo.cardNumber" >
 										</div>
 									<div class="col-xs-1 no-padding"></div>
 										
 										<div class="col-xs-3 no-padding">
 										
-										<input type="text" class="form-control" id="securitycode"  placeholder="CVC" >
+										<input type="text" class="form-control" id="cvv"  placeholder="CVV" ng-model="paymentInfo.cvv">
 										 </div>
 										</div>	
 									<!--/div>	
@@ -558,17 +558,17 @@
 										<div class="row margin-left">
 										
 											<div class="col-xs-4 no-padding">
-											<select name="dateexpirationmonth" id="dateexpirationmonth" class="form-control" >
+											<select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="paymentInfo.expMonth">
 										
-												<option value="1">01</option>
-												<option value="2">02</option>
-												<option value="3">03</option>
-												<option value="4">04</option>
-												<option value="5">05</option>
-												<option value="6">06</option>
-												<option value="7">07</option>
-												<option value="8">08</option>
-												<option value="9">09</option>
+												<option value="01">01</option>
+												<option value="02">02</option>
+												<option value="03">03</option>
+												<option value="04">04</option>
+												<option value="05">05</option>
+												<option value="06">06</option>
+												<option value="07">07</option>
+												<option value="08">08</option>
+												<option value="09">09</option>
 												<option value="10">10</option>		
 												<option value="11">11</option>
 												<option value="12">12</option>								
@@ -576,17 +576,13 @@
 											</div>
 											<div class="col-xs-2 no-padding"></div>
 												<div class="col-xs-5 no-padding">
-												<select name="dateexpirationyear" id="dateexpirationyear" class="form-control" >
-										
-												<option value="2017">2017</option>
-												<option value="2018">2018</option>
-												<option value="2019">2019</option>
-												<option value="2020">2020</option>
-												<option value="2021">2021</option>
-												<option value="2022">2022</option>
-												<option value="2023">2023</option>
-												<option value="2024">2024</option>
-												<option value="2025">2025</option>
+												<select name="dateexpirationyear" id="expYear" class="form-control" ng-model="paymentInfo.expYear">
+										        {% set dateSplit = today |split("-") %}
+                                                {% set year = dateSplit[0] %}
+                                                {% for yr in year..(year+10) %}
+                                                    <option value="{{ yr |slice(2,2)}}">{{ yr }}</option>
+                                                {% endfor %}
+
 											
 												</select>
 												</div>
