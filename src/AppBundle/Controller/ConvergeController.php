@@ -35,7 +35,7 @@ class ConvergeController extends Controller
             $firstName = $customer->getFirstname();
             $lastName = $customer->getLastname();
             $phonePrimary = $customer->getPhoneprimary();
-            $country = $customer->getCountry();
+            $country = $this->getIso3FromCountry($customer->getCountry());
             $email = $customer->getEmail();
             $state = $customer->getState();
             $city = $customer->getCity();
@@ -45,12 +45,7 @@ class ConvergeController extends Controller
 
         }
 
-
-
-        $converge = new ConvergeApi( '007128',
-            'webpage',
-            'CL7NIF',
-            false);
+        $converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
         // Submit a recurring payment
         $response = $converge->ccaddrecurring(
             array(
@@ -62,7 +57,7 @@ class ConvergeController extends Controller
                 'ssl_avs_address' => $address,
                 'ssl_avs_zip' => $zipcode,
                 'ssl_city' => $city,
-                'ssl_state' => $state,//'QC',
+                'ssl_state' => 'QC',
                 'ssl_country' => $country,
                 'ssl_email' => $email,
                 'ssl_phone' => $phonePrimary,
@@ -80,6 +75,13 @@ class ConvergeController extends Controller
         //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
         //print_r($response);
 
-        return $this->json(array('response' => $response,'cardNumber'=>$cardNumber ));
+        return $this->json(array('response' => $response,'cardNumber'=>$cardNumber )); //
+    }
+
+    private function getIso3FromCountry($country)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countrieslist');
+        $country = $repository->findOneByName("$country");
+        return $country->getIso3();
     }
 }
