@@ -424,17 +424,17 @@ class UserController extends Controller
         //$request->query->get('data'); // for get
         //$data = $request->request->all();
         //var_dump($data);
-       $customerId = $request->query->get('customerId'); //$data['firstName'];
-        $firstName = $request->query->get('firstName'); //$data['firstName'];
-        $lastName = $request->query->get('lastName');//$data['lastName'];
-        $email = $request->query->get('email');//$data['email'];
-        $phonePrimary = $request->query->get('phonePrimary');//$data['phonePrimary'];
-        $phoneAlternate = $request->query->get('phoneAlternate');//$data['phoneAlternate'];
-        $country = $request->query->get('country');//$data['country'];
-        $state = $request->query->get('state');//$data['state'];
-        $city = $request->query->get('city');//$data['city'];
-        $address = $request->query->get('address');//$data['address'];
-        $zipCode = $request->query->get('zipCode');//$data['zipCode'];
+       $customerId = $request->request->get('customerId'); //$data['firstName'];
+        $firstName = $request->request->get('firstName'); //$data['firstName'];
+        $lastName = $request->request->get('lastName');//$data['lastName'];
+        $email = $request->request->get('email');//$data['email'];
+        $phonePrimary = $request->request->get('phonePrimary');//$data['phonePrimary'];
+        $phoneAlternate = $request->request->get('phoneAlternate');//$data['phoneAlternate'];
+        $country = $request->request->get('country');//$data['country'];
+        $state = $request->request->get('state');//$data['state'];
+        $city = $request->request->get('city');//$data['city'];
+        $address = $request->request->get('address');//$data['address'];
+        $zipCode = $request->request->get('zipCode');//$data['zipCode'];
 
         //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
         $updateStatus = -1;
@@ -484,10 +484,10 @@ class UserController extends Controller
      */
     public function updatePasswordAction(Request $request)
     {
-        $customerId = $request->query->get('customerId');
-        $oldPassword = $request->query->get('oldPassword');
-        $newPassword = $request->query->get('newPassword');
-        $cNewPassword = $request->query->get('cNewPassword');
+        $customerId = $request->request->get('customerId');
+        $oldPassword = $request->request->get('oldPassword');
+        $newPassword = $request->request->get('newPassword');
+        $cNewPassword = $request->request->get('cNewPassword');
 
         $updateStatus = -1;
         $response = array();
@@ -675,17 +675,17 @@ class UserController extends Controller
     public function subscribeHouseAction(Request $request)
     {
 
-        $customerId = $request->query->get('customerId');
-        $planId = $request->query->get('planId');
-        $firstName = $request->query->get('firstName');
-        $lastName = $request->query->get('lastName');
-        $phonePrimary = $request->query->get('phonePrimary');
-        $phoneAlternate = $request->query->get('phoneAlternate');
-        $country = $request->query->get('country');
-        $state = $request->query->get('state');
-        $city = $request->query->get('city');
-        $address = $request->query->get('address');
-        $zipCode = $request->query->get('zipCode');
+        $customerId = $request->request->get('customerId');
+        $planId = $request->request->get('planId');
+        $firstName = $request->request->get('firstName');
+        $lastName = $request->request->get('lastName');
+        $phonePrimary = $request->request->get('phonePrimary');
+        $phoneAlternate = $request->request->get('phoneAlternate');
+        $country = $request->request->get('country');
+        $state = $request->request->get('state');
+        $city = $request->request->get('city');
+        $address = $request->request->get('address');
+        $zipCode = $request->request->get('zipCode');
 
         $subscriptionStatus = -1;
         $response = array();
