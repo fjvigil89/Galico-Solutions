@@ -30,7 +30,7 @@ app.config(function($interpolateProvider,$translateProvider){
 		"ERR_REGISTER_ADDRESS" : "Please enter a address",
 		"ERR_REGISTER_ZIPCODE" : "Please enter a zipCode",
 	
-        "ERR_UPDATEPASSWORD_PASS"     : "Please enter your old password",
+        "ERR_UPDATEPASSWORD_PASS"     : "Please enter your current password",
         "ERR_UPDATEPASSWORD_REPASS"    : "Please enter your new password.",
         "ERR_UPDATEPASSWORD_NEWPASS" : "Please confirm your new password",
         "ERR_UPDATEPASSWORD_MATCHPASS"     : "The 2 passwords must match",

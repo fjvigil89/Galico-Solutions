@@ -24,12 +24,15 @@ angular.module("gpApp")
         }
 		
 		this.resetPassword = function (email) {
+            var url = RouterService.getEndPoint() + '/reset-password'
 
             return $http({
                 url : RouterService.getEndPoint() + '/reset-password',
                 method: "GET",
                 params: {email: email}
             });
+
+
         }
     })
 
@@ -101,7 +104,7 @@ angular.module("gpApp")
         }
 
         this.updateCustomer = function (customer) {
-
+            /*
             return $http({
                 url : RouterService.getEndPoint() + '/update-customer',
                 method: "GET",
@@ -113,11 +116,28 @@ angular.module("gpApp")
                         country : customer.country, state : customer.state, city : customer.city,
                         address : customer.address, zipCode : customer.zipCode
                     }
+            });*/
+
+            var url = RouterService.getEndPoint() + '/update-customer';
+            var data = $.param({
+                customerId : customer.customerId,lastName : customer.lastName,
+                firstName : customer.firstName,email: customer.email,
+                phonePrimary : customer.phonePrimary, phoneAlternate : customer.phoneAlternate,
+                country : customer.country, state : customer.state, city : customer.city,
+                address : customer.address, zipCode : customer.zipCode
+
             });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
         }
 
         this.updatePassword = function (customer) {
-
+/*
             return $http({
                 url : RouterService.getEndPoint() + '/update-password',
                 method: "GET",
@@ -128,11 +148,35 @@ angular.module("gpApp")
                         newPassword : customer.newPassword,
                         cNewPassword : customer.cNewPassword
                     }
-            });
+            });*/
+
+            var url = RouterService.getEndPoint() + '/update-password';
+            var data = $.param(
+                {
+
+                customerId : customer.customerId,
+                 oldPassword : customer.oldPassword,
+                newPassword : customer.newPassword,
+                cNewPassword : customer.cNewPassword
+                });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
         }
 
-        this.subscribeHouse = function (subscription) {
 
+
+
+
+
+
+
+        this.subscribeHouse = function (subscription) {
+/*
             return $http({
                 url : RouterService.getEndPoint() + '/subscribe-house',
                 method: "GET",
@@ -151,7 +195,36 @@ angular.module("gpApp")
                         zipCode : subscription.zipCode,
 
                     }
-            });
+            });*/
+
+            var url = RouterService.getEndPoint() + '/subscribe-house';
+            var data = $.param(
+                {
+                customerId : subscription.customerId,
+                planId : subscription.planId,
+                firstName : subscription.firstName,
+                lastName : subscription.lastName,
+                phonePrimary : subscription.phonePrimary,
+                phoneAlternate : subscription.phoneAlternate,
+                country : subscription.country,
+                state : subscription.state,
+                city : subscription.city,
+                address : subscription.address,
+                zipCode : subscription.zipCode,
+
+                });
+
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+
+
+
+
         }
 
         this.addRecurringPayments = function(paymentInfo)

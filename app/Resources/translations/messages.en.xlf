@@ -130,16 +130,16 @@
     <!--Modal-->
 
                <trans-unit id="modal_Old_password" resname="modal_Old_password">
-                    <source>Old password*</source>
-                    <target>Old password*</target>
+                    <source>Current password</source>
+                    <target>Current password</target>
               </trans-unit>
                <trans-unit id="modal_new_pass" resname="modal_new_pass">
-                    <source>New password*</source>
-                    <target>New password*</target>
+                    <source>New password</source>
+                    <target>New password</target>
               </trans-unit>
                <trans-unit id="modal_confirm_password" resname="modal_confirm_password">
-                    <source>Confirm password*</source>
-                    <target>Confirm password*</target>
+                    <source>Confirm password</source>
+                    <target>Confirm password</target>
               </trans-unit>
                <trans-unit id="modal_singing_out" resname="modal_singing_out">
                     <source>Signing out...</source>

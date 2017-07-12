@@ -355,15 +355,15 @@
                     <h5 class="error-message text-bold text-center">{[ update.error ]} </h5>
                     <h5 ng-if="update.successful" class="message-info text-bold text-center">Your password was successfully updated. </h5>
                     <div class="form-group">
-                        <label for="pwd">{{ 'modal_Old_password' | trans({}, "messages", lang) }}</label>
+                        <label for="pwd">{{ 'modal_Old_password' | trans({}, "messages", lang) }}*</label>
                         <input type="password" id="oldPassword" name="oldPassword" ng-model="user.oldPassword" required>
                     </div>
                     <div class="form-group">
-                        <label for="pwd">{{ 'modal_new_pass' | trans({}, "messages", lang) }}</label>
+                        <label for="pwd">{{ 'modal_new_pass' | trans({}, "messages", lang) }}*</label>
                         <input type="password" id="newPassword" name="newPassword" ng-model="user.newPassword" required>
                     </div>
                     <div class="form-group">
-                        <label for="pwd">{{ 'modal_confirm_password' | trans({}, "messages", lang) }}</label>
+                        <label for="pwd">{{ 'modal_confirm_password' | trans({}, "messages", lang) }}*</label>
                         <input type="password" id="cNewPassword" name="cNewPassword" ng-model="user.cNewPassword" required>
                     </div>
 
