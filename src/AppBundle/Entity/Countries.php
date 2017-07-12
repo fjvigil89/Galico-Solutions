@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Countries
@@ -23,23 +22,23 @@ class Countries
     /**
      * @var string
      *
-     * @ORM\Column(name="CountryCode", type="string", length=5, nullable=false)
+     * @ORM\Column(name="CountryISO2", type="string", length=5, nullable=false)
      */
-    private $countrycode;
+    private $countryiso2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="CurrencyCode", type="string", length=5, nullable=true)
+     * @ORM\Column(name="CountryISO3", type="string", length=5, nullable=false)
      */
-    private $currencycode;
+    private $countryiso3;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=false)
+     * @ORM\Column(name="CurrencyISO", type="string", length=5, nullable=true)
      */
-    private $price = '0.00';
+    private $currencyiso;
 
     /**
      * @var integer
@@ -50,156 +49,6 @@ class Countries
      */
     private $countryid;
 
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Localnumbers", mappedBy="country")
-     */
-    private $localnumbers;
 
-    public function __construct()
-    {
-        $this->localnumbers = new ArrayCollection();
-    }
-
-
-
-
-    /**
-     * Set country
-     *
-     * @param string $country
-     *
-     * @return Countries
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-    
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
-     * Set countrycode
-     *
-     * @param string $countrycode
-     *
-     * @return Countries
-     */
-    public function setCountrycode($countrycode)
-    {
-        $this->countrycode = $countrycode;
-    
-        return $this;
-    }
-
-    /**
-     * Get countrycode
-     *
-     * @return string
-     */
-    public function getCountrycode()
-    {
-        return $this->countrycode;
-    }
-
-    /**
-     * Set currencycode
-     *
-     * @param string $currencycode
-     *
-     * @return Countries
-     */
-    public function setCurrencycode($currencycode)
-    {
-        $this->currencycode = $currencycode;
-    
-        return $this;
-    }
-
-    /**
-     * Get currencycode
-     *
-     * @return string
-     */
-    public function getCurrencycode()
-    {
-        return $this->currencycode;
-    }
-
-    /**
-     * Set price
-     *
-     * @param string $price
-     *
-     * @return Countries
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-    
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return string
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Get countryid
-     *
-     * @return integer
-     */
-    public function getCountryid()
-    {
-        return $this->countryid;
-    }
-
-    /**
-     * Add localnumber
-     *
-     * @param \AppBundle\Entity\Localnumbers $localnumber
-     *
-     * @return Countries
-     */
-    public function addLocalNumber(\AppBundle\Entity\Localnumbers $localnumber)
-    {
-        $this->localnumbers[] = $localnumber;
-
-        return $this;
-    }
-
-    /**
-     * Remove localnumber
-     *
-     * @param \AppBundle\Entity\Localnumbers $localnumber
-     */
-    public function removeLocalNumber(\AppBundle\Entity\Localnumbers $localnumber)
-    {
-        $this->localnumbers->removeElement($localnumber);
-    }
-
-    /**
-     * Get localnumbers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getLocalNumbers()
-    {
-        return $this->localnumbers;
-    }
 }
+

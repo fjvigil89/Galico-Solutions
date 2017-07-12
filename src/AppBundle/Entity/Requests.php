@@ -3,8 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-
 
 /**
  * Requests
@@ -36,6 +34,48 @@ class Requests
     private $status;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="InvoiceDate", type="date", nullable=true)
+     */
+    private $invoicedate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=false)
+     */
+    private $invoicenumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Amount", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $amount = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Tax", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $tax = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="InvoiceType", type="string", length=10, nullable=true)
+     */
+    private $invoicetype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TransactionID", type="string", length=100, nullable=true)
+     */
+    private $transactionid;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="RequestID", type="integer")
@@ -52,197 +92,8 @@ class Requests
      *   @ORM\JoinColumn(name="HouseID", referencedColumnName="HouseID")
      * })
      */
-    private $house;
+    private $houseid;
 
-    /**
- * @ORM\OneToMany(targetEntity="AppBundle\Entity\Interventions", mappedBy="request")
- */
-    private $interventions;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Requestservices", mappedBy="request")
-     */
-    private $requestservices;
-
-    public function __construct()
-    {
-        $this->interventions = new ArrayCollection();
-        $this->requestservices = new ArrayCollection();
-    }
-
-    /**
-     * Set requestdate
-     *
-     * @param \DateTime $requestdate
-     *
-     * @return Requests
-     */
-    public function setRequestdate($requestdate)
-    {
-        $this->requestdate = $requestdate;
-    
-        return $this;
-    }
-
-    /**
-     * Get requestdate
-     *
-     * @return \DateTime
-     */
-    public function getRequestdate()
-    {
-        return $this->requestdate;
-    }
-
-    /**
-     * Set details
-     *
-     * @param string $details
-     *
-     * @return Requests
-     */
-    public function setDetails($details)
-    {
-        $this->details = $details;
-    
-        return $this;
-    }
-
-    /**
-     * Get details
-     *
-     * @return string
-     */
-    public function getDetails()
-    {
-        return $this->details;
-    }
-
-    /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return Requests
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Get requestid
-     *
-     * @return integer
-     */
-    public function getRequestid()
-    {
-        return $this->requestid;
-    }
-
-    /**
-     * Set house
-     *
-     * @param \AppBundle\Entity\Houses $houseid
-     *
-     * @return Requests
-     */
-    public function setHouse(\AppBundle\Entity\Houses $house = null)
-    {
-        $this->house = $house;
-    
-        return $this;
-    }
-
-    /**
-     * Get house
-     *
-     * @return \AppBundle\Entity\Houses
-     */
-    public function getHouse()
-    {
-        return $this->house;
-    }
-
-    /**
-     * Add intervention
-     *
-     * @param \AppBundle\Entity\Interventions $intervention
-     *
-     * @return Requests
-     */
-    public function addIntervention(\AppBundle\Entity\Interventions $intervention)
-    {
-        $this->interventions[] = $intervention;
-
-        return $this;
-    }
-
-    /**
-     * Remove intervention
-     *
-     * @param \AppBundle\Entity\Interventions $intervention
-     */
-    public function removeIntervention(\AppBundle\Entity\Interventions $intervention)
-    {
-        $this->interventions->removeElement($intervention);
-    }
-
-    /**
-     * Get interventions
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getInterventions()
-    {
-        return $this->interventions;
-    }
-
-
-    /**
-     * Add requestservice
-     *
-     * @param \AppBundle\Entity\Requestservices $requestservice
-     *
-     * @return Requests
-     */
-    public function addRequestService(\AppBundle\Entity\Requestservices $requestservice)
-    {
-        $this->requestservices[] = $requestservice;
-
-        return $this;
-    }
-
-    /**
-     * Remove requestservice
-     *
-     * @param \AppBundle\Entity\Requestservices $requestservice
-     */
-    public function removeRequestService(\AppBundle\Entity\Interventions $requestservice)
-    {
-        $this->requestservices->removeElement($requestservice);
-    }
-
-    /**
-     * Get requestservices
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRequestServices()
-    {
-        return $this->requestservices;
-    }
 
 }
+

@@ -43,7 +43,7 @@ class Interventions
      *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
      * })
      */
-    private $request;
+    private $requestid;
 
     /**
      * @var \AppBundle\Entity\Technicians
@@ -53,113 +53,8 @@ class Interventions
      *   @ORM\JoinColumn(name="TechnicianID", referencedColumnName="TechnicianID")
      * })
      */
-    private $technician;
+    private $technicianid;
 
 
-
-    /**
-     * Set interventiondate
-     *
-     * @param \DateTime $interventiondate
-     *
-     * @return Interventions
-     */
-    public function setInterventiondate($interventiondate)
-    {
-        $this->interventiondate = $interventiondate;
-    
-        return $this;
-    }
-
-    /**
-     * Get interventiondate
-     *
-     * @return \DateTime
-     */
-    public function getInterventiondate()
-    {
-        return $this->interventiondate;
-    }
-
-    /**
-     * Set comments
-     *
-     * @param string $comments
-     *
-     * @return Interventions
-     */
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
-    
-        return $this;
-    }
-
-    /**
-     * Get comments
-     *
-     * @return string
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * Get interventionid
-     *
-     * @return integer
-     */
-    public function getInterventionid()
-    {
-        return $this->interventionid;
-    }
-
-    /**
-     * Set request
-     *
-     * @param \AppBundle\Entity\Requests $request
-     *
-     * @return Interventions
-     */
-    public function setRequest(\AppBundle\Entity\Requests $request = null)
-    {
-        $this->request = $request;
-    
-        return $this;
-    }
-
-    /**
-     * Get request
-     *
-     * @return \AppBundle\Entity\Requests
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * Set technician
-     *
-     * @param \AppBundle\Entity\Technicians $technician
-     *
-     * @return Interventions
-     */
-    public function setTechnician(\AppBundle\Entity\Technicians $technician = null)
-    {
-        $this->technician = $technician;
-    
-        return $this;
-    }
-
-    /**
-     * Get technician
-     *
-     * @return \AppBundle\Entity\Technicians
-     */
-    public function getTechnician()
-    {
-        return $this->technician;
-    }
 }
+

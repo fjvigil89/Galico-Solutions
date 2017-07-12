@@ -27,6 +27,27 @@ class Payments
     private $amount;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="tax", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $tax = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=false)
+     */
+    private $invoicenumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Description", type="string", length=200, nullable=false)
+     */
+    private $description;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="PaymentID", type="integer")
@@ -43,89 +64,8 @@ class Payments
      *   @ORM\JoinColumn(name="SubscriptionID", referencedColumnName="SubscriptionID")
      * })
      */
-    private $subscription;
+    private $subscriptionid;
 
 
-
-    /**
-     * Set paymentdate
-     *
-     * @param \DateTime $paymentdate
-     *
-     * @return Payments
-     */
-    public function setPaymentdate($paymentdate)
-    {
-        $this->paymentdate = $paymentdate;
-    
-        return $this;
-    }
-
-    /**
-     * Get paymentdate
-     *
-     * @return \DateTime
-     */
-    public function getPaymentdate()
-    {
-        return $this->paymentdate;
-    }
-
-    /**
-     * Set amount
-     *
-     * @param string $amount
-     *
-     * @return Payments
-     */
-    public function setAmount($amount)
-    {
-        $this->amount = $amount;
-    
-        return $this;
-    }
-
-    /**
-     * Get amount
-     *
-     * @return string
-     */
-    public function getAmount()
-    {
-        return $this->amount;
-    }
-
-    /**
-     * Get paymentid
-     *
-     * @return integer
-     */
-    public function getPaymentid()
-    {
-        return $this->paymentid;
-    }
-
-    /**
-     * Set subscription
-     *
-     * @param \AppBundle\Entity\Subscriptions $subscription
-     *
-     * @return Payments
-     */
-    public function setSubscription(\AppBundle\Entity\Subscriptions $subscription = null)
-    {
-        $this->subscription = $subscription;
-    
-        return $this;
-    }
-
-    /**
-     * Get subscription
-     *
-     * @return \AppBundle\Entity\Subscriptions
-     */
-    public function getSubscription()
-    {
-        return $this->subscription;
-    }
 }
+

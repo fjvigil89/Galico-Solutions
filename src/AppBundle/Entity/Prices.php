@@ -5,26 +5,19 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * States
+ * Prices
  *
- * @ORM\Table(name="states", indexes={@ORM\Index(name="CountryID", columns={"CountryID"})})
+ * @ORM\Table(name="prices", indexes={@ORM\Index(name="CountryID", columns={"CountryID"}), @ORM\Index(name="PlanID", columns={"PlanID"})})
  * @ORM\Entity
  */
-class States
+class Prices
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="State", type="string", length=50, nullable=false)
+     * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $state;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="StateCode", type="string", length=5, nullable=false)
-     */
-    private $statecode;
+    private $price = '0.00';
 
     /**
      * @var string
@@ -36,11 +29,11 @@ class States
     /**
      * @var integer
      *
-     * @ORM\Column(name="StateID", type="integer")
+     * @ORM\Column(name="PriceID", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $stateid;
+    private $priceid;
 
     /**
      * @var \AppBundle\Entity\Countries
@@ -51,6 +44,16 @@ class States
      * })
      */
     private $countryid;
+
+    /**
+     * @var \AppBundle\Entity\Plans
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plans")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="PlanID", referencedColumnName="PlanID")
+     * })
+     */
+    private $planid;
 
 
 }

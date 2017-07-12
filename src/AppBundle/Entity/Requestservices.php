@@ -29,7 +29,7 @@ class Requestservices
      *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
      * })
      */
-    private $request;
+    private $requestid;
 
     /**
      * @var \AppBundle\Entity\Services
@@ -39,65 +39,8 @@ class Requestservices
      *   @ORM\JoinColumn(name="ServiceID", referencedColumnName="ServiceID")
      * })
      */
-    private $service;
+    private $serviceid;
 
 
-
-    /**
-     * Get requestserviceid
-     *
-     * @return integer
-     */
-    public function getRequestserviceid()
-    {
-        return $this->requestserviceid;
-    }
-
-    /**
-     * Set request
-     *
-     * @param \AppBundle\Entity\Requests $request
-     *
-     * @return Requestservices
-     */
-    public function setRequest(\AppBundle\Entity\Requests $request = null)
-    {
-        $this->request = $request;
-    
-        return $this;
-    }
-
-    /**
-     * Get request
-     *
-     * @return \AppBundle\Entity\Requests
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * Set service
-     *
-     * @param \AppBundle\Entity\Services $service
-     *
-     * @return Requestservices
-     */
-    public function setService(\AppBundle\Entity\Services $service = null)
-    {
-        $this->service = $service;
-    
-        return $this;
-    }
-
-    /**
-     * Get service
-     *
-     * @return \AppBundle\Entity\Services
-     */
-    public function getService()
-    {
-        return $this->service;
-    }
 }
+
