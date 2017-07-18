@@ -43,7 +43,71 @@ class Localnumbers
      *   @ORM\JoinColumn(name="CountryID", referencedColumnName="CountryID")
      * })
      */
-    private $countryid;
+    private $country;
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLocalnumberid()
+    {
+        return $this->localnumberid;
+    }
+
+    /**
+     * @param int $localnumberid
+     */
+    public function setLocalnumberid($localnumberid)
+    {
+        $this->localnumberid = $localnumberid;
+    }
+
+    /**
+     * @return Countries
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Countries $countryid
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
 
 
 }

@@ -2,13 +2,7 @@ angular.module("gpApp")
     .service('authService', function($http,RouterService) {
         this.authenticate = function (user) {
 
-            /*return $http({
-                url : user.authUrl,
-                method: "GET",
-                params: {email: user.email, pwd : user.pwd}
-            });*/
-
-            //http://techfunda.com/howto/565/http-post-server-request
+           //http://techfunda.com/howto/565/http-post-server-request
             var data = $.param({
                 email: user.email,
                 pwd : user.pwd
@@ -104,19 +98,6 @@ angular.module("gpApp")
         }
 
         this.updateCustomer = function (customer) {
-            /*
-            return $http({
-                url : RouterService.getEndPoint() + '/update-customer',
-                method: "GET",
-                params:
-                    {
-                        customerId : customer.customerId,lastName : customer.lastName,
-                        firstName : customer.firstName,email: customer.email,
-                        phonePrimary : customer.phonePrimary, phoneAlternate : customer.phoneAlternate,
-                        country : customer.country, state : customer.state, city : customer.city,
-                        address : customer.address, zipCode : customer.zipCode
-                    }
-            });*/
 
             var url = RouterService.getEndPoint() + '/update-customer';
             var data = $.param({
@@ -137,18 +118,6 @@ angular.module("gpApp")
         }
 
         this.updatePassword = function (customer) {
-/*
-            return $http({
-                url : RouterService.getEndPoint() + '/update-password',
-                method: "GET",
-                params:
-                    {
-                        customerId : customer.customerId,
-                        oldPassword : customer.oldPassword,
-                        newPassword : customer.newPassword,
-                        cNewPassword : customer.cNewPassword
-                    }
-            });*/
 
             var url = RouterService.getEndPoint() + '/update-password';
             var data = $.param(
@@ -169,33 +138,7 @@ angular.module("gpApp")
         }
 
 
-
-
-
-
-
-
         this.subscribeHouse = function (subscription) {
-/*
-            return $http({
-                url : RouterService.getEndPoint() + '/subscribe-house',
-                method: "GET",
-                params:
-                    {
-                        customerId : subscription.customerId,
-                        planId : subscription.planId,
-                        firstName : subscription.firstName,
-                        lastName : subscription.lastName,
-                        phonePrimary : subscription.phonePrimary,
-                        phoneAlternate : subscription.phoneAlternate,
-                        country : subscription.country,
-                        state : subscription.state,
-                        city : subscription.city,
-                        address : subscription.address,
-                        zipCode : subscription.zipCode,
-
-                    }
-            });*/
 
             var url = RouterService.getEndPoint() + '/subscribe-house';
             var data = $.param(
@@ -222,9 +165,6 @@ angular.module("gpApp")
             };
             return $http.post(url, data, config);
 
-
-
-
         }
 
         this.addRecurringPayments = function(paymentInfo)
@@ -248,6 +188,19 @@ angular.module("gpApp")
                 }
             };
             return $http.post(url, data, config);
+        }
+
+        this.getPlanPrice = function(countryISO3,planId){
+            console.log(countryISO3 + " " + planId);
+            return $http({
+                url : RouterService.getEndPoint() + '/plan-price',
+                method: "GET",
+                params:
+                    {
+                        countryISO3 : countryISO3,
+                        planId : planId
+                    }
+            });
         }
     })
 

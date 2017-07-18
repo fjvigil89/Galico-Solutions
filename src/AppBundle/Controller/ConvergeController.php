@@ -26,6 +26,7 @@ class ConvergeController extends Controller
         $nameOnCard = $request->request->get('nameOnCard');
         $cardType = $request->request->get('cardType');
         $planName = $request->request->get('planName');
+
         $tax = 0.14975 * $amount;
 
         $response = null;
@@ -48,6 +49,8 @@ class ConvergeController extends Controller
             $nextPaymentDate = new \DateTime();
             $nextPaymentDate->add(new \DateInterval('P30D'));
 
+            $invoiceNumber = $this->getNextInvoiceNumber();
+
             $converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
             // Submit a recurring payment
             $response = $converge->ccaddrecurring(
@@ -60,7 +63,7 @@ class ConvergeController extends Controller
                     'ssl_avs_address' => $address,
                     'ssl_avs_zip' => $zipcode,
                     'ssl_city' => $city,
-                    'ssl_state' => 'QC',
+                    'ssl_state' => $state,
                     'ssl_country' => $country,
                     'ssl_email' => $email,
                     'ssl_phone' => $phonePrimary,
@@ -71,7 +74,7 @@ class ConvergeController extends Controller
                     'ssl_billing_cycle' => 'MONTHLY',
                     'vita_name_on_card' => $nameOnCard,
                     'ssl_invoice_number' => 'INV-0012',
-                    'ssl_customer_code'=> 'CU-2201 ',
+                    'ssl_customer_code'=> $customerId,
                 )
             );
 
@@ -87,10 +90,15 @@ class ConvergeController extends Controller
         return $this->json(array('response' => $response,'cardNumber'=>$cardNumber )); //
     }
 
-    private function getIso3FromCountry($country)
+    private function getIso3FromCountry($countryName)
     {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Countrieslist');
-        $country = $repository->findOneByName("$country");
-        return $country->getIso3();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countryntry = $repository->findOneByCountry("$countryName");
+        return $countryntry->getCountryiso3();
+    }
+
+    private function getNextInvoiceNumber($country)
+    {
+
     }
 }

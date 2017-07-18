@@ -544,12 +544,13 @@ class UserController extends Controller
         $customerHouses = array();
         foreach($houses as $house)
         {
+
             $subscriptions = $house->getSubscriptions();
             $index = count($subscriptions)-1;
 
             $hs = array();
             $hs['id'] =$house->getHouseid();
-            $hs['plan'] = $subscriptions[$index]->getPlan()->getPlanname();
+            $hs['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
             $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
             //$hs['dueDate'] = $this->getDueDate($hs['subscriptionDate']);
             //$hs['contact'] = $house->getFirstname() . " " . $house->getLastname();
@@ -611,7 +612,7 @@ class UserController extends Controller
             $sub = array();
 
             $sub['subscriptionDate'] = date_format($subscription->getSubscriptiondate(), 'Y-m-d');
-            $sub['plan'] = $subscription->getPlan()->getPlanname();
+            $sub['plan'] = $subscription->getPrice()->getPlan()->getPlanname();
             //$sub['title']
             $paymnt = array();
             foreach($subscription->getPayments() as $payment)
@@ -667,6 +668,26 @@ class UserController extends Controller
 
         }
         return $this->json($houseRequests);
+    }
+
+    /**
+     * @Route("/plan-price", name="planPrice")
+     */
+    public function getPlanPriceAction(Request $request)
+    {
+        $countryISO3 = $request->query->get('countryISO3');
+        $planId = $request->query->get('planId');
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
+        $plan = $repository->find($planId);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Countries");
+        $country = $repository->findOneByCountryiso3($countryISO3);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Prices");
+        $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
+
+        return $this->json(array("planName" => $plan->getPlanname(),"price" => $planPrice->getPrice(),"currency"=>$country->getCurrencyiso()));
     }
 
     /**
@@ -734,22 +755,6 @@ class UserController extends Controller
 
         return $this->json($response);
 
-    }
-
-    /**
-     * @Route("/client-resume")
-     */
-    public function showMyAcountAction()
-    {
-        return $this->render('website/client-resume.html.twig');
-    }
-
-    /**
-     * @Route("/administrator")
-     */
-    public function showAdministratorAction()
-    {
-        return $this->render('website/administator.html.twig');
     }
 
 }

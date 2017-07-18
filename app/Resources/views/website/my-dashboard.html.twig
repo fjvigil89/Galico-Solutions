@@ -457,7 +457,7 @@
                         </div>
 						<div class="form-group">
                             <label for="subPlanId">Plan:</label>
-                            <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId">
+                            <select name="plan" class="form-control" id="subPlanId" ng-model="newSubscription.planId" ng-change="getPlanPrice()" ng-disabled="newSubscription.country=='' || newSubscription.country==undefined">
                                 {% for plan in plans %}
                                     <option value="{{ plan.planid }}">{{ plan.planname }}</option>
                                 {% endfor %}
@@ -466,7 +466,7 @@
                         </div>
 						<div class="form-group">
                             <label for="status">Monthly amount:</label>
-							<text>US 24.99</text>
+							<text>{[newSubscription.amount]} {[newSubscription.currency]}</text>
                         </div>						
 						
 						

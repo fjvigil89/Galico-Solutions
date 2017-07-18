@@ -41,6 +41,54 @@ class Planservices
      */
     private $planid;
 
+    /**
+     * @return int
+     */
+    public function getPlanserviceid()
+    {
+        return $this->planserviceid;
+    }
+
+    /**
+     * @param int $planserviceid
+     */
+    public function setPlanserviceid($planserviceid)
+    {
+        $this->planserviceid = $planserviceid;
+    }
+
+    /**
+     * @return Services
+     */
+    public function getServiceid()
+    {
+        return $this->serviceid;
+    }
+
+    /**
+     * @param Services $serviceid
+     */
+    public function setServiceid($serviceid)
+    {
+        $this->serviceid = $serviceid;
+    }
+
+    /**
+     * @return Plans
+     */
+    public function getPlanid()
+    {
+        return $this->planid;
+    }
+
+    /**
+     * @param Plans $planid
+     */
+    public function setPlanid($planid)
+    {
+        $this->planid = $planid;
+    }
+
 
 }
 

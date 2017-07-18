@@ -45,7 +45,7 @@ class Admins
      *
      * @ORM\Column(name="IsSuperAdmin", type="boolean", nullable=false)
      */
-    private $issuperadmin = '0';
+    private $issuperadmin;
 
     /**
      * @var integer
@@ -65,6 +65,118 @@ class Admins
      * })
      */
     private $localnumberid;
+
+    /**
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIssuperadmin()
+    {
+        return $this->issuperadmin;
+    }
+
+    /**
+     * @param bool $issuperadmin
+     */
+    public function setIssuperadmin($issuperadmin)
+    {
+        $this->issuperadmin = $issuperadmin;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAdminid()
+    {
+        return $this->adminid;
+    }
+
+    /**
+     * @param int $adminid
+     */
+    public function setAdminid($adminid)
+    {
+        $this->adminid = $adminid;
+    }
+
+    /**
+     * @return Localnumbers
+     */
+    public function getLocalnumberid()
+    {
+        return $this->localnumberid;
+    }
+
+    /**
+     * @param Localnumbers $localnumberid
+     */
+    public function setLocalnumberid($localnumberid)
+    {
+        $this->localnumberid = $localnumberid;
+    }
 
 
 }

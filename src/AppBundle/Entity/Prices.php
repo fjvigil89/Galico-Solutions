@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Prices
@@ -17,14 +18,14 @@ class Prices
      *
      * @ORM\Column(name="Price", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $price = '0.00';
+    private $price;
 
     /**
      * @var string
      *
      * @ORM\Column(name="TaxPercentage", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $taxpercentage = '0.00';
+    private $taxpercentage;
 
     /**
      * @var integer
@@ -43,7 +44,7 @@ class Prices
      *   @ORM\JoinColumn(name="CountryID", referencedColumnName="CountryID")
      * })
      */
-    private $countryid;
+    private $country;
 
     /**
      * @var \AppBundle\Entity\Plans
@@ -53,7 +54,132 @@ class Prices
      *   @ORM\JoinColumn(name="PlanID", referencedColumnName="PlanID")
      * })
      */
-    private $planid;
+    private $plan;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Subscriptions", mappedBy="price")
+     */
+    private $subscriptions;
+
+
+    public function __construct()
+    {
+        $this->subscriptions = new ArrayCollection();
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param string $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaxpercentage()
+    {
+        return $this->taxpercentage;
+    }
+
+    /**
+     * @param string $taxpercentage
+     */
+    public function setTaxpercentage($taxpercentage)
+    {
+        $this->taxpercentage = $taxpercentage;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPriceid()
+    {
+        return $this->priceid;
+    }
+
+    /**
+     * @param int $priceid
+     */
+    public function setPriceid($priceid)
+    {
+        $this->priceid = $priceid;
+    }
+
+    /**
+     * @return Countries
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Countries $country
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return Plans
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * @param Plans $plan
+     */
+    public function setPlan($plan)
+    {
+        $this->plan = $plan;
+    }
+
+    /**
+     * Add subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     *
+     * @return Prices
+     */
+    public function addSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions[] = $subscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove subscription
+     *
+     * @param \AppBundle\Entity\Subscriptions $subscription
+     */
+    public function removeSubscription(\AppBundle\Entity\Subscriptions $subscription)
+    {
+        $this->subscriptions->removeElement($subscription);
+    }
+
+    /**
+     * Get subscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
+    }
 
 
 }

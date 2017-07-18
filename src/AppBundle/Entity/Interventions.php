@@ -43,7 +43,7 @@ class Interventions
      *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
      * })
      */
-    private $requestid;
+    private $request;
 
     /**
      * @var \AppBundle\Entity\Technicians
@@ -53,7 +53,87 @@ class Interventions
      *   @ORM\JoinColumn(name="TechnicianID", referencedColumnName="TechnicianID")
      * })
      */
-    private $technicianid;
+    private $technician;
+
+    /**
+     * @return \DateTime
+     */
+    public function getInterventiondate()
+    {
+        return $this->interventiondate;
+    }
+
+    /**
+     * @param \DateTime $interventiondate
+     */
+    public function setInterventiondate($interventiondate)
+    {
+        $this->interventiondate = $interventiondate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param string $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
+     * @return int
+     */
+    public function getInterventionid()
+    {
+        return $this->interventionid;
+    }
+
+    /**
+     * @param int $interventionid
+     */
+    public function setInterventionid($interventionid)
+    {
+        $this->interventionid = $interventionid;
+    }
+
+    /**
+     * @return Requests
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param Requests $request
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+    }
+
+    /**
+     * @return Technicians
+     */
+    public function getTechnician()
+    {
+        return $this->technician;
+    }
+
+    /**
+     * @param Technicians $technicianid
+     */
+    public function setTechnician($technician)
+    {
+        $this->technician = $technician;
+    }
 
 
 }

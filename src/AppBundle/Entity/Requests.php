@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Requests
@@ -52,14 +53,14 @@ class Requests
      *
      * @ORM\Column(name="Amount", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $amount = '0.00';
+    private $amount;
 
     /**
      * @var string
      *
      * @ORM\Column(name="Tax", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $tax = '0.00';
+    private $tax;
 
     /**
      * @var string
@@ -92,7 +93,271 @@ class Requests
      *   @ORM\JoinColumn(name="HouseID", referencedColumnName="HouseID")
      * })
      */
-    private $houseid;
+    private $house;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Interventions", mappedBy="request")
+     */
+    private $interventions;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Requestservices", mappedBy="request")
+     */
+    private $requestservices;
+
+    public function __construct()
+    {
+        $this->interventions = new ArrayCollection();
+        $this->requestservices = new ArrayCollection();
+    }
+
+
+    /**
+     * @return \DateTime
+     */
+    public function getRequestdate()
+    {
+        return $this->requestdate;
+    }
+
+    /**
+     * @param \DateTime $requestdate
+     */
+    public function setRequestdate($requestdate)
+    {
+        $this->requestdate = $requestdate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDetails()
+    {
+        return $this->details;
+    }
+
+    /**
+     * @param string $details
+     */
+    public function setDetails($details)
+    {
+        $this->details = $details;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getInvoicedate()
+    {
+        return $this->invoicedate;
+    }
+
+    /**
+     * @param \DateTime $invoicedate
+     */
+    public function setInvoicedate($invoicedate)
+    {
+        $this->invoicedate = $invoicedate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInvoicenumber()
+    {
+        return $this->invoicenumber;
+    }
+
+    /**
+     * @param string $invoicenumber
+     */
+    public function setInvoicenumber($invoicenumber)
+    {
+        $this->invoicenumber = $invoicenumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param string $amount
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * @param string $tax
+     */
+    public function setTax($tax)
+    {
+        $this->tax = $tax;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInvoicetype()
+    {
+        return $this->invoicetype;
+    }
+
+    /**
+     * @param string $invoicetype
+     */
+    public function setInvoicetype($invoicetype)
+    {
+        $this->invoicetype = $invoicetype;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransactionid()
+    {
+        return $this->transactionid;
+    }
+
+    /**
+     * @param string $transactionid
+     */
+    public function setTransactionid($transactionid)
+    {
+        $this->transactionid = $transactionid;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRequestid()
+    {
+        return $this->requestid;
+    }
+
+    /**
+     * @param int $requestid
+     */
+    public function setRequestid($requestid)
+    {
+        $this->requestid = $requestid;
+    }
+
+    /**
+     * @return Houses
+     */
+    public function getHouse()
+    {
+        return $this->house;
+    }
+
+    /**
+     * @param Houses $house
+     */
+    public function setHouse($house)
+    {
+        $this->house = $house;
+    }
+
+
+    /**
+     * Add intervention
+     *
+     * @param \AppBundle\Entity\Interventions $intervention
+     *
+     * @return Requests
+     */
+    public function addIntervention(\AppBundle\Entity\Interventions $intervention)
+    {
+        $this->interventions[] = $intervention;
+
+        return $this;
+    }
+
+    /**
+     * Remove intervention
+     *
+     * @param \AppBundle\Entity\Interventions $intervention
+     */
+    public function removeIntervention(\AppBundle\Entity\Interventions $intervention)
+    {
+        $this->interventions->removeElement($intervention);
+    }
+
+    /**
+     * Get interventions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventions()
+    {
+        return $this->interventions;
+    }
+
+
+    /**
+     * Add requestservice
+     *
+     * @param \AppBundle\Entity\Requestservices $requestservice
+     *
+     * @return Requests
+     */
+    public function addRequestService(\AppBundle\Entity\Requestservices $requestservice)
+    {
+        $this->requestservices[] = $requestservice;
+
+        return $this;
+    }
+
+    /**
+     * Remove requestservice
+     *
+     * @param \AppBundle\Entity\Requestservices $requestservice
+     */
+    public function removeRequestService(\AppBundle\Entity\Requestservices $requestservice)
+    {
+        $this->requestservices->removeElement($requestservice);
+    }
+
+    /**
+     * Get requestservices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRequestServices()
+    {
+        return $this->requestservices;
+    }
 
 
 }

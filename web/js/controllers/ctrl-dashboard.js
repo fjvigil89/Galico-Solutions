@@ -150,6 +150,22 @@ angular.module("gpApp")
 
         }
 
+        $scope.getPlanPrice = function()
+        {
+            DashboardService.getPlanPrice($scope.newSubscription.country,$scope.newSubscription.planId)
+                .then(function(response){
+
+                    $scope.newSubscription.amount = response.data.price;
+                    $scope.newSubscription.currency = response.data.currency;
+
+                    $scope.paymentInfo.planName = response.data.planName;
+                    $scope.paymentInfo.amount = response.data.price;
+
+                },function(error){
+                    console.log(error);
+                })
+        }
+
         $scope.subscribeNewHouse = function()
         {
             if(GeneralService.isInvalid($scope.newSubscription.planId))
@@ -279,6 +295,7 @@ angular.module("gpApp")
             else
 			{
 				$scope.showPaymentForm = true;
+
 			}
 			
 		}
@@ -347,6 +364,8 @@ angular.module("gpApp")
             else
             {
                 $scope.paymentInfo.customerId = $scope.newSubscription.customerId;
+                $scope.paymentInfo.country = $scope.newSubscription.country;
+                $scope.paymentInfo.country = $scope.newSubscription.country;
 
                 DashboardService.addRecurringPayments($scope.paymentInfo)
                     .then(function(response){

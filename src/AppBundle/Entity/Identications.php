@@ -50,7 +50,7 @@ class Identications
      *   @ORM\JoinColumn(name="CustomerID", referencedColumnName="CustomerID")
      * })
      */
-    private $customerid;
+    private $customer;
 
     /**
      * @var \AppBundle\Entity\Technicians
@@ -60,7 +60,103 @@ class Identications
      *   @ORM\JoinColumn(name="TechnicianID", referencedColumnName="TechnicianID")
      * })
      */
-    private $technicianid;
+    private $technician;
+
+    /**
+     * @return string
+     */
+    public function getIdtype()
+    {
+        return $this->idtype;
+    }
+
+    /**
+     * @param string $idtype
+     */
+    public function setIdtype($idtype)
+    {
+        $this->idtype = $idtype;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdnumber()
+    {
+        return $this->idnumber;
+    }
+
+    /**
+     * @param string $idnumber
+     */
+    public function setIdnumber($idnumber)
+    {
+        $this->idnumber = $idnumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param string $picture
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdenticationid()
+    {
+        return $this->identicationid;
+    }
+
+    /**
+     * @param int $identicationid
+     */
+    public function setIdenticationid($identicationid)
+    {
+        $this->identicationid = $identicationid;
+    }
+
+    /**
+     * @return Customers
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+    /**
+     * @param Customers $customer
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
+    }
+
+    /**
+     * @return Technicians
+     */
+    public function getTechnician()
+    {
+        return $this->technician;
+    }
+
+    /**
+     * @param Technicians $technician
+     */
+    public function setTechnician($technician)
+    {
+        $this->technician = $technician;
+    }
 
 
 }

@@ -31,7 +31,7 @@ class States
      *
      * @ORM\Column(name="TaxPercentage", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $taxpercentage = '0.00';
+    private $taxpercentage;
 
     /**
      * @var integer
@@ -51,6 +51,86 @@ class States
      * })
      */
     private $countryid;
+
+    /**
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatecode()
+    {
+        return $this->statecode;
+    }
+
+    /**
+     * @param string $statecode
+     */
+    public function setStatecode($statecode)
+    {
+        $this->statecode = $statecode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaxpercentage()
+    {
+        return $this->taxpercentage;
+    }
+
+    /**
+     * @param string $taxpercentage
+     */
+    public function setTaxpercentage($taxpercentage)
+    {
+        $this->taxpercentage = $taxpercentage;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStateid()
+    {
+        return $this->stateid;
+    }
+
+    /**
+     * @param int $stateid
+     */
+    public function setStateid($stateid)
+    {
+        $this->stateid = $stateid;
+    }
+
+    /**
+     * @return Countries
+     */
+    public function getCountryid()
+    {
+        return $this->countryid;
+    }
+
+    /**
+     * @param Countries $countryid
+     */
+    public function setCountryid($countryid)
+    {
+        $this->countryid = $countryid;
+    }
 
 
 }

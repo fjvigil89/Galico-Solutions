@@ -52,6 +52,86 @@ class Availabilities
      */
     private $technicianid;
 
+    /**
+     * @return string
+     */
+    public function getDay()
+    {
+        return $this->day;
+    }
+
+    /**
+     * @param string $day
+     */
+    public function setDay($day)
+    {
+        $this->day = $day;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getStarttime()
+    {
+        return $this->starttime;
+    }
+
+    /**
+     * @param \DateTime $starttime
+     */
+    public function setStarttime($starttime)
+    {
+        $this->starttime = $starttime;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndtime()
+    {
+        return $this->endtime;
+    }
+
+    /**
+     * @param \DateTime $endtime
+     */
+    public function setEndtime($endtime)
+    {
+        $this->endtime = $endtime;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAvailabilityid()
+    {
+        return $this->availabilityid;
+    }
+
+    /**
+     * @param int $availabilityid
+     */
+    public function setAvailabilityid($availabilityid)
+    {
+        $this->availabilityid = $availabilityid;
+    }
+
+    /**
+     * @return Technicians
+     */
+    public function getTechnicianid()
+    {
+        return $this->technicianid;
+    }
+
+    /**
+     * @param Technicians $technicianid
+     */
+    public function setTechnicianid($technicianid)
+    {
+        $this->technicianid = $technicianid;
+    }
+
 
 }
 

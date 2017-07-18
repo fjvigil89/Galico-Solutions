@@ -31,7 +31,7 @@ class Payments
      *
      * @ORM\Column(name="tax", type="decimal", precision=10, scale=2, nullable=false)
      */
-    private $tax = '0.00';
+    private $tax;
 
     /**
      * @var string
@@ -64,7 +64,119 @@ class Payments
      *   @ORM\JoinColumn(name="SubscriptionID", referencedColumnName="SubscriptionID")
      * })
      */
-    private $subscriptionid;
+    private $subscription;
+
+    /**
+     * @return \DateTime
+     */
+    public function getPaymentdate()
+    {
+        return $this->paymentdate;
+    }
+
+    /**
+     * @param \DateTime $paymentdate
+     */
+    public function setPaymentdate($paymentdate)
+    {
+        $this->paymentdate = $paymentdate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param string $amount
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * @param string $tax
+     */
+    public function setTax($tax)
+    {
+        $this->tax = $tax;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInvoicenumber()
+    {
+        return $this->invoicenumber;
+    }
+
+    /**
+     * @param string $invoicenumber
+     */
+    public function setInvoicenumber($invoicenumber)
+    {
+        $this->invoicenumber = $invoicenumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPaymentid()
+    {
+        return $this->paymentid;
+    }
+
+    /**
+     * @param int $paymentid
+     */
+    public function setPaymentid($paymentid)
+    {
+        $this->paymentid = $paymentid;
+    }
+
+    /**
+     * @return Subscriptions
+     */
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
+
+    /**
+     * @param Subscriptions $subscription
+     */
+    public function setSubscription($subscription)
+    {
+        $this->subscription = $subscription;
+    }
 
 
 }
