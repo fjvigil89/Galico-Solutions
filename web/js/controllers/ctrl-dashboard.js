@@ -3,6 +3,15 @@
  */
 angular.module("gpApp")
     .controller('DashboardController',function($scope,$rootScope,DashboardService,$window,GeneralService,$translate){
+            /*FOR MULTIPLE MODAL WINDOWS*/
+            $('body').on('hidden.bs.modal', function (e) {
+                if($('.modal').hasClass('in')) {
+                    $('body').addClass('modal-open');
+                }
+            });
+
+            /*END ::*/
+
             $scope.customer = {};
             $scope.customerUpdated = {};
             $scope.update = {};
@@ -365,7 +374,16 @@ angular.module("gpApp")
             {
                 $scope.paymentInfo.customerId = $scope.newSubscription.customerId;
                 $scope.paymentInfo.country = $scope.newSubscription.country;
-                $scope.paymentInfo.country = $scope.newSubscription.country;
+                $scope.paymentInfo.state = $scope.newSubscription.state;
+                $scope.paymentInfo.city = $scope.newSubscription.city;
+                $scope.paymentInfo.address = $scope.newSubscription.address;
+                $scope.paymentInfo.zipCode = $scope.newSubscription.zipCode;
+
+                $scope.paymentInfo.cFirstName = $scope.newSubscription.firstName;
+                $scope.paymentInfo.cLastName = $scope.newSubscription.lastName;
+                $scope.paymentInfo.cPhonePrimary = $scope.newSubscription.phonePrimary;
+                $scope.paymentInfo.cPhoneAlternate = $scope.newSubscription.phoneAlternate;
+
 
                 DashboardService.addRecurringPayments($scope.paymentInfo)
                     .then(function(response){

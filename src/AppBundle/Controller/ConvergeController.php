@@ -26,8 +26,19 @@ class ConvergeController extends Controller
         $nameOnCard = $request->request->get('nameOnCard');
         $cardType = $request->request->get('cardType');
         $planName = $request->request->get('planName');
+        $houseCountry = $request->request->get('country');
+        $houseState = $request->request->get('state');
+        $houseCity = $request->request->get('city');
+        $houseAddress = $request->request->get('address');
+        $houseZipCode = $request->request->get('zipCode');
 
-        $tax = 0.14975 * $amount;
+        $cFirstName = $request->request->get('firstName');
+        $cLastName = $request->request->get('lastName');
+        $cPhonePrimary = $request->request->get('phonePrimary');
+        $cPhoneAlternate = $request->request->get('phoneAlternate');
+
+
+        $tax = $this->getTaxPercentage($houseCountry) * $amount;
 
         $response = null;
 
@@ -44,7 +55,6 @@ class ConvergeController extends Controller
             $city = $customer->getCity();
             $address =$customer->getAddress();
             $zipcode =$customer->getZipcode();
-
 
             $nextPaymentDate = new \DateTime();
             $nextPaymentDate->add(new \DateInterval('P30D'));
@@ -93,12 +103,33 @@ class ConvergeController extends Controller
     private function getIso3FromCountry($countryName)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
-        $countryntry = $repository->findOneByCountry("$countryName");
-        return $countryntry->getCountryiso3();
+        $country = $repository->findOneByCountry("$countryName");
+        return $country->getCountryiso3();
     }
 
-    private function getNextInvoiceNumber($country)
+    private function getNextInvoiceNumber($countryName)
     {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountry("$countryName");
 
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+
+        $qb->select('p')
+            ->from('Payments', 'p')
+            ->where('p.InvoiceNumber LIKE :identifier')
+            ->orderBy('p.InvoiceNumber', 'ASC')
+            ->setParameter('identifier', 'INV-'.$country->getCountryid());
+    }
+
+    private function getTaxPercentage($countryName)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountry("$countryName");
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
+        $price = $repository->findOneByCountry($country);
+
+        return $price->getTaxpercentage();
     }
 }

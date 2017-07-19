@@ -189,8 +189,8 @@
 
 #addHouseModal .modal-body
 {
-    max-height: 73vh;
-    overflow-y: auto;
+    /*max-height: 73vh;
+    overflow-y: auto;*/
 }
 
 

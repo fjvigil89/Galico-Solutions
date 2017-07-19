@@ -178,7 +178,16 @@ angular.module("gpApp")
                 nameOnCard : paymentInfo.nameOnCard,
                 cardType : paymentInfo.cardType,
                 planName : paymentInfo.planName,
-                customerId : paymentInfo.customerId
+                customerId : paymentInfo.customerId,
+                country : paymentInfo.country,
+                state : paymentInfo.state,
+                city : paymentInfo.city,
+                address : paymentInfo.address,
+                zipCode : paymentInfo.zipCode,
+                firstName : paymentInfo.cFirstName,
+                lastName : paymentInfo.cLastName,
+                phonePrimary : paymentInfo.cPhonePrimary,
+                phoneAlternate : paymentInfo.cPhoneAlternate
 
             });
 
