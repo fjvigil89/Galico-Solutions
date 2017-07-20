@@ -29,7 +29,7 @@ class Techservices
      *   @ORM\JoinColumn(name="ServiceID", referencedColumnName="ServiceID")
      * })
      */
-    private $serviceid;
+    private $service;
 
     /**
      * @var \AppBundle\Entity\Technicians
@@ -39,7 +39,55 @@ class Techservices
      *   @ORM\JoinColumn(name="TechnicianID", referencedColumnName="TechnicianID")
      * })
      */
-    private $technicianid;
+    private $technician;
+
+    /**
+     * @return int
+     */
+    public function getTechserviceid()
+    {
+        return $this->techserviceid;
+    }
+
+    /**
+     * @param int $techserviceid
+     */
+    public function setTechserviceid($techserviceid)
+    {
+        $this->techserviceid = $techserviceid;
+    }
+
+    /**
+     * @return Services
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * @param Services $service
+     */
+    public function setService($service)
+    {
+        $this->service = $service;
+    }
+
+    /**
+     * @return Technicians
+     */
+    public function getTechnician()
+    {
+        return $this->technician;
+    }
+
+    /**
+     * @param Technicians $technician
+     */
+    public function setTechnician($technician)
+    {
+        $this->technician = $technician;
+    }
 
 
 }
