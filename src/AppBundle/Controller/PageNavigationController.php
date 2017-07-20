@@ -84,7 +84,7 @@ class PageNavigationController extends Controller
     }
 	
 	/**
-     * @Route("/admin-signin")
+     * @Route("/admin-signin", name="adminSignin")
      */
     public function showAdminSigninAction()
     {
@@ -92,7 +92,7 @@ class PageNavigationController extends Controller
     }
 	
 	/**
-     * @Route("/admin-console")
+     * @Route("/admin-console", name="showAdmin")
      */
     public function showAdminConsoleAction()
     {
