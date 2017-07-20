@@ -696,7 +696,7 @@ class UserController extends Controller
     public function subscribeHouseAction(Request $request)
     {
 
-        $customerId = $request->request->get('customerId');
+        /*$customerId = $request->request->get('customerId');
         $planId = $request->request->get('planId');
         $firstName = $request->request->get('firstName');
         $lastName = $request->request->get('lastName');
@@ -754,7 +754,7 @@ class UserController extends Controller
         $response['subscriptionStatus'] = $subscriptionStatus;
 
         return $this->json($response);
-
+        */
     }
 
 }

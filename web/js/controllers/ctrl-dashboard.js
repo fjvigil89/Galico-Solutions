@@ -388,6 +388,18 @@ angular.module("gpApp")
                 DashboardService.addRecurringPayments($scope.paymentInfo)
                     .then(function(response){
                         console.log(response);
+                        var result = response.data;
+
+                        if(result.errorCode!=0) //TRANSACTION FAILED
+                        {
+                            $scope.paymentInfo.error =  $translate.instant(result.errorName);
+                        }
+                        else
+                        {
+
+                        }
+
+
                     },function(error){
                         console.log(error);
                     })

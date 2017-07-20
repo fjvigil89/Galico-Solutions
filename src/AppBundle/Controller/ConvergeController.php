@@ -2,7 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Payments;
 use AppBundle\Entity\Requestservices;
+use AppBundle\Entity\Houses;
+use AppBundle\Entity\Subscriptions;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,7 +41,7 @@ class ConvergeController extends Controller
         $cPhonePrimary = $request->request->get('phonePrimary');
         $cPhoneAlternate = $request->request->get('phoneAlternate');
 
-        $tax = $this->getTaxPercentage($houseCountryISO) * $amount;
+        $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
 
         $response = null;
 
@@ -59,7 +62,7 @@ class ConvergeController extends Controller
             $nextPaymentDate = new \DateTime();
             $nextPaymentDate->add(new \DateInterval('P30D'));
 
-            //$invoiceNumber = $this->getNextInvoiceNumber();
+            $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
             $converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
             // Submit a recurring payment
@@ -83,7 +86,7 @@ class ConvergeController extends Controller
                     'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
                     'ssl_billing_cycle' => 'MONTHLY',
                     'vita_name_on_card' => $nameOnCard,
-                    'ssl_invoice_number' => $this->getNextInvoiceNumber($customer->getCountry()),
+                    'ssl_invoice_number' => $invoiceNumber,
                     'ssl_customer_code'=> $customerId,
                 )
             );
@@ -97,17 +100,66 @@ class ConvergeController extends Controller
         //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
         //print_r($response);
         $result = array();
-        if($response['errorCode'])
+        if(array_key_exists("errorCode",$response))
         {
             $result['errorCode'] = $response['errorCode'];
             $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
+            $result['outcome'] = "FAILURE";
         }
         else
         {
             $result['errorCode'] = 0;
+            $dateNow = new \DateTime('now');
+
+            //---SUBSCRIBE HOUSE
+            $houseCountry = $this->getCountryByIso3($houseCountryISO);
+
+            $house = new Houses();
+            $house->setFirstname($cFirstName);
+            $house->setLastname($cLastName);
+            $house->setPhoneprimary($cPhonePrimary);
+            $house->setPhonealternate($cPhoneAlternate);
+            $house->setCountry($houseCountry->getCountry());
+            $house->setState($houseState);
+            $house->setCity($houseCity);
+            $house->setAddress($houseAddress);
+            $house->setZipcode($houseZipCode);
+            $house->setCustomer($customer);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($house);
+            $em->flush();
+
+            $price = $this->getPrice($houseCountryISO,$planName);
+            $subscription = new Subscriptions();
+            $subscription->setHouse($house);
+            $subscription->setPrice($price);
+            $subscription->setSubscriptiondate($dateNow);
+            $subscription->setTransactionid($response['ssl_recurring_id']);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subscription);
+            $em->flush();
+
+            //---END : SUSCRIBE HOUSE
+
+            //-- ADD PAYMENT INFO
+            $payment = new Payments();
+            $payment->setPaymentdate($dateNow);
+            $payment->setAmount($amount);
+            $payment->setTax($tax);
+            $payment->setDescription($planName . " subscription");
+            $payment->setInvoicenumber($invoiceNumber);
+            $payment->setSubscription($subscription);
+
+
+            //-- END :: PAYMENT INFO
+
+
+            $result['outcome'] = "SUCCESS";
         }
 
-        return $this->json(array('response' => $result)); //
+        return $this->json($result); //
     }
 
     private function getTransactionErrorName($convergeErrorName)
@@ -122,6 +174,12 @@ class ConvergeController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
         $country = $repository->findOneByCountry("$countryName");
         return $country->getCountryiso3();
+    }
+    private function getCountryByIso3($countryIso3)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountryiso3("$countryIso3");
+        return $country;
     }
 
     private function getNextInvoiceNumber($countryName)
@@ -149,15 +207,27 @@ class ConvergeController extends Controller
         return $nextInvoiceNumber;
     }
 
-
     private function getTaxPercentage($countryIso3)
     {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
-        $country = $repository->findOneByCountryiso3("$countryIso3");
 
+        $country = $this->getCountryByIso3($countryIso3);
         $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
         $price = $repository->findOneByCountry($country);
 
         return $price->getTaxpercentage();
+    }
+
+    private function getPrice($countryIso3,$planName)
+    {
+
+        $country = $this->getCountryByIso3($countryIso3);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+        $plan = $repository->findOneByPlanname($planName);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
+        $price = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
+
+        return $price;
     }
 }
