@@ -314,7 +314,7 @@ angular.module("gpApp")
 			$scope.showPaymentForm = false;
 		}
 
-        $scope.gotoserviceForm = function()
+        /*$scope.gotoserviceForm = function()
         {
             $scope.showServiceForm = true;
         }
@@ -333,7 +333,7 @@ angular.module("gpApp")
         $scope.gotoinvoiceForm = function()
         {
             $scope.showInvoice = true;
-        }
+        }*/
 
 
         $scope.addRecurringPayments = function()

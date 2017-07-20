@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Requestservices;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +27,7 @@ class ConvergeController extends Controller
         $nameOnCard = $request->request->get('nameOnCard');
         $cardType = $request->request->get('cardType');
         $planName = $request->request->get('planName');
-        $houseCountry = $request->request->get('country');
+        $houseCountryISO = $request->request->get('country');
         $houseState = $request->request->get('state');
         $houseCity = $request->request->get('city');
         $houseAddress = $request->request->get('address');
@@ -37,8 +38,7 @@ class ConvergeController extends Controller
         $cPhonePrimary = $request->request->get('phonePrimary');
         $cPhoneAlternate = $request->request->get('phoneAlternate');
 
-
-        $tax = $this->getTaxPercentage($houseCountry) * $amount;
+        $tax = $this->getTaxPercentage($houseCountryISO) * $amount;
 
         $response = null;
 
@@ -59,7 +59,7 @@ class ConvergeController extends Controller
             $nextPaymentDate = new \DateTime();
             $nextPaymentDate->add(new \DateInterval('P30D'));
 
-            $invoiceNumber = $this->getNextInvoiceNumber();
+            //$invoiceNumber = $this->getNextInvoiceNumber();
 
             $converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
             // Submit a recurring payment
@@ -83,7 +83,7 @@ class ConvergeController extends Controller
                     'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
                     'ssl_billing_cycle' => 'MONTHLY',
                     'vita_name_on_card' => $nameOnCard,
-                    'ssl_invoice_number' => 'INV-0012',
+                    'ssl_invoice_number' => $this->getNextInvoiceNumber($customer->getCountry()),
                     'ssl_customer_code'=> $customerId,
                 )
             );
@@ -96,9 +96,26 @@ class ConvergeController extends Controller
 // Display Converge API response
         //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
         //print_r($response);
+        $result = array();
+        if($response['errorCode'])
+        {
+            $result['errorCode'] = $response['errorCode'];
+            $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
+        }
+        else
+        {
+            $result['errorCode'] = 0;
+        }
 
-        return $this->json(array('response' => $response,'cardNumber'=>$cardNumber )); //
+        return $this->json(array('response' => $result)); //
     }
+
+    private function getTransactionErrorName($convergeErrorName)
+    {
+        $errorList = array('Exp Date Invalid'=>'EXP_DATE_INVALID','Credit Card Number Invalid'=>'CC_NUMBER_INVALID');
+        return $errorList[$convergeErrorName];
+    }
+
 
     private function getIso3FromCountry($countryName)
     {
@@ -113,19 +130,30 @@ class ConvergeController extends Controller
         $country = $repository->findOneByCountry("$countryName");
 
         $em = $this->getDoctrine()->getManager();
-        $qb = $em->createQueryBuilder();
 
-        $qb->select('p')
-            ->from('Payments', 'p')
-            ->where('p.InvoiceNumber LIKE :identifier')
-            ->orderBy('p.InvoiceNumber', 'ASC')
-            ->setParameter('identifier', 'INV-'.$country->getCountryid());
+        $substr = "inv-" . $country->getCountryid() . "-";
+        $query = $em->createQuery( 'SELECT Max(p.invoicenumber) AS invNumber FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
+        $query->setParameter('inv', '%' . $substr . '%');
+        $invoiceNumber = $query->getSingleResult();
+        $maxInvoiceNumber = $invoiceNumber['invNumber'];
+        if($maxInvoiceNumber)
+        {
+            $split = explode('-',$maxInvoiceNumber);
+            $number = (int) $split[2];
+            $nextInvoiceNumber = $substr . ($number+1);
+        }
+        else
+        {
+            $nextInvoiceNumber = $substr . "1";
+        }
+        return $nextInvoiceNumber;
     }
 
-    private function getTaxPercentage($countryName)
+
+    private function getTaxPercentage($countryIso3)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
-        $country = $repository->findOneByCountry("$countryName");
+        $country = $repository->findOneByCountryiso3("$countryIso3");
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
         $price = $repository->findOneByCountry($country);
