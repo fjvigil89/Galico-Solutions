@@ -396,7 +396,8 @@ angular.module("gpApp")
                         }
                         else
                         {
-
+                            $("#addHouseModal").modal('hide');
+                            $scope.getHousesInformation();
                         }
 
 
