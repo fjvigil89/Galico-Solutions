@@ -295,7 +295,9 @@ class UserController extends Controller
      */
     public function showMyDashboardAction($customerId)
     {
-       $userId = $this->get('session')->get('userId');
+
+
+        $userId = $this->get('session')->get('userId');
        if(!$userId || $customerId!=$userId)
        {
            return $this->redirectToRoute('app_pagenavigation_showsignin');
@@ -410,7 +412,8 @@ class UserController extends Controller
         $em->flush();
 
         $this->get('session')->set('userId', $customer->getCustomerid());
-        return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
+        //return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
+        return $this->redirectToRoute("sendRegisterEmail",['customerId' => $customer->getCustomerid()]);
 
     }
 

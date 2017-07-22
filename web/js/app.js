@@ -193,4 +193,8 @@ app.config(function($interpolateProvider,$translateProvider){
     //-- END : TRANSLATION CONFIG
 
 
-});
+})
+
+
+
+;
