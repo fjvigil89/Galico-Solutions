@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you for choosing General Pro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% set lang = app.session.get('lang') %}
+
+    <img src="https://general-pro.com/images/gp.png">
+
+<div class="cointainer">
+
+    <div class="row">
+
+        <div class="col-xs-3 container-rounded-corner ">
+
+        </div>
+        <div class="col-xs-3 container-rounded-corner ">
+
+        </div>
+
+        <div class="col-xs-3 container-rounded-corner ">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<p>Dear {{customerFullname}}, </p>
+    <p>
+        Thank you for registering online with General Pro. We would like to take the opportunity to welcome you
+        <br/>into the General Pro family of services. We're looking forward to assisting you with ....
+
+        <br/><br/>If you have questions or need assistance, please <a href="https://general-pro.com/contact">contact us.</a>
+
+    </p>
+</body>
+</html>

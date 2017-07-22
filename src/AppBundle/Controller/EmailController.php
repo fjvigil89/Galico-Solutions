@@ -24,7 +24,7 @@ class EmailController extends Controller
             ->setFrom('info@general-pro.com',"General Pro")
             ->setTo($customer->getEmail())
             ->setBody(
-                $this->renderView('website/registerThankYou.html.twig',array("customerFullname"=>$fullname)),
+                $this->renderView('website/template-thank-you.html.twig',array("customerFullname"=>$fullname)),
                 'text/html'
 
             );
@@ -46,6 +46,6 @@ class EmailController extends Controller
         $customer = $repository->find($customerId);
         $fullname = $customer->getFirstname() . " " . $customer->getLastname();
 
-        return $this->render('website/registerThankYou.html.twig',array("customerFullname"=>$fullname));
+        return $this->render('website/template-thank-you.html.twig',array("customerFullname"=>$fullname));
     }
 }
