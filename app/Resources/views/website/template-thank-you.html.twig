@@ -6,27 +6,68 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        img {
+            width:15em;
+            height:15em;
+
+        }
+
+    .bg-bluegp
+        {
+
+        background-color: #070b4f;
+        }
+    </style>
+
+
+
 </head>
 <body>
 {% set lang = app.session.get('lang') %}
 
-    <img src="https://general-pro.com/images/gp.png">
 
-<div class="cointainer">
 
-    <div class="row">
+<div class="container">
 
-        <div class="col-xs-3 container-rounded-corner ">
+    <div class="col-md-8 col-md-offset-2 panel panel-primary"> <br/>
+        <p style="text-align:center;"> <img src="https://general-pro.com/images/gp.png"></p>
+<br>
+        <nav class="navbar navbar-inverse bg-bluegp">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="https://general-pro.com/">Home</a></li>
+                    <li><a href="https://general-pro.com/services">Services</a></li>
+                    <li><a href="https://general-pro.com/plans">Plans</a></li>
+                    <li><a href="https://general-pro.com/contact">Contact us</a></li>
+                    <li><a href="https://general-pro.com/about">About us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+
+            <div class="col-md-4 col-md-offset-1">
+                <p style="text-align:center;"> <img src="https://general-pro.com/images/page-home/modelgp.png"></p>
+
+
+                </div>
+            <div class="col-md-4 col-md-offset-1">
+
+                <p>Dear {{customerFullname}}, </p>
+                <p>
+                    Thank you for registering online with General Pro. We would like to take the opportunity to welcome you
+                    <br/>into the General Pro family of services. We're looking forward to assisting you with ....
+
+                    <br/><br/>If you have questions or need assistance, please <a href="https://general-pro.com/contact">contact us.</a>
+
+                </p>
+
+
+            </div>
 
         </div>
-        <div class="col-xs-3 container-rounded-corner ">
-
-        </div>
-
-        <div class="col-xs-3 container-rounded-corner ">
-
-        </div>
-
 
     </div>
 
@@ -37,13 +78,7 @@
 
 
 
-<p>Dear {{customerFullname}}, </p>
-    <p>
-        Thank you for registering online with General Pro. We would like to take the opportunity to welcome you
-        <br/>into the General Pro family of services. We're looking forward to assisting you with ....
 
-        <br/><br/>If you have questions or need assistance, please <a href="https://general-pro.com/contact">contact us.</a>
 
-    </p>
 </body>
 </html>

@@ -3,8 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        img {
+            width:8em;
+            height:8em;
+
+        }
+
+        .bg-bluegp
+        {
+
+            background-color: #070b4f;
+        }
+        .no-padding
+        {
+            padding:0px;
+        }
+        .center
+        {
+            text-align: center;
+        }
+        .border-white
+        {
+            border-color:transparent;
+        }
+
+        .table-head
+        {
+            background-color: #070b4f;
+            color: white;
+        }
+
+
+        .bg-yellowtable
+        {
+            background:#FBD232 ;
+            color: black;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
+
+    <div class="col-md-8 col-md-offset-2 panel panel-warning border-white ">
+        <div class="panel-heading center bg-yellowtable">INVOICE</div>
+
+
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <br>
+
+            </div>
+            <div class="col-md-5">
+                <br>
+                <p > <img src="https://general-pro.com/images/gp.png"></p>
+
+            </div>
+
+            <div class="col-md-5 "><br>
+                <p>{{customerFullname}}, </p>
+                <p>Adresse: {{ address}}, </p>
+                <p>Telephone: {{ telephone}} </p>
+                <p>Email: {{ email }} </p>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-2">
+                <br>
+
+            </div>
+            <div class="col-md-5">
+                <br>
+
+
+            </div>
+
+            <div class="col-md-5 "><br>
+                <table class="table table-bordered">
+
+                    <tbody>
+                    <tr>
+                        <th>Invoice #</th>
+                        <td>AF124343</td>
+
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>12-04-2017</td>
+
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td>29.99</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <table class="table table-striped">
+                <thead class="table-head">
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Unit Cost</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Basic plan</td>
+                    <td>Plombing service </td>
+                    <td>19.99</td>
+                    <td>1</td>
+                    <td>19.99</td>
+                </tr>
+                <tr>
+                    <td>Add Service</td>
+                    <td>Painting service, 4 walls 2m each</td>
+                    <td>50</td>
+                    <td>4</td>
+                    <td>200.00</td>
+                </tr>
+                <tr>
+                    <td>Add Service</td>
+                    <td>Child Care</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>60.00</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <br>
+
+            </div>
+            <div class="col-md-5">
+                <br>
+
+
+            </div>
+
+            <div class="col-md-5 "><br>
+                <table class="table ">
+
+                    <tbody>
+                    <tr>
+                        <th>Subtotal</th>
+                        <td>279.99</td>
+
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>279.99</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
 
 </body>
 </html>
