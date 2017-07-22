@@ -211,5 +211,27 @@ angular.module("gpApp")
                     }
             });
         }
+
+
+
+
+
+
+
     })
 
+    .service('AdminService',function($http,RouterService){
+
+        this.getTechnicianInformation = function(id)
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/technician-information/'+id,
+                method: "GET",
+
+            })
+
+        }
+
+
+
+    })

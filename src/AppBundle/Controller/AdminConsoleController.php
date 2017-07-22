@@ -21,7 +21,7 @@ class AdminConsoleController extends Controller
     {
         $userId = $this->get('session')->get('userId');
 
-        if($userId)
+        if(!$userId)
         {
             return $this->redirectToRoute('adminSignin');
         }
@@ -36,26 +36,43 @@ class AdminConsoleController extends Controller
         $technicians = $repository->findAll();
 
        return $this->render('website/admin-console.html.twig', array(
-         'CustomersAdmin' =>  $cust, 'houses' => $houses,  'technicians' => $technicians
+         'Customers' =>  $cust, 'houses' => $houses,  'technicians' => $technicians
        ));
 
 
     }
 
 
-
     /**
-     * @Route("/showHouseInfo" ,name="ShowHouseInfo")
+     * @Route("/technician-information/{technicianId}",name="technicianInformation")
      */
-    public function showhouseAction(Request $request)
-    {
 
-        $repository = $this->getDoctrine()->getRepository(Houses::class);
-        $houses = $repository->findAll();
+    public function getTechnicianInformationAction($technicianId){
 
 
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
+            $technician = $repository->find(technicianId);
 
+        $tech = array();
+        $tech['technicianid'] = $technician->getTechnicianid();
+        $tech['firstName'] = $technician->getFirstname();
+        $tech['lastName'] = $technician->getLastname();
+        $tech['email'] = $technician->getEmail();
+        $tech['phonePrimary'] = $technician->getPhoneprimary();
+        $tech['phoneAlternate'] = $technician->getPhonealternate();
+        $tech['profession'] = $technician->getProfession();
+        $tech['idtype'] = $technician->getIdtype();
+        $tech['idnumber'] = $technician->getIdnumber();
+        $tech['code'] = $technician->getCode();
+        $tech['country'] = $technician->getCountry();
+        $tech['state'] = $technician->getState();
+        $tech['city'] = $technician->getCity();
+        $tech['address'] = $technician->getAddress();
+        $tech['zipCode'] = $technician->getZipcode();
+
+        return $this->json($tech);
     }
+
 
 
 

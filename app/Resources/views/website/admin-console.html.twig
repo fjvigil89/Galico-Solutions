@@ -96,14 +96,14 @@
                     </tr>
                 </thead>
                   <tbody>
-                  {% for customer in CustomersAdmin %}
+                  {% for customer in Customers %}
                         <tr>
-                            <td class="">{{ customer.lastName }}</td>
+                            <td class="">{{ customer.LastName }}</td>
                             <td class="">{{ customer.firstName }}</td>
                             <td class="">{{ customer.country }}</td>
                           <!--<td class="">{{ customer.email }}</td>-->
                             <td>
-                                <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                                <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs" ng-click="getCustomerInformation({{ customer.customerid }})" ><span class="glyphicon glyphicon-edit" title="edit"></span></button>
                                 <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-home" title="details"></span></button>
                             </td>
                          </tr>
@@ -165,13 +165,13 @@
 
                       <td class="">{{ house.city}}</td>
                         <!--<td class="product-name">{{ house.address}}</td>-->
-				      <td class="">Basic</td>
+				      <td class="">{{ house.houseid}}</td>
                       <td class="product-qty">12/25/2017 </td>
 
                         <td>
-                            <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                            <button data-toggle="modal" data-target="#houseModal"  class="btn-danger btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
-                            <button data-toggle="modal" data-target="#editmaisonModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" title="go"></span></button>
+                            <button data-toggle="modal" data-target="#editmaisonModal" ng-click="getSelectedHouseInfo({{ house.houseid }})" class="btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" title="go"></span></button>
 
                             <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
 
@@ -276,12 +276,12 @@
                 {% for tech in technicians %}
                 <tr>
                       <td class="">{{ tech.lastname}} {{ tech.firstname}}</td>
-                      <td class="">xxxxx</td>
+                      <td class="">{{ tech.technicianid }}</td>
                       <td class="">{{ tech.phoneprimary}}</td>
 
 
                       <td>
-                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                        <button data-toggle="modal" data-target="#edittechnicianModal" ng-click="getTechnicianInformation({{ tech.technicianid}})" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
                         <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
                       </td>
                 </tr>
@@ -637,7 +637,7 @@
           </div>
           <div class="row">
             <div class="col-xs-5">{{ 'dash_contact' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">Renzo Sanchez</div>
+            <div class="col-xs-7" ng-bind="nombre"></div>
           </div>
           <div class="row">
             <div class="col-xs-5">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</div>
@@ -1037,15 +1037,15 @@
 
           <div class="form-group">
             <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="lastname" ng-model="customerUpdated.lastName" >
+            <input type="text" class="form-control" id="lastname" ng-model="customer.lastName" >
           </div>
           <div class="form-group">
             <label for="name">{{ 'form_name' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="name" value="Antonio" >
+            <input type="text" class="form-control" id="firstname" ng-model="customer.firstName" >
           </div>
           <div class="form-group">
             <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
-            <input type="email" class="form-control" id="email" value="antofuchong@gmail.com" >
+            <input type="email" class="form-control" id="email" ng-model="customer.email" >
           </div>
           <div class="form-group">
             <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
@@ -1053,31 +1053,31 @@
           </div>
           <div class="form-group">
             <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
-            <input type="tel" class="form-control" id="phonePrimary" value="534545443" >
+            <input type="tel" class="form-control" id="phonePrimary" ng-model="customer.phonePrimary" >
           </div>
           <div class="form-group">
             <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
-            <input type="tel" class="form-control" id="phonealternate" value="437545443" >
+            <input type="tel" class="form-control" id="phonealternate" ng-model="customer.phoneAlternate" >
           </div>
           <div class="form-group">
             <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}:</label>
-            <input type="text" class="form-control" id="country" value="Canada" >
+            <input type="text" class="form-control" id="country" ng-model="customer.country" >
           </div>
           <div class="form-group">
             <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="state" value="Quebec" >
+            <input type="text" class="form-control" id="state" ng-model="customer.state" >
           </div>
           <div class="form-group">
             <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="city" value="Montreal" >
+            <input type="text" class="form-control" id="city" ng-model="customer.city" >
           </div>
           <div class="form-group">
             <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="address" value="4534 av Maisonneuve" >
+            <input type="text" class="form-control" id="address" ng-model="customer.address" >
           </div>
           <div class="form-group">
             <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="zipCode" value="j3d 2g3" >
+            <input type="text" class="form-control" id="zipCode" ng-model="customer.zipCode" >
           </div>
 
         </div>
@@ -1123,11 +1123,11 @@
           </div>
           <div class="form-group">
             <label for="addsuscription">{{ 'admin_console_subscriptiondate' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="addsuscription" value="12/02/2017" >
+            <input type="text" class="form-control" id="addsuscription" ng-model="customer.fullName" >
           </div>
           <div class="form-group">
             <label for="editcontact">{{ 'dash_contact' | trans({}, "messages", lang) }}</label>
-            <input type="text" class="form-control" id="editcontact" value="Renzo Sanchez">
+            <input type="text" class="form-control" id="editcontact" ng-model="selectedHouse.contactFullName">
           </div>
           <div class="form-group">
             <label for="editphonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
@@ -1525,7 +1525,7 @@
 
           <div class="form-group">
             <label for="edit-tech-lastname">Last Name:</label>
-            <input type="text" class="form-control" id="edit-tech-lastname" value="Ramirez">
+            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.lastName">
           </div>
           <div class="form-group">
             <label for="edit-tech-lastname">Name:</label>

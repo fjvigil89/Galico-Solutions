@@ -2,37 +2,36 @@
  * Created by jrhod on 2017-05-17.
  */
 angular.module("gpApp")
-    .controller('AdminController',function($scope,$rootScope,DashboardService,$window,GeneralService,$translate){
+    .controller('AdminController',function($scope,$rootScope,DashboardService,AdminService,$window,GeneralService,$translate){
 
             $('body').on('hidden.bs.modal', function (e) {
             if($('.modal').hasClass('in')) {
                 $('body').addClass('modal-open');
             }
             });
-
-        $scope.prueba="hola";
-        $scope.customerUpdated = {};
-        $scope.getCustomerInformation = function()
+        $scope.nombre = "hola";
+        $scope.houses = {};
+        $scope.customer = {};
+        $scope.technician = {};
+        $scope.getCustomerInformation = function(customerId)
         {
             //if($scope.customer.length===undefined)
             {
-                var customerId = $window.document.getElementById("customerId").value;
-                AdminService.getCustomerInformation(customerId)
+                DashboardService.getCustomerInformation(customerId)
                     .then(function(response){
                         console.log(response);
                         $scope.customer = response.data;
                         $scope.customer.fullName = $scope.customer.firstName + " " + $scope.customer.lastName;
 
-                        angular.copy($scope.customer, $scope.customerUpdated);
+
                     },function(error){
 
                     })
             }
         }
 
-        $scope.getHousesInformation = function() {
-            var customerId = $window.document.getElementById("customerId").value;
-            AdminService.getHousesInformation(customerId)
+        $scope.getHousesInformation = function(customerId) {
+          DashboardService.getHousesInformation(customerId)
                 .then(function(response){
                     console.log(response.data);
                     $scope.houses = response.data;
@@ -42,67 +41,38 @@ angular.module("gpApp")
                 })
         }
 
-
-        $scope.updateCustomer = function()
+        $scope.getSelectedHouseInfo = function(houseId)
         {
-            if(GeneralService.isInvalid($scope.customerUpdated.lastName))
+            var house = $.grep($scope.houses, function (h) { return h.id == houseId; });
+            if(house.length>0)
             {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_LASTNAME');
-                $window.document.getElementById("lastName").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.firstName))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_FIRSTNAME');
-                $window.document.getElementById("firstName").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.email))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_ADDRESSVALIDE');
-                $window.document.getElementById("email").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.phonePrimary))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_NUMBER');
-                $window.document.getElementById("phonePrimary").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.country))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_COUNTRY');
-                $window.document.getElementById("country").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.city))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_CITY');
-                $window.document.getElementById("city").focus();
-            }
-            else if(GeneralService.isInvalid($scope.customerUpdated.address))
-            {
-                $scope.update.error = $translate.instant('ERR_DASHBOARD_ADDRESS');
-                $window.document.getElementById("address").focus();
-            }
-            else
-            {
-                $scope.update.error = "";
-                DashboardService.updateCustomer($scope.customerUpdated)
-                    .then(function(response){
-                        console.log(response);
-                        var resp = response.data;
-                        if(resp.updateStatus> 0)
-                        {
-                            $scope.customer = resp;
-                            $('#editModal').modal('hide');
-                        }
-                        else
-                        {
-                            //angular.copy($scope.customer,$scope.customerUpdated);
-                            $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
-                        }
+                $scope.selectedHouse = house[0];
 
-                    },function(error){
-                        $scope.update.error = $translate.instant('ERR_DASHBOARD_INF_UPDATE');
-                    })
             }
         }
+
+
+        $scope.getTechnicianInformation = function(customerId)
+
+        {
+            AdminService.getTechnicianInformation(customerId)
+                .then(function(response){
+                    console.log(response.data);
+                    $scope.technician = response.data;
+
+                }, function (error) {
+
+                })
+
+        }
+
+
+
+
+
+        $scope.getCustomerInformation();
+        $scope.getHousesInformation();
+
     })
 	
 	
