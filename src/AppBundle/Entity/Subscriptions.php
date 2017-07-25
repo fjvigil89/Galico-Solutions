@@ -28,6 +28,13 @@ class Subscriptions
     private $transactionid;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="CC", type="string", length=20, nullable=false)
+     */
+    private $cc;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="SubscriptionID", type="integer")
@@ -181,5 +188,22 @@ class Subscriptions
     {
         return $this->payments;
     }
+
+    /**
+     * @return string
+     */
+    public function getCc()
+    {
+        return $this->cc;
+    }
+
+    /**
+     * @param string $cc
+     */
+    public function setCc($cc)
+    {
+        $this->cc = $cc;
+    }
+
 }
 

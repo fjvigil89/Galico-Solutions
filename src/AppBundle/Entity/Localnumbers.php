@@ -22,6 +22,13 @@ class Localnumbers
     /**
      * @var string
      *
+     * @ORM\Column(name="Address", type="text", length=65535, nullable=false)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="phone", type="string", length=15, nullable=false)
      */
     private $phone;
@@ -107,6 +114,22 @@ class Localnumbers
     public function setCountry($country)
     {
         $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
     }
 
 

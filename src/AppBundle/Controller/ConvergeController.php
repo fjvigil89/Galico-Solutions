@@ -42,6 +42,7 @@ class ConvergeController extends Controller
         $cPhoneAlternate = $request->request->get('phoneAlternate');
 
         $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
+        $totalAmount = $amount + $tax;
 
         $response = null;
 
@@ -60,7 +61,7 @@ class ConvergeController extends Controller
             $zipcode =$customer->getZipcode();
 
             $nextPaymentDate = new \DateTime();
-            $nextPaymentDate->add(new \DateInterval('P30D'));
+            //$nextPaymentDate->add(new \DateInterval('P30D'));
 
             $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
@@ -68,7 +69,7 @@ class ConvergeController extends Controller
             // Submit a recurring payment
             $response = $converge->ccaddrecurring(
                 array(
-                    'ssl_amount' => $amount,
+                    'ssl_amount' => $totalAmount,
                     'ssl_salestax' => $tax,
                     'ssl_card_number' => $cardNumber,
                     'ssl_cvv2cvc2' => $cvv,
@@ -136,8 +137,9 @@ class ConvergeController extends Controller
             $subscription->setPrice($price);
             $subscription->setSubscriptiondate($dateNow);
             $subscription->setTransactionid($response['ssl_recurring_id']);
+            $subscription->setCc($response['ssl_card_number']);
 
-            $em = $this->getDoctrine()->getManager();
+            //$em = $this->getDoctrine()->getManager();
             $em->persist($subscription);
             $em->flush();
 
@@ -152,6 +154,8 @@ class ConvergeController extends Controller
             $payment->setInvoicenumber($invoiceNumber);
             $payment->setSubscription($subscription);
 
+            $em->persist($payment);
+            $em->flush();
 
             //-- END :: PAYMENT INFO
 
@@ -189,7 +193,7 @@ class ConvergeController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $substr = "inv-" . $country->getCountryid() . "-";
+        $substr = "GP-" . $country->getCountryid() . "-";
         $query = $em->createQuery( 'SELECT Max(p.invoicenumber) AS invNumber FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
         $query->setParameter('inv', '%' . $substr . '%');
         $invoiceNumber = $query->getSingleResult();

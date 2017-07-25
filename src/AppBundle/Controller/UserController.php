@@ -623,6 +623,8 @@ class UserController extends Controller
                 $pay = array();
                 $pay['paymentDate'] = date_format($payment->getPaymentdate(), 'Y-m-d');
                 $pay['amount'] = $payment->getAmount();
+                $pay['tax'] = $payment->getTax();
+                $pay['totalAmount'] = $payment->getAmount() + $payment->getTax();
                 $paymnt[] = $pay;
             }
             $sub['payments'] = $paymnt;

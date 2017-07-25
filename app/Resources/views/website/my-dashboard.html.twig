@@ -136,6 +136,9 @@
                                         <a href="#" data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)">
                                             <span class="glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}} ></span>
                                         </a>
+                                        <a href="#" data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)">
+                                            <span class="glyphicon glyphicon-credit-card" title={{ 'dash_change_cc' | trans({}, "messages", lang)}} ></span>
+                                        </a>
                                     </td>
                                 </tr>
 
@@ -302,12 +305,16 @@
                             <h4>{{ 'dash_subscription' | trans({}, "messages", lang)}} {[sub.subscriptionDate + ' (' + sub.plan +')']}</h4>
 
                             <div class="row">
-                                <div class="col-xs-5 text-bold">{{ 'dash_payment_date' | trans({}, "messages", lang)}}</div>
-                                <div class="col-xs-7 text-bold">{{ 'dash_amount' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-4 text-bold">{{ 'dash_payment_date' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-3 text-bold">{{ 'dash_amount' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-2 text-bold">{{ 'dash_tax' | trans({}, "messages", lang)}}</div>
+                                <div class="col-xs-3 text-bold">{{ 'dash_total' | trans({}, "messages", lang)}}</div>
                             </div>
                             <div class="row" ng-repeat="payment in sub.payments">
-                                <div class="col-xs-5" ng-bind="payment.paymentDate"></div>
-                                <div class="col-xs-7" ng-bind="payment.amount | currency"></div>
+                                <div class="col-xs-4" ng-bind="payment.paymentDate"></div>
+                                <div class="col-xs-3" ng-bind="payment.amount | currency"></div>
+                                <div class="col-xs-2" ng-bind="payment.tax | currency"></div>
+                                <div class="col-xs-3" ng-bind="payment.totalAmount | currency"></div>
                             </div>
 
                         </div>
