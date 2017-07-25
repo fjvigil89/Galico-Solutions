@@ -104,7 +104,7 @@
                           <!--<td class="">{{ customer.email }}</td>-->
                             <td>
                                 <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs" ng-click="getCustomerInformation({{ customer.customerid }})" ><span class="glyphicon glyphicon-edit" title="edit"></span></button>
-                                <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-home" title="details"></span></button>
+                                <button class="btn-warning btn-xs" ng-click="getHousesInformation({{ customer.customerid }})"><span class="glyphicon glyphicon-home" title="A traduire"></span></button>
                             </td>
                          </tr>
                   {% endfor %}
@@ -139,7 +139,7 @@
 
                     <thead class="bg-yellow font-header">
                     <tr>
-                        <th colspan="3">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</th>
+                        <th colspan="5">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</th>
                         <th class="text-right">
                             <a href="#" data-toggle="modal" data-target="#addmaisonModal" >
                                 <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
@@ -149,43 +149,39 @@
                     </thead>
                     <thead class="bg-light-gray">
                     <tr>
-
-                      <th>{{ 'form_city' | trans({}, "messages", lang) }}</th>
-                      <!--<th>{{ 'form_address' | trans({}, "messages", lang) }}</th>-->
-                      <th>Plan</th>
-                      <th>{{ 'admin_console_duedate' | trans({}, "messages", lang) }}</th>
-
-                        <th></th>
+                        <th>{{ 'form_Country' | trans({}, "messages", lang)}}</th>
+                        <th>{{ 'form_address' | trans({}, "messages", lang)}}</th>
+                        <th>Plan</th>
+                        <th>{{ 'dash_sdate' | trans({}, "messages", lang)}}</th>
+                        <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
+                        <th class="text-center"></th>
                     </tr>
 
                     </thead>
-                    <tbody>
-                    {% for house in houses %}
-                    <tr>
+                      <tbody>
 
-                      <td class="">{{ house.city}}</td>
-                        <!--<td class="product-name">{{ house.address}}</td>-->
-				      <td class="">{{ house.houseid}}</td>
-                      <td class="product-qty">12/25/2017 </td>
+                      <tr ng-repeat="house in houses">
+                          <td ng-bind="house.country"></td>
+                          <td ng-bind="house.address"></td>
 
-                        <td>
-                            <button data-toggle="modal" data-target="#houseModal"  class="btn-danger btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                          <td ng-bind="house.plan"></td>
 
-                            <button data-toggle="modal" data-target="#editmaisonModal" ng-click="getSelectedHouseInfo({{ house.houseid }})" class="btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" title="go"></span></button>
 
-                            <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+                          <td ng-bind="house.subscriptionDate"></td>
+                          <td ng-bind="house.agentNumber"></td>
+                          <td>
+                              <a href="#maison1" data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)">
+                                  <span class="glyphicon glyphicon-list-alt" title={{ 'dash_view_details' | trans({}, "messages", lang)}} ></span>
+                              </a>
+                              <a href="#" data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)">
+                                  <span class="glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}} ></span>
+                              </a>
 
-                            <button data-toggle="modal" data-target="#paymentsModal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="go"></span></button>
+                          </td>
+                      </tr>
 
-                            <a href="#" data-target="#" ng-hide="true">
-                                <span class="glyphicon glyphicon-remove" title="Remove" ></span>
-                            </a>
 
-                        </td>
-                    </tr>
-                    {% endfor %}
-
-                    </tbody>
+                      </tbody>
                   </table>
                 </div>
               </div>
@@ -486,74 +482,117 @@
 
 
           </br>
-          <div class="col-xs-12 border-yellow no-padding">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead class="bg-yellow">
-                <tr>
-                  <th colspan ="6">Setting</th>
+          <div class="col-xs-12 no-padding">
+              <div class="row">
+                  <div class="col-xs-4 border-yellow no-padding">
+                      <div class="table-responsive">
+                          <table class="table table-hover">
+                              <thead class="bg-yellow font-header">
+                              <tr>
+                                  <th colspan="3">Local Agents</th>
+                                  <th class="text-right">
+                                      <a href="#" data-toggle="modal" data-target="#addagenceModal" >
+                                          <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                      </a>
+                                  </th>
+                              </tr>
+                              </thead>
+                              <thead class="bg-light-gray">
+                              <tr>
 
-                </tr>
-                </thead>
 
-                <thead class="bg-light-gray">
-                <tr>
-                  <th>Country</th>
-                  <th>Local Number</th>
-                  <th>Basic Plan</th>
-                  <th>GP Plus</th>
-                  <th>Aditional Service</th>
+                                  <th>Country</th>
+                                  <th>City</th>
 
-                  <th>
+                                  <th>Phone</th>
+                                  <th></th>
+                              </tr>
+                              </thead>
+                              <tbody>
 
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
+                                  <tr>
+                                      <td class="">Canada</td>
+                                      <td class="">Montreal</td>
 
-                  <td class="">CANADA</td>
-                  <td class="">2452323232</td>
-                  <td class="">CAD 29.00</td>
-                  <td class="">CAD 59.00</td>
-                  <td>
-                    <a href="#" data-toggle="modal" data-target="#settingModal" >
-                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                    </a>
+                                      <td class="">25463343</td>
 
-                  </td>
-                </tr>
-                  <tr>
+                                      <td>
+                                          <button data-toggle="modal" data-target="#editagenceModal" class="btn-danger btn-xs"  ><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                                          <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-home" title="details"></span></button>
+                                      </td>
+                                  </tr>
 
-                  <td class="">CUBA</td>
-                  <td class="">243223232</td>
-                  <td class="">US 19.00</td>
-                  <td class="">US 29.00</td>
-                  <td>
-                    <a href="#" data-toggle="collapse">
-                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                    </a>
 
-                  </td>
-                </tr>
 
-                <tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div><br/>
 
-                  <td class="">USA</td>
-                  <td class="">243233433</td>
-                  <td class="">US 29.00</td>
-                  <td class="">US 39.00</td>
-                  <td>
-                    <a href="#" data-toggle="collapse">
-                      <span class="glyphicon glyphicon-list-alt" title="View details"></span>
-                    </a>
 
-                  </td>
-                </tr>
 
-                </tbody>
-              </table>
-            </div>
+
+
+
+
+
+                  <!-- Houses Customer-------------------------------------------->
+
+                  <div class="col-xs-offset-1 col-xs-6 border-yellow no-padding">
+                      <div class="table-responsive">
+                          <table class="table table-hover">
+
+                              <thead class="bg-yellow font-header">
+                              <tr>
+                                  <th colspan="4">Prices</th>
+                                  <th class="text-right">
+                                      <a href="#" data-toggle="modal" data-target="#addpriceModal" >
+                                          <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                      </a>
+                                  </th>
+                              </tr>
+                              </thead>
+                              <thead class="bg-light-gray">
+                              <tr>
+
+                                  <th>Country</th>
+                                  <th>Price</th>
+                                  <th>Tax Percentage</th>
+                                  <th>Plan/Services</th>
+
+                                  <th></th>
+                              </tr>
+
+                              </thead>
+                              <tbody>
+
+                                  <tr>
+
+                                      <td class="">Canada</td>
+                                      <td class="">29.99</td>
+                                      <td class="">15%</td>
+                                      <td class="">Basic plan </td>
+
+                                      <td>
+                                          <button data-toggle="modal" data-target="#priceModal"  class="btn-danger btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+
+
+                                          <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+
+                                          <button data-toggle="modal" data-target="#paymentsModal" class="btn-success btn-xs"><span class="glyphicon glyphicon-remove-sign" title="go"></span></button>
+
+                                          <a href="#" data-target="#" ng-hide="true">
+                                              <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                                          </a>
+
+                                      </td>
+                                  </tr>
+
+
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
           </div><br/>
 
 
@@ -611,67 +650,63 @@
 
 
 
-    <div id="houseModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+      <div id="houseModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
 
-      <!-- Modal content-->
-    <div class="modal-content">
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header bg-yellow">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">{{ 'dash_house_information' | trans({}, "messages", lang)}}</h4>
+                  </div>
+                  <div class="modal-body">
 
-        <div class="modal-header bg-yellow">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</h4>
-        </div>
-        <div class="modal-body">
-            <div ng-hide="showServiceForm">
-          <div class="row">
-            <div class="col-xs-5">Plan</div>
-            <div class="col-xs-7">Basic</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'admin_console_duedate' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">04/25/2017</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'admin_console_subscriptiondate' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">12/02/2017</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'dash_contact' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7" ng-bind="nombre"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">234543232</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">23523232</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_Country' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">Cuba</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_city' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">La habana</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_address' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">3233 Av maisonneuve</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'form_state' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">Matanzas</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">{{ 'admin_console_agentnumber' | trans({}, "messages", lang) }}</div>
-            <div class="col-xs-7">94232232232</div>
-          </div>
-
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">Plan</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.plan">: </div>
+                      </div>
+                      <!--<div class="row">
+                          <div class="col-xs-5 text-bold">Due date</div>
+                          <div class="col-xs-7">04/25/2017</div>
+                      </div>-->
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.subscriptionDate">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'dash_contact' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.contactFullName">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'form_phone_primary' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.phonePrimary">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.phoneAlternate">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'form_Country' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.country">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'form_city' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.city">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold ">{{ 'form_address' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.address">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'form_state' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.state">: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-5 text-bold">{{ 'dash_local_agent' | trans({}, "messages", lang)}}</div>
+                          <div class="col-xs-7" ng-bind="selectedHouse.agentNumber"> </div>
+                      </div>
 
 
-
-        </div>
 
 
         <div  ng-show="showServiceForm">
@@ -1529,39 +1564,36 @@
           </div>
           <div class="form-group">
             <label for="edit-tech-lastname">Name:</label>
-            <input type="text" class="form-control" id="edit-tech-lastname" value="Juan" >
+            <input type="text" class="form-control" id="edit-tech-lastname"  ng-model="technician.firstName" >
           </div>
           <div class="form-group">
             <label for="edit-tech-email">Email:</label>
-            <input type="email" class="form-control" id="edit-tech-email" value="ramirez@gmail.com" >
+            <input type="email" class="form-control" id="edit-tech-email" ng-model="technician.email" >
           </div>
           <div class="form-group">
             <label for="edit-tech-phonePrimary">Phone (Primary):</label>
-            <input type="tel" class="form-control" id="edit-tech-phonePrimary" value="437545443" >
+            <input type="tel" class="form-control" id="edit-tech-phonePrimary" ng-model="technician.phonePrimary" >
           </div>
           <div class="form-group">
             <label for="edit-tech-phonealternate">Phone (Alternate):</label>
-            <input type="tel" class="form-control" id="edit-tech-phonealternate" value="34353634" >
+            <input type="tel" class="form-control" id="edit-tech-phonealternate" ng-model="technician.phoneAlternate" >
           </div>
-          <div class="form-group">
-            <label for="edit-tech-lastname">Profesion:</label>
-            <input type="text" class="form-control" id="edit-tech-lastname" value="Engineer" >
-          </div>
+
           <div class="form-group">
             <label for="edit-tech-lastname">Serv. Provide:</label>
-            <input type="text" class="form-control" id="edit-tech-lastname" value="Plumbing" >
+            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.profession" >
           </div>
           <div class="form-group">
             <label for="edit-tech-country">Country:</label>
-            <input type="text" class="form-control" id="edit-tech-country" value="Canada" >
+            <input type="text" class="form-control" id="edit-tech-country" ng-model="technician.country" >
           </div>
           <div class="form-group">
             <label for="edit-tech-state">State:</label>
-            <input type="text" class="form-control" id="edit-tech-state" value="Quebec" >
+            <input type="text" class="form-control" id="edit-tech-state" ng-model="technician.state" >
           </div>
           <div class="form-group">
             <label for="edit-tech-city">City:</label>
-            <input type="text" class="form-control" id="edit-tech-city" value="Montreal" >
+            <input type="text" class="form-control" id="edit-tech-city" ng-model="technician.city" >
           </div>
           <div class="form-group">
             <label for="edit-tech-address">Address:</label>
@@ -1717,6 +1749,208 @@
 
 
 
+
+      <div id="addagenceModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+              <div class="modal-content">
+                  <div class="modal-header bg-yellow">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Add Agence</h4>
+                  </div>
+                  <div class="modal-body">
+
+
+
+                      <div class="form-group">
+                          <label for="subCountry">Country</label>
+                          <select name="subCountry" id="subCountry" class="form-control"  >
+
+                              <option value="Canada">Canada</option>
+                              <option value="Costa Rica">Costa Rica</option>
+                              <option value="Cuba">Cuba</option>
+                              <option value="Mexico">Mexico</option>
+                              <option value="United States">United States</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                      <div class="form-group">
+                          <label for="cityAgence">City</label>
+                          <input type="text" class="form-control" id="cityAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="phoneAgence">Phone</label>
+                          <input type="text" class="form-control" id="phoneAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="adresseAgence">Address</label>
+                          <input type="text" class="form-control" id="adresseAgence" value="">
+                      </div>
+
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                          <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      </div>
+
+
+      <div id="editagenceModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+              <div class="modal-content">
+                  <div class="modal-header bg-yellow">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Edit Agence</h4>
+                  </div>
+                  <div class="modal-body">
+
+
+
+                      <div class="form-group">
+                          <label for="subagCountry">Country</label>
+                          <select name="subagCountry" id="subagCountry" class="form-control" >
+
+                              <option value="Canada">Canada</option>
+                              <option value="Costa Rica">Costa Rica</option>
+                              <option value="Cuba">Cuba</option>
+                              <option value="Mexico">Mexico</option>
+                              <option value="United States">United States</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="cityAgence">City</label>
+                          <input type="text" class="form-control" id="cityAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="phoneAgence">Phone</label>
+                          <input type="text" class="form-control" id="phoneAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="adresseAgence">Address</label>
+                          <input type="text" class="form-control" id="adresseAgence" value="">
+                      </div>
+
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                          <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+
+    <div id="addpriceModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Price</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="subagCountry">Country</label>
+                            <select name="subagCountry" id="subagCountry" class="form-control" >
+
+                                <option value="Canada">Canada</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="United States">United States</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cityAgence">Price</label>
+                            <input type="text" class="form-control" id="cityAgence" value="" >
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneAgence">Tax Percentage</label>
+                            <input type="text" class="form-control" id="phoneAgence" value="" >
+                        </div>
+                        <div class="form-group">
+                            <label for="adresseAgence">Plan Services</label>
+                            <input type="text" class="form-control" id="adresseAgence" value="">
+                        </div>
+
+
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
     </div>
+
+
+
+      <div id="priceModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+
+                  <div class="modal-header bg-yellow">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Edit Price</h4>
+                  </div>
+                  <div class="modal-body">
+
+                      <div class="form-group">
+                          <label for="subagCountry">Country</label>
+                          <select name="subagCountry" id="subagCountry" class="form-control" >
+
+                              <option value="Canada">Canada</option>
+                              <option value="Costa Rica">Costa Rica</option>
+                              <option value="Cuba">Cuba</option>
+                              <option value="Mexico">Mexico</option>
+                              <option value="United States">United States</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="cityAgence">Price</label>
+                          <input type="text" class="form-control" id="cityAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="phoneAgence">Tax Percentage</label>
+                          <input type="text" class="form-control" id="phoneAgence" value="" >
+                      </div>
+                      <div class="form-group">
+                          <label for="adresseAgence">Plan Services</label>
+                          <input type="text" class="form-control" id="adresseAgence" value="">
+                      </div>
+
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                          <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+  </div>
+
 
 {% endblock %}

@@ -875,7 +875,15 @@
                        <source>Amount</source>
                        <target>Montant</target>
                 </trans-unit>
-                 <trans-unit id="dash_view_details" resname="dash_view_details">
+                  <trans-unit id="dash_tax" resname="dash_tax">
+                          <source>Tax</source>
+                          <target>Tax</target>
+                  </trans-unit>
+                 <trans-unit id="dash_total" resname="dash_total">
+                        <source>Total</source>
+                        <target>Total</target>
+                 </trans-unit>
+               <trans-unit id="dash_view_details" resname="dash_view_details">
                        <source>View details</source>
                        <target>Voir les détails</target>
                 </trans-unit>				
@@ -955,7 +963,14 @@
                        <source>Next</source>
                        <target>Suivant</target>
                 </trans-unit>	
-				
+		        <trans-unit id="dash_change_plan" resname="dash_change_plan">
+                       <source>Change plan</source>
+                       <target>Changement de plan</target>
+                </trans-unit>
+		        <trans-unit id="dash_change_cc" resname="dash_change_cc">
+                       <source>Change card</source>
+                       <target>Changement de carte</target>
+                </trans-unit>
 <!--End my dashboard-->	
 
 <!--Admin-console-->

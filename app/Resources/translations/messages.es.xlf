@@ -878,6 +878,14 @@
                        <source>Amount</source>
                        <target>Monto</target>
                 </trans-unit>
+                 <trans-unit id="dash_tax" resname="dash_tax">
+                         <source>Tax</source>
+                         <target>Impuesto</target>
+                 </trans-unit>
+                <trans-unit id="dash_total" resname="dash_total">
+                       <source>Total</source>
+                       <target>Total</target>
+                </trans-unit>
                  <trans-unit id="dash_view_details" resname="dash_view_details">
                        <source>View details</source>
                        <target>Ver detalles</target>
@@ -959,7 +967,14 @@
                        <source>Next</source>
                        <target>Siguiente</target>
                 </trans-unit>				
-
+		        <trans-unit id="dash_change_plan" resname="dash_change_plan">
+                       <source>Change plan</source>
+                       <target>Cambio de plan</target>
+                </trans-unit>
+		        <trans-unit id="dash_change_cc" resname="dash_change_cc">
+                       <source>Change card</source>
+                       <target>Cambio de tarjeta</target>
+                </trans-unit>
 				
 <!--End my dashboard-->
 

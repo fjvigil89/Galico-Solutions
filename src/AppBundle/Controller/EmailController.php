@@ -17,6 +17,9 @@ class EmailController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
         $fullname = $customer->getFirstname() . " " . $customer->getLastname();
+        $images = array("services-01","services-04","services-05","services-11","services-022");
+        $index = rand(0,4);
+        $imageName = $images[$index];
 
         # Setup the message
         $message = \Swift_Message::newInstance()
@@ -24,7 +27,7 @@ class EmailController extends Controller
             ->setFrom('info@general-pro.com',"General Pro")
             ->setTo($customer->getEmail())
             ->setBody(
-                $this->renderView('website/template-thank-you.html.twig',array("customerFullname"=>$fullname)),
+                $this->renderView('website/template-thank-you.html.twig',array("customerFullname"=>$fullname, "image"=>$imageName)),
                 'text/html'
 
             );
@@ -45,8 +48,11 @@ class EmailController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
         $fullname = $customer->getFirstname() . " " . $customer->getLastname();
+        $images = array("services-01","services-04","services-05","services-11","services-022");
+        $index = rand(0,4);
+        $imageName = $images[$index];
 
-        return $this->render('website/template-thank-you.html.twig',array("customerFullname"=>$fullname));
+        return $this->render('website/template-thank-you.html.twig',array("customerFullname"=>$fullname, "image"=>$imageName));
     }
 
     /**

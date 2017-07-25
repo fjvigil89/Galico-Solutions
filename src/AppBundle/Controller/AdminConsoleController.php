@@ -51,7 +51,7 @@ class AdminConsoleController extends Controller
 
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
-            $technician = $repository->find(technicianId);
+            $technician = $repository->find($technicianId);
 
         $tech = array();
         $tech['technicianid'] = $technician->getTechnicianid();
