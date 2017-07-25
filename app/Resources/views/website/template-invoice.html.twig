@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
     <style>
         img {
@@ -14,23 +12,6 @@
 
         }
 
-        .bg-bluegp
-        {
-
-            background-color: #070b4f;
-        }
-        .no-padding
-        {
-            padding:0px;
-        }
-        .center
-        {
-            text-align: center;
-        }
-        .border-white
-        {
-            border-color:transparent;
-        }
 
         .table-head
         {
@@ -39,162 +20,119 @@
         }
 
 
-        .bg-yellowtable
-        {
-            background:#FBD232 ;
-            color: black;
+        div.container {
+            width: 100%;
+
         }
+        tr:nth-child(even) {
+            background-color: 	#F0F0F0;
+        }
+        header {
+            padding: 1em;
+            color: white;
+            background-color: #FBD232;
+            clear: left;
+            text-align: center;
+        }
+
+        footer {
+            padding: 1em;
+            color: black;
+
+            clear: left;
+            text-align: center;
+        }
+
+        nav {
+            float: left;
+            max-width: 600px;
+            margin: 0;
+            padding: 4em;
+        }
+
+
+        article {
+            float: right;
+            margin-left: 170px;
+
+            padding: 5em;
+            overflow: hidden;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tablero{
+
+            float: right;
+            width: 23%;
+        }
+
+
     </style>
 </head>
 <body>
 
 <div class="container">
 
-    <div class="col-md-8 col-md-offset-2 border-white ">
-        <div class="panel-heading center bg-yellowtable">INVOICE</div>
-
-
-
-        <div class="row">
-
-            <div class="col-md-2">
-                <br>
-
-            </div>
-            <div class="col-md-5">
-                <br>
-                <p > <img src="https://general-pro.com/images/gp.png"></p>
-
-            </div>
-
-            <div class="col-md-5 "><br>
-                <p>{{customerFullname}}, </p>
-                <p>Adresse: {{ address}}, </p>
-                <p>Telephone: {{ telephone}} </p>
-                <p>Email: {{ email }} </p>
-            </div>
-
-        </div>
-        <div class="row">
-
-            <div class="col-md-1">
-                <br>
-
-            </div>
-            <div class="col-md-6">
-                <br>
-                <i>GENERAL PRO</i>
-                <p>Adresse: 661 Notre-Dame St-Remi,</p>
-                <p>J0L 2L0 - Québec, Canada </p>
-                <p>Telephone: 1-(514)-375-4523 </p>
-                <p>Email: contact@general-pro.com </p>
-
-            </div>
-
-            <div class="col-md-5 "><br>
-                <table class="table table-bordered">
-
-                    <tbody>
-                    <tr>
-                        <th>Invoice #</th>
-                        <td>AF124343</td>
+    <header>
+        <h1>INVOICE</h1>
+    </header>
 
-                    </tr>
-                    <tr>
-                        <th>Date</th>
-                        <td>12-04-2017</td>
 
-                    </tr>
-                    <tr>
-                        <th>Amount</th>
-                        <td>29.99</td>
 
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
 
+    <nav>
 
-        <div class="row">
 
-            <table class="table table-striped">
-                <thead class="table-head">
-                <tr>
-                    <th>Item</th>
-                    <th>Description</th>
-                    <th>Unit Cost</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Basic plan</td>
-                    <td>Plombing service </td>
-                    <td>19.99</td>
-                    <td>1</td>
-                    <td>19.99</td>
-                </tr>
-                <tr>
-                    <td>Add Service</td>
-                    <td>Painting service, 4 walls 2m each</td>
-                    <td>50</td>
-                    <td>4</td>
-                    <td>200.00</td>
-                </tr>
-                <tr>
-                    <td>Add Service</td>
-                    <td>Child Care</td>
-                    <td>20</td>
-                    <td>3</td>
-                    <td>60.00</td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
+        <p > <img src="https://general-pro.com/images/gp.png"></p>
 
+        <br>
 
+        <i>GENERAL PRO</i>
+        <p>Adresse: 661 Notre-Dame St-Remi,</p>
+        <p>J0L 2L0 - Québec, Canada </p>
+        <p>Telephone: 1-(514)-375-4523 </p>
+        <p>Email: contact@general-pro.com </p>
 
 
-        <div class="row">
+    </nav>
+    <article>
 
-            <div class="col-md-2">
-                <br>
+        <p>{{customerFullname}}, </p>
+        <p>{{ address}}, </p>
+        <p>Telephone: {{ telephone}} </p>
+        <p>Email: {{ email }} </p>
+        <br><br><br>
+        <table style= "width:100%" >
 
-            </div>
-            <div class="col-md-5">
-                <br>
+            <tbody>
+            <tr>
+                <th style="text-align:left">Invoice #</th>
+                <td>AF124343</td>
 
+            </tr>
+            <tr>
+                <th style="text-align:left">Date</th>
+                <td>12-04-2017</td>
 
-            </div>
+            </tr>
+            <tr>
+                <th style="text-align:left">Amount</th>
+                <td>29.99</td>
 
-            <div class="col-md-5 "><br>
-                <table class="table ">
+            </tr>
+            </tbody>
+        </table>
 
-                    <tbody>
-                    <tr>
-                        <th>Subtotal</th>
-                        <td>279.99</td>
 
-                    </tr>
-                    <tr>
-                        <th>Tax</th>
-                        <td>0.00</td>
 
-                    </tr>
-                    <tr>
-                        <th>Total</th>
-                        <td>279.99</td>
 
-                    </tr>
+    </article>
 
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
 
 
 
@@ -203,20 +141,72 @@
 
 
 
+    <footer>
 
+        <table class="table table-striped" style="width:100%">
+            <thead class="table-head" >
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Unit Cost</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Basic plan</td>
+                <td>Plombing service </td>
+                <td>19.99</td>
+                <td>1</td>
+                <td>19.99</td>
+            </tr>
+            <tr>
+                <td>Add Service</td>
+                <td>Painting service, 4 walls 2m each</td>
+                <td>50</td>
+                <td>4</td>
+                <td>200.00</td>
+            </tr>
+            <tr>
+                <td>Add Service</td>
+                <td>Child Care</td>
+                <td>20</td>
+                <td>3</td>
+                <td>60.00</td>
+            </tr>
+            </tbody>
+        </table>
 
+        <br>
 
+        <table class="tablero">
 
+            <tbody>
+            <tr>
+                <th>Subtotal</th>
+                <td>279.99</td>
 
+            </tr>
+            <tr>
+                <th>Tax</th>
+                <td>0.00</td>
 
-        </div>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>279.99</td>
 
+            </tr>
 
+            </tbody>
+        </table>
 
 
 
 
 
+    </footer>
 
 
 
@@ -226,9 +216,31 @@
 
 
 
-        </div>
 
-    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

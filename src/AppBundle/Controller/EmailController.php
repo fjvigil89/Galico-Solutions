@@ -70,6 +70,19 @@ class EmailController extends Controller
         return $this->render('website/template-invoice.html.twig',array("customerFullname"=>$fullname,"address"=> $address, "telephone"=> $telephone, "email"=>$email ));
     }
 
+    /**
+     * @Route("/subscription/{customerId}")
+     */
+    public function viewSubscription($customerId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+        $fullname = $customer->getFirstname() . " " . $customer->getLastname();
+        $address = $customer->getAddress();
+        $telephone = $customer->getPhoneprimary();
+        $email = $customer->getEmail();
 
+        return $this->render('website/template-subscription.html.twig',array("customerFullname"=>$fullname,"address"=> $address, "telephone"=> $telephone, "email"=>$email ));
+    }
 
 }
