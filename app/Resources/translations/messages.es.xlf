@@ -975,7 +975,15 @@
                        <source>Change card</source>
                        <target>Cambio de tarjeta</target>
                 </trans-unit>
-				
+	                  <trans-unit id="dash_send_proforma" resname="dash_send_proforma">
+                            <source>Send</source>
+                            <target>Enviar</target>
+                     </trans-unit>
+                   <trans-unit id="dash_proforma" resname="dash_proforma">
+                         <source>Request a proforma</source>
+                         <target>Solicitar cotización</target>
+                  </trans-unit>
+
 <!--End my dashboard-->
 
 <!--Admin-console-->
@@ -1053,6 +1061,26 @@
                             <target>Seleccione su CV</target>
                      </trans-unit>
 <!--End Work us-->
+<!--Template Welcome-->
+                   <trans-unit id="template_welcome_dear" resname="template_welcome_dear">
+                          <source>Dear</source>
+                          <target>Estimado/a</target>
+                   </trans-unit>
+                    <trans-unit id="template_welcome" resname="template_welcome">
+                             <source>Thank you for completing your registration with General Pro. You are part of the family now! We would like to take this opportunity to welcome you to our organization. We are looking forward to assisting you with all your demands, which may range from house renovations and maintenance to daily needs and emergencies. Whatever you need, we provide! </source>
+                             <target>Gracias por inscribirse a General Pro. ¡Ahora es parte de la familia! Nos gustaría aprovechar esta oportunidad para darle la bienvenida a nuestra organización. Estamos ansiosos de poder satisfacer sus exigencias, las cuales pueden incluir la renovación y el mantenimiento de la casa, igual que las necesidades y las emergencias cuotidianas. ¡Nosotros tenemos lo que usted necesita!</target>
+                       </trans-unit>
+                      <trans-unit id="template_welcome_qs" resname="template_welcome_qs">
+                             <source>If you have any questions regarding our services, plans, policies, or if you need assistance, do not hesitate to contact us at any time.</source>
+                             <target>Si tiene alguna pregunta sobre nuestros servicios, planes, políticas, o si necesita ayuda, contáctenos en cualquier momento. </target>
+                         </trans-unit>
+                        <trans-unit id="template_welcome_bye" resname="template_welcome_bye">
+                                 <source>Sincerely,Your friends at</source>
+                             <target>Sinceramente, Sus amigos de</target>
+                        </trans-unit>
+
+
+<!--End Template Welcome-->
 
         </body>
     </file>

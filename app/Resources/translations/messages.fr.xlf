@@ -971,6 +971,14 @@
                        <source>Change card</source>
                        <target>Changement de carte</target>
                 </trans-unit>
+               <trans-unit id="dash_send_proforma" resname="dash_send_proforma">
+                        <source>Send</source>
+                        <target>Envoyer</target>
+                 </trans-unit>
+                   <trans-unit id="dash_proforma" resname="dash_proforma">
+                         <source>Request a proforma</source>
+                         <target>Demander une proforma</target>
+                  </trans-unit>
 <!--End my dashboard-->	
 
 <!--Admin-console-->
@@ -1055,6 +1063,21 @@
 
 <!--End Work us-->
 
+<!--Template Welcome-->
+                   <trans-unit id="template_welcome_dear" resname="template_welcome_dear">
+                          <source>Dear</source>
+                          <target>Cher/Chère</target>
+                   </trans-unit>
+                    <trans-unit id="template_welcome" resname="template_welcome">
+                             <source>Thank you for completing your registration with General Pro. You are part of the family now! We would like to take this opportunity to welcome you to our organization. We are looking forward to assisting you with all your demands, which may range from house renovations and maintenance to daily needs and emergencies. Whatever you need, we provide! </source>
+                             <target>Merci d'avoir complété votre inscription à General Pro. Vous faites maintenant partie de notre famille! Nous aimerions profiter de cette occasion pour vous souhaiter la bienvenue à notre organisation. Nous sommes impatients de satisfaire toutes vos demandes, lesquelles peuvent aller de la rénovation et l’entretien des maisons aux urgences et besoins quotidiens. Nous fournissons tout ce dont vous avez besoin!</target>
+                     </trans-unit>
+                      <trans-unit id="template_welcome_qs" resname="template_welcome_qs">
+                             <source>If you have any questions regarding our services, plans, policies, or if you need assistance, do not hesitate to contact us at any time.</source>
+                             <target>Si vous avez des questions concernant nos services, plans, politiques, ou si vous avez besoin d'aide, n'hésitez pas à nous contacter à tout moment.</target>
+                        </trans-unit>
+
+<!--End Template Welcome-->
 
 
 

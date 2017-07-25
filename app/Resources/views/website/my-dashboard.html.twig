@@ -7,8 +7,24 @@
         <div class="pad">
         </div>
         <div class="container">
+            <div class="row">
+                <div class="col-md-5">
             <h2 class="heading-title">{{ 'dash_my_dashboard' | trans({}, "messages", lang)}}</h2>
             </br>
+                </div>
+                <div class="col-md-4 col-md-offset-3 panel panel-default">
+                    <div class="panel-body text-right">{{ 'dash_proforma' | trans({}, "messages", lang)}}
+                        &nbsp; &nbsp;&nbsp;
+
+                         <button data-toggle="modal" data-target="#proformaModal" ng-click="getSelectedHouseInfo(house.id)" class="btn-primary btn-lg "><span class="glyphicon glyphicon-list-alt" title={{ 'dash_view_details' | trans({}, "messages", lang)}}></span></button>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
             <div class="row">
 
 
@@ -131,7 +147,7 @@
                                     <td ng-bind="house.agentNumber"></td>
                                     <td>
 
-                                        <button data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title={{ 'dash_view_details' | trans({}, "messages", lang)}}></span></button>
+                                        <button data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)" class="btn-danger btn-xs"><span class="glyphicon glyphicon-align-justify" title={{ 'dash_view_details' | trans({}, "messages", lang)}}></span></button>
                                         <button data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)" class="btn-success btn-xs"><span class="glyphicon glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
                                         <button data-toggle="modal" data-target="#cardchangeModal" ng-click="getPaymentsHistory(house.id)" class="btn-primary btn-xs"><span class="glyphicon glyphicon-credit-card" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
 
@@ -766,8 +782,94 @@
 
     </div>
 
+
+
+        <div id="proformaModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Service Request</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-inline">
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Reference Number:</div>
+                            <div class="col-xs-7" >CA2454343 </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Account Number:</div>
+                            <div class="col-xs-7" >44454334 </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}:</div>
+                            <div class="col-xs-7" >15-04-2017 </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Applicant name:</div>
+                            <div class="col-xs-7" >Antonio Fu </div>
+                        </div><br>
+                            <div class="row">
+                                <label class="col-xs-5 text-bold" for="addr">Addresse:</label>
+                                <div class="col-xs-7">
+                                <input type="text" class="form-control" size="30" id="addr">
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <label class="col-xs-5 text-bold" for="servicereq">Service Request:</label>
+                                <div class="col-xs-7">
+
+
+                                    <select name="service" id="service" class="form-control"   >
+
+                                        <option value="Plumbing">Plumbing</option>
+                                        <option value="Electricity">Electricity</option>
+                                        <option value="Doors and Windows">Doors and Windows</option>
+                                        <option value="Locksmith">Locksmith</option>
+                                        <option value="United States">United States</option>
+                                        <option value="Appliances">Appliances</option>
+                                        <option value="AC/Heating">AC/Heating</option>
+                                        <option value="Nursing Care">Nursing Care</option>
+                                        <option value="Child Care">Child Care</option>
+                                        <option value="Lawn maintenance">Lawn maintenance</option>
+                                        <option value="Cleaning services">Cleaning services</option>
+                                        <option value="IT support and services">IT support and services</option>
+                                        <option value="Painting Services">Painting Services</option>
+                                        <option value="others">Others</option>
+                                    </select>
+
+
+
+
+                                </div>
+                            </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Job description:</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <textarea class="form-control col-xs-5" rows="7" id="jobdescription"></textarea>
+                        </div><br>
+                            <div class="row">
+                                <div class="col-xs-5 text-bold">Additional comments</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <textarea class="form-control col-xs-5" rows="3" id="addcomment"></textarea>
+                            </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-envelope" title="Save"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang)}}
+                        </button>
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-
+    </div>
 {% endblock %}
 
