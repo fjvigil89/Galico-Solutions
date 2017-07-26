@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Subscriptions
  *
  * @ORM\Table(name="subscriptions", indexes={@ORM\Index(name="CustomerID", columns={"HouseID"}), @ORM\Index(name="PriceID", columns={"PriceID"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="SubscriptionsRepository")
  */
 class Subscriptions
 {

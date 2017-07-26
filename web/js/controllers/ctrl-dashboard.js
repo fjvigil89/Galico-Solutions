@@ -37,7 +37,7 @@ angular.module("gpApp")
                     var customerId = $window.document.getElementById("customerId").value;
                     DashboardService.getCustomerInformation(customerId)
                         .then(function(response){
-                            console.log(response);
+
                             $scope.customer = response.data;
                             $scope.customer.fullName = $scope.customer.firstName + " " + $scope.customer.lastName;
 
