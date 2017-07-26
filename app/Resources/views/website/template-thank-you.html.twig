@@ -48,10 +48,13 @@
             float: left;
             width: 40%;
             height: 40%;
-
-
         }
-
+        .floating-boxb {
+            float: left;
+            width: 40%;
+            height: 40%;
+            margin: 10px;
+        }
     </style>
 
 
@@ -83,7 +86,7 @@
             <p style="text-align:left;"> <img src="https://general-pro.com/images/page-home/{{ image }}.jpg" class="img-template"></p>
         </div>
 
-        <div class="floating-box">
+        <div class="floating-boxb">
             <p>{{ 'template_welcome_dear' | trans({}, "messages", lang) }} {{customerFullname}}, </p>
             <p>
                 {{ 'template_welcome' | trans({}, "messages", lang) }}
