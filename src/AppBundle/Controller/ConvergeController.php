@@ -44,128 +44,162 @@ class ConvergeController extends Controller
         $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
         $totalAmount = $amount + $tax;
 
-        $response = null;
+        $response = array();
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
-        if($customer)
+        
+		$result = array();
+		$result['outcome'] = 'FAILURE';
+		$result['errorCode'] = '-1';
+		$result['errorName'] = 'CUSTOMER_INVALID';
+		
+		if($customer)
         {
-            $firstName = $customer->getFirstname();
-            $lastName = $customer->getLastname();
-            $phonePrimary = $customer->getPhoneprimary();
-            $country = $this->getIso3FromCountry($customer->getCountry());
-            $email = $customer->getEmail();
-            $state = $customer->getState();
-            $city = $customer->getCity();
-            $address =$customer->getAddress();
-            $zipcode =$customer->getZipcode();
-
-            $nextPaymentDate = new \DateTime();
-            //$nextPaymentDate->add(new \DateInterval('P30D'));
-
-            $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
-
-            //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
-			$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
             
-			$totalAmount = '1.00';
-			// Submit a recurring payment
-            $response = $converge->ccaddrecurring(
-                array(
-                    'ssl_amount' => $totalAmount,
-                    'ssl_salestax' => $tax,
-                    'ssl_card_number' => $cardNumber,
-                    'ssl_cvv2cvc2' => $cvv,
-                    'ssl_exp_date' => $expirationDate,
-                    'ssl_avs_address' => $address,
-                    'ssl_avs_zip' => $zipcode,
-                    'ssl_city' => $city,
-                    'ssl_state' => $state,
-                    'ssl_country' => $country,
-                    'ssl_email' => $email,
-                    'ssl_phone' => $phonePrimary,
-                    'ssl_first_name' => $firstName,
-                    'ssl_last_name' =>  $lastName,
-                    'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
-                    'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-                    //'ssl_billing_cycle' => 'MONTHLY',
-                    'ssl_billing_cycle' => 'DAILY',
-                    'vita_name_on_card' => $nameOnCard,
-                    'ssl_invoice_number' => $invoiceNumber,
-                    'ssl_customer_code'=> $customerId,
-                )
-            );
+			try
+			{
+				
+				$firstName = $customer->getFirstname();
+				$lastName = $customer->getLastname();
+				$phonePrimary = $customer->getPhoneprimary();
+				$country = $this->getIso3FromCountry($customer->getCountry());
+				$email = $customer->getEmail();
+				$state = $customer->getState();
+				$city = $customer->getCity();
+				$address =$customer->getAddress();
+				$zipcode =$customer->getZipcode();
 
+				$nextPaymentDate = new \DateTime();
+				//$nextPaymentDate->add(new \DateInterval('P30D'));
 
+				$invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
+
+				//$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
+				$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+				
+				$totalAmount = '1.00';
+				// Submit a recurring payment
+				$response = $converge->ccaddrecurring(
+					array(
+						'ssl_amount' => $totalAmount,
+						'ssl_salestax' => $tax,
+						'ssl_card_number' => $cardNumber,
+						'ssl_cvv2cvc2' => $cvv,
+						'ssl_exp_date' => $expirationDate,
+						'ssl_avs_address' => $address,
+						'ssl_avs_zip' => $zipcode,
+						'ssl_city' => $city,
+						'ssl_state' => $state,
+						'ssl_country' => $country,
+						'ssl_email' => $email,
+						'ssl_phone' => $phonePrimary,
+						'ssl_first_name' => $firstName,
+						'ssl_last_name' =>  $lastName,
+						'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
+						'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
+						//'ssl_billing_cycle' => 'MONTHLY',
+						'ssl_billing_cycle' => 'DAILY',
+						'vita_name_on_card' => $nameOnCard,
+						'ssl_invoice_number' => $invoiceNumber,
+						'ssl_customer_code'=> $customerId,
+					)
+				);
+				
+				
+				
+				// Display Converge API response
+				//print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
+				//print_r($response);
+				
+				if(array_key_exists("errorCode",$response))
+				{
+					$result['errorCode'] = $response['errorCode'];
+					$result['errorName'] = $this->getTransactionErrorName($response['errorName']);
+					$result['outcome'] = "FAILURE";
+				}
+				else
+				{
+					$result['errorCode'] = 0;
+					
+					
+					$dateNow = new \DateTime('now');
+
+					//---SUBSCRIBE HOUSE
+					$houseCountry = $this->getCountryByIso3($houseCountryISO);
+
+					$house = new Houses();
+					$house->setFirstname($cFirstName);
+					$house->setLastname($cLastName);
+					$house->setPhoneprimary($cPhonePrimary);
+					$house->setPhonealternate($cPhoneAlternate);
+					$house->setCountry($houseCountry->getCountry());
+					$house->setState($houseState);
+					$house->setCity($houseCity);
+					$house->setAddress($houseAddress);
+					$house->setZipcode($houseZipCode);
+					$house->setCustomer($customer);
+
+					$em = $this->getDoctrine()->getManager();
+					$em->persist($house);
+					$em->flush();
+
+					$price = $this->getPrice($houseCountryISO,$planName);
+					$subscription = new Subscriptions();
+					$subscription->setHouse($house);
+					$subscription->setPrice($price);
+					$subscription->setSubscriptiondate($dateNow);
+					$subscription->setTransactionid($response['ssl_recurring_id']);
+					$subscription->setCc($response['ssl_card_number']);
+
+					//$em = $this->getDoctrine()->getManager();
+					$em->persist($subscription);
+					$em->flush();
+					
+
+					//---END : SUSCRIBE HOUSE
+
+					//-- ADD PAYMENT INFO
+					$payment = new Payments();
+					$payment->setPaymentdate($dateNow);
+					$payment->setAmount($amount);
+					$payment->setTax($tax);
+					$payment->setDescription($planName . " subscription");
+					$payment->setInvoicenumber($invoiceNumber);
+					$payment->setSubscription($subscription);
+
+					$em->persist($payment);
+					$em->flush();
+
+					//-- END :: PAYMENT INFO
+
+					$result['errorName'] = '';
+					$result['outcome'] = "SUCCESS";
+				}
+				
+				
+			}
+			//end : try
+			catch(Exception $e)
+			{
+				
+				if(array_key_exists("errorCode",$response))
+				{
+					$result['errorCode'] = $response['errorCode'];
+					$result['errorName'] = $this->getTransactionErrorName($response['errorName']);
+					$result['outcome'] = "FAILURE";
+				}
+				else
+				{
+					$result['outcome'] = 'FAILURE';
+					$result['errorCode'] = '-2';
+					$result['errorName'] = 'TRANSACTION_FAILED';
+				}
+				
+			}
+			
         }
-
-
-
-// Display Converge API response
-        //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
-        //print_r($response);
-        $result = array();
-        if(array_key_exists("errorCode",$response))
-        {
-            $result['errorCode'] = $response['errorCode'];
-            $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
-            $result['outcome'] = "FAILURE";
-        }
-        else
-        {
-            $result['errorCode'] = 0;
-            $dateNow = new \DateTime('now');
-
-            //---SUBSCRIBE HOUSE
-            $houseCountry = $this->getCountryByIso3($houseCountryISO);
-
-            $house = new Houses();
-            $house->setFirstname($cFirstName);
-            $house->setLastname($cLastName);
-            $house->setPhoneprimary($cPhonePrimary);
-            $house->setPhonealternate($cPhoneAlternate);
-            $house->setCountry($houseCountry->getCountry());
-            $house->setState($houseState);
-            $house->setCity($houseCity);
-            $house->setAddress($houseAddress);
-            $house->setZipcode($houseZipCode);
-            $house->setCustomer($customer);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($house);
-            $em->flush();
-
-            $price = $this->getPrice($houseCountryISO,$planName);
-            $subscription = new Subscriptions();
-            $subscription->setHouse($house);
-            $subscription->setPrice($price);
-            $subscription->setSubscriptiondate($dateNow);
-            $subscription->setTransactionid($response['ssl_recurring_id']);
-            $subscription->setCc($response['ssl_card_number']);
-
-            //$em = $this->getDoctrine()->getManager();
-            $em->persist($subscription);
-            $em->flush();
-
-            //---END : SUSCRIBE HOUSE
-
-            //-- ADD PAYMENT INFO
-            $payment = new Payments();
-            $payment->setPaymentdate($dateNow);
-            $payment->setAmount($amount);
-            $payment->setTax($tax);
-            $payment->setDescription($planName . " subscription");
-            $payment->setInvoicenumber($invoiceNumber);
-            $payment->setSubscription($subscription);
-
-            $em->persist($payment);
-            $em->flush();
-
-            //-- END :: PAYMENT INFO
-
-
-            $result['outcome'] = "SUCCESS";
-        }
+		//--END : IF CUSTOMER
 
         return $this->json($result); //
     }
