@@ -177,7 +177,10 @@ class ConvergeController extends Controller
 		'Credit Card Number Invalid'=>'CC_NUMBER_INVALID',
 		'Not Permitted'=> 'NOT_PERMITTED'
 		);
-        return $errorList[$convergeErrorName];
+		
+		$error = array_key_exists($convergeErrorName,$errorList)? $errorList[$convergeErrorName] : $convergeErrorName;
+		
+        return $error;
     }
 
 

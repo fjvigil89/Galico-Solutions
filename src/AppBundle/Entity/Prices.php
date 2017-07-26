@@ -23,7 +23,7 @@ class Prices
     /**
      * @var string
      *
-     * @ORM\Column(name="TaxPercentage", type="decimal", precision=10, scale=2, nullable=false)
+     * @ORM\Column(name="TaxPercentage", type="decimal", precision=10, scale=3, nullable=false)
      */
     private $taxpercentage;
 
