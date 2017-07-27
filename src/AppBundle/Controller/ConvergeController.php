@@ -21,7 +21,8 @@ class ConvergeController extends Controller
      */
     public function addRecurringAction(Request $request)
     {
-        //---GET ALL REQUEST VARIABLES
+        die("STOP");
+		//---GET ALL REQUEST VARIABLES
         $customerId = $request->request->get('customerId');
         $amount = $request->request->get('amount');
         $cardNumber = $request->request->get('cardNumber');
