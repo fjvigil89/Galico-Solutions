@@ -76,10 +76,10 @@ class ConvergeController extends Controller
 
 				$invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
-				//$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
-				$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+				$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
+				//$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
 				
-				$totalAmount = '1.00';
+				//$totalAmount = '1.00';
 
 				// Submit a recurring payment
 				$response = $converge->ccaddrecurring(
@@ -100,17 +100,14 @@ class ConvergeController extends Controller
 						'ssl_last_name' =>  $lastName,
 						'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
 						'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-						//'ssl_billing_cycle' => 'MONTHLY',
-						'ssl_billing_cycle' => 'DAILY',
+						'ssl_billing_cycle' => 'MONTHLY',
 						'vita_name_on_card' => $nameOnCard,
 						'ssl_invoice_number' => $invoiceNumber,
 						'ssl_customer_code'=> $customerId,
 					)
 				);
 
-                die("after ccaddrecurring");
-				
-				// Display Converge API response
+                // Display Converge API response
 				//print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
 				//print_r($response);
 				
