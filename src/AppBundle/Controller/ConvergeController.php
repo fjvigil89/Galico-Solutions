@@ -21,7 +21,7 @@ class ConvergeController extends Controller
      */
     public function addRecurringAction(Request $request)
     {
-        die("STOP");
+        
 		//---GET ALL REQUEST VARIABLES
         $customerId = $request->request->get('customerId');
         $amount = $request->request->get('amount');
@@ -54,7 +54,7 @@ class ConvergeController extends Controller
 		$result['outcome'] = 'FAILURE';
 		$result['errorCode'] = '-1';
 		$result['errorName'] = 'CUSTOMER_INVALID';
-		
+		die("STOP");
 		if($customer)
         {
             
