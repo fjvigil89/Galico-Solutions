@@ -54,7 +54,7 @@ class ConvergeController extends Controller
 		$result['outcome'] = 'FAILURE';
 		$result['errorCode'] = '-1';
 		$result['errorName'] = 'CUSTOMER_INVALID';
-		die("STOP");
+
 		if($customer)
         {
             
@@ -80,6 +80,7 @@ class ConvergeController extends Controller
 				$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
 				
 				$totalAmount = '1.00';
+
 				// Submit a recurring payment
 				$response = $converge->ccaddrecurring(
 					array(
@@ -106,8 +107,8 @@ class ConvergeController extends Controller
 						'ssl_customer_code'=> $customerId,
 					)
 				);
-				
-				
+
+                die("after ccaddrecurring");
 				
 				// Display Converge API response
 				//print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
