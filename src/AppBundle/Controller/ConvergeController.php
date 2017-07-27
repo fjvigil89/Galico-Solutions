@@ -51,10 +51,7 @@ class ConvergeController extends Controller
         $customer = $repository->find($customerId);
         
 		$result = array();
-		$result['outcome'] = 'FAILURE';
-		$result['errorCode'] = '-1';
-		$result['errorName'] = 'CUSTOMER_INVALID';
-
+		
 		if($customer)
         {
             
@@ -76,11 +73,9 @@ class ConvergeController extends Controller
 
 				$invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
-				$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
+				$converge = new ConvergeApi( '007128','webpage','CL7NIF',false); // demo api
 				//$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
 				
-				//$totalAmount = '1.00';
-
 				// Submit a recurring payment
 				$response = $converge->ccaddrecurring(
 					array(
@@ -98,20 +93,20 @@ class ConvergeController extends Controller
 						'ssl_phone' => $phonePrimary,
 						'ssl_first_name' => $firstName,
 						'ssl_last_name' =>  $lastName,
-						'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
+						//'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
 						'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
 						'ssl_billing_cycle' => 'MONTHLY',
 						'vita_name_on_card' => $nameOnCard,
 						'ssl_invoice_number' => $invoiceNumber,
 						'ssl_customer_code'=> $customerId,
 					)
-				);
-
-                // Display Converge API response
+				) ;
+				
+				// Display Converge API response
 				//print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
 				//print_r($response);
 				
-				if(array_key_exists("errorCode",$response))
+				if(array_key_exists("errorCode",$response)) // Transaction failed
 				{
 					$result['errorCode'] = $response['errorCode'];
 					$result['errorName'] = $this->getTransactionErrorName($response['errorName']);
@@ -155,7 +150,6 @@ class ConvergeController extends Controller
 					$em->persist($subscription);
 					$em->flush();
 					
-
 					//---END : SUSCRIBE HOUSE
 
 					//-- ADD PAYMENT INFO
@@ -182,13 +176,13 @@ class ConvergeController extends Controller
 			catch(Exception $e)
 			{
 				
-				if(array_key_exists("errorCode",$response))
+				/*if(array_key_exists("errorCode",$response))
 				{
 					$result['errorCode'] = $response['errorCode'];
 					$result['errorName'] = $this->getTransactionErrorName($response['errorName']);
 					$result['outcome'] = "FAILURE";
 				}
-				else
+				else*/
 				{
 					$result['outcome'] = 'FAILURE';
 					$result['errorCode'] = '-2';
@@ -198,6 +192,12 @@ class ConvergeController extends Controller
 			}
 			
         }
+		else
+		{
+			$result['outcome'] = 'FAILURE';
+			$result['errorCode'] = '-1';
+			$result['errorName'] = 'CUSTOMER_INVALID';
+		}
 		//--END : IF CUSTOMER
 
         return $this->json($result); //
@@ -287,7 +287,9 @@ class ConvergeController extends Controller
      */
     public function updateRecurringAction(Request $request)
     {
-        //---GET ALL REQUEST VARIABLES
+        //NOT YET IMPLEMENTED
+		
+		//---GET ALL REQUEST VARIABLES
         $customerId = $request->request->get('customerId');
         $amount = $request->request->get('amount');
         $cardNumber = $request->request->get('cardNumber');
@@ -295,17 +297,8 @@ class ConvergeController extends Controller
         $expirationDate = $request->request->get('expirationDate');
         $nameOnCard = $request->request->get('nameOnCard');
         $planName = $request->request->get('planName');
-        $houseCountryISO = $request->request->get('country');
-        $houseState = $request->request->get('state');
-        $houseCity = $request->request->get('city');
-        $houseAddress = $request->request->get('address');
-        $houseZipCode = $request->request->get('zipCode');
-
-        $cFirstName = $request->request->get('firstName');
-        $cLastName = $request->request->get('lastName');
-        $cPhonePrimary = $request->request->get('phonePrimary');
-        $cPhoneAlternate = $request->request->get('phoneAlternate');
-
+        
+        
         $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
         $totalAmount = $amount + $tax;
 
@@ -331,7 +324,7 @@ class ConvergeController extends Controller
             $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
             //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
-            $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+            //$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
 
             $totalAmount = '1.00';
             // Submit a recurring payment
@@ -353,8 +346,7 @@ class ConvergeController extends Controller
                     'ssl_last_name' =>  $lastName,
                     'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
                     'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-                    //'ssl_billing_cycle' => 'MONTHLY',
-                    'ssl_billing_cycle' => 'DAILY',
+                    'ssl_billing_cycle' => 'MONTHLY',
                     'vita_name_on_card' => $nameOnCard,
                     'ssl_invoice_number' => $invoiceNumber,
                     'ssl_customer_code'=> $customerId,
