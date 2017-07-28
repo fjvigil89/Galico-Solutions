@@ -74,6 +74,48 @@ class AdminConsoleController extends Controller
     }
 
 
+    /**
+     * @Route("/create-technician",name="createTechnician")
+     */
+    public function addtechnicianAction(Request $request){
 
+        $data = $request->request->all();
+        //var_dump($data); die("");
+        $firstName = $data['newTechFirstname'];
+        $lastName = $data['newTechLastname'];
+        $email = $data['newTechEmail'];
+        $phonePrimary = $data['newTechPhonePrimary'];
+        $phoneAlternate = $data['newTechPhonealternate'];
+        $profession = $data['newTechProfesion'];
+        $idType = $data['newTechIDType'];
+        $code = $data['newTechCode'];
+        $country = $data['newTechCountry'];
+        $state = $data['newTechState'];
+        $city = $data['addTechCity'];
+        $address = $data['newTechAddress'];
+        $zipCode = $data['newTechZipCode'];
 
+        $technician = new Technicians();
+        $technician->setFirstname($firstName);
+        $technician->setLastname($lastName);
+        $technician->setEmail($email);
+        $technician->setPhoneprimary($phonePrimary);
+        $technician->setPhonealternate($phoneAlternate);
+        $technician->setProfession($profession);
+        $technician->setIdtype($idType);
+        $technician->setCode($code);
+        $technician->setCountry($country);
+        $technician->setState($state);
+        $technician->setCity($city);
+        $technician->setAddress($address);
+        $technician->setZipcode($zipCode);
+        $technician->setIdnumber(2);
+        $technician->setPhoto("photo");
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($technician);
+        $em->flush();
+
+        return $this->redirectToRoute("ListCustomers");
+    }
 }
