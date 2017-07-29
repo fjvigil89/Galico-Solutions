@@ -372,7 +372,9 @@ angular.module("gpApp")
 
             else
             {
-                $scope.paymentInfo.customerId = $scope.newSubscription.customerId;
+                $scope.paymentInfo.error =  "";
+				
+				$scope.paymentInfo.customerId = $scope.newSubscription.customerId;
                 $scope.paymentInfo.country = $scope.newSubscription.country;
                 $scope.paymentInfo.state = $scope.newSubscription.state;
                 $scope.paymentInfo.city = $scope.newSubscription.city;
