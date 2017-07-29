@@ -762,4 +762,73 @@ class UserController extends Controller
         */
     }
 
+    /**
+     * @Route("/menu")
+     */
+    public function showConditionsAction()
+    {
+        {
+            return $this->render('website/sidemenu.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/profile")
+     */
+    public function showProfileAction()
+    {
+        {
+            return $this->render('website/my-profile.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/personalInfo")
+     */
+    public function editPersonalInfoAction()
+    {
+        {
+            return $this->render('website/personal-information.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/houses")
+     */
+    public function showHousesAction()
+    {
+        {
+            return $this->render('website/my-houses.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/CreditCardChange")
+     */
+    public function editCreditCardAction()
+    {
+        {
+            return $this->render('website/modify-my-card.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/ChangePlan")
+     */
+    public function editPlanAction()
+    {
+        {
+            return $this->render('website/change-plan.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/RequestProforma")
+     */
+    public function showRequestProformaPlanAction()
+    {
+        {
+            return $this->render('website/request-proforma.html.twig');
+        }
+    }
 }

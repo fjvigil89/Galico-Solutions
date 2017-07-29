@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Credit card change{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
+
+
+                    <div  class ="border-yellow col-md-8 col-md-offset-2 padding-payment">
+                        <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+
+
+
+
+                        <div class="form-group">
+                            <label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
+                            <input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
+                            <select name="creditCard" id="cardType" class="form-control" ng-model="paymentInfo.cardType" >
+                                <option value=""></option>
+                                <option value="Visa">Visa</option>
+                                <option value="MasterCard">Master Card</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-6 no-padding">
+                                <label for="cardnumber">{{ 'dash_card_number' | trans({}, "messages", lang)}}&nbsp; </label><img src="{{ asset('images/card_mastercard.png') }}"><img src="{{ asset('images/card_visa.png') }}">
+                            </div>
+
+
+
+                            <div class="row margin-left">
+
+                                <div class="col-xs-7 no-padding">
+                                    <input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="paymentInfo.cardNumber" >
+                                </div>
+                                <div class="col-xs-1 no-padding"></div>
+
+                                <div class="col-xs-3 no-padding">
+
+                                    <input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="paymentInfo.cvv">
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="dateexpiration">{{ 'dash_expiration_date' | trans({}, "messages", lang)}}</label>
+
+                                <div class="row margin-left">
+
+                                    <div class="col-xs-4 no-padding">
+                                        <select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="paymentInfo.expMonth">
+
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-2 no-padding"></div>
+                                    <div class="col-xs-5 no-padding">
+                                        <select name="dateexpirationyear" id="expYear" class="form-control" ng-model="paymentInfo.expYear">
+                                          {#  {% set dateSplit = today |split("-") %}
+                                            {% set year = dateSplit[0] %}
+                                            {% for yr in year..(year+10) %}
+                                                <option value="{{ yr |slice(2,2)}}">{{ yr }}</option>
+                                            {% endfor %}
+
+                                            #}
+                                        </select>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
+                        </button>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

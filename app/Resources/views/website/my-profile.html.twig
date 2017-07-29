@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} My profile{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+                <div class="table-responsive ">
+                    <table class="table" id="tbl-profile">
+                        <thead class="bg-yellow font-header no-padding spacer-large">
+                        <tr>
+                            <th colspan="2" ng-bind="customer.fullName"></th>
+
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+
+
+                        <!--<tr>
+                            <td>ID</td>
+                            <td >CA24353</td>
+                        </tr>-->
+                        <tr>
+                            <td>{{ 'form_lastname' | trans({}, "messages", lang) }}</td>
+                            <td ng-bind="customer.lastName"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_name' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.firstName"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_email' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.email"></td>
+                        </tr>
+
+                        <tr>
+                            <td>{{ 'form_phone_primary' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.phonePrimary"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.phoneAlternate"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_Country' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.country"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_state' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.state"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_city' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.city"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_address' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.address"></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'form_zipcode' | trans({}, "messages", lang)}}</td>
+                            <td ng-bind="customer.zipCode"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

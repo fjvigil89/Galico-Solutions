@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Credit card change{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
+
+
+                <div  class ="border-yellow col-md-8 col-md-offset-2 padding-payment">
+                    <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+                    <div class="form-group">
+                        <label for="plan">Plan</label>
+                        <select name="plan" id="cardType" class="form-control"  >
+                            <option value=""></option>
+                            <option value="Basic Plan">Basic Plan</option>
+                            <option value="Gp Plan">Gp Plan</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">{{ 'dash_month_amount' | trans({}, "messages", lang)}}</label>
+                        <text>{[paymentInfo.amount]}</text>
+                    </div>
+                </div>
+
+                <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                    <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
+                </button>
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

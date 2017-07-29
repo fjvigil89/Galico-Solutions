@@ -225,3 +225,14 @@
 
     margin-left:-2em;
 }
+
+.sidemenu-item :hover
+{
+    background-color: #FBD232;
+    color : #FFFFFF;
+}
+
+#sidemenu
+{
+    vertical-align: middle;
+}

@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} My dashboard{% endblock %}
+
+{% block body %}
+<div class="pad">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            {% include 'website/sidemenu.html.twig' %}
+        </div>
+        <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+            <div >
+                <div class="modal-header bg-yellow">
+
+                    <h4 class="modal-title">{{ 'dash_edit_profile' | trans({}, "messages", lang)}}</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+                    <div class="form-group">
+                        <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang)}} *:</label>
+                        <input type="text" class="form-control" id="lastName" ng-model="customerUpdated.lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">{{ 'form_name' | trans({}, "messages", lang)}} *:</label>
+                        <input type="text" class="form-control" id="firstName" ng-model="customerUpdated.firstName" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">{{ 'form_email' | trans({}, "messages", lang)}} *:</label>
+                        <input type="email" class="form-control" id="email" ng-model="customerUpdated.email" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}} *:</label>
+                        <input type="tel" class="form-control" id="phonePrimary" ng-model="customerUpdated.phonePrimary">
+                    </div>
+                    <div class="form-group">
+                        <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
+                        <input type="tel" class="form-control" id="phoneAlternate" ng-model="customerUpdated.phoneAlternate" >
+                    </div>
+                    <div class="form-group">
+                        <label for="country">{{ 'form_Country' | trans({}, "messages", lang)}} *:</label>
+                        <input type="text" class="form-control" id="country" ng-model="customerUpdated.country">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">{{ 'form_state' | trans({}, "messages", lang)}} :</label>
+                        <input type="text" class="form-control" id="state" ng-model="customerUpdated.state" >
+                    </div>
+                    <div class="form-group">
+                        <label for="city">{{ 'form_city' | trans({}, "messages", lang)}} *:</label>
+                        <input type="text" class="form-control" id="city" ng-model="customerUpdated.city" >
+                    </div>
+                    <div class="form-group">
+                        <label for="address">{{ 'form_address' | trans({}, "messages", lang)}} *:</label>
+                        <input type="text" class="form-control" id="address" ng-model="customerUpdated.address" >
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
+                        <input type="text" class="form-control" id="zipCode" ng-model="customerUpdated.zipCode" >
+                    </div>
+                    <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                        <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<div class="pad">
+</div>
+{% endblock %}
