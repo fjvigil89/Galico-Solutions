@@ -389,7 +389,6 @@ class ConvergeController extends Controller
 		//--END : IF CUSTOMER
 
         return $this->json($result); //
-        //return $this->json($response); //
     }
 
     private function getTransactionErrorName($convergeErrorName)
@@ -476,8 +475,7 @@ class ConvergeController extends Controller
      */
     public function updateRecurringAction(Request $request)
     {
-        //NOT YET IMPLEMENTED
-		
+       
 		//---GET ALL REQUEST VARIABLES
         $customerId = $request->request->get('customerId');
         $amount = $request->request->get('amount');
@@ -485,8 +483,7 @@ class ConvergeController extends Controller
         $cvv = $request->request->get('cvv');
         $expirationDate = $request->request->get('expirationDate');
         $nameOnCard = $request->request->get('nameOnCard');
-        $planName = $request->request->get('planName');
-        
+         
         
         $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
         $totalAmount = $amount + $tax;
@@ -519,11 +516,13 @@ class ConvergeController extends Controller
             // Submit a recurring payment
             $response = $converge->ccaddrecurring(
                 array(
+                    'ssl_recurring_id' => $recurringId,
+					'ssl_card_number' => $cardNumber,
+					'ssl_exp_date' => $expirationDate,
+					'ssl_cvv2cvc2' => $cvv,
                     'ssl_amount' => $totalAmount,
                     'ssl_salestax' => $tax,
-                    'ssl_card_number' => $cardNumber,
-                    'ssl_cvv2cvc2' => $cvv,
-                    'ssl_exp_date' => $expirationDate,
+                    'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
                     'ssl_avs_address' => $address,
                     'ssl_avs_zip' => $zipcode,
                     'ssl_city' => $city,
@@ -533,8 +532,8 @@ class ConvergeController extends Controller
                     'ssl_phone' => $phonePrimary,
                     'ssl_first_name' => $firstName,
                     'ssl_last_name' =>  $lastName,
-                    'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
-                    'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
+                    //'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
+                    
                     'ssl_billing_cycle' => 'MONTHLY',
                     'vita_name_on_card' => $nameOnCard,
                     'ssl_invoice_number' => $invoiceNumber,
@@ -560,59 +559,10 @@ class ConvergeController extends Controller
         else
         {
             $result['errorCode'] = 0;
-            $dateNow = new \DateTime('now');
-
-            //---SUBSCRIBE HOUSE
-            $houseCountry = $this->getCountryByIso3($houseCountryISO);
-
-            $house = new Houses();
-            $house->setFirstname($cFirstName);
-            $house->setLastname($cLastName);
-            $house->setPhoneprimary($cPhonePrimary);
-            $house->setPhonealternate($cPhoneAlternate);
-            $house->setCountry($houseCountry->getCountry());
-            $house->setState($houseState);
-            $house->setCity($houseCity);
-            $house->setAddress($houseAddress);
-            $house->setZipcode($houseZipCode);
-            $house->setCustomer($customer);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($house);
-            $em->flush();
-
-            $price = $this->getPrice($houseCountryISO,$planName);
-            $subscription = new Subscriptions();
-            $subscription->setHouse($house);
-            $subscription->setPrice($price);
-            $subscription->setSubscriptiondate($dateNow);
-            $subscription->setTransactionid($response['ssl_recurring_id']);
-            $subscription->setCc($response['ssl_card_number']);
-
-            //$em = $this->getDoctrine()->getManager();
-            $em->persist($subscription);
-            $em->flush();
-
-            //---END : SUSCRIBE HOUSE
-
-            //-- ADD PAYMENT INFO
-            $payment = new Payments();
-            $payment->setPaymentdate($dateNow);
-            $payment->setAmount($amount);
-            $payment->setTax($tax);
-            $payment->setDescription($planName . " subscription");
-            $payment->setInvoicenumber($invoiceNumber);
-            $payment->setSubscription($subscription);
-
-            $em->persist($payment);
-            $em->flush();
-
-            //-- END :: PAYMENT INFO
-
-
             $result['outcome'] = "SUCCESS";
         }
 
         return $this->json($result); //
+        return $this->json($response); //
     }
 }

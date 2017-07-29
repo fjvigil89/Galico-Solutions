@@ -232,7 +232,7 @@
     color : #FFFFFF;
 }
 
-#sidemenu
+#sidemenu .sidemenu-item, #sidemenu-title
 {
-    vertical-align: middle;
+    padding-top:10px;
 }
