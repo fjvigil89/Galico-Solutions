@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Admin houses{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div ng-controller= "AdminController">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    {% include 'website/sidemenu-admin.html.twig' %}
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+
+                            <thead class="bg-yellow font-header">
+                            <tr>
+                                <th colspan="5">List Technician</th>
+
+                            </tr>
+                            </thead>
+                            <thead class="bg-light-gray">
+                            <tr>
+
+
+                                <th>Technician</th>
+                                <th>Service</th>
+                                <th>Phone</th>
+
+                                <th>Code Client</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                          {% for tech in technicians %}
+                                <tr>
+                                    <td class="">{{ tech.lastname}} {{ tech.firstname}}</td>
+                                    <td class="">{{ tech.profession }}</td>
+                                    <td class="">{{ tech.phoneprimary}}</td>
+
+
+                                    <td>
+                                        <button data-toggle="modal" data-target="#edittechnicianModal" ng-click="getTechnicianInformation({{ tech.technicianid}})" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                                        <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-list-alt" title="details"></span></button>
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+                    </div>
+
+
+
+            </div>
+        </div>
+
+        <div id="edittechnicianModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Technician</h4>
+                    </div>
+                    <div class="modal-body">
+                        <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+
+                        <div class="form-group">
+                            <label for="edit-tech-lastname">Last Name:</label>
+                            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.lastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-lastname">Name:</label>
+                            <input type="text" class="form-control" id="edit-tech-lastname"  ng-model="technician.firstName" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-email">Email:</label>
+                            <input type="email" class="form-control" id="edit-tech-email" ng-model="technician.email" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-phonePrimary">Phone (Primary):</label>
+                            <input type="tel" class="form-control" id="edit-tech-phonePrimary" ng-model="technician.phonePrimary" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-phonealternate">Phone (Alternate):</label>
+                            <input type="tel" class="form-control" id="edit-tech-phonealternate" ng-model="technician.phoneAlternate" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-tech-lastname">Serv. Provide:</label>
+                            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.profession" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-country">Country:</label>
+                            <input type="text" class="form-control" id="edit-tech-country" ng-model="technician.country" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-state">State:</label>
+                            <input type="text" class="form-control" id="edit-tech-state" ng-model="technician.state" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-city">City:</label>
+                            <input type="text" class="form-control" id="edit-tech-city" ng-model="technician.city" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-address">Address:</label>
+                            <input type="text" class="form-control" id="edit-tech-address" value="4534 av Maisonneuve" >
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tech-zipCode">ZipCode:</label>
+                            <input type="text" class="form-control" id="edit-tech-zipCode" value="j3d 2g3" >
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

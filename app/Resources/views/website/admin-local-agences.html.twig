@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Local Agences{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div ng-controller= "AdminController">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu-admin.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="bg-yellow font-header">
+                        <tr>
+                            <th colspan="3">Local Agents</th>
+                            <th class="text-right">
+                                <a href="#" data-toggle="modal" data-target="#addagenceModal" >
+                                    <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                </a>
+                            </th>
+                        </tr>
+                        </thead>
+                        <thead class="bg-light-gray">
+                        <tr>
+
+
+                            <th>Address</th>
+                            <th>City</th>
+
+                            <th>Phone</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        {%  for local in locals %}
+                        <tbody>
+
+                        <tr>
+                            <td class="">{{ local.Address }}</td>
+                            <td class="">{{ local.city }}</td>
+
+                            <td class="">{{ local.Phone }}</td>
+
+                            <td>
+                                <button data-toggle="modal" data-target="#editagenceModal" class="btn-danger btn-xs"  ><span class="glyphicon glyphicon-edit" title="edit"></span></button>
+                                <button data-toggle="modal" data-target="#editModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-home" title="details"></span></button>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

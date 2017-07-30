@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Admin add Customers{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+        <div ng-controller= "AdminController">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3">
+                        {% include 'website/sidemenu-admin.html.twig' %}
+                    </div>
+                    <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+
+                        <div class="modal-header bg-yellow">
+
+                            <h4 class="modal-title">{{ 'admin_console_addcustomer' | trans({}, "messages", lang) }}</h4>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <form  id="frm_newCustomer" method="POST" action="{{ path('createCustomer') }}">
+                                <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
+
+                                <div class="form-group">
+                                    <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" ng-model="newCustomer.lastName" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname">{{ 'form_name' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control"  id="firstName" name="firstName" ng-model="newCustomer.firstName" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
+                                    <input type="email" class="form-control" ng-model="newCustomer.email" id="email" name="email" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
+                                    <input type="password" class="form-control" ng-model="newCustomer.pwd" id="pwd" name="pwd" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">{{ 'modal_confirm_password' | trans({}, "messages", lang) }}</label>
+                                    <input type="password" id="cPwd" name="cPwd" ng-model="newCustomer.cPwd" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
+                                    <input type="tel" class="form-control" id="phonePrimary" name="phonePrimary" ng-model="newCustomer.phonePrimary" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
+                                    <input type="tel" class="form-control" id="phoneAlternate" name="phoneAlternate" ng-model="newCustomer.phoneAlternate" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" name="country" id="country"  ng-model="newCustomer.country" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" id="state" name="state" ng-model="newCustomer.state" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" id="city" name="city"  ng-model="newCustomer.city" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" id="address" name="address" ng-model="newCustomer.address" value="" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
+                                    <input type="text" class="form-control" id="zipCode" name="zipCode" ng-model="newCustomer.zipCode" value="" >
+                                </div>
+
+
+
+                                    <button type="button" class="btn bg-yellow color-black" ng-click="addNewCustomer()">
+                                        <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                                    </button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

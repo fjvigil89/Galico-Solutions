@@ -232,7 +232,7 @@
     color : #FFFFFF;
 }
 
-#sidemenu .sidemenu-item, #sidemenu-title
+#sidemenu .sidemenu-item, #sidemenu-title, .sidemenu-subtitle
 {
     padding-top:10px;
 }

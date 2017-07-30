@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} My houses{% endblock %}
+{% block title %} Admin houses{% endblock %}
 
 {% block body %}
     <div class="pad">
@@ -8,22 +8,22 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
-                {% include 'website/sidemenu.html.twig' %}
+                {% include 'website/sidemenu-admin.html.twig' %}
             </div>
             <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
 
 
                 <div class="table-responsive">
-                    <table class="table table-hover ">
+                    <table class="table table-hover">
 
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="5">{{ 'dash_house' | trans({}, "messages", lang)}}</th>
-
-                            <th><a href="#" data-toggle="modal" data-target="#contractModal" >
-                                    <span class="glyphicon glyphicon-plus-sign font-header"  title={{ 'dash_add_house' | trans({}, "messages", lang)}}></span>
-                                </a></th>
-
+                            <th colspan="5">{{ 'admin_console_houseinfo' | trans({}, "messages", lang) }}</th>
+                            <th class="text-right">
+                                <a href="#" data-toggle="modal" data-target="#addmaisonModal" >
+                                    <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                </a>
+                            </th>
                         </tr>
                         </thead>
                         <thead class="bg-light-gray">
@@ -35,6 +35,7 @@
                             <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
                             <th class="text-center"></th>
                         </tr>
+
                         </thead>
                         <tbody>
 
@@ -48,12 +49,12 @@
                             <td ng-bind="house.subscriptionDate"></td>
                             <td ng-bind="house.agentNumber"></td>
                             <td>
-
-                                <button data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)" class="btn-danger btn-xs"><span class="glyphicon glyphicon-align-justify" title={{ 'dash_view_details' | trans({}, "messages", lang)}}></span></button>
-                                <button data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)" class="btn-success btn-xs"><span class="glyphicon glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
-                                <button data-toggle="modal" data-target="#cardchangeModal" ng-click="getPaymentsHistory(house.id)" class="btn-primary btn-xs"><span class="glyphicon glyphicon-credit-card" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
-
-
+                                <a href="#maison1" data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)">
+                                    <span class="glyphicon glyphicon-list-alt" title={{ 'dash_view_details' | trans({}, "messages", lang)}} ></span>
+                                </a>
+                                <a href="#" data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)">
+                                    <span class="glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}} ></span>
+                                </a>
 
                             </td>
                         </tr>

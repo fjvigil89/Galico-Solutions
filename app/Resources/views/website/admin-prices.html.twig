@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Prices{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu-admin.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+
+                        <thead class="bg-yellow font-header">
+                        <tr>
+                            <th colspan="4">Prices</th>
+                            <th class="text-right">
+                                <a href="#" data-toggle="modal" data-target="#addpriceModal" >
+                                    <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                </a>
+                            </th>
+                        </tr>
+                        </thead>
+                        <thead class="bg-light-gray">
+                        <tr>
+
+                            <th>Country</th>
+                            <th>Price</th>
+                            <th>Tax Percentage</th>
+                            <th>Plan/Services</th>
+
+                            <th></th>
+                        </tr>
+
+                        </thead>
+
+                        <tbody>
+                        {%  for price in prices %}
+                        <tr>
+                            <td>Country</td>
+                            <td>{{ price.Price }}</td>
+                            <td>{{ price.TaxPercentage }}</td>
+                            <td>plan</td>
+
+
+                            <td>
+                                <button data-toggle="modal" data-target="#priceModal"  class="btn-danger btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+
+
+                                <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+
+                                <button data-toggle="modal" data-target="#paymentsModal" class="btn-success btn-xs"><span class="glyphicon glyphicon-remove-sign" title="go"></span></button>
+
+                                <a href="#" data-target="#" ng-hide="true">
+                                    <span class="glyphicon glyphicon-remove" title="Remove" ></span>
+                                </a>
+
+                            </td>
+                        </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

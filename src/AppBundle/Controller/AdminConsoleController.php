@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Customers;
 use AppBundle\Entity\Admins;
 use AppBundle\Entity\Houses;
+use AppBundle\Entity\Localnumbers;
 use AppBundle\Entity\Technicians;
+use AppBundle\Entity\Prices;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,6 +43,9 @@ class AdminConsoleController extends Controller
 
 
     }
+
+
+
 
 
     /**
@@ -117,5 +122,155 @@ class AdminConsoleController extends Controller
         $em->flush();
 
         return $this->redirectToRoute("ListCustomers");
+    }
+
+    /**
+     * @Route("/admin")
+     */
+    public function showMenuAdminAction()
+    {
+        {
+            return $this->render('website/sidemenu-admin.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/adminCustomers" )
+     */
+    public function showAdminCustomersAction()
+    {
+
+        $userId = $this->get('session')->get('userId');
+
+        if(!$userId)
+        {
+            return $this->redirectToRoute('adminSignin');
+        }
+
+        $repository = $this->getDoctrine()->getRepository(Customers::class);
+        $cust = $repository->findAll();
+
+
+        return $this->render('website/admin-customers.html.twig', array(
+            'Customers' =>  $cust,
+        ));
+    }
+    /**
+     * @Route("/addAdminCustomers")
+     */
+    public function addAdminCustomersAction()
+    {
+        {
+            return $this->render('website/admin-add-customers.html.twig');
+        }
+
+    }
+
+    /**
+     * @Route("/adminHouses")
+     */
+    public function showAdminHousesAction()
+    {
+        {
+            return $this->render('website/admin-houses.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/adminTechnicians" )
+     */
+    public function showListTechniciansAction()
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Technicians::class);
+        $technicians = $repository->findAll();
+
+
+        return $this->render('website/admin-technicians.html.twig', array(
+            'technicians' => $technicians,
+        ));
+
+         }
+
+    /**
+     * @Route("/adminaddTechnicians")
+     */
+    public function addAdminTechniciansAction()
+    {
+        {
+            return $this->render('website/admin-add-technicians.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/admintechrequest")
+     */
+    public function showTechRequestAction()
+    {
+        {
+            return $this->render('website/admin-tech-request.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/localAgence")
+     */
+    public function showLocalAgencesAction()
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Localnumbers::class);
+        $locals = $repository->findAll();
+
+
+        {
+                return $this->render('website/admin-local-agences.html.twig', array(
+            'locals' =>  $locals,
+        ));
+            }
+
+
+
+    }
+
+    /**
+     * @Route("/prices")
+     */
+    public function showPricesAction()
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Prices::class);
+        $prices = $repository->findAll();
+
+
+
+            return $this->render('website/admin-prices.html.twig', array(
+                'prices' =>  $prices,
+            ));
+
+
+
+
+    }
+
+
+    /**
+     * @Route("/addprices")
+     */
+    public function addPricesAction()
+    {
+        {
+            return $this->render('website/admin-add-prices.html.twig');
+        }
+    }
+
+
+    /**
+     * @Route("/addlocalAgence")
+     */
+    public function addLocalAgencesAction()
+    {
+        {
+            return $this->render('website/admin-add-local-agences.html.twig');
+        }
     }
 }

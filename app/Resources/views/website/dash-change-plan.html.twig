@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Credit card change{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div ng-controller="DashboardController">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu.html.twig' %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
+
+
+                <div class="table-responsive">
+                    <table class="table table-hover ">
+
+                        <thead class="bg-yellow font-header">
+                        <tr>
+                            <th colspan="5">Mon plan</th>
+
+
+
+                        </tr>
+                        </thead>
+                        <thead class="bg-light-gray">
+                        <tr>
+                            <th>{{ 'form_Country' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'form_address' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'form_city' | trans({}, "messages", lang)}}</th>
+
+                            <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
+                            <th class="">Plan</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="house in houses">
+                            <td ng-bind="house.country"></td>
+                            <td ng-bind="house.address"></td>
+                            <td ng-bind="house.city"></td>
+
+
+
+                            <td ng-bind="house.agentNumber"></td>
+                            <td>
+
+                                
+
+                                    <select name="plan" id="plan" class="form-control"  ng-bind="house.plan" >
+
+                                        <option value="Basic Plan">Basic Plan</option>
+                                        <option value="Gp Plus">Gp Plus</option>
+                                        </select>
+
+
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+    <div class="pad">
+    </div>
+{% endblock %}

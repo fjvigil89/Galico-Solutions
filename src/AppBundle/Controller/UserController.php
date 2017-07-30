@@ -778,7 +778,7 @@ class UserController extends Controller
     public function showProfileAction()
     {
         {
-            return $this->render('website/my-profile.html.twig');
+            return $this->render('website/dash-my-profile.html.twig');
         }
     }
 
@@ -788,7 +788,7 @@ class UserController extends Controller
     public function editPersonalInfoAction()
     {
         {
-            return $this->render('website/personal-information.html.twig');
+            return $this->render('website/dash-personal-information.html.twig');
         }
     }
 
@@ -798,7 +798,7 @@ class UserController extends Controller
     public function showHousesAction()
     {
         {
-            return $this->render('website/my-houses.html.twig');
+            return $this->render('website/dash-my-houses.html.twig');
         }
     }
 
@@ -808,7 +808,7 @@ class UserController extends Controller
     public function editCreditCardAction()
     {
         {
-            return $this->render('website/modify-my-card.html.twig');
+            return $this->render('website/dash-modify-my-card.html.twig');
         }
     }
 
@@ -818,17 +818,17 @@ class UserController extends Controller
     public function editPlanAction()
     {
         {
-            return $this->render('website/change-plan.html.twig');
+            return $this->render('website/dash-change-plan.html.twig');
         }
     }
 
     /**
      * @Route("/RequestProforma")
      */
-    public function showRequestProformaPlanAction()
+    public function showRequestProformaAction()
     {
         {
-            return $this->render('website/request-proforma.html.twig');
+            return $this->render('website/dash-request-proforma.html.twig');
         }
     }
 }
