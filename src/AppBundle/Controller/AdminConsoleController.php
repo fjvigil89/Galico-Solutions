@@ -125,6 +125,74 @@ class AdminConsoleController extends Controller
     }
 
     /**
+     * @Route("/create-agence", name="createAgence")
+     * @param Request $request
+     */
+    public function createAgenceAction(Request $request)
+    {
+        $data = $request->request->all();
+        //var_dump($data); die("");
+       //$country = $data['countryAgence'];
+        $city = $data['cityAgence'];
+        $phone = $data['phoneAgence'];
+        $address = $data['adresseAgence'];
+
+
+        $agence = new Localnumbers();
+      //$agence->setCountry($country);
+        $agence->setCity($city);
+        $agence->setPhone($phone);
+        $agence->setAddress($address);
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($agence);
+        $em->flush();
+
+        return $this->redirectToRoute("ListCustomers");
+    }
+
+
+
+    /**
+     * @Route("/create-price", name="createPrice")
+     * @param Request $request
+     */
+    public function createPricesAction(Request $request)
+    {
+        $data = $request->request->all();
+        //var_dump($data); die("");
+        //$country = $data['PriceCountry'];
+        $prices = $data['price'];
+        $tax = $data['tax'];
+        //$plan = $data['plan'];
+
+
+        $price = new Prices();
+        //$agence->setCountry($country);
+        $price->setPrice($prices);
+        $price->setTaxpercentage($tax);
+        //$price->setPlan($plan);
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($price);
+        $em->flush();
+
+        return $this->redirectToRoute("ListCustomers");
+    }
+
+
+
+
+
+
+
+
+
+    /**
      * @Route("/admin")
      */
     public function showMenuAdminAction()

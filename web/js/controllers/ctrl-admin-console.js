@@ -16,7 +16,8 @@ angular.module("gpApp")
         $scope.auth = {};
         $scope.auth.message = "";
         $scope.newCustomer = "";
-
+        $scope.newAgence = "";
+        $scope.newPrice = "";
         $scope.getCustomerInformation = function(customerId)
         {
             //if($scope.customer.length===undefined)
@@ -227,11 +228,79 @@ $scope.addtechnician = function () {
 }
 
 
+        $scope.addNewAgence = function()
+
+        {
+            if(GeneralService.isInvalid($scope.newAgence.country))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $window.document.getElementById("countryAgence").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newAgence.city))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
+                $window.document.getElementById("cityAgence").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newAgence.phone))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
+                $window.document.getElementById("phoneAgence").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newAgence.address))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                $window.document.getElementById("adresseAgence").focus();
+            }
 
 
 
 
+            else
+            {
+                $('#frm_newAgence').submit();
+            }
 
+
+        }
+
+
+
+        $scope.addNewPrice = function()
+
+        {
+            if(GeneralService.isInvalid($scope.newPrice.country))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $window.document.getElementById("PriceCountry").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newPrice.price))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
+                $window.document.getElementById("price").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.newPrice.tax))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
+                $window.document.getElementById("tax").focus();
+            }
+            else if(GeneralService.isInvalid($scope.newPrice.plan))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                $window.document.getElementById("plan").focus();
+            }
+
+
+
+
+            else
+            {
+                $('#frm_newPrice').submit();
+            }
+
+
+        }
 
 
         $scope.getCustomerInformation();
