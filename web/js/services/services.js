@@ -1,5 +1,5 @@
 angular.module("gpApp")
-    .service('authService', function($http,RouterService) {
+    .service('AuthService', function($http,RouterService) {
         this.authenticate = function (user) {
 
            //http://techfunda.com/howto/565/http-post-server-request
@@ -212,13 +212,6 @@ angular.module("gpApp")
                     }
             });
         }
-
-
-
-
-
-
-
     })
 
     .service('AdminService',function($http,RouterService){

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
-                {% include 'website/sidemenu.html.twig' %}
+                {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
             </div>
             <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
 

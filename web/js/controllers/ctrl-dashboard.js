@@ -50,7 +50,10 @@ angular.module("gpApp")
 
             $scope.updateCustomer = function()
             {
-                if(GeneralService.isInvalid($scope.customerUpdated.lastName))
+                $scope.update.info = "";
+                $scope.update.error = "";
+				
+				if(GeneralService.isInvalid($scope.customerUpdated.lastName))
                 {
                     $scope.update.error = $translate.instant('ERR_DASHBOARD_LASTNAME');
                     $window.document.getElementById("lastName").focus();
@@ -90,12 +93,13 @@ angular.module("gpApp")
                     $scope.update.error = "";
                     DashboardService.updateCustomer($scope.customerUpdated)
                     .then(function(response){
-                        console.log(response);
+                        //console.log(response);
                         var resp = response.data;
                         if(resp.updateStatus> 0)
                         {
                             $scope.customer = resp;
                             $('#editModal').modal('hide');
+							$scope.update.info = $translate.instant('SUCCESS_DASHBOARD_INF_UPDATE');
                         }
                         else
                         {
@@ -304,7 +308,6 @@ angular.module("gpApp")
             else
 			{
 				$scope.showPaymentForm = true;
-
 			}
 			
 		}

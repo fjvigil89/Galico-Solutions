@@ -290,47 +290,13 @@ class UserController extends Controller
         return $this->redirectToRoute('home');
     }
 
-    /**
-     * @Route("/my-dashboard/{customerId}")
-     */
-    public function showMyDashboardAction($customerId)
-    {
-
-
-        $userId = $this->get('session')->get('userId');
-       if(!$userId || $customerId!=$userId)
-       {
-           return $this->redirectToRoute('app_pagenavigation_showsignin');
-       }
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-        $customer = $repository->find($customerId);
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
-        $plans = $repository->findAll();
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
-        $countries = $repository->findAll();
-
-        if(!$customer)
-        {
-            return $this->redirectToRoute('app_pagenavigation_showsignin');
-        }
-		
-		//--
-		$today = date('Y-m-d');
-		//--
-		
-
-        return $this->render('website/my-dashboard.html.twig', array('customer'=>$customer,'plans'=>$plans,'countries'=>$countries,'today'=>$today));
-    }
-
 
     /**
      * @Route("/customer-information/{customerId}",name="customerInformation")
      */
     public function getCustomerInformationAction($customerId)
     {
+        // DO NOT USE ANY MORE (CHECK)
         $userId = $this->get('session')->get('userId');
         $customer = "";
         /*if(!$userId || $customerId!=$userId){}
@@ -442,41 +408,44 @@ class UserController extends Controller
         //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
         $updateStatus = -1;
         $response = array();
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-        $customer = $repository->find($customerId);
-
-        if($customer)
+        if($this->isCustomerValid($customerId))
         {
-            $customer->setFirstname($firstName);
-            $customer->setLastname($lastName);
-            $customer->setEmail($email);
-            //$customer->setPassword($pwd);
-            $customer->setPhoneprimary($phonePrimary);
-            $customer->setPhonealternate($phoneAlternate);
-            $customer->setCountry($country);
-            $customer->setState($state);
-            $customer->setCity($city);
-            $customer->setAddress($address);
-            $customer->setZipcode($zipCode);
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
-            $updateStatus = 1;
+            if($customer)
+            {
+                $customer->setFirstname($firstName);
+                $customer->setLastname($lastName);
+                $customer->setEmail($email);
+                //$customer->setPassword($pwd);
+                $customer->setPhoneprimary($phonePrimary);
+                $customer->setPhonealternate($phoneAlternate);
+                $customer->setCountry($country);
+                $customer->setState($state);
+                $customer->setCity($city);
+                $customer->setAddress($address);
+                $customer->setZipcode($zipCode);
 
-            $response['customerId'] = $customer->getCustomerid();
-            $response['firstName'] = $customer->getFirstname();
-            $response['lastName'] = $customer->getLastname();
-            $response['email'] = $customer->getEmail();
-            $response['phonePrimary'] = $customer->getPhoneprimary();
-            $response['phoneAlternate'] = $customer->getPhonealternate();
-            $response['country'] = $customer->getCountry();
-            $response['state'] = $customer->getState();
-            $response['city'] = $customer->getCity();
-            $response['address'] = $customer->getAddress();
-            $response['zipCode'] = $customer->getZipcode();
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                $updateStatus = 1;
 
+                $response['customerId'] = $customer->getCustomerid();
+                $response['firstName'] = $customer->getFirstname();
+                $response['lastName'] = $customer->getLastname();
+                $response['email'] = $customer->getEmail();
+                $response['phonePrimary'] = $customer->getPhoneprimary();
+                $response['phoneAlternate'] = $customer->getPhonealternate();
+                $response['country'] = $customer->getCountry();
+                $response['state'] = $customer->getState();
+                $response['city'] = $customer->getCity();
+                $response['address'] = $customer->getAddress();
+                $response['zipCode'] = $customer->getZipcode();
+
+            }
+            $response['updateStatus'] = $updateStatus;
         }
-        $response['updateStatus'] = $updateStatus;
 
         return $this->json($response);
 
@@ -694,141 +663,197 @@ class UserController extends Controller
 
         return $this->json(array("planName" => $plan->getPlanname(),"price" => $planPrice->getPrice(),"currency"=>$country->getCurrencyiso()));
     }
+	
+	/**
+     * @Route("/profile/{customerId}")
+     */
+    public function showProfileAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+		{
+			
+			$repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+			$customer = $repository->find($customerId);
+			if(!$customer)
+			{
+				return $this->redirectToRoute('app_pagenavigation_showsignin');
+			}
+
+            $houses = $this->getHouses($customerId);
+
+			return $this->render('website/dash-my-profile.html.twig',array('customer'=>$customer,'houses'=>$houses));
+		}
+		else
+		{
+			return $this->redirectToRoute('app_pagenavigation_showsignin');
+		}
+		
+		
+    }
 
     /**
-     * @Route("/subscribe-house", name="subscribeHouse")
+     * @Route("/personalInfo/{customerId}")
      */
-    public function subscribeHouseAction(Request $request)
+    public function editPersonalInfoAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+
+            return $this->render('website/dash-personal-information.html.twig',array('customer'=>$customer));
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+    }
+
+    /**
+     * @Route("/houses/{customerId}")
+     */
+    public function showHousesAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+            return $this->render('website/dash-my-houses.html.twig',array('customer'=>$customer));
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+    }
+
+    /**
+     * @Route("/changeCC/{customerId}")
+     */
+    public function editCreditCardAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+            return $this->render('website/dash-modify-my-card.html.twig',array('customer'=>$customer));
+
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+    }
+
+    /**
+     * @Route("/changePlan/{customerId}")
+     */
+    public function editPlanAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+            return $this->render('website/dash-change-plan.html.twig',array('customer'=>$customer));
+
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+    }
+
+    /**
+     * @Route("/requestProforma/{customerId}")
+     */
+    public function showRequestProformaAction($customerId)
     {
 
-        /*$customerId = $request->request->get('customerId');
-        $planId = $request->request->get('planId');
-        $firstName = $request->request->get('firstName');
-        $lastName = $request->request->get('lastName');
-        $phonePrimary = $request->request->get('phonePrimary');
-        $phoneAlternate = $request->request->get('phoneAlternate');
-        $country = $request->request->get('country');
-        $state = $request->request->get('state');
-        $city = $request->request->get('city');
-        $address = $request->request->get('address');
-        $zipCode = $request->request->get('zipCode');
+        if($this->isCustomerValid($customerId))
+        {
 
-        $subscriptionStatus = -1;
-        $response = array();
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+            return $this->render('website/dash-request-proforma.html.twig',array('customer'=>$customer));
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+    }
+	
+	
+	
+	private function isCustomerValid($customerId)
+	{
+		return ($customerId==$this->get('session')->get('userId'));
+	}
+
+	private function getHouses($customerId)
+    {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
+        $customerHouses = array();
 
         if($customer)
         {
-            $house = new Houses();
-            $house->setFirstname($firstName);
-            $house->setLastname($lastName);
-            $house->setPhoneprimary($phonePrimary);
-            $house->setPhonealternate($phoneAlternate);
-            $house->setCountry($country);
-            $house->setState($state);
-            $house->setCity($city);
-            $house->setAddress($address);
-            $house->setZipcode($zipCode);
-            $house->setCustomer($customer);
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $houses = $repository->findByCustomer($customer);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($house);
-            $em->flush();
+            foreach($houses as $house)
+            {
+                $subscriptions = $house->getSubscriptions();
+                $index = count($subscriptions)-1;
 
-            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
-            $plan = $repository->find($planId);
+                if($index>=0)
+                {
+                    $hs = array();
+                    $hs['id'] =$house->getHouseid();
+                    $hs['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
+                    $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
+                    $hs['phonePrimary'] = $house->getPhoneprimary();
+                    $hs['phoneAlternate'] = $house->getPhonealternate();
+                    $hs['country'] = $house->getCountry();
+                    $hs['state'] = $house->getState();
+                    $hs['city'] = $house->getCity();
+                    $hs['address'] = $house->getAddress();
+                    $hs['contactFullName'] = $house->getFirstname() . " " . $house->getLastname();
+                    $hs['agentNumber'] = $this->getLocalAgentNumber($hs['country'],$hs['city']);
 
-            //$today = date("Y-m-d");//(new \DateTime())->format('Y-m-d');
-            $subscription = new Subscriptions();
-            $subscription->setHouse($house);
-            $subscription->setPlan($plan);
-            $subscription->setSubscriptiondate(new \DateTime('now'));
+                    $customerHouses[] = $hs;
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($subscription);
-            $em->flush();
+                }
 
-            $subscriptionStatus = 1;
-            $response['agentNumber'] = $this->getLocalAgentNumber($country,$city);
-            $response['houseId'] = $house->getHouseid();
-            $response['subscriptionDate'] = date_format($subscription->getSubscriptiondate(), 'Y-m-d');;
-            $response['plan'] = $plan->getPlanname();
 
+            }
         }
-        $response['subscriptionStatus'] = $subscriptionStatus;
 
-        return $this->json($response);
-        */
-    }
-
-    /**
-     * @Route("/menu")
-     */
-    public function showConditionsAction()
-    {
-        {
-            return $this->render('website/sidemenu.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/profile")
-     */
-    public function showProfileAction()
-    {
-        {
-            return $this->render('website/dash-my-profile.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/personalInfo")
-     */
-    public function editPersonalInfoAction()
-    {
-        {
-            return $this->render('website/dash-personal-information.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/houses")
-     */
-    public function showHousesAction()
-    {
-        {
-            return $this->render('website/dash-my-houses.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/CreditCardChange")
-     */
-    public function editCreditCardAction()
-    {
-        {
-            return $this->render('website/dash-modify-my-card.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/ChangePlan")
-     */
-    public function editPlanAction()
-    {
-        {
-            return $this->render('website/dash-change-plan.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/RequestProforma")
-     */
-    public function showRequestProformaAction()
-    {
-        {
-            return $this->render('website/dash-request-proforma.html.twig');
-        }
+        return $customerHouses;
     }
 }

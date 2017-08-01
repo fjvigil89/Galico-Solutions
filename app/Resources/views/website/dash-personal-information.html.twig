@@ -9,18 +9,19 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-3">
-            {% include 'website/sidemenu.html.twig' %}
+            {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
         </div>
         <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
 
 
-            <div >
+            <div>
                 <div class="modal-header bg-yellow">
 
                     <h4 class="modal-title">{{ 'dash_edit_profile' | trans({}, "messages", lang)}}</h4>
                 </div>
                 <div class="modal-body">
                     <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+                    <h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>
                     <div class="form-group">
                         <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang)}} *:</label>
                         <input type="text" class="form-control" id="lastName" ng-model="customerUpdated.lastName">
@@ -63,6 +64,7 @@
                         <input type="text" class="form-control" id="zipCode" ng-model="customerUpdated.zipCode" >
                     </div>
                     <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+					<h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>
 
                 </div>
                 <div class="modal-footer">
