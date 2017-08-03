@@ -15,34 +15,34 @@
 
 
                     <div class="modal-header bg-yellow">
-                        <h4 class="modal-title">Add Technician</h4>
+                        <h4 class="modal-title">{{ 'admin_add_technician' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
 
                         <form  id="frm_newTechnician" method="POST" action="{{ path('createTechnician') }}">
                             <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
                             <div class="form-group">
-                                <label for="newTechLastname">Last Name:</label>
+                                <label for="newTechLastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechLastname" name="newTechLastname" ng-model="technician.lastName" value="">
                             </div>
                             <div class="form-group">
-                                <label for="newTechFirstname">Name:</label>
+                                <label for="newTechFirstname">{{ 'form_name' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechFirstname" name="newTechFirstname" ng-model="technician.firstName" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechEmail">Email:</label>
+                                <label for="newTechEmail">{{ 'form_email' | trans({}, "messages", lang)}}:</label>
                                 <input type="email" class="form-control" id="newTechEmail" name="newTechEmail" ng-model="technician.email" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechPhonePrimary">Phone (Primary):</label>
+                                <label for="newTechPhonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
                                 <input type="tel" class="form-control" id="newTechPhonePrimary" name="newTechPhonePrimary" ng-model="technician.phonePrimary" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechPhonealternate">Phone (Alternate):</label>
+                                <label for="newTechPhonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
                                 <input type="tel" class="form-control" id="newTechPhonealternate" name="newTechPhonealternate" ng-model="technician.phonealternate" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechProfesion">Profesion:</label>
+                                <label for="newTechProfesion">{{ 'form_profession' | trans({}, "messages", lang)}}:</label>
 
                                 <select name="newTechProfesion" id="newTechProfesion" class="form-control" ng-model= "technician.profession" >
 
@@ -62,7 +62,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="newTechIDType">ID Type:</label>
+                                <label for="newTechIDType">{{ 'form_document_type' | trans({}, "messages", lang)}}</label>
 
                                 <select  id="newTechIDType" name="newTechIDType" class="form-control"  ng-model="technician.idType"  >
 
@@ -74,11 +74,11 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="newTechCode">Code:</label>
+                                <label for="newTechCode">{{ 'admin_console_codeid' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechCode" name="newTechCode" ng-model="technician.code" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechCountry">Country:</label>
+                                <label for="newTechCountry">{{ 'menu_country' | trans({}, "messages", lang)}}:</label>
                                 <select name="newTechCountry" id="newTechCountry" class="form-control"  ng-model="technician.country"  >
 
                                     <option value="Canada">Canada</option>
@@ -89,19 +89,19 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="newTechState">State:</label>
+                                <label for="newTechState">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechState" name="newTechState" ng-model="technician.state" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechCity">City:</label>
+                                <label for="newTechCity">{{ 'form_city' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="addTechCity" name="addTechCity" ng-model="technician.city" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechAddress">Address:</label>
+                                <label for="newTechAddress">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechAddress" name="newTechAddress" ng-model="technician.address" value="" >
                             </div>
                             <div class="form-group">
-                                <label for="newTechZipCode">ZipCode:</label>
+                                <label for="newTechZipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechZipCode" name="newTechZipCode" ng-model="technician.zipCode" value="" >
                             </div>
 

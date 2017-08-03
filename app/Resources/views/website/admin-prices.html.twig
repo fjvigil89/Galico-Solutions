@@ -18,7 +18,7 @@
 
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="4">Prices</th>
+                            <th colspan="4">{{ 'admin_prices' | trans({}, "messages", lang)}}</th>
                             <th class="text-right">
 
                             </th>
@@ -27,10 +27,10 @@
                         <thead class="bg-light-gray">
                         <tr>
 
-                            <th>Country</th>
-                            <th>Price</th>
-                            <th>Tax Percentage</th>
-                            <th>Plan/Services</th>
+                            <th>{{ 'form_Country' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'admin_price' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'admin_tax_percentage' | trans({}, "messages", lang)}}</th>
+                            <th>Plan/{{ 'menu_services' | trans({}, "messages", lang)}}</th>
 
                             <th></th>
                         </tr>

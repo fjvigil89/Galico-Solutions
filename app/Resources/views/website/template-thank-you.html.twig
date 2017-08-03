@@ -16,6 +16,22 @@
             height:15em;
 
         }
+        .format-img {
+                     float: left;
+                     margin: 5px;
+                     padding: 15px;
+                     max-width: 350px;
+                     height: 300px;
+
+                 }
+        .format-text {
+            float: left;
+            margin: 5px;
+            padding: 15px;
+            max-width: 500px;
+            height: 300px;
+
+        }
 
         ul {
             list-style-type: none;
@@ -83,13 +99,13 @@
 
 
 
-        <div class="floating-box">
+        <div class="format-img">
 
 
             <p style="text-align:left;"> <img src="https://general-pro.com/images/page-home/{{ image }}.jpg" class="img-template"></p>
         </div>
 
-        <div class="floating-boxb">
+        <div class="format-text">
             <p>{{ 'template_welcome_dear' | trans({}, "messages", lang) }} {{customerFullname}}, </p>
             <p>
                 {{ 'template_welcome' | trans({}, "messages", lang) }}
