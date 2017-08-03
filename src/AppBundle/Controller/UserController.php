@@ -11,6 +11,8 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Customers;
 use AppBundle\Entity\Houses;
+use AppBundle\Entity\Requests;
+use AppBundle\Entity\Requestservices;
 use AppBundle\Entity\Subscriptions;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -786,9 +788,9 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/requestProforma/{customerId}")
+     * @Route("/requestService/{customerId}",name="app_request_service")
      */
-    public function showRequestProformaAction($customerId)
+    public function showRequestServiceAction($customerId)
     {
 
         if($this->isCustomerValid($customerId))
@@ -800,15 +802,115 @@ class UserController extends Controller
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
-            return $this->render('website/dash-request-proforma.html.twig',array('customer'=>$customer));
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Services');
+            $services = $repository->findAll();
+
+            $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
+            $today = date("Y-m-d");
+
+            return $this->render('website/dash-request-service.html.twig',array(
+                'customer'=>$customer,
+                'invoiceNumber'=>$invoiceNumber,
+                'today'=>$today,
+                'services' => $services
+                )
+            );
         }
         else
         {
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
     }
-	
-	
+
+    /**
+     * @Route("/sendServiceRequest", name="sendServiceRequest")
+     */
+    public function sendServiceRequestAction(Request $request)
+    {
+        $customerId = $request->request->get('customerId');
+        $houseId = $request->request->get('houseId');
+        $serviceId = $request->request->get('serviceId');
+        $requestDetails = $request->request->get('requestDetails');
+        $invoiceNumber = $request->request->get('invoiceNumber');
+
+        $requestDate = new \DateTime();//date("Y-m-d");
+        $invoiceType = "REQUEST";
+
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+
+            $sRequest = new Requests();
+            $sRequest->setRequestdate($requestDate);
+            $sRequest->setDetails($requestDetails);
+            $sRequest->setStatus("PENDING");
+            $sRequest->setInvoicenumber($invoiceNumber);
+            $sRequest->setInvoicetype($invoiceType);
+            $sRequest->setAmount("0.00");
+            $sRequest->setTax("0.00");
+
+            if(!empty($houseId))
+            {
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+                $house = $repository->find("$houseId");
+                $sRequest->setHouse($house);
+            }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($sRequest);
+            $em->flush();
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Services');
+            $service = $repository->find("$serviceId");
+
+            $reqService = new Requestservices();
+            $reqService->setRequest($sRequest);
+            $reqService->setService($service);
+
+            return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer));
+
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+
+
+
+
+    }
+
+    private function getNextInvoiceNumber($countryName)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountry("$countryName");
+
+        $em = $this->getDoctrine()->getManager();
+
+        $substr = "GP-SER-" . $country->getCountryid() . "-";
+        $query = $em->createQuery( 'SELECT Max(r.invoicenumber) AS invNumber FROM AppBundle:Requests r WHERE r.invoicenumber LIKE :inv' );
+        $query->setParameter('inv', '%' . $substr . '%');
+        $invoiceNumber = $query->getSingleResult();
+        $maxInvoiceNumber = $invoiceNumber['invNumber'];
+        if($maxInvoiceNumber)
+        {
+            $split = explode('-',$maxInvoiceNumber);
+            $number = (int) $split[2];
+            $nextInvoiceNumber = $substr . ($number+1);
+        }
+        else
+        {
+            $nextInvoiceNumber = $substr . "1";
+        }
+        return $nextInvoiceNumber;
+    }
 	
 	private function isCustomerValid($customerId)
 	{

@@ -10,8 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 class EmailController extends Controller
 {
     /**
- * @Route("/send-register-email/{customerId}",name="sendRegisterEmail")
- */
+     * @Route("/send-register-email/{customerId}",name="sendRegisterEmail")
+     */
     public function sendRegisterThankYouEmail($customerId)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
@@ -83,6 +83,34 @@ class EmailController extends Controller
         $email = $customer->getEmail();
 
         return $this->render('website/template-subscription.html.twig',array("customerFullname"=>$fullname,"address"=> $address, "telephone"=> $telephone, "email"=>$email ));
+    }
+
+    /**
+     * @Route("/sendServiceRequestEmail/{requestId}",name="sendServiceRequestEmail")
+     */
+    public function sendServiceRequestEmail($requestId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $serviceRequest = $repository->find($requestId);
+
+
+        # Setup the message
+        $message = \Swift_Message::newInstance()
+            ->setSubject("Thank you for choosing General Pro")
+            ->setFrom('info@general-pro.com',"General Pro")
+            ->setTo($customer->getEmail())
+            ->setBody(
+                $this->renderView('website/template-thank-you.html.twig',array("customerFullname"=>$fullname, "image"=>$imageName)),
+                'text/html'
+
+            );
+
+        # Send the message
+        $this->get('mailer')
+            ->send($message);
+        //var_dump($customer->getEmail()); die("");
+
+        return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
     }
 
 }

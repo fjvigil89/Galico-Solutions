@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Request service{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div  ng-controller="SendRequestController">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
+            </div>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding ">
+
+                <div class="modal-header bg-yellow">
+
+                    <h4 class="modal-title">Service Request</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-inline" id="frm_service_request" method="post" action="{{ path('sendServiceRequest') }}">
+
+                        <!--<div class="row">
+                            <div class="col-xs-12 error-message text-center">Charges may apply if service requested is not included in plan</div>
+                        </div><br>-->
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Reference Number</div>
+                            <div class="col-xs-7" >: {{ invoiceNumber }} </div>
+                        </div><br>
+
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" >: {{ today }} </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Customer</div>
+                            <div class="col-xs-7" > : {{ customer.firstname ~ " " ~ customer.lastname }}</div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-xs-5 text-bold" for="addr">House</label>
+                            <div class="col-xs-7">
+                                <select name="service" id="service" class="form-control" ng-model="request.houseId">
+                                    <option value=""></option>
+                                    {% for house in customer.houses %}
+                                        <option value="{{ house.houseid }}">{{ house.country ~ " ," ~ house.city ~ " ," ~ house.address }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Plan</div>
+                            <div class="col-xs-7" >:</div>
+                        </div><br>
+
+                        <div class="row">
+                            <label class="col-xs-5 text-bold" for="servicereq">Service </label>
+                            <div class="col-xs-7">
+
+                                <select name="service" id="serviceId" class="form-control" ng-model="request.serviceId">
+                                    <option value=""></option>
+                                    {% for service in services|sort %}
+                                        <option value="{{ service.serviceid }}">{{ service.servicename }}</option>
+                                    {% endfor %}
+
+                                </select>
+
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Request details:</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <textarea class="form-control col-xs-5" rows="10" id="requestDetails" ng-model="request.requestDetails"></textarea>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-12 error-message text-center">**** NO HOUSE SELECTED ****</div>
+                        </div><br>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn bg-yellow color-black" ng-click="sendRequest()">
+                                <span class="glyphicon glyphicon-send" title="Send request"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang)}}
+                            </button>
+                        </div>
+
+                        <input type="hidden" name="customerId" value="{{ customer.customerid }}">
+                        <input type="hidden" name="invoiceNumber" value="{{ invoiceNumber }}">
+                        <input type="hidden" name="houseId">
+                        <input type="hidden" name="requestDetails">
+                        <input type="hidden" name="serviceId">
+                    </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+    <div class="pad">
+    </div>
+{% endblock %}
