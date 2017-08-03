@@ -140,7 +140,7 @@
                 </trans-unit>
                  <trans-unit id="modal_confirm_password" resname="modal_confirm_password">
                       <source>Confirm password</source>
-                      <target>Confirme nueva clave</target>
+                      <target>Confirme clave</target>
                 </trans-unit>
                  <trans-unit id="modal_singing_out" resname="modal_singing_out">
                       <source>Signing out...</source>
@@ -715,7 +715,16 @@
 	            <trans-unit id="form_fullname" resname="form_fullname">
                        <source>Full name</source>
                        <target>Nombre completo</target>
-                </trans-unit>			
+                </trans-unit>
+   	            <trans-unit id="form_profession" resname="form_profession">
+                          <source>Profession</source>
+                          <target>Profesión</target>
+                   </trans-unit>
+ 	            <trans-unit id="form_document_type" resname="form_document_type">
+                        <source>Document type</source>
+                        <target>Tipo de documento</target>
+                 </trans-unit>
+
 <!--End Form-->
 
 		
@@ -1081,7 +1090,103 @@
 
 
 <!--End Template Welcome-->
+<!--Admin Console-->
+                   <trans-unit id="admin_administration_console" resname="admin_administration_console">
+                          <source>Administration Console</source>
+                          <target>Control Administrativo</target>
+                   </trans-unit>
+                    <trans-unit id="admin_customers" resname="admin_customers">
+                           <source>CUSTOMERS</source>
+                           <target>CLIENTES</target>
+                    </trans-unit>
+                    <trans-unit id="admin_list_customers" resname="admin_list_customers">
+                           <source>List customers</source>
+                           <target>Lista de clientes</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_customer" resname="admin_add_customer">
+                           <source>Add customer</source>
+                           <target>Adicionar cliente</target>
+                    </trans-unit>
+                    <trans-unit id="admin_customer_houses" resname="admin_customer_houses">
+                           <source>Customer houses</source>
+                           <target>Casas de clientes</target>
+                    </trans-unit>
+                    <trans-unit id="admin_technitians" resname="admin_technitians">
+                           <source>TECHNICIANS</source>
+                           <target>TÉCNICO</target>
+                    </trans-unit>
+                    <trans-unit id="admin_list_technicians" resname="admin_list_technicians">
+                           <source>List Technicians</source>
+                           <target>Lista de técnicos</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_technician" resname="admin_add_technician">
+                           <source>Add Technician</source>
+                           <target>Adicionar técnico</target>
+                    </trans-unit>
 
+                    <trans-unit id="admin_request" resname="admin_request">
+                           <source>Request</source>
+                           <target>Solicitudes</target>
+                    </trans-unit>
+                    <trans-unit id="admin_interventions" resname="admin_interventions">
+                           <source>Interventions</source>
+                           <target>Intervenciones</target>
+                    </trans-unit>
+
+
+                    <trans-unit id="admin_settings" resname="admin_settings">
+                           <source>SETTINGS</source>
+                           <target>PARÁMETROS</target>
+                    </trans-unit>
+                    <trans-unit id="admin_local_agent" resname="admin_local_agent">
+                           <source>Local agent</source>
+                           <target>Agente Local</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_local_agent" resname="admin_add_local_agent">
+                           <source>Add local agent</source>
+                           <target>Adicionar agente Local</target>
+                    </trans-unit>
+                     <trans-unit id="admin_prices" resname="admin_prices">
+                            <source>Prices</source>
+                            <target>Precios</target>
+                     </trans-unit>
+                      <trans-unit id="admin_add_prices" resname="admin_add_prices">
+                             <source>add prices</source>
+                             <target>Adicionar Precios</target>
+                      </trans-unit>
+                      <trans-unit id="admin_tech_inter" resname="admin_tech_inter">
+                             <source>Technicians Interventions</source>
+                             <target>Intervenciones</target>
+                      </trans-unit>
+                      <trans-unit id="admin_intervention_id" resname="admin_intervention_id">
+                             <source>Intervention id</source>
+                             <target>ID</target>
+                      </trans-unit>
+                       <trans-unit id="admin_service" resname="admin_service">
+                              <source>Service</source>
+                              <target>Servicio</target>
+                       </trans-unit>
+                        <trans-unit id="admin_data_service" resname="admin_data_service">
+                               <source>Date service</source>
+                               <target>Fecha de servicio</target>
+                        </trans-unit>
+                        <trans-unit id="admin_amount" resname="admin_amount">
+                               <source>Amount</source>
+                               <target>Monto</target>
+                        </trans-unit>
+                     <trans-unit id="admin_price" resname="admin_price">
+                            <source>Price</source>
+                            <target>Precio</target>
+                     </trans-unit>
+                      <trans-unit id="admin_tax_percentage" resname="admin_tax_percentage">
+                             <source>TAX percentage</source>
+                             <target>Porcentaje/ Impuesto</target>
+                      </trans-unit>
+                      <trans-unit id="admin_edit_technician" resname="admin_edit_technician">
+                             <source>Edit Technician</source>
+                             <target>Editar Técnico</target>
+                      </trans-unit>
+<!--End Admin Console-->
         </body>
     </file>
 </xliff>

@@ -19,7 +19,7 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="5">List Technician</th>
+                                <th colspan="5">{{ 'admin_list_customers' | trans({}, "messages", lang)}}</th>
 
                             </tr>
                             </thead>
@@ -27,11 +27,11 @@
                             <tr>
 
 
-                                <th>Technician</th>
-                                <th>Service</th>
-                                <th>Phone</th>
+                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'menu_services' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'form_phone_primary' | trans({}, "messages", lang)}}</th>
 
-                                <th>Code Client</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -74,54 +74,54 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Edit Technician</h4>
+                        <h4 class="modal-title">{{ 'admin_edit_technician' | trans({}, "messages", lang)}}</h4>
                     </div>
                     <div class="modal-body">
                         <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
 
                         <div class="form-group">
-                            <label for="edit-tech-lastname">Last Name:</label>
+                            <label for="edit-tech-lastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.lastName">
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-lastname">Name:</label>
+                            <label for="edit-tech-lastname">{{ 'form_name' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-lastname"  ng-model="technician.firstName" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-email">Email:</label>
+                            <label for="edit-tech-email">{{ 'form_email' | trans({}, "messages", lang)}}:</label>
                             <input type="email" class="form-control" id="edit-tech-email" ng-model="technician.email" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-phonePrimary">Phone (Primary):</label>
+                            <label for="edit-tech-phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
                             <input type="tel" class="form-control" id="edit-tech-phonePrimary" ng-model="technician.phonePrimary" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-phonealternate">Phone (Alternate):</label>
+                            <label for="edit-tech-phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
                             <input type="tel" class="form-control" id="edit-tech-phonealternate" ng-model="technician.phoneAlternate" >
                         </div>
 
                         <div class="form-group">
-                            <label for="edit-tech-lastname">Serv. Provide:</label>
+                            <label for="edit-tech-lastname">{{ 'form_profession' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.profession" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-country">Country:</label>
+                            <label for="edit-tech-country">{{ 'form_Country' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-country" ng-model="technician.country" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-state">State:</label>
+                            <label for="edit-tech-state">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-state" ng-model="technician.state" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-city">City:</label>
+                            <label for="edit-tech-city">{{ 'form_city' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-city" ng-model="technician.city" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-address">Address:</label>
+                            <label for="edit-tech-address">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-address" value="4534 av Maisonneuve" >
                         </div>
                         <div class="form-group">
-                            <label for="edit-tech-zipCode">ZipCode:</label>
+                            <label for="edit-tech-zipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
                             <input type="text" class="form-control" id="edit-tech-zipCode" value="j3d 2g3" >
                         </div>
 

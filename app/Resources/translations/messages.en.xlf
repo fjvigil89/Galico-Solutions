@@ -704,7 +704,15 @@
 	            <trans-unit id="form_fullname" resname="form_fullname">
                        <source>Full name</source>
                        <target>Full name</target>
-                </trans-unit>	
+                </trans-unit>
+ 	            <trans-unit id="form_profession" resname="form_profession">
+                        <source>Profession</source>
+                        <target>Profession</target>
+                 </trans-unit>
+ 	            <trans-unit id="form_document_type" resname="form_document_type">
+                        <source>Document type</source>
+                        <target>Document type</target>
+                 </trans-unit>
 
 <!--End Form-->
 
@@ -1079,7 +1087,103 @@
 
 <!--End Template Welcome-->
 
+<!--Admin Console-->
+                   <trans-unit id="admin_administration_console" resname="admin_administration_console">
+                          <source>Administration Console</source>
+                          <target>Administration Console</target>
+                   </trans-unit>
+                    <trans-unit id="admin_customers" resname="admin_customers">
+                           <source>CUSTOMERS</source>
+                           <target>CUSTOMERS</target>
+                    </trans-unit>
+                    <trans-unit id="admin_list_customers" resname="admin_list_customers">
+                           <source>List customers</source>
+                           <target>List customers</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_customer" resname="admin_add_customer">
+                           <source>Add customer</source>
+                           <target>Add customer</target>
+                    </trans-unit>
+                    <trans-unit id="admin_customer_houses" resname="admin_customer_houses">
+                           <source>Customer houses</source>
+                           <target>Customer houses</target>
+                    </trans-unit>
+                    <trans-unit id="admin_technitians" resname="admin_technitians">
+                           <source>TECHNICIANS</source>
+                           <target>TECHNICIANS</target>
+                    </trans-unit>
+                    <trans-unit id="admin_list_technicians" resname="admin_list_technicians">
+                           <source>List Technicians</source>
+                           <target>List Technicians</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_technician" resname="admin_add_technician">
+                           <source>Add Technician</source>
+                           <target>Add Technician</target>
+                    </trans-unit>
+                <trans-unit id="admin_request" resname="admin_request">
+                       <source>Request</source>
+                       <target>Request</target>
+                </trans-unit>
+                <trans-unit id="admin_interventions" resname="admin_interventions">
+                       <source>Interventions</source>
+                       <target>Interventions</target>
+                </trans-unit>
 
+
+                    <trans-unit id="admin_settings" resname="admin_settings">
+                           <source>SETTINGS</source>
+                           <target>SETTINGS</target>
+                    </trans-unit>
+                    <trans-unit id="admin_local_agent" resname="admin_local_agent">
+                           <source>Local agent</source>
+                           <target>Local agent</target>
+                    </trans-unit>
+                    <trans-unit id="admin_add_local_agent" resname="admin_add_local_agent">
+                           <source>Add local agent</source>
+                           <target>Add local agent</target>
+                    </trans-unit>
+                     <trans-unit id="admin_prices" resname="admin_prices">
+                            <source>Prices</source>
+                            <target>Prices</target>
+                     </trans-unit>
+                      <trans-unit id="admin_add_prices" resname="admin_add_prices">
+                             <source>add prices</source>
+                             <target>add prices</target>
+                      </trans-unit>
+                      <trans-unit id="admin_tech_inter" resname="admin_tech_inter">
+                             <source>Technicians Interventions</source>
+                             <target>Interventions</target>
+                      </trans-unit>
+                      <trans-unit id="admin_intervention_id" resname="admin_intervention_id">
+                             <source>Intervention id</source>
+                             <target>ID</target>
+                      </trans-unit>
+                       <trans-unit id="admin_service" resname="admin_service">
+                              <source>Service</source>
+                              <target>Service</target>
+                       </trans-unit>
+                        <trans-unit id="admin_data_service" resname="admin_data_service">
+                               <source>Date service</source>
+                               <target>Date service</target>
+                        </trans-unit>
+                        <trans-unit id="admin_amount" resname="admin_amount">
+                               <source>Amount</source>
+                               <target>Amount</target>
+                        </trans-unit>
+                     <trans-unit id="admin_price" resname="admin_price">
+                            <source>Price</source>
+                            <target>Price</target>
+                     </trans-unit>
+                     <trans-unit id="admin_tax_percentage" resname="admin_tax_percentage">
+                            <source>TAX percentage</source>
+                            <target>TAX percentage</target>
+                     </trans-unit>
+                     <trans-unit id="admin_edit_technician" resname="admin_edit_technician">
+                            <source>Edit Technician</source>
+                            <target>Edit Technician</target>
+                     </trans-unit>
+
+<!--End Admin Console-->
         </body>
     </file>
 </xliff>
