@@ -271,7 +271,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/admintechrequest")
+     * @Route("/adminTechRequest")
      */
     public function showTechRequestAction()
     {
@@ -322,7 +322,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/addprices")
+     * @Route("/addPrices")
      */
     public function addPricesAction()
     {
@@ -333,7 +333,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/addlocalAgence")
+     * @Route("/addLocalAgence")
      */
     public function addLocalAgencesAction()
     {
@@ -341,4 +341,16 @@ class AdminController extends Controller
             return $this->render('website/admin-add-local-agences.html.twig');
         }
     }
+
+    /**
+     * @Route("/sendEmail")
+     */
+    public function sendEmailAction()
+    {
+        {
+            return $this->render('website/admin-send-email.html.twig');
+        }
+    }
+
+
 }

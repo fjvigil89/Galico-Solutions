@@ -1151,7 +1151,7 @@
                             <target>Precios</target>
                      </trans-unit>
                       <trans-unit id="admin_add_prices" resname="admin_add_prices">
-                             <source>add prices</source>
+                             <source>Add prices</source>
                              <target>Adicionar Precios</target>
                       </trans-unit>
                       <trans-unit id="admin_tech_inter" resname="admin_tech_inter">
@@ -1180,11 +1180,27 @@
                      </trans-unit>
                       <trans-unit id="admin_tax_percentage" resname="admin_tax_percentage">
                              <source>TAX percentage</source>
-                             <target>Porcentaje/ Impuesto</target>
+                             <target>Impuesto (%)</target>
                       </trans-unit>
                       <trans-unit id="admin_edit_technician" resname="admin_edit_technician">
                              <source>Edit Technician</source>
                              <target>Editar Técnico</target>
+                      </trans-unit>
+                     <trans-unit id="admin_other_other" resname="admin_other_other">
+                            <source>OTHER</source>
+                            <target>OTRO</target>
+                     </trans-unit>
+                     <trans-unit id="admin_other_sendEmail" resname="admin_other_sendEmail">
+                            <source>Send Email</source>
+                            <target>Enviar Correo</target>
+                     </trans-unit>
+                      <trans-unit id="admin_sendemail_sujet" resname="admin_sendemail_sujet">
+                             <source>Sujet</source>
+                             <target>Asunto</target>
+                      </trans-unit>
+                      <trans-unit id="admin_sendemail_selectFile" resname="admin_sendemail_selectFile">
+                             <source>Select File</source>
+                             <target>Seleccionar Archivo</target>
                       </trans-unit>
 <!--End Admin Console-->
         </body>

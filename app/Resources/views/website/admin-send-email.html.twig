@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Send Email{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div ng-controller= "AdminController">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    {% include 'website/sidemenu-admin.html.twig' %}
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
+
+
+                    <div>
+                        <div class="modal-header bg-yellow">
+
+                            <h4 class="modal-title">{{ 'admin_other_sendEmail' | trans({}, "messages", lang)}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
+                            <h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>
+
+                            <div class="form-group">
+                                <label for="email">{{ 'form_email' | trans({}, "messages", lang)}} *:</label>
+                                <input type="email" class="form-control" id="email" ng-model="email" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sujet">{{ 'admin_sendemail_sujet' | trans({}, "messages", lang)}}*:</label>
+                                <input type="text" class="form-control" id="sujet" ng-model="sujet">
+                            </div>
+                            <div class="form-group">
+                                <label for="messagesendmail">{{ 'form_message' | trans({}, "messages", lang) }}*:</label>
+                                <textarea  class="form-control" name="messagesendmail" id="messagesendmail" ng-model="" cols="40" rows="10" aria-invalid="false"  style="height: 110px;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">{{ 'admin_sendemail_selectFile' | trans({}, "messages", lang) }}</label>
+                                <input id="input-2" name="input2[]" type="file"  multiple data-show-upload="false" data-show-caption="true">
+                            </div>
+
+
+                        </div>
+                        <div class="right-align small-margin-right ">
+                            <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                                <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="pad">
+    </div>
+{% endblock %}

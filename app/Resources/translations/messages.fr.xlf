@@ -1148,7 +1148,7 @@
                             <target>Prix</target>
                      </trans-unit>
                       <trans-unit id="admin_add_prices" resname="admin_add_prices">
-                             <source>add prices</source>
+                             <source>Add prices</source>
                              <target>Ajouter un prix</target>
                       </trans-unit>
                       <trans-unit id="admin_tech_inter" resname="admin_tech_inter">
@@ -1177,11 +1177,27 @@
                      </trans-unit>
                       <trans-unit id="admin_tax_percentage" resname="admin_tax_percentage">
                              <source>TAX percentage</source>
-                             <target>TAX Pourcentage</target>
+                              <target>Taxe (%) </target>
                       </trans-unit>
                       <trans-unit id="admin_edit_technician" resname="admin_edit_technician">
                              <source>Edit Technician</source>
                              <target>Editer Technicien</target>
+                      </trans-unit>
+                     <trans-unit id="admin_other_other" resname="admin_other_other">
+                            <source>OTHER</source>
+                            <target>AUTRE</target>
+                     </trans-unit>
+                     <trans-unit id="admin_other_sendEmail" resname="admin_other_sendEmail">
+                            <source>Send Email</source>
+                            <target>Envoyer courriel</target>
+                     </trans-unit>
+                      <trans-unit id="admin_sendemail_sujet" resname="admin_sendemail_sujet">
+                             <source>Sujet</source>
+                             <target>Sujet</target>
+                      </trans-unit>
+                      <trans-unit id="admin_sendemail_selectFile" resname="admin_sendemail_selectFile">
+                             <source>Select File</source>
+                             <target>Choisir le dossier</target>
                       </trans-unit>
 <!--End Admin Console-->
 
