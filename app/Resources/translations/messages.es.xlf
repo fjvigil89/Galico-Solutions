@@ -992,7 +992,34 @@
                          <source>Request a proforma</source>
                          <target>Solicitar cotización</target>
                   </trans-unit>
-
+                  <trans-unit id="dash_profile" resname="dash_profile">
+                        <source>My profile</source>
+                        <target>Mi perfil</target>
+                 </trans-unit>
+                   <trans-unit id="dash_edit_my_profile" resname="dash_edit_my_profile">
+                         <source>Edit My profile</source>
+                         <target>Modificar mi perfil</target>
+                  </trans-unit>
+                   <trans-unit id="dash_services_request" resname="dash_services_request">
+                         <source>My services request</source>
+                         <target>Mis solicitudes de servicio</target>
+                  </trans-unit>
+                  <trans-unit id="dash_change_credit_Card" resname="dash_change_credit_Card">
+                         <source>Change my credit card</source>
+                         <target>Cambiar mi tarjeta de crédito</target>
+                  </trans-unit>
+                   <trans-unit id="dash_change_plans" resname="dash_change_plans">
+                         <source>Change my plan</source>
+                         <target>Cambiar mi plan</target>
+                  </trans-unit>
+                   <trans-unit id="dash_create_serviceReq" resname="dash_create_serviceReq">
+                         <source>Create a service request</source>
+                         <target>Crear una nueva solicitud </target>
+                  </trans-unit>
+                    <trans-unit id="dash_my_account" resname="dash_my_account">
+                          <source>MY ACCOUNT</source>
+                          <target>MI CUENTA</target>
+                   </trans-unit>
 <!--End my dashboard-->
 
 <!--Admin-console-->

@@ -352,5 +352,15 @@ class AdminController extends Controller
         }
     }
 
+    /**
+     * @Route("/request/{customerId}")
+     */
+    public function requestAction($customerId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+            return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer));
+
+    }
 
 }

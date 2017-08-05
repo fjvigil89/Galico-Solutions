@@ -981,7 +981,34 @@
                         <source>Request a proforma</source>
                         <target>Request a proforma</target>
                  </trans-unit>
-
+                  <trans-unit id="dash_profile" resname="dash_profile">
+                        <source>My profile</source>
+                        <target>My profile</target>
+                 </trans-unit>
+                   <trans-unit id="dash_edit_my_profile" resname="dash_edit_my_profile">
+                         <source>Edit My profile</source>
+                         <target>Edit my profile</target>
+                  </trans-unit>
+                   <trans-unit id="dash_services_request" resname="dash_services_request">
+                         <source>My services request</source>
+                         <target>My services request</target>
+                  </trans-unit>
+                   <trans-unit id="dash_change_credit_Card" resname="dash_change_credit_Card">
+                         <source>Change my credit card</source>
+                         <target>Change my credit card</target>
+                  </trans-unit>
+                   <trans-unit id="dash_change_plans" resname="dash_change_plans">
+                         <source>Change my plan</source>
+                         <target>Change my plan</target>
+                  </trans-unit>
+                   <trans-unit id="dash_create_serviceReq" resname="dash_create_serviceReq">
+                         <source>Create a service request</source>
+                         <target>Create a service request</target>
+                  </trans-unit>
+                    <trans-unit id="dash_my_account" resname="dash_my_account">
+                          <source>MY ACCOUNT</source>
+                          <target>MY ACCOUNT</target>
+                   </trans-unit>
 <!--End my dashboard-->	
 
 

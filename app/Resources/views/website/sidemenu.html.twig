@@ -6,28 +6,28 @@
     <div class="row" id="sidemenu">
         <div class="col-xs-12 col-md-3 border-yellow ">
             <div class="row bg-yellow" id="sidemenu-title">
-                <h4 class="col-xs-12 col-md-12">MON COMPTE</h4>
+                <h4 class="col-xs-12 col-md-12">{{ 'dash_my_account' | trans({}, "messages", lang)}}</h4>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showprofile',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-user" >&nbsp;</span>Mon profil</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showprofile',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-user" >&nbsp;</span>{{ 'dash_profile' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editpersonalinfo',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-map-marker" >&nbsp;</span>Modifier mes coordonées</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editpersonalinfo',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-map-marker" >&nbsp;</span>{{ 'dash_edit_my_profile' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showhouses',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-home" >&nbsp;</span>Mes maisons</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showhouses',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-home" >&nbsp;</span>{{ 'dash_house' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showhouses',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-book" >&nbsp;</span>Mes requ&ecirc;tes de service</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_admin_request',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-book" >&nbsp;</span>{{ 'dash_services_request' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editcreditcard',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-credit-card" >&nbsp;</span>Changer ma carte de crédit</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editcreditcard',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-credit-card" >&nbsp;</span>{{ 'dash_change_credit_Card' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editplan',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-file" >&nbsp;</span>Changer mon plan</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editplan',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-file" >&nbsp;</span>{{ 'dash_change_plans' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_request_service',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-list-alt" >&nbsp;</span>Faire une requ&ecirc;te de service</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_request_service',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-list-alt" >&nbsp;</span>{{ 'dash_create_serviceReq' | trans({}, "messages", lang)}}</a></div>
             </div>
 
         </div>
