@@ -169,8 +169,8 @@ angular.module("gpApp")
 
         this.addRecurringPayments = function(paymentInfo)
         {
-            //var url = RouterService.getEndPoint() + '/ccaddrecurring'
-            var url = RouterService.getEndPoint() + '/ccsale'
+            var url = RouterService.getEndPoint() + '/ccaddrecurring'
+            //var url = RouterService.getEndPoint() + '/ccsale'
             var data = $.param({
                 amount: paymentInfo.amount,
                 cardNumber : paymentInfo.cardNumber,//'5123456789012346', //visa : 4987654321098769

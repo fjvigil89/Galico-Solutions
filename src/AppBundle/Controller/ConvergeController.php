@@ -51,6 +51,7 @@ class ConvergeController extends Controller
         $customer = $repository->find($customerId);
 
         $result = array();
+		$result['transType'] = 'Recurring';
 
         if($customer)
         {
@@ -75,7 +76,7 @@ class ConvergeController extends Controller
 
                 //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false); // demo api
                 $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
-                //$totalAmount = 1.00;
+                $totalAmount = 1.00;
                 // Submit a recurring payment
                 $response = $converge->ccaddrecurring(
                     array(
@@ -105,7 +106,8 @@ class ConvergeController extends Controller
                 // Display Converge API response
                 //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
                 //print_r($response);
-
+				
+				
                 if(array_key_exists("errorCode",$response)) // Transaction failed
                 {
                     $result['errorCode'] = $response['errorCode'];
@@ -239,7 +241,8 @@ class ConvergeController extends Controller
         $customer = $repository->find($customerId);
 
         $result = array();
-
+		$result['transType'] = 'Sale';
+		
         if($customer)
         {
 
@@ -264,7 +267,7 @@ class ConvergeController extends Controller
                 //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false); // demo api
                 $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
                 $totalAmount = 1.00;
-                // Submit a recurring payment
+                
                 $response = $converge->ccsale(
                     array(
                         'ssl_amount' => $totalAmount,

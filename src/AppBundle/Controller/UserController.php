@@ -873,6 +873,11 @@ class UserController extends Controller
             $reqService->setRequest($sRequest);
             $reqService->setService($service);
 
+            //--SEND EMAIL TO GENERAL PRO
+
+            //--
+
+
             return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer));
 
         }
@@ -880,10 +885,6 @@ class UserController extends Controller
         {
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
-
-
-
-
 
     }
 

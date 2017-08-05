@@ -232,7 +232,7 @@ angular.module("gpApp")
             }
             else
             {
-				authService.resetPassword($scope.reset.email)
+				AuthService.resetPassword($scope.reset.email)
 				.then(function(response){
 					//console.log(response.data);
 					if(response.data.actionStatus==1)
