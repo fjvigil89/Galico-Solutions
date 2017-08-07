@@ -9,7 +9,7 @@
                 <h4 class="col-xs-12 col-md-12">{{ 'dash_my_account' | trans({}, "messages", lang)}}</h4>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showprofile',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-user" >&nbsp;</span>{{ 'dash_profile' | trans({}, "messages", lang)}}</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('rte_profile',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-user" >&nbsp;</span>{{ 'dash_profile' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
                 <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editpersonalinfo',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-map-marker" >&nbsp;</span>{{ 'dash_edit_my_profile' | trans({}, "messages", lang)}}</a></div>
