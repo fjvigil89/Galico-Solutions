@@ -12,8 +12,11 @@
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
             </div>
             <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
-				<h3 class="bg-yellow"> Mon profil </h3>
 
+
+                <div class="modal-header bg-yellow">
+                    <h4 class="modal-title">{{ 'dash_profile' | trans({}, "messages", lang)}}</h4>
+                </div>
                 <div class="padding-sm">
                     <div class="spacer-large"></div>
                     <div class="row">
@@ -33,16 +36,18 @@
 
                     <div class="spacer-large"></div>
                     <div class="spacer-large"></div>
-                    <h4 class="pr-house-section">HOUSES</h4>
 
+                    <div class="modal-header bg-light-gray">
+                        <h4 class="modal-title">{{ 'dash_house' | trans({}, "messages", lang)}}</h4>
+                    </div>
                     <div class="table-responsive table-hover">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Country</th>
-                                    <th>Address</th>
+                                    <th>{{ 'menu_country' | trans({}, "messages", lang)}}</th>
+                                    <th>{{ 'form_address' | trans({}, "messages", lang)}}</th>
                                     <th>Plan</th>
-                                    <th>Local agent number</th>
+                                    <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
                                 </tr>
                             </thead>
 

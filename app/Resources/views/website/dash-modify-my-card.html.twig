@@ -91,14 +91,18 @@
                                             #}
                                         </select>
                                     </div><br>
+
                                 </div>
                             </div>
+                            <br>
+                            <div class="right-align small-margin-right ">
+                                <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                                    <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
+                                </button>
+                            </div>
+
                         </div>
                     </div>
-
-                        <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
-                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
-                        </button>
 
 
 

@@ -1114,7 +1114,10 @@
                              <source>If you have any questions regarding our services, plans, policies, or if you need assistance, do not hesitate to contact us at any time.</source>
                              <target>Si vous avez des questions concernant nos services, plans, politiques, ou si vous avez besoin d'aide, n'hésitez pas à nous contacter à tout moment.</target>
                         </trans-unit>
-
+                        <trans-unit id="template_welcome_bye" resname="template_welcome_bye">
+                                 <source>Sincerely,Your friends at</source>
+                             <target>Cordialement, vos amis de</target>
+                        </trans-unit>
 <!--End Template Welcome-->
 
 <!--Admin Console-->
