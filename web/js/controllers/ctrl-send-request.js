@@ -28,7 +28,10 @@ angular.module("gpApp")
 
                 else
                 {
-                    //$("")
+                    $("#hHouseId").val($scope.request.houseId);
+                    $("#hRequestDetails").val($scope.request.requestDetails);
+                    $("#hServiceId").val($scope.request.serviceId);
+
                     $('#frm_service_request').submit();
                 }
             }

@@ -3,7 +3,7 @@
  */
 
 angular.module("gpApp")
-    .controller('ContactUsController',function($scope,$rootScope,authService,GeneralService,ContactService,$window,$translate){
+    .controller('ContactUsController',function($scope,$rootScope,GeneralService,ContactService,$window,$translate){
 
         $scope.sender = {};
         $scope.sender.cname ="";

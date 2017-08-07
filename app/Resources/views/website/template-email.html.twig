@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you for choosing General Pro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .img-logo {
+            width:7em;
+            height:6em;
+
+        }
+
+        .img-template {
+            width:18em;
+            height:20em;
+
+        }
+        .bg-bluegp
+        {
+
+            background-color: #070b4f;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #070b4f;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+            color: white;
+        }
+        .floating-box {
+            float: left;
+            width: 45%;
+            height: 45%;
+
+
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+{% set lang = app.session.get('lang') %}
+
+
+
+<div class="container">
+
+    <div class="col-md-8 col-md-offset-2 panel panel-primary"> <br/>
+        <p style="text-align:left;"> <img src="https://general-pro.com/images/gp.png" class="img-logo"></p>
+        <br>
+        <ul>
+            <li><a href="https://general-pro.com/" target = "blank">Home</a></li>
+            <li><a href="https://general-pro.com/services" target = "blank">Services</a></li>
+            <li><a href="https://general-pro.com/plans" target = "blank">Plans</a></li>
+            <li><a href="https://general-pro.com/contact" target = "blank">Contact us</a></li>
+            <li><a href="https://general-pro.com/about" target = "blank">About us</a></li>
+        </ul>
+
+
+
+        <div class="floating-box">
+
+
+            <p style="text-align:left;"> <img src="https://general-pro.com/images/page-home/{{ image }}.jpg" class="img-template"></p>
+        </div>
+
+        <div class="floating-box"><br>
+            {{messageBody}}
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

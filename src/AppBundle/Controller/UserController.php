@@ -667,7 +667,7 @@ class UserController extends Controller
     }
 	
 	/**
-     * @Route("/profile/{customerId}")
+     * @Route("/profile/{customerId}", name="rte_profile")
      */
     public function showProfileAction($customerId)
     {
@@ -727,11 +727,15 @@ class UserController extends Controller
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
             $customer = $repository->find($customerId);
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+            $plans = $repository->findAll();
+            $today = date('Y-m-d');
+
             if(!$customer)
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
-            return $this->render('website/dash-my-houses.html.twig',array('customer'=>$customer));
+            return $this->render('website/dash-my-houses.html.twig',array('customer'=>$customer,'plans'=>$plans,'today'=>$today));
         }
         else
         {
@@ -833,6 +837,7 @@ class UserController extends Controller
         $serviceId = $request->request->get('serviceId');
         $requestDetails = $request->request->get('requestDetails');
         $invoiceNumber = $request->request->get('invoiceNumber');
+        //$email = $request->request->get('emailAddress');
 
         $requestDate = new \DateTime();//date("Y-m-d");
         $invoiceType = "REQUEST";
@@ -867,13 +872,35 @@ class UserController extends Controller
             $em->flush();
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Services');
-            $service = $repository->find("$serviceId");
+            $service = $repository->find($serviceId);
 
             $reqService = new Requestservices();
             $reqService->setRequest($sRequest);
             $reqService->setService($service);
 
+            $em->persist($reqService);
+            $em->flush();
+
+
             //--SEND EMAIL TO GENERAL PRO
+            $fullname = $customer->getFirstname() . " " . $customer->getLastname();
+            $email = $customer->getEmail();
+            $body = "REFERENCE NUMBER &emsp; : " . $invoiceNumber . "<br/><br/>";
+            $body .= "REQUEST DATE &emsp; : " . date("Y-m-d H:i:s") . "<br/><br/>";
+            $body .= "CUSTOMER &emsp; : " . $fullname . "<br/><br/>";
+            if(isset($house))
+            {
+                $body .= "HOUSE &emsp; : " . $house->getCountry() . " ," . $house->getCity() . " ," . $house->getAddress() . " ," . $house->getZipcode() . "<br/><br/>";
+            }
+
+            $body .= "SERVICE &emsp; : " . $service->getServicename() . "<br/><br/>";
+            $body .= "REQUEST DETAILS <br/><br/>";
+            $body .= "$requestDetails";
+
+
+            $image = $this->getRandomImage();
+            $this->sendEmail($email,$fullname,"jrhodelyr@gmail.com","SERVICE REQUEST",$body,$image);
+
 
             //--
 
@@ -903,7 +930,7 @@ class UserController extends Controller
         if($maxInvoiceNumber)
         {
             $split = explode('-',$maxInvoiceNumber);
-            $number = (int) $split[2];
+            $number = (int) $split[3];
             $nextInvoiceNumber = $substr . ($number+1);
         }
         else
@@ -918,7 +945,38 @@ class UserController extends Controller
 		return ($customerId==$this->get('session')->get('userId'));
 	}
 
-	private function getHouses($customerId)
+    private function sendEmail($from, $fromName, $to, $subject, $body, $image)
+    {
+        # Setup the message
+        /*$message = \Swift_Message::newInstance()
+            ->setSubject($subject)
+            ->setFrom($from, $fromName)
+            ->setTo($to)
+            ->setBody(
+                $this->renderView('website/template-email.html.twig', array("messageBody" => $body, "image" => $image)),
+                'text/html'
+            );
+        */
+        $message = \Swift_Message::newInstance()
+            ->setSubject("Contact - From General Pro's website")
+            ->setFrom('jrhodelyr@gmail.com','General Pro')
+            ->setTo('jrhodelyr@gmail.com')
+            ->setBody( "test" );
+
+        # Send the message
+        $this->get('mailer')
+            ->send($message);
+    }
+
+    private function getRandomImage()
+    {
+        $images = array("services-01","services-04","services-05","services-11","services-022");
+        $index = rand(0,4);
+        return $images[$index];
+    }
+
+
+    private function getHouses($customerId)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);

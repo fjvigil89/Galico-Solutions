@@ -17,17 +17,15 @@ class EmailController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
         $fullname = $customer->getFirstname() . " " . $customer->getLastname();
-        $images = array("services-01","services-04","services-05","services-11","services-022");
-        $index = rand(0,4);
-        $imageName = $images[$index];
+        $imageName = $this->getRandomImage();
 
         # Setup the message
         $message = \Swift_Message::newInstance()
             ->setSubject("Thank you for choosing General Pro")
-            ->setFrom('info@general-pro.com',"General Pro")
+            ->setFrom('info@general-pro.com', "General Pro")
             ->setTo($customer->getEmail())
             ->setBody(
-                $this->renderView('website/template-thank-you.html.twig',array("customerFullname"=>$fullname, "image"=>$imageName)),
+                $this->renderView('website/template-thank-you.html.twig', array("customerFullname" => $fullname, "image" => $imageName)),
                 'text/html'
 
             );
@@ -37,7 +35,7 @@ class EmailController extends Controller
             ->send($message);
         //var_dump($customer->getEmail()); die("");
 
-        return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
+        return $this->redirectToRoute("rte_profile", ['customerId' => $customer->getCustomerid()]);
     }
 
     /**
@@ -48,11 +46,11 @@ class EmailController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
         $fullname = $customer->getFirstname() . " " . $customer->getLastname();
-        $images = array("services-01","services-04","services-05","services-11","services-022");
-        $index = rand(0,4);
+        $images = array("services-01", "services-04", "services-05", "services-11", "services-022");
+        $index = rand(0, 4);
         $imageName = $images[$index];
 
-        return $this->render('website/template-thank-you.html.twig',array("customerFullname"=>$fullname, "image"=>$imageName));
+        return $this->render('website/template-thank-you.html.twig', array("customerFullname" => $fullname, "image" => $imageName));
     }
 
     /**
@@ -67,7 +65,7 @@ class EmailController extends Controller
         $telephone = $customer->getPhoneprimary();
         $email = $customer->getEmail();
 
-        return $this->render('website/template-invoice.html.twig',array("customerFullname"=>$fullname,"address"=> $address, "telephone"=> $telephone, "email"=>$email ));
+        return $this->render('website/template-invoice.html.twig', array("customerFullname" => $fullname, "address" => $address, "telephone" => $telephone, "email" => $email));
     }
 
     /**
@@ -82,13 +80,33 @@ class EmailController extends Controller
         $telephone = $customer->getPhoneprimary();
         $email = $customer->getEmail();
 
-        return $this->render('website/template-subscription.html.twig',array("customerFullname"=>$fullname,"address"=> $address, "telephone"=> $telephone, "email"=>$email ));
+        return $this->render('website/template-subscription.html.twig', array("customerFullname" => $fullname, "address" => $address, "telephone" => $telephone, "email" => $email));
     }
 
 
-    public function sendEmail($from, $to, $subject, $body)
+    public function sendEmail($from, $fromName, $to, $subject, $body, $image)
     {
-        
+        # Setup the message
+        $message = \Swift_Message::newInstance()
+            ->setSubject("$subject")
+            ->setFrom("$from", "$fromName")
+            ->setTo($to)
+            ->setBody(
+                $this->renderView('website/template-email.html.twig', array("messageBody" => $body, "image" => $image)),
+                'text/html'
+
+            );
+
+        # Send the message
+        $this->get('mailer')
+            ->send($message);
+    }
+
+    public function getRandomImage()
+    {
+        $images = array("services-01","services-04","services-05","services-11","services-022");
+        $index = rand(0,4);
+        return $images[$index];
     }
 
 }
