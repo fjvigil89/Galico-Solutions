@@ -12,13 +12,14 @@
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
             </div>
             <div class="col-xs-12 col-md-8 col-md-offset-1 border-yellow no-padding">
-
-
+                <div class="modal-header bg-yellow">
+                    <h4 class="modal-title">{{ 'dash_services_request' | trans({}, "messages", lang)}}</h4>
+                </div>
                 <div class="row" ng-repeat="request in requests">
                     <div class="col-xs-12 ">
                         <div class="panel-group" id="myAccordion">
 
-                                <div class="panel-heading bg-yellow ">
+                                <div class="panel-heading bg-light-gray ">
                                     <h4 class="panel-title ">
                                         <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
                                     </h4>
