@@ -352,15 +352,50 @@ class AdminController extends Controller
         }
     }
 
-    /**
-     * @Route("/request/{customerId}")
-     */
-    public function requestAction($customerId)
+    private function getRandomImage()
     {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-        $customer = $repository->find($customerId);
-            return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer));
-
+        $images = array("services-01","services-04","services-05","services-11","services-022");
+        $index = rand(0,4);
+        return $images[$index];
     }
+    /**
+     * @Route("/sendEmailClient", name="sendEmailClient")
+     */
+    public function sendEmailClientAction(Request $request)
+    {
+
+        $content = $request->request->get('content');
+        $subject = $request->request->get('subject');
+        $email = $request->request->get('email');
+        $image = $this->getRandomImage();
+        //$attachment= $request->request->get('file[]');
+
+
+            # Setup the message
+            $message = \Swift_Message::newInstance()
+                ->setSubject("$subject")
+                ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
+                ->setTo("$email")
+                //->attach(Swift_Attachment::fromPath($attachment)->setDisposition('inline'))
+                ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
+                    'text/html'
+
+
+                );
+
+            # Send the message
+            $this->get('mailer')
+                ->send($message);
+
+
+            //--
+
+
+            return $this->render('website/admin-send-email.html.twig');
+
+        }
+
+
+
 
 }

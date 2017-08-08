@@ -18,7 +18,12 @@ angular.module("gpApp")
         $scope.newCustomer = "";
         $scope.newAgence = "";
         $scope.newPrice = "";
+        $scope.request = {};
+        $scope.request.error = "";
+
+
         $scope.getCustomerInformation = function(customerId)
+
         {
             //if($scope.customer.length===undefined)
             {
@@ -301,6 +306,35 @@ $scope.addtechnician = function () {
 
 
         }
+
+
+        $scope.sendProforma = function()
+        {
+
+            $scope.request.error = "";
+
+            if(GeneralService.isInvalid($scope.request.email))
+            {
+                $scope.update.error = $translate.instant('ERR_SERVICE_INVALID');
+                $window.document.getElementById("email").focus();
+            }
+            else if(GeneralService.isInvalid($scope.request.subject))
+            {
+                $scope.update.error = $translate.instant('ERR_REQUEST_DETAILS_INVALID');
+                $window.document.getElementById("subject").focus();
+            }
+            else if(GeneralService.isInvalid($scope.request.content))
+            {
+                $scope.update.error = $translate.instant('ERR_REQUEST_DETAILS_INVALID');
+                $window.document.getElementById("content").focus();
+            }
+            else
+            {
+
+                $('#frm_send_proforma').submit();
+            }
+        }
+
 
 
         $scope.getCustomerInformation();
