@@ -807,7 +807,7 @@
                 </trans-unit>				
                  <trans-unit id="dash_house" resname="dash_house">
                        <source>Houses</source>
-                       <target>Suscripción de casa</target>
+                       <target>Mis casas</target>
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
