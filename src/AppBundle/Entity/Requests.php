@@ -35,6 +35,13 @@ class Requests
     private $status;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="ReferenceNumber", type="string", length=15, nullable=false)
+     */
+    private $referencenumber;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="InvoiceDate", type="date", nullable=true)
@@ -44,7 +51,7 @@ class Requests
     /**
      * @var string
      *
-     * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=false)
+     * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=true)
      */
     private $invoicenumber;
 
@@ -159,6 +166,22 @@ class Requests
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReferencenumber()
+    {
+        return $this->referencenumber;
+    }
+
+    /**
+     * @param string $referencenumber
+     */
+    public function setReferencenumber($referencenumber)
+    {
+        $this->referencenumber = $referencenumber;
     }
 
     /**

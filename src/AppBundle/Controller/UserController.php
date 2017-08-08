@@ -852,11 +852,15 @@ class UserController extends Controller
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
 
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $houses = $repository->findByCustomer($customer);
+
+
             $sRequest = new Requests();
             $sRequest->setRequestdate($requestDate);
             $sRequest->setDetails($requestDetails);
             $sRequest->setStatus("PENDING");
-            $sRequest->setInvoicenumber($invoiceNumber);
+            $sRequest->setReferencenumber($invoiceNumber);
             $sRequest->setInvoicetype($invoiceType);
             $sRequest->setAmount("0.00");
             $sRequest->setTax("0.00");
@@ -883,14 +887,17 @@ class UserController extends Controller
 
 
             //--SEND EMAIL TO GENERAL PRO
+            $discount = (count($houses)>0)? " YES" : " NO";
             $fullname = $customer->getFirstname() . " " . $customer->getLastname();
             $email = $customer->getEmail();
             $body = "\n\n SERVICE REQUEST\n";
             $body .= "------------------------------\n\n";
             $body .= "REFERENCE NUMBER  : " . $invoiceNumber . "\n\n";
             $body .= "REQUEST DATE  : " . date("Y-m-d H:i:s") . "\n\n";
-            $body .= "CUSTOMER  $fullname \n\n";
+            $body .= "CUSTOMER : $fullname \n\n";
             $body .= "CUSTOMER EMAIL  : $email\n\n";
+            $body .= "DISCOUNT APPLICABLE : " . $discount . "\n\n";
+
             if(isset($house))
             {
                 $body .= "HOUSE  : " . $house->getCountry() . " ," . $house->getCity() . " ," . $house->getAddress() . " ," . $house->getZipcode() . "\n\n";
@@ -899,7 +906,6 @@ class UserController extends Controller
             $body .= "SERVICE : " . $service->getServicename() . "\n\n";
             $body .= "REQUEST DETAILS :\n \n";
             $body .= "$requestDetails";
-
 
             $image = $this->getRandomImage();
             //$this->sendEmail($email,$fullname,"jrhodelyr@gmail.com","SERVICE REQUEST",$body,$image);
@@ -919,11 +925,9 @@ class UserController extends Controller
             $this->get('mailer')
                 ->send($message);
 
-
             //--
 
-
-            return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer));
+            return $this->redirectToRoute("rte_myRequests",['customerId' => $customer->getCustomerid()]);
 
         }
         else
@@ -931,6 +935,62 @@ class UserController extends Controller
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
 
+    }
+    /**
+     * @Route("/requests/{customerId}", name="rte_myRequests")
+     */
+    public function showMyRequestsAction($customerId)
+    {
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $houses = $repository->findByCustomer($customer);
+
+            $houseRequests = array();
+            foreach ($houses as $house) {
+
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+                $requests = $repository->findByHouse($house);
+
+                foreach($requests as $request) {
+                    $req = array();
+
+                    $reqService = $request->getRequestServices();
+                    $req['requestDate'] = date_format($request->getRequestdate(), 'Y-m-d');
+                    $req['status'] = $request->getStatus();
+                    $req['requestId'] = $request->getRequestid();
+                    $req['referenceNumber'] = $request->getReferencenumber();
+                    $req['details'] = $request->getDetails();
+                    $req['service'] = count($reqService) > 0 ? $reqService[0]->getService()->getServicename() : "";
+                    $interventions = array();
+                    foreach ($request->getInterventions() as $intervention) {
+                        $interv = array();
+                        $interv['interventionDate'] = date_format($intervention->getInterventiondate(), 'Y-m-d');
+                        $interv['technician'] = $intervention->getTechnician()->getFirstname() . " " . $intervention->getTechnician()->getLastname();
+                        $interv['comments'] = $intervention->getComments();
+
+                        $interventions[] = $interv;
+                    }
+                    $req['interventions'] = $interventions;
+
+                    $houseRequests[] = $req;
+                }
+            }
+
+            return $this->render('website/dash-my-requests.html.twig',array('customer'=>$customer, 'requests'=>$houseRequests));
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
     }
 
     private function getNextInvoiceNumber($countryName)

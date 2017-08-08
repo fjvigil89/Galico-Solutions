@@ -5,7 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div ng-controller="DashboardController">
+    <div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -15,24 +15,27 @@
                 <div class="modal-header bg-yellow">
                     <h4 class="modal-title">{{ 'dash_services_request' | trans({}, "messages", lang)}}</h4>
                 </div>
-                <div class="row" ng-repeat="request in requests">
-                    <div class="col-xs-12 ">
-                        <div class="panel-group" id="myAccordion">
 
-                                <div class="panel-heading bg-light-gray ">
-                                    <h4 class="panel-title ">
-                                        <a data-toggle="collapse" data-parent="#myAccordion" href="#collapsedashboard" ng-bind="request.requestDate + ' | ' + request.service + ' | ' + request.status"></a>
-                                    </h4>
-                                </div>
+                    <div class="row" >
+                        <div class="col-xs-12 ">
+                            <div class="panel-group" id="myAccordion">
 
-                                <div id="collapsedashboard" class="panel-collapse collapse in  ">
-                                    <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
-                                        <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
-                                        <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
-                                        <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                                {% for request in requests %}
+
+                                    <div class="panel-heading bg-light-gray ">
+                                        <h4 class="panel-title ">
+                                            <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse{{ request.requestId }}" >{{ request.requestDate ~ ' | ' ~ request.service ~ ' | ' ~ request.status }}</a>
+                                        </h4>
                                     </div>
 
-                                    <div class="panel-body" >{[request.details]}
+                                <div id="collapse{{ request.requestId }}" class="panel-collapse collapse in  ">
+                                    <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text >{{ request.requestDate }}</text> <br/>
+                                        <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                        <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text >{{ request.status }}</text><br/>
+                                        <label class="text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</label> : <text >{{ request.referenceNumber }}</text>
+                                    </div>
+
+                                    <div class="panel-body" >{{ request.details }}
                                     </div>
 
                                     <div class="col-xs-12 no-padding">
@@ -49,14 +52,14 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr ng-repeat="intervention in request.interventions">
+                                                {% for intervention in request.interventions %}
+                                                    <tr>
 
-                                                    <td class="" ng-bind="intervention.interventionDate"></td>
-                                                    <td class="" ng-bind="intervention.technician"></td>
-                                                    <td class="" ng-bind="intervention.comments"></td>
-
-
-                                                </tr>
+                                                        <td>{{ intervention.interventionDate }}</td>
+                                                        <td>{{ intervention.technician }}</td>
+                                                        <td>{{ intervention.comments }}</td>
+                                                    </tr>
+                                                {% endfor %}
 
                                                 </tbody>
                                             </table>
@@ -64,6 +67,9 @@
                                     </div>
                                 </div>
 
+                                {% endfor %}
+
+                            </div>
 
 
                         </div>
@@ -72,7 +78,6 @@
                     </div>
 
 
-                </div>
 
 
 

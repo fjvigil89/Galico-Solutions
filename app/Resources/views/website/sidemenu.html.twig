@@ -18,7 +18,7 @@
                 <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_showhouses',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-home" >&nbsp;</span>{{ 'dash_house' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
-                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_admin_request',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-book" >&nbsp;</span>{{ 'dash_services_request' | trans({}, "messages", lang)}}</a></div>
+                <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('rte_myRequests',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-book" >&nbsp;</span>{{ 'dash_services_request' | trans({}, "messages", lang)}}</a></div>
             </div>
             <div class="row sidemenu-item">
                 <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ path('app_user_editcreditcard',{'customerId' : customerId}) }}"><span class="glyphicon glyphicon-credit-card" >&nbsp;</span>{{ 'dash_change_credit_Card' | trans({}, "messages", lang)}}</a></div>

@@ -42,7 +42,7 @@
                         <div class="row">
                             <label class="col-xs-5 text-bold" for="addr">House</label>
                             <div class="col-xs-7">
-                                <select name="service" id="service" class="form-control" ng-model="request.houseId">
+                                <select name="houseId" id="houseId" class="form-control" ng-model="request.houseId">
                                     <option value=""></option>
                                     {% for house in customer.houses %}
                                         <option value="{{ house.houseid }}">{{ house.country ~ " ," ~ house.city ~ " ," ~ house.address }}</option>
@@ -52,16 +52,16 @@
                             </div>
                         </div><br>
 
-                        <div class="row">
+                        <!--<div class="row" ng-hide="request.houseId==undefined || request.houseId==''">
                             <div class="col-xs-5 text-bold">Plan</div>
-                            <div class="col-xs-7" >:</div>
-                        </div><br>
+                            <div class="col-xs-7" >:{[getPlanPrice()]}</div>
+                        </div><br>-->
 
                         <div class="row">
                             <label class="col-xs-5 text-bold" for="servicereq">Service </label>
                             <div class="col-xs-7">
 
-                                <select name="service" id="serviceId" class="form-control" ng-model="request.serviceId">
+                                <select id="serviceId" name="serviceId" class="form-control" ng-model="request.serviceId">
                                     <option value=""></option>
                                     {% for service in services|sort %}
                                         <option value="{{ service.serviceid }}">{{ service.servicename }}</option>
@@ -74,11 +74,11 @@
 
                         <div class="row">
                             <div class="col-xs-5 text-bold">Request details:</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <textarea class="form-control col-xs-5" rows="10" id="requestDetails" ng-model="request.requestDetails"></textarea>
+                            <textarea class="form-control col-xs-5" rows="10" name="requestDetails" id="requestDetails" ng-model="request.requestDetails"></textarea>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-xs-12 error-message text-center">**** NO HOUSE SELECTED ****</div>
+                            <div class="col-xs-12 error-message text-center" ng-if="request.houseId==undefined || request.houseId==''">**** NO HOUSE SELECTED ****</div>
                         </div><br>
 
 
@@ -90,9 +90,9 @@
 
                         <input type="hidden" name="customerId" value="{{ customer.customerid }}">
                         <input type="hidden" name="invoiceNumber" value="{{ invoiceNumber }}">
-                        <input type="hidden" id="hHouseId" name="houseId">
+                        <!--<input type="hidden" id="hHouseId" name="houseId">
                         <input type="hidden" id="hRequestDetails" name="requestDetails">
-                        <input type="hidden" id="hServiceId" name="serviceId">
+                        <input type="hidden" id="hServiceId" name="serviceId">-->
                     </form>
 
             </div>
