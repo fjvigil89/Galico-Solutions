@@ -272,7 +272,7 @@ class ConvergeController extends Controller
                     array(
                         'ssl_amount' => $totalAmount,
                         'ssl_salestax' => $tax,
-                        //'ssl_transaction_currency' => 'USD',
+                        'ssl_transaction_currency' => 'USD',
                         'ssl_card_number' => $cardNumber,
                         'ssl_cvv2cvc2' => $cvv,
                         'ssl_exp_date' => $expirationDate,

@@ -885,21 +885,39 @@ class UserController extends Controller
             //--SEND EMAIL TO GENERAL PRO
             $fullname = $customer->getFirstname() . " " . $customer->getLastname();
             $email = $customer->getEmail();
-            $body = "REFERENCE NUMBER &emsp; : " . $invoiceNumber . "<br/><br/>";
-            $body .= "REQUEST DATE &emsp; : " . date("Y-m-d H:i:s") . "<br/><br/>";
-            $body .= "CUSTOMER &emsp; : " . $fullname . "<br/><br/>";
+            $body = "\n\n SERVICE REQUEST\n";
+            $body .= "------------------------------\n\n";
+            $body .= "REFERENCE NUMBER  : " . $invoiceNumber . "\n\n";
+            $body .= "REQUEST DATE  : " . date("Y-m-d H:i:s") . "\n\n";
+            $body .= "CUSTOMER  $fullname \n\n";
+            $body .= "CUSTOMER EMAIL  : $email\n\n";
             if(isset($house))
             {
-                $body .= "HOUSE &emsp; : " . $house->getCountry() . " ," . $house->getCity() . " ," . $house->getAddress() . " ," . $house->getZipcode() . "<br/><br/>";
+                $body .= "HOUSE  : " . $house->getCountry() . " ," . $house->getCity() . " ," . $house->getAddress() . " ," . $house->getZipcode() . "\n\n";
             }
 
-            $body .= "SERVICE &emsp; : " . $service->getServicename() . "<br/><br/>";
-            $body .= "REQUEST DETAILS <br/><br/>";
+            $body .= "SERVICE : " . $service->getServicename() . "\n\n";
+            $body .= "REQUEST DETAILS :\n \n";
             $body .= "$requestDetails";
 
 
             $image = $this->getRandomImage();
-            $this->sendEmail($email,$fullname,"jrhodelyr@gmail.com","SERVICE REQUEST",$body,$image);
+            //$this->sendEmail($email,$fullname,"jrhodelyr@gmail.com","SERVICE REQUEST",$body,$image);
+
+            # Setup the message
+            $message = \Swift_Message::newInstance()
+                ->setSubject("SERVICE REQUEST")
+                ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
+                ->setCc("$email","$fullname")
+                ->setTo("request@general-pro.com")
+                ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $body, "image" => $image)),
+                    'text/html'
+
+                );
+
+            # Send the message
+            $this->get('mailer')
+                ->send($message);
 
 
             //--
