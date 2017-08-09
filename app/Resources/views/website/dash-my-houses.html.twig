@@ -51,8 +51,8 @@
                             <td>
 
                                 <button data-toggle="modal" data-target="#houseModal" ng-click="getSelectedHouseInfo(house.id)" class="btn-danger btn-xs"><span class="glyphicon glyphicon-align-justify" title={{ 'dash_view_details' | trans({}, "messages", lang)}}></span></button>
-                                <button data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)" class="btn-success btn-xs"><span class="glyphicon glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
-                                <button data-toggle="modal" data-target="#cardchangeModal" ng-click="getPaymentsHistory(house.id)" class="btn-primary btn-xs"><span class="glyphicon glyphicon-credit-card" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
+                                <!--<button data-toggle="modal" data-target="#paymentsModal" ng-click="getPaymentsHistory(house.id)" class="btn-success btn-xs"><span class="glyphicon glyphicon glyphicon-usd" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>
+                                <button data-toggle="modal" data-target="#cardchangeModal" ng-click="getPaymentsHistory(house.id)" class="btn-primary btn-xs"><span class="glyphicon glyphicon-credit-card" title={{ 'dash_view_payment' | trans({}, "messages", lang)}}></span></button>-->
 
 
 
@@ -321,6 +321,76 @@
 
          </div>
      </div>
+
+
+
+
+        <div id="houseModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{ 'dash_house_information' | trans({}, "messages", lang)}}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">Plan</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.plan">: </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-xs-5 text-bold">Due date</div>
+                            <div class="col-xs-7">04/25/2017</div>
+                        </div>-->
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.subscriptionDate">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'dash_contact' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.contactFullName">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'form_phone_primary' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.phonePrimary">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.phoneAlternate">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'form_Country' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.country">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'form_city' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.city">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold ">{{ 'form_address' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.address">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'form_state' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.state">: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-5 text-bold">{{ 'dash_local_agent' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" ng-bind="selectedHouse.agentNumber"> </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove" title="{{ 'dash_close' | trans({}, "messages", lang)}}"></span> {{ 'dash_close' | trans({}, "messages", lang)}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
  </div>
 
