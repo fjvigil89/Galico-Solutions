@@ -5,6 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
+    <div ng-controller= "AdminController">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -74,11 +75,180 @@
 
 
         </div>
+
+
+
+
+
+
     </div>
 
+    <div id="houseModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ 'dash_house_information' | trans({}, "messages", lang)}}</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">Plan</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.plan">: </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-xs-5 text-bold">Due date</div>
+                        <div class="col-xs-7">04/25/2017</div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.subscriptionDate">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'dash_contact' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.contactFullName">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'form_phone_primary' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.phonePrimary">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.phoneAlternate">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'form_Country' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.country">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'form_city' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.city">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold ">{{ 'form_address' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.address">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'form_state' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.state">: </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 text-bold">{{ 'dash_local_agent' | trans({}, "messages", lang)}}</div>
+                        <div class="col-xs-7" ng-bind="selectedHouse.agentNumber"> </div>
+                    </div>
 
 
 
+
+                    <div  ng-show="showServiceForm">
+                        <table class="table table-hover">
+
+                            <thead class="bg-light-gray">
+                            <tr>
+                                <th>{{ 'dash_req_date' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'dash_req_id' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'menu_services' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                <th> <button data-toggle="modal" data-target="#addserviceModal" class="btn-warning btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td>13/04/2017</td>
+                                <td>3253453</td>
+                                <td>Electicity</td>
+                                <td>Carlos Mendez</td>
+                                <td><button class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button></td>
+
+                            </tr>
+                            <tr>
+
+                                <td>16/05/2017</td>
+                                <td>56443453</td>
+                                <td>Plumbing</td>
+                                <td>Mario Villavicencio</td>
+                                <td><button class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class ="border-yellow " >
+                            <div class="panel-body" ><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text ng-bind="request.requestDate"></text> <br/>
+                                <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
+                                <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text ng-bind="request.status"></text><br/>
+                                <label class="text-bold">{{ 'dash_req_id' | trans({}, "messages", lang)}}</label> : <text ng-bind="request.requestId"></text>
+                            </div>
+
+                            <div class="panel-body" >{[request.details]}
+                            </div>
+
+                            <div class="col-xs-12 padding-sevice">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+
+                                        <thead class="bg-light-blue">
+                                        <tr>
+                                            <th>{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                            <th>{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                            <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="intervention in request.interventions">
+
+                                            <td class="" ng-bind="intervention.interventionDate"></td>
+                                            <td class="" ng-bind="intervention.technician"></td>
+                                            <td class="" ng-bind="intervention.comments"></td>
+
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn bg-yellow color-black" ng-show="showServiceForm" ng-click="gotodetailsForm()">
+                        <span class="glyphicon glyphicon-chevron-left" title=""></span>{{ 'dash_back' | trans({}, "messages", lang)}}
+                    </button>
+                    <button type="button" class="btn bg-yellow color-black" ng-hide="showServiceForm" ng-click="gotoserviceForm()">
+                        {{ 'dash_next' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-chevron-right" title=""></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
 
     <div class="pad">
     </div>

@@ -20,7 +20,7 @@
                             <h4 class="modal-title">{{ 'admin_other_sendEmail' | trans({}, "messages", lang)}}</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="" id="frm_send_proforma" method="post" action="{{ path('sendEmailClient') }}">
+                            <form class="" id="frm_send_proforma" method="post" action="{{ path('sendEmailClient') }}" enctype="multipart/form-data">
 
                             <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
                             <h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>
@@ -31,16 +31,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="sujet">{{ 'admin_sendemail_sujet' | trans({}, "messages", lang)}}*:</label>
+                                <label for="subject">{{ 'admin_sendemail_sujet' | trans({}, "messages", lang)}}*:</label>
                                 <input type="text" class="form-control" name="subject" id="subject" ng-model="request.subject">
                             </div>
                             <div class="form-group">
-                                <label for="messagesendmail">{{ 'form_message' | trans({}, "messages", lang) }}*:</label>
+                                <label for="content">{{ 'form_message' | trans({}, "messages", lang) }}*:</label>
                                 <textarea  class="form-control" name="content" id="content" ng-model="request.content" cols="40" rows="10" aria-invalid="false"  style="height: 110px;"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">{{ 'admin_sendemail_selectFile' | trans({}, "messages", lang) }}</label>
-                                <input id="file" name="file[]" type="file"  multiple data-show-upload="false" data-show-caption="true">
+                                <input id="file" name="file" type="file"  multiple data-show-upload="true" data-show-caption="true">
                             </div>
 
 

@@ -368,7 +368,7 @@ class AdminController extends Controller
         $subject = $request->request->get('subject');
         $email = $request->request->get('email');
         $image = $this->getRandomImage();
-        //$attachment= $request->request->get('file[]');
+        $attachment= $request->request->get('file');
 
 
             # Setup the message
@@ -376,7 +376,7 @@ class AdminController extends Controller
                 ->setSubject("$subject")
                 ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
                 ->setTo("$email")
-                //->attach(Swift_Attachment::fromPath($attachment)->setDisposition('inline'))
+                ->attach(\Swift_Attachment::fromPath("$attachment"))
                 ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
                     'text/html'
 
