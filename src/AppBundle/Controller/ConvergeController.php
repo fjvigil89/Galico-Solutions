@@ -52,6 +52,7 @@ class ConvergeController extends Controller
 
         $result = array();
 		$result['transType'] = 'Recurring';
+        $result['platform'] = 'DEMO';
 
         if($customer)
         {
@@ -74,9 +75,11 @@ class ConvergeController extends Controller
 
                 $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
-                //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false); // demo api
+                //$converge = new ConvergeApi( '007128','webpage','PFZBHCRRL5000NLLTL0DWC5DFIT7R5Q3R596W0NQ4OU45NJ632BIBC44XSI9IHVD',false); // demo api
                 $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
                 $totalAmount = 1.00;
+                $result['platform'] = 'LIVE';
+
                 // Submit a recurring payment
                 $response = $converge->ccaddrecurring(
                     array(
@@ -106,8 +109,7 @@ class ConvergeController extends Controller
                 // Display Converge API response
                 //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
                 //print_r($response);
-				
-				
+
                 if(array_key_exists("errorCode",$response)) // Transaction failed
                 {
                     $result['errorCode'] = $response['errorCode'];
@@ -177,19 +179,10 @@ class ConvergeController extends Controller
                 //end : try
             catch(Exception $e)
             {
-
-                /*if(array_key_exists("errorCode",$response))
-                {
-                    $result['errorCode'] = $response['errorCode'];
-                    $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
-                    $result['outcome'] = "FAILURE";
-                }
-                else*/
-                {
                     $result['outcome'] = 'FAILURE';
                     $result['errorCode'] = '-2';
                     $result['errorName'] = 'TRANSACTION_FAILED';
-                }
+
 
             }
 
@@ -202,7 +195,74 @@ class ConvergeController extends Controller
         }
         //--END : IF CUSTOMER
 
+        return $this->json($result);
+    }
+
+    /**
+     * @Route("/ccupdaterecurring")
+     */
+    public function updateRecurringAction(Request $request)
+    {
+
+        //---GET ALL REQUEST VARIABLES
+        $customerId = $request->request->get('customerId');
+        $cardNumber = $request->request->get('cardNumber');
+        $cvv = $request->request->get('cvv');
+        $expirationDate = $request->request->get('expirationDate');
+        $nameOnCard = $request->request->get('nameOnCard');
+
+        $response = null;
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+        if($customer)
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $houses = $repository->findByCustomer($customer);
+
+            if(count($houses)>0)
+            {
+                $subscriptions = $houses[0]->getSubscriptions();
+                $lastSubscription = $subscriptions[count($subscriptions)-1];
+                $recurringId = $lastSubscription->getTransactionid();
+
+                //$converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
+                $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+
+                $totalAmount = '1.00';
+                // Update recurring
+                $response = $converge->ccupdaterecurring(
+                    array(
+                        'ssl_recurring_id' => $recurringId,
+                        'ssl_card_number' => $cardNumber,
+                        'ssl_exp_date' => $expirationDate,
+                        'ssl_cvv2cvc2' => $cvv,
+                        'vita_name_on_card' => $nameOnCard
+                    )
+                );
+            }
+
+        }
+
+
+// Display Converge API response
+        //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
+        //print_r($response);
+        $result = array();
+        if(array_key_exists("errorCode",$response))
+        {
+            $result['errorCode'] = $response['errorCode'];
+            $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
+            $result['outcome'] = "FAILURE";
+        }
+        else
+        {
+            $result['errorCode'] = 0;
+            $result['outcome'] = "SUCCESS";
+        }
+
         return $this->json($result); //
+        //return $this->json($response); //
     }
 
 
@@ -394,6 +454,7 @@ class ConvergeController extends Controller
         return $this->json($result); //
     }
 
+
     private function getTransactionErrorName($convergeErrorName)
     {
         $errorList = array(
@@ -468,104 +529,5 @@ class ConvergeController extends Controller
         $price = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
 
         return $price;
-    }
-
-
-
-
-    /**
-     * @Route("/ccupdaterecurring)")
-     */
-    public function updateRecurringAction(Request $request)
-    {
-
-        //---GET ALL REQUEST VARIABLES
-        $customerId = $request->request->get('customerId');
-        $amount = $request->request->get('amount');
-        $cardNumber = $request->request->get('cardNumber');
-        $cvv = $request->request->get('cvv');
-        $expirationDate = $request->request->get('expirationDate');
-        $nameOnCard = $request->request->get('nameOnCard');
-
-
-        $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
-        $totalAmount = $amount + $tax;
-
-        $response = null;
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-        $customer = $repository->find($customerId);
-        if($customer)
-        {
-            $firstName = $customer->getFirstname();
-            $lastName = $customer->getLastname();
-            $phonePrimary = $customer->getPhoneprimary();
-            $country = $this->getIso3FromCountry($customer->getCountry());
-            $email = $customer->getEmail();
-            $state = $customer->getState();
-            $city = $customer->getCity();
-            $address =$customer->getAddress();
-            $zipcode =$customer->getZipcode();
-
-            $nextPaymentDate = new \DateTime();
-            //$nextPaymentDate->add(new \DateInterval('P30D'));
-
-            $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
-
-            $converge = new ConvergeApi( '007128','webpage','CL7NIF',false);
-            //$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
-
-            $totalAmount = '1.00';
-            // Submit a recurring payment
-            $response = $converge->ccaddrecurring(
-                array(
-                    'ssl_recurring_id' => $recurringId,
-                    'ssl_card_number' => $cardNumber,
-                    'ssl_exp_date' => $expirationDate,
-                    'ssl_cvv2cvc2' => $cvv,
-                    'ssl_amount' => $totalAmount,
-                    'ssl_salestax' => $tax,
-                    'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-                    'ssl_avs_address' => $address,
-                    'ssl_avs_zip' => $zipcode,
-                    'ssl_city' => $city,
-                    'ssl_state' => $state,
-                    'ssl_country' => $country,
-                    'ssl_email' => $email,
-                    'ssl_phone' => $phonePrimary,
-                    'ssl_first_name' => $firstName,
-                    'ssl_last_name' =>  $lastName,
-                    //'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
-
-                    'ssl_billing_cycle' => 'MONTHLY',
-                    'vita_name_on_card' => $nameOnCard,
-                    'ssl_invoice_number' => $invoiceNumber,
-                    'ssl_customer_code'=> $customerId,
-                )
-            );
-
-
-        }
-
-
-
-// Display Converge API response
-        //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
-        //print_r($response);
-        $result = array();
-        if(array_key_exists("errorCode",$response))
-        {
-            $result['errorCode'] = $response['errorCode'];
-            $result['errorName'] = $this->getTransactionErrorName($response['errorName']);
-            $result['outcome'] = "FAILURE";
-        }
-        else
-        {
-            $result['errorCode'] = 0;
-            $result['outcome'] = "SUCCESS";
-        }
-
-        return $this->json($result); //
-        return $this->json($response); //
     }
 }

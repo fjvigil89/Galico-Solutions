@@ -60,6 +60,29 @@ angular.module("gpApp")
         }
     })
 
+    .service('CCService',function($http,RouterService){
+
+        this.updateCC = function (cc) {
+
+            var url = RouterService.getEndPoint() + '/ccupdaterecurring'
+            var data = $.param({
+                customerId : cc.customerId,
+                nameOnCard : cc.nameOnCard,
+                cardNumber : cc.cardNumber,
+                cvv : cc.cvv,
+                expirationDate : cc.expMonth+""+cc.expYear
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+    })
+
     .service('DashboardService',function($http,RouterService){
         this.getCustomerInformation = function(id)
         {

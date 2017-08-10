@@ -718,7 +718,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/houses/{customerId}")
+     * @Route("/houses/{customerId}",name="rte_houses")
      */
     public function showHousesAction($customerId)
     {
@@ -758,7 +758,8 @@ class UserController extends Controller
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
-            return $this->render('website/dash-modify-my-card.html.twig',array('customer'=>$customer));
+            $today = date("Y-m-d");
+            return $this->render('website/dash-modify-my-card.html.twig',array('customer'=>$customer,'today'=>$today));
 
         }
         else
@@ -1001,7 +1002,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $substr = "GP-SER-" . $country->getCountryid() . "-";
-        $query = $em->createQuery( 'SELECT Max(r.invoicenumber) AS invNumber FROM AppBundle:Requests r WHERE r.invoicenumber LIKE :inv' );
+        $query = $em->createQuery( 'SELECT Max(r.referencenumber) AS invNumber FROM AppBundle:Requests r WHERE r.referencenumber LIKE :inv' );
         $query->setParameter('inv', '%' . $substr . '%');
         $invoiceNumber = $query->getSingleResult();
         $maxInvoiceNumber = $invoiceNumber['invNumber'];

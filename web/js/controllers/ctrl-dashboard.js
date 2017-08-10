@@ -401,8 +401,8 @@ angular.module("gpApp")
                         }
                         else
                         {
-                            $("#addHouseModal").modal('hide');
-                            $scope.getHousesInformation();
+                            $('#frm_houses').attr('action', RouterService.getEndPoint()+'/send-register-email/'+$scope.paymentInfo.customerId);
+                            $('#frm_houses').submit();
                         }
 
 

@@ -5,8 +5,8 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div ng-controller="DashboardController">
-    <div class="container">
+    <div ng-controller="CCController">
+    <div class="container" ng-cloak>
         <div class="row">
             <div class="col-xs-12 col-md-3">
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
@@ -15,25 +15,25 @@
 
 
                     <div  class ="border-yellow col-md-8 col-md-offset-2 padding-payment">
-                        <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
-
+                        <h5 class="error-message text-bold text-center">{[cc.error]} </h5>
+                        <h5 class="message-info text-bold text-center">{[cc.info]} </h5>
 
 
 
                         <div class="form-group">
                             <label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
-                            <input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
+                            <input type="text" class="form-control" id="nameOnCard" ng-model ="cc.nameOnCard">
                         </div>
 
-                        <div class="form-group">
-                            <label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
+                        <!--<div class="form-group">
+                            <label for="creditCard"> 'dash_card_type' | trans({}, "messages", lang)</label>
                             <select name="creditCard" id="cardType" class="form-control" ng-model="paymentInfo.cardType" >
                                 <option value=""></option>
                                 <option value="Visa">Visa</option>
                                 <option value="MasterCard">Master Card</option>
 
                             </select>
-                        </div>
+                        </div>-->
 
                         <div class="form-group">
                             <div class="col-xs-6 no-padding">
@@ -45,13 +45,13 @@
                             <div class="row margin-left">
 
                                 <div class="col-xs-7 no-padding">
-                                    <input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="paymentInfo.cardNumber" >
+                                    <input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="cc.cardNumber" >
                                 </div>
                                 <div class="col-xs-1 no-padding"></div>
 
                                 <div class="col-xs-3 no-padding">
 
-                                    <input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="paymentInfo.cvv">
+                                    <input type="text" class="form-control" id="cvv" maxlength="4"  placeholder="CVV" ng-model="cc.cvv">
                                 </div>
                             </div>
 
@@ -63,7 +63,7 @@
                                 <div class="row margin-left">
 
                                     <div class="col-xs-4 no-padding">
-                                        <select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="paymentInfo.expMonth">
+                                        <select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="cc.expMonth">
 
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -81,14 +81,14 @@
                                     </div>
                                     <div class="col-xs-2 no-padding"></div>
                                     <div class="col-xs-5 no-padding">
-                                        <select name="dateexpirationyear" id="expYear" class="form-control" ng-model="paymentInfo.expYear">
-                                          {#  {% set dateSplit = today |split("-") %}
+                                        <select name="dateexpirationyear" id="expYear" class="form-control" ng-model="cc.expYear">
+                                            {% set dateSplit = today |split("-") %}
                                             {% set year = dateSplit[0] %}
                                             {% for yr in year..(year+10) %}
                                                 <option value="{{ yr |slice(2,2)}}">{{ yr }}</option>
                                             {% endfor %}
 
-                                            #}
+
                                         </select>
                                     </div><br>
 
@@ -96,17 +96,13 @@
                             </div>
                             <br>
                             <div class="right-align small-margin-right ">
-                                <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()">
+                                <button type="button" class="btn bg-yellow color-black" ng-click="updateCC()">
                                     <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang)}}
                                 </button>
                             </div>
 
                         </div>
                     </div>
-
-
-
-
 
         </div>
     </div>
@@ -117,4 +113,6 @@
 
     <div class="pad">
     </div>
+    <input type="hidden" id="hFullname" value="{{ customer.firstname ~ " " ~ customer.lastname }}">
+    <input type="hidden" id="customerId" value="{{ customer.customerid }}">
 {% endblock %}

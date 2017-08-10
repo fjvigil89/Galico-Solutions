@@ -35,7 +35,7 @@ class EmailController extends Controller
             ->send($message);
         //var_dump($customer->getEmail()); die("");
 
-        return $this->redirectToRoute("rte_profile", ['customerId' => $customer->getCustomerid()]);
+        return $this->redirectToRoute("rte_houses", ['customerId' => $customer->getCustomerid()]);
     }
 
     /**
