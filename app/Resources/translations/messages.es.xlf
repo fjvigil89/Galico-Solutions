@@ -1024,7 +1024,10 @@
                            <source>Reference number</source>
                            <target>Número de referencia</target>
                     </trans-unit>
-
+                    <trans-unit id="dash_make_payment" resname="dash_make_payment">
+                          <source>Make a payment</source>
+                          <target>Hacer un pago</target>
+                   </trans-unit>
 
 <!--End my dashboard-->
 

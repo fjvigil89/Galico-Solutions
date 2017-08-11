@@ -1013,7 +1013,10 @@
                           <source>Reference number</source>
                           <target>Reference number</target>
                    </trans-unit>
-
+                    <trans-unit id="dash_make_payment" resname="dash_make_payment">
+                          <source>Make a payment</source>
+                          <target>Make a payment</target>
+                   </trans-unit>
 
 
 

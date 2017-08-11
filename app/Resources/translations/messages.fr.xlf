@@ -1020,6 +1020,10 @@
                           <source>Reference number</source>
                           <target>Numéro de réference</target>
                    </trans-unit>
+                     <trans-unit id="dash_make_payment" resname="dash_make_payment">
+                           <source>Make a payment</source>
+                           <target>Effectuer une paiement</target>
+                    </trans-unit>
 <!--End my dashboard-->	
 
 <!--Admin-console-->
