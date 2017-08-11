@@ -247,3 +247,19 @@
     background-color: #D8D8D8;
     border-color: #ddd;
 }
+
+
+#serviceId,#houseId, #requestDetails
+{
+    width: 100%;
+}
+
+.word-wrap
+{
+    word-wrap: break-word;
+}
+
+.word-wrap-table{
+    table-layout: fixed;
+    word-wrap: break-word;
+}

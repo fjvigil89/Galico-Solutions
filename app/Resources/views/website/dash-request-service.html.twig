@@ -26,23 +26,23 @@
                         </div><br>-->
 
                         <div class="row">
-                            <div class="col-xs-5 text-bold">Reference Number</div>
+                            <div class="col-xs-4 text-bold">Reference Number</div>
                             <div class="col-xs-7" >: {{ invoiceNumber }} </div>
                         </div><br>
 
 
                         <div class="row">
-                            <div class="col-xs-5 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-4 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
                             <div class="col-xs-7" >: {{ today }} </div>
                         </div><br>
                         <div class="row">
-                            <div class="col-xs-5 text-bold">Customer</div>
+                            <div class="col-xs-4 text-bold">Customer</div>
                             <div class="col-xs-7" > : {{ customer.firstname ~ " " ~ customer.lastname }}</div>
                         </div><br>
                         <div class="row">
-                            <label class="col-xs-5 text-bold" for="addr">House</label>
+                            <label class="col-xs-4 text-bold" for="addr">House</label>
                             <div class="col-xs-7">
-                                <select name="houseId" id="houseId" class="form-control" ng-model="request.houseId">
+                                <select name="houseId" id="houseId"  class="form-control" ng-model="request.houseId">
                                     <option value=""></option>
                                     {% for house in customer.houses %}
                                         <option value="{{ house.houseid }}">{{ house.country ~ " ," ~ house.city ~ " ," ~ house.address }}</option>
@@ -58,7 +58,7 @@
                         </div><br>-->
 
                         <div class="row">
-                            <label class="col-xs-5 text-bold" for="servicereq">Service </label>
+                            <label class="col-xs-4 text-bold" for="servicereq">Service </label>
                             <div class="col-xs-7">
 
                                 <select id="serviceId" name="serviceId" class="form-control" ng-model="request.serviceId">
@@ -73,8 +73,10 @@
                         </div><br>
 
                         <div class="row">
-                            <div class="col-xs-5 text-bold">Request details:</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <textarea class="form-control col-xs-5" rows="10" name="requestDetails" id="requestDetails" ng-model="request.requestDetails"></textarea>
+                            <div class="col-xs-4 text-bold">Request details:</div>&nbsp;
+                            <div class="col-xs-7">&nbsp;&nbsp;&nbsp;
+                                <textarea class="form-control " rows="10" name="requestDetails" id="requestDetails" ng-model="request.requestDetails"></textarea>
+                            </div>
                         </div><br>
 
                         <div class="row">

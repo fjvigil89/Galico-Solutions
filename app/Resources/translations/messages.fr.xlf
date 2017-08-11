@@ -1016,7 +1016,10 @@
                            <source>MY ACCOUNT</source>
                            <target>MON COMPTE</target>
                     </trans-unit>
-
+                    <trans-unit id="dash_reference_number" resname="dash_reference_number">
+                          <source>Reference number</source>
+                          <target>Numéro de réference</target>
+                   </trans-unit>
 <!--End my dashboard-->	
 
 <!--Admin-console-->

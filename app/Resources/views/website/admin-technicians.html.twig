@@ -75,59 +75,61 @@
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{ 'admin_edit_technician' | trans({}, "messages", lang)}}</h4>
+
                     </div>
                     <div class="modal-body">
-                        <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+                        <h5 class="error-message text-bold text-center" ng-bind="auth.message"> </h5>
+                        <h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>
 
                         <div class="form-group">
                             <label for="edit-tech-lastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.lastName">
+                            <input type="text" class="form-control" name="edit-tech-lastname" id="edit-tech-lastname" ng-model="technicianUpdated.lastName">
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-lastname">{{ 'form_name' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-lastname"  ng-model="technician.firstName" >
+                            <input type="text" class="form-control" name="edit-tech-firstname" id="edit-tech-firstname"  ng-model="technicianUpdated.firstName" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-email">{{ 'form_email' | trans({}, "messages", lang)}}:</label>
-                            <input type="email" class="form-control" id="edit-tech-email" ng-model="technician.email" >
+                            <input type="email" class="form-control" name="edit-tech-email" id="edit-tech-email" ng-model="technicianUpdated.email" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
-                            <input type="tel" class="form-control" id="edit-tech-phonePrimary" ng-model="technician.phonePrimary" >
+                            <input type="tel" class="form-control" name="edit-tech-phonePrimary" id="edit-tech-phonePrimary" ng-model="technicianUpdated.phonePrimary" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
-                            <input type="tel" class="form-control" id="edit-tech-phonealternate" ng-model="technician.phoneAlternate" >
+                            <input type="tel" class="form-control" name="edit-tech-phonealternate" id="edit-tech-phonealternate" ng-model="technicianUpdated.phoneAlternate" >
                         </div>
 
                         <div class="form-group">
                             <label for="edit-tech-lastname">{{ 'form_profession' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-lastname" ng-model="technician.profession" >
+                            <input type="text" class="form-control" name="edit-tech-profession" id="edit-tech-profession" ng-model="technicianUpdated.profession" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-country">{{ 'form_Country' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-country" ng-model="technician.country" >
+                            <input type="text" class="form-control" name="edit-tech-country" id="edit-tech-country" ng-model="technicianUpdated.country" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-state">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-state" ng-model="technician.state" >
+                            <input type="text" class="form-control" name="edit-tech-state" id="edit-tech-state" ng-model="technicianUpdated.state" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-city">{{ 'form_city' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-city" ng-model="technician.city" >
+                            <input type="text" class="form-control" name="edit-tech-city" id="edit-tech-city" ng-model="technicianUpdated.city" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-address">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-address" value="4534 av Maisonneuve" >
+                            <input type="text" class="form-control" name="edit-tech-address" id="edit-tech-address" value="4534 av Maisonneuve" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-zipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" id="edit-tech-zipCode" value="j3d 2g3" >
+                            <input type="text" class="form-control" name="edit-tech-zipCode" id="edit-tech-zipCode" value="j3d 2g3" >
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <button type="button" class="btn btn-default" ng-click="updateTechnician()">
                             <span class="glyphicon glyphicon-floppy-disk" title="Save"></span>
                         </button>
                     </div>

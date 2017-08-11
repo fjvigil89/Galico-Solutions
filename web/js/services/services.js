@@ -249,6 +249,27 @@ angular.module("gpApp")
 
         }
 
+        this.updateTechnician = function (technician) {
+
+            var url = RouterService.getEndPoint() + '/update-technician';
+            var data = $.param({
+                technicianId : technician.technicianId,lastName : technician.lastName,
+                firstName : technician.firstName,email: technician.email,
+                phonePrimary : technician.phonePrimary, phoneAlternate : technician.phoneAlternate, profession : technician.profession,
+                country : technician.country, state : technician.state, city : technician.city,
+                address : technician.address, zipCode : technician.zipCode
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+
+
 
 
     })

@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="container contact-content" ng-controller="ContactUsController">
+<div class="container contact-content" ng-controller="WorkUsController">
     <div class="row">
         <div class="col-md-4">
 
@@ -38,7 +38,7 @@
             <!-- /.thememove-gmaps -->
             <h5 class="error-message text-bold text-center" ng-bind="message.error" class=""> </h5>
             <h5 ng-cloak class="message-info text-bold text-center" ng-if="message.successful">{{ 'contact_message_successfully' | trans({}, "messages", lang) }}</h5>
-            <form id="frm_contact_us" method="GET" action="{{ path('sendEmail') }}" >
+            <form id="frm_work_us" method="POST" action="{{ path('sendinfoCareers') }}" >
                 <div class="row">
 
                     <div class="col-sm-12">
@@ -84,7 +84,7 @@
                         <label class="control-label">{{ 'workus_select_cv' | trans({}, "messages", lang) }}</label>
                         <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true"> </div>
                     <div class="col-sm-12">
-                        <button type="button" class="btn" ng-click="send()">{{ 'workus_cv' | trans({}, "messages", lang) }}</button>
+                        <button type="button" class="btn" ng-click="sendform()">{{ 'workus_cv' | trans({}, "messages", lang) }}</button>
                     </div>
 
                 </div>

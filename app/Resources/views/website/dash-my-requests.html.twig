@@ -35,12 +35,12 @@
                                         <label class="text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</label> : <text >{{ request.referenceNumber }}</text>
                                     </div>
 
-                                    <div class="panel-body" >{{ request.details }}
+                                    <div class="panel-body word-wrap" >{{ request.details }}
                                     </div>
 
                                     <div class="col-xs-12 no-padding">
                                         <div class="table-responsive">
-                                            <table class="table table-hover">
+                                            <table class="table table-hover word-wrap-table " >
 
                                                 <thead class="bg-light-gray">
                                                 <tr>
@@ -52,12 +52,13 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+
                                                 {% for intervention in request.interventions %}
                                                     <tr>
 
                                                         <td>{{ intervention.interventionDate }}</td>
                                                         <td>{{ intervention.technician }}</td>
-                                                        <td>{{ intervention.comments }}</td>
+                                                        <td >{{ intervention.comments }}</td>
                                                     </tr>
                                                 {% endfor %}
 

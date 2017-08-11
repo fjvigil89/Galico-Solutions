@@ -1020,6 +1020,12 @@
                           <source>MY ACCOUNT</source>
                           <target>MI CUENTA</target>
                    </trans-unit>
+                     <trans-unit id="dash_reference_number" resname="dash_reference_number">
+                           <source>Reference number</source>
+                           <target>Número de referencia</target>
+                    </trans-unit>
+
+
 <!--End my dashboard-->
 
 <!--Admin-console-->

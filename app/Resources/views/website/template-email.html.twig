@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thank you for choosing General Pro</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <style>
         .img-logo {
@@ -50,7 +50,7 @@
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 1em 1em;
             text-decoration: none;
         }
 
@@ -59,12 +59,15 @@
             background-color: #111;
             color: white;
         }
-        .floating-box {
-            float: left;
-            width: 40%;
-            height: 40%;
-            margin-right: 5%;
+
+        .central-margin {
+
+            width: 80%;
+            margin-left: 10%;
         }
+
+
+
 
     </style>
 
@@ -78,10 +81,9 @@
 
 <div class="container">
 
-    <div class="col-md-8 col-md-offset-2 panel panel-primary"> <br/>
         <p style="text-align:left;"> <img src="https://general-pro.com/images/gp.png" class="img-logo"></p>
         <br>
-        <ul>
+        <ul >
             <li><a href="https://general-pro.com/" target = "blank">Home</a></li>
             <li><a href="https://general-pro.com/services" target = "blank">Services</a></li>
             <li><a href="https://general-pro.com/plans" target = "blank">Plans</a></li>
@@ -89,19 +91,17 @@
             <li><a href="https://general-pro.com/about" target = "blank">About us</a></li>
         </ul>
 
-        <div class="img-container floating-box" > <img src="https://general-pro.com/images/page-home/{{ image }}.jpg" ></div>
+    <div class="central-margin">
 
-
-        <div>
-            {{messageBody | nl2br }}
+        <div class="img-container central-margin" > <img src="https://general-pro.com/images/page-home/{{ image }}.jpg" >
         </div>
 
+        <div class="central-margin">
+            {{messageBody | nl2br }}
+
+
+        </div>
     </div>
-
-
-
-
-
 
 
 </div>

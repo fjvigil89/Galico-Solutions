@@ -20,6 +20,7 @@ angular.module("gpApp")
         $scope.newPrice = "";
         $scope.request = {};
         $scope.request.error = "";
+        $scope.technicianUpdated = {};
 
 
         $scope.getCustomerInformation = function(customerId)
@@ -68,7 +69,7 @@ angular.module("gpApp")
             AdminService.getTechnicianInformation(customerId)
                 .then(function(response){
                     console.log(response.data);
-                    $scope.technician = response.data;
+                    $scope.technicianUpdated = response.data;
 
                 }, function (error) {
 
@@ -180,7 +181,6 @@ $scope.addtechnician = function () {
         $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
         $window.document.getElementById("newTechPhonePrimary").focus();
     }
-
 
     else if(GeneralService.isInvalid($scope.technician.profession))
     {
@@ -335,7 +335,80 @@ $scope.addtechnician = function () {
             }
         }
 
+        $scope.updateTechnician = function () {
 
+
+            if(GeneralService.isInvalid($scope.technicianUpdated.lastName))
+            {
+                $scope.auth.message  = $translate.instant('ERR_REGISTER_LASTNAME');
+                $window.document.getElementById("edit-tech-lastName").focus();
+
+            }
+            else if(GeneralService.isInvalid($scope.technicianUpdated.firstName))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
+                $window.document.getElementById("edit-tech-firstName").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.technicianUpdated.email))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_EMAIL');
+                $window.document.getElementById("edit-tech-email").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.technicianUpdated.phonePrimary))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
+                $window.document.getElementById("edit-tech-phonePrimary").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.technicianUpdated.profession))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $window.document.getElementById("edit-tech-profession").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.technicianUpdated.country))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $window.document.getElementById("edit-tech-country").focus();
+            }
+            else if(GeneralService.isInvalid($scope.technicianUpdated.state))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_STATE');
+                $window.document.getElementById("edit-tech-state").focus();
+            }
+            else if(GeneralService.isInvalid($scope.technicianUpdated.city))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
+                $window.document.getElementById("edit-tech-city").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.technicianUpdated.address))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                $window.document.getElementById("edit-tech-address").focus();
+            }
+            else if(GeneralService.isInvalid($scope.technicianUpdated.zipCode))
+            {
+                $scope.auth.message = $translate.instant('ERR_REGISTER_ZIPCODE');
+                $window.document.getElementById("edit-tech-zipCode").focus();
+            }
+
+            else
+            {
+
+                AdminService.updateTechnician($scope.technicianUpdated)
+                    .then(function(response){
+                        console.log(response.data);
+                        $scope.technicianUpdated = response.data;
+
+                    },function(error){
+
+                    })
+            }
+
+        }
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();

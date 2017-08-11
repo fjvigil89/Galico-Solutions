@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+
 class AdminController extends Controller
 {
 
@@ -352,6 +353,9 @@ class AdminController extends Controller
         }
     }
 
+
+
+
     private function getRandomImage()
     {
         $images = array("services-01","services-04","services-05","services-11","services-022");
@@ -376,7 +380,7 @@ class AdminController extends Controller
                 ->setSubject("$subject")
                 ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
                 ->setTo("$email")
-                ->attach(\Swift_Attachment::fromPath("$attachment"))
+                ->attach(\Swift_Attachment::fromPath($attachment))
                 ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
                     'text/html'
 
@@ -396,6 +400,70 @@ class AdminController extends Controller
         }
 
 
+    /**
+     * @Route("/update-technician", name="updateTechnician")
+     */
+    public function updateTechnicianAction(Request $request)
+    {
+
+        $technicianId = $request->request->get('technicianId');
+        $firstName = $request->request->get('firstName');
+        $lastName = $request->request->get('lastName');
+        $email = $request->request->get('email');
+        $phonePrimary = $request->request->get('phonePrimary');
+        $phoneAlternate = $request->request->get('phoneAlternate');
+        $profession = $request->request->get('$profession');
+        $country = $request->request->get('country');
+        $state = $request->request->get('state');
+        $city = $request->request->get('city');
+        $address = $request->request->get('address');
+        $zipCode = $request->request->get('zipCode');
+
+        //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
+        $updateStatus = -1;
+        $response = array();
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
+            $technician = $repository->find($technicianId);
+
+            if($technician)
+            {
+                $technician->setFirstname($firstName);
+                $technician->setLastname($lastName);
+                $technician->setEmail($email);
+
+                $technician->setPhoneprimary($phonePrimary);
+                $technician->setPhonealternate($phoneAlternate);
+
+                $technician->setCountry($country);
+                $technician->setState($state);
+                $technician->setCity($city);
+                $technician->setAddress($address);
+                $technician->setZipcode($zipCode);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                $updateStatus = 1;
+
+                $response['customerId'] = $technician->getCustomerid();
+                $response['firstName'] = $technician->getFirstname();
+                $response['lastName'] = $technician->getLastname();
+                $response['email'] = $technician->getEmail();
+                $response['phonePrimary'] = $technician->getPhoneprimary();
+                $response['phoneAlternate'] = $technician->getPhonealternate();
+                $response['country'] = $technician->getCountry();
+                $response['state'] = $technician->getState();
+                $response['city'] = $technician->getCity();
+                $response['address'] = $technician->getAddress();
+                $response['zipCode'] = $technician->getZipcode();
+
+            }
+            $response['updateStatus'] = $updateStatus;
+
+
+        return $this->json($response);
+
+    }
 
 
 }
