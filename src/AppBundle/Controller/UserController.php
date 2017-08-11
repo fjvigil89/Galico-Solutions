@@ -1096,4 +1096,31 @@ class UserController extends Controller
 
         return $customerHouses;
     }
+
+    /**
+     * @Route("/makePayment/{customerId}", name="rte_makePayment")
+     */
+    public function makePaymentAction($customerId)
+    {
+
+        if($this->isCustomerValid($customerId))
+        {
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+
+
+            if(!$customer)
+            {
+                return $this->redirectToRoute('app_pagenavigation_showsignin');
+            }
+            return $this->render('website/dash-make-payments.html.twig',array('customer'=>$customer));
+        }
+        else
+        {
+            return $this->redirectToRoute('app_pagenavigation_showsignin');
+        }
+
+    }
+
 }

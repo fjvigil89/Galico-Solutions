@@ -1028,6 +1028,14 @@
                           <source>Make a payment</source>
                           <target>Hacer un pago</target>
                    </trans-unit>
+                    <trans-unit id="dash_view_payments" resname="dash_view_payments">
+                          <source>View my payments</source>
+                          <target>Ver mis pagos</target>
+                   </trans-unit>
+                    <trans-unit id="dash_total_amount" resname="dash_total_amount">
+                               <source>Total amount</source>
+                               <target>Monto total</target>
+                   </trans-unit>
 
 <!--End my dashboard-->
 

@@ -1022,8 +1022,18 @@
                    </trans-unit>
                      <trans-unit id="dash_make_payment" resname="dash_make_payment">
                            <source>Make a payment</source>
-                           <target>Effectuer une paiement</target>
+                           <target>Effectuer un paiement</target>
                     </trans-unit>
+                    <trans-unit id="dash_view_payments" resname="dash_view_payments">
+                          <source>View my payments</source>
+                          <target>Voir mes paiements</target>
+                   </trans-unit>
+                   <trans-unit id="dash_total_amount" resname="dash_total_amount">
+                               <source>Total amount</source>
+                               <target>Montant total</target>
+                   </trans-unit>
+
+
 <!--End my dashboard-->	
 
 <!--Admin-console-->
