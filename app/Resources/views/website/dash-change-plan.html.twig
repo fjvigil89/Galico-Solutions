@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Credit card change{% endblock %}
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_change_plans' | trans({}, "messages", lang)}}
+{% endblock %}
 
 {% block body %}
     <div class="pad">
     </div>
-    <div ng-controller="DashboardController">
-    <div class="container">
+    <div>
+    <div class="container" ng-controller="PlanController">
         <div class="row">
             <div class="col-xs-12 col-md-3">
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
@@ -30,34 +33,32 @@
                             <th>{{ 'form_Country' | trans({}, "messages", lang)}}</th>
                             <th>{{ 'form_address' | trans({}, "messages", lang)}}</th>
                             <th>{{ 'form_city' | trans({}, "messages", lang)}}</th>
-
                             <th>{{ 'dash_local_agent' | trans({}, "messages", lang)}}</th>
                             <th class="">Plan</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <tr ng-repeat="house in houses">
-                            <td ng-bind="house.country"></td>
-                            <td ng-bind="house.address"></td>
-                            <td ng-bind="house.city"></td>
+                            {% for house in houses %}
+                                <tr>
+                                    <td>{{ house.country }}</td>
+                                    <td>{{ house.address }}</td>
+                                    <td>{{ house.city }}</td>
+                                    <td>{{ house.agentNumber }}</td>
+                                    <td>
+                                        <select class="form-control" ng-change="changePlan({{ house.id }})">
+                                            {% for plan in plans %}
+                                                {% set selected = '' %}
+                                                {% if(plan.planid==house.planId) %}
+                                                    {% set selected = 'selected' %}
+                                                {% endif %}
 
-
-
-                            <td ng-bind="house.agentNumber"></td>
-                            <td>
-
-
-
-                                    <select name="plan" id="plan" class="form-control"  ng-bind="house.plan" >
-
-                                        <option value="Basic Plan">Basic Plan</option>
-                                        <option value="Gp Plus">Gp Plus</option>
+                                                <option value="{{ plan.planid }}" {{ selected }}>{{ plan.planname }}</option>
+                                            {% endfor %}
                                         </select>
-
-
-                            </td>
-                        </tr>
+                                    </td>
+                                </tr>
+                           {% endfor %}
 
 
                         </tbody>

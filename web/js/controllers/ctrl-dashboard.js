@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-17.
  */
 angular.module("gpApp")
-    .controller('DashboardController',function($scope,$rootScope,DashboardService,$window,GeneralService,$translate){
+    .controller('DashboardController',function($scope,$rootScope,DashboardService,RouterService,$window,GeneralService,$translate){
             /*FOR MULTIPLE MODAL WINDOWS*/
             $('body').on('hidden.bs.modal', function (e) {
                 if($('.modal').hasClass('in')) {
@@ -316,27 +316,6 @@ angular.module("gpApp")
 		{
 			$scope.showPaymentForm = false;
 		}
-
-        /*$scope.gotoserviceForm = function()
-        {
-            $scope.showServiceForm = true;
-        }
-
-        $scope.gotodetailsForm = function()
-        {
-            $scope.showServiceForm = false;
-        }
-
-
-        $scope.gotopaysForm = function()
-        {
-            $scope.showInvoice = false;
-        }
-
-        $scope.gotoinvoiceForm = function()
-        {
-            $scope.showInvoice = true;
-        }*/
 
 
         $scope.addRecurringPayments = function()

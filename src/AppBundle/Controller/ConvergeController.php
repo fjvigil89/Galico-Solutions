@@ -45,8 +45,6 @@ class ConvergeController extends Controller
         $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
         $totalAmount = $amount + $tax;
 
-        $response = array();
-
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
 
@@ -182,8 +180,6 @@ class ConvergeController extends Controller
                     $result['outcome'] = 'FAILURE';
                     $result['errorCode'] = '-2';
                     $result['errorName'] = 'TRANSACTION_FAILED';
-
-
             }
 
         }

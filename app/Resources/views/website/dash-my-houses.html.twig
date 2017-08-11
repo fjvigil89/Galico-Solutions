@@ -6,7 +6,7 @@
     <div class="pad">
     </div>
     <div ng-controller="DashboardController">
-    <div class="container">
+    <div class="container" ng-cloak>
         <div class="row">
             <div class="col-xs-12 col-md-3">
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}

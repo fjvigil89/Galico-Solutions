@@ -778,11 +778,44 @@ class UserController extends Controller
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
             $customer = $repository->find($customerId);
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $houses = $repository->findByCustomer($customer);
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+            $plans = $repository->findAll();
+
+            $customerHouses = array();
+            foreach($houses as $house)
+            {
+
+                $subscriptions = $house->getSubscriptions();
+                $index = count($subscriptions)-1;
+
+                $hs = array();
+                $hs['id'] =$house->getHouseid();
+                $hs['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
+                $hs['planId'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanid();
+                /*$hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
+                $hs['phonePrimary'] = $house->getPhoneprimary();
+                $hs['phoneAlternate'] = $house->getPhonealternate();*/
+                $hs['country'] = $house->getCountry();
+                $hs['state'] = $house->getState();
+                $hs['city'] = $house->getCity();
+                $hs['address'] = $house->getAddress();
+                $hs['contactFullName'] = $house->getFirstname() . " " . $house->getLastname();
+                $hs['agentNumber'] = $this->getLocalAgentNumber($hs['country'],$hs['city']);
+
+                $customerHouses[] = $hs;
+
+            }
+
+
             if(!$customer)
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
-            return $this->render('website/dash-change-plan.html.twig',array('customer'=>$customer));
+            return $this->render('website/dash-change-plan.html.twig',array('customer'=>$customer,'houses'=>$customerHouses,'plans'=>$plans));
 
         }
         else
