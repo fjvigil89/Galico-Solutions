@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Make a payment{% endblock %}
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_make_payment' | trans({}, "messages", lang)}}
+{% endblock %}
 
 {% block body %}
     <div class="pad">
@@ -31,18 +34,51 @@
                                 <th>{{ 'admin_service' | trans({}, "messages", lang)}}</th>
                                 <th>{{ 'dash_total_amount' | trans({}, "messages", lang)}}</th>
 
-                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'dash_reference_number' | trans({}, "messages", lang)}}</th>
                                 <th>
 
-                                    <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-edit" title="edit"></span></button>
 
 
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
+                            <tr>
+                                <td>14/08/2017</td>
+                                <td>Plumbing</td>
+                                <td>CAD 300</td>
+                                <td>FACE23442</td>
 
-                            <tr ng-repeat="house in houses">
+
+                                <td>
+
+
+                                    <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-list-alt" title="edit"></span></button>
+
+                                    <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="edit"></span></button>
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>15/08/2017</td>
+                                <td>Plumbing</td>
+                                <td>CAD 200</td>
+                                <td>FACWSD23442</td>
+
+                                <td>
+
+
+                                    <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-list-alt" title="edit"></span></button>
+
+                                    <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="edit"></span></button>
+
+
+                                </td>
+                            </tr>
+
+                            <!--tr ng-repeat="house in houses">
                                 <td ng-bind="house.country"></td>
                                 <td ng-bind="house.address"></td>
                                 <td ng-bind="house.city"></td>
@@ -57,7 +93,7 @@
 
 
                                 </td>
-                            </tr>
+                            </tr-->
 
 
                             </tbody>
@@ -73,7 +109,91 @@
 
 
         </div>
+        <div id="paymentmodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-yellow">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-bold text-center">{{ 'dash_payservice' | trans({}, "messages", lang)}}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class ="border-yellow padding-payment col-xs-12 col-md-8 col-md-offset-2 ">
+
+                            <h5 class="error-message text-bold text-center">{[paymentInfo.error]} </h5>
+
+
+                            </br>
+                        <div class="form-group">
+                            <label for="status">{{ 'admin_service' | trans({}, "messages", lang)}} :</label>
+                            <text>Plumbing</text>
+                        </div>
+
+                            <div class="form-group">
+                                <label for="status">{{ 'dash_total_amount' | trans({}, "messages", lang)}} :</label>
+                                <text>{[paymentInfo.amount]}</text>
+                            </div>
+                            <div class="form-group">
+                                <label for="type">{{ 'dash_type_c' | trans({}, "messages", lang)}}</label>
+                                <text>{{ 'dash_credit_card' | trans({}, "messages", lang)}}</text>
+                            </div>
+                            <!--div class="col-xs-6 no-padding"-->
+                            <div class="form-group">
+                                <label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
+                                <input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
+                                <select name="creditCard" id="cardType" class="form-control" ng-model="paymentInfo.cardType" >
+                                    <option value=""></option>
+                                    <option value="Visa">Visa</option>
+                                    <option value="MasterCard">Master Card</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6 no-padding">
+                                    <label for="cardnumber">{{ 'dash_card_number' | trans({}, "messages", lang)}}&nbsp; </label><img src="{{ asset('images/card_mastercard.png') }}"><img src="{{ asset('images/card_visa.png') }}">
+                                </div>
+
+
+
+                                <div class="row margin-left">
+
+                                    <div class="col-xs-7 no-padding">
+                                        <input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="paymentInfo.cardNumber" >
+                                    </div>
+                                    <div class="col-xs-1 no-padding"></div>
+
+                                    <div class="col-xs-3 no-padding">
+
+                                        <input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="paymentInfo.cvv">
+                                    </div>
+                                </div>
+
+
+
+
+                                </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-yellow color-black" >
+                            <span class="glyphicon glyphicon-credit-card" title="{{ 'dash_pay' | trans({}, "messages", lang)}}"></span> {{ 'dash_pay' | trans({}, "messages", lang)}}
+                        </button>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
     <div class="pad">
     </div>

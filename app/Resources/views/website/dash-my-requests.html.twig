@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} My requests{% endblock %}
-
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_services_request' | trans({}, "messages", lang)}}
+{% endblock %}
 {% block body %}
     <div class="pad">
     </div>
@@ -24,14 +26,14 @@
 
                                     <div class="panel-heading bg-light-gray ">
                                         <h4 class="panel-title ">
-                                            <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse{{ request.requestId }}" >{{ request.requestDate ~ ' | ' ~ request.service ~ ' | ' ~ request.status }}</a>
+                                            <a data-toggle="collapse" data-parent="#myAccordion" href="#collapse{{ request.requestId }}" >{{ request.requestDate ~ ' | ' ~ request.service ~ ' | ' ~ request.status | trans({}, "messages", lang) }}</a>
                                         </h4>
                                     </div>
 
                                 <div id="collapse{{ request.requestId }}" class="panel-collapse collapse in  ">
                                     <div class="panel-body"><label class="text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</label> <text >{{ request.requestDate }}</text> <br/>
                                         <!--<label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label>{{ 'status_closed' | trans({}, "messages", lang)}}<br/>-->
-                                        <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text >{{ request.status }}</text><br/>
+                                        <label class="text-bold">{{ 'dash_status' | trans({}, "messages", lang)}} :</label><text >{{ request.status | trans({}, "messages", lang)}}</text><br/>
                                         <label class="text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</label> : <text >{{ request.referenceNumber }}</text>
                                     </div>
 

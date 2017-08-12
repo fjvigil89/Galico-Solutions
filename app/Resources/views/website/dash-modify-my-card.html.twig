@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Credit card change{% endblock %}
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_change_credit_Card' | trans({}, "messages", lang)}}
+{% endblock %}
 
 {% block body %}
     <div class="pad">
@@ -14,11 +17,11 @@
             <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
 
 
-                    <div  class ="border-yellow col-md-8 col-md-offset-2 padding-payment">
+                    <div  class ="border-yellow col-md-8 col-md-offset-2 no-padding">
                         <div class="modal-header bg-yellow">
                             <h4 class="modal-title">{{ 'dash_change_credit_Card' | trans({}, "messages", lang)}}</h4>
                         </div>
-
+                        <div  class ="padding-payment">
                         <h5 class="error-message text-bold text-center">{[cc.error]} </h5>
                         <h5 class="message-info text-bold text-center">{[cc.info]} </h5>
 
@@ -107,7 +110,7 @@
 
                         </div>
                     </div>
-
+                    </div>
         </div>
     </div>
 

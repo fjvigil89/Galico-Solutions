@@ -807,14 +807,19 @@
                        <source>Request ID</source>
                        <target>Request ID</target>
                 </trans-unit>
-                 <trans-unit id="status_open" resname="status_open">
-                       <source>Open</source>
-                       <target>Open</target>
+                 <trans-unit id="OPEN" resname="OPEN">
+                       <source>OPEN</source>
+                       <target>OPEN</target>
                 </trans-unit>					
-                 <trans-unit id="status_closed" resname="status_closed">
-                       <source>Closed</source>
-                       <target>Closed</target>
-                </trans-unit>	
+                 <trans-unit id="CLOSED" resname="CLOSED">
+                       <source>CLOSED</source>
+                       <target>CLOSED</target>
+                </trans-unit>
+                  <trans-unit id="PENDING" resname="PENDING">
+                        <source>PENDING</source>
+                        <target>PENDING</target>
+                 </trans-unit>
+
                  <trans-unit id="dash_intervention" resname="dash_intervention">
                        <source>Intervention</source>
                        <target>Intervention</target>
@@ -935,19 +940,19 @@
                 </trans-unit>			
 			        <trans-unit id="dash_credit_card" resname="dash_credit_card">
                        <source>Credit Card</source>
-                       <target>Credit Card</target>
+                       <target>Credit card</target>
                 </trans-unit>
 		        <trans-unit id="dash_name_card" resname="dash_name_card">
                        <source>Name on Card:</source>
-                       <target>Name on Card:</target>
+                       <target>Name on card:</target>
                 </trans-unit>
 		        <trans-unit id="dash_card_type" resname="dash_card_type">
                        <source>Card Type:</source>
-                       <target>Card Type:</target>
+                       <target>Card type:</target>
                 </trans-unit>				
 			        <trans-unit id="dash_card_number" resname="dash_card_number">
                        <source>Card Number:</source>
-                       <target>Card Number:</target>
+                       <target>Card number:</target>
                 </trans-unit>
 		        <trans-unit id="dash_expiration_date" resname="dash_expiration_date">
                        <source>Expiration date:</source>
@@ -1025,7 +1030,31 @@
                                <source>Total amount</source>
                                <target>Total amount</target>
                         </trans-unit>
+                        <trans-unit id="dash_customer" resname="dash_customer">
+                               <source>Customer</source>
+                               <target>Customer</target>
+                        </trans-unit>
+                         <trans-unit id="dash_house_service" resname="dash_house_service">
+                                <source>House</source>
+                                <target>House</target>
+                         </trans-unit>
+                         <trans-unit id="dash_request_details" resname="dash_request_details">
+                                <source>Request details</source>
+                                <target>Request details</target>
+                         </trans-unit>
+                         <trans-unit id="dash_no_houses_selected" resname="dash_no_houses_selected">
+                                <source>NO HOUSE SELECTED</source>
+                                <target>NO HOUSE SELECTED</target>
+                         </trans-unit>
+			    <trans-unit id="dash_payservice" resname="dash_payservice">
+                       <source>Payment service</source>
+                       <target>Payment service</target>
+                </trans-unit>
 
+ 			    <trans-unit id="dash_pay" resname="dash_pay">
+                        <source>Pay</source>
+                        <target>Pay</target>
+                 </trans-unit>
 <!--End my dashboard-->	
 
 
@@ -1125,7 +1154,10 @@
                              <source>Sincerely,Your friends at</source>
                              <target>Sincerely,Your friends at</target>
                         </trans-unit>
-
+                        <trans-unit id="template_invoice" resname="template_invoice">
+                             <source>Invoice</source>
+                             <target>Invoice</target>
+                        </trans-unit>
 
 
 
