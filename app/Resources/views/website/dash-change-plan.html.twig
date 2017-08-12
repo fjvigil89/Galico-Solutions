@@ -9,7 +9,7 @@
     <div class="pad">
     </div>
     <div>
-    <div class="container" ng-controller="PlanController">
+    <div class="container" ng-controller="ChangePlanController" ng-cloak>
         <div class="row">
             <div class="col-xs-12 col-md-3">
                 {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
@@ -23,9 +23,6 @@
                         <thead class="bg-yellow font-header">
                         <tr>
                             <th colspan="5">{{ 'dash_change_plans' | trans({}, "messages", lang)}}</th>
-
-
-
                         </tr>
                         </thead>
                         <thead class="bg-light-gray">
@@ -39,38 +36,51 @@
                         </thead>
                         <tbody>
 
-                            {% for house in houses %}
-                                <tr>
-                                    <td>{{ house.country }}</td>
-                                    <td>{{ house.address }}</td>
-                                    <td>{{ house.city }}</td>
-                                    <td>{{ house.agentNumber }}</td>
-                                    <td>
-                                        <select class="form-control" ng-change="changePlan({{ house.id }})">
-                                            {% for plan in plans %}
-                                                {% set selected = '' %}
-                                                {% if(plan.planid==house.planId) %}
-                                                    {% set selected = 'selected' %}
-                                                {% endif %}
-
-                                                <option value="{{ plan.planid }}" {{ selected }}>{{ plan.planname }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </td>
-                                </tr>
-                           {% endfor %}
-
-
+                            <tr ng-repeat="house in houses">
+                                <td>{[ house.country ]}</td>
+                                <td>{[ house.address ]}</td>
+                                <td>{[ house.city ]}</td>
+                                <td>{[ house.agentNumber ]}</td>
+                                <td>
+                                    <select class="form-control" ng-model="house.planId" ng-click="planClicked(house)"  ng-change="planChanged(house)" >
+                                        <option ng-repeat="plan in plans" value="{[plan.id]}">{[plan.name]}</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
+            </div>
+        </div>
 
 
 
+        <!-- Modal -->
+        <div id="changePlanModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Changing plan</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to change your plan?</p>
+                        <p>your monthly payment will be  {[newPrice]}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelChange()">Cancel</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveChange()">Change plan</button>
+                    </div>
+                </div>
 
             </div>
         </div>
+
+
+
 
 
     </div>
@@ -78,4 +88,11 @@
     </div>
     <div class="pad">
     </div>
+
+
+
+
+
+
+    <input type="hidden" id="customerId" value="{{ customer.customerid }}">
 {% endblock %}

@@ -43,6 +43,11 @@ angular.module("gpApp")
         }
     })
 
+
+    //*-*************************************************************************//
+    //*-****************************** CONTACT SERVICE **************************//
+    //*-*************************************************************************//
+
     .service('ContactService',function($http,RouterService){
 
         this.sendMessage = function(msg){
@@ -59,6 +64,11 @@ angular.module("gpApp")
             });
         }
     })
+
+
+    //*-*************************************************************************//
+    //*-*********************************** CC SERVICE **************************//
+    //*-*************************************************************************//
 
     .service('CCService',function($http,RouterService){
 
@@ -82,6 +92,12 @@ angular.module("gpApp")
             return $http.post(url, data, config);
         }
     })
+
+
+
+    //*-*************************************************************************//
+    //*-************************ DASHBOARD SERVICE ******************************//
+    //*-*************************************************************************//
 
     .service('DashboardService',function($http,RouterService){
         this.getCustomerInformation = function(id)
@@ -237,6 +253,10 @@ angular.module("gpApp")
         }
     })
 
+    //*-*************************************************************************//
+    //*-******************************** ADMIN SERVICE **************************//
+    //*-*************************************************************************//
+
     .service('AdminService',function($http,RouterService){
 
         this.getTechnicianInformation = function(id)
@@ -268,8 +288,42 @@ angular.module("gpApp")
             };
             return $http.post(url, data, config);
         }
+    })
 
 
+//*-*************************************************************************//
+//*-********************************* PLAN SERVICE **************************//
+//*-*************************************************************************//
 
+    .service('PlanService',function($http,RouterService){
+
+        this.updateCC = function (cc) {
+
+            var url = RouterService.getEndPoint() + '/ccupdaterecurring'
+            var data = $.param({
+                customerId : cc.customerId,
+                nameOnCard : cc.nameOnCard,
+                cardNumber : cc.cardNumber,
+                cvv : cc.cvv,
+                expirationDate : cc.expMonth+""+cc.expYear
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+
+
+        this.getPlans = function()
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/plansList',
+                method: "GET",
+            })
+        }
 
     })
