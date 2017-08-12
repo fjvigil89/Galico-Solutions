@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} My profile{% endblock %}
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_profile' | trans({}, "messages", lang)}}
+{% endblock %}
+
 
 {% block body %}
     <div class="pad">

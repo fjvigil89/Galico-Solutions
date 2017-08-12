@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Request service{% endblock %}
-
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_create_serviceReq' | trans({}, "messages", lang)}}
+{% endblock %}
 {% block body %}
     <div class="pad">
     </div>
@@ -15,7 +17,7 @@
 
                 <div class="modal-header bg-yellow">
 
-                    <h4 class="modal-title">Service Request</h4>
+                    <h4 class="modal-title">{{ 'dash_create_serviceReq' | trans({}, "messages", lang)}}</h4>
                 </div>
 
                 <div class="modal-body">
@@ -26,7 +28,7 @@
                         </div><br>-->
 
                         <div class="row">
-                            <div class="col-xs-4 text-bold">Reference Number</div>
+                            <div class="col-xs-4 text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</div>
                             <div class="col-xs-7" >: {{ invoiceNumber }} </div>
                         </div><br>
 
@@ -36,11 +38,11 @@
                             <div class="col-xs-7" >: {{ today }} </div>
                         </div><br>
                         <div class="row">
-                            <div class="col-xs-4 text-bold">Customer</div>
+                            <div class="col-xs-4 text-bold">{{ 'dash_customer' | trans({}, "messages", lang)}}</div>
                             <div class="col-xs-7" > : {{ customer.firstname ~ " " ~ customer.lastname }}</div>
                         </div><br>
                         <div class="row">
-                            <label class="col-xs-4 text-bold" for="addr">House</label>
+                            <label class="col-xs-4 text-bold" for="addr">{{ 'dash_house_service' | trans({}, "messages", lang)}}</label>
                             <div class="col-xs-7">
                                 <select name="houseId" id="houseId"  class="form-control" ng-model="request.houseId">
                                     <option value=""></option>
@@ -58,7 +60,7 @@
                         </div><br>-->
 
                         <div class="row">
-                            <label class="col-xs-4 text-bold" for="servicereq">Service </label>
+                            <label class="col-xs-4 text-bold" for="servicereq">{{ 'admin_service' | trans({}, "messages", lang)}} </label>
                             <div class="col-xs-7">
 
                                 <select id="serviceId" name="serviceId" class="form-control" ng-model="request.serviceId">
@@ -73,14 +75,14 @@
                         </div><br>
 
                         <div class="row">
-                            <div class="col-xs-4 text-bold">Request details:</div>&nbsp;
+                            <div class="col-xs-4 text-bold">{{ 'dash_request_details' | trans({}, "messages", lang)}}:</div>&nbsp;
                             <div class="col-xs-7">&nbsp;&nbsp;&nbsp;
                                 <textarea class="form-control " rows="10" name="requestDetails" id="requestDetails" ng-model="request.requestDetails"></textarea>
                             </div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-xs-12 error-message text-center" ng-if="request.houseId==undefined || request.houseId==''">**** NO HOUSE SELECTED ****</div>
+                            <div class="col-xs-12 error-message text-center" ng-if="request.houseId==undefined || request.houseId==''">**** {{ 'dash_no_houses_selected' | trans({}, "messages", lang)}} ****</div>
                         </div><br>
 
 

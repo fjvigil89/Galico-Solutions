@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_view_payments' | trans({}, "messages", lang)}}
+{% endblock %}
+
+{% block body %}
+    <div class="pad">
+    </div>
+    <div ng-controller="DashboardController">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    {% include 'website/sidemenu.html.twig' with {'customerId' : customer.customerid} %}
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+
+                            <thead class="bg-yellow font-header">
+                            <tr>
+                                <th colspan="5">{{ 'dash_view_payments' | trans({}, "messages", lang)}}</th>
+
+
+
+                            </tr>
+                            </thead>
+                            <thead class="bg-light-gray">
+                            <tr>
+                                <th>{{ 'dash_payment_date' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'admin_service' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'dash_total_amount' | trans({}, "messages", lang)}}</th>
+
+                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                <th>
+
+
+
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr ng-repeat="house in houses">
+                                <td ng-bind="house.country"></td>
+                                <td ng-bind="house.address"></td>
+                                <td ng-bind="house.city"></td>
+
+
+
+                                <td ng-bind="house.agentNumber"></td>
+                                <td>
+
+
+
+
+
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="pad">
+    </div>
+{% endblock %}

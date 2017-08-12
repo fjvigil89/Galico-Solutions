@@ -818,14 +818,18 @@
                        <source>Request ID</source>
                        <target>Code de la requête</target>
                 </trans-unit>
-                 <trans-unit id="status_open" resname="status_open">
-                       <source>Open</source>
-                       <target>Ouvert</target>
-                </trans-unit>					
-                 <trans-unit id="status_closed" resname="status_closed">
-                       <source>Closed</source>
-                       <target>Fermé</target>
-                </trans-unit>	
+                 <trans-unit id="OPEN" resname="OPEN">
+                       <source>OPEN</source>
+                       <target>OUVERT</target>
+                </trans-unit>
+                 <trans-unit id="CLOSED" resname="CLOSED">
+                       <source>CLOSED</source>
+                       <target>FERMÉ</target>
+                </trans-unit>
+                  <trans-unit id="PENDING" resname="PENDING">
+                        <source>PENDING</source>
+                        <target>EN ATTENTE</target>
+                 </trans-unit>
                  <trans-unit id="dash_intervention" resname="dash_intervention">
                        <source>Intervention</source>
                        <target>Intervention</target>
@@ -1032,7 +1036,31 @@
                                <source>Total amount</source>
                                <target>Montant total</target>
                    </trans-unit>
+                        <trans-unit id="dash_customer" resname="dash_customer">
+                               <source>Customer</source>
+                               <target>Client</target>
+                        </trans-unit>
+                         <trans-unit id="dash_house_service" resname="dash_house_service">
+                                <source>House</source>
+                                <target>Maison</target>
+                         </trans-unit>
+                         <trans-unit id="dash_request_details" resname="dash_request_details">
+                                <source>Request details</source>
+                                <target>Détails de la requête</target>
+                         </trans-unit>
+                          <trans-unit id="dash_no_houses_selected" resname="dash_no_houses_selected">
+                                 <source>NO HOUSE SELECTED</source>
+                                 <target>AUCUN MAISON A ÉTÉ SELECTIONNE</target>
+                          </trans-unit>
+			    <trans-unit id="dash_payservice" resname="dash_payservice">
+                       <source>Payment service</source>
+                       <target>Paiement de servicio</target>
+                </trans-unit>
 
+ 			    <trans-unit id="dash_pay" resname="dash_pay">
+                        <source>Pay</source>
+                        <target>Payer</target>
+                 </trans-unit>
 
 <!--End my dashboard-->	
 
@@ -1135,6 +1163,12 @@
                                  <source>Sincerely,Your friends at</source>
                              <target>Cordialement, vos amis de</target>
                         </trans-unit>
+                        <trans-unit id="template_invoice" resname="template_invoice">
+                             <source>Invoice</source>
+                             <target>Facture</target>
+                        </trans-unit>
+
+
 <!--End Template Welcome-->
 
 <!--Admin Console-->

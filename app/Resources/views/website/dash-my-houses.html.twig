@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} My houses{% endblock %}
+{% block title %}
+    {% set lang = app.session.get('lang') %}
+    {{ 'dash_house' | trans({}, "messages", lang)}}
+{% endblock %}
 
 {% block body %}
     <div class="pad">

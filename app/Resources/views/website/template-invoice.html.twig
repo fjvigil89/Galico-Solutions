@@ -92,10 +92,10 @@
         <br>
 
         <i>GENERAL PRO</i>
-        <p>Adresse: 661 Notre-Dame St-Remi,</p>
+        <p>{{ 'form_address' | trans({}, "messages", lang) }}: 661 Notre-Dame St-Remi,</p>
         <p>J0L 2L0 - Québec, Canada </p>
-        <p>Telephone: 1-(514)-375-4523 </p>
-        <p>Email: contact@general-pro.com </p>
+        <p>{{ 'form_phone_primary' | trans({}, "messages", lang) }}: 1-(514)-375-4523 </p>
+        <p>{{ 'form_email' | trans({}, "messages", lang) }}: contact@general-pro.com </p>
 
 
     </nav>
@@ -103,24 +103,24 @@
 
         <p>{{customerFullname}}, </p>
         <p>{{ address}}, </p>
-        <p>Telephone: {{ telephone}} </p>
-        <p>Email: {{ email }} </p>
+        <p>{{ 'form_phone_primary' | trans({}, "messages", lang) }}: {{ telephone}} </p>
+        <p>{{ 'form_email' | trans({}, "messages", lang) }}: {{ email }} </p>
         <br><br><br>
         <table style= "width:100%" >
 
             <tbody>
             <tr>
-                <th style="text-align:left">Invoice #</th>
+                <th style="text-align:left">{{ 'template_invoice' | trans({}, "messages", lang) }} #</th>
                 <td>AF124343</td>
 
             </tr>
             <tr>
-                <th style="text-align:left">Date</th>
+                <th style="text-align:left">{{ 'dash_sdate' | trans({}, "messages", lang) }}</th>
                 <td>12-04-2017</td>
 
             </tr>
             <tr>
-                <th style="text-align:left">Amount</th>
+                <th style="text-align:left">{{ 'dash_amount' | trans({}, "messages", lang) }}</th>
                 <td>29.99</td>
 
             </tr>
