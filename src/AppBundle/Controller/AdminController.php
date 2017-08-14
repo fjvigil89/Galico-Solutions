@@ -7,6 +7,7 @@ use AppBundle\Entity\Admins;
 use AppBundle\Entity\Houses;
 use AppBundle\Entity\Localnumbers;
 use AppBundle\Entity\Technicians;
+use AppBundle\Entity\Requests;
 use AppBundle\Entity\Prices;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -348,12 +349,20 @@ class AdminController extends Controller
      */
     public function sendEmailAction()
     {
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customers = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $requests = $repository->findAll();
+
+
         {
-            return $this->render('website/admin-send-email.html.twig');
-        }
+            return $this->render('website/admin-send-email.html.twig',array(
+            'customers' =>  $customers, 'requests' =>  $requests,
+        ));
     }
 
-
+    }
 
 
     private function getRandomImage()
@@ -380,7 +389,7 @@ class AdminController extends Controller
                 ->setSubject("$subject")
                 ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
                 ->setTo("$email")
-                ->attach(\Swift_Attachment::fromPath($attachment))
+               // ->attach(\Swift_Attachment::fromPath($attachment))
                 ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
                     'text/html'
 

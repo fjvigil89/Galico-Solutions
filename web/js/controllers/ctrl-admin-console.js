@@ -410,6 +410,14 @@ $scope.addtechnician = function () {
 
         }
 
+
+        $scope.getemail= function () {
+
+        $scope.request.email = "hola";
+
+        }
+
+
         $scope.getCustomerInformation();
         $scope.getHousesInformation();
 
