@@ -525,12 +525,14 @@ class UserController extends Controller
             $hs = array();
             $hs['id'] =$house->getHouseid();
             $hs['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
+            $hs['planId'] = "" . $subscriptions[$index]->getPrice()->getPlan()->getPlanid();
             $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
             //$hs['dueDate'] = $this->getDueDate($hs['subscriptionDate']);
             //$hs['contact'] = $house->getFirstname() . " " . $house->getLastname();
             $hs['phonePrimary'] = $house->getPhoneprimary();
             $hs['phoneAlternate'] = $house->getPhonealternate();
             $hs['country'] = $house->getCountry();
+            $hs['countryISO'] = $this->getCountryISO($house->getCountry());
             $hs['state'] = $house->getState();
             $hs['city'] = $house->getCity();
             $hs['address'] = $house->getAddress();
@@ -664,6 +666,26 @@ class UserController extends Controller
         $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
 
         return $this->json(array("planName" => $plan->getPlanname(),"price" => $planPrice->getPrice(),"currency"=>$country->getCurrencyiso()));
+    }
+
+
+    /**
+     * @Route("/plansList")
+     */
+    public function getPlansAction(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
+        $plans = $repository->findAll();
+        $allPlans = array();
+
+        foreach($plans as $plan)
+        {
+            $p = array();
+            $p['id'] = $plan->getPlanid();
+            $p['name'] = $plan->getPlanname();
+            $allPlans[] = $p;
+        }
+        return $this->json($allPlans);
     }
 	
 	/**
@@ -815,7 +837,7 @@ class UserController extends Controller
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
-            return $this->render('website/dash-change-plan.html.twig',array('customer'=>$customer,'houses'=>$customerHouses,'plans'=>$plans));
+            return $this->render('website/dash-change-plan.html.twig',array('customer'=>$customer));
 
         }
         else
@@ -823,6 +845,51 @@ class UserController extends Controller
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
 
+    }
+
+    /**
+     * @Route("/saveChangePlan", name="saveChangePlan")
+     */
+    public function saveChangePlanAction(Request $request)
+    {
+        $customerId = $request->request->get('customerId');
+        $houseId = $request->request->get('houseId');
+        $planId = $request->request->get('planId');
+        $countryISO3 = $request->query->get('countryISO3');
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
+        $plan = $repository->find($planId);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Countries");
+        $country = $repository->findOneByCountryiso3($countryISO3);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Prices");
+        $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
+
+        $updateStatus = -1;
+        $response = array();
+        if($this->isCustomerValid($customerId))
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+            $customer = $repository->find($customerId);
+
+            if($customer)
+            {
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+                $house = $repository->find($houseId);
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Subscriptions');
+                $subscription = $repository->findOneByHouse($house);
+                $subscription->setPrice($planPrice);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                $updateStatus = 1;
+
+            }
+            $response['updateStatus'] = $updateStatus;
+        }
+
+        return $this->json($response);
     }
 
     /**
@@ -1129,6 +1196,28 @@ class UserController extends Controller
 
         return $customerHouses;
     }
+
+    private function getPlanPrice($countryISO3,$planId)
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
+        $plan = $repository->find($planId);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Countries");
+        $country = $repository->findOneByCountryiso3($countryISO3);
+
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Prices");
+        $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
+
+        return $planPrice->getPrice() . "|" . $country->getCurrencyiso();
+    }
+
+    private function getCountryISO($countryName)
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Countries");
+        $country = $repository->findOneByCountry($countryName);
+        return $country->getCountryiso3();
+    }
+
 
     /**
      * @Route("/makePayment/{customerId}", name="rte_makePayment")
