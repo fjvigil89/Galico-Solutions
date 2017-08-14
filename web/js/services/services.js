@@ -326,4 +326,24 @@ angular.module("gpApp")
             })
         }
 
+        this.saveChangePlan = function(planInfo)
+        {
+            console.log(planInfo);
+            var url = RouterService.getEndPoint() + '/saveChangePlan'
+            var data = $.param({
+                customerId : planInfo.customerId,
+                houseId : planInfo.houseId,
+                planId : planInfo.planId,
+                countryISO3 : planInfo.countryISO3
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+
     })

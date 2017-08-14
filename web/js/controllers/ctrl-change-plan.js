@@ -59,9 +59,21 @@ angular.module("gpApp")
 
         $scope.saveChange = function()
         {
+            var planInfo = {};
+            planInfo.customerId = $scope.customerId;
+            planInfo.houseId = $scope.currentHouse.id;
+            planInfo.planId = $scope.currentHouse.planId;
+            planInfo.countryISO3 = $scope.currentHouse.countryISO;
+
+            PlanService.saveChangePlan(planInfo)
+                .then(function(response){
+                    console.log(response);
+                },function (error) {
+                    console.error(error);
+
+                })
 
             $scope.previousPlanId = "";
-
         }
 
 
