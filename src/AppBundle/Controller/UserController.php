@@ -1238,10 +1238,14 @@ class UserController extends Controller
             }
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
-            $customer = $repository->find($customerId);
+            $requests = $repository->findByInvoicetype("REQUEST");
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+            $country = $repository->findOneByCountry($customer->getCountry());
 
 
-            return $this->render('website/dash-make-payments.html.twig',array('customer'=>$customer));
+            return $this->render('website/dash-make-payments.html.twig',array('customer'=>$customer,'requests'=>$requests,
+                'currency'=>$country->getCurrencyiso()));
         }
         else
         {
@@ -1256,6 +1260,10 @@ class UserController extends Controller
     public function getCustomerRequestsAction($customerId)
     {
 
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $requests = $repository->findByInvoicetype("REQUEST");
+
+        return $this->json(count($requests));
     }
 
 }
