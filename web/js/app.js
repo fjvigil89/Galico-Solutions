@@ -65,7 +65,13 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CARDNUMBER" : "Please provide your card number.",
         "ERR_DASHBOARD_CVV"     : "Please provide your CVV number",
         "ERR_DASHBOARD_EXPMONTH"    : "The expiration date is invalid.",
-        "ERR_DASHBOARD_EXPYEAR"    : "The expiration date is invalid."
+        "ERR_DASHBOARD_EXPYEAR"    : "The expiration date is invalid.",
+
+        "ERR_HOUSE_INVALID" : "Please select a house.",
+        "ERR_SERVICE_INVALID" : "Please select a service type.",
+        "ERR_REQUEST_DETAILS_INVALID" : "Please provide a short details of the request."
+
+
     });
 
     // Adding a translation table for the Spanish language
@@ -124,7 +130,13 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CARDNUMBER" : "Por favor ingrese un número de tarjeta.",
         "ERR_DASHBOARD_CVV"     : "Por favor ingresar un código de seguridad válido.",
         "ERR_DASHBOARD_EXPMONTH"    : "La fecha de expiración no es válido.",
-        "ERR_DASHBOARD_EXPYEAR"    : "La fecha de expiración no es válido."
+        "ERR_DASHBOARD_EXPYEAR"    : "La fecha de expiración no es válido.",
+        "ERR_HOUSE_INVALID" : "Por favor seleccione una casa.",
+        "ERR_SERVICE_INVALID" : "Por favor seleccione un servicio.",
+        "ERR_REQUEST_DETAILS_INVALID" : "Por favor ingrese un resumen de la solicitud ."
+
+
+
     });
 
     // Adding a translation table for the French language
@@ -184,7 +196,10 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_CARDNUMBER" : "Vous devez saisir un numéro de carte.",
         "ERR_DASHBOARD_CVV"     : "Vous devez saisir un code de sécurité valide.",
         "ERR_DASHBOARD_EXPMONTH"    : "La date d'expiration n'est pas valide.",
-        "ERR_DASHBOARD_EXPYEAR"    : "La date d'expiration n'est pas valide."
+        "ERR_DASHBOARD_EXPYEAR"    : "La date d'expiration n'est pas valide.",
+        "ERR_HOUSE_INVALID" : "Veuillez sélectioner une maison.",
+        "ERR_SERVICE_INVALID" : "Veuillez sélectioner un service.",
+        "ERR_REQUEST_DETAILS_INVALID" : "Veuillez fournir une brève description de la requête."
     });
 
     // Tell the module what language to use by default

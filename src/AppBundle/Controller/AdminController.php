@@ -189,12 +189,6 @@ class AdminController extends Controller
 
 
 
-
-
-
-
-
-
     /**
      * @Route("/admin")
      */
@@ -318,9 +312,6 @@ class AdminController extends Controller
                 'prices' =>  $prices,
             ));
 
-
-
-
     }
 
 
@@ -346,7 +337,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/sendEmail")
+     * @Route("/sendEmailForm", name="rte_sendEmailForm")
      */
     public function sendEmailAction()
     {
@@ -382,18 +373,23 @@ class AdminController extends Controller
         $subject = $request->request->get('subject');
         $email = $request->request->get('email');
         $image = $this->getRandomImage();
-        $attachment= $request->request->get('file');
+        $attachment= $request->files->get('file');
+
+         $attachment->move('images/upload/',$attachment->getClientOriginalName()
+
+        );
+        $namefile = $attachment->getClientOriginalName();
 
 
             # Setup the message
             $message = \Swift_Message::newInstance()
                 ->setSubject("$subject")
                 ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
-                ->setTo("$email")
-               // ->attach(\Swift_Attachment::fromPath($attachment))
+                ->setTo($email)
+               ->attach(\Swift_Attachment::fromPath('images/upload/'.$namefile))
+               // ->attach(\Swift_Attachment::fromPath('images/page-home/services-032.jpg'))
                 ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
                     'text/html'
-
 
                 );
 
@@ -405,7 +401,7 @@ class AdminController extends Controller
             //--
 
 
-            return $this->render('website/admin-send-email.html.twig');
+        return $this->redirectToRoute("rte_sendEmailForm");
 
         }
 

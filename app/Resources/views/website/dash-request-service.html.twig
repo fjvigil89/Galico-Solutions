@@ -81,9 +81,9 @@
                             </div>
                         </div><br>
 
-                        <div class="row">
-                            <div class="col-xs-12 error-message text-center" ng-if="request.houseId==undefined || request.houseId==''">**** {{ 'dash_no_houses_selected' | trans({}, "messages", lang)}} ****</div>
-                        </div><br>
+
+                            <p class="error-message text-center">{[request.error]}</p>
+
 
 
                         <div class="modal-footer">
