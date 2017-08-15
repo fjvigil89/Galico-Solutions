@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Subscriptions
  *
  * @ORM\Table(name="subscriptions", indexes={@ORM\Index(name="CustomerID", columns={"HouseID"}), @ORM\Index(name="PriceID", columns={"PriceID"})})
- * @ORM\Entity(repositoryClass="SubscriptionsRepository")
+ * @ORM\Entity
  */
 class Subscriptions
 {
@@ -72,8 +72,6 @@ class Subscriptions
     {
         $this->payments = new ArrayCollection();
     }
-
-
 
     /**
      * @return \DateTime

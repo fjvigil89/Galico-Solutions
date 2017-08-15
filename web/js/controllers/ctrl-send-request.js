@@ -14,15 +14,20 @@ angular.module("gpApp")
             {
 
                 $scope.request.error = "";
-				
-				if(GeneralService.isInvalid($scope.request.serviceId))
+
+                if(GeneralService.isInvalid($scope.request.houseId))
                 {
-                    $scope.update.error = $translate.instant('ERR_SERVICE_INVALID');
+                    $scope.request.error = $translate.instant('ERR_HOUSE_INVALID');
+                    $window.document.getElementById("serviceId").focus();
+                }
+                else if(GeneralService.isInvalid($scope.request.serviceId))
+                {
+                    $scope.request.error = $translate.instant('ERR_SERVICE_INVALID');
                     $window.document.getElementById("serviceId").focus();
                 }
                 else if(GeneralService.isInvalid($scope.request.requestDetails))
                 {
-                    $scope.update.error = $translate.instant('ERR_REQUEST_DETAILS_INVALID');
+                    $scope.request.error = $translate.instant('ERR_REQUEST_DETAILS_INVALID');
                     $window.document.getElementById("requestDetails").focus();
                 }
 

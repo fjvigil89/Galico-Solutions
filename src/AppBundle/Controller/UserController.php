@@ -38,8 +38,6 @@ $session = new Session();
 class UserController extends Controller
 {
 
-
-
     /**
      * @Route("/authenticate")
      */
@@ -855,9 +853,9 @@ class UserController extends Controller
         $customerId = $request->request->get('customerId');
         $houseId = $request->request->get('houseId');
         $planId = $request->request->get('planId');
-        $countryISO3 = $request->query->get('countryISO3');
+        $countryISO3 = $request->request->get('countryISO3');
 
-        $repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
+        /*$repository = $this->getDoctrine()->getRepository("AppBundle:Plans");
         $plan = $repository->find($planId);
 
         $repository = $this->getDoctrine()->getRepository("AppBundle:Countries");
@@ -865,12 +863,16 @@ class UserController extends Controller
 
         $repository = $this->getDoctrine()->getRepository("AppBundle:Prices");
         $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
+*/
+        $planPrice = $this->getPlanPrice($countryISO3,$planId);
+
+        //die($planPrice);
 
         $updateStatus = -1;
         $response = array();
         if($this->isCustomerValid($customerId))
         {
-            $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
             $customer = $repository->find($customerId);
 
             if($customer)
@@ -911,7 +913,7 @@ class UserController extends Controller
             $repository = $this->getDoctrine()->getRepository('AppBundle:Services');
             $services = $repository->findAll();
 
-            $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
+            $invoiceNumber = $this->getNextReferenceNumber($customer->getCountry());
             $today = date("Y-m-d");
 
             return $this->render('website/dash-request-service.html.twig',array(
@@ -1094,7 +1096,7 @@ class UserController extends Controller
         }
     }
 
-    private function getNextInvoiceNumber($countryName)
+    private function getNextReferenceNumber($countryName)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
         $country = $repository->findOneByCountry("$countryName");
@@ -1208,7 +1210,7 @@ class UserController extends Controller
         $repository = $this->getDoctrine()->getRepository("AppBundle:Prices");
         $planPrice = $repository->findOneBy(array('country'=>$country,'plan'=>$plan));
 
-        return $planPrice->getPrice() . "|" . $country->getCurrencyiso();
+        return $planPrice;//->getPrice() . "|" . $country->getCurrencyiso();
     }
 
     private function getCountryISO($countryName)
@@ -1227,21 +1229,32 @@ class UserController extends Controller
 
         if($this->isCustomerValid($customerId))
         {
-
             $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
             $customer = $repository->find($customerId);
-
 
             if(!$customer)
             {
                 return $this->redirectToRoute('app_pagenavigation_showsignin');
             }
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+            $customer = $repository->find($customerId);
+
+
             return $this->render('website/dash-make-payments.html.twig',array('customer'=>$customer));
         }
         else
         {
             return $this->redirectToRoute('app_pagenavigation_showsignin');
         }
+
+    }
+
+    /**
+     * @Route("/cRequests/{customerId}", name="rte_c_requests")
+     */
+    public function getCustomerRequestsAction($customerId)
+    {
 
     }
 
