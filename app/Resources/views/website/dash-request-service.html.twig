@@ -7,7 +7,7 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div  ng-controller="SendRequestController">
+    <div  ng-controller="SendRequestController" ng-cloak>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -26,7 +26,7 @@
                         <!--<div class="row">
                             <div class="col-xs-12 error-message text-center">Charges may apply if service requested is not included in plan</div>
                         </div><br>-->
-
+                        <p class="error-message text-center">{[request.error]}</p>
                         <div class="row">
                             <div class="col-xs-4 text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</div>
                             <div class="col-xs-7" >: {{ invoiceNumber }} </div>
