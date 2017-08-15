@@ -43,66 +43,22 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>14/08/2017</td>
-                                <td>Plumbing</td>
-                                <td>CAD 300</td>
-                                <td>FACE23442</td>
-
-
-                                <td>
-
-
-                                    <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-list-alt" title="edit"></span></button>
-
-                                    <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="edit"></span></button>
-
-
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>15/08/2017</td>
-                                <td>Plumbing</td>
-                                <td>CAD 200</td>
-                                <td>FACWSD23442</td>
-
-                                <td>
-
-
-                                    <button data-toggle="modal" data-target="#edittechnicianModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-list-alt" title="edit"></span></button>
-
-                                    <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="edit"></span></button>
-
-
-                                </td>
-                            </tr>
-
-                            <!--tr ng-repeat="house in houses">
-                                <td ng-bind="house.country"></td>
-                                <td ng-bind="house.address"></td>
-                                <td ng-bind="house.city"></td>
-
-
-
-                                <td ng-bind="house.agentNumber"></td>
-                                <td>
-
-
-
-
-
-                                </td>
-                            </tr-->
-
+                            {% for req in requests %}
+                                <tr>
+                                    <td>{{ req.requestdate |date('Y-m-d')}}</td>
+                                    <td>{{ req.requestservices[0].service.servicename }} </td>
+                                    <td>{{ (req.amount + req.tax) |number_format(2) ~ " " ~ currency}} </td>
+                                    <td>{{ req.referencenumber }} </td>
+                                    <td>
+                                        <a href="{{ path('rte_proforma',{'referenceNumber': req.referencenumber}) }}" target="_blank"><span class="glyphicon glyphicon-file" title="View proforma"></span></a>
+                                        <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs"><span class="glyphicon glyphicon-usd" title="Pay"></span></button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
 
                             </tbody>
                         </table>
                     </div>
-
-
-
-
 
                 </div>
             </div>
