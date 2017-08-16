@@ -37,7 +37,10 @@ class WorkUsController extends Controller
         $service = $request->request->get('servicework');
         $image = $this->getRandomImage();
         $messagedetails= $request->request->get('messagework');
+        $cvfile = $request->files->get('cvfile');
+        $cvfile->move('images/cvFiles/',$cvfile->getClientOriginalName());
 
+        $cvFileName = $cvfile->getClientOriginalName();
 
         $body = "\n\n CAREERS\n";
         $body .= "------------------------------\n\n";
@@ -56,6 +59,7 @@ class WorkUsController extends Controller
             ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
             ->setCc("$email")
             ->setTo("request@general-pro.com")
+            ->attach(\Swift_Attachment::fromPath('images/cvFiles/'.$cvFileName))
             ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $body, "image" => $image)),
                 'text/html'
 

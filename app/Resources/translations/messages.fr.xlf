@@ -1054,7 +1054,7 @@
                           </trans-unit>
 			    <trans-unit id="dash_payservice" resname="dash_payservice">
                        <source>Payment service</source>
-                       <target>Paiement de servicio</target>
+                       <target>Paiement de service</target>
                 </trans-unit>
 
  			    <trans-unit id="dash_pay" resname="dash_pay">
