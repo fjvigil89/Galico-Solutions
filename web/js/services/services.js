@@ -347,3 +347,18 @@ angular.module("gpApp")
         }
 
     })
+	
+	
+	//*-*************************************************************************//
+    //*-****************************** REQUEST SERVICE **************************//
+    //*-*************************************************************************//
+
+    .service('RequestService',function($http,RouterService){
+
+        this.findRequest = function(id){
+            return $http({
+                url : RouterService.getEndPoint() + '/findRequest/'+id,
+                method: "GET",
+            });
+        }
+    })

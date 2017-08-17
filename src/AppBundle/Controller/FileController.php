@@ -17,13 +17,14 @@ class FileController extends Controller
     {
         $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
         $filename = $referenceNumber.".pdf";
-        if(file_exists($filename))
+        $proforma = $resourcesFolderPath . $filename;
+        if(file_exists($proforma))
         {
-            return new BinaryFileResponse($resourcesFolderPath.$filename);
+            return new BinaryFileResponse($proforma);
         }
         else
         {
-            return new Response("FILE DOES NOT EXIST");
+            return new Response("THE PROFORMA IS NOT AVAILABLE YET. TRY AGAIN LATER");
         }
 
 

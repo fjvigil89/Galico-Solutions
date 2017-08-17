@@ -1245,7 +1245,7 @@ class UserController extends Controller
 
 
             return $this->render('website/dash-make-payments.html.twig',array('customer'=>$customer,'requests'=>$requests,
-                'currency'=>$country->getCurrencyiso()));
+                'currency'=>$country->getCurrencyiso(),'today'=>date('Y-m-d')));
         }
         else
         {

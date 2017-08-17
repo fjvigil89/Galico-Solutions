@@ -73,10 +73,11 @@ class ConvergeController extends Controller
 
                 $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
-                //$converge = new ConvergeApi( '007128','webpage','PFZBHCRRL5000NLLTL0DWC5DFIT7R5Q3R596W0NQ4OU45NJ632BIBC44XSI9IHVD',false); // demo api
-                $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
-                $totalAmount = 1.00;
-                $result['platform'] = 'LIVE';
+                $converge = new ConvergeApi( '007128','webpage','TXM3J2',false); // demo api
+                $result['platform'] = 'DEMO';
+                //$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+                //$totalAmount = 1.00;
+                //$result['platform'] = 'LIVE';
 
                 // Submit a recurring payment
                 $response = $converge->ccaddrecurring(
