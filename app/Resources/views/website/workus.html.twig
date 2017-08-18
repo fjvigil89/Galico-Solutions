@@ -82,7 +82,7 @@
                     </div>
                     <div class="col-sm-12">
                         <label class="control-label">{{ 'workus_select_cv' | trans({}, "messages", lang) }}</label>
-                        <input id="cvfile" name="cvfile" type="file" class="file" multiple data-show-upload="false" data-show-caption="true"> </div>
+                        <input id="cvfile" name="cvfile" type="file" class="file" accept=".pdf,.docx"  multiple data-show-upload="false" data-show-caption="true" onchange="checkfile(this)"> </div>
                     <div class="col-sm-12">
                         <button type="button" class="btn" ng-click="sendform()">{{ 'workus_cv' | trans({}, "messages", lang) }}</button>
                     </div>

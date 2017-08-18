@@ -374,8 +374,8 @@ class AdminController extends Controller
         $email = $request->request->get('email');
         $image = $this->getRandomImage();
         $attachment= $request->files->get('file');
-
-         $attachment->move('images/upload/',$attachment->getClientOriginalName()
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
+         $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName()
 
         );
         $namefile = $attachment->getClientOriginalName();
@@ -386,7 +386,7 @@ class AdminController extends Controller
                 ->setSubject("$subject")
                 ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
                 ->setTo($email)
-               ->attach(\Swift_Attachment::fromPath('images/upload/'.$namefile))
+               ->attach(\Swift_Attachment::fromPath($resourcesFolderPath.$namefile))
                // ->attach(\Swift_Attachment::fromPath('images/page-home/services-032.jpg'))
                 ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
                     'text/html'

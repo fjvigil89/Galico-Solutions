@@ -1122,7 +1122,10 @@
                        <source>Subscription date</source>
                        <target>Date de souscription</target>
                 </trans-unit>
-
+		        <trans-unit id="admin_console_treatRequest" resname="admin_console_treatRequest">
+                       <source>Treat the request</source>
+                       <target>Traiter la requête</target>
+                </trans-unit>
 <!--End Admin-console-->
 
 <!--Work us-->
@@ -1206,7 +1209,7 @@
                     </trans-unit>
                     <trans-unit id="admin_request" resname="admin_request">
                            <source>Request</source>
-                           <target>Request</target>
+                           <target>Requêtes</target>
                     </trans-unit>
                     <trans-unit id="admin_interventions" resname="admin_interventions">
                            <source>Interventions</source>

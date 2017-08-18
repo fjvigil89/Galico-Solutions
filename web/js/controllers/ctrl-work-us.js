@@ -10,7 +10,7 @@ angular.module("gpApp")
         $scope.message = {};
         $scope.message.error = "";
         $scope.message.successful = false;
-
+        $scope.greeting = 'Hello, World!';
 
         $scope.sendform = function()
         {
@@ -47,5 +47,22 @@ angular.module("gpApp")
 
             }
         }
+
+        $scope.checkfile = function(sender) {
+            //var validExts = new Array(".pdf", ".doc", ".csv");
+            var validExts = array(".pdf", ".docx");
+            var fileExt = sender.value;
+
+            fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+            if (validExts.indexOf(fileExt) < 0) {
+                alert("Invalid file selected, valid files are of " +
+                    validExts.toString() + " types.");
+                return false;
+            }
+
+            else return true;
+        }
+
+
 
     })

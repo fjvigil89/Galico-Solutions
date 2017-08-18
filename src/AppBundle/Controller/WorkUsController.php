@@ -38,7 +38,8 @@ class WorkUsController extends Controller
         $image = $this->getRandomImage();
         $messagedetails= $request->request->get('messagework');
         $cvfile = $request->files->get('cvfile');
-        $cvfile->move('images/cvFiles/',$cvfile->getClientOriginalName());
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/resumes/';
+        $cvfile->move($resourcesFolderPath,$cvfile->getClientOriginalName());
 
         $cvFileName = $cvfile->getClientOriginalName();
 
@@ -59,7 +60,7 @@ class WorkUsController extends Controller
             ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
             ->setCc("$email")
             ->setTo("request@general-pro.com")
-            ->attach(\Swift_Attachment::fromPath('images/cvFiles/'.$cvFileName))
+            ->attach(\Swift_Attachment::fromPath($resourcesFolderPath.$cvFileName))
             ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $body, "image" => $image)),
                 'text/html'
 

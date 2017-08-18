@@ -18,29 +18,31 @@
                     <table class="table table-hover">
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="7">{{ 'admin_tech_inter' | trans({}, "messages", lang)}}</th>
+                            <th colspan="7">{{ 'admin_request' | trans({}, "messages", lang)}}</th>
 
                         </tr>
                         </thead>
                         <thead class="bg-light-gray">
                         <tr>
-                            <th>{{ 'admin_intervention_id' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'dash_req_date' | trans({}, "messages", lang)}}</th>
                             <th>{{ 'admin_service' | trans({}, "messages", lang)}}</th>
-                            <th>{{ 'admin_data_service' | trans({}, "messages", lang)}}</th>
                             <th>{{ 'admin_amount' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'dash_customer' | trans({}, "messages", lang)}}</th>
+                            <th>{{ 'dash_status' | trans({}, "messages", lang)}}</th>
                             <th></th>
 
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="">BPS43567</td>
-                            <td class="product-qty">Plombing </td>
                             <td class="">04/25/2017</td>
-                            <td class="">US 15 </td>
+                            <td class="product-qty">Plombing </td>
+                            <td class="">US 15</td>
+                            <td class="">Antonio Fu </td>
+                            <td class="">OPEN </td>
                             <td>
-                                <button data-toggle="modal" data-target="#houseModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
-
+                                <button data-toggle="modal" data-target="#detailModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                                <button data-toggle="modal" data-target="#treatmentRequestsModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-th" title="go"></span></button>
                             </td>
                         </tr>
 
@@ -60,9 +62,162 @@
         </div>
     </div>
 
+    <div id="detailModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="row">
+                        <div class="col-xs-3 text-bold">{{ 'dash_amount' | trans({}, "messages", lang)}} *:</div>
+                        <div class="col-xs-8 text-bold"><input type="text" class="form-control"  name="amount" id="amount" ng-model="request.email" ></div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-xs-3 text-bold">{{ 'admin_tax_percentage' | trans({}, "messages", lang)}}*:</div>
+                        <div class="col-xs-8 text-bold"><input type="text" class="form-control" name="tax" id="tax" ng-model="request.subject"></div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-xs-3 text-bold">Proforma : </div>
+                        <div class="col-xs-8 text-bold"><input class="form-control" id="file" name="file" type="file" data-show-caption="true"></div>
+                    </div><br>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" >
+                        <span class="glyphicon glyphicon-floppy-disk" title="Send"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="treatmentRequestsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ 'admin_console_treatRequest' | trans({}, "messages", lang)}} :</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >3454353434 </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'dash_req_date' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >14/08/2017 </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'dash_customer' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >Antonio Fu </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'dash_house_service' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >5343 Av de maisonneuve  </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'admin_service' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >Plumbing </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 text-bold">{{ 'dash_request_details' | trans({}, "messages", lang)}} :</div>
+                        <div class="col-xs-7" >asdsgadfgsdfgsdfg dfg sd ssdfdsdsdfsdfsdfas as asdf asd fasf sa dfg sdfg sdfg ds </div>
+                    </div><br>
+
+                    <div class="row">
+                        <label class="col-xs-4 text-bold" for="carform">{{ 'dash_status' | trans({}, "messages", lang)}}</label>
+                        <div class="col-xs-7">
+                            <select name="status" class="form-control" form="carform">
+                                <option value="PENDING">PENDING</option>
+                                <option value="OPEN">OPEN</option>
+                                <option value="CLOSED">CLOSED</option>
+
+                            </select>
+                        </div>
+                    </div><br>
+                    <div class="col-xs-12 no-padding">
+                        <div class="table-responsive">
+                            <table class="table table-hover word-wrap-table" >
+
+                                <thead class="bg-light-gray">
+                                <tr>
+                                    <th colspan="3">{{ 'dash_intervention' | trans({}, "messages", lang)}}</th>
+                                    <th colspan="3">{{ 'dash_technician' | trans({}, "messages", lang)}}</th>
+                                    <th colspan="4">{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+                                    <th colspan="1"></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+
+                                    <td colspan="3"><input type="text" class="form-control"  name="dateIntervention" id="dateIntervention"  ></td>
+                                    <td colspan="3"><select name="status" class="form-control" form="carform">
+
+                                            <option value="1">Leonardo Presto</option>
+                                            <option value="2">Miguel Asturias</option>
+                                            <option value="3">Renzo Luza</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="4" >
+                                        <textarea  class="form-control" name="content" id="content" ng-model="request.content" cols="50" rows="10" aria-invalid="false"  style="height: 110px;"></textarea>
+                                    </td>
+                                    <td colspan="1">
+                                        <button class="btn-danger btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
+
+                                    </td>
+                                </tr>
+
+                                    <tr>
+
+                                        <td colspan="3">16/08/2017</td>
+                                        <<td colspan="3">Carlos Amarreti</td>
+                                        <td colspan="4">fsafdfasdfasdf as asdf asdf sadf s</td>
+                                        <td colspan="1">
+                                        </td>
+                                    </tr>
+
+                                <tr>
+
+                                    <td colspan="3">14/08/2017</td>
+                                    <<td colspan="3">Carlos Aguirre</td>
+                                    <td colspan="4">fsafdfasdfasdf as asdf asdf sadf s</td>
+                                    <td colspan="1">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
 
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" >
+                        <span class="glyphicon glyphicon-floppy-disk" title="Send"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <div class="pad">
     </div>

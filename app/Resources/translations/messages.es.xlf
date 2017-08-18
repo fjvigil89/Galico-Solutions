@@ -1120,7 +1120,10 @@
                        <source>Subscription date</source>
                        <target>Fecha de suscripción</target>
                 </trans-unit>
-
+		        <trans-unit id="admin_console_treatRequest" resname="admin_console_treatRequest">
+                       <source>Treat the request</source>
+                       <target>Tratamiento de la solicitud</target>
+                </trans-unit>
 <!--End Admin-console-->
 <!--Work us-->
 		        <trans-unit id="workus_resume" resname="workus_resume">
