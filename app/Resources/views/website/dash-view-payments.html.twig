@@ -22,7 +22,7 @@
 
                             <thead class="bg-yellow font-header">
                             <tr>
-                                <th colspan="5">{{ 'dash_view_payments' | trans({}, "messages", lang)}}</th>
+                                <th colspan="6">{{ 'dash_view_payments' | trans({}, "messages", lang)}}</th>
 
 
 
@@ -31,10 +31,11 @@
                             <thead class="bg-light-gray">
                             <tr>
                                 <th>{{ 'dash_payment_date' | trans({}, "messages", lang)}}</th>
+                                <th>{{ 'template_invoice' | trans({}, "messages", lang)}}</th>
                                 <th>{{ 'admin_service' | trans({}, "messages", lang)}}</th>
                                 <th>{{ 'dash_total_amount' | trans({}, "messages", lang)}}</th>
 
-                                <th>{{ 'dash_comments' | trans({}, "messages", lang)}}</th>
+
                                 <th>
 
 
@@ -44,20 +45,17 @@
                             </thead>
                             <tbody>
 
-                            <tr ng-repeat="house in houses">
-                                <td ng-bind="house.country"></td>
-                                <td ng-bind="house.address"></td>
-                                <td ng-bind="house.city"></td>
+                            <tr ng-repeat="payment in payments">
+                                <td ng-bind="payment.paymentdate"></td>
+                                <td ng-bind="payment.invoicenumber"></td>
+                                <td ></td>
+                                <td ng-bind="payment.amount"></td>
 
 
 
-                                <td ng-bind="house.agentNumber"></td>
                                 <td>
-
-
-
-
-
+                                    <a href="" target="_blank"><span class="glyphicon glyphicon-file" title="View proforma"></span></a>
+                                   
                                 </td>
                             </tr>
 

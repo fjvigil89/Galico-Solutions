@@ -9,6 +9,7 @@ use AppBundle\Entity\Localnumbers;
 use AppBundle\Entity\Technicians;
 use AppBundle\Entity\Requests;
 use AppBundle\Entity\Prices;
+use AppBundle\Entity\Payments;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -470,6 +471,34 @@ class AdminController extends Controller
         return $this->json($response);
 
     }
+
+
+    /**
+     * @Route("/viewPayments/{customerId}", name="rte_viewPayments")
+     */
+    public function viewPaymentsAction($customerId)
+    {
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+        $house = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
+        $payment = $repository->find($customerId);
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $request = $repository->find($customerId);
+        {
+            return $this->render('website/dash-view-payments.html.twig',array(
+                'houses' =>  $house,  'customer' =>  $customer,  'payments' =>  $payment,
+                'requests' =>  $request,
+            ));
+        }
+
+    }
+
+
+
+
 
 
 }
