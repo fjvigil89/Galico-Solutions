@@ -42,20 +42,6 @@ class Requests
     private $referencenumber;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="InvoiceDate", type="date", nullable=true)
-     */
-    private $invoicedate;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=true)
-     */
-    private $invoicenumber;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="Amount", type="decimal", precision=10, scale=2, nullable=false)
@@ -75,13 +61,6 @@ class Requests
      * @ORM\Column(name="InvoiceType", type="string", length=10, nullable=true)
      */
     private $invoicetype;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="TransactionID", type="string", length=100, nullable=true)
-     */
-    private $transactionid;
 
     /**
      * @var integer
@@ -185,38 +164,6 @@ class Requests
     }
 
     /**
-     * @return \DateTime
-     */
-    public function getInvoicedate()
-    {
-        return $this->invoicedate;
-    }
-
-    /**
-     * @param \DateTime $invoicedate
-     */
-    public function setInvoicedate($invoicedate)
-    {
-        $this->invoicedate = $invoicedate;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInvoicenumber()
-    {
-        return $this->invoicenumber;
-    }
-
-    /**
-     * @param string $invoicenumber
-     */
-    public function setInvoicenumber($invoicenumber)
-    {
-        $this->invoicenumber = $invoicenumber;
-    }
-
-    /**
      * @return string
      */
     public function getAmount()
@@ -262,22 +209,6 @@ class Requests
     public function setInvoicetype($invoicetype)
     {
         $this->invoicetype = $invoicetype;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTransactionid()
-    {
-        return $this->transactionid;
-    }
-
-    /**
-     * @param string $transactionid
-     */
-    public function setTransactionid($transactionid)
-    {
-        $this->transactionid = $transactionid;
     }
 
     /**

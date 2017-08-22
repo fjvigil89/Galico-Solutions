@@ -42,7 +42,12 @@ class ConvergeController extends Controller
         $cPhonePrimary = $request->request->get('phonePrimary');
         $cPhoneAlternate = $request->request->get('phoneAlternate');
 
-        $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
+        $tax = 0;
+        if($houseCountryISO=="USA" || $houseCountryISO=="CAN" )
+        {
+            $tax = ($this->getTaxPercentage($houseCountryISO) * $amount) /100;
+        }
+
         $totalAmount = $amount + $tax;
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
@@ -57,7 +62,6 @@ class ConvergeController extends Controller
 
             try
             {
-
                 $firstName = $customer->getFirstname();
                 $lastName = $customer->getLastname();
                 $phonePrimary = $customer->getPhoneprimary();
@@ -69,15 +73,15 @@ class ConvergeController extends Controller
                 $zipcode =$customer->getZipcode();
 
                 $nextPaymentDate = new \DateTime();
-                //$nextPaymentDate->add(new \DateInterval('P30D'));
+                $nextPaymentDate->add(new \DateInterval('P1D'));
 
                 $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
 
-                $converge = new ConvergeApi( '007128','webpage','TXM3J2',false); // demo api
-                $result['platform'] = 'DEMO';
-                //$converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
+                //$converge = new ConvergeApi( '007128','webpage','TXM3J2',false); // demo api
+                //$result['platform'] = 'DEMO';
+                $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);
                 //$totalAmount = 1.00;
-                //$result['platform'] = 'LIVE';
+                $result['platform'] = 'LIVE';
 
                 // Submit a recurring payment
                 $response = $converge->ccaddrecurring(
@@ -98,7 +102,7 @@ class ConvergeController extends Controller
                         'ssl_last_name' =>  $lastName,
                         //'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
                         'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-                        'ssl_billing_cycle' => 'DAILY',
+                        'ssl_billing_cycle' => 'MONTHLY',
                         'vita_name_on_card' => $nameOnCard,
                         'ssl_invoice_number' => $invoiceNumber,
                         'ssl_customer_code'=> $customerId,
@@ -146,8 +150,6 @@ class ConvergeController extends Controller
                     $subscription->setHouse($house);
                     $subscription->setPrice($price);
                     $subscription->setSubscriptiondate($dateNow);
-                    $subscription->setTransactionid($response['ssl_recurring_id']);
-                    $subscription->setCc($response['ssl_card_number']);
 
                     //$em = $this->getDoctrine()->getManager();
                     $em->persist($subscription);
@@ -162,6 +164,8 @@ class ConvergeController extends Controller
                     $payment->setTax($tax);
                     $payment->setDescription($planName . " subscription");
                     $payment->setInvoicenumber($invoiceNumber);
+                    $payment->setTransactionid($response['ssl_recurring_id']);
+                    $payment->setCc($response['ssl_card_number']);
                     $payment->setSubscription($subscription);
 
                     $em->persist($payment);
@@ -486,7 +490,7 @@ class ConvergeController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $substr = "GP-SUB-" . $country->getCountryid() . "-";
+        $substr = "GP-INV-" . $country->getCountryid() . "-";
         $query = $em->createQuery( 'SELECT Max(p.invoicenumber) AS invNumber FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
         $query->setParameter('inv', '%' . $substr . '%');
         $invoiceNumber = $query->getSingleResult();
@@ -494,7 +498,7 @@ class ConvergeController extends Controller
         if($maxInvoiceNumber)
         {
             $split = explode('-',$maxInvoiceNumber);
-            $number = (int) $split[2];
+            $number = (int) $split[3];
             $nextInvoiceNumber = $substr . ($number+1);
         }
         else

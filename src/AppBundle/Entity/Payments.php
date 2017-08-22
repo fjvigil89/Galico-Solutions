@@ -36,6 +36,21 @@ class Payments
     /**
      * @var string
      *
+     * @ORM\Column(name="TransactionID", type="string", length=100, nullable=false)
+     */
+    private $transactionid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CC", type="string", length=20, nullable=false)
+     */
+    private $cc;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="InvoiceNumber", type="string", length=15, nullable=false)
      */
     private $invoicenumber;
@@ -65,6 +80,16 @@ class Payments
      * })
      */
     private $subscription;
+
+    /**
+     * @var \AppBundle\Entity\Requests
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Requests")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RequestID", referencedColumnName="RequestID")
+     * })
+     */
+    private $request;
 
     /**
      * @return \DateTime
@@ -112,6 +137,38 @@ class Payments
     public function setTax($tax)
     {
         $this->tax = $tax;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransactionid()
+    {
+        return $this->transactionid;
+    }
+
+    /**
+     * @param string $transactionid
+     */
+    public function setTransactionid($transactionid)
+    {
+        $this->transactionid = $transactionid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCc()
+    {
+        return $this->cc;
+    }
+
+    /**
+     * @param string $cc
+     */
+    public function setCc($cc)
+    {
+        $this->cc = $cc;
     }
 
     /**
@@ -177,6 +234,23 @@ class Payments
     {
         $this->subscription = $subscription;
     }
+
+    /**
+     * @return Requests
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param Requests $request
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+    }
+
 
 
 }

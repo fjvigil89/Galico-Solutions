@@ -24,7 +24,7 @@ class FileController extends Controller
         }
         else
         {
-            return new Response("THE PROFORMA IS NOT AVAILABLE YET. TRY AGAIN LATER");
+            return new Response("THE PROFORMA IS NOT AVAILABLE YET. PLEASE TRY AGAIN LATER");
         }
 
 
