@@ -498,6 +498,32 @@ class AdminController extends Controller
 
 
 
+    /**
+     * @Route("/admin/authenticate")
+     */
+    public function authenticateAdminAction(Request $request)
+    {
+        $email = $request->request->get('email');
+        $pwd = $request->request->get('pwd');
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Admins');
+
+        $admin = $repository->findOneByEmail($email);
+
+        $adminId = -1;
+        if($admin)
+        {
+            $encoder = $this->container->get('security.password_encoder');
+            $isValid = $encoder->isPasswordValid($admin, $pwd);
+            if($isValid)
+            {
+                $adminId = $admin->getAdminid();
+                $this->get('session')->set('$adminId', $adminId);
+            }
+        }
+
+        return $this->json(array('$adminId' => $adminId));
+    }
 
 
 
