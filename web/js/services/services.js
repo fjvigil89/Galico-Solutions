@@ -356,9 +356,34 @@ angular.module("gpApp")
     .service('RequestService',function($http,RouterService){
 
         this.findRequest = function(id){
-            return $http({
+            /*return $http({
                 url : RouterService.getEndPoint() + '/findRequest/'+id,
                 method: "GET",
-            });
+            });*/
+            return $http.get(RouterService.getEndPoint() + '/findRequest/'+id);
         }
+		
+		
+		this.payRequestedService = function(paymentInfo)
+        {
+            var url = RouterService.getEndPoint() + '/ccsale'
+            var data = $.param({
+                customerId : paymentInfo.customerId,
+                requestId : paymentInfo.requestId,
+                existingCC : paymentInfo.existingCC,
+                cc : paymentInfo.cc,
+				cardNumber : paymentInfo.cardNumber,
+                cvv : paymentInfo.cvv,
+                expirationDate :   paymentInfo.expMonth+""+paymentInfo.expYear,
+                nameOnCard : paymentInfo.nameOnCard,
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+		
     })

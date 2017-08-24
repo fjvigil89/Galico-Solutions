@@ -1238,7 +1238,7 @@ class UserController extends Controller
             }
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
-            $requests = $repository->findByInvoicetype("REQUEST");
+            $requests = $repository->findByInvoicetype("PROFORMA");
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
             $country = $repository->findOneByCountry($customer->getCountry());
@@ -1255,6 +1255,34 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/viewPayments/{customerId}", name="rte_viewPayments")
+     */
+    public function viewPaymentsAction($customerId)
+    {
+       /* $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+        $houses = $repository->findByCustomer($customer);
+
+        $em = $this->getDoctrine()->getManager();
+
+*/
+
+
+        //get subscription payments
+        $query = $em->createQuery( 'SELECT p FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
+        $query->setParameter('inv', '%' . $substr . '%');
+        $invoiceNumber = $query->getSingleResult();
+
+        return $this->render('website/dash-view-payments.html.twig',array(
+            'customer' =>  $customer
+            ));
+
+
+    }
+
+    /**
      * @Route("/cRequests/{customerId}", name="rte_c_requests")
      */
     public function getCustomerRequestsAction($customerId)
@@ -1265,5 +1293,45 @@ class UserController extends Controller
 
         return $this->json(count($requests));
     }
+    /**
+     * @Route("/findRequest/{requestId}", name="rte_findRequest")
+     */
+    public function findRequestAction($requestId)
+    {
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $request = $repository->find($requestId);
+        $house = $request->getHouse();
+        $subscription = $house->getSubscriptions()[0];
+        $payment = $subscription->getPayments()[0];
+        $requestInfo = array();
+        $requestService = $request->getRequestServices()[0];
+        $requestInfo['service'] = $requestService->getService()->getServicename();
+        $requestInfo['cc'] = $payment->getCc();
+        $requestInfo['totalAmount'] = number_format( $request->getAmount() + $request->getTax(),2);
+
+        return $this->json($requestInfo);
+    }
+
+    /**
+     * @Route("/findCC/{requestId}", name="rte_findCC")
+     */
+    public function findCCAction($requestId)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $request = $repository->find($requestId);
+        $house = $request->getHouse();
+        $subscription = $house->getSubscriptions()[0];
+        $payment = $subscription->getPayments()[0];
+        $requestInfo = array();
+        $requestService = $request->getRequestServices()[0];
+        $requestInfo['service'] = $requestService->getService()->getServicename();
+        $requestInfo['cc'] = $payment->getCc();
+        $requestInfo['totalAmount'] = number_format( $request->getAmount() + $request->getTax(),2);
+
+        return $this->json($requestInfo);
+    }
+
+
 
 }

@@ -16,16 +16,12 @@
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-offset-1 no-padding">
 
-
                     <div class="table-responsive">
                         <table class="table table-hover ">
 
                             <thead class="bg-yellow font-header">
                             <tr>
                                 <th colspan="5">{{ 'dash_make_payment' | trans({}, "messages", lang)}}</th>
-
-
-
                             </tr>
                             </thead>
                             <thead class="bg-light-gray">
@@ -35,11 +31,7 @@
                                 <th>{{ 'dash_total_amount' | trans({}, "messages", lang)}}</th>
 
                                 <th>{{ 'dash_reference_number' | trans({}, "messages", lang)}}</th>
-                                <th>
-
-
-
-                                </th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,7 +43,7 @@
                                     <td>{{ req.referencenumber }} </td>
                                     <td>
                                         <a href="{{ path('rte_proforma',{'referenceNumber': req.referencenumber}) }}" target="_blank"><span class="glyphicon glyphicon-file" title="View proforma"></span></a>
-                                        <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs" ng-click="getRequest({{req.requestid}})"><span class="glyphicon glyphicon-usd" title="Pay"></span></button>
+                                        <button data-toggle="modal" data-target="#paymentmodal" class="btn-success btn-xs" ng-click="getRequest({{req.requestid}},'{{currency}}')"><span class="glyphicon glyphicon-usd" title="Pay"></span></button>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -78,38 +70,35 @@
 
                         <div class ="border-yellow padding-payment col-xs-12 col-md-8 col-md-offset-2 ">
 
-                            <h5 class="error-message text-bold text-center">{[paymentInfo.error]} </h5>
-
-
+                            <h5 class="error-message text-bold text-center">{[payment.error]} </h5>
                             </br>
                         <div class="form-group">
                             <label for="status">{{ 'admin_service' | trans({}, "messages", lang)}} :</label>
-                            <text>Plumbing</text>
+                            <text>{[payment.service]}</text>
                         </div>
 
                             <div class="form-group">
                                 <label for="status">{{ 'dash_total_amount' | trans({}, "messages", lang)}} :</label>
-                                <text>{[paymentInfo.amount]}</text>
+                                <text>{[payment.totalAmount + " " + payment.currency]}</text>
                             </div>
 
-                            <div class="form-group">
-                                <div >
-                                    <input type="radio"> {{ 'dash_existing_credit_card' | trans({}, "messages", lang)}} :
-                                </div> <!-- existing credit card-->
-                                <text>{[paymentInfo.existingCC]}</text>
+                            <!--<div class="form-group">
+                                <div>
+                                    <input type="radio" ng-model="payment.existingCC" value="1"> {{ 'dash_existing_credit_card' | trans({}, "messages", lang)}} : {[payment.cc]}
+                                </div> <!--- existing credit card-!->
                             </div>
                             <div class="form-group">
-                                <div >
-                                    <input type="radio"> {{ 'dash_new_credit_card' | trans({}, "messages", lang)}} :
-                                </div> <!-- existing credit card-->
+                                <div><!-- new credit card-!->
+                                    <input type="radio" ng-model="payment.existingCC" value="0"> {{ 'dash_new_credit_card' | trans({}, "messages", lang)}} :
+                                </div> 
 
-                            </div>
+                            </div>-->
 							
 							<div id="container-new-cc">
 																
 								<div class="form-group">
 									<label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
-									<input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
+									<input type="text" class="form-control" id="nameOnCard" ng-model ="payment.nameOnCard" ng-disabled="payment.existingCC=='1'">
 								</div>
 
 
@@ -121,13 +110,12 @@
 									<div class="row margin-left">
 
 										<div class="col-xs-7 no-padding">
-											<input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="paymentInfo.cardNumber" >
+											<input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="payment.cardNumber" ng-disabled="payment.existingCC=='1'">
 										</div>
 										<div class="col-xs-1 no-padding"></div>
 
 										<div class="col-xs-3 no-padding">
-
-											<input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="paymentInfo.cvv">
+											<input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="payment.cvv" ng-disabled="payment.existingCC=='1'">
 										</div>
 									</div>
 
@@ -139,8 +127,7 @@
 									<div class="row margin-left">
 
 										<div class="col-xs-4 no-padding">
-											<select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="paymentInfo.expMonth">
-
+											<select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="payment.expMonth" ng-disabled="payment.existingCC=='1'">
 												<option value="01">01</option>
 												<option value="02">02</option>
 												<option value="03">03</option>
@@ -157,13 +144,12 @@
 										</div>
 										<div class="col-xs-2 no-padding"></div>
 										<div class="col-xs-5 no-padding">
-											<select name="dateexpirationyear" id="expYear" class="form-control" ng-model="paymentInfo.expYear">
+											<select name="dateexpirationyear" id="expYear" class="form-control" ng-model="payment.expYear" ng-disabled="payment.existingCC=='1'">
 												{% set dateSplit = today |split("-") %}
 												{% set year = dateSplit[0] %}
 												{% for yr in year..(year+10) %}
 												<option value="{{ yr |slice(2,2)}}">{{ yr }}</option>
 												{% endfor %}
-
 											</select>
 										</div>
 									</div>
@@ -174,10 +160,10 @@
                             
 
 							<div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" >
-                            <span class="glyphicon glyphicon-credit-card" title="{{ 'dash_pay' | trans({}, "messages", lang)}}"></span> {{ 'dash_pay' | trans({}, "messages", lang)}}
-                        </button>
-                    </div>
+								<button type="button" class="btn bg-yellow color-black" ng-click="payRequestedService()">
+									<span class="glyphicon glyphicon-credit-card" title='{{ "dash_pay" | trans({}, "messages", lang)}}'></span> {{ 'dash_pay' | trans({}, "messages", lang)}}
+								</button>
+							</div>
                 </div>
                 </div>
                 </div>
@@ -187,4 +173,6 @@
     </div>
     <div class="pad">
     </div>
+	
+	<form id="frm_payment"></form>
 {% endblock %}
