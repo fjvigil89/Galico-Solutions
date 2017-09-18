@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-17.
  */
 angular.module("gpApp")
-    .controller('AdminController',function($scope,$rootScope,DashboardService,AdminService,$window,GeneralService,$translate){
+    .controller('AdminController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,$window,GeneralService,$translate){
 
             $('body').on('hidden.bs.modal', function (e) {
             if($('.modal').hasClass('in')) {
@@ -21,6 +21,7 @@ angular.module("gpApp")
         $scope.request = {};
         $scope.request.error = "";
         $scope.technicianUpdated = {};
+        $scope.admin = {};
 
 
         $scope.getCustomerInformation = function(customerId)
@@ -413,10 +414,46 @@ $scope.addtechnician = function () {
 
         $scope.getemail= function () {
 
-        $scope.request.email = "hola";
+            $scope.request.email = "hola";
 
         }
 
+        $scope.authenticateadmin = function()
+        {
+            if(GeneralService.isInvalid($scope.admin.email))
+            {
+                $scope.auth.message = $translate.instant('ERR_SIGNIN_EMAIL');
+                $window.document.getElementById("email").focus();
+            }
+            else if(GeneralService.isInvalid($scope.admin.pwd))
+            {
+                $scope.auth.message = $translate.instant('ERR_SIGNIN_PASSWORD');
+                $window.document.getElementById("pwd").focus();
+            }
+            else
+            {
+                $scope.admin.authadmUrl = $('#frm_signinadmin').attr('action');
+                AuthAdmService.authenticateadmin($scope.admin)
+                    .then(function(response){
+                        console.log(response);
+                        var adminId = response.data.adminId;
+                        if(adminId>-1)
+                        {
+                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/adminCustomers/'+adminId);
+                            $('#frm_signinadmin').submit();
+                        }
+                        else
+                        {
+                            $scope.auth.message = $translate.instant('ERR_SIGNIN_FAILED');
+                        }
+
+
+                    },function(error){
+                        console.log(error);
+                    })
+            }
+
+        }
 
         $scope.getCustomerInformation();
         $scope.getHousesInformation();

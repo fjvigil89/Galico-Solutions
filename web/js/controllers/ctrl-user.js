@@ -256,42 +256,7 @@ angular.module("gpApp")
 
 
 
-        $scope.authenticateadmin = function()
-        {
-            if(GeneralService.isInvalid($scope.admin.email))
-            {
-                $scope.auth.message = $translate.instant('ERR_SIGNIN_EMAIL');
-                $window.document.getElementById("email").focus();
-            }
-            else if(GeneralService.isInvalid($scope.admin.pwd))
-            {
-                $scope.auth.message = $translate.instant('ERR_SIGNIN_PASSWORD');
-                $window.document.getElementById("pwd").focus();
-            }
-            else
-            {
-                $scope.user.authUrl = $('#frm_signinadmin').attr('action');
-                AuthService.authenticateadmin($scope.admin)
-                    .then(function(response){
-                        console.log(response);
-                        var adminId = response.data.adminid;
-                        if(adminId>-1)
-                        {
-                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/admin/'+adminId);
-                            $('#frm_signinadmin').submit();
-                        }
-                        else
-                        {
-                            $scope.auth.message = $translate.instant('ERR_SIGNIN_FAILED');
-                        }
 
-
-                    },function(error){
-                        console.log(error);
-                    })
-            }
-
-        }
 
 
 

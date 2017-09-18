@@ -3,6 +3,7 @@
 security:
     encoders:
             AppBundle\Entity\Customers: bcrypt
+            AppBundle\Entity\Admins: bcrypt
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:

@@ -10,11 +10,12 @@ use AppBundle\Entity\Technicians;
 use AppBundle\Entity\Requests;
 use AppBundle\Entity\Prices;
 use AppBundle\Entity\Payments;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 
 class AdminController extends Controller
@@ -474,31 +475,6 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/viewPayments/{customerId}", name="rte_viewPayments")
-     */
-    public function viewPaymentsAction($customerId)
-    {
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
-        $house = $repository->findAll();
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-        $customer = $repository->find($customerId);
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
-        $payment = $repository->find($customerId);
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
-        $request = $repository->find($customerId);
-        {
-            return $this->render('website/dash-view-payments.html.twig',array(
-                'houses' =>  $house,  'customer' =>  $customer,  'payments' =>  $payment,
-                'requests' =>  $request,
-            ));
-        }
-
-    }
-
-
-
-    /**
      * @Route("/admin/authenticate")
      */
     public function authenticateAdminAction(Request $request)
@@ -518,11 +494,11 @@ class AdminController extends Controller
             if($isValid)
             {
                 $adminId = $admin->getAdminid();
-                $this->get('session')->set('$adminId', $adminId);
+                $this->get('session')->set('adminId', $adminId);
             }
         }
 
-        return $this->json(array('$adminId' => $adminId));
+        return $this->json(array('adminId' => $adminId));
     }
 
 

@@ -147,4 +147,13 @@ class PageNavigationController extends Controller
             return $this->render('website/refundpolicy.html.twig');
         }
     }
+
+    /**
+     * @Route("/admin/signin")
+     */
+    public function showSigninAdminAction()
+    {
+        return $this->render('website/admin-signin.html.twig');
+    }
+
 }
