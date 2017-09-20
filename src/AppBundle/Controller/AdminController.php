@@ -21,16 +21,24 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller
 {
 
-     /**
-     * @Route("/list-customers" ,name="ListCustomers")
+    /**
+     * @Route("/admin/signin",name="rte_admin_signin")
      */
-    public function getCustomersAction(Request $request)
+    public function showSigninAdminAction()
     {
-        $userId = $this->get('session')->get('userId');
+        return $this->render('website/admin-signin.html.twig');
+    }
 
-        if(!$userId)
+    /**
+     * @Route("/admin/customers" ,name="rte_admin_customers")
+     */
+    public function getCustomersAction($adminId)
+    {
+        $connectedAdminId = $this->get('session')->get('adminId');
+
+        if(!$connectedAdminId)
         {
-            return $this->redirectToRoute('adminSignin');
+            return $this->redirectToRoute('rte_admin_signin');
         }
 
         $repository = $this->getDoctrine()->getRepository(Customers::class);
@@ -42,7 +50,7 @@ class AdminController extends Controller
         $repository = $this->getDoctrine()->getRepository(Technicians::class);
         $technicians = $repository->findAll();
 
-       return $this->render('website/admin-console.html.twig', array(
+       return $this->render('website/admin-customers.html.twig', array(
          'Customers' =>  $cust, 'houses' => $houses,  'technicians' => $technicians
        ));
 

@@ -17,6 +17,19 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class ConvergeController extends Controller
 {
     /**
+     * @Route("/testDate")
+     */
+    public function testDate(Request $request)
+    {
+        $nextPaymentDate = new \DateTime();
+        $nextPaymentDate->add(new \DateInterval('P1D'));
+        $conditionalMonths = array("04-30","06-30","09-30","11-30","02-28","02-29");
+        $str = $nextPaymentDate->format('Y-m-d H:i:s');
+        $startPDate = substr($str,5,5);
+        return $this->json(in_array($startPDate, $conditionalMonths));
+    }
+
+    /**
      * @Route("/ccaddrecurring")
      */
     public function addRecurringAction(Request $request)
@@ -84,30 +97,38 @@ class ConvergeController extends Controller
                 $result['platform'] = 'LIVE';
 
                 // Submit a recurring payment
-                $response = $converge->ccaddrecurring(
-                    array(
-                        'ssl_amount' => $totalAmount,
-                        'ssl_salestax' => $tax,
-                        'ssl_card_number' => $cardNumber,
-                        'ssl_cvv2cvc2' => $cvv,
-                        'ssl_exp_date' => $expirationDate,
-                        'ssl_avs_address' => $address,
-                        'ssl_avs_zip' => $zipcode,
-                        'ssl_city' => $city,
-                        'ssl_state' => $state,
-                        'ssl_country' => $country,
-                        'ssl_email' => $email,
-                        'ssl_phone' => $phonePrimary,
-                        'ssl_first_name' => $firstName,
-                        'ssl_last_name' =>  $lastName,
-                        //'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
-                        'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
-                        'ssl_billing_cycle' => 'MONTHLY',
-                        'vita_name_on_card' => $nameOnCard,
-                        'ssl_invoice_number' => $invoiceNumber,
-                        'ssl_customer_code'=> $customerId,
-                    )
-                ) ;
+                $paymentParams = array(
+                    'ssl_amount' => $totalAmount,
+                    'ssl_salestax' => $tax,
+                    'ssl_card_number' => $cardNumber,
+                    'ssl_cvv2cvc2' => $cvv,
+                    'ssl_exp_date' => $expirationDate,
+                    'ssl_avs_address' => $address,
+                    'ssl_avs_zip' => $zipcode,
+                    'ssl_city' => $city,
+                    'ssl_state' => $state,
+                    'ssl_country' => $country,
+                    'ssl_email' => $email,
+                    'ssl_phone' => $phonePrimary,
+                    'ssl_first_name' => $firstName,
+                    'ssl_last_name' =>  $lastName,
+                    //'ssl_cardholder_ip' => $_SERVER['REMOTE_ADDR'],//$this->container->get('request')->getClientIp(),
+                    'ssl_next_payment_date' => $nextPaymentDate->format('m/d/Y'),
+                    'ssl_billing_cycle' => 'MONTHLY',
+                    'vita_name_on_card' => $nameOnCard,
+                    'ssl_invoice_number' => $invoiceNumber,
+                    'ssl_customer_code'=> $customerId,
+                );
+                //-- conditional payment dates
+                $conditionalDates = array("04-30","06-30","09-30","11-30","02-28","02-29");
+                $str = $nextPaymentDate->format('Y-m-d H:i:s');
+                $startPDate = substr($str,5,5);
+                if(in_array($startPDate, $conditionalDates))
+                {
+                    $paymentParams['ssl_end_of_month'] = 'Y';
+                }
+
+                $response = $converge->ccaddrecurring($paymentParams) ;
 
                 // Display Converge API response
                 //print('ConvergeApi->ccaddrecurring Response:' . "\n\n");
@@ -321,9 +342,9 @@ class ConvergeController extends Controller
 
             $invoiceNumber = $this->getNextInvoiceNumber($customer->getCountry());
             $amount = $request->getAmount();
-            $tax = $request->getTax();
+            $tax = ($country=='USA' || $country=='CAN')? $request->getTax() : 0.00;
             $totalAmount = $amount + $tax;
-            $transDescription = 'Payment for service requested : ' . $serviceName;
+            $transDescription = 'Payment for  : ' . $serviceName;
 
             //$converge = new ConvergeApi( '007128','webpage','TXM3J2',false); // demo api
             $converge = new ConvergeApi( '789406','apiuser','TZLKOM08UH3DB7AI3RP636NSVP9R7Y1NVWYMX1A9Y7LO506EZQJ18GFOOVCVK1VP',true);

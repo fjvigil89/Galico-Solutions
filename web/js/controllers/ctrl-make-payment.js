@@ -66,6 +66,7 @@ angular.module("gpApp")
 					else
 					{
 						$scope.payment.error = $translate.instant(result.errorName);
+						console.log(result);
 					}
 				},function(error){
 					

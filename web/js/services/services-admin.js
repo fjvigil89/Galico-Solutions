@@ -1,6 +1,6 @@
 angular.module("gpApp")
     .service('AuthAdmService', function($http,RouterService) {
-         this.authenticateadmin = function (admin) {
+         this.authenticateAdmin = function (admin) {
 
             //http://techfunda.com/howto/565/http-post-server-request
             var data = $.param({

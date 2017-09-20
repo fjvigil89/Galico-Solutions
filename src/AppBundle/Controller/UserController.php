@@ -1259,7 +1259,7 @@ class UserController extends Controller
      */
     public function viewPaymentsAction($customerId)
     {
-       /* $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
         $customer = $repository->find($customerId);
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
@@ -1267,14 +1267,14 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-*/
+
 
 
         //get subscription payments
-        $query = $em->createQuery( 'SELECT p FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
+        /*$query = $em->createQuery( 'SELECT p FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
         $query->setParameter('inv', '%' . $substr . '%');
         $invoiceNumber = $query->getSingleResult();
-
+*/
         return $this->render('website/dash-view-payments.html.twig',array(
             'customer' =>  $customer
             ));

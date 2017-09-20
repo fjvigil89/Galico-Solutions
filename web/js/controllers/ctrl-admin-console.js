@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-05-17.
  */
 angular.module("gpApp")
-    .controller('AdminController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,$window,GeneralService,$translate){
+    .controller('AdminController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,RouterService,$window,GeneralService,$translate){
 
             $('body').on('hidden.bs.modal', function (e) {
             if($('.modal').hasClass('in')) {
@@ -259,9 +259,6 @@ $scope.addtechnician = function () {
                 $window.document.getElementById("adresseAgence").focus();
             }
 
-
-
-
             else
             {
                 $('#frm_newAgence').submit();
@@ -412,13 +409,13 @@ $scope.addtechnician = function () {
         }
 
 
-        $scope.getemail= function () {
+        $scope.getEmail= function () {
 
             $scope.request.email = "hola";
 
         }
 
-        $scope.authenticateadmin = function()
+        $scope.authenticateAdmin = function()
         {
             if(GeneralService.isInvalid($scope.admin.email))
             {
@@ -433,13 +430,13 @@ $scope.addtechnician = function () {
             else
             {
                 $scope.admin.authadmUrl = $('#frm_signinadmin').attr('action');
-                AuthAdmService.authenticateadmin($scope.admin)
+                AuthAdmService.authenticateAdmin($scope.admin)
                     .then(function(response){
                         console.log(response);
                         var adminId = response.data.adminId;
                         if(adminId>-1)
                         {
-                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/adminCustomers/'+adminId);
+                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/admin/customers/');
                             $('#frm_signinadmin').submit();
                         }
                         else

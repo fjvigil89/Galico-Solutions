@@ -143,17 +143,9 @@ class PageNavigationController extends Controller
      */
     public function showRefundpolicyAction()
     {
-        {
-            return $this->render('website/refundpolicy.html.twig');
-        }
+        return $this->render('website/refundpolicy.html.twig');
     }
 
-    /**
-     * @Route("/admin/signin")
-     */
-    public function showSigninAdminAction()
-    {
-        return $this->render('website/admin-signin.html.twig');
-    }
+
 
 }
