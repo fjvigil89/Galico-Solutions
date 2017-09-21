@@ -1265,18 +1265,45 @@ class UserController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
         $houses = $repository->findByCustomer($customer);
 
-        $em = $this->getDoctrine()->getManager();
+        $allRequests = array();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        foreach($houses as $house)
+        {
+            $requests = $repository->findByHouse($house);
+            $allRequests = array_merge($allRequests,$requests);
+        }
 
+        $allPayments = array();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
+        foreach($allRequests as $req)
+        {
+            $payments = $repository->findByRequest($req);
+            $allPayments = array_merge($allPayments,$payments);
+        }
 
+        /*Test purpose
+        return $this->json(array('customer'=>$customer,
+            'houses'=>$houses,
+            'requests'=>$allRequests,
+            'payments'=> $allPayments
 
+        ));
+        */
+        $paymentInfo = array();
+        foreach($allPayments as $payment)
+        {
+            $requestsServices = $payment->getRequest()->getRequestServices();
+            $pay['service'] = $requestsServices[0]->getService()->getServicename();
+            $pay['invoiceNumber'] = $payment->getInvoicenumber();
+            $pay['paymentDate'] = $payment->getPaymentdate();
+            $pay['totalAmount'] = $payment->getAmount() + $payment->getTax();
 
-        //get subscription payments
-        /*$query = $em->createQuery( 'SELECT p FROM AppBundle:Payments p WHERE p.invoicenumber LIKE :inv' );
-        $query->setParameter('inv', '%' . $substr . '%');
-        $invoiceNumber = $query->getSingleResult();
-*/
+            $paymentInfo[] = $pay;
+        }
+
         return $this->render('website/dash-view-payments.html.twig',array(
-            'customer' =>  $customer
+            'customer' =>  $customer,
+            'payments' => $paymentInfo
             ));
 
 

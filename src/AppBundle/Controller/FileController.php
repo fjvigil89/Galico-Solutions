@@ -27,6 +27,24 @@ class FileController extends Controller
             return new Response("THE PROFORMA IS NOT AVAILABLE YET. PLEASE TRY AGAIN LATER");
         }
 
+    }
+
+    /**
+     * @Route("/viewInvoice/{invoiceNumber}", name="rte_view_invoice")
+     */
+    public function showInvoiceAction($invoiceNumber)
+    {
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/invoices/';
+        $filename = $invoiceNumber.".pdf";
+        $invoice = $resourcesFolderPath . $filename;
+        if(file_exists($invoice))
+        {
+            return new BinaryFileResponse($invoice);
+        }
+        else
+        {
+            return new Response("THE INVOICE IS NOT AVAILABLE YET. PLEASE TRY AGAIN LATER");
+        }
 
     }
 }

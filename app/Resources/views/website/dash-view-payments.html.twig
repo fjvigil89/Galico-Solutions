@@ -34,30 +34,22 @@
                                 <th>{{ 'template_invoice' | trans({}, "messages", lang)}}</th>
                                 <th>{{ 'admin_service' | trans({}, "messages", lang)}}</th>
                                 <th>{{ 'dash_total_amount' | trans({}, "messages", lang)}}</th>
+                                <th></th>
 
-
-                                <th>
-
-
-
-                                </th>
                             </tr>
                             </thead>
                             <tbody>
-
-                            <tr ng-repeat="payment in payments">
-                                <td ng-bind="payment.paymentdate"></td>
-                                <td ng-bind="payment.invoicenumber"></td>
-                                <td ></td>
-                                <td ng-bind="payment.amount"></td>
-
-
-
-                                <td>
-                                    <a href="" target="_blank"><span class="glyphicon glyphicon-file" title="View proforma"></span></a>
-
-                                </td>
-                            </tr>
+                                {% for payment in payments %}
+                                    <tr>
+                                        <td>{{ payment.paymentDate | date("Y-m-d") }}</td>
+                                        <td>{{ payment.invoiceNumber }}</td>
+                                        <td>{{ payment.service }}</td>
+                                        <td>{{ payment.totalAmount }}</td>
+                                        <td>
+                                            <a href="{{ path('rte_view_invoice',{'invoiceNumber': payment.invoiceNumber}) }}" target="_blank"><span class="glyphicon glyphicon-file" title="View invoice"></span></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
 
 
                             </tbody>
