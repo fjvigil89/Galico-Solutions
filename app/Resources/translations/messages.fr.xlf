@@ -1126,6 +1126,12 @@
                        <source>Treat the request</source>
                        <target>Traiter la requête</target>
                 </trans-unit>
+                  <trans-unit id="admin_console_date_intervention" resname="admin_console_date_intervention">
+                        <source>Date of intervention</source>
+                        <target>Date d'intervention</target>
+                 </trans-unit>
+
+
 <!--End Admin-console-->
 
 <!--Work us-->
@@ -1221,9 +1227,9 @@
                            <source>SETTINGS</source>
                            <target>PARAMÈTRES</target>
                     </trans-unit>
-                    <trans-unit id="admin_local_agent" resname="admin_local_agent">
-                           <source>Local agent</source>
-                           <target>Agent local</target>
+                    <trans-unit id="admin_local_agent_list" resname="admin_local_agent_list">
+                           <source>Local agents list</source>
+                           <target>Liste des agents locaux</target>
                     </trans-unit>
                     <trans-unit id="admin_add_local_agent" resname="admin_add_local_agent">
                            <source>Add local agent</source>
@@ -1231,7 +1237,7 @@
                     </trans-unit>
                      <trans-unit id="admin_prices" resname="admin_prices">
                             <source>Prices</source>
-                            <target>Prix</target>
+                            <target>Liste de prix</target>
                      </trans-unit>
                       <trans-unit id="admin_add_prices" resname="admin_add_prices">
                              <source>Add prices</source>
@@ -1275,7 +1281,7 @@
                      </trans-unit>
                      <trans-unit id="admin_other_sendEmail" resname="admin_other_sendEmail">
                             <source>Send Email</source>
-                            <target>Envoyer courriel</target>
+                            <target>Envoyer un courriel</target>
                      </trans-unit>
                       <trans-unit id="admin_sendemail_sujet" resname="admin_sendemail_sujet">
                              <source>Sujet</source>

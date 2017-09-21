@@ -436,7 +436,7 @@ $scope.addtechnician = function () {
                         var adminId = response.data.adminId;
                         if(adminId>-1)
                         {
-                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/admin/customers/');
+                            $('#frm_signinadmin').attr('action', RouterService.getEndPoint()+'/admin/customers');
                             $('#frm_signinadmin').submit();
                         }
                         else

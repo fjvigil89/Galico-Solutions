@@ -10,9 +10,9 @@
 <div class="container" ng-controller="AdminController">
   <div class="row">
     <div class="col-xs-12">
-      <h3>Admin -  {{ 'form_login' | trans({}, "messages", lang) }} </h3>
+      <h3>Admin -  {{ 'menu_signin' | trans({}, "messages", lang) }} </h3>
 
-      <form class="form-login" method="POST" id="frm_signinadmin" action="{{ path('app_admin_authenticateadmin') }}">
+      <form class="form-login" method="POST" id="frm_signinadmin" action="{{ path('rte_admin_authenticate') }}">
         <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
         <div class="form-group">
           <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
@@ -22,10 +22,10 @@
           <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
           <input type="password" id="pwd" name="pwd" ng-model="admin.pwd" required>
         </div>
-        <button type="button" class="btn" ng-click="authenticateAdmin()">{{ 'form_login' | trans({}, "messages", lang) }}</button>
+        <button type="button" class="btn" ng-click="authenticateAdmin()">{{ 'menu_signin' | trans({}, "messages", lang) }}</button>
         
 
-        <input type="hidden" ng-model="admin.authadmUrl" value="{{ path('app_admin_authenticateadmin')  }}">
+        <input type="hidden" ng-model="admin.authadmUrl" value="{{ path('rte_admin_authenticate')  }}">
       </form>
 
 

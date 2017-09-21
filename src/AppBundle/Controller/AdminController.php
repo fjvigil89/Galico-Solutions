@@ -32,7 +32,7 @@ class AdminController extends Controller
     /**
      * @Route("/admin/customers" ,name="rte_admin_customers")
      */
-    public function getCustomersAction($adminId)
+    public function getCustomersAction(Request $request)
     {
         $connectedAdminId = $this->get('session')->get('adminId');
 
@@ -62,7 +62,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/technician-information/{technicianId}",name="technicianInformation")
+     * @Route("/admin/technician-information/{technicianId}",name="rte_admin_technician_information")
      */
 
     public function getTechnicianInformationAction($technicianId){
@@ -93,7 +93,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/create-technician",name="createTechnician")
+     * @Route("/admin/technician/save",name="rte_admin_technician_save")
      */
     public function addtechnicianAction(Request $request){
 
@@ -138,7 +138,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/create-agence", name="createAgence")
+     * @Route("/admin/agence/save", name="rte_admin_agence_save")
      * @param Request $request
      */
     public function createAgenceAction(Request $request)
@@ -169,7 +169,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/create-price", name="createPrice")
+     * @Route("/admin/price/save", name="rte_admin_price_save")
      * @param Request $request
      */
     public function createPricesAction(Request $request)
@@ -200,49 +200,15 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/admin")
-     */
-    public function showMenuAdminAction()
-    {
-        {
-            return $this->render('website/sidemenu-admin.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/adminCustomers" )
-     */
-    public function showAdminCustomersAction()
-    {
-
-        $userId = $this->get('session')->get('userId');
-
-        if(!$userId)
-        {
-            return $this->redirectToRoute('adminSignin');
-        }
-
-        $repository = $this->getDoctrine()->getRepository(Customers::class);
-        $cust = $repository->findAll();
-
-
-        return $this->render('website/admin-customers.html.twig', array(
-            'Customers' =>  $cust,
-        ));
-    }
-    /**
-     * @Route("/addAdminCustomers")
+     * @Route("/admin/customer/new", name="rte_admin_customer_new" )
      */
     public function addAdminCustomersAction()
     {
-        {
-            return $this->render('website/admin-add-customers.html.twig');
-        }
-
+         return $this->render('website/admin-add-customer.html.twig');
     }
 
     /**
-     * @Route("/adminHouses")
+     * @Route("/admin/houses", name="rte_admin_houses" )
      */
     public function showAdminHousesAction()
     {
@@ -252,7 +218,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/adminTechnicians" )
+     * @Route("/admin/technicians", name="rte_admin_technicians" )
      */
     public function showListTechniciansAction()
     {
@@ -267,28 +233,11 @@ class AdminController extends Controller
 
          }
 
-    /**
-     * @Route("/adminaddTechnicians")
-     */
-    public function addAdminTechniciansAction()
-    {
-        {
-            return $this->render('website/admin-add-technicians.html.twig');
-        }
-    }
+
+
 
     /**
-     * @Route("/adminTechRequest")
-     */
-    public function showTechRequestAction()
-    {
-        {
-            return $this->render('website/admin-tech-request.html.twig');
-        }
-    }
-
-    /**
-     * @Route("/localAgence")
+     * @Route("/admin/agences", name="rte_admin_agences" )
      */
     public function showLocalAgencesAction()
     {
@@ -308,7 +257,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/prices")
+     * @Route("/admin/prices", name="rte_admin_prices" )
      */
     public function showPricesAction()
     {
@@ -326,18 +275,18 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/addPrices")
+     * @Route("/admin/price/new", name="rte_admin_price_new" )
      */
     public function addPricesAction()
     {
         {
-            return $this->render('website/admin-add-prices.html.twig');
+            return $this->render('website/admin-add-price.html.twig');
         }
     }
 
 
     /**
-     * @Route("/addLocalAgence")
+     * @Route("/admin/agence/new", name="rte_admin_agence_new" )
      */
     public function addLocalAgencesAction()
     {
@@ -347,7 +296,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/sendEmailForm", name="rte_sendEmailForm")
+     * @Route("/admin/send-email-form", name="rte_admin_send_email_form")
      */
     public function sendEmailAction()
     {
@@ -374,7 +323,7 @@ class AdminController extends Controller
         return $images[$index];
     }
     /**
-     * @Route("/sendEmailClient", name="sendEmailClient")
+     * @Route("/admin/send-email-client", name="rte_admin_send_email_client")
      */
     public function sendEmailClientAction(Request $request)
     {
@@ -411,13 +360,13 @@ class AdminController extends Controller
             //--
 
 
-        return $this->redirectToRoute("rte_sendEmailForm");
+        return $this->redirectToRoute("rte_admin_send_email_form");
 
         }
 
 
     /**
-     * @Route("/update-technician", name="updateTechnician")
+     * @Route("/admin/technician/update", name="rte_admin_technician_update")
      */
     public function updateTechnicianAction(Request $request)
     {
@@ -483,7 +432,7 @@ class AdminController extends Controller
 
 
     /**
-     * @Route("/admin/authenticate")
+     * @Route("/admin/authenticate", name="rte_admin_authenticate")
      */
     public function authenticateAdminAction(Request $request)
     {
@@ -511,4 +460,47 @@ class AdminController extends Controller
 
 
 
+    /**
+     * @Route("/admin")
+     */
+    public function showMenuAdminAction()
+    {
+        {
+            return $this->render('website/sidemenu-admin.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/admin/technician/new",name="rte_admin_technician_new")
+     */
+    public function addAdminTechniciansAction()
+    {
+
+            return $this->render('website/admin-add-technician.html.twig');
+
+    }
+
+    /**
+     * @Route("/admin/request", name="rte_admin_request")
+     */
+    public function showTechRequestAction()
+    {
+
+            return $this->render('website/admin-tech-request.html.twig');
+
+    }
+
+
+    /**
+     * @Route("/admin/send-email", name="rte_admin_send_email")
+     */
+    public function showsendEmailAction()
+    {
+
+        return $this->render('website/admin-send-email.html.twig');
+
+
+
+
+    }
 }

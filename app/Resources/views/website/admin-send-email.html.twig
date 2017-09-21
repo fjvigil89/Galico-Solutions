@@ -20,7 +20,7 @@
                             <h4 class="modal-title">{{ 'admin_other_sendEmail' | trans({}, "messages", lang)}}</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="" id="frm_send_proforma" method="post" action="{{ path('sendEmailClient') }}" enctype="multipart/form-data">
+                            <form class="" id="frm_send_proforma" method="post" action="{{ path('rte_admin_send_email_client') }}" enctype="multipart/form-data">
 
                             <h5 class="error-message text-bold text-center" ng-bind="update.error"> </h5>
                             <h5 class="message-info text-bold text-center" ng-bind="update.info"> </h5>

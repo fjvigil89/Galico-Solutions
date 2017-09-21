@@ -69,7 +69,8 @@ app.config(function($interpolateProvider,$translateProvider){
 
         "ERR_HOUSE_INVALID" : "Please select a house.",
         "ERR_SERVICE_INVALID" : "Please select a service type.",
-        "ERR_REQUEST_DETAILS_INVALID" : "Please provide a short details of the request."
+        "ERR_REQUEST_DETAILS_INVALID" : "Please provide a short details of the request.",
+        "SUCCESS_DASHBOARD_INF_UPDATE":"You have successfully updated your profile."
 
 
     });
@@ -133,8 +134,8 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_EXPYEAR"    : "La fecha de expiración no es válido.",
         "ERR_HOUSE_INVALID" : "Por favor seleccione una casa.",
         "ERR_SERVICE_INVALID" : "Por favor seleccione un servicio.",
-        "ERR_REQUEST_DETAILS_INVALID" : "Por favor ingrese un resumen de la solicitud ."
-
+        "ERR_REQUEST_DETAILS_INVALID" : "Por favor ingrese un resumen de la solicitud .",
+        "SUCCESS_DASHBOARD_INF_UPDATE":" Usted ha actualizado correctamente su perfil."
 
 
     });
@@ -199,7 +200,8 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_DASHBOARD_EXPYEAR"    : "La date d'expiration n'est pas valide.",
         "ERR_HOUSE_INVALID" : "Veuillez sélectioner une maison.",
         "ERR_SERVICE_INVALID" : "Veuillez sélectioner un service.",
-        "ERR_REQUEST_DETAILS_INVALID" : "Veuillez fournir une brève description de la requête."
+        "ERR_REQUEST_DETAILS_INVALID" : "Veuillez fournir une brève description de la requête.",
+        "SUCCESS_DASHBOARD_INF_UPDATE":"Vous avez réussi à mettre à jour votre profil."
     });
 
     // Tell the module what language to use by default

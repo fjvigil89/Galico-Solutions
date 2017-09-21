@@ -19,7 +19,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form  id="frm_newTechnician" method="POST" action="{{ path('createTechnician') }}">
+                        <form  id="frm_newTechnician" method="POST" action="{{ path('rte_admin_technician_save') }}">
                             <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
                             <div class="form-group">
                                 <label for="newTechLastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
