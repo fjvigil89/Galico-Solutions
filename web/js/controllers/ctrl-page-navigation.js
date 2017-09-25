@@ -3,7 +3,7 @@
  */
 
 angular.module("gpApp")
-    .controller('PageNavigationController',function($scope,$rootScope,authService,GeneralService,$window){
+    .controller('PageNavigationController',function($scope,$rootScope,AuthService,GeneralService,$window){
 
         $scope.plan = {};
         $scope.plan.name = $("#allPlans").val();
