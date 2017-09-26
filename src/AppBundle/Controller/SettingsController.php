@@ -8,14 +8,16 @@
 
 namespace AppBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
-class SettingController
+class SettingsController extends Controller
 {
     /**
-     * @Route("/admin/agence/save", name="rte_admin_agence_save")
-     * @param Request $request
+     * @Route("/admin/agent/save", name="rte_admin_agent_save")
      */
-    public function createAgenceAction(Request $request)
+    public function createAgentAction(Request $request)
     {
         $data = $request->request->all();
         //var_dump($data); die("");
@@ -37,45 +39,13 @@ class SettingController
         $em->persist($agence);
         $em->flush();
 
-        return $this->redirectToRoute("ListCustomers");
+        return $this->redirectToRoute("rte_admin_agents");
     }
 
-
-
     /**
-     * @Route("/admin/price/save", name="rte_admin_price_save")
-     * @param Request $request
+     * @Route("/admin/agents", name="rte_admin_agents" )
      */
-    public function createPricesAction(Request $request)
-    {
-        $data = $request->request->all();
-        //var_dump($data); die("");
-        //$country = $data['PriceCountry'];
-        $prices = $data['price'];
-        $tax = $data['tax'];
-        //$plan = $data['plan'];
-
-
-        $price = new Prices();
-        //$agence->setCountry($country);
-        $price->setPrice($prices);
-        $price->setTaxpercentage($tax);
-        //$price->setPlan($plan);
-
-
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($price);
-        $em->flush();
-
-        return $this->redirectToRoute("ListCustomers");
-    }
-
-
-    /**
-     * @Route("/admin/agences", name="rte_admin_agences" )
-     */
-    public function showLocalAgencesAction()
+    public function showLocalAgentsAction()
     {
 
         $repository = $this->getDoctrine()->getRepository(Localnumbers::class);
@@ -88,8 +58,14 @@ class SettingController
             ));
         }
 
+    }
 
-
+    /**
+     * @Route("/admin/agent/new", name="rte_admin_agent_new" )
+     */
+    public function addLocalAgentAction()
+    {
+        return $this->render('website/admin-add-local-agences.html.twig');
     }
 
     /**
@@ -109,26 +85,38 @@ class SettingController
 
     }
 
-
     /**
      * @Route("/admin/price/new", name="rte_admin_price_new" )
      */
     public function addPricesAction()
     {
-        {
-            return $this->render('website/admin-add-price.html.twig');
-        }
+        return $this->render('website/admin-add-price.html.twig');
     }
 
-
     /**
-     * @Route("/admin/agence/new", name="rte_admin_agence_new" )
+     * @Route("/admin/price/save", name="rte_admin_price_save")
      */
-    public function addLocalAgencesAction()
+    public function createPriceAction(Request $request)
     {
-        {
-            return $this->render('website/admin-add-local-agences.html.twig');
-        }
+        $data = $request->request->all();
+        //var_dump($data); die("");
+        //$country = $data['PriceCountry'];
+        $prices = $data['price'];
+        $tax = $data['tax'];
+        //$plan = $data['plan'];
+
+
+        $price = new Prices();
+        //$agence->setCountry($country);
+        $price->setPrice($prices);
+        $price->setTaxpercentage($tax);
+        //$price->setPlan($plan);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($price);
+        $em->flush();
+
+        return $this->redirectToRoute("ListCustomers");
     }
 
 }

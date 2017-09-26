@@ -9,13 +9,16 @@
 namespace AppBundle\Controller;
 
 
-class TechincianController
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
+class TechnicianController extends Controller
 {
 
     /**
      * @Route("/admin/technician-information/{technicianId}",name="rte_admin_technician_information")
      */
-
     public function getTechnicianInformationAction($technicianId){
 
 
