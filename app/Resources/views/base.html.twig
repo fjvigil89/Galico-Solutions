@@ -53,9 +53,11 @@
 <body ng-app="gpApp" ng-controller="AppController">
 {% set userId = app.session.get('userId') %}
 {% set lang = app.session.get('lang') %}
+{% set adminId = app.session.get('adminId') %}
 
 <input type="hidden" value="{{ lang }}" id="hiddenLang">
 <input type="hidden" value="{{ userId }}" id="customerId">
+<input type="hidden" value="{{ adminId }}" id="adminId">
 
 <div class="site">
     <div class="site-top style-02">
@@ -106,23 +108,28 @@
                 <div class="col-sm-7 col-md-6">
                     <div class="site-top-right text-xs-center text-sm-right">
                         <nav id="top-right-menu">
-                            {% if(userId=="")  %}
-                                <ul class="menu">
 
-                                    <li class="menu-item">
-                                        <a href="#"><img src="{{ asset('images/{[flag]}') }}" >&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
-                                        <ul class="sub-menu text-left">
-                                            <!--li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" >English </a></li>
+                            <ul class="menu">
+
+                                <li class="menu-item">
+                                    <a href="#"><img src="{{ asset('images/{[flag]}') }}" >&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
+                                    <ul class="sub-menu text-left">
+                                        <!--li class="menu-item"><a href="{{ path('page_translation',{'lang':'en'}) }}" >English </a></li>
                                             <li class="menu-item"><a href="{{ path('page_translation',{'lang':'es'}) }}" >Español </a></li>
                                             <li class="menu-item"><a href="{{ path('page_translation',{'lang':'fr'}) }}">Français </a></li>
 											<li class="divider"></li-->
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_canada.png')"><img src="{{ asset('images/flag_canada.png') }}" >&nbsp;CA</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_USA.png')" ><img src="{{ asset('images/flag_USA.png') }}" >&nbsp;US</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_mexico.png')"><img src="{{ asset('images/flag_mexico.png') }}" >&nbsp;MX</a></li>
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_cr.png')"><img src="{{ asset('images/flag_cr.png') }}" >&nbsp;CR</a></li>
-                                        </ul>
-										
-                                    </li>
+                                        <li class="menu-item"><a href="#" ng-click="changeFlag('flag_canada.png')"><img src="{{ asset('images/flag_canada.png') }}" >&nbsp;CA</a></li>
+                                        <li class="menu-item"><a href="#" ng-click="changeFlag('flag_USA.png')" ><img src="{{ asset('images/flag_USA.png') }}" >&nbsp;US</a></li>
+                                        <li class="menu-item"><a href="#" ng-click="changeFlag('flag_mexico.png')"><img src="{{ asset('images/flag_mexico.png') }}" >&nbsp;MX</a></li>
+                                        <li class="menu-item"><a href="#" ng-click="changeFlag('flag_cr.png')"><img src="{{ asset('images/flag_cr.png') }}" >&nbsp;CR</a></li>
+                                    </ul>
+
+                                </li>
+
+
+
+                            {% if(userId=="" and adminId=="") %}
+
                                     <li class="menu-item"><a href="{{ url('app_pagenavigation_showsignin') }}"> <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_signin' | trans({}, "messages", lang) }}</a></li>
                                     <li class="menu-item">
                                         <a href="{{ url('app_pagenavigation_showregister') }}"> <span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_registre' | trans({}, "messages", lang) }}</a>
@@ -136,20 +143,9 @@
 
 
                                 </ul>
-                            {% else %}
-							
-                                <ul class="menu">
-								     <li class="menu-item">
-                                         <a href="#"><img src="{{ asset('images/{[flag]}') }}" >&nbsp;&nbsp;&nbsp;{{ 'menu_country' | trans({}, "messages", lang) }}</a>
-                                        <ul class="sub-menu text-left">
-                                       
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_canada.png')"><img src="{{ asset('images/flag_canada.png') }}" alt="Canada" title="Canada" >&nbsp;CA</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_USA.png')" ><img src="{{ asset('images/flag_USA.png') }}" alt="United States" title="United States" >&nbsp;US</a></li>
-                                            <li class="menu-item"><a href="#" ng-click="changeFlag('flag_mexico.png')"><img src="{{ asset('images/flag_mexico.png')  }}" alt="Mexico" title="Mexico" >&nbsp;MX</a></li>
-											 <li class="menu-item"><a href="#" ng-click="changeFlag('flag_cr.png')"><img src="{{ asset('images/flag_cr.png') }}"  alt="Costa Rica" title="Costa Rica">&nbsp;CR</a></li>
-                                        </ul>
-										
-                                    </li>
+                            {% elseif(userId!="")%}
+
+
                                     <li class="menu-item">
                                         <a href="#"> <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_account' | trans({}, "messages", lang) }}</a>
                                         <ul class="sub-menu text-left">
@@ -157,6 +153,20 @@
                                             <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;{{ 'menu_password' | trans({}, "messages", lang) }}</a></li>
 
                                             <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;{{ 'menu_signout' | trans({}, "messages", lang) }}</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
+                                </ul>
+                            {% else %}
+                                <!-- ADMIN -->
+
+                                    <li class="menu-item">
+                                        <a href="#"> <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;{{ 'menu_account' | trans({}, "messages", lang) }}</a>
+                                        <ul class="sub-menu text-left">
+                                            <li class="menu-item"><a href="{{ path('rte_admin_customers') }}"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;{{ 'menu_dashboard' | trans({}, "messages", lang) }}</a>AD</li>
+                                            <li class="menu-item"><a href="#pass" data-toggle="modal" data-target="#passwordModal" ><span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;{{ 'menu_password' | trans({}, "messages", lang) }}</a>AD</li>
+
+                                            <li class="menu-item"><a href="#" data-toggle="modal" data-target="#signoutModal"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;{{ 'menu_signout' | trans({}, "messages", lang) }}</a>AD</li>
                                         </ul>
                                     </li>
                                     <!--<li class="menu-item"><a href="#">Alternative Pages</a></li>-->
