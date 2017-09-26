@@ -1,6 +1,8 @@
 {% block body %}
 
     <div class="container">
+        {% set isSuperAdmin  = app.session.get('isSuperAdmin') %}
+        <input type="hidden" value="{{ isSuperAdmin }}" id="isSuperAdmin">
         <div class="row" id="sidemenu">
             <div class="col-xs-12 col-md-3 border-yellow ">
                 <div class="row bg-yellow" id="sidemenu-title">
@@ -36,6 +38,9 @@
                 <div class="row sidemenu-item">
                     <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ url('rte_admin_request') }}">&nbsp;<span class="glyphicon glyphicon-calendar" >&nbsp;</span>{{ 'admin_interventions' | trans({}, "messages", lang)}}</a></div>
                 </div>
+
+                {% if(isSuperAdmin=="1")  %}
+
                 <div class="row bg-light-gray sidemenu-subtitle">
                     <div class="col-xs-12 col-md-12 spacer-large text-center"></span>{{ 'admin_settings' | trans({}, "messages", lang)}}</div>
                 </div>
@@ -58,12 +63,17 @@
                 <div class="row sidemenu-item">
                     <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ url('rte_admin_send_email_form') }}">&nbsp;<span class="glyphicon glyphicon-send" >&nbsp;</span>{{ 'admin_other_sendEmail' | trans({}, "messages", lang)}}</a></div>
                 </div>
-
-
-
+            </div>
+                {% else %}
+                <div class="row bg-light-gray sidemenu-subtitle">
+                    <div class="col-xs-12 col-md-12 spacer-large text-center"></span>{{ 'admin_other_other' | trans({}, "messages", lang)}}</div>
+                </div>
+                <div class="row sidemenu-item">
+                    <div class="col-xs-12 col-md-12 spacer-large"><a href="{{ url('rte_admin_send_email_form') }}">&nbsp;<span class="glyphicon glyphicon-send" >&nbsp;</span>{{ 'admin_other_sendEmail' | trans({}, "messages", lang)}}</a></div>
+                </div>
             </div>
 
-
+            {% endif %}
 
         </div>
     </div>

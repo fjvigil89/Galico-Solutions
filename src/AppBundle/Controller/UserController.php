@@ -284,7 +284,7 @@ class UserController extends Controller
     public function signOutAction(Request $request)
     {
         $this->get('session')->remove('userId');
-        $this->get('session')->invalidate();
+               $this->get('session')->invalidate();
         $this->get('session')->clear();
 
         return $this->redirectToRoute('home');
