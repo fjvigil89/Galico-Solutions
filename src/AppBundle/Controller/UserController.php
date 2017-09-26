@@ -66,6 +66,124 @@ class UserController extends Controller
 
         return $this->json(array('userId' => $userId));
     }
+
+    /**
+     * @Route("/create-customer", name="createCustomer")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function createCustomerAction(Request $request)
+    {
+        $data = $request->request->all();
+        //var_dump($data); die("");
+        $firstName = $data['firstName'];
+        $lastName = $data['lastName'];
+        $email = $data['email'];
+        $pwd = $data['pwd'];
+        $cPwd = $data['cPwd'];
+        $phonePrimary = $data['phonePrimary'];
+        $phoneAlternate = $data['phoneAlternate'];
+        $country = $data['country'];
+        $state = $data['state'];
+        $city = $data['city'];
+        $address = $data['address'];
+        $zipCode = $data['zipCode'];
+
+        $customer = new Customers();
+        $customer->setFirstname($firstName);
+        $customer->setLastname($lastName);
+        $customer->setEmail($email);
+        $customer->setPassword($pwd);
+        $customer->setPhoneprimary($phonePrimary);
+        $customer->setPhonealternate($phoneAlternate);
+        $customer->setCountry($country);
+        $customer->setState($state);
+        $customer->setCity($city);
+        $customer->setAddress($address);
+        $customer->setZipcode($zipCode);
+
+        $encoder = $this->container->get('security.password_encoder');
+        $password = $encoder->encodePassword($customer, $customer->getPassword());
+        $customer->setPassword($password);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($customer);
+        $em->flush();
+
+        $this->get('session')->set('userId', $customer->getCustomerid());
+        //return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
+        return $this->redirectToRoute("sendRegisterEmail",['customerId' => $customer->getCustomerid()]);
+
+    }
+
+    /**
+     * @Route("/update-customer", name="updateCustomer")
+     */
+    public function updateCustomerAction(Request $request)
+    {
+        //$postData = $request->request->get('contact');
+        //$request->request->get('data'); // for post
+        //$request->query->get('data'); // for get
+        //$data = $request->request->all();
+        //var_dump($data);
+        $customerId = $request->request->get('customerId'); //$data['firstName'];
+        $firstName = $request->request->get('firstName'); //$data['firstName'];
+        $lastName = $request->request->get('lastName');//$data['lastName'];
+        $email = $request->request->get('email');//$data['email'];
+        $phonePrimary = $request->request->get('phonePrimary');//$data['phonePrimary'];
+        $phoneAlternate = $request->request->get('phoneAlternate');//$data['phoneAlternate'];
+        $country = $request->request->get('country');//$data['country'];
+        $state = $request->request->get('state');//$data['state'];
+        $city = $request->request->get('city');//$data['city'];
+        $address = $request->request->get('address');//$data['address'];
+        $zipCode = $request->request->get('zipCode');//$data['zipCode'];
+
+        //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
+        $updateStatus = -1;
+        $response = array();
+        if($this->isCustomerValid($customerId))
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+
+            if($customer)
+            {
+                $customer->setFirstname($firstName);
+                $customer->setLastname($lastName);
+                $customer->setEmail($email);
+                //$customer->setPassword($pwd);
+                $customer->setPhoneprimary($phonePrimary);
+                $customer->setPhonealternate($phoneAlternate);
+                $customer->setCountry($country);
+                $customer->setState($state);
+                $customer->setCity($city);
+                $customer->setAddress($address);
+                $customer->setZipcode($zipCode);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                $updateStatus = 1;
+
+                $response['customerId'] = $customer->getCustomerid();
+                $response['firstName'] = $customer->getFirstname();
+                $response['lastName'] = $customer->getLastname();
+                $response['email'] = $customer->getEmail();
+                $response['phonePrimary'] = $customer->getPhoneprimary();
+                $response['phoneAlternate'] = $customer->getPhonealternate();
+                $response['country'] = $customer->getCountry();
+                $response['state'] = $customer->getState();
+                $response['city'] = $customer->getCity();
+                $response['address'] = $customer->getAddress();
+                $response['zipCode'] = $customer->getZipcode();
+
+            }
+            $response['updateStatus'] = $updateStatus;
+        }
+
+        return $this->json($response);
+
+    }
 	
 	/**
      * @Route("/reset-password-requested",name="resetPasswordRequested")
@@ -333,123 +451,7 @@ class UserController extends Controller
     }
 
 
-    /**
-     * @Route("/create-customer", name="createCustomer")
-     * @param Request $request
-     * @param UserPasswordEncoderInterface $passwordEncoder
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
-    public function createCustomerAction(Request $request)
-    {
-        $data = $request->request->all();
-        //var_dump($data); die("");
-        $firstName = $data['firstName'];
-        $lastName = $data['lastName'];
-        $email = $data['email'];
-        $pwd = $data['pwd'];
-        $cPwd = $data['cPwd'];
-        $phonePrimary = $data['phonePrimary'];
-        $phoneAlternate = $data['phoneAlternate'];
-        $country = $data['country'];
-        $state = $data['state'];
-        $city = $data['city'];
-        $address = $data['address'];
-        $zipCode = $data['zipCode'];
 
-        $customer = new Customers();
-        $customer->setFirstname($firstName);
-        $customer->setLastname($lastName);
-        $customer->setEmail($email);
-        $customer->setPassword($pwd);
-        $customer->setPhoneprimary($phonePrimary);
-        $customer->setPhonealternate($phoneAlternate);
-        $customer->setCountry($country);
-        $customer->setState($state);
-        $customer->setCity($city);
-        $customer->setAddress($address);
-        $customer->setZipcode($zipCode);
-
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($customer, $customer->getPassword());
-        $customer->setPassword($password);
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($customer);
-        $em->flush();
-
-        $this->get('session')->set('userId', $customer->getCustomerid());
-        //return $this->redirectToRoute("app_user_showmydashboard",['customerId' => $customer->getCustomerid()]);
-        return $this->redirectToRoute("sendRegisterEmail",['customerId' => $customer->getCustomerid()]);
-
-    }
-
-    /**
-     * @Route("/update-customer", name="updateCustomer")
-     */
-        public function updateCustomerAction(Request $request)
-    {
-        //$postData = $request->request->get('contact');
-        //$request->request->get('data'); // for post
-        //$request->query->get('data'); // for get
-        //$data = $request->request->all();
-        //var_dump($data);
-       $customerId = $request->request->get('customerId'); //$data['firstName'];
-        $firstName = $request->request->get('firstName'); //$data['firstName'];
-        $lastName = $request->request->get('lastName');//$data['lastName'];
-        $email = $request->request->get('email');//$data['email'];
-        $phonePrimary = $request->request->get('phonePrimary');//$data['phonePrimary'];
-        $phoneAlternate = $request->request->get('phoneAlternate');//$data['phoneAlternate'];
-        $country = $request->request->get('country');//$data['country'];
-        $state = $request->request->get('state');//$data['state'];
-        $city = $request->request->get('city');//$data['city'];
-        $address = $request->request->get('address');//$data['address'];
-        $zipCode = $request->request->get('zipCode');//$data['zipCode'];
-
-        //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
-        $updateStatus = -1;
-        $response = array();
-        if($this->isCustomerValid($customerId))
-        {
-            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-            $customer = $repository->find($customerId);
-
-            if($customer)
-            {
-                $customer->setFirstname($firstName);
-                $customer->setLastname($lastName);
-                $customer->setEmail($email);
-                //$customer->setPassword($pwd);
-                $customer->setPhoneprimary($phonePrimary);
-                $customer->setPhonealternate($phoneAlternate);
-                $customer->setCountry($country);
-                $customer->setState($state);
-                $customer->setCity($city);
-                $customer->setAddress($address);
-                $customer->setZipcode($zipCode);
-
-                $em = $this->getDoctrine()->getManager();
-                $em->flush();
-                $updateStatus = 1;
-
-                $response['customerId'] = $customer->getCustomerid();
-                $response['firstName'] = $customer->getFirstname();
-                $response['lastName'] = $customer->getLastname();
-                $response['email'] = $customer->getEmail();
-                $response['phonePrimary'] = $customer->getPhoneprimary();
-                $response['phoneAlternate'] = $customer->getPhonealternate();
-                $response['country'] = $customer->getCountry();
-                $response['state'] = $customer->getState();
-                $response['city'] = $customer->getCity();
-                $response['address'] = $customer->getAddress();
-                $response['zipCode'] = $customer->getZipcode();
-
-            }
-            $response['updateStatus'] = $updateStatus;
-        }
-
-        return $this->json($response);
-
-    }
 
     /**
      * @Route("/update-password", name="updatePassword")

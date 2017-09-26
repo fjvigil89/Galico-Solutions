@@ -122,7 +122,7 @@ $scope.addNewCustomer = function()
         $window.document.getElementById("phonePrimary").focus();
     }
 
-    else if(GeneralService.isInvalid($scope.newCustomer.country))
+    /*else if(GeneralService.isInvalid($scope.newCustomer.country))
     {
         $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
         $window.document.getElementById("country").focus();
@@ -137,6 +137,7 @@ $scope.addNewCustomer = function()
         $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
         $window.document.getElementById("city").focus();
     }
+    */
 
     else if(GeneralService.isInvalid($scope.newCustomer.address))
     {
@@ -153,7 +154,6 @@ $scope.addNewCustomer = function()
     {
         $('#frm_newCustomer').submit();
     }
-
 
 }
 

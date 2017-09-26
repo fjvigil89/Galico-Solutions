@@ -64,7 +64,7 @@ class Admins implements UserInterface, \Serializable
      *   @ORM\JoinColumn(name="LocalNumberID", referencedColumnName="LocalNumberID")
      * })
      */
-    private $localnumberid;
+    private $localnumber;
 
     /**
      * @return string
@@ -165,17 +165,17 @@ class Admins implements UserInterface, \Serializable
     /**
      * @return Localnumbers
      */
-    public function getLocalnumberid()
+    public function getLocalnumber()
     {
-        return $this->localnumberid;
+        return $this->localnumber;
     }
 
     /**
-     * @param Localnumbers $localnumberid
+     * @param Localnumbers $localnumber
      */
-    public function setLocalnumberid($localnumberid)
+    public function setLocalnumber($localnumber)
     {
-        $this->localnumberid = $localnumberid;
+        $this->localnumber = $localnumber;
     }
 
 

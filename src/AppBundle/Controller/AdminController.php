@@ -41,35 +41,155 @@ class AdminController extends Controller
             return $this->redirectToRoute('rte_admin_signin');
         }
 
-        $repository = $this->getDoctrine()->getRepository(Customers::class);
-        $cust = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Admins::class);
+        $admin = $repository->find($connectedAdminId);
+
+        $country = $admin->getLocalnumber()->getCountry()->getCountry();
 
         $repository = $this->getDoctrine()->getRepository(Houses::class);
-        $houses = $repository->findAll();
+        $houses = $repository->findByCountry($country);
 
-        $repository = $this->getDoctrine()->getRepository(Technicians::class);
-        $technicians = $repository->findAll();
+        $customers = array();
+        foreach($houses as $house)
+        {
+            if(!in_array($house->getCustomer(), $customers, TRUE))
+            {
+                $customers[] = $house->getCustomer();
+            }
+
+        }
 
        return $this->render('website/admin-customers.html.twig', array(
-         'Customers' =>  $cust, 'houses' => $houses,  'technicians' => $technicians
+         'Customers' =>  $customers
        ));
-
 
     }
 
 
 
+    /**
+     * @Route("/admin/customer/save", name="rte_admin_customer_save")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function createNewCustomerAction(Request $request)
+    {
+        $data = $request->request->all();
+        //var_dump($data); die("");
+        $firstName = $data['firstName'];
+        $lastName = $data['lastName'];
+        $email = $data['email'];
+        $pwd = $data['pwd'];
+        $cPwd = $data['cPwd'];
+        $phonePrimary = $data['phonePrimary'];
+        $phoneAlternate = $data['phoneAlternate'];
+        $country = $data['country'];
+        $state = $data['state'];
+        $city = $data['city'];
+        $address = $data['address'];
+        $zipCode = $data['zipCode'];
 
+        $customer = new Customers();
+        $customer->setFirstname($firstName);
+        $customer->setLastname($lastName);
+        $customer->setEmail($email);
+        $customer->setPassword($pwd);
+        $customer->setPhoneprimary($phonePrimary);
+        $customer->setPhonealternate($phoneAlternate);
+        $customer->setCountry($country);
+        $customer->setState($state);
+        $customer->setCity($city);
+        $customer->setAddress($address);
+        $customer->setZipcode($zipCode);
+
+        $encoder = $this->container->get('security.password_encoder');
+        $password = $encoder->encodePassword($customer, $customer->getPassword());
+        $customer->setPassword($password);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($customer);
+        $em->flush();
+
+        return $this->redirectToRoute("rte_admin_customers");
+
+    }
+
+    /**
+     * @Route("/admin/customer/update", name="rte_admin_customer_update")
+     */
+    public function updateCustomerAction(Request $request)
+    {
+        //$postData = $request->request->get('contact');
+        //$request->request->get('data'); // for post
+        //$request->query->get('data'); // for get
+        //$data = $request->request->all();
+        //var_dump($data);
+        $customerId = $request->request->get('customerId'); //$data['firstName'];
+        $firstName = $request->request->get('firstName'); //$data['firstName'];
+        $lastName = $request->request->get('lastName');//$data['lastName'];
+        $email = $request->request->get('email');//$data['email'];
+        $phonePrimary = $request->request->get('phonePrimary');//$data['phonePrimary'];
+        $phoneAlternate = $request->request->get('phoneAlternate');//$data['phoneAlternate'];
+        $country = $request->request->get('country');//$data['country'];
+        $state = $request->request->get('state');//$data['state'];
+        $city = $request->request->get('city');//$data['city'];
+        $address = $request->request->get('address');//$data['address'];
+        $zipCode = $request->request->get('zipCode');//$data['zipCode'];
+
+        //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
+        $updateStatus = -1;
+        $response = array();
+        if($this->isCustomerValid($customerId))
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+            $customer = $repository->find($customerId);
+
+            if($customer)
+            {
+                $customer->setFirstname($firstName);
+                $customer->setLastname($lastName);
+                $customer->setEmail($email);
+                //$customer->setPassword($pwd);
+                $customer->setPhoneprimary($phonePrimary);
+                $customer->setPhonealternate($phoneAlternate);
+                $customer->setCountry($country);
+                $customer->setState($state);
+                $customer->setCity($city);
+                $customer->setAddress($address);
+                $customer->setZipcode($zipCode);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                $updateStatus = 1;
+
+                $response['customerId'] = $customer->getCustomerid();
+                $response['firstName'] = $customer->getFirstname();
+                $response['lastName'] = $customer->getLastname();
+                $response['email'] = $customer->getEmail();
+                $response['phonePrimary'] = $customer->getPhoneprimary();
+                $response['phoneAlternate'] = $customer->getPhonealternate();
+                $response['country'] = $customer->getCountry();
+                $response['state'] = $customer->getState();
+                $response['city'] = $customer->getCity();
+                $response['address'] = $customer->getAddress();
+                $response['zipCode'] = $customer->getZipcode();
+
+            }
+            $response['updateStatus'] = $updateStatus;
+        }
+
+        return $this->redirectToRoute("rte_admin_customers");
+
+    }
 
     /**
      * @Route("/admin/technician-information/{technicianId}",name="rte_admin_technician_information")
      */
 
     public function getTechnicianInformationAction($technicianId){
-
-
-            $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
-            $technician = $repository->find($technicianId);
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
+        $technician = $repository->find($technicianId);
 
         $tech = array();
         $tech['technicianid'] = $technician->getTechnicianid();
@@ -134,14 +254,13 @@ class AdminController extends Controller
         $em->persist($technician);
         $em->flush();
 
-        return $this->redirectToRoute("ListCustomers");
+        return $this->redirectToRoute("rte_admin_technicians");
     }
 
     /**
-     * @Route("/admin/agence/save", name="rte_admin_agence_save")
-     * @param Request $request
+     * @Route("/admin/agent/save", name="rte_admin_agent_save")
      */
-    public function createAgenceAction(Request $request)
+    public function createAgentAction(Request $request)
     {
         $data = $request->request->all();
         //var_dump($data); die("");
@@ -150,14 +269,11 @@ class AdminController extends Controller
         $phone = $data['phoneAgence'];
         $address = $data['adresseAgence'];
 
-
         $agence = new Localnumbers();
       //$agence->setCountry($country);
         $agence->setCity($city);
         $agence->setPhone($phone);
         $agence->setAddress($address);
-
-
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($agence);
@@ -167,10 +283,8 @@ class AdminController extends Controller
     }
 
 
-
     /**
      * @Route("/admin/price/save", name="rte_admin_price_save")
-     * @param Request $request
      */
     public function createPricesAction(Request $request)
     {
@@ -232,8 +346,6 @@ class AdminController extends Controller
         ));
 
          }
-
-
 
 
     /**
@@ -451,7 +563,9 @@ class AdminController extends Controller
             if($isValid)
             {
                 $adminId = $admin->getAdminid();
+                $isSuperAdmin = $admin->isIssuperadmin();
                 $this->get('session')->set('adminId', $adminId);
+                $this->get('session')->set('isSuperAdmin', $isSuperAdmin);
             }
         }
 
