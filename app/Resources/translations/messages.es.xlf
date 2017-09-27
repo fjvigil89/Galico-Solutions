@@ -1128,6 +1128,50 @@
                         <source>Date of intervention</source>
                         <target>Fecha de intervención</target>
                  </trans-unit>
+                 <trans-unit id="admin_technician_availability" resname="admin_technician_availability">
+                       <source>Technician availability</source>
+                       <target>Disponibilidad del técnico</target>
+                </trans-unit>
+                 <trans-unit id="admin_day" resname="admin_day">
+                       <source>Day</source>
+                       <target>Día</target>
+                </trans-unit>
+                 <trans-unit id="admin_starttime" resname="admin_starttime">
+                       <source>Start time</source>
+                       <target>Hora de inicio</target>
+                </trans-unit>
+                 <trans-unit id="admin_endtime" resname="admin_endtime">
+                       <source>End time</source>
+                       <target>Hora de finalización</target>
+                </trans-unit>
+                 <trans-unit id="admin_monday" resname="admin_monday">
+                       <source>Monday</source>
+                       <target>Lunes</target>
+                </trans-unit>
+                  <trans-unit id="admin_tuesday" resname="admin_tuesday">
+                        <source>Tuesday</source>
+                        <target>Martes</target>
+                 </trans-unit>
+                 <trans-unit id="admin_wednesday" resname="admin_wednesday">
+                       <source>Wednesday</source>
+                       <target>Miercoles</target>
+                </trans-unit>
+                 <trans-unit id="admin_thursday" resname="admin_thursday">
+                       <source>Thursday</source>
+                       <target>Jueves</target>
+                </trans-unit>
+                  <trans-unit id="admin_friday" resname="admin_friday">
+                        <source>Friday</source>
+                        <target>Viernes</target>
+                 </trans-unit>
+                 <trans-unit id="admin_saturday" resname="admin_saturday">
+                       <source>Saturday</source>
+                       <target>Sábado</target>
+                </trans-unit>
+                 <trans-unit id="admin_sunday" resname="admin_sunday">
+                       <source>Sunday</source>
+                       <target>Domingo</target>
+                </trans-unit>
 
 
 <!--End Admin-console-->

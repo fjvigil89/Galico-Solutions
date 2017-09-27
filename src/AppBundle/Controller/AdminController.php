@@ -298,6 +298,7 @@ class AdminController extends Controller
         {
             $encoder = $this->container->get('security.password_encoder');
             $isValid = $encoder->isPasswordValid($admin, $pwd);
+
             if($isValid)
             {
                 $adminId = $admin->getAdminid();
