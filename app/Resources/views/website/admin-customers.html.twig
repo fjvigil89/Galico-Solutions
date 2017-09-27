@@ -5,7 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div ng-controller= "AdminController">
+    <div ng-controller= "CustomerController">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -55,12 +55,7 @@
                 </div>
 
 
-
-
-
-
             </div>
-
 
 
         </div>
@@ -126,8 +121,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" >
-                            <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_save' | trans({}, "messages", lang) }}
+                        <button type="button" class="btn bg-yellow color-black" ng-click="" >
+                            <span class="glyphicon glyphicon-floppy-disk" title="Save customer"></span> {{ 'dash_save' | trans({}, "messages", lang) }}
                         </button>
                     </div>
                 </div>
