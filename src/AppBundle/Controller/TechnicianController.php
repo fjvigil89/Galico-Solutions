@@ -89,7 +89,7 @@ class TechnicianController extends Controller
         $em->persist($technician);
         $em->flush();
 
-        return $this->redirectToRoute("ListCustomers");
+        return $this->redirectToRoute("rte_admin_technicians");
     }
 
     /**

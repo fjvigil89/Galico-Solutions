@@ -1241,11 +1241,11 @@
                     </trans-unit>
                     <trans-unit id="admin_list_technicians" resname="admin_list_technicians">
                            <source>List Technicians</source>
-                           <target>List Technicians</target>
+                           <target>List technicians</target>
                     </trans-unit>
                     <trans-unit id="admin_add_technician" resname="admin_add_technician">
                            <source>Add Technician</source>
-                           <target>Add Technician</target>
+                           <target>Add technician</target>
                     </trans-unit>
                 <trans-unit id="admin_request" resname="admin_request">
                        <source>Request</source>
@@ -1263,7 +1263,7 @@
                     </trans-unit>
                     <trans-unit id="admin_local_agent_list" resname="admin_local_agent_list">
                            <source>Local agents list</source>
-                           <target>Local agents list</target>
+                           <target>List local agents</target>
                     </trans-unit>
                     <trans-unit id="admin_add_local_agent" resname="admin_add_local_agent">
                            <source>Add local agent</source>
