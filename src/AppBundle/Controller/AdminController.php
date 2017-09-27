@@ -65,8 +65,6 @@ class AdminController extends Controller
 
     }
 
-
-
     /**
      * @Route("/admin/customer/save", name="rte_admin_customer_save")
      * @param Request $request
@@ -76,7 +74,6 @@ class AdminController extends Controller
     public function createNewCustomerAction(Request $request)
     {
         $data = $request->request->all();
-        //var_dump($data); die("");
         $firstName = $data['firstName'];
         $lastName = $data['lastName'];
         $email = $data['email'];
@@ -313,8 +310,6 @@ class AdminController extends Controller
         return $this->json(array('adminId' => $adminId));
     }
 
-
-
     /**
      * @Route("/admin")
      */
@@ -336,8 +331,6 @@ class AdminController extends Controller
      */
     public function showsendEmailAction()
     {
-
         return $this->render('website/admin-send-email.html.twig');
-
     }
 }
