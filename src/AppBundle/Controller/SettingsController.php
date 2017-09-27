@@ -11,6 +11,8 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Prices;
+use AppBundle\Entity\Localnumbers;
 
 class SettingsController extends Controller
 {
@@ -65,7 +67,7 @@ class SettingsController extends Controller
      */
     public function addLocalAgentAction()
     {
-        return $this->render('website/admin-add-local-agences.html.twig');
+        return $this->render('website/admin-add-local-agent.html.twig');
     }
 
     /**

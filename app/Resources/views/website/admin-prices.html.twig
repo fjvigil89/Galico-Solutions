@@ -40,10 +40,10 @@
                         <tbody>
                         {%  for price in prices %}
                         <tr>
-                            <td>Country</td>
+                            <td>{{ price.country.country }}</td>
                             <td>{{ price.Price }}</td>
                             <td>{{ price.TaxPercentage }}</td>
-                            <td>plan</td>
+                            <td>{{ price.plan.planname }}</td>
 
 
                             <td>
