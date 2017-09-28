@@ -20,6 +20,7 @@
                         </div>
                         <div class="modal-body">
 
+<div ng-show="showCustomerForm">
 
                             <form  id="frm_newCustomer" method="POST" action="{{ path('rte_admin_customer_save') }}">
                                 <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
@@ -75,11 +76,219 @@
 
 
                                 <div class="right-align ">
-                                    <button type="button" class="btn bg-yellow color-black" ng-click="addNewCustomer()">
-                                        <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                                    <button type="button" class="btn bg-yellow color-black"  ng-click="goToHouseInfoForm()">
+                                        <span title="Add"></span> {{ 'dash_next' | trans({}, "messages", lang) }}
                                     </button>
                                 </div>
+
+
+
+
                             </form>
+
+
+
+
+
+</div>
+
+
+
+
+                            <div ng-show="showCustomerHouseForm">
+                                <div class="">
+
+                                    <h4 class="modal-title text-center">{{ 'dash_add_house' | trans({}, "messages", lang) }}</h4>
+                                </div>
+                                <h5 class="error-message text-bold text-center">{[newSubscription.error]} </h5>
+
+
+                                <div class="form-group">
+                                    <label for="subContactFirstName">{{ 'dash_contact_firtName' | trans({}, "messages", lang)}}:</label>
+                                    <input type="text" class="form-control" id="subContactFirstName" ng-model="newSubscription.firstName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subContactLastName">{{ 'dash_contact_lastName' | trans({}, "messages", lang)}}:</label>
+                                    <input type="text" class="form-control" id="subContactLastName" ng-model="newSubscription.lastName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subPhonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
+                                    <input type="tel" class="form-control" id="subPhonePrimary" ng-model="newSubscription.phonePrimary" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="subPhoneAlternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
+                                    <input type="tel" class="form-control" id="subPhoneAlternate" ng-model="newSubscription.phoneAlternate" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">{{ 'form_Country' | trans({}, "messages", lang)}}*</label>
+                                    <select name="subCountry" id="subCountry" class="form-control" ng-model= "newSubscription.country">
+                                        <!-- {|% for country in countries #%}
+                                             <option value="{|{ country.country }}">{|{ country.country }}</option>
+                                         {|% endfor #%}-->
+                                        <option value="CAN">Canada</option>
+                                        <option value="CRI">Costa Rica</option>
+                                        <option value="CUB">Cuba</option>
+                                        <option value="MEX">Mexico</option>
+                                        <option value="USA">United States</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subState">{{ 'form_state' | trans({}, "messages", lang)}}:</label>
+                                    <input type="text" class="form-control" id="subState" ng-model= "newSubscription.state" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subCity">{{ 'form_city' | trans({}, "messages", lang)}} *:</label>
+                                    <input type="text" class="form-control" id="subCity" ng-model= "newSubscription.city" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subAddress">{{ 'form_address' | trans({}, "messages", lang)}} *:</label>
+                                    <input type="text" class="form-control" id="subAddress" ng-model= "newSubscription.address" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subZipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}} *:</label>
+                                    <input type="text" class="form-control" id="subZipCode" ng-model= "newSubscription.zipCode" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="subPlanId">Plan:</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Monthly amount:</label>
+                                    <text>{[newSubscription.amount]} {[newSubscription.currency]}</text>
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+
+                            <!--div class="modal-body"-->
+                            <div class ="padding-payment" id="container-payment" ng-show="showPaymentForm">
+                                <h4 class="text-bold text-center">{{ 'dash_payinfo' | trans({}, "messages", lang)}}</h4>
+                                <h5 class="error-message text-bold text-center">{[paymentInfo.error]} </h5>
+
+
+                                </br>
+
+                                <div class="form-group">
+                                    <label for="subPlanId">Plan:</label>
+                                    <text>{[paymentInfo.planName]}</text>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">{{ 'dash_month_amount' | trans({}, "messages", lang)}}</label>
+                                    <text>{[paymentInfo.amount]}</text>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">{{ 'dash_type_c' | trans({}, "messages", lang)}}</label>
+                                    <text>{{ 'dash_credit_card' | trans({}, "messages", lang)}}</text>
+                                </div>
+                                <!--div class="col-xs-6 no-padding"-->
+                                <div class="form-group">
+                                    <label for="fullname">{{ 'dash_name_card' | trans({}, "messages", lang)}}</label>
+                                    <input type="text" class="form-control" id="nameOnCard" ng-model ="paymentInfo.nameOnCard">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="creditCard">{{ 'dash_card_type' | trans({}, "messages", lang)}}</label>
+                                    <select name="creditCard" id="cardType" class="form-control" ng-model="paymentInfo.cardType" >
+                                        <option value=""></option>
+                                        <option value="Visa">Visa</option>
+                                        <option value="MasterCard">Master Card</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6 no-padding">
+                                        <label for="cardnumber">{{ 'dash_card_number' | trans({}, "messages", lang)}}&nbsp; </label><img src="{{ asset('images/card_mastercard.png') }}"><img src="{{ asset('images/card_visa.png') }}">
+                                    </div>
+
+
+
+                                    <div class="row margin-left">
+
+                                        <div class="col-xs-7 no-padding">
+                                            <input type="number" class="form-control" id="cardNumber" maxlength="16"  ng-model="paymentInfo.cardNumber" >
+                                        </div>
+                                        <div class="col-xs-1 no-padding"></div>
+
+                                        <div class="col-xs-3 no-padding">
+
+                                            <input type="text" class="form-control" id="cvv" maxlength="3"  placeholder="CVV" ng-model="paymentInfo.cvv">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="dateexpiration">{{ 'dash_expiration_date' | trans({}, "messages", lang)}}</label>
+
+                                        <div class="row margin-left">
+
+                                            <div class="col-xs-4 no-padding">
+                                                <select name="dateexpirationmonth" id="expMonth" class="form-control" ng-model="paymentInfo.expMonth">
+
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-2 no-padding"></div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn bg-yellow color-black" ng-show="showPaymentForm" ng-click="goToHouseInfoForm()">
+                                    <span class="glyphicon glyphicon-chevron-left" title=""></span>{{ 'dash_back' | trans({}, "messages", lang)}}
+                                </button>
+                                <button type="button" class="btn bg-blue color-white" name="btn-submit" ng-show="showPaymentForm" ng-click="addRecurringPayments()">
+                                    {{ 'dash_submit' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-ok-circle" title=""></span>
+                                </button>
+                                <button type="button" class="btn bg-yellow color-black" ng-hide="showCustomerForm" ng-click="goToPaymentForm()">
+                                    {{ 'dash_next' | trans({}, "messages", lang)}}<span class="glyphicon glyphicon-chevron-right" title=""></span>
+                                </button>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
 
                     </div>
