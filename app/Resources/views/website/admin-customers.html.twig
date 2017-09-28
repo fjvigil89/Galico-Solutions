@@ -18,7 +18,7 @@
                     <table class="table table-hover">
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="3">{{ 'admin_list_customers' | trans({}, "messages", lang) }}</th>
+                            <th colspan="5">{{ 'admin_list_customers' | trans({}, "messages", lang) }}</th>
                             <th class="text-right">
 
                             </th>
@@ -31,17 +31,19 @@
                             <th>{{ 'form_lastname' | trans({}, "messages", lang) }}</th>
                             <th>{{ 'form_name' | trans({}, "messages", lang) }}</th>
                             <th>{{ 'menu_country' | trans({}, "messages", lang) }}</th>
-                            <!--<th>{{ 'form_email' | trans({}, "messages", lang) }}</th>-->
+                            <th>{{ 'form_email' | trans({}, "messages", lang) }}</th>
+                            <th>{{ 'form_phone_primary' | trans({}, "messages", lang) }}</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
-                       {% for customer in Customers %}
+                       {% for customer in customers %}
                             <tr>
                                 <td class="">{{ customer.lastName }}</td>
                                 <td class="">{{ customer.firstName }}</td>
                                 <td class="">{{ customer.country }}</td>
-                                <!--<td class="">{{ customer.email }}</td>-->
+                                <td class="">{{ customer.email }}</td>
+                                <td class="">{{ customer.phoneprimary }}</td>
                                 <td>
                                     <button data-toggle="modal" data-target="#editModal" class="btn-danger btn-xs" ng-click="getCustomerInformation({{ customer.customerid }})" ><span class="glyphicon glyphicon-edit" title="edit"></span></button>
                                     <!--<button class="btn-warning btn-xs" ng-click="getHousesInformation({{ customer.customerid }})"><span class="glyphicon glyphicon-home" title="A traduire"></span></button>-->
@@ -71,57 +73,65 @@
                     <div class="modal-body">
 
                         <a class="glyphicon glyphicon-user font-header" style = "font-size:10em; "  href=""></a> <!--input type="file" id="file"  name="file"/-->
+                        <p class="error-message text-center text-bold">{[ error.message ]}</p>
 
-
-
-                        <div class="form-group">
-                            <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="lastname" ng-model="customer.lastName" >
-                        </div>
-                        <div class="form-group">
-                            <label for="name">{{ 'form_name' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="firstname" ng-model="customer.firstName" >
-                        </div>
-                        <div class="form-group">
-                            <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
-                            <input type="email" class="form-control" id="email" ng-model="customer.email" >
-                        </div>
-                        <div class="form-group">
+                        <form method="POST" id="frm_update_customer" action="{{ path('rte_admin_customer_update') }}">
+                            <div class="form-group">
+                                <label for="lastname">{{ 'form_lastname' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="lastName" id="lastName" ng-model="customer.lastName" >
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{ 'form_name' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="firstName" id="firstName" ng-model="customer.firstName" >
+                            </div>
+                            <div class="form-group">
+                                <label for="email">{{ 'form_email' | trans({}, "messages", lang) }}</label>
+                                <input type="email" class="form-control" name="email" id="email" ng-model="customer.email" >
+                            </div>
+                            <!--<div class="form-group">
                             <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
                             <input type="password" class="form-control" id="pwd" value="*****">
-                        </div>
-                        <div class="form-group">
-                            <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
-                            <input type="tel" class="form-control" id="phonePrimary" ng-model="customer.phonePrimary" >
-                        </div>
-                        <div class="form-group">
-                            <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
-                            <input type="tel" class="form-control" id="phonealternate" ng-model="customer.phoneAlternate" >
-                        </div>
-                        <div class="form-group">
-                            <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}:</label>
-                            <input type="text" class="form-control" id="country" ng-model="customer.country" >
-                        </div>
-                        <div class="form-group">
-                            <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="state" ng-model="customer.state" >
-                        </div>
-                        <div class="form-group">
-                            <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="city" ng-model="customer.city" >
-                        </div>
-                        <div class="form-group">
-                            <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="address" ng-model="customer.address" >
-                        </div>
-                        <div class="form-group">
-                            <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
-                            <input type="text" class="form-control" id="zipCode" ng-model="customer.zipCode" >
-                        </div>
+                        </div>-->
+                            <div class="form-group">
+                                <label for="phonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang) }}</label>
+                                <input type="tel" class="form-control" name="phonePrimary" id="phonePrimary" ng-model="customer.phonePrimary" >
+                            </div>
+                            <div class="form-group">
+                                <label for="phonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang) }}</label>
+                                <input type="tel" class="form-control" name="phoneAlternate" id="phoneAlternate" ng-model="customer.phoneAlternate" >
+                            </div>
+                            <div class="form-group">
+                                <label for="country">{{ 'form_Country' | trans({}, "messages", lang) }}:</label>
+                                <select name="country" class="form-control" name="country" id="country" ng-model= "customer.country" required>
+                                    {% for country in countries %}
+                                        <option value="{{ country.country }}">{{ country.country }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">{{ 'form_state' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="state" id="state" ng-model="customer.state" >
+                            </div>
+                            <div class="form-group">
+                                <label for="city">{{ 'form_city' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="city" id="city" ng-model="customer.city" >
+                            </div>
+                            <div class="form-group">
+                                <label for="address">{{ 'form_address' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="address" id="address" ng-model="customer.address" >
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">{{ 'form_zipcode' | trans({}, "messages", lang) }}</label>
+                                <input type="text" class="form-control" name="zipCode" id="zipCode" ng-model="customer.zipCode" >
+                            </div>
+                            <input type="hidden" name="customerId" ng-value="customer.customerId" />
+                        </form>
+
+
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-yellow color-black" ng-click="" >
+                        <button type="button" class="btn bg-yellow color-black" ng-click="updateCustomer()" >
                             <span class="glyphicon glyphicon-floppy-disk" title="Save customer"></span> {{ 'dash_save' | trans({}, "messages", lang) }}
                         </button>
                     </div>
