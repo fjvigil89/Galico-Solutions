@@ -95,12 +95,10 @@ class TechnicianController extends Controller
     /**
      * @Route("/admin/technicians", name="rte_admin_technicians" )
      */
-    public function showListTechniciansAction()
+    public function listTechniciansAction()
     {
-
         $repository = $this->getDoctrine()->getRepository(Technicians::class);
         $technicians = $repository->findAll();
-
 
         return $this->render('website/admin-technicians.html.twig', array(
             'technicians' => $technicians,
@@ -178,19 +176,7 @@ class TechnicianController extends Controller
      */
     public function addAdminTechniciansAction()
     {
-
         return $this->render('website/admin-add-technician.html.twig');
-
-    }
-
-    /**
-     * @Route("/admin/request", name="rte_admin_request")
-     */
-    public function showTechRequestAction()
-    {
-
-        return $this->render('website/admin-tech-request.html.twig');
-
     }
 
     /**

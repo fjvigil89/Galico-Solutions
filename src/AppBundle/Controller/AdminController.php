@@ -199,6 +199,14 @@ class AdminController extends Controller
     }
 
     /**
+     * @Route("/admin/requests", name="rte_admin_requests")
+     */
+    public function showRequestsAction()
+    {
+        return $this->render('website/admin-requests.html.twig');
+    }
+
+    /**
      * @Route("/admin/prices", name="rte_admin_prices" )
      */
     public function showPricesAction()
