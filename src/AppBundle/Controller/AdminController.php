@@ -59,8 +59,12 @@ class AdminController extends Controller
 
         }
 
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countries = $repository->findAll();
+
        return $this->render('website/admin-customers.html.twig', array(
-         'Customers' =>  $customers
+         'customers' =>  $customers,
+         'countries' => $countries
        ));
 
     }
@@ -71,7 +75,7 @@ class AdminController extends Controller
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function createNewCustomerAction(Request $request)
+    public function createCustomerAction(Request $request)
     {
         $data = $request->request->all();
         $firstName = $data['firstName'];
@@ -117,11 +121,6 @@ class AdminController extends Controller
      */
     public function updateCustomerAction(Request $request)
     {
-        //$postData = $request->request->get('contact');
-        //$request->request->get('data'); // for post
-        //$request->query->get('data'); // for get
-        //$data = $request->request->all();
-        //var_dump($data);
         $customerId = $request->request->get('customerId'); //$data['firstName'];
         $firstName = $request->request->get('firstName'); //$data['firstName'];
         $lastName = $request->request->get('lastName');//$data['lastName'];
@@ -134,47 +133,46 @@ class AdminController extends Controller
         $address = $request->request->get('address');//$data['address'];
         $zipCode = $request->request->get('zipCode');//$data['zipCode'];
 
-        //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
         $updateStatus = -1;
         $response = array();
-        if($this->isCustomerValid($customerId))
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
+        $customer = $repository->find($customerId);
+
+        if($customer)
         {
-            $repository = $this->getDoctrine()->getRepository('AppBundle:Customers');
-            $customer = $repository->find($customerId);
+            $customer->setFirstname($firstName);
+            $customer->setLastname($lastName);
+            $customer->setEmail($email);
+            //$customer->setPassword($pwd);
+            $customer->setPhoneprimary($phonePrimary);
+            $customer->setPhonealternate($phoneAlternate);
+            $customer->setCountry($country);
+            $customer->setState($state);
+            $customer->setCity($city);
+            $customer->setAddress($address);
+            $customer->setZipcode($zipCode);
 
-            if($customer)
-            {
-                $customer->setFirstname($firstName);
-                $customer->setLastname($lastName);
-                $customer->setEmail($email);
-                //$customer->setPassword($pwd);
-                $customer->setPhoneprimary($phonePrimary);
-                $customer->setPhonealternate($phoneAlternate);
-                $customer->setCountry($country);
-                $customer->setState($state);
-                $customer->setCity($city);
-                $customer->setAddress($address);
-                $customer->setZipcode($zipCode);
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $updateStatus = 1;
 
-                $em = $this->getDoctrine()->getManager();
-                $em->flush();
-                $updateStatus = 1;
+            /*$response['customerId'] = $customer->getCustomerid();
+            $response['firstName'] = $customer->getFirstname();
+            $response['lastName'] = $customer->getLastname();
+            $response['email'] = $customer->getEmail();
+            $response['phonePrimary'] = $customer->getPhoneprimary();
+            $response['phoneAlternate'] = $customer->getPhonealternate();
+            $response['country'] = $customer->getCountry();
+            $response['state'] = $customer->getState();
+            $response['city'] = $customer->getCity();
+            $response['address'] = $customer->getAddress();
+            $response['zipCode'] = $customer->getZipcode();
+            */
 
-                $response['customerId'] = $customer->getCustomerid();
-                $response['firstName'] = $customer->getFirstname();
-                $response['lastName'] = $customer->getLastname();
-                $response['email'] = $customer->getEmail();
-                $response['phonePrimary'] = $customer->getPhoneprimary();
-                $response['phoneAlternate'] = $customer->getPhonealternate();
-                $response['country'] = $customer->getCountry();
-                $response['state'] = $customer->getState();
-                $response['city'] = $customer->getCity();
-                $response['address'] = $customer->getAddress();
-                $response['zipCode'] = $customer->getZipcode();
-
-            }
-            $response['updateStatus'] = $updateStatus;
         }
+        //$response['updateStatus'] = $updateStatus;
+
 
         return $this->redirectToRoute("rte_admin_customers");
 
@@ -185,7 +183,11 @@ class AdminController extends Controller
      */
     public function addAdminCustomersAction()
     {
-         return $this->render('website/admin-add-customer.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countries = $repository->findAll();
+        return $this->render('website/admin-add-customer.html.twig',array(
+            'countries'=> $countries
+        ));
     }
 
     /**
