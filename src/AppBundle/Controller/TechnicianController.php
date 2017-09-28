@@ -199,7 +199,7 @@ class TechnicianController extends Controller
     public function showTechInterventionAction()
     {
 
-        return $this->render('website/admin-add-technician-interventions.html.twig');
+        return $this->render('website/admin-interventions.html.twig');
 
     }
 
