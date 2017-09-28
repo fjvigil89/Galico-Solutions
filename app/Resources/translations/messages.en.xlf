@@ -796,7 +796,7 @@
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
-                       <target>Request date</target>
+                       <target>Date request</target>
                 </trans-unit>					
                  <trans-unit id="dash_status" resname="dash_status">
                        <source>Status</source>
@@ -1122,7 +1122,7 @@
                 </trans-unit>
                  <trans-unit id="admin_console_date_intervention" resname="admin_console_date_intervention">
                        <source>Date of intervention</source>
-                       <target>Date of intervention</target>
+                       <target>Intervention date </target>
                 </trans-unit>
                  <trans-unit id="admin_technician_availability" resname="admin_technician_availability">
                        <source>Technician availability</source>
@@ -1324,6 +1324,10 @@
                       <trans-unit id="admin_sendemail_selectFile" resname="admin_sendemail_selectFile">
                              <source>Select File</source>
                              <target>Select File</target>
+                      </trans-unit>
+                      <trans-unit id="admin_intervention_details" resname="admin_intervention_details">
+                             <source>Intervention details</source>
+                             <target>Intervention details</target>
                       </trans-unit>
 <!--End Admin Console-->
         </body>

@@ -18,9 +18,14 @@
                     <table class="table table-hover">
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="7">{{ 'admin_request' | trans({}, "messages", lang)}}</th>
-
+                            <th colspan="5">{{ 'admin_request' | trans({}, "messages", lang)}}</th>
+                            <th class="text-right">
+                                <a href="#" data-toggle="modal" data-target="#addRequestModal" >
+                                    <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
+                                </a>
+                            </th>
                         </tr>
+
                         </thead>
                         <thead class="bg-light-gray">
                         <tr>
@@ -205,6 +210,106 @@
                             </table>
                         </div>
                     </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" >
+                        <span class="glyphicon glyphicon-floppy-disk" title="Send"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div id="addRequestModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ 'dash_create_serviceReq' | trans({}, "messages", lang)}}</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <form class="form-inline" id="frm_service_request" method="post" action="{{ path('sendServiceRequest') }}">
+
+                        <!--<div class="row">
+                            <div class="col-xs-12 error-message text-center">Charges may apply if service requested is not included in plan</div>
+                        </div><br>-->
+                        <p class="error-message text-center">{[request.error]}</p>
+                        <div class="row">
+                            <div class="col-xs-4 text-bold">{{ 'dash_reference_number' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" >: 3455434 </div>
+                        </div><br>
+
+
+                        <div class="row">
+                            <div class="col-xs-4 text-bold">{{ 'dash_sdate' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" >: 27/09/2017 </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-xs-4 text-bold">{{ 'dash_customer' | trans({}, "messages", lang)}}</div>
+                            <div class="col-xs-7" > : Carlos mendoza</div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-xs-4 text-bold" for="addr">{{ 'dash_house_service' | trans({}, "messages", lang)}}</label>
+                            <div class="col-xs-7">
+                                <select name="houseId" id="houseId"  class="form-control" ng-model="request.houseId">
+                                    <option value=""></option>
+
+
+                                </select>
+                            </div>
+                        </div><br>
+
+                        <!--<div class="row" ng-hide="request.houseId==undefined || request.houseId==''">
+                            <div class="col-xs-5 text-bold">Plan</div>
+                            <div class="col-xs-7" >:{[getPlanPrice()]}</div>
+                        </div><br>-->
+
+                        <div class="row">
+                            <label class="col-xs-4 text-bold" for="servicereq">{{ 'admin_service' | trans({}, "messages", lang)}} </label>
+                            <div class="col-xs-7">
+
+                                <select id="serviceId" name="serviceId" class="form-control" ng-model="request.serviceId">
+                                    <option value=""></option>
+
+
+                                </select>
+
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-xs-4 text-bold">{{ 'dash_request_details' | trans({}, "messages", lang)}}:</div>&nbsp;
+                            <div class="col-xs-7">&nbsp;&nbsp;&nbsp;
+                                <textarea class="form-control " rows="10" name="requestDetails" id="requestDetails" ng-model="request.requestDetails"></textarea>
+                            </div>
+                        </div><br>
+
+
+                        <p class="error-message text-center">{[request.error]}</p>
+
+
+
+
+
+                        <!--<input type="hidden" id="hHouseId" name="houseId">
+                        <input type="hidden" id="hRequestDetails" name="requestDetails">
+                        <input type="hidden" id="hServiceId" name="serviceId">-->
+                    </form>
+
+
+
+
+
 
 
 

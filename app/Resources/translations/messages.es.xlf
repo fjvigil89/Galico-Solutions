@@ -1329,6 +1329,10 @@
                              <source>Select File</source>
                              <target>Seleccionar Archivo</target>
                       </trans-unit>
+                      <trans-unit id="admin_intervention_details" resname="admin_intervention_details">
+                             <source>Intervention details</source>
+                             <target>Detalles de la intervención</target>
+                      </trans-unit>
 
 <!--End Admin Console-->
         </body>

@@ -192,4 +192,16 @@ class TechnicianController extends Controller
         return $this->render('website/admin-tech-request.html.twig');
 
     }
+
+    /**
+     * @Route("/admin/technician/interventions", name="rte_admin_technician_interventions")
+     */
+    public function showTechInterventionAction()
+    {
+
+        return $this->render('website/admin-add-technician-interventions.html.twig');
+
+    }
+
+
 }

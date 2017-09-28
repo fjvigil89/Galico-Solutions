@@ -1334,6 +1334,12 @@
                              <source>Select File</source>
                              <target>Choisir le dossier</target>
                       </trans-unit>
+                      <trans-unit id="admin_intervention_details" resname="admin_intervention_details">
+                             <source>Intervention details</source>
+                             <target>Détails d intervention</target>
+                      </trans-unit>
+
+
 <!--End Admin Console-->
 
 
