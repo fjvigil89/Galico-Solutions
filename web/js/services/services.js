@@ -288,6 +288,37 @@ angular.module("gpApp")
             };
             return $http.post(url, data, config);
         }
+
+        this.getAgentInformation = function(id)
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/admin/agent/'+id,
+                method: "GET",
+
+            });
+        }
+
+        this.updateAgent = function (agent) {
+
+            var url = RouterService.getEndPoint() + '/update-agent';
+            var data = $.param({
+                country : agent.country,city : agent.city,
+                phone : agent.phone,address: agent.address,
+                localnumberid: agent.localnumberid
+
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+
+
+
     })
 
 

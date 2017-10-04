@@ -16,6 +16,31 @@ use AppBundle\Entity\Localnumbers;
 
 class SettingsController extends Controller
 {
+
+    /**
+     * @Route("/admin/agent/{id}",name="rte_admin_agent")
+     */
+    public function getAgentInformationAction($id){
+
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Localnumbers');
+        $agentlocal = $repository->find($id);
+
+        $agent = array();
+        $agent['localnumberid'] = $agentlocal->getLocalnumberid();
+        $agent['country'] = $agentlocal->getCountry();
+        $agent['city'] = $agentlocal->getCity();
+        $agent['phone'] = $agentlocal->getPhone();
+        $agent['address'] = $agentlocal->getAddress();
+
+
+
+
+        return $this->json($agent);
+    }
+
+
+
     /**
      * @Route("/admin/agent/save", name="rte_admin_agent_save")
      */
@@ -120,5 +145,49 @@ class SettingsController extends Controller
 
         return $this->redirectToRoute("ListCustomers");
     }
+
+
+    /**
+     * @Route("/admin/agent/update", name="rte_admin_agent_update")
+     */
+    public function updateAgentAction(Request $request)
+    {
+        $localnumberid = $request->request->get('localnumberid');
+        $country = $request->request->get('subagCountry');
+        $city = $request->request->get('cityAgence');
+        $phone = $request->request->get('phoneAgence');
+        $address = $request->request->get('adresseAgence');
+
+
+        $updateStatus = -1;
+        $response = array();
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Localnumbers');
+        $localnumber = $repository->find($localnumberid);
+
+        if($localnumberid)
+        {
+            $localnumber->setCountry($country);
+            $localnumber->setCity($city);
+            $localnumber->setPhone($phone);
+            $localnumber->setAddress($address);
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $updateStatus = 1;
+
+
+
+        }
+        //$response['updateStatus'] = $updateStatus;
+
+
+        return $this->redirectToRoute("rte_admin_customers");
+
+    }
+
+
+
 
 }
