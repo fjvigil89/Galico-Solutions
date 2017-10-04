@@ -27,7 +27,7 @@ app.config(function($interpolateProvider,$translateProvider){
 		"ERR_REGISTER_COUNTRY" : "Please enter a country",
 		"ERR_REGISTER_STATE" : "Please enter a state",
 		"ERR_REGISTER_CITY" : "Please enter a city",	
-		"ERR_REGISTER_ADDRESS" : "Please enter a address",
+		"ERR_REGISTER_ADDRESS" : "Please enter an address",
 		"ERR_REGISTER_ZIPCODE" : "Please enter a zipCode",
 	
         "ERR_UPDATEPASSWORD_PASS"     : "Please enter your current password",

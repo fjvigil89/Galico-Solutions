@@ -47,17 +47,25 @@ class AdminController extends Controller
         $country = $admin->getLocalnumber()->getCountry()->getCountry();
 
         $repository = $this->getDoctrine()->getRepository(Houses::class);
-        $houses = $repository->findByCountry($country);
 
-        $customers = array();
-        foreach($houses as $house)
+        if($admin->isIssuperadmin())
         {
-            if(!in_array($house->getCustomer(), $customers, TRUE))
-            {
-                $customers[] = $house->getCustomer();
-            }
-
+            $repository = $this->getDoctrine()->getRepository(Customers::class);
+            $customers = $repository->findAll();
         }
+        else
+        {
+            $houses = $repository->findByCountry($country);
+
+            $customers = array();
+            foreach($houses as $house)
+            {
+                if(!in_array($house->getCustomer(), $customers, TRUE)) {
+                    $customers[] = $house->getCustomer();
+                }
+            }
+        }
+
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
         $countries = $repository->findAll();
@@ -185,8 +193,13 @@ class AdminController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
         $countries = $repository->findAll();
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
+        $plans = $repository->findAll();
+
         return $this->render('website/admin-add-customer.html.twig',array(
-            'countries'=> $countries
+            'countries'=> $countries,
+            'plans'=> $plans
         ));
     }
 

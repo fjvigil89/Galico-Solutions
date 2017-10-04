@@ -5,7 +5,12 @@ angular.module("gpApp")
     .controller('CustomerController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,RouterService,$window,GeneralService,$translate){
 
         $scope.error = {};
-        $scope.action = "";
+        $scope.action = "add";
+        $scope.newCustomer = {};
+        $scope.newHouse = {};
+        $scope.paymentInfo = {};
+
+        $scope.step = 1;
 
         $scope.getCustomerInformation = function(customerId)
         {
@@ -45,6 +50,7 @@ angular.module("gpApp")
         function validateCustomer (customer)
         {
             var formValid = true;
+            $scope.error.message = "";
             if(GeneralService.isInvalid(customer.firstName))
             {
                 $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
@@ -122,6 +128,106 @@ angular.module("gpApp")
             }
 
             return formValid;
+        }
+
+        $scope.goToNextStep = function()
+        {
+            var formValid = true;
+
+            if($scope.step==1)
+            {
+                formValid = validateCustomer ($scope.newCustomer);
+
+            }
+            else if($scope.step==2)
+            {
+                $scope.error.message = "";
+                if(GeneralService.isInvalid($scope.newHouse.contactFirstName))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
+                    $window.document.getElementById("contactFirstName").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.contactLastName))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_LASTNAME');
+                    $window.document.getElementById("contactLastName").focus();
+                    formValid = false;
+                }
+
+                else if(GeneralService.isInvalid($scope.newHouse.contactPhonePrimary))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_PHONE');
+                    $window.document.getElementById("contactPhonePrimary").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.country))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                    $window.document.getElementById("houseCountry").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.state))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_STATE');
+                    $window.document.getElementById("houseState").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.city))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_CITY');
+                    $window.document.getElementById("houseCity").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.address))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                    $window.document.getElementById("houseAddress").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.zipCode))
+                {
+                    $scope.error.message = $translate.instant('ERR_REGISTER_ZIPCODE');
+                    $window.document.getElementById("houseZipCode").focus();
+                    formValid = false;
+                }
+                else if(GeneralService.isInvalid($scope.newHouse.planId))
+                {
+                    $scope.error.message =  $translate.instant('ERR_DASHBOARD_PLAN');
+                    $window.document.getElementById("housePlanId").focus();
+                    formValid = false;
+                }
+
+            }
+
+            if(formValid)
+            {
+                $scope.step += 1;
+            }
+
+
+        }
+
+        $scope.goToPreviousStep = function()
+        {
+            $scope.step -= 1;
+        }
+
+
+        $scope.getPlanPrice = function()
+        {
+            DashboardService.getPlanPrice($scope.newHouse.country,$scope.newHouse.planId)
+                .then(function(response){
+
+                    $scope.newHouse.amount = response.data.price;
+                    $scope.newHouse.currency = response.data.currency;
+
+                    $scope.paymentInfo.planName = response.data.planName;
+                    $scope.paymentInfo.amount = response.data.price;
+
+                },function(error){
+                    console.log(error);
+                })
         }
 
         //End controller
