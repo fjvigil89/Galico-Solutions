@@ -120,7 +120,9 @@ class AdminController extends Controller
         $em->persist($customer);
         $em->flush();
 
-        return $this->redirectToRoute("rte_admin_customers");
+        //return $this->redirectToRoute("rte_admin_customers");
+        return $this->json(array('id'=> $customer->getCustomerid()));
+
 
     }
 
@@ -197,11 +199,16 @@ class AdminController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Plans');
         $plans = $repository->findAll();
 
+        $today = date('Y-m-d');
+
         return $this->render('website/admin-add-customer.html.twig',array(
             'countries'=> $countries,
-            'plans'=> $plans
+            'plans'=> $plans,
+            'today'=>$today
         ));
     }
+
+
 
     /**
      * @Route("/admin/houses", name="rte_admin_houses" )

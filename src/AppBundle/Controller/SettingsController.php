@@ -80,7 +80,7 @@ class SettingsController extends Controller
 
 
         {
-            return $this->render('website/admin-local-agences.html.twig', array(
+            return $this->render('admin-local-agents.html.twig', array(
                 'locals' =>  $locals,
             ));
         }

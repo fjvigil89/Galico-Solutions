@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-09-26.
  */
 angular.module("gpApp")
-    .controller('TechnicianController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,RouterService,$window,GeneralService,$translate){
+    .controller('TechnicianController',function($scope, $rootScope, DashboardService, AdminService, AdminService, RouterService, $window, GeneralService, $translate){
 
         $scope.technician = {};
         $scope.technicianUpdated = {};

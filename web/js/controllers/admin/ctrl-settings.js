@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-09-26.
  */
 angular.module("gpApp")
-    .controller('SettingsController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,RouterService,$window,GeneralService,$translate){
+    .controller('SettingsController',function($scope, $rootScope, DashboardService, AdminService, AdminService, RouterService, $window, GeneralService, $translate){
 
         $scope.error = {};
         $scope.action = "";

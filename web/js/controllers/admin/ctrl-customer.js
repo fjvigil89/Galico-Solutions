@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-09-26.
  */
 angular.module("gpApp")
-    .controller('CustomerController',function($scope,$rootScope,DashboardService,AdminService,AuthAdmService,RouterService,$window,GeneralService,$translate){
+    .controller('CustomerController',function($scope, $rootScope, DashboardService, AdminService, RouterService, $window, GeneralService, $translate){
 
         $scope.error = {};
         $scope.action = "add";
@@ -134,6 +134,7 @@ angular.module("gpApp")
         {
             var formValid = true;
 
+
             if($scope.step==1)
             {
                 formValid = validateCustomer ($scope.newCustomer);
@@ -228,6 +229,96 @@ angular.module("gpApp")
                 },function(error){
                     console.log(error);
                 })
+        }
+
+        $scope.addRecurringPayments = function()
+        {
+
+            $scope.paymentInfo.error =  "";
+
+            if(GeneralService.isInvalid($scope.paymentInfo.nameOnCard))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_NAMEONCARD');
+                $window.document.getElementById("nameOnCard").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.cardType))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CARDTYPE');
+                $window.document.getElementById("cardType").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.cardNumber))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CARDNUMBER');
+                $window.document.getElementById("cardNumber").focus();
+            }
+
+            else if(GeneralService.isInvalid($scope.paymentInfo.cvv))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_CVV');
+                $window.document.getElementById("cvv").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.expMonth))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_EXPMONTH');
+                $window.document.getElementById("expMonth").focus();
+            }
+            else if(GeneralService.isInvalid($scope.paymentInfo.expYear))
+            {
+                $scope.paymentInfo.error =  $translate.instant('ERR_DASHBOARD_EXPYEAR');
+                $window.document.getElementById("expYear").focus();
+            }
+
+            else
+            {
+                $scope.paymentInfo.error =  "";
+
+                AdminService.createCustomer($scope.newCustomer)
+                    .then(function(response){
+                        console.log(response.data);
+
+
+                        $scope.paymentInfo.customerId = response.data.id;
+                        $scope.paymentInfo.country = $scope.newHouse.country;
+                        $scope.paymentInfo.state = $scope.newHouse.state;
+                        $scope.paymentInfo.city = $scope.newHouse.city;
+                        $scope.paymentInfo.address = $scope.newHouse.address;
+                        $scope.paymentInfo.zipCode = $scope.newHouse.zipCode;
+
+                        $scope.paymentInfo.cFirstName = $scope.newHouse.contactFirstName;
+                        $scope.paymentInfo.cLastName = $scope.newHouse.contactLastName;
+                        $scope.paymentInfo.cPhonePrimary = $scope.newHouse.contactPhonePrimary;
+                        $scope.paymentInfo.cPhoneAlternate = $scope.newHouse.contactPhoneAlternate;
+
+
+                        DashboardService.addRecurringPayments($scope.paymentInfo)
+                            .then(function(response){
+                                console.log(response);
+                                var result = response.data;
+
+                                if(result.errorCode!=0) //TRANSACTION FAILED
+                                {
+                                    $scope.paymentInfo.error =  $translate.instant(result.errorName);
+                                }
+                                else
+                                {
+                                    $('#frm_newCustomer').attr('action', RouterService.getEndPoint()+'/admin/customers');
+                                    $('#frm_newCustomer').submit();
+                                }
+
+
+                            },function(error){
+                                console.log(error);
+                            })
+
+
+                    },function(error){
+
+                    })
+
+                /*
+                */
+            }
+
         }
 
         //End controller

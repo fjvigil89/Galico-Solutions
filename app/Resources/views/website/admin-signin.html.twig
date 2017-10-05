@@ -22,7 +22,7 @@
           <label for="pwd">{{ 'form_password' | trans({}, "messages", lang) }}</label>
           <input type="password" id="pwd" name="pwd" ng-model="admin.pwd" required>
         </div>
-        <button type="button" class="btn" ng-click="authenticateAdmin()">{{ 'menu_signin' | trans({}, "messages", lang) }}</button>
+        <button type="button" class="btn" ng-click="authenticate()">{{ 'menu_signin' | trans({}, "messages", lang) }}</button>
         
 
         <input type="hidden" ng-model="admin.authadmUrl" value="{{ path('rte_admin_authenticate')  }}">
