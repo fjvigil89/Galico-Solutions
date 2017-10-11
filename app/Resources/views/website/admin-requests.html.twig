@@ -5,7 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div class="container">
+    <div class="container" ng-controller="CustomerController">
         <div class="row">
             <div class="col-xs-12 col-md-3">
                 {% include 'website/sidemenu-admin.html.twig' %}
@@ -39,17 +39,23 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="">04/25/2017</td>
-                            <td class="product-qty">Plombing </td>
-                            <td class="">US 15</td>
-                            <td class="">Antonio Fu </td>
-                            <td class="">OPEN </td>
-                            <td>
-                                <button data-toggle="modal" data-target="#detailModal" class="btn-primary btn-xs"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
-                                <button data-toggle="modal" data-target="#treatmentRequestsModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-th" title="go"></span></button>
-                            </td>
-                        </tr>
+                        {% for request in requests %}
+                            <tr>
+                                <td>{{ request.requestDate }}</td>
+                                <td>{{ request.service }}</td>
+                                <td>{{ request.totalAmount }}</td>
+                                <td>{{ request.customer }}</td>
+                                <td>{{ request.status }}</td>
+                                <td>
+                                    <button data-toggle="modal" data-target="#proformaModal" class="btn-primary btn-xs">
+                                        <span class="glyphicon glyphicon-file" title="Attach the proforma"></span>
+                                    </button>
+                                    <button data-toggle="modal" data-target="#processRequestModal" class="btn-danger btn-xs" ng-click="setRequestOpen({{ request.requestId }})">
+                                        <span class="glyphicon glyphicon-pencil" title="Process request"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
 
                         </tbody>
                     </table>
@@ -67,7 +73,7 @@
         </div>
     </div>
 
-    <div id="detailModal" class="modal fade" role="dialog">
+    <div id="proformaModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <div class="modal-content">
@@ -93,7 +99,7 @@
                         <div class="col-xs-8 text-bold"><input class="form-control" id="file" name="file" type="file" data-show-caption="true"></div>
                     </div><br>
 
-
+                    <a class="text-center text-bold" href="">Proforma</a>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn bg-yellow color-black" data-dismiss="modal" >
@@ -105,7 +111,7 @@
         </div>
     </div>
 
-    <div id="treatmentRequestsModal" class="modal fade" role="dialog">
+    <div id="processRequestModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content">
@@ -181,7 +187,7 @@
                                         </select>
                                     </td>
                                     <td colspan="4" >
-                                        <textarea  class="form-control" name="content" id="content" ng-model="request.content" cols="50" rows="10" aria-invalid="false"  style="height: 110px;"></textarea>
+                                        <textarea  class="form-control" name="content" id="content" ng-model="request.content" rows="3"></textarea>
                                     </td>
                                     <td colspan="1">
                                         <button class="btn-primary btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>

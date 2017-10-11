@@ -102,4 +102,13 @@ angular.module("gpApp")
             return $http.post(url, data, config);
         }
 
+        this.setRequestOpen = function(requestId)
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/admin/request/open/'+requestId,
+                method: "POST",
+
+            });
+        }
+
     })

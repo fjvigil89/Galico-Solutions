@@ -161,6 +161,7 @@ angular.module("gpApp")
 
         }
 
+
         //$scope.getCustomerInformation();
         //$scope.getHousesInformation();
 

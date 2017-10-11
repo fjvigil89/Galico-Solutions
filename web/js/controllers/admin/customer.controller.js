@@ -321,5 +321,15 @@ angular.module("gpApp")
 
         }
 
+        $scope.setRequestOpen = function(id)
+        {
+            AdminService.setRequestOpen(id)
+                .then(function (response) {
+                    //console.log(response);
+                },function (error) {
+                    console.log(error);
+                })
+        }
+
         //End controller
     })

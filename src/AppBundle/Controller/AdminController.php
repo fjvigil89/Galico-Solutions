@@ -223,7 +223,29 @@ class AdminController extends Controller
      */
     public function showRequestsAction()
     {
-        return $this->render('website/admin-requests.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $requests = $repository->findAll();
+
+        $allRequests = array();
+        foreach($requests as $request)
+        {
+            $req = array();
+
+            $reqService = $request->getRequestServices();
+            $req['requestDate'] = date_format($request->getRequestdate(), 'Y-m-d');
+            $req['totalAmount'] = $request->getAmount() + $request->getTax();
+            $cust = $request->getHouse()->getCustomer();
+            $req['customer'] = $cust->getLastname() . " " . $cust->getFirstname();
+
+            $req['status'] = $request->getStatus();
+            $req['requestId'] = $request->getRequestid();
+            $req['details'] = $request->getDetails();
+            $req['service'] = count($reqService)>0? $reqService[0]->getService()->getServicename() : "";
+
+            $allRequests[] = $req;
+        }
+
+        return $this->render('website/admin-requests.html.twig',array('requests'=>$allRequests) );
     }
 
     /**
@@ -360,8 +382,28 @@ class AdminController extends Controller
     /**
      * @Route("/admin/send-email", name="rte_admin_send_email")
      */
-    public function showsendEmailAction()
+    public function showSendEmailFormAction()
     {
         return $this->render('website/admin-send-email.html.twig');
+    }
+
+    /**
+     * @Route("/admin/request/open/{requestId}", name="rte_admin_request_open")
+     */
+    public function openRequestAction($requestId)
+    {
+        $statusChanged = false;
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $request = $repository->find($requestId);
+        if($request && $request->getStatus()=="PENDING")
+        {
+            $request->setStatus("OPEN");
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+
+            $statusChanged = true;
+        }
+
+        return $this->json(array('statusChanged'=>$statusChanged));
     }
 }
