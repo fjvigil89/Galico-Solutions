@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Countries;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,27 +18,6 @@ use AppBundle\Entity\Localnumbers;
 class SettingsController extends Controller
 {
 
-    /**
-     * @Route("/admin/agent/{id}",name="rte_admin_agent")
-     */
-    public function getAgentInformationAction($id){
-
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Localnumbers');
-        $agentlocal = $repository->find($id);
-
-        $agent = array();
-        $agent['localnumberid'] = $agentlocal->getLocalnumberid();
-        $agent['country'] = $agentlocal->getCountry();
-        $agent['city'] = $agentlocal->getCity();
-        $agent['phone'] = $agentlocal->getPhone();
-        $agent['address'] = $agentlocal->getAddress();
-
-
-
-
-        return $this->json($agent);
-    }
 
 
 
@@ -52,6 +32,10 @@ class SettingsController extends Controller
         $city = $data['cityAgence'];
         $phone = $data['phoneAgence'];
         $address = $data['adresseAgence'];
+        $countryId = $data['countryAgence'];
+
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $country = $repository->find($countryId);
 
 
         $agence = new Localnumbers();
@@ -59,7 +43,7 @@ class SettingsController extends Controller
         $agence->setCity($city);
         $agence->setPhone($phone);
         $agence->setAddress($address);
-
+        $agence->setCountry($country);
 
 
         $em = $this->getDoctrine()->getManager();
@@ -81,7 +65,7 @@ class SettingsController extends Controller
 
         {
             return $this->render('website/admin-local-agents.html.twig', array(
-                'locals' =>  $locals,
+                'locals' => $locals,
             ));
         }
 
@@ -105,9 +89,8 @@ class SettingsController extends Controller
         $prices = $repository->findAll();
 
 
-
         return $this->render('website/admin-prices.html.twig', array(
-            'prices' =>  $prices,
+            'prices' => $prices,
         ));
 
     }
@@ -165,8 +148,7 @@ class SettingsController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Localnumbers');
         $localnumber = $repository->find($localnumberid);
 
-        if($localnumberid)
-        {
+        if ($localnumberid) {
             $localnumber->setCountry($country);
             $localnumber->setCity($city);
             $localnumber->setPhone($phone);
@@ -178,7 +160,6 @@ class SettingsController extends Controller
             $updateStatus = 1;
 
 
-
         }
         //$response['updateStatus'] = $updateStatus;
 
@@ -188,6 +169,25 @@ class SettingsController extends Controller
     }
 
 
+    /**
+     * @Route("/admin/agent/{id}",name="rte_admin_agent")
+     */
+    public function getAgentInformationAction($id)
+    {
 
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Localnumbers');
+        $agentlocal = $repository->find($id);
+
+        $agent = array();
+        $agent['localnumberid'] = $agentlocal->getLocalnumberid();
+        $agent['country'] = $agentlocal->getCountry();
+        $agent['city'] = $agentlocal->getCity();
+        $agent['phone'] = $agentlocal->getPhone();
+        $agent['address'] = $agentlocal->getAddress();
+
+
+        return $this->json($agent);
+    }
 
 }

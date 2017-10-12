@@ -21,7 +21,7 @@
                     <div class="modal-body">
 
                 <form id="frm_newAgence" method="post" action="{{ path('rte_admin_agent_save') }}">
-
+                    <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
                         <div class="form-group">
                             <label for="countryAgence">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select id="countryAgence" name="countryAgence" class="form-control" ng-model="newAgence.country" >
