@@ -796,7 +796,7 @@
                 </trans-unit>					
                  <trans-unit id="dash_req_date" resname="dash_req_date">
                        <source>Request date</source>
-                       <target>Date request</target>
+                       <target>Request date</target>
                 </trans-unit>					
                  <trans-unit id="dash_status" resname="dash_status">
                        <source>Status</source>
