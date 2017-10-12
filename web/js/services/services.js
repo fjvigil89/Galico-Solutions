@@ -34,7 +34,7 @@ angular.module("gpApp")
 
         this.isInvalid = function(value){
             var invalid = false;
-            if(value===undefined || value.length==0)
+            if(value==undefined || value.length==0)
             {
                 invalid = true;
             }

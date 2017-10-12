@@ -302,9 +302,7 @@ class AdminController extends Controller
         $image = $this->getRandomImage();
         $attachment= $request->files->get('file');
         $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
-         $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName()
-
-        );
+         $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName());
         $namefile = $attachment->getClientOriginalName();
 
 
@@ -405,5 +403,32 @@ class AdminController extends Controller
         }
 
         return $this->json(array('statusChanged'=>$statusChanged));
+    }
+
+    /**
+     * @Route("/admin/proforma/attachment", name="rte_admin_proforma_attachment")
+     */
+    public function attachProformaAction($request)
+    {
+        $requestId = $request->request->get('requestId');
+        $amount = $request->request->get('amount');
+        $tax = $request->request->get('tax');
+        $filename = $request->request->get('filename');
+
+
+        $attachment= $request->files->get('filename');
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
+        $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName());
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+        $serviceRequest = $repository->find($requestId);
+
+        $serviceRequest->setAmount($amount);
+        $tax->setTax($tax);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
+        return $this->redirectToRoute('rte_admin_requests');
     }
 }
