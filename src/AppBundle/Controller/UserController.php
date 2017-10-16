@@ -626,6 +626,7 @@ class UserController extends Controller
 
             $reqService = $request->getRequestServices();
             $req['requestDate'] = date_format($request->getRequestdate(), 'Y-m-d');
+            $req['referenceNumber'] = $request->getReferencenumber();
             $req['status'] = $request->getStatus();
             $req['requestId'] = $request->getRequestid();
             $req['details'] = $request->getDetails();
@@ -635,6 +636,8 @@ class UserController extends Controller
             {
                 $interv = array();
                 $interv['interventionDate'] = date_format($intervention->getInterventiondate(), 'Y-m-d');
+                $interv['techLastName'] = $intervention->getTechnician()->getLastname();
+                $interv['techFirstName'] = $intervention->getTechnician()->getFirstname();
                 $interv['technician'] = $intervention->getTechnician()->getFirstname() . " " . $intervention->getTechnician()->getLastname();
                 $interv['comments'] = $intervention->getComments();
 

@@ -215,7 +215,100 @@ class AdminController extends Controller
      */
     public function showAdminHousesAction()
     {
-        return $this->render('website/admin-houses.html.twig');
+
+        $connectedAdminId = $this->get('session')->get('adminId');
+
+        if(!$connectedAdminId)
+        {
+            return $this->redirectToRoute('rte_admin_signin');
+        }
+
+        $repository = $this->getDoctrine()->getRepository(Admins::class);
+        $admin = $repository->find($connectedAdminId);
+
+        $country = $admin->getLocalnumber()->getCountry()->getCountry();
+
+        $repository = $this->getDoctrine()->getRepository(Houses::class);
+
+        if($admin->isIssuperadmin())
+        {
+            $houses = $repository->findAll();
+        }
+        else
+        {
+            $houses = $repository->findByCountry($country);
+        }
+
+        $customerHouses = array();
+        foreach($houses as $house)
+        {
+            $subscriptions = $house->getSubscriptions();
+            $index = count($subscriptions)-1;
+
+            if($index>=0)
+            {
+                $hs = array();
+                $hs['id'] =$house->getHouseid();
+                $hs['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
+                $hs['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
+                $hs['phonePrimary'] = $house->getPhoneprimary();
+                $hs['phoneAlternate'] = $house->getPhonealternate();
+                $hs['country'] = $house->getCountry();
+                $hs['state'] = $house->getState();
+                $hs['city'] = $house->getCity();
+                $hs['address'] = $house->getAddress();
+                $hs['contactFullName'] = $house->getFirstname() . " " . $house->getLastname();
+                $hs['agentNumber'] = $this->getLocalAgentNumber($hs['country'],$hs['city']);
+
+                $customerHouses[] = $hs;
+
+            }
+
+
+        }
+
+
+
+        return $this->render('website/admin-houses.html.twig', array('houses'=>$customerHouses));
+    }
+
+    /**
+     * @Route("/admin/house/{id}", name="rte_admin_house" )
+     */
+    public function showHouseDetailsAction($id)
+    {
+
+        $connectedAdminId = $this->get('session')->get('adminId');
+        $customerHouse = array();
+
+        if($connectedAdminId)
+        {
+            $repository = $this->getDoctrine()->getRepository(Houses::class);
+            $house = $repository->find($id);
+
+            $subscriptions = $house->getSubscriptions();
+            $index = count($subscriptions)-1;
+
+            if($index>=0)
+            {
+                $customerHouse['id'] =$house->getHouseid();
+                $customerHouse['plan'] = $subscriptions[$index]->getPrice()->getPlan()->getPlanname();
+                $customerHouse['subscriptionDate'] = date_format($subscriptions[$index]->getSubscriptiondate(), 'Y-m-d');
+                $customerHouse['phonePrimary'] = $house->getPhoneprimary();
+                $customerHouse['phoneAlternate'] = $house->getPhonealternate();
+                $customerHouse['country'] = $house->getCountry();
+                $customerHouse['state'] = $house->getState();
+                $customerHouse['city'] = $house->getCity();
+                $customerHouse['address'] = $house->getAddress();
+                $customerHouse['contactLastName'] = $house->getLastname();
+                $customerHouse['contactFirstName'] = $house->getFirstname();
+                $customerHouse['agentNumber'] = $this->getLocalAgentNumber($customerHouse['country'],$customerHouse['city']);
+
+            }
+        }
+
+        return $this->json($customerHouse);
+
     }
 
     /**
@@ -246,6 +339,34 @@ class AdminController extends Controller
         }
 
         return $this->render('website/admin-requests.html.twig',array('requests'=>$allRequests) );
+    }
+
+    /**
+     * @Route("/admin/payments/{houseId}", name="rte_admin_payments")
+     */
+    public function showPaymentsAction($houseId)
+    {
+        $connectedAdminId = $this->get('session')->get('adminId');
+        $allPayments = array();
+
+        if($connectedAdminId)
+        {
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Houses');
+            $house = $repository->find($houseId);
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
+            $requests = $repository->findByHouse($house);
+
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
+            foreach($requests as $req)
+            {
+                $payments = $repository->findByRequest($req);
+                $allPayments = array_merge($allPayments,$payments);
+            }
+        }
+
+        return $this->json($allPayments);
     }
 
     /**
@@ -430,5 +551,27 @@ class AdminController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('rte_admin_requests');
+    }
+
+    //TO REMOVE AND PLACE IN A SERVICE
+    private function getLocalAgentNumber($country,$city)
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $country = $repository->findOneByCountry("$country");
+        $localNumbers = $country->getLocalNumbers();
+
+
+        $phoneNumber = "";
+        foreach ($localNumbers as $localNumber)
+        {
+            //echo strtoupper($localNumber->getCity()) . "  " . strtoupper($city) . "\n";
+            if(strtoupper($localNumber->getCity())==strtoupper($city))
+            {
+                $phoneNumber = $localNumber->getPhone();
+                break;
+            }
+        }
+
+        return $phoneNumber;
     }
 }

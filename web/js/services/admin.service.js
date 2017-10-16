@@ -111,4 +111,14 @@ angular.module("gpApp")
             });
         }
 
+        this.findHouse = function(id){
+            return $http.get(RouterService.getEndPoint() + '/admin/house/'+id);
+        }
+
+        this.getPayments = function(houseId){
+            return $http.get(RouterService.getEndPoint() + '/admin/payments/'+houseId);
+        }
+
+
+
     })

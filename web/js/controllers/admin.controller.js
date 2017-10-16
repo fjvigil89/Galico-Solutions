@@ -22,6 +22,8 @@ angular.module("gpApp")
         $scope.request.error = "";
 
         $scope.admin = {};
+        $scope.form = {};
+        $scope.form.page = 1;
 
 
         $scope.getHousesInformation = function (customerId) {
@@ -35,15 +37,50 @@ angular.module("gpApp")
                 })
         }
 
-        $scope.getSelectedHouseInfo = function (houseId) {
-            var house = $.grep($scope.houses, function (h) {
-                return h.id == houseId;
-            });
-            if (house.length > 0) {
-                $scope.selectedHouse = house[0];
+        $scope.findHouse = function (id) {
 
-            }
+            AdminService.findHouse(id)
+                .then(function(response){
+                    $scope.selectedHouse = response.data;
+
+                    //--GET HOUSE REQUESTS
+                    DashboardService.getHouseRequests($scope.selectedHouse.id)
+                        .then(function(response){
+                            $scope.selectedHouse.requests = response.data;
+                            console.log(response.data);
+                        },function(error){
+
+                        })
+
+
+                    $scope.form.page = 1;
+                }, function(error){
+
+                })
         }
+
+        $scope.getSelectedRequest = function(request)
+        {
+            $scope.selectedRequest = request;
+        }
+
+        $scope.goToPage = function(direction)
+        {
+            $scope.selectedRequest = null;
+            if(direction=="next")
+            {
+                $scope.form.page+=1;
+            }
+            else
+            {
+                $scope.form.page-=1;
+            }
+
+        }
+        $scope.getP
+
+
+
 
 
         $scope.addNewAgence = function () {
