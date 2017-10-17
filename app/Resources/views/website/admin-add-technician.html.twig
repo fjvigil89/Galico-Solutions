@@ -20,7 +20,7 @@
                     <div class="modal-body">
 
                         <form  id="frm_newTechnician" method="POST" action="{{ path('rte_admin_technician_save') }}">
-                            <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
+                            <h5 class="error-message text-bold text-center" ng-bind="auth.message" > </h5>
                             <div class="form-group">
                                 <label for="newTechLastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
                                 <input type="text" class="form-control" id="newTechLastname" name="newTechLastname" ng-model="technician.lastName" value="">
@@ -46,18 +46,16 @@
 
                                 <select name="newTechProfesion" id="newTechProfesion" class="form-control" ng-model= "technician.profession" >
 
-                                    <option value="Plumbing">Plumbing</option>
-                                    <option value="Electricity">Electricity</option>
-                                    <option value="Doors and Windows">Doors and Windows</option>
-                                    <option value="Locksmith">Locksmith</option>
-                                    <option value="Appliances">Appliances</option>
-                                    <option value="AC/Heating">AC/Heating</option>
-                                    <option value="Nursing Care">Nursing Care</option>
-                                    <option value="Child Care">Child Care</option>
-                                    <option value="Lawn maintenance">Lawn maintenance</option>
-                                    <option value="Cleaning services">Cleaning services</option>
-                                    <option value="IT support and services">IT support and services</option>
-                                    <option value="Painting Services">Painting Services</option>
+                                    <option value="1">Electrical repair</option>
+                                    <option value="2">Plumbing repair</option>
+                                    <option value="3">Locksmith</option>
+                                    <option value="4">Windows and doors repair</option>
+                                    <option value="5">Home appliances</option>
+                                    <option value="6">Nursing</option>
+                                    <option value="7">Landscaping</option>
+                                    <option value="8">Child Care</option>
+                                    <option value="9">House cleaning</option>
+                                    <option value="10">IT support and services</option>
 
                                 </select>
                             </div>
@@ -81,11 +79,11 @@
                                 <label for="newTechCountry">{{ 'menu_country' | trans({}, "messages", lang)}}:</label>
                                 <select name="newTechCountry" id="newTechCountry" class="form-control"  ng-model="technician.country"  >
 
-                                    <option value="Canada">Canada</option>
-                                    <option value="Costa Rica">Costa Rica</option>
-                                    <option value="Cuba">Cuba</option>
-                                    <option value="Mexico">Mexico</option>
-                                    <option value="United States">United States</option>
+                                    <option value="293">Canada</option>
+                                    <option value="305">Costa Rica</option>
+                                    <option value="306">Cuba</option>
+                                    <option value="412">Mexico</option>
+                                    <option value="488">United States</option>
                                 </select>
                             </div>
                             <div class="form-group">

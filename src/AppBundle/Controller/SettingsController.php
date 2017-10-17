@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Countries;
+use AppBundle\Entity\Plans;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -113,20 +114,28 @@ class SettingsController extends Controller
         //$country = $data['PriceCountry'];
         $prices = $data['price'];
         $tax = $data['tax'];
-        //$plan = $data['plan'];
+       $plan = $data['PricePlan'];
+        $countryId = $data['PriceCountry'];
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $country = $repository->find($countryId);
 
+        $repository = $this->getDoctrine()->getRepository(Plans::class);
+        $planPrices = $repository->find($plan);
 
         $price = new Prices();
         //$agence->setCountry($country);
         $price->setPrice($prices);
         $price->setTaxpercentage($tax);
+        $price->setCountry($country);
+        $price->setPlan($planPrices);
         //$price->setPlan($plan);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($price);
         $em->flush();
 
-        return $this->redirectToRoute("ListCustomers");
+        return $this->redirectToRoute("rte_admin_prices");
+
     }
 
 

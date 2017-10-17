@@ -13,6 +13,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Technicians;
+use AppBundle\Entity\Countries;
+use AppBundle\Entity\Services;
 
 class TechnicianController extends Controller
 {
@@ -48,7 +50,7 @@ class TechnicianController extends Controller
 
 
     /**
-     * @Route("/admin/technician/save",name="rte_admin_technician_save")
+     * @Route("/admin/technician/save", name="rte_admin_technician_save")
      */
     public function addtechnicianAction(Request $request){
 
@@ -62,11 +64,17 @@ class TechnicianController extends Controller
         $profession = $data['newTechProfesion'];
         $idType = $data['newTechIDType'];
         $code = $data['newTechCode'];
-        $country = $data['newTechCountry'];
+        $countryId = $data['newTechCountry'];
         $state = $data['newTechState'];
         $city = $data['addTechCity'];
         $address = $data['newTechAddress'];
         $zipCode = $data['newTechZipCode'];
+
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $country = $repository->find($countryId);
+
+        $repository = $this->getDoctrine()->getRepository(Services::class);
+        $service = $repository->find($profession);
 
         $technician = new Technicians();
         $technician->setFirstname($firstName);
@@ -74,7 +82,7 @@ class TechnicianController extends Controller
         $technician->setEmail($email);
         $technician->setPhoneprimary($phonePrimary);
         $technician->setPhonealternate($phoneAlternate);
-        $technician->setProfession($profession);
+        $technician->setProfession($service);
         $technician->setIdtype($idType);
         $technician->setCode($code);
         $technician->setCountry($country);
