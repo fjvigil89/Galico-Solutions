@@ -77,7 +77,20 @@ angular.module("gpApp")
             }
 
         }
-        $scope.getP
+        $scope.getPayments = function(houseId)
+        {
+            AdminService.getPayments(houseId)
+                .then(function(response){
+                    //console.log(response);
+                    if($scope.selectedHouse==null)
+                    {
+                        $scope.selectedHouse = {};
+                    }
+                    $scope.selectedHouse.payments = response.data;
+                }, function(error){
+
+                })
+        }
 
 
 

@@ -347,7 +347,9 @@ class AdminController extends Controller
     public function showPaymentsAction($houseId)
     {
         $connectedAdminId = $this->get('session')->get('adminId');
-        $allPayments = array();
+
+        $payments = array();
+
 
         if($connectedAdminId)
         {
@@ -357,16 +359,36 @@ class AdminController extends Controller
             $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
             $requests = $repository->findByHouse($house);
 
-
+            $allPayments = array();
             $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
             foreach($requests as $req)
             {
                 $payments = $repository->findByRequest($req);
                 $allPayments = array_merge($allPayments,$payments);
             }
+
+
+            $payments = array();
+            foreach($allPayments as $payment)
+            {
+                $pay = array();
+                $pay['paymentId'] = $payment->getPaymentid();
+                $pay['paymentDate'] = $payment->getPaymentdate()->format('Y-m-d');
+                $pay['amount'] = $payment->getAmount();
+                $pay['tax'] = $payment->getTax();
+                $pay['totalAmount'] = $payment->getAmount() + $payment->getTax();
+                $pay['invoiceNumber'] = $payment->getInvoicenumber();
+                $pay['description'] = $payment->getDescription();
+
+                $reqService = $payment->getRequest()->getRequestServices();
+                $pay['service'] = count($reqService)>0? $reqService[0]->getService()->getServicename() : "";
+
+                $payments[] = $pay;
+            }
+
         }
 
-        return $this->json($allPayments);
+        return $this->json($payments);
     }
 
     /**

@@ -52,7 +52,7 @@
                                                   title={{ 'dash_view_details' | trans({}, "messages", lang) }}></span>
                                         </a>
                                         <a href="#paymentsModal" data-toggle="modal"
-                                           ng-click="getPaymentsHistory({{ house.id }})">
+                                           ng-click="getPayments({{ house.id }})">
                                             <span class="glyphicon glyphicon-usd"
                                                   title={{ 'dash_view_payment' | trans({}, "messages", lang) }}></span>
                                         </a>
@@ -284,7 +284,7 @@
                                 <td>{[ payment.service ]}</td>
                                 <td>{[ payment.totalAmount ]}</td>
                                 <td>
-                                    <a href="{{ path('rte_view_invoice',{'invoiceNumber': '{[payment.invoiceNumber]}' }) }}"
+                                    <a href="/viewInvoice/{[payment.invoiceNumber]}"
                                        target="_blank"><span class="glyphicon glyphicon-file"
                                                              title="View invoice"></span></a>
                                 </td>
@@ -301,6 +301,8 @@
 
             </div>
         </div>
+
+
 
     </div>
 

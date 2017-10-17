@@ -116,6 +116,7 @@ angular.module("gpApp")
         }
 
         this.getPayments = function(houseId){
+            console.log(RouterService.getEndPoint() + '/admin/payments/'+houseId);
             return $http.get(RouterService.getEndPoint() + '/admin/payments/'+houseId);
         }
 
