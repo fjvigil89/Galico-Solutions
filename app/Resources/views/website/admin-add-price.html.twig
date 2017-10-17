@@ -5,7 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
-    <div ng-controller= "AdminController">
+    <div ng-controller= "SettingsController">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -24,11 +24,11 @@
                             <label for="subagCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select name="PriceCountry" id="PriceCountry"  ng-model="newPrice.country" class="form-control" >
 
-                                <option value="Canada">Canada</option>
-                                <option value="Costa Rica">Costa Rica</option>
-                                <option value="Cuba">Cuba</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="United States">United States</option>
+                                <option value="293">Canada</option>
+                                <option value="305">Costa Rica</option>
+                                <option value="306">Cuba</option>
+                                <option value="412">Mexico</option>
+                                <option value="488">United States</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,15 @@
                         </div>
                         <div class="form-group">
                             <label for="plan">Plan/{{ 'menu_services' | trans({}, "messages", lang)}}</label>
-                            <input type="text" class="form-control" id="plan" name="plan" ng-model="newPrice.plan" value="">
+
+                            <select name="PricePlan" id="PricePlan"  ng-model="newPrice.plan" class="form-control" >
+
+                                <option value="1">Basic Plan</option>
+                                <option value="2">GP Plus</option>
+
+                            </select>
+
+
                         </div>
 
 
