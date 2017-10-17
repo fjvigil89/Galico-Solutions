@@ -2,7 +2,7 @@
  * Created by jrhod on 2017-09-26.
  */
 angular.module("gpApp")
-    .controller('SettingsController',function($scope, $rootScope, DashboardService, AdminService, AdminService, RouterService, $window, GeneralService, $translate){
+    .controller('SettingsController', function ($scope, $rootScope, DashboardService, AdminService, RouterService, $window, GeneralService, $translate) {
 
         $scope.error = {};
         $scope.action = "";
@@ -12,33 +12,26 @@ angular.module("gpApp")
         $scope.request = {};
         $scope.request.error = "";
 
-        $scope.addNewAgence = function()
-
-        {
-            if(GeneralService.isInvalid($scope.newAgence.country))
-            {
+        $scope.addNewAgence = function () {
+            if (GeneralService.isInvalid($scope.newAgence.country)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("countryAgence").focus();
             }
-            else if(GeneralService.isInvalid($scope.newAgence.city))
-            {
+            else if (GeneralService.isInvalid($scope.newAgence.city)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
                 $window.document.getElementById("cityAgence").focus();
             }
 
-            else if(GeneralService.isInvalid($scope.newAgence.phone))
-            {
+            else if (GeneralService.isInvalid($scope.newAgence.phone)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
                 $window.document.getElementById("phoneAgence").focus();
             }
-            else if(GeneralService.isInvalid($scope.newAgence.address))
-            {
+            else if (GeneralService.isInvalid($scope.newAgence.address)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
                 $window.document.getElementById("adresseAgence").focus();
             }
 
-            else
-            {
+            else {
                 $('#frm_newAgence').submit();
             }
 
@@ -46,38 +39,27 @@ angular.module("gpApp")
         }
 
 
-
-
-        $scope.addNewPrice = function()
-
-        {
-            if(GeneralService.isInvalid($scope.newPrice.country))
-            {
+        $scope.addNewPrice = function () {
+            if (GeneralService.isInvalid($scope.newPrice.country)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("PriceCountry").focus();
             }
-            else if(GeneralService.isInvalid($scope.newPrice.price))
-            {
+            else if (GeneralService.isInvalid($scope.newPrice.price)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
                 $window.document.getElementById("price").focus();
             }
 
-            else if(GeneralService.isInvalid($scope.newPrice.tax))
-            {
+            else if (GeneralService.isInvalid($scope.newPrice.tax)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
                 $window.document.getElementById("tax").focus();
             }
-            else if(GeneralService.isInvalid($scope.newPrice.plan))
-            {
+            else if (GeneralService.isInvalid($scope.newPrice.plan)) {
                 $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
                 $window.document.getElementById("plan").focus();
             }
 
 
-
-
-            else
-            {
+            else {
                 $('#frm_newPrice').submit();
             }
 
@@ -85,42 +67,34 @@ angular.module("gpApp")
         }
 
 
-
-        $scope.updateAgent = function()
-        {
+        $scope.updateAgent = function () {
             $scope.action = "update";
-            if(validateAgent($scope.agent))
-            {
+            if (validateAgent($scope.agent)) {
                 $('#frm_update_agent').submit();
             }
         }
 
-        function validateAgent (agent)
-        {
+        function validateAgent(agent) {
             var formValid = true;
-            if(GeneralService.isInvalid(agent.country))
-            {
+            if (GeneralService.isInvalid(agent.country)) {
                 $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
                 $window.document.getElementById("subagCountry").focus();
                 formValid = false;
             }
-            else if(GeneralService.isInvalid(agent.city))
-            {
+            else if (GeneralService.isInvalid(agent.city)) {
                 $scope.error.message = $translate.instant('ERR_REGISTER_LASTNAME');
                 $window.document.getElementById("cityAgence").focus();
                 formValid = false;
             }
 
-            else if(GeneralService.isInvalid(agent.phone))
-            {
+            else if (GeneralService.isInvalid(agent.phone)) {
                 $scope.error.message = $translate.instant('ERR_REGISTER_EMAIL');
                 $window.document.getElementById("phoneAgence").focus();
                 formValid = false;
             }
 
 
-            else if(GeneralService.isInvalid(agent.address))
-            {
+            else if (GeneralService.isInvalid(agent.address)) {
                 $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("adresseAgence").focus();
                 formValid = false;
@@ -130,18 +104,18 @@ angular.module("gpApp")
             return formValid;
         }
 
-        $scope.getAgentInformation = function(agentId)
-        {
+        $scope.getAgentInformation = function (agentId) {
 
-            {
-                AdminService.getAgentInformation(agentId)
-                    .then(function(response){
-                        //console.log(response);
-                        $scope.agent = response.data;
 
-                    },function(error){
+            AdminService.getAgentInformation(agentId)
+                .then(function (response) {
+                    console.log(response.data);
+                    $scope.agent = response.data;
 
-                    })
-            }
+
+                }, function (error) {
+
+                })
+
         }
     })

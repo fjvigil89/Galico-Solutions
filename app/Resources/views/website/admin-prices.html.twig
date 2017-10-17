@@ -5,6 +5,7 @@
 {% block body %}
     <div class="pad">
     </div>
+    <div ng-controller= "SettingsController">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-3">
@@ -47,7 +48,7 @@
 
 
                             <td>
-                                <button data-toggle="modal" data-target="#priceModal"  class="btn-primary btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                                <button data-toggle="modal" data-target="#editpriceModal"  class="btn-primary btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
 
                                 <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
@@ -79,8 +80,57 @@
     </div>
 
 
+    <div id="editpriceModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <div class="modal-content">
+                <div class="modal-header bg-yellow">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Price</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="error-message text-center text-bold">{[ error.message ]}</p>
+                    <form method="POST" id="frm_update_agent" action="{{ path('rte_admin_agent_update') }}">
 
+                        <div class="form-group">
+                            <label for="subagCountry">Country</label>
+                            <select name="subagCountry" id="subagCountry" class="form-control" name="subagCountry" ng-model="agent.country" >
+
+                                <option value="293">Canada</option>
+                                <option value="305">Costa Rica</option>
+                                <option value="306">Cuba</option>
+                                <option value="412">Mexico</option>
+                                <option value="488">United States</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cityAgence">City</label>
+                            <input type="text" class="form-control" id="cityAgence" name="cityAgence" ng-model="agent.city" >
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneAgence">Phone</label>
+                            <input type="text" class="form-control" id="phoneAgence" name="phoneAgence" ng-model="agent.phone" >
+                        </div>
+                        <div class="form-group">
+                            <label for="adresseAgence">Address</label>
+                            <input type="text" class="form-control" id="adresseAgence" name="adresseAgence" ng-model="agent.address">
+                        </div>
+                        <input type="hidden" name="localnumberid" ng-value="agent.localnumberid" />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-yellow color-black" ng-click="updateAgent()">
+                        <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
 
     <div class="pad">
     </div>
