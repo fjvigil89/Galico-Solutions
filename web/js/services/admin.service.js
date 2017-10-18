@@ -83,6 +83,16 @@ angular.module("gpApp")
             });
         }
 
+        this.getPriceInformation = function(id)
+        {
+            return $http({
+                url : RouterService.getEndPoint() + '/admin/price/'+id,
+                method: "GET",
+
+            });
+        }
+
+
         this.updateAgent = function (agent) {
 
             var url = RouterService.getEndPoint() + '/update-agent';
@@ -101,6 +111,27 @@ angular.module("gpApp")
             };
             return $http.post(url, data, config);
         }
+
+        this.updatePrice = function (price) {
+
+            var url = RouterService.getEndPoint() + '/update-price';
+            var data = $.param({
+                price : price.price,taxpercentage : price.taxpercentage,
+                country : price.country,plan: price.plan,
+                priceid: price.priceid,
+
+
+            });
+
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+            return $http.post(url, data, config);
+        }
+
+
 
         this.setRequestOpen = function(requestId)
         {

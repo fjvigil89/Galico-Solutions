@@ -201,4 +201,67 @@ class SettingsController extends Controller
         return $this->json($agent);
     }
 
+
+
+    /**
+     * @Route("/admin/price/{id}",name="rte_admin_price")
+     */
+    public function getPriceInformationAction($id)
+    {
+
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
+        $priceObject = $repository->find($id);
+
+        $price = array();
+        $price['priceid'] = $priceObject->getPriceid();
+        $price['country'] = $priceObject->getCountry()->getCountry();
+        $price['taxpercentage'] = $priceObject->getTaxpercentage();
+        $price['plan'] = $priceObject->getPlan()->getPlanname();
+        $price['price'] = $priceObject->getPrice();
+
+
+
+        return $this->json($price);
+    }
+
+    /**
+     * @Route("/admin/price/update", name="rte_admin_price_update")
+     */
+    public function updatePriceAction(Request $request)
+    {
+        $priceid = $request->request->get('priceid');
+        $priceCountryId = $request->request->get('priceCountry');
+        $pricePrice = $request->request->get('pricePrice');
+        $priceTax = $request->request->get('priceTax');
+        $pricePlan = $request->request->get('pricePlan');
+
+        $repository = $this->getDoctrine()->getRepository(Prices::class);
+        $price = $repository->find($priceid);
+        $updateStatus = -1;
+        $response = array();
+
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $priceCountry = $repository->find($priceCountryId);
+
+
+        if ($priceid) {
+            $price->setPrice($pricePrice);
+            $price->setTaxpercentage($priceTax);
+            $price->setPlan($pricePlan);
+            $price->setCountry($priceCountry);
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $updateStatus = 1;
+
+
+        }
+        //$response['updateStatus'] = $updateStatus;
+
+
+        return $this->redirectToRoute("rte_admin_prices");
+
+    }
 }

@@ -80,7 +80,7 @@
                         <form method="POST" id="frm_update_agent" action="{{ path('rte_admin_agent_update') }}">
 
                         <div class="form-group">
-                            <label for="subagCountry">Country</label>
+                            <label for="subagCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select name="subagCountry" id="subagCountry" class="form-control" name="subagCountry" ng-model="agent.countryId" >
 
                                 <option value="293">Canada</option>
@@ -93,15 +93,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="cityAgence">City</label>
+                            <label for="cityAgence">{{ 'form_city' | trans({}, "messages", lang)}}</label>
                             <input type="text" class="form-control" id="cityAgence" name="cityAgence" ng-model="agent.city" >
                         </div>
                         <div class="form-group">
-                            <label for="phoneAgence">Phone</label>
+                            <label for="phoneAgence">{{ 'form_phone_primary' | trans({}, "messages", lang)}}</label>
                             <input type="text" class="form-control" id="phoneAgence" name="phoneAgence" ng-model="agent.phone" >
                         </div>
                         <div class="form-group">
-                            <label for="adresseAgence">Address</label>
+                            <label for="adresseAgence">{{ 'form_address' | trans({}, "messages", lang)}}</label>
                             <input type="text" class="form-control" id="adresseAgence" name="adresseAgence" ng-model="agent.address">
                         </div>
                             <input type="hidden" name="localnumberid" ng-value="agent.localnumberid" />

@@ -118,4 +118,58 @@ angular.module("gpApp")
                 })
 
         }
+
+        $scope.getPriceInformation = function (priceId) {
+
+
+            AdminService.getPriceInformation(priceId)
+                .then(function (response) {
+                    console.log(response.data);
+                    $scope.price = response.data;
+
+
+                }, function (error) {
+
+                })
+
+        }
+
+
+        $scope.updatePrice = function () {
+            $scope.action = "update";
+            if (validatePrice($scope.price)) {
+                $('#frm_update_price').submit();
+            }
+        }
+
+        function validatePrice(price) {
+            var formValid = true;
+            if (GeneralService.isInvalid(price.price)) {
+                $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
+                $window.document.getElementById("pricePrice").focus();
+                formValid = false;
+            }
+            else if (GeneralService.isInvalid(price.taxpercentage)) {
+                $scope.error.message = $translate.instant('ERR_REGISTER_LASTNAME');
+                $window.document.getElementById("priceTax").focus();
+                formValid = false;
+            }
+
+            else if (GeneralService.isInvalid(price.plan)) {
+                $scope.error.message = $translate.instant('ERR_REGISTER_EMAIL');
+                $window.document.getElementById("pricePlan").focus();
+                formValid = false;
+            }
+
+
+            else if (GeneralService.isInvalid(price.country)) {
+                $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $window.document.getElementById("priceCountry").focus();
+                formValid = false;
+            }
+
+
+            return formValid;
+        }
+
     })

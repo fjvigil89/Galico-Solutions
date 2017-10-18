@@ -48,7 +48,7 @@
 
 
                             <td>
-                                <button data-toggle="modal" data-target="#editpriceModal"  class="btn-primary btn-xs" ><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
+                                <button data-toggle="modal" data-target="#editPriceModal"  class="btn-primary btn-xs" ng-click="getPriceInformation({{ price.priceid }})"><span class="glyphicon glyphicon-list-alt" title="go"></span></button>
 
 
                                 <button data-toggle="modal" ng-hide="true" data-target="#addserviceModal" class="btn-danger btn-xs"><span class="glyphicon glyphicon-plus" title="go"></span></button>
@@ -80,7 +80,7 @@
     </div>
 
 
-    <div id="editpriceModal" class="modal fade" role="dialog">
+    <div id="editPriceModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <div class="modal-content">
@@ -90,11 +90,11 @@
                 </div>
                 <div class="modal-body">
                     <p class="error-message text-center text-bold">{[ error.message ]}</p>
-                    <form method="POST" id="frm_update_agent" action="{{ path('rte_admin_agent_update') }}">
+                    <form method="POST" id="frm_update_price" action="{{ path('rte_admin_price_update') }}">
 
                         <div class="form-group">
-                            <label for="subagCountry">Country</label>
-                            <select name="subagCountry" id="subagCountry" class="form-control" name="subagCountry" ng-model="agent.country" >
+                            <label for="priceCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
+                            <select name="priceCountry" id="priceCountry" class="form-control" name="priceCountry" ng-model="price.country" >
 
                                 <option value="293">Canada</option>
                                 <option value="305">Costa Rica</option>
@@ -106,22 +106,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="cityAgence">City</label>
-                            <input type="text" class="form-control" id="cityAgence" name="cityAgence" ng-model="agent.city" >
+                            <label for="pricePrice">{{ 'admin_price' | trans({}, "messages", lang)}}</label>
+                            <input type="text" class="form-control" id="pricePrice" name="pricePrice" ng-model="price.price" >
                         </div>
                         <div class="form-group">
-                            <label for="phoneAgence">Phone</label>
-                            <input type="text" class="form-control" id="phoneAgence" name="phoneAgence" ng-model="agent.phone" >
+                            <label for="priceTax">{{ 'admin_tax_percentage' | trans({}, "messages", lang)}}</label>
+                            <input type="text" class="form-control" id="priceTax" name="priceTax" ng-model="price.taxpercentage" >
                         </div>
                         <div class="form-group">
-                            <label for="adresseAgence">Address</label>
-                            <input type="text" class="form-control" id="adresseAgence" name="adresseAgence" ng-model="agent.address">
+                            <label for="pricePlan">Plan/{{ 'menu_services' | trans({}, "messages", lang)}}</label>
+                            <input type="text" class="form-control" id="pricePlan" name="pricePlan" ng-model="price.plan">
                         </div>
-                        <input type="hidden" name="localnumberid" ng-value="agent.localnumberid" />
+                        <input type="hidden" id="priceid" name="priceid" ng-value="price.priceid" />
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-yellow color-black" ng-click="updateAgent()">
+                    <button type="button" class="btn bg-yellow color-black" ng-click="updatePrice()">
                         <span class="glyphicon glyphicon-floppy-disk" title="Save"></span> {{ 'dash_add' | trans({}, "messages", lang) }}
                     </button>
                 </div>
