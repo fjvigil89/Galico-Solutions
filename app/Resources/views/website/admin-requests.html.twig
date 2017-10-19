@@ -78,44 +78,49 @@
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <!--<h4 class="modal-title">{{ 'dash_reference_number' | trans({}, "messages", lang) }}</h4>-->
-                        <h4 class="modal-title">Attach proforma</h4>
+                        <h4 class="modal-title">Attach {[proforma.invoiceType]}</h4>
                     </div>
                     <div class="modal-body">
                         <p class="text-bold text-center error-message">{[ error.message ]}</p>
 
                         <form id="frm_attachProforma" method="post" action="{{ path('rte_admin_proforma_attachment') }}" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-xs-3 text-bold">{{ 'dash_amount' | trans({}, "messages", lang) }} *:</div>
-                                <div class="col-xs-8 text-bold">
+                                <div class="col-xs-5 text-bold">{{ 'dash_amount' | trans({}, "messages", lang) }} *:</div>
+                                <div class="col-xs-6 text-bold">
                                     <input type="number" min="0" class="form-control" name="amount" id="amount" ng-model="proforma.amount"></div>
                             </div>
                             <br>
 
                             <div class="row">
-                                <div class="col-xs-3 text-bold">{{ 'admin_tax_percentage' | trans({}, "messages", lang) }}
+                                <div class="col-xs-5 text-bold">{{ 'admin_tax_percentage' | trans({}, "messages", lang) }}
                                     *:
                                 </div>
-                                <div class="col-xs-8 text-bold">
+                                <div class="col-xs-6 text-bold">
                                     <input type="number" min="0" class="form-control" name="tax" id="tax" ng-model="proforma.tax"></div>
                             </div>
                             <br>
 
                             <div class="row">
-                                <div class="col-xs-3 text-bold">Proforma :</div>
-                                <div class="col-xs-8 text-bold">
+                                <div class="col-xs-5 text-bold">
+                                    <select class="form-control" name="invoiceType"  ng-model="proforma.invoiceType">
+                                        <option value="proforma" ng-disabled="request.type=='INVOICE'">Proforma</option>
+                                        <option value="invoice" ng-disabled="request.type=='REQUEST'">Invoice</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 text-bold">
                                     <input class="form-control" id="filename" name="filename" type="file" ng-model="proforma.filename">
                                 </div>
                             </div>
                             <br>
 
                             <div class="row" ng-if="request.type=='PROFORMA'">
-                                <div class="col-xs-offset-3 col-xs-8 text-bold text-center">
+                                <div class="col-xs-11 text-bold text-center">
                                     <a href="/proforma/{[request.referenceNumber]}" target="_blank">View Proforma</a>
                                 </div>
                             </div>
 
                             <div class="row" ng-if="request.type=='INVOICE'">
-                                <div class="col-xs-offset-3 col-xs-8 text-bold text-center">
+                                <div class="col-xs-11 text-bold text-center">
                                     <a href="/invoice/{[request.invoiceNumber]}" target="_blank">View invoice</a>
                                 </div>
                             </div>
@@ -126,7 +131,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-yellow color-black" ng-click="attachProforma()" >
-                            <span class="glyphicon glyphicon glyphicon-paperclip" title="Send proforma to customer"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
+                            <span class="glyphicon glyphicon glyphicon-paperclip" title="Attach"></span> {{ 'dash_attach_file' | trans({}, "messages", lang) }}
                         </button>
                     </div>
                 </div>
@@ -140,7 +145,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-yellow">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">{{ 'admin_console_treatRequest' | trans({}, "messages", lang) }} :</h4>
+                        <h4 class="modal-title">{{ 'admin_console_processRequest' | trans({}, "messages", lang) }} :</h4>
                     </div>
                     <div class="modal-body">
 

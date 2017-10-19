@@ -10,6 +10,7 @@ angular.module("gpApp")
         $scope.newHouse = {};
         $scope.paymentInfo = {};
         $scope.proforma = {};
+        $scope.proforma.invoiceType = "proforma";
 
         $scope.step = 1;
 
@@ -293,7 +294,8 @@ angular.module("gpApp")
         {
             $scope.request = request;
             $scope.proforma.requestId = request.requestId;
-            //console.log(request);
+
+            $scope.proforma.invoiceType = (request.type=='INVOICE')?"invoice" : "proforma";
         }
 
         $scope.attachProforma = function () {

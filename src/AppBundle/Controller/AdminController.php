@@ -417,7 +417,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/admin/send-email-form", name="rte_admin_send_email_form")
+     * @Route("/admin/email", name="rte_admin_send_email_form")
      */
     public function sendEmailAction()
     {
@@ -575,6 +575,7 @@ class AdminController extends Controller
         $requestId = $request->request->get('requestId');
         $amount = $request->request->get('amount');
         $taxPercentage = $request->request->get('tax');
+        $invoiceType = $request->request->get('invoiceType');
         //$filename = $request->request->get('filename');
 
         if(!$taxPercentage)
@@ -588,7 +589,7 @@ class AdminController extends Controller
 
         $serviceRequest->setAmount($amount);
         $serviceRequest->setTax($tax);
-        $serviceRequest->setInvoicetype("PROFORMA");
+        $serviceRequest->setInvoicetype(strtoupper($invoiceType));
 
         $em = $this->getDoctrine()->getManager();
         $em->flush();
