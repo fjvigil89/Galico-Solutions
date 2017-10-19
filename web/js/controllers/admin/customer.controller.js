@@ -289,9 +289,11 @@ angular.module("gpApp")
                 })
         }
 
-        $scope.getRequestId = function(id)
+        $scope.getRequest = function(request)
         {
-            $scope.proforma.requestId = id;
+            $scope.request = request;
+            $scope.proforma.requestId = request.requestId;
+            //console.log(request);
         }
 
         $scope.attachProforma = function () {
@@ -303,7 +305,7 @@ angular.module("gpApp")
                 $scope.error.message =  $translate.instant('ERR_AMOUNT_INVALID');
                 $window.document.getElementById("amount").focus();
             }
-            else if(GeneralService.isInvalid($scope.proforma.filename))
+            else if(GeneralService.isInvalid($("#filename").val()))
             {
                 $scope.error.message =  $translate.instant('ERR_FILE_INVALID');
                 $window.document.getElementById("filename").focus();
@@ -317,7 +319,6 @@ angular.module("gpApp")
                 }
 
                 $("#requestId").val($scope.proforma.requestId);
-                console.log();
 
                 $("#frm_attachProforma").submit();
             }

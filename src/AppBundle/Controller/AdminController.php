@@ -331,9 +331,19 @@ class AdminController extends Controller
             $req['customer'] = $cust->getLastname() . " " . $cust->getFirstname();
 
             $req['status'] = $request->getStatus();
+            $req['referenceNumber'] = $request->getReferencenumber();
+            $req['type'] = $request->getInvoicetype();
             $req['requestId'] = $request->getRequestid();
             $req['details'] = $request->getDetails();
             $req['service'] = count($reqService)>0? $reqService[0]->getService()->getServicename() : "";
+
+            $repository = $this->getDoctrine()->getRepository('AppBundle:Payments');
+            $payments = $repository->findByRequest($request);
+            if($payments)
+            {
+                $paymnt = $payments[0];
+                $req['invoiceNumber'] = $paymnt->getInvoicenumber();
+            }
 
             $allRequests[] = $req;
         }
@@ -444,22 +454,31 @@ class AdminController extends Controller
         $email = $request->request->get('email');
         $image = $this->getRandomImage();
         $attachment= $request->files->get('file');
-        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
-         $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName());
-        $namefile = $attachment->getClientOriginalName();
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/uploads/';
 
 
-            # Setup the message
-            $message = \Swift_Message::newInstance()
-                ->setSubject("$subject")
-                ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
-                ->setTo($email)
-               ->attach(\Swift_Attachment::fromPath($resourcesFolderPath.$namefile))
-               // ->attach(\Swift_Attachment::fromPath('images/page-home/services-032.jpg'))
-                ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
-                    'text/html'
+        # Setup the message
+        $message = \Swift_Message::newInstance()
+            ->setSubject("$subject")
+            ->setFrom("info@general-pro.com", "INFO GENERAL PRO")
+            ->setTo($email)
 
-                );
+
+            ->setBody($this->renderView('website/template-email.html.twig', array("messageBody" => $content, "image" => $image)),
+                'text/html'
+            );
+
+        if($attachment)
+        {
+            $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName());
+            $namefile = $attachment->getClientOriginalName();
+
+            $message->attach(\Swift_Attachment::fromPath($resourcesFolderPath.$namefile));
+        }
+
+
+
+
 
             # Send the message
             $this->get('mailer')
@@ -551,26 +570,35 @@ class AdminController extends Controller
     /**
      * @Route("/admin/proforma/attachment", name="rte_admin_proforma_attachment")
      */
-    public function attachProformaAction($request)
+    public function attachProformaAction(Request $request)
     {
         $requestId = $request->request->get('requestId');
         $amount = $request->request->get('amount');
-        $tax = $request->request->get('tax');
-        $filename = $request->request->get('filename');
+        $taxPercentage = $request->request->get('tax');
+        //$filename = $request->request->get('filename');
 
-
-        $attachment= $request->files->get('filename');
-        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
-        $attachment->move($resourcesFolderPath ,$attachment->getClientOriginalName());
+        if(!$taxPercentage)
+        {
+            $taxPercentage = 0;
+        }
+        $tax = ($taxPercentage* $amount)/100;
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Requests');
         $serviceRequest = $repository->find($requestId);
 
         $serviceRequest->setAmount($amount);
-        $tax->setTax($tax);
+        $serviceRequest->setTax($tax);
+        $serviceRequest->setInvoicetype("PROFORMA");
 
         $em = $this->getDoctrine()->getManager();
         $em->flush();
+
+        $filename = $serviceRequest->getReferencenumber() . ".pdf";
+        $attachment= $request->files->get('filename');
+        $resourcesFolderPath = $this->get('kernel')->getRootDir() . '/Resources/proformas/';
+        $attachment->move($resourcesFolderPath ,$filename); //$attachment->getClientOriginalName()
+
+
 
         return $this->redirectToRoute('rte_admin_requests');
     }

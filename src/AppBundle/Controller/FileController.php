@@ -30,7 +30,7 @@ class FileController extends Controller
     }
 
     /**
-     * @Route("/viewInvoice/{invoiceNumber}", name="rte_view_invoice")
+     * @Route("/invoice/{invoiceNumber}", name="rte_view_invoice")
      */
     public function showInvoiceAction($invoiceNumber)
     {

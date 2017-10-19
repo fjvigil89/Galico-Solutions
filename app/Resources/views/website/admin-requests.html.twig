@@ -17,7 +17,7 @@
                     <table class="table table-hover">
                         <thead class="bg-yellow font-header">
                         <tr>
-                            <th colspan="5">{{ 'admin_request' | trans({}, "messages", lang) }}</th>
+                            <th colspan="6">{{ 'admin_request' | trans({}, "messages", lang) }}</th>
                             <th class="text-right">
                                 <a href="#" data-toggle="modal" data-target="#addRequestModal">
                                     <span class="glyphicon glyphicon-plus-sign font-header" title="add"></span>
@@ -33,6 +33,7 @@
                             <th>{{ 'admin_amount' | trans({}, "messages", lang) }}</th>
                             <th>{{ 'dash_customer' | trans({}, "messages", lang) }}</th>
                             <th>{{ 'dash_status' | trans({}, "messages", lang) }}</th>
+                            <th>{{ 'dash_request_type' | trans({}, "messages", lang) }}</th>
                             <th></th>
 
                         </tr>
@@ -45,8 +46,9 @@
                                 <td>{{ request.totalAmount }}</td>
                                 <td>{{ request.customer }}</td>
                                 <td>{{ request.status }}</td>
+                                <td>{{ request.type }}</td>
                                 <td>
-                                    <button data-toggle="modal" data-target="#proformaModal" class="btn-primary btn-xs" ng-click="getRequestId({{ request.requestId }})">
+                                    <button data-toggle="modal" data-target="#proformaModal" class="btn-primary btn-xs" ng-click="getRequest({{ request | json_encode() }})">
                                         <span class="glyphicon glyphicon-file" title="Attach the proforma"></span>
                                     </button>
                                     <button data-toggle="modal" data-target="#processRequestModal"
@@ -79,8 +81,9 @@
                         <h4 class="modal-title">Attach proforma</h4>
                     </div>
                     <div class="modal-body">
+                        <p class="text-bold text-center error-message">{[ error.message ]}</p>
 
-                        <form id="frm_attachProforma" method="post" action="{{ path('rte_admin_proforma_attachment') }}">
+                        <form id="frm_attachProforma" method="post" action="{{ path('rte_admin_proforma_attachment') }}" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-xs-3 text-bold">{{ 'dash_amount' | trans({}, "messages", lang) }} *:</div>
                                 <div class="col-xs-8 text-bold">
@@ -105,9 +108,15 @@
                             </div>
                             <br>
 
-                            <div class="row">
+                            <div class="row" ng-if="request.type=='PROFORMA'">
                                 <div class="col-xs-offset-3 col-xs-8 text-bold text-center">
-                                    <a href="">Proforma</a>
+                                    <a href="/proforma/{[request.referenceNumber]}" target="_blank">View Proforma</a>
+                                </div>
+                            </div>
+
+                            <div class="row" ng-if="request.type=='INVOICE'">
+                                <div class="col-xs-offset-3 col-xs-8 text-bold text-center">
+                                    <a href="/invoice/{[request.invoiceNumber]}" target="_blank">View invoice</a>
                                 </div>
                             </div>
                             <br>
@@ -117,7 +126,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-yellow color-black" ng-click="attachProforma()" >
-                            <span class="glyphicon glyphicon-floppy-disk" title="Send"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
+                            <span class="glyphicon glyphicon glyphicon-paperclip" title="Send proforma to customer"></span> {{ 'dash_send_proforma' | trans({}, "messages", lang) }}
                         </button>
                     </div>
                 </div>

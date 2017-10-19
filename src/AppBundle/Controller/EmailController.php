@@ -54,7 +54,7 @@ class EmailController extends Controller
     }
 
     /**
-     * @Route("/invoice/{customerId}")
+     * @Route("/xinvoice/{customerId}") //xInvoice must be replaced
      */
     public function viewInvoice($customerId)
     {

@@ -1122,8 +1122,8 @@
                        <source>Subscription date</source>
                        <target>Date de souscription</target>
                 </trans-unit>
-		        <trans-unit id="admin_console_treatRequest" resname="admin_console_treatRequest">
-                       <source>Treat the request</source>
+		        <trans-unit id="admin_console_processRequest" resname="admin_console_processRequest">
+                       <source>Process the request</source>
                        <target>Traiter la requête</target>
                 </trans-unit>
                   <trans-unit id="admin_console_date_intervention" resname="admin_console_date_intervention">

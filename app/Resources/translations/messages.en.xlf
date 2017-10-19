@@ -1116,9 +1116,9 @@
                        <source>Subscription date</source>
                        <target>Subscription date</target>
                 </trans-unit>
-		        <trans-unit id="admin_console_treatRequest" resname="admin_console_treatRequest">
-                       <source>Treat the request</source>
-                       <target>Treat the request</target>
+		        <trans-unit id="admin_console_processRequest" resname="admin_console_processRequest">
+                       <source>Process the request</source>
+                       <target>Process the request</target>
                 </trans-unit>
                  <trans-unit id="admin_console_date_intervention" resname="admin_console_date_intervention">
                        <source>Date of intervention</source>
@@ -1315,7 +1315,7 @@
                      </trans-unit>
                      <trans-unit id="admin_other_sendEmail" resname="admin_other_sendEmail">
                             <source>Send Email</source>
-                            <target>Send an email</target>
+                            <target>Send email</target>
                      </trans-unit>
                       <trans-unit id="admin_sendemail_sujet" resname="admin_sendemail_sujet">
                              <source>Sujet</source>
