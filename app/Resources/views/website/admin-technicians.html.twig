@@ -124,11 +124,11 @@
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-address">{{ 'form_address' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" name="edit-tech-address" id="edit-tech-address" value="4534 av Maisonneuve" >
+                            <input type="text" class="form-control" name="edit-tech-address" id="edit-tech-address" ng-model="technicianUpdated.address" >
                         </div>
                         <div class="form-group">
                             <label for="edit-tech-zipCode">{{ 'form_zipcode' | trans({}, "messages", lang)}}:</label>
-                            <input type="text" class="form-control" name="edit-tech-zipCode" id="edit-tech-zipCode" value="j3d 2g3" >
+                            <input type="text" class="form-control" name="edit-tech-zipCode" id="edit-tech-zipCode" ng-model="technicianUpdated.zipCode" >
                         </div>
 
                     </div>

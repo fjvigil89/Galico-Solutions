@@ -94,13 +94,11 @@
 
                         <div class="form-group">
                             <label for="priceCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
-                            <select name="priceCountry" id="priceCountry" class="form-control" name="priceCountry" ng-model="price.country" >
+                            <select name="priceCountry" id="priceCountry" class="form-control" name="priceCountry" ng-model="price.countryId" >
 
-                                <option value="293">Canada</option>
-                                <option value="305">Costa Rica</option>
-                                <option value="306">Cuba</option>
-                                <option value="412">Mexico</option>
-                                <option value="488">United States</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.countryid }}">{{ country.country }}</option>
+                                {% endfor %}
 
                             </select>
                         </div>
@@ -115,7 +113,14 @@
                         </div>
                         <div class="form-group">
                             <label for="pricePlan">Plan/{{ 'menu_services' | trans({}, "messages", lang)}}</label>
-                            <input type="text" class="form-control" id="pricePlan" name="pricePlan" ng-model="price.plan">
+
+                            <select name="pricePlan" id="pricePlan" class="form-control" ng-model="price.planId" >
+
+                                {% for plan in plans %}
+                                    <option value="{{ plan.planid }}">{{ plan.planname }}</option>
+                                {% endfor %}
+
+                            </select>
                         </div>
                         <input type="hidden" id="priceid" name="priceid" ng-value="price.priceid" />
                     </form>

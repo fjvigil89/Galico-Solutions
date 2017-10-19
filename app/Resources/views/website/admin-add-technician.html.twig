@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Admin houses{% endblock %}
+{% block title %} Admin Technician{% endblock %}
 
 {% block body %}
     <div class="pad">
@@ -23,39 +23,32 @@
                             <h5 class="error-message text-bold text-center" ng-bind="auth.message" > </h5>
                             <div class="form-group">
                                 <label for="newTechLastname">{{ 'form_lastname' | trans({}, "messages", lang)}}:</label>
-                                <input type="text" class="form-control" id="newTechLastname" name="newTechLastname" ng-model="technician.lastName" value="">
+                                <input type="text" class="form-control" id="newTechLastname" name="newTechLastname" ng-model="technician.lastName" >
                             </div>
                             <div class="form-group">
                                 <label for="newTechFirstname">{{ 'form_name' | trans({}, "messages", lang)}}:</label>
-                                <input type="text" class="form-control" id="newTechFirstname" name="newTechFirstname" ng-model="technician.firstName" value="" >
+                                <input type="text" class="form-control" id="newTechFirstname" name="newTechFirstname" ng-model="technician.firstName"  >
                             </div>
                             <div class="form-group">
                                 <label for="newTechEmail">{{ 'form_email' | trans({}, "messages", lang)}}:</label>
-                                <input type="email" class="form-control" id="newTechEmail" name="newTechEmail" ng-model="technician.email" value="" >
+                                <input type="email" class="form-control" id="newTechEmail" name="newTechEmail" ng-model="technician.email" >
                             </div>
                             <div class="form-group">
                                 <label for="newTechPhonePrimary">{{ 'form_phone_primary' | trans({}, "messages", lang)}}:</label>
-                                <input type="tel" class="form-control" id="newTechPhonePrimary" name="newTechPhonePrimary" ng-model="technician.phonePrimary" value="" >
+                                <input type="tel" class="form-control" id="newTechPhonePrimary" name="newTechPhonePrimary" ng-model="technician.phonePrimary" >
                             </div>
                             <div class="form-group">
                                 <label for="newTechPhonealternate">{{ 'form_phone_alternate' | trans({}, "messages", lang)}}:</label>
-                                <input type="tel" class="form-control" id="newTechPhonealternate" name="newTechPhonealternate" ng-model="technician.phonealternate" value="" >
+                                <input type="tel" class="form-control" id="newTechPhonealternate" name="newTechPhonealternate" ng-model="technician.phonealternate" >
                             </div>
                             <div class="form-group">
                                 <label for="newTechProfesion">{{ 'form_profession' | trans({}, "messages", lang)}}:</label>
 
                                 <select name="newTechProfesion" id="newTechProfesion" class="form-control" ng-model= "technician.profession" >
 
-                                    <option value="1">Electrical repair</option>
-                                    <option value="2">Plumbing repair</option>
-                                    <option value="3">Locksmith</option>
-                                    <option value="4">Windows and doors repair</option>
-                                    <option value="5">Home appliances</option>
-                                    <option value="6">Nursing</option>
-                                    <option value="7">Landscaping</option>
-                                    <option value="8">Child Care</option>
-                                    <option value="9">House cleaning</option>
-                                    <option value="10">IT support and services</option>
+                                    {% for service in services %}
+                                        <option value="{{ service.serviceid }}">{{ service.servicename }}</option>
+                                    {% endfor %}
 
                                 </select>
                             </div>
@@ -79,11 +72,9 @@
                                 <label for="newTechCountry">{{ 'menu_country' | trans({}, "messages", lang)}}:</label>
                                 <select name="newTechCountry" id="newTechCountry" class="form-control"  ng-model="technician.country"  >
 
-                                    <option value="293">Canada</option>
-                                    <option value="305">Costa Rica</option>
-                                    <option value="306">Cuba</option>
-                                    <option value="412">Mexico</option>
-                                    <option value="488">United States</option>
+                                    {% for country in countries %}
+                                        <option value="{{ country.countryid }}">{{ country.country }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="form-group">

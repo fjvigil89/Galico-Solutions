@@ -83,11 +83,9 @@
                             <label for="subagCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select name="subagCountry" id="subagCountry" class="form-control" name="subagCountry" ng-model="agent.countryId" >
 
-                                <option value="293">Canada</option>
-                                <option value="305">Costa Rica</option>
-                                <option value="306">Cuba</option>
-                                <option value="412">Mexico</option>
-                                <option value="488">United States</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.countryid }}">{{ country.country }}</option>
+                                {% endfor %}
 
                             </select>
                         </div>

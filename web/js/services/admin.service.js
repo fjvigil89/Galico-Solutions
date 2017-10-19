@@ -47,22 +47,22 @@ angular.module("gpApp")
         this.getTechnicianInformation = function(id)
         {
             return $http({
-                url : RouterService.getEndPoint() + '/technician-information/'+id,
+                url : RouterService.getEndPoint() + '/admin/technician-information/'+id,
                 method: "GET",
 
             })
 
         }
 
-        this.updateTechnician = function (technician) {
+        this.updateTechnician = function (technicianUpdated) {
 
-            var url = RouterService.getEndPoint() + '/update-technician';
+            var url = RouterService.getEndPoint() + '/admin/technician/update';
             var data = $.param({
-                technicianId : technician.technicianId,lastName : technician.lastName,
-                firstName : technician.firstName,email: technician.email,
-                phonePrimary : technician.phonePrimary, phoneAlternate : technician.phoneAlternate, profession : technician.profession,
-                country : technician.country, state : technician.state, city : technician.city,
-                address : technician.address, zipCode : technician.zipCode
+                technicianId : technicianUpdated.technicianId,lastName : technicianUpdated.lastName,
+                firstName : technicianUpdated.firstName,email: technicianUpdated.email,
+                phonePrimary : technicianUpdated.phonePrimary, phoneAlternate : technicianUpdated.phoneAlternate, profession : technicianUpdated.profession,
+                country : technicianUpdated.country, state : technicianUpdated.state, city : technicianUpdated.city,
+                address : technicianUpdated.address, zipCode : technicianUpdated.zipCode
 
             });
 
@@ -117,9 +117,8 @@ angular.module("gpApp")
             var url = RouterService.getEndPoint() + '/update-price';
             var data = $.param({
                 price : price.price,taxpercentage : price.taxpercentage,
-                country : price.country,plan: price.plan,
+                country : price.country, plan: price.plan,
                 priceid: price.priceid,
-
 
             });
 

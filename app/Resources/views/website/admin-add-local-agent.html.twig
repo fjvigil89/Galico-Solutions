@@ -21,16 +21,15 @@
                     <div class="modal-body">
 
                 <form id="frm_newAgence" method="post" action="{{ path('rte_admin_agent_save') }}">
-                    <h5 class="error-message text-bold text-center" ng-bind="auth.message" class=""> </h5>
+                    <p class="error-message text-center text-bold">{[ error.message ]}</p>
+
                         <div class="form-group">
                             <label for="countryAgence">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select id="countryAgence" name="countryAgence" class="form-control" ng-model="newAgence.country" >
 
-                                <option value="293">Canada</option>
-                                <option value="305">Costa Rica</option>
-                                <option value="306">Cuba</option>
-                                <option value="412">Mexico</option>
-                                <option value="488">United States</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.countryid }}">{{ country.country }}</option>
+                                {% endfor %}
 
                             </select>
                         </div>

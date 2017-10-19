@@ -18,17 +18,16 @@
                         <h4 class="modal-title">{{ 'admin_add_prices' | trans({}, "messages", lang)}}</h4>
                     </div>
                 <form id="frm_newPrice" method="post" action="{{ path('rte_admin_price_save') }}">
+                    <p class="error-message text-center text-bold">{[ error.message ]}</p>
                     <div class="modal-body">
 
                         <div class="form-group">
                             <label for="subagCountry">{{ 'form_Country' | trans({}, "messages", lang)}}</label>
                             <select name="PriceCountry" id="PriceCountry"  ng-model="newPrice.country" class="form-control" >
 
-                                <option value="293">Canada</option>
-                                <option value="305">Costa Rica</option>
-                                <option value="306">Cuba</option>
-                                <option value="412">Mexico</option>
-                                <option value="488">United States</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.countryid }}">{{ country.country }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="form-group">
@@ -44,9 +43,9 @@
 
                             <select name="PricePlan" id="PricePlan"  ng-model="newPrice.plan" class="form-control" >
 
-                                <option value="1">Basic Plan</option>
-                                <option value="2">GP Plus</option>
-
+                                {% for plan in plans %}
+                                    <option value="{{ plan.planid }}">{{ plan.planname }}</option>
+                                {% endfor %}
                             </select>
 
 

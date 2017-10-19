@@ -20,7 +20,7 @@ class TechnicianController extends Controller
 {
 
     /**
-     * @Route("/admin/technician-information/{technicianId}",name="rte_admin_technician_information")
+     * @Route("/admin/technician-information/{technicianId}", name="rte_admin_technician_information")
      */
     public function getTechnicianInformationAction($technicianId){
 
@@ -126,7 +126,7 @@ class TechnicianController extends Controller
         $email = $request->request->get('email');
         $phonePrimary = $request->request->get('phonePrimary');
         $phoneAlternate = $request->request->get('phoneAlternate');
-        $profession = $request->request->get('$profession');
+        $profession = $request->request->get('profession');
         $country = $request->request->get('country');
         $state = $request->request->get('state');
         $city = $request->request->get('city');
@@ -135,7 +135,7 @@ class TechnicianController extends Controller
 
         //return $this->json(array('updateStatus' => "customer id : " . $request->query->get('email')));
         $updateStatus = -1;
-        $response = array();
+        //$response = array();
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:Technicians');
         $technician = $repository->find($technicianId);
@@ -157,7 +157,7 @@ class TechnicianController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            $updateStatus = 1;
+      /*      $updateStatus = 1;
 
             $response['customerId'] = $technician->getCustomerid();
             $response['firstName'] = $technician->getFirstname();
@@ -170,12 +170,12 @@ class TechnicianController extends Controller
             $response['city'] = $technician->getCity();
             $response['address'] = $technician->getAddress();
             $response['zipCode'] = $technician->getZipcode();
-
+*/
         }
-        $response['updateStatus'] = $updateStatus;
+      //  $response['updateStatus'] = $updateStatus;
+        return $this->redirectToRoute("rte_admin_technicians");
 
-
-        return $this->json($response);
+   //     return $this->json($response);
 
     }
 
@@ -184,7 +184,14 @@ class TechnicianController extends Controller
      */
     public function addAdminTechniciansAction()
     {
-        return $this->render('website/admin-add-technician.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Services');
+        $services = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Countries');
+        $countries = $repository->findAll();
+
+        return $this->render('website/admin-add-technician.html.twig', array(
+            'services' => $services, 'countries' => $countries
+        ));
     }
 
     /**

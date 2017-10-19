@@ -6,28 +6,26 @@ angular.module("gpApp")
 
         $scope.error = {};
         $scope.action = "";
-        $scope.newAgence = "";
-        $scope.newPrice = "";
         $scope.agent = {};
-        $scope.request = {};
-        $scope.request.error = "";
+
+
 
         $scope.addNewAgence = function () {
             if (GeneralService.isInvalid($scope.newAgence.country)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("countryAgence").focus();
             }
             else if (GeneralService.isInvalid($scope.newAgence.city)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
+                $scope.error.message = $translate.instant('ERR_REGISTER_CITY');
                 $window.document.getElementById("cityAgence").focus();
             }
 
             else if (GeneralService.isInvalid($scope.newAgence.phone)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
+                $scope.error.message = $translate.instant('ERR_REGISTER_PHONE');
                 $window.document.getElementById("phoneAgence").focus();
             }
             else if (GeneralService.isInvalid($scope.newAgence.address)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                $scope.error.message = $translate.instant('ERR_REGISTER_ADDRESS');
                 $window.document.getElementById("adresseAgence").focus();
             }
 
@@ -41,20 +39,20 @@ angular.module("gpApp")
 
         $scope.addNewPrice = function () {
             if (GeneralService.isInvalid($scope.newPrice.country)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("PriceCountry").focus();
             }
             else if (GeneralService.isInvalid($scope.newPrice.price)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_CITY');
+                $scope.error.message = $translate.instant('ERR_SETTING_PRICE');
                 $window.document.getElementById("price").focus();
             }
 
             else if (GeneralService.isInvalid($scope.newPrice.tax)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_PHONE');
+                $scope.error.message = $translate.instant('ERR_SETTING_TAX');
                 $window.document.getElementById("tax").focus();
             }
             else if (GeneralService.isInvalid($scope.newPrice.plan)) {
-                $scope.auth.message = $translate.instant('ERR_REGISTER_ADDRESS');
+                $scope.error.message = $translate.instant('ERR_DASHBOARD_PLAN');
                 $window.document.getElementById("plan").focus();
             }
 
@@ -77,25 +75,25 @@ angular.module("gpApp")
         function validateAgent(agent) {
             var formValid = true;
             if (GeneralService.isInvalid(agent.country)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
+                $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
                 $window.document.getElementById("subagCountry").focus();
                 formValid = false;
             }
             else if (GeneralService.isInvalid(agent.city)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_LASTNAME');
+                $scope.error.message = $translate.instant('ERR_REGISTER_CITY');
                 $window.document.getElementById("cityAgence").focus();
                 formValid = false;
             }
 
             else if (GeneralService.isInvalid(agent.phone)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_EMAIL');
+                $scope.error.message = $translate.instant('ERR_REGISTER_PHONE');
                 $window.document.getElementById("phoneAgence").focus();
                 formValid = false;
             }
 
 
             else if (GeneralService.isInvalid(agent.address)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_COUNTRY');
+                $scope.error.message = $translate.instant('ERR_REGISTER_ADDRESS');
                 $window.document.getElementById("adresseAgence").focus();
                 formValid = false;
             }
@@ -145,18 +143,18 @@ angular.module("gpApp")
         function validatePrice(price) {
             var formValid = true;
             if (GeneralService.isInvalid(price.price)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_FIRSTNAME');
+                $scope.error.message = $translate.instant('ERR_SETTING_PRICE');
                 $window.document.getElementById("pricePrice").focus();
                 formValid = false;
             }
             else if (GeneralService.isInvalid(price.taxpercentage)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_LASTNAME');
+                $scope.error.message = $translate.instant('ERR_SETTING_TAX');
                 $window.document.getElementById("priceTax").focus();
                 formValid = false;
             }
 
             else if (GeneralService.isInvalid(price.plan)) {
-                $scope.error.message = $translate.instant('ERR_REGISTER_EMAIL');
+                $scope.error.message = $translate.instant('ERR_DASHBOARD_PLAN');
                 $window.document.getElementById("pricePlan").focus();
                 formValid = false;
             }

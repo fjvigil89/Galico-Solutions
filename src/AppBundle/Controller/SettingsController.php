@@ -20,16 +20,12 @@ class SettingsController extends Controller
 {
 
 
-
-
     /**
      * @Route("/admin/agent/save", name="rte_admin_agent_save")
      */
     public function createAgentAction(Request $request)
     {
         $data = $request->request->all();
-        //var_dump($data); die("");
-        //$country = $data['countryAgence'];
         $city = $data['cityAgence'];
         $phone = $data['phoneAgence'];
         $address = $data['adresseAgence'];
@@ -62,11 +58,12 @@ class SettingsController extends Controller
 
         $repository = $this->getDoctrine()->getRepository(Localnumbers::class);
         $locals = $repository->findAll();
-
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $countries = $repository->findAll();
 
         {
             return $this->render('website/admin-local-agents.html.twig', array(
-                'locals' => $locals,
+                'locals' => $locals,'countries' => $countries
             ));
         }
 
@@ -77,7 +74,12 @@ class SettingsController extends Controller
      */
     public function addLocalAgentAction()
     {
-        return $this->render('website/admin-add-local-agent.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $countries = $repository->findAll();
+
+        return $this->render('website/admin-add-local-agent.html.twig', array(
+            'countries' => $countries
+        ));
     }
 
     /**
@@ -88,10 +90,13 @@ class SettingsController extends Controller
 
         $repository = $this->getDoctrine()->getRepository(Prices::class);
         $prices = $repository->findAll();
-
+        $repository = $this->getDoctrine()->getRepository(Plans::class);
+        $plans = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $countries = $repository->findAll();
 
         return $this->render('website/admin-prices.html.twig', array(
-            'prices' => $prices,
+            'prices' => $prices, 'plans' => $plans, 'countries' => $countries
         ));
 
     }
@@ -101,7 +106,14 @@ class SettingsController extends Controller
      */
     public function addPricesAction()
     {
-        return $this->render('website/admin-add-price.html.twig');
+
+        $repository = $this->getDoctrine()->getRepository(Plans::class);
+        $plans = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Countries::class);
+        $countries = $repository->findAll();
+        return $this->render('website/admin-add-price.html.twig', array(
+            'plans' => $plans, 'countries' => $countries
+        ));
     }
 
     /**
@@ -110,11 +122,10 @@ class SettingsController extends Controller
     public function createPriceAction(Request $request)
     {
         $data = $request->request->all();
-        //var_dump($data); die("");
-        //$country = $data['PriceCountry'];
+
         $prices = $data['price'];
         $tax = $data['tax'];
-       $plan = $data['PricePlan'];
+        $plan = $data['PricePlan'];
         $countryId = $data['PriceCountry'];
         $repository = $this->getDoctrine()->getRepository(Countries::class);
         $country = $repository->find($countryId);
@@ -191,7 +202,7 @@ class SettingsController extends Controller
 
         $agent = array();
         $agent['localnumberid'] = $agentlocal->getLocalnumberid();
-        $agent['countryId'] = "".$agentlocal->getCountry()->getCountryid();
+        $agent['countryId'] = "" . $agentlocal->getCountry()->getCountryid();
         $agent['country'] = $agentlocal->getCountry()->getCountry();
         $agent['city'] = $agentlocal->getCity();
         $agent['phone'] = $agentlocal->getPhone();
@@ -202,29 +213,6 @@ class SettingsController extends Controller
     }
 
 
-
-    /**
-     * @Route("/admin/price/{id}",name="rte_admin_price")
-     */
-    public function getPriceInformationAction($id)
-    {
-
-
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
-        $priceObject = $repository->find($id);
-
-        $price = array();
-        $price['priceid'] = $priceObject->getPriceid();
-        $price['country'] = $priceObject->getCountry()->getCountry();
-        $price['taxpercentage'] = $priceObject->getTaxpercentage();
-        $price['plan'] = $priceObject->getPlan()->getPlanname();
-        $price['price'] = $priceObject->getPrice();
-
-
-
-        return $this->json($price);
-    }
-
     /**
      * @Route("/admin/price/update", name="rte_admin_price_update")
      */
@@ -234,7 +222,7 @@ class SettingsController extends Controller
         $priceCountryId = $request->request->get('priceCountry');
         $pricePrice = $request->request->get('pricePrice');
         $priceTax = $request->request->get('priceTax');
-        $pricePlan = $request->request->get('pricePlan');
+        $pricePlanId = $request->request->get('pricePlan');
 
         $repository = $this->getDoctrine()->getRepository(Prices::class);
         $price = $repository->find($priceid);
@@ -244,11 +232,13 @@ class SettingsController extends Controller
         $repository = $this->getDoctrine()->getRepository(Countries::class);
         $priceCountry = $repository->find($priceCountryId);
 
+        $repository = $this->getDoctrine()->getRepository(Plans::class);
+        $priceplan = $repository->find($pricePlanId);
 
-        if ($priceid) {
+        if ($price) {
             $price->setPrice($pricePrice);
             $price->setTaxpercentage($priceTax);
-            $price->setPlan($pricePlan);
+            $price->setPlan($priceplan);
             $price->setCountry($priceCountry);
 
 
@@ -263,5 +253,28 @@ class SettingsController extends Controller
 
         return $this->redirectToRoute("rte_admin_prices");
 
+    }
+
+    /**
+     * @Route("/admin/price/{id}",name="rte_admin_price")
+     */
+    public function getPriceInformationAction($id)
+    {
+
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Prices');
+        $priceObject = $repository->find($id);
+
+        $price = array();
+        $price['priceid'] = $priceObject->getPriceid();
+        $price['countryId'] = "" . $priceObject->getCountry()->getCountryid();
+        $price['country'] = $priceObject->getCountry()->getCountry();
+        $price['taxpercentage'] = $priceObject->getTaxpercentage();
+        $price['plan'] = $priceObject->getPlan()->getPlanname();
+        $price['planId'] = "" . $priceObject->getPlan()->getPlanid();
+        $price['price'] = $priceObject->getPrice();
+
+
+        return $this->json($price);
     }
 }

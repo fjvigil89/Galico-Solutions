@@ -70,7 +70,12 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_HOUSE_INVALID" : "Please select a house.",
         "ERR_SERVICE_INVALID" : "Please select a service type.",
         "ERR_REQUEST_DETAILS_INVALID" : "Please provide a short details of the request.",
-        "SUCCESS_DASHBOARD_INF_UPDATE":"You have successfully updated your profile."
+        "SUCCESS_DASHBOARD_INF_UPDATE":"You have successfully updated your profile.",
+
+        "ERR_SETTING_PRICE" : "Please provide a price",
+        "ERR_SETTING_TAX" : "Please provide a tax percentage"
+
+
 
 
     });
@@ -135,9 +140,10 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_HOUSE_INVALID" : "Por favor seleccione una casa.",
         "ERR_SERVICE_INVALID" : "Por favor seleccione un servicio.",
         "ERR_REQUEST_DETAILS_INVALID" : "Por favor ingrese un resumen de la solicitud .",
-        "SUCCESS_DASHBOARD_INF_UPDATE":" Usted ha actualizado correctamente su perfil."
+        "SUCCESS_DASHBOARD_INF_UPDATE":" Usted ha actualizado correctamente su perfil.",
 
-
+        "ERR_SETTING_PRICE" : "Por favor ingrese un precio valido.",
+        "ERR_SETTING_TAX" : "Por favor proporcione un porcentaje de impuesto."
     });
 
     // Adding a translation table for the French language
@@ -201,7 +207,10 @@ app.config(function($interpolateProvider,$translateProvider){
         "ERR_HOUSE_INVALID" : "Veuillez sélectioner une maison.",
         "ERR_SERVICE_INVALID" : "Veuillez sélectioner un service.",
         "ERR_REQUEST_DETAILS_INVALID" : "Veuillez fournir une brève description de la requête.",
-        "SUCCESS_DASHBOARD_INF_UPDATE":"Vous avez réussi à mettre à jour votre profil."
+        "SUCCESS_DASHBOARD_INF_UPDATE":"Vous avez réussi à mettre à jour votre profil.",
+
+        "ERR_SETTING_PRICE" : "Veuillez saisir un prix.",
+        "ERR_SETTING_TAX" : "Veuillez indiquer un pourcentage d'impôt."
     });
 
     // Tell the module what language to use by default
