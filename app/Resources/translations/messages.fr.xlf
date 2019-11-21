@@ -106,8 +106,8 @@
                     <target>Droits d'auteur</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>General Pro seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. General Pro will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
-                    <target>Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. General Pro s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
+                    <source>Galico Solutions seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. Galico Solutions will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
+                    <target>Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. Galico Solutions s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
                          <source>Terms of use</source>
@@ -205,16 +205,16 @@
          <!--End Band-->
 
                <trans-unit id="home_generalpro_resume" resname="home_generalpro_resume">
-                    <source>We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. General Pro offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</source>
-                    <target>Nous sommes fiers d’avoir une excellente équipe d’experts, qui sont prêts à travailler, dès que vous en avez besoin. General Pro offre une large variété de services à un coût très raisonnable, tout en fournissant la meilleure qualité de service et d’efficacité à nos clients. </target>
+                    <source>We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. Galico Solutions offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</source>
+                    <target>Nous sommes fiers d’avoir une excellente équipe d’experts, qui sont prêts à travailler, dès que vous en avez besoin. Galico Solutions offre une large variété de services à un coût très raisonnable, tout en fournissant la meilleure qualité de service et d’efficacité à nos clients. </target>
               </trans-unit>
                <trans-unit id="home_ourservice_title" resname="home_ourservice_title">
                     <source>Our Services</source>
                     <target>Nos Services</target>
               </trans-unit>
                <trans-unit id="home_ourservice_subtitle" resname="home_ourservice_subtitle">
-                     <source>General Pro offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </source>
-                     <target>General Pro offre une ample gamme de services qui traite plusieurs de vos besoins, que ce soient de la rénovation de maison, des cas d’urgence, ou des besoins occasionnels.   </target>
+                     <source>Galico Solutions offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </source>
+                     <target>Galico Solutions offre une ample gamme de services qui traite plusieurs de vos besoins, que ce soient de la rénovation de maison, des cas d’urgence, ou des besoins occasionnels.   </target>
               </trans-unit>
          <!--Gp Basic-->
                <trans-unit id="plumbing" resname="plumbing">
@@ -282,8 +282,8 @@
                      <target>Nos Plans</target>
               </trans-unit>
                <trans-unit id="home_ourplans_subtitle" resname="home_ourplans_subtitle">
-                     <source>General Pro allows you to choose from three plans that include various services.</source>
-                     <target>General Pro vous permet de choisir parmi deux plans incluant plusieurs services et des services supplémentaires.  </target>
+                     <source>Galico Solutions allows you to choose from three plans that include various services.</source>
+                     <target>Galico Solutions vous permet de choisir parmi deux plans incluant plusieurs services et des services supplémentaires.  </target>
               </trans-unit>
                <trans-unit id="home_gpbasic_resume" resname="home_gpbasic_resume">
                      <source>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</source>
@@ -373,8 +373,8 @@
 
 
               <trans-unit id="service_electricity_resume" resname="service_electricity_resume">
-                     <source>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. General Pro allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</source>
-                     <target>Quotidiennement, des pannes dangereuses et imprévues dans l’équipement électrique ont lieu. Pour des raisons de sécurité, l'intervention de techniciens spécialisés est nécessaire. General Pro vous permet de demander à un technicien hautement qualifié de visiter votre maison, afin que les réparations urgentes soient effectuées efficacement. </target>
+                     <source>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. Galico Solutions allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</source>
+                     <target>Quotidiennement, des pannes dangereuses et imprévues dans l’équipement électrique ont lieu. Pour des raisons de sécurité, l'intervention de techniciens spécialisés est nécessaire. Galico Solutions vous permet de demander à un technicien hautement qualifié de visiter votre maison, afin que les réparations urgentes soient effectuées efficacement. </target>
               </trans-unit>
 
                                <trans-unit id="service_electricity_1" resname="service_electricity_1">
@@ -474,8 +474,8 @@
                                     </trans-unit>
 
                <trans-unit id="service_additionalservices_resume" resname="service_additionalservices_resume">
-                      <source>General Pro genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</source>
-                      <target>General Pro se soucie sincèrement de vous, ainsi que du confort et du bien-être de votre famille. C'est pourquoi nous vous permettons d'avoir plus de temps libre et de tranquillité d’esprit, en vous offrant nos services supplémentaires. Nous couvrons tous vos besoins subsidiaires, tels que la garde d'enfants, la maintenance de la pelouse, le support informatique, entre autres.  </target>
+                      <source>Galico Solutions genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</source>
+                      <target>Galico Solutions se soucie sincèrement de vous, ainsi que du confort et du bien-être de votre famille. C'est pourquoi nous vous permettons d'avoir plus de temps libre et de tranquillité d’esprit, en vous offrant nos services supplémentaires. Nous couvrons tous vos besoins subsidiaires, tels que la garde d'enfants, la maintenance de la pelouse, le support informatique, entre autres.  </target>
                </trans-unit>
 
 
@@ -529,28 +529,28 @@
                       <target>Nous comprenons que la détérioration de vos appareils électroménagers cause nombreux inconvénients. Chaque année, plusieurs appareils sont jetés faute des défauts mineurs, alors qu'ils auraient pu être sauvés s'ils étaient traités par des professionnels. Notre équipe de réparation offre un service rapide et fiable. Si vous avez une machine à laver, un congélateur, une cuisinière ou tout autre appareil en panne, nous pouvons vous aider à les réparer.</target>
                </trans-unit>
                  <trans-unit id="plans_nursing" resname="plans_nursing">
-                       <source>Need a professional person to care of a relative when you can’t? General Pro’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones. </source>
-                        <target>Avez-vous besoin d'un professionnel pour s'occuper d'un proche lorsque vous ne pouvez pas? Les services infirmiers de General Pro sont exactement ce dont vous avez besoin. Nos professionnels dignes de confiance prendront soin de vos proches. </target>
+                       <source>Need a professional person to care of a relative when you can’t? Galico Solutions’s nursing services are just what you need. Our trustworthy professionals will take great care of your loved ones. </source>
+                        <target>Avez-vous besoin d'un professionnel pour s'occuper d'un proche lorsque vous ne pouvez pas? Les services infirmiers de Galico Solutions sont exactement ce dont vous avez besoin. Nos professionnels dignes de confiance prendront soin de vos proches. </target>
                </trans-unit>
                  <trans-unit id="plans_child" resname="plans_child">
-                       <source>At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. General Pro’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.   </source>
+                       <source>At times, you may have an important dinner, meeting, or you just need some time for yourself, but you also want your children to be taken care of. Galico Solutions’s child care services are here for you! We have a network of reliable specialists that will ensure the well-being and safety of your children.   </source>
                        <target>Occasionnellement, vous pouvez avoir un dîner ou une réunion d’importance, ou vous avez simplement besoin de temps pour vous, mais vous voulez également que vos enfants soient sains et saufs. Nos services de garde d’enfants sont là pour vous! Nous avons un réseau de spécialistes fiables qui assureront le bien-être et la sécurité de vos enfants.</target>
                        </trans-unit>
                  <trans-unit id="plans_lawn" resname="plans_lawn">
-                       <source> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, General Pro offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve. </source>
-                       <target>Entretenir un jardin peut devenir un cauchemar. La plupart des gens veulent un beau jardin, mais ils n'ont pas le temps. Heureusement pour vous, General Pro offre des services d’entretien de pelouse. Nos professionnels peuvent tondre, désherber et couper votre pelouse pour vous donner le jardin magnifique que vous méritez.</target>
+                       <source> Maintaining a garden can be a nightmare. Most people want a beautiful garden, but don’t have the time, nor patience to maintain it. Luckily for you, Galico Solutions offers lawn maintenance. With our professionals, we can mow, weed, and trim your lawn, to give you the beautiful garden that you deserve. </source>
+                       <target>Entretenir un jardin peut devenir un cauchemar. La plupart des gens veulent un beau jardin, mais ils n'ont pas le temps. Heureusement pour vous, Galico Solutions offre des services d’entretien de pelouse. Nos professionnels peuvent tondre, désherber et couper votre pelouse pour vous donner le jardin magnifique que vous méritez.</target>
                  </trans-unit>
                  <trans-unit id="plans_painting" resname="plans_painting">
-                       <source>   You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! General Pro’s team of specialists will gladly fulfil your requests.  </source>
-                       <target>Vous souhaitez changer la couleur de vos murs, mais vous vous rendez compte que vous n'avez pas le temps ou la volonté de les peindre. Vous pouvez compter sur nous! L'équipe de spécialistes de General Pro satisfera vos demandes avec plaisir.</target>
+                       <source>   You have decided that you want to change the color of your walls, but you realize that you don’t have the time, or the willingness to paint them. You can count on us! Galico Solutions’s team of specialists will gladly fulfil your requests.  </source>
+                       <target>Vous souhaitez changer la couleur de vos murs, mais vous vous rendez compte que vous n'avez pas le temps ou la volonté de les peindre. Vous pouvez compter sur nous! L'équipe de spécialistes de Galico Solutions satisfera vos demandes avec plaisir.</target>
                  </trans-unit>
                  <trans-unit id="plans_cleaning" resname="plans_cleaning">
-                       <source>You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. General Pro’s house cleaning services consist of professionally trained cleaners that will meet your demands. </source>
-                        <target>Vous voulez que votre maison soit propre, mais vous n'avez pas le temps de la nettoyer. Nous pouvons vous aider. Les services de nettoyage à domicile de General Pro consistent en des nettoyeurs professionnels qui répondent à vos demandes. </target>
+                       <source>You want your house to be clean, but you don’t have time to do the cleaning yourself, we can help you. Galico Solutions’s house cleaning services consist of professionally trained cleaners that will meet your demands. </source>
+                        <target>Vous voulez que votre maison soit propre, mais vous n'avez pas le temps de la nettoyer. Nous pouvons vous aider. Les services de nettoyage à domicile de Galico Solutions consistent en des nettoyeurs professionnels qui répondent à vos demandes. </target>
                  </trans-unit>
                  <trans-unit id="plans_support" resname="plans_support">
-                       <source>If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. General Pro offers services of computer support and technical assistance for both hardware and software flaws. </source>
-                       <target>Si votre ordinateur a des défauts, et vous ne savez pas comment le réparer, vous pouvez compter sur nous. General Pro offre des services de support informatique et d'assistance technique pour les défauts dans les matériels informatique et les logiciels.</target>
+                       <source>If your very essential computer is showing deficiencies, and you have no clue how to fix it, you can rely on us. Galico Solutions offers services of computer support and technical assistance for both hardware and software flaws. </source>
+                       <target>Si votre ordinateur a des défauts, et vous ne savez pas comment le réparer, vous pouvez compter sur nous. Galico Solutions offre des services de support informatique et d'assistance technique pour les défauts dans les matériels informatique et les logiciels.</target>
                  </trans-unit>
 
                 <trans-unit id="plan_gpbasic" resname="plan_gpbasic">
@@ -600,12 +600,12 @@
                       <target>Peu importe votre problème, nous pouvons le résoudre!</target>
                </trans-unit>
                 <trans-unit id="about_slogan_subtitle" resname="about_slogan_subtitle">
-                      <source>General Pro’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces. </source>
-                      <target>Le but de General Pro est de déterminer de nouveaux standards d'excellence. Notre équipe de professionnels hautement qualifiés et motivés offre une qualité supérieure, ainsi que la meilleure valeur pour votre argent, tout en travaillant dans des espaces résidentiels ou commerciaux.</target>
+                      <source>Galico Solutions’s purpose is to set new standards of excellence. Our team of highly skilled and motivated professionals deliver superior quality and the best value for your money, while operating in any residential or commercial spaces. </source>
+                      <target>Le but de Galico Solutions est de déterminer de nouveaux standards d'excellence. Notre équipe de professionnels hautement qualifiés et motivés offre une qualité supérieure, ainsi que la meilleure valeur pour votre argent, tout en travaillant dans des espaces résidentiels ou commerciaux.</target>
                </trans-unit>
                 <trans-unit id="about_body_title" resname="about_body_title">
-                      <source>About General Pro</source>
-                      <target>À propos de General Pro</target>
+                      <source>About Galico Solutions</source>
+                      <target>À propos de Galico Solutions</target>
                </trans-unit>
                 <trans-unit id="about_body_subtitle1" resname="about_body_subtitle1">
                       <source>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</source>
@@ -620,8 +620,8 @@
                        <target>Témoignage</target>
                 </trans-unit>
                  <trans-unit id="about_testimony_resume" resname="about_testimony_resume">
-                       <source>“I am very pleased with General Pro’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </source>
-                       <target>"Je suis très satisfait avec le service de General Pro. Leur temps de réponse a été rapide et ils ont traité mon problème efficacement." F. Tomlinson, LaSalle, QC.</target>
+                       <source>“I am very pleased with Galico Solutions’s service. Their response time was fast and they efficiently handled my issue.” F. Tomlinson, LaSalle, QC.  </source>
+                       <target>"Je suis très satisfait avec le service de Galico Solutions. Leur temps de réponse a été rapide et ils ont traité mon problème efficacement." F. Tomlinson, LaSalle, QC.</target>
                 </trans-unit>
 <!--End About us-->
 
@@ -1204,8 +1204,8 @@
                           <target>Cher/Chère</target>
                    </trans-unit>
                     <trans-unit id="template_welcome" resname="template_welcome">
-                             <source>Thank you for completing your registration with General Pro. You are part of the family now! We would like to take this opportunity to welcome you to our organization. We are looking forward to assisting you with all your demands, which may range from house renovations and maintenance to daily needs and emergencies. Whatever you need, we provide! </source>
-                             <target>Merci d'avoir complété votre inscription à General Pro. Vous faites maintenant partie de notre famille! Nous aimerions profiter de cette occasion pour vous souhaiter la bienvenue à notre organisation. Nous sommes impatients de satisfaire toutes vos demandes, lesquelles peuvent aller de la rénovation et l’entretien des maisons aux urgences et besoins quotidiens. Nous fournissons tout ce dont vous avez besoin!</target>
+                             <source>Thank you for completing your registration with Galico Solutions. You are part of the family now! We would like to take this opportunity to welcome you to our organization. We are looking forward to assisting you with all your demands, which may range from house renovations and maintenance to daily needs and emergencies. Whatever you need, we provide! </source>
+                             <target>Merci d'avoir complété votre inscription à Galico Solutions. Vous faites maintenant partie de notre famille! Nous aimerions profiter de cette occasion pour vous souhaiter la bienvenue à notre organisation. Nous sommes impatients de satisfaire toutes vos demandes, lesquelles peuvent aller de la rénovation et l’entretien des maisons aux urgences et besoins quotidiens. Nous fournissons tout ce dont vous avez besoin!</target>
                      </trans-unit>
                       <trans-unit id="template_welcome_qs" resname="template_welcome_qs">
                              <source>If you have any questions regarding our services, plans, policies, or if you need assistance, do not hesitate to contact us at any time.</source>
