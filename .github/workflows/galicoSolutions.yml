@@ -9,8 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: deploy_environment
+      run: |
+        echo "${CI_COMMIT_REF_NAME}"        
+        tools/deploy-git.sh $CI_COMMIT_REF_NAME
+      
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
