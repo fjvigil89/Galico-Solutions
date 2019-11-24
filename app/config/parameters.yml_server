@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: galic305_generalpro
+    database_user: galic305
+    database_password: CNnX-u87yxck
+    mailer_transport: smtp
+    mailer_host: email-smtp.us-east-1.amazonaws.com
+    mailer_user: AKIAIHK4XCUAV6O6AFJA
+    mailer_password: AgXsYzZS6qzVhmBNXovmUMZOvPUhCUkcWv0k09SV5r9E
+    secret: 88f9db9d576771535c39f66dffed74a8ec1a66df
+
