@@ -215,29 +215,29 @@
                      <target>Galico Solutions offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </target>
               </trans-unit>
          <!--Gp Basic-->
-               <trans-unit id="plumbing" resname="plumbing">
-                     <source>Plumbing</source>
-                     <target>Plumbing</target>
+               <trans-unit id="home_improvement" resname="home_improvement">
+                     <source>home_improvement</source>
+                     <target>Home improvement</target>
               </trans-unit>
-               <trans-unit id="electricity" resname="electricity">
-                     <source>Electricity</source>
-                     <target>Electricity</target>
+              <trans-unit id="education" resname="education">
+                     <source>Education</source>
+                     <target>Education</target>
               </trans-unit>
-               <trans-unit id="doors_windows" resname="doors_windows">
-                     <source>Doors and Windows</source>
-                     <target>Doors and Windows</target>
+               <trans-unit id="arts" resname="arts">
+                     <source>Arts</source>
+                     <target>Arts</target>
               </trans-unit>
-               <trans-unit id="locksmith" resname="locksmith">
-                     <source>Locksmith</source>
-                     <target>Locksmith</target>
+              <trans-unit id="it_work" resname="it_work">
+                     <source>IT work</source>
+                     <target>IT work</target>
               </trans-unit>
-               <trans-unit id="appliances" resname="appliances">
-                     <source>Appliances</source>
-                     <target>Appliances</target>
+              <trans-unit id="clerical_work" resname="clerical_work">
+                     <source>Clerical work</source>
+                     <target>Clerical work </target>
               </trans-unit>
-               <trans-unit id="additional_services" resname="additional_services">
-                     <source>Additional services</source>
-                     <target>Additional services</target>
+               <trans-unit id="home_health_care" resname="home_health_care">
+                     <source>Home and Health Care</source>
+                     <target>Home and Health Care</target>
               </trans-unit>
          <!--End Gp Basic-->
          <!--Gp plus-->
@@ -343,168 +343,165 @@
                      <source>Every home owner dreams of having their home improvement projects done. Our professionals will make your dreams come true. </source>
                      <target>Every home owner dreams of having their home improvement projects done. Our professionals will make your dreams come true. </target>
               </trans-unit>
-              <trans-unit id="service_plumbing_resume" resname="service_plumbing_resume">
+              <trans-unit id="service_home_improvement_resume" resname="service_home_improvement_resume">
                      <source>Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.</source>
                      <target>Plumbing emergencies are very common and very stressful to deal with. We strive to reduce the stress and frustration associated with these emergencies. Our experts specialize in a multitude of repairs related to plumbing.</target>
               </trans-unit>
 
-                               <trans-unit id="service_plumbing_1" resname="service_plumbing_1">
-                                      <source>Unclog drains and pipes</source>
-                                      <target>Unclog drains and pipes</target>
-                               </trans-unit>
-                               <trans-unit id="service_plumbing_2" resname="service_plumbing_2">
-                                        <source>Faucet Repair and Installation</source>
-                                        <target>Faucet Repair and Installation</target>
-                               </trans-unit>
-                                <trans-unit id="service_plumbing_3" resname="service_plumbing_3">
-                                       <source>Sink Installation</source>
-                                       <target>Sink Installation</target>
-                                </trans-unit>
-                                <trans-unit id="service_plumbing_4" resname="service_plumbing_4">
-                                       <source>Toilet Repair and Installation</source>
-                                       <target>Toilet Repair and Installation</target>
-                                </trans-unit>
-                                <trans-unit id="service_plumbing_5" resname="service_plumbing_5">
-                                         <source>Minor Plumbing Leaks</source>
-                                         <target>Minor Plumbing Leaks</target>
-                                </trans-unit>
+              <trans-unit id="service_home_improvement_1" resname="service_home_improvement_1">
+                     <source>plumbers</source>
+                     <target>Plumbers</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_2" resname="service_home_improvement_2">
+                     <source>electricians</source>
+                     <target>Electricians</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_3" resname="service_home_improvement_3">
+                     <source>locksmiths</source>
+                     <target>Locksmiths</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_4" resname="service_home_improvement_4">
+                     <source>door and window installers</source>
+                     <target>Door and window installers</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_5" resname="service_home_improvement_5">
+                     <source>appliance technicians</source>
+                     <target>Appliance technicians</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_6" resname="service_home_improvement_6">
+                     <source>carpet installers</source>
+                     <target>Carpet installers</target>
+              </trans-unit>
+              <trans-unit id="service_home_improvement_7" resname="service_home_improvement_7">
+                     <source>lawn maintenance</source>
+                     <target>Lawn maintenance</target>
+              </trans-unit>
 
 
-              <trans-unit id="service_electricity_resume" resname="service_electricity_resume">
+              <trans-unit id="service_education_resume" resname="service_education_resume">
                      <source>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. Galico Solutions allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</source>
                      <target>On a daily basis, dangerous and unforeseen breakdowns in electrical equipment take place. For safety reasons, the intervention of specialized technicians is necessary. Galico Solutions allows you to request a highly trained technician to visit your home, in order for urgent repairs to be efficiently carried out.</target>
               </trans-unit>
 
-                               <trans-unit id="service_electricity_1" resname="service_electricity_1">
-                                      <source>Switches and Socket Repair</source>
-                                      <target>Switches and Socket Repair</target>
+                               <trans-unit id="service_education_1" resname="service_education_1">
+                                      <source>Tutors of different subjects</source>
+                                      <target>Tutors of different subjects</target>
                                </trans-unit>
-                               <trans-unit id="service_electricity_2" resname="service_electricity_2">
-                                        <source>Light Fixture Installation</source>
-                                        <target>Light Fixture Installation</target>
-                               </trans-unit>
-                                <trans-unit id="service_electricity_3" resname="service_electricity_3">
-                                       <source>Circuits and wiring Inspections</source>
-                                       <target>Circuits and wiring Inspections</target>
-                                </trans-unit>
-                                <trans-unit id="service_electricity_4" resname="service_electricity_4">
-                                       <source>Ceiling fan installation and repair</source>
-                                       <target>Ceiling fan installation and repair</target>
-                                </trans-unit>
+                               <trans-unit id="service_education_2" resname="service_education_2">
+                                        <source>art teachers</source>
+                                        <target>Art teachers</target>
+                               </trans-unit> 
+                               
 
 
-               <trans-unit id="service_doorswindows_resume" resname="service_doorswindows_resume">
+               <trans-unit id="service_arts_resume" resname="service_arts_resume">
                       <source>Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </source>
                       <target>Installing, replacing, and maintaining windows and doors is a difficult task. You can completely rely on our professionals to take care of such problems. Our team will help you solve any issues revolving around windows and doors. </target>
                </trans-unit>
 
-                               <trans-unit id="service_doorswindows_1" resname="service_doorswindows_1">
-                                      <source>Windows frames repair</source>
-                                      <target>Windows frames repair</target>
+                                <trans-unit id="service_arts_1" resname="service_arts_1">
+                                      <source>photographers</source>
+                                      <target>Photographers</target>
                                </trans-unit>
-                               <trans-unit id="service_doorswindows_2" resname="service_doorswindows_2">
-                                        <source>Replace window and doors panels</source>
-                                        <target>Replace window and doors panels</target>
+                               <trans-unit id="service_arts_2" resname="service_arts_2">
+                                        <source>graphic designers</source>
+                                        <target>Graphic designer</target>
                                </trans-unit>
-                                <trans-unit id="service_doorswindows_3" resname="service_doorswindows_3">
-                                       <source>Glasses</source>
-                                       <target>Glasses</target>
+                                <trans-unit id="service_arts_3" resname="service_arts_3">
+                                       <source>graphic artists</source>
+                                       <target>Graphic artists</target>
+                                </trans-unit>
+                                <trans-unit id="service_arts_4" resname="service_arts_4">
+                                        <source>traditional artists</source>
+                                        <target>Traditional artists</target>
+                               </trans-unit>
+                                <trans-unit id="service_arts_5" resname="service_arts_5">
+                                       <source>film editors</source>
+                                       <target>Film editors</target>
                                 </trans-unit>
 
 
 
-               <trans-unit id="service_locksmith_resume" resname="service_locksmith_resume">
+               <trans-unit id="service_it_work_resume" resname="service_it_work_resume">
                       <source>Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our locksmiths to seal, fix, repair, disassemble, and change locks or key jams.</source>
                       <target>Losing your keys, or having problems with your lock is one of the most exasperating events. However, our professional locksmiths can easily solve your concerns. Our locksmith experts are at your disposal to repair and change keyhole or security locks. Trust our locksmiths to seal, fix, repair, disassemble, and change locks or key jams.</target>
                </trans-unit>
 
-                               <trans-unit id="service_locksmith_1" resname="service_locksmith_1">
-                                      <source>Installation</source>
-                                      <target>Installation</target>
+                               <trans-unit id="service_it_work_1" resname="service_it_work_1">
+                                      <source>technical support</source>
+                                      <target>Technical support</target>
                                </trans-unit>
-                               <trans-unit id="service_locksmith_2" resname="service_locksmith_2">
-                                        <source>Repair</source>
-                                        <target>Repair</target>
+                               <trans-unit id="service_it_work_2" resname="service_it_work_2">
+                                        <source>computer analysts</source>
+                                        <target>Computer analysts</target>
                                </trans-unit>
-                                <trans-unit id="service_locksmith_3" resname="service_locksmith_3">
-                                       <source>Change</source>
-                                       <target>Change</target>
+                                <trans-unit id="service_it_work_3" resname="service_it_work_3">
+                                       <source>system security</source>
+                                       <target>System security</target>
                                 </trans-unit>
-                                <trans-unit id="service_locksmith_4" resname="service_locksmith_4">
-                                       <source>Opening locks</source>
-                                       <target>Opening locks</target>
-                                </trans-unit>
-                                <trans-unit id="service_locksmith_5" resname="service_locksmith_5">
-                                         <source>Disassemble</source>
-                                         <target>Disassemble</target>
+                                <trans-unit id="service_it_work_4" resname="service_it_work_4">
+                                       <source>web designers</source>
+                                       <target>Web designers </target>
                                 </trans-unit>
 
 
 
-               <trans-unit id="service_appliances_resume" resname="service_appliances_resume">
+               <trans-unit id="service_clerical_work_resume" resname="service_clerical_work_resume">
                       <source>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them.</source>
                       <target>We understand that the breaking down of your household appliances causes many inconveniences. Every year, many appliances are thrown away for minor defects, while they could have been saved if treated by professionals. Our repair team offers a fast and reliable service. If you have a broken down washing machine, fridge freezer, cooker or any other appliance, we can help you fix them.</target>
                </trans-unit>
 
-                                  <trans-unit id="service_appliances_1" resname="service_appliances_1">
-                                         <source>Washing machine</source>
-                                         <target>Washing machine </target>
+                                  <trans-unit id="service_clerical_work_1" resname="service_clerical_work_1">
+                                         <source>transcribers</source>
+                                         <target>Transcribers </target>
                                   </trans-unit>
-                                  <trans-unit id="service_appliances_2" resname="service_appliances_2">
-                                           <source>Refrigerators</source>
-                                           <target>Refrigerators</target>
+                                  <trans-unit id="service_clerical_work_2" resname="service_clerical_work_2">
+                                           <source>accountants</source>
+                                           <target>Accountants</target>
                                   </trans-unit>
-                                   <trans-unit id="service_appliances_3" resname="service_appliances_3">
-                                          <source>Dishwashers</source>
-                                          <target>Dishwashers </target>
+                                   <trans-unit id="service_clerical_work_3" resname="service_clerical_work_3">
+                                          <source>cheap</source>
+                                          <target>Cheap </target>
                                    </trans-unit>
-                                   <trans-unit id="service_appliances_4" resname="service_appliances_4">
-                                          <source>Microwave</source>
-                                          <target>Microwave </target>
+                                   <trans-unit id="service_clerical_work_4" resname="service_clerical_work_4">
+                                          <source>legal consultants</source>
+                                          <target>Legal consultants </target>
                                    </trans-unit>
-                                   <trans-unit id="service_appliances_5" resname="service_appliances_5">
-                                            <source>Dryer</source>
-                                            <target>Dryer</target>
+                                   <trans-unit id="service_clerical_work_5" resname="service_clerical_work_5">
+                                            <source>notaries</source>
+                                            <target>Notaries</target>
                                    </trans-unit>
-                                    <trans-unit id="service_appliances_6" resname="service_appliances_6">
-                                           <source>Range Hood</source>
-                                           <target>Range Hood</target>
-                                    </trans-unit>
 
-               <trans-unit id="service_additionalservices_resume" resname="service_additionalservices_resume">
+               <trans-unit id="service_home_health_care_resume" resname="service_home_health_care_resume">
                       <source>Galico Solutions genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</source>
                       <target>Galico Solutions genuinely cares about you and your family’s comfort and well-being, which is why we enable you to have more free time, and peace of mind, by offering our wide-ranging additional services. We cover any of your additional needs, such as childcare, lawn maintenance, IT support, and many more.</target>
                </trans-unit>
 
 
-                               <trans-unit id="service_additionalservices_1" resname="service_additionalservices_1">
-                                      <source>Cleaning services</source>
-                                      <target>Cleaning services</target>
+                               <trans-unit id="service_home_health_care_1" resname="service_home_health_care_1">
+                                      <source>nannies</source>
+                                      <target>Nannies </target>
                                </trans-unit>
-                               <trans-unit id="service_additionalservices_2" resname="service_additionalservices_2">
-                                        <source>Nursing Care</source>
-                                        <target>Nursing Care</target>
+                               <trans-unit id="service_home_health_care_2" resname="service_home_health_care_2">
+                                      <source>nursing aids</source>
+                                      <target>Nursing aids </target>
                                </trans-unit>
-                                <trans-unit id="service_additionalservices_3" resname="service_additionalservices_3">
-                                       <source>Child care</source>
-                                       <target>hild care</target>
-                                </trans-unit>
-                                <trans-unit id="service_additionalservices_4" resname="service_additionalservices_4">
-                                       <source>Lawn maintenance</source>
-                                       <target>Lawn maintenance</target>
-                                </trans-unit>
-                                <trans-unit id="service_additionalservices_5" resname="service_additionalservices_5">
-                                         <source>IT support and services</source>
-                                         <target>IT support and services</target>
-                                </trans-unit>
-                                 <trans-unit id="service_additionalservices_6" resname="service_additionalservices_6">
-                                        <source>Painting service</source>
-                                        <target>Painting service</target>
-                                 </trans-unit>
-                                  <trans-unit id="service_additionalservices_7" resname="service_additionalservices_7">
-                                         <source>Carpet installation services</source>
-                                         <target>Carpet installation services</target>
-                                  </trans-unit>
+                               <trans-unit id="service_home_health_care_3" resname="service_home_health_care_3">
+                                      <source>housekeepers</source>
+                                      <target>Housekeepers </target>
+                               </trans-unit>
+                               <trans-unit id="service_home_health_care_4" resname="service_home_health_care_4">
+                                      <source>nurses</source>
+                                      <target>Nurses</target>
+                               </trans-unit>
+                               <trans-unit id="service_home_health_care_5" resname="service_home_health_care_5">
+                                      <source>Butler</source>
+                                      <target>Butler </target>
+                               </trans-unit>
+                               <trans-unit id="service_home_health_care_6" resname="service_home_health_care_6">
+                                      <source>cleaners</source>
+                                      <target>Cleaners </target>
+                               </trans-unit>
 
 <!--End Services-->
 
