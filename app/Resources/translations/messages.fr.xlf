@@ -74,8 +74,8 @@
                 <target>Services</target>
             </trans-unit>
              <trans-unit id="menu_plans" resname="menu_plans">
-                <source>Plans</source>
-                <target>Plans</target>
+                <source>Acreditation</source>
+                <target>Accréditation</target>
             </trans-unit>
             <trans-unit id="menu_contactus" resname="menu_contactus">
                  <source>Contact us</source>
@@ -106,8 +106,8 @@
                     <target>Droits d'auteur</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>Galico Solutions seeks to provide the best service to homeowners around the world, while delivering the strongest relationship between value and quality. Galico Solutions will ensure that your expectations and needs are met, by professionally taking care of your demands. </source>
-                    <target>Nous cherchons à fournir le meilleur service aux propriétaires et locataires du monde, tout en offrant la meilleure relation entre valeur et qualité. Galico Solutions s’occupera de vos demandes professionnellement, afin d’assurer que vos attentes et vos besoins soient honorés.   </target>
+                    <source>Galico Solutions seeks to create an ethical market for the provision of services that meet the expectations of both buyer and seller.Apply the above changes in information folder. </source>
+                    <target>Galico Solutions cherche à créer un marché éthique pour la fourniture de services répondant aux attentes de l'acheteur et du vendeur. Appliquez les modifications ci-dessus dans le dossier d'informations.</target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
                          <source>Terms of use</source>
@@ -604,8 +604,8 @@
                       <target>À propos de Galico Solutions</target>
                </trans-unit>
                 <trans-unit id="about_body_subtitle1" resname="about_body_subtitle1">
-                      <source>Our company is built on the idea of improving lives, by responding to your immediate needs. Our professionals will help you save time all the way from the first phone call to the moment of completion”.</source>
-                      <target>Notre entreprise a été conçue sur l'idée d'améliorer les vies en répondant à vos besoins immédiats. Nos professionnels vous aideront à sauver du temps du premier appel jusqu'au moment de l'achèvement. </target>
+                      <source>Galico Solutions is a company responsible for bridging the gap between self-employed workers and those who need their services. Through the publicity provided by our website while facilitating the hiring of workers in a simple and convenient way. Customers and workers are free to agree the terms of service between them. All self-employed registered in Galico are accredited.</source>
+                      <target>Galico Solutions est une entreprise chargée de combler le fossé entre les travailleurs indépendants et ceux qui ont besoin de leurs services. Grâce à la publicité fournie par notre site Web tout en facilitant l’embauche de travailleurs de manière simple et pratique. Les clients et les travailleurs sont libres de convenir des conditions de service entre eux. Tous les travailleurs indépendants enregistrés à Galico sont accrédités.</target>
                </trans-unit>
                  <trans-unit id="about_body_subtitle2" resname="about_body_subtitle2">
                        <source>Our punctuality is second to none, and we arrive ready to work. We are ready to assist you on a daily basis. Contact us today to get the best offer possible.</source>
