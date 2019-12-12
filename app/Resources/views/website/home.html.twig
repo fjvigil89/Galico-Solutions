@@ -323,7 +323,7 @@
                     <div class="col-sm-12 text-center">
 
                         <h2 class="heading-title"> {{ 'home_ourservice_title' | trans({}, "messages", lang) }}</h2>
-                        <h5 class="color-white"> {{ 'home_ourservice_subtitle' | trans({}, "messages", lang) }}</h5>
+                        <!-- <h5 class="color-white"> {{ 'home_ourservice_subtitle' | trans({}, "messages", lang) }}</h5>-->
                     </div>
                 </div>
             </div>
@@ -338,76 +338,56 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-04.jpg') }}" alt="service-renovation">
-                            </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#plumbing">
-                                <div class="service-item_icon"><i class="rn-plumbing"></i></div>
-                                {{ 'plumbing' | trans({}, "messages", lang) }}
-                            </a>
+                                <img src="{{ asset('images/page-home/accreditation.jpg') }}" alt="service-renovation">
+                            </div> 
+                                <!-- <div class="service-item_icon"><i class="rn-plumbing"></i></div> -->                                
+                                <blockquote class="blockquote text-center" style="border: 2px solid #fdfcf7;">
+                                    <p class="mb-0">{{ 'accreditation' | trans({}, "messages", lang) }} </p>
+                                    <footer class="blockquote-footer"> {{ 'accreditation_detail' | trans({}, "messages", lang) }} </footer>
+                                
+                                    
+                                    <cite ><a href="{{ url('app_pagenavigation_showservices') }}" class="card-link"><u>{{ 'learn_more' | trans({}, "messages", lang) }}</u></a></cite>
+                                </blockquote>
                         </div>
+
+                        
                     </div>
+
+       
 
 
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-02.jpg') }}" alt="service-renovation">
+                                <img src="{{ asset('images/page-home/employee.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#electricity">
-                                <div class="service-item_icon"><i class="rn-electrical"></i></div>
-                                {{ 'electricity' | trans({}, "messages", lang) }}
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="service-item">
-                            <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-03.jpg') }}" alt="service-renovation">
-                            </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#service-windows-and-doors">
-                                <div class="service-item_icon"><i class="rn-home"></i></div>
-                                {{ 'doors_windows' | trans({}, "messages", lang) }}
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="service-item">
-                            <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-01.jpg') }}" alt="service-renovation">
-                            </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#locksmith">
-                                <div class="service-item_icon"><i class="rn-renovation"></i></div>
-                                {{ 'locksmith' | trans({}, "messages", lang) }}
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="service-item">
-                            <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-05.jpg') }}" alt="service-renovation">
-                            </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#appliances">
-                                <div class="service-item_icon"><i class="rn-heating"></i></div>
-                                {{ 'appliances' | trans({}, "messages", lang) }}
-                            </a>
+                            <blockquote class="blockquote text-center" style="border: 2px solid #fdfcf7;">
+                                <p class="mb-0">{{ 'employee' | trans({}, "messages", lang) }} </p>
+                                <footer class="blockquote-footer"> {{ 'employee_detail' | trans({}, "messages", lang) }} </footer>
+                            
+                                <cite><a href="{{ url('app_pagenavigation_showservices') }}" class="card-link"><u>{{ 'learn_more' | trans({}, "messages", lang) }}</u></a></cite>
+                            </blockquote>                            
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-md-4">
                         <div class="service-item">
                             <div class="service-item_img">
-                                <img src="{{ asset('images/page-home/services-12.jpg') }}" alt="service-renovation">
+                                <img src="{{ asset('images/page-home/employer.jpg') }}" alt="service-renovation">
                             </div>
-                            <a class="service-item_link" href="{{ url('app_pagenavigation_showservices') }}#additional-services">
-                                <div class="service-item_icon"><i class="rn-painting"></i></div>
-                                {{ 'additional_services' | trans({}, "messages", lang) }}
-                            </a>
+
+                            <blockquote class="blockquote text-center" style="border: 2px solid #fdfcf7;">
+                                <p class="mb-0">{{ 'employer' | trans({}, "messages", lang) }} </p>
+                                <footer class="blockquote-footer"> {{ 'employer_detail' | trans({}, "messages", lang) }} </footer>
+                            
+                                <cite><a href="{{ url('app_pagenavigation_showservices') }}"
+                                        class="card-link"><u>{{ 'learn_more' | trans({}, "messages", lang) }}</u></a></cite>
+                            </blockquote>
+
                         </div>
                     </div>
+
+                    
 
                 </div>
             </div>
@@ -420,8 +400,8 @@
             <div class="container" >
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <h2 class="heading-title">{{ 'home_ourplans' | trans({}, "messages", lang) }}</h2>
-                        <h5 class="color-white">{{ 'home_ourplans_subtitle' | trans({}, "messages", lang) }}</h5>
+                        <h2 class="heading-title">{{ 'home_ouracreditation' | trans({}, "messages", lang) }}</h2>
+                        <!-- <h5 class="color-white">{{ 'home_ouracreditation_subtitle' | trans({}, "messages", lang) }}</h5> -->
                     </div>
                 </div>
             </div>
@@ -434,10 +414,10 @@
                             <i class="pe-7s-tools"></i>
                         </div>
                         <a class="service-item_link" href="{{ url('app_pagenavigation_showplans') }}#appliances">
-                            GP BASIC
+                            Manual laborers
                         </a>
                         <p class="feature-item_description">
-                            {{ 'home_gpbasic_resume' | trans({}, "messages", lang) }}
+                            {{ 'home_manual_resume' | trans({}, "messages", lang) }}
                         </p>
                     </div>
                 </div>
@@ -448,10 +428,10 @@
                             <i class="pe-7s-plus"></i>
                         </div>
                         <a class="service-item_link" href="{{ url('app_pagenavigation_showplans') }}#appliances">
-                            GP PLUS
+                            Skilled workers
                         </a>
                         <p class="feature-item_description">
-                            {{ 'home_gpplus_resume' | trans({}, "messages", lang) }}
+                            {{ 'home_skilled_resume' | trans({}, "messages", lang) }}
                         </p>
                     </div>
                 </div>
@@ -459,19 +439,47 @@
                 <div class="col-sm-4">
                     <div class="feature-item feature-item_price">
                         <div class="feature-item_icon">
-                            <i class="pe-7s-albums"></i>
+                            <i class="pe-7s-portfolio"></i>
                         </div>
                         <a class="service-item_link" href="{{ url('app_pagenavigation_showplans') }}#appliances">
-                            GP ADD
+                            Professionals
                         </a>
                         <p class="feature-item_description">
 
-                            {{ 'home_gpadd_resume1' | trans({}, "messages", lang) }}
+                            {{ 'home_professionals_resume' | trans({}, "messages", lang) }}
                         </p>
-                        <p class="feature-item_description">
+                        
+                    </div>
+                </div>
 
-                            {{ 'home_gpadd_resume2' | trans({}, "messages", lang) }}
+                <div class="col-sm-4">
+                    <div class="feature-item feature-item_price">
+                        <div class="feature-item_icon">
+                            <i class="pe-7s-culture"></i>
+                        </div>
+                        <a class="service-item_link" href="{{ url('app_pagenavigation_showplans') }}#appliances">
+                            Personal employer
+                        </a>
+                        <p class="feature-item_description">
+                
+                            {{ 'home_personalemployer_resume' | trans({}, "messages", lang) }}
                         </p>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="feature-item feature-item_price">
+                        <div class="feature-item_icon">
+                            <i class="pe-7s-albums"></i>
+                        </div>
+                        <a class="service-item_link" href="{{ url('app_pagenavigation_showplans') }}#appliances">
+                            Commercial employer
+                        </a>
+                        <p class="feature-item_description">
+                
+                            {{ 'home_commercialemployer_resume' | trans({}, "messages", lang) }}
+                        </p>
+                       
                     </div>
                 </div>
             </div>

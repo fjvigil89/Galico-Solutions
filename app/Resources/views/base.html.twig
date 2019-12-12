@@ -198,7 +198,7 @@
                         <nav id="primary-menu-mobile">
                             <ul>
                                 <li><a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
-                                <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                                <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_employment' | trans({}, "messages", lang) }}</a></li>
                                 <li><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
                                 <!--<li><a href="index.html">Prices</a></li>-->
                                 <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
@@ -223,7 +223,7 @@
                         <li class="menu-item active">
                             <a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
 
-                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                        <li class="menu-item"><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_employment' | trans({}, "messages", lang) }}</a></li>
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
                         <!--<li class="menu-item"><a href="#">Prices</a></li>-->
                         <li class="menu-item"><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
@@ -321,7 +321,7 @@
                         <h3 class="widget-tittle">{{ 'menu_information' | trans({}, "messages", lang) }}</h3>
                         <ul class="menu-infomation">
                             <li><a href="/">{{ 'menu_home' | trans({}, "messages", lang) }}</a></li>
-                            <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_services' | trans({}, "messages", lang) }}</a></li>
+                            <li><a href="{{ url('app_pagenavigation_showservices') }}">{{ 'menu_employment' | trans({}, "messages", lang) }}</a></li>
                             <li><a href="{{ url('app_pagenavigation_showplans') }}">{{ 'menu_plans' | trans({}, "messages", lang) }}</a></li>
                             <li><a href="{{ url('app_pagenavigation_showcontactus') }}">{{ 'menu_contactus' | trans({}, "messages", lang) }}</a></li>
                             <li><a href="{{ url('app_pagenavigation_showaboutus') }}">{{ 'menu_aboutus' | trans({}, "messages", lang) }}</a></li>
@@ -354,7 +354,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    {{ 'menu_copyright' | trans({}, "messages", lang) }} &copy; Galico Solutions 2017. {{ 'menu_allrightreserved' | trans({}, "messages", lang) }}
+                    {{ 'menu_copyright' | trans({}, "messages", lang) }} &copy; Galico Solutions 2017 - {{'now' | date('Y')}}. {{ 'menu_allrightreserved' | trans({}, "messages", lang) }}
                 </div>
             </div>
         </div>

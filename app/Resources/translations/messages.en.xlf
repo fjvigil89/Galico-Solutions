@@ -71,9 +71,9 @@
                 <source>Home</source>
                 <target>Home</target>
             </trans-unit>
-            <trans-unit id="menu_services" resname="menu_services">
-                <source>Services</source>
-                <target>Services</target>
+            <trans-unit id="menu_employment" resname="menu_employment">
+                <source>Employment</source>
+                <target>Employment</target>
             </trans-unit>
              <trans-unit id="menu_plans" resname="menu_plans">
                 <source>Acreditation</source>
@@ -108,8 +108,8 @@
                     <target>Copyright</target>
               </trans-unit>
                <trans-unit id="foot_mission" resname="foot_mission">
-                    <source>Galico Solutions seeks to create an ethical market for the provision of services that meet the expectations of both buyer and seller.Apply the above changes in information folder.</source>
-                    <target>Galico Solutions seeks to create an ethical market for the provision of services that meet the expectations of both buyer and seller. Apply the above changes in information folder.</target>
+                    <source>Galico Solutions seeks to create an ethical marketplace for labor and services that holds both employers and employees accountable.</source>
+                    <target>Galico Solutions seeks to create an ethical marketplace for labor and services that holds both employers and employees accountable.</target>
                </trans-unit>
                 <trans-unit id="menu_terms" resname="menu_terms">
                          <source>Terms of use</source>
@@ -161,6 +161,36 @@
 
 
 <!--Home-->
+         <!-- Category -->
+              <trans-unit id="accreditation" resname="accreditation">
+                    <source>Acreditation</source>
+                    <target>Acreditation</target>
+              </trans-unit>
+              <trans-unit id="accreditation_detail" resname="accreditation_detail">
+                    <source>decree of sound advertising and service practices</source>
+                    <target>Decree of sound advertising and service practices</target>
+              </trans-unit>
+              <trans-unit id="learn_more" resname="learn_more">
+                    <source>learn more</source>
+                    <target>learn more...</target>
+              </trans-unit>
+              <trans-unit id="employee" resname="employee">
+                    <source>employee</source>
+                    <target>Employee</target>
+              </trans-unit>
+              <trans-unit id="employee_detail" resname="employee_detail">
+                    <source>individuals of varied professions for contractual or permanent hire</source>
+                    <target>Individuals of varied professions for contractual or permanent hire</target>
+              </trans-unit>
+              <trans-unit id="employer" resname="employer">
+                    <source>employer</source>
+                    <target>Employer</target>
+              </trans-unit>
+              <trans-unit id="employer_detail" resname="employer_detail">
+                    <source>personal and commercial hiring, both local and international</source>
+                    <target>Personal and commercial hiring, both local and international</target>
+              </trans-unit>
+         <!-- End Category -->
          <!--Band-->
 
               <trans-unit id="home_band1_title" resname="home_band1_title">
@@ -207,8 +237,8 @@
                     <target>We pride ourselves in having a great team of experts, who are ready to work, as soon as you need them to. Galico Solutions offers a wide variety of services at a very reasonable cost, all while providing the best service quality and efficiency to our customers.</target>
               </trans-unit>
                <trans-unit id="home_ourservice_title" resname="home_ourservice_title">
-                    <source>Our Services</source>
-                    <target>Our Services</target>
+                    <source>Our Category of Employment</source>
+                    <target>Our Category of Employment</target>
               </trans-unit>
                <trans-unit id="home_ourservice_subtitle" resname="home_ourservice_subtitle">
                      <source>Galico Solutions offers an extensive range of services that handle anything from house renovation, to emergencies, and occasional needs. </source>
@@ -275,29 +305,33 @@
 
          <!--End Gp plus-->
 
-               <trans-unit id="home_ourplans" resname="home_ourplans">
-                     <source>Our plans</source>
-                     <target>Our plans</target>
-              </trans-unit>
-               <trans-unit id="home_ourplans_subtitle" resname="home_ourplans_subtitle">
+               <trans-unit id="home_ouracreditation" resname="home_ouracreditation">
+                     <source>Our Acreditations</source>
+                     <target>Our Acreditations</target>
+              </trans-unit>              
+               <trans-unit id="home_ouracreditation_subtitle" resname="home_ouracreditation_subtitle">
                      <source>Galico Solutions allows you to choose from three plans that include various services.</source>
                      <target>Galico Solutions allows you to choose from three plans that include various services.</target>
               </trans-unit>
-               <trans-unit id="home_gpbasic_resume" resname="home_gpbasic_resume">
-                     <source>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</source>
-                     <target>Includes basic services such as plumbing, electricity, locksmith and doors and windows, for the affordable price of $24.99 per month.</target>
+               <trans-unit id="home_manual_resume" resname="home_manual_resume">
+                     <source>Physical work like handymen, construction workers, housekeepers, etc. -$3.50 per year</source>
+                     <target>Physical work like handymen, construction workers, housekeepers, etc. -$3.50 per year</target>
               </trans-unit>
-               <trans-unit id="home_gpplus_resume" resname="home_gpplus_resume">
-                     <source>Includes the services offered in the GP Basic, while also providing appliance service, for only $29.99 per month.</source>
-                     <target>Includes the services offered in the GP Basic, while also providing appliance service, for only $29.99 per month.</target>
+               <trans-unit id="home_skilled_resume" resname="home_skilled_resume">
+                     <source>Training and knowledge like electricians, tutor, child carers, etc. - $7per year</source>
+                     <target>Training and knowledge like electricians, tutor, child carers, etc. - $7per year</target>
               </trans-unit>
-               <trans-unit id="home_gpadd_resume1" resname="home_gpadd_resume1">
-                     <source>Covers additional services such as IT support, babysitting, house cleaning, and many more, at very competitive rates*</source>
-                     <target>Covers additional services such as IT support, babysitting, house cleaning, and many more, at very competitive rates*</target>
+               <trans-unit id="home_professionals_resume" resname="home_professionals_resume">
+                     <source>Specialized qualifications like engineers, attorneys, professors, etc. -$10 per year</source>
+                     <target>Specialized qualifications like engineers, attorneys, professors, etc. -$10 per year</target>
               </trans-unit>
-               <trans-unit id="home_gpadd_resume2" resname="home_gpadd_resume2">
-                     <source>*Certain discounts can be applied. Refer to our “Plans” page for more information.</source>
-                     <target>*Certain discounts can be applied. Refer to our “Plans” page for more information.</target>
+               <trans-unit id="home_personalemployer_resume" resname="home_personalemployer_resume">
+                     <source>Individuals who want work done for their home - $5 per year</source>
+                     <target>Individuals who want work done for their home - $5 per year</target>
+              </trans-unit>
+              <trans-unit id="home_commercialemployer_resume" resname="home_commercialemployer_resume">
+                     <source>Companies or businesses who want to hire from local or foreign locations -$20 per year</source>
+                     <target>Companies or businesses who want to hire from local or foreign locations -$20 per year</target>
               </trans-unit>
 
               <trans-unit id="home_just_three_steps" resname="home_just_three_steps">

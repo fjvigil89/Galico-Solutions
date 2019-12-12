@@ -304,7 +304,7 @@ p {
 }
 
 blockquote {
-  border: 2px solid #FBD232;
+  border: 0px solid #FBD232;
   font-size: 18px;
   padding: 20px;
   color: rgba(0, 0, 0, 0.7);
