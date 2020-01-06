@@ -52,6 +52,10 @@ class Localnumbers
      */
     private $country;
 
+    public function __toString()
+        {
+            return $this->city; // which is a string in any circumstance
+        }
     /**
      * @return string
      */

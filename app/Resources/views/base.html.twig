@@ -49,6 +49,17 @@
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155409512-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155409512-1');
+    </script>
+
 </head>
 <body ng-app="gpApp" ng-controller="AppController">
 {% set userId = app.session.get('userId') %}
